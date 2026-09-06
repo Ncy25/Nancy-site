@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paiement — Wild Flower by Wooden Mountain</title>
+  <meta name="description" content="Finalisez votre commande Wild Flower by Wooden Mountain."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --blush:      #F9E8E0;
+      --blush-mid:  #F5D5C8;
+      --peach:      #F0A882;
+      --peach-dk:   #D97A52;
+      --terra:      #C26B4A;
+      --rose:       #F2BFB5;
+      --rose-lt:    #FDEAE5;
+      --cream:      #FFF8F5;
+      --ivory:      #FFFCFA;
+      --gold:       #D4A853;
+      --gold-lt:    #F0D08A;
+      --sage:       #8FAF8A;
+      --sage-lt:    #C4D9BE;
+      --brown:      #6B3D2A;
+      --brown-mid:  #8B5540;
+      --gray:       #9E8880;
+      --font-d: 'Cormorant Garamond', Georgia, serif;
+      --font-s: 'Dancing Script', cursive;
+      --font-b: 'DM Sans', sans-serif;
+      --ease: 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-b); background: var(--ivory); color: var(--brown); overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── SPARKLE ── */
+    .spark { position: absolute; pointer-events: none; animation: spark-pulse 2.5s ease-in-out infinite; }
+    @keyframes spark-pulse {
+      0%,100% { opacity:.5; transform: scale(1) rotate(0deg); }
+      50%      { opacity:1;  transform: scale(1.25) rotate(15deg); }
+    }
+
+    /* ── PROMO BAR ── */
+    .promo-bar {
+      background: var(--peach);
+      text-align: center;
+      padding: 9px 16px;
+      font-size: 12px; font-weight: 500;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: #fff;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(255,252,250,0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(242,191,181,0.3);
+    }
+    .nav-top {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+      max-width: 1160px; margin: 0 auto; padding: 0 28px;
+    }
+    .nav-left { display: flex; align-items: center; gap: 22px; }
+    .nav-logo { display: flex; flex-direction: column; align-items: center; line-height: 1; }
+    .logo-wild { font-family: var(--font-s); font-size: 28px; color: var(--terra); letter-spacing: -.01em; line-height: 1; }
+    .logo-flower-row { display: flex; align-items: center; font-family: var(--font-b); font-size: 18px; font-weight: 400; letter-spacing: .06em; color: var(--peach); line-height: 1.1; }
+    .logo-flower-icon { width: 18px; height: 18px; margin: 0 1px; display: inline-block; }
+    .logo-by { font-family: var(--font-s); font-size: 9px; color: var(--brown-mid); letter-spacing: .04em; }
+    .logo-wm { font-family: var(--font-b); font-size: 8.5px; font-weight: 500; color: var(--sage); letter-spacing: .06em; text-transform: uppercase; }
+    .nav-right { display: flex; align-items: center; gap: 18px; }
+    .nav-icon-btn { background: none; border: none; cursor: pointer; color: var(--brown-mid); font-size: 17px; transition: color var(--ease); }
+    .nav-icon-btn:hover { color: var(--peach-dk); }
+    .nav-back { display: flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 500; color: var(--brown-mid); transition: color var(--ease); }
+    .nav-back:hover { color: var(--peach-dk); }
+
+    /* ── PROGRESS BAR ── */
+    .progress-bar {
+      background: var(--blush);
+      padding: 14px 28px;
+    }
+    .progress-inner {
+      max-width: 1160px; margin: 0 auto;
+      display: flex; align-items: center; gap: 0;
+    }
+    .prog-step {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 500;
+      color: var(--gray); letter-spacing: .06em;
+    }
+    .prog-step.active { color: var(--peach-dk); }
+    .prog-step.done { color: var(--sage); }
+    .prog-dot {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(240,168,130,0.15);
+      border: 1.5px solid var(--blush-mid);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: var(--gray);
+      flex-shrink: 0;
+    }
+    .prog-step.active .prog-dot { background: var(--peach); border-color: var(--peach); color: #fff; }
+    .prog-step.done .prog-dot { background: var(--sage-lt); border-color: var(--sage); color: var(--sage); }
+    .prog-line { flex: 1; height: 1.5px; background: var(--blush-mid); margin: 0 12px; min-width: 30px; max-width: 80px; }
+    .prog-line.done { background: var(--sage-lt); }
+
+    /* ── MAIN LAYOUT ── */
+    .checkout-wrap {
+      max-width: 1160px; margin: 0 auto; padding: 48px 28px 96px;
+      display: grid; grid-template-columns: 1fr 400px; gap: 48px; align-items: start;
+    }
+
+    /* ── SECTION TITLES ── */
+    .section-head { margin-bottom: 22px; }
+    .section-script { font-family: var(--font-s); font-size: 18px; color: var(--terra); margin-bottom: 2px; }
+    .section-title { font-family: var(--font-d); font-size: 26px; font-weight: 600; color: var(--brown); letter-spacing: -.01em; }
+
+    /* ── FORMS ── */
+    .form-card {
+      background: var(--ivory);
+      border: 1px solid rgba(242,191,181,0.35);
+      border-radius: 24px; padding: 32px;
+      box-shadow: 0 4px 24px rgba(195,107,74,0.05);
+      margin-bottom: 22px;
+    }
+    .form-card-title {
+      font-family: var(--font-d); font-size: 18px; font-weight: 600; color: var(--brown);
+      margin-bottom: 20px; padding-bottom: 14px;
+      border-bottom: 1px solid rgba(242,191,181,0.3);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .form-card-title .fc-icon {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--blush);
+      display: flex; align-items: center; justify-content: center; font-size: 16px;
+      flex-shrink: 0;
+    }
+    .fg { margin-bottom: 16px; }
+    .fg label {
+      display: block; font-size: 11px; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--brown-mid); margin-bottom: 7px;
+    }
+    .fg input, .fg select, .fg textarea {
+      width: 100%; padding: 11px 14px;
+      border: 1.5px solid rgba(195,107,74,0.18);
+      border-radius: 10px; background: var(--cream);
+      font-family: var(--font-b); font-size: 14px; color: var(--brown);
+      outline: none; transition: border-color var(--ease), box-shadow var(--ease);
+    }
+    .fg input:focus, .fg select:focus { border-color: var(--peach); box-shadow: 0 0 0 3px rgba(240,168,130,0.15); }
+    .f-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .f-3col { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; }
+
+    /* input with icon */
+    .input-wrap { position: relative; }
+    .input-wrap input { padding-left: 42px; }
+    .input-icon {
+      position: absolute; left: 13px; top: 50%; transform: translateY(-50%);
+      color: var(--gray); font-size: 16px; pointer-events: none;
+    }
+    .input-wrap .input-brand {
+      position: absolute; right: 13px; top: 50%; transform: translateY(-50%);
+      display: flex; gap: 5px; align-items: center;
+    }
+    .card-brand {
+      height: 18px; border-radius: 3px; opacity: .6;
+      font-size: 9px; font-weight: 700; padding: 3px 5px;
+      background: var(--brown); color: #fff; letter-spacing: .04em;
+    }
+    .cb-visa { background: #1A1F71; }
+    .cb-mc { background: #EB001B; }
+    .cb-cb { background: var(--peach-dk); }
+
+    /* card visual */
+    .card-preview {
+      background: linear-gradient(135deg, var(--peach-dk) 0%, var(--terra) 60%, var(--brown-mid) 100%);
+      border-radius: 18px; padding: 24px 26px;
+      margin-bottom: 24px; position: relative; overflow: hidden;
+      color: #fff; box-shadow: 0 8px 32px rgba(195,107,74,0.25);
+    }
+    .card-preview::before {
+      content: '';
+      position: absolute; top: -30px; right: -30px;
+      width: 150px; height: 150px; border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+    }
+    .card-preview::after {
+      content: '';
+      position: absolute; bottom: -40px; left: 20px;
+      width: 120px; height: 120px; border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+    }
+    .card-chip {
+      width: 34px; height: 26px; border-radius: 5px;
+      background: linear-gradient(135deg, var(--gold-lt), var(--gold));
+      margin-bottom: 22px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2px; padding: 4px;
+    }
+    .card-chip-cell { background: rgba(255,255,255,0.35); border-radius: 2px; }
+    .card-number { font-size: 17px; letter-spacing: .18em; font-weight: 500; margin-bottom: 20px; opacity: .95; }
+    .card-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
+    .card-label { font-size: 9px; letter-spacing: .12em; text-transform: uppercase; opacity: .6; margin-bottom: 3px; }
+    .card-value { font-size: 13.5px; font-weight: 500; letter-spacing: .05em; }
+    .card-logo { font-family: var(--font-s); font-size: 20px; opacity: .75; }
+
+    /* payment tabs */
+    .pay-tabs { display: flex; gap: 10px; margin-bottom: 22px; }
+    .pay-tab {
+      flex: 1; padding: 12px 10px;
+      border: 1.5px solid rgba(195,107,74,0.2);
+      border-radius: 12px; background: var(--cream);
+      cursor: pointer; transition: all var(--ease);
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      font-size: 13px; font-weight: 500; color: var(--brown-mid);
+    }
+    .pay-tab:hover { border-color: var(--peach); }
+    .pay-tab.active { border-color: var(--peach); background: var(--rose-lt); color: var(--peach-dk); }
+    .pay-tab svg { flex-shrink: 0; }
+
+    /* paypal alt */
+    .paypal-zone {
+      display: none; text-align: center; padding: 24px;
+      background: var(--blush);
+      border-radius: 14px; margin-bottom: 6px;
+    }
+    .paypal-zone.show { display: block; }
+    .paypal-zone p { font-size: 13.5px; color: var(--brown-mid); margin-bottom: 16px; line-height: 1.6; }
+    .btn-paypal {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; background: #FFC439; color: #003087;
+      font-weight: 700; font-size: 14px; border-radius: 999px;
+      border: none; cursor: pointer;
+    }
+
+    /* virement */
+    .virement-zone {
+      display: none; padding: 20px;
+      background: var(--blush);
+      border-radius: 14px; margin-bottom: 6px;
+    }
+    .virement-zone.show { display: block; }
+    .virement-zone p { font-size: 13.5px; color: var(--brown-mid); line-height: 1.7; }
+
+    /* secure badges */
+    .secure-row {
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 16px;
+      background: rgba(143,175,138,0.1);
+      border-radius: 12px; margin-top: 6px;
+      border: 1px solid rgba(143,175,138,0.25);
+    }
+    .secure-row svg { color: var(--sage); flex-shrink: 0; }
+    .secure-row p { font-size: 12px; color: var(--gray); line-height: 1.5; }
+
+    /* ── DELIVERY OPTIONS ── */
+    .delivery-options { display: flex; flex-direction: column; gap: 10px; }
+    .del-opt {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 18px; border-radius: 14px;
+      border: 1.5px solid rgba(195,107,74,0.18);
+      background: var(--cream); cursor: pointer;
+      transition: all var(--ease);
+    }
+    .del-opt:hover { border-color: var(--peach); }
+    .del-opt.selected { border-color: var(--peach); background: var(--rose-lt); }
+    .del-radio {
+      width: 18px; height: 18px; border-radius: 50%;
+      border: 2px solid var(--blush-mid);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: all var(--ease);
+    }
+    .del-opt.selected .del-radio { border-color: var(--peach); }
+    .del-radio-inner {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--peach); opacity: 0; transition: opacity var(--ease);
+    }
+    .del-opt.selected .del-radio-inner { opacity: 1; }
+    .del-info { flex: 1; }
+    .del-name { font-size: 13.5px; font-weight: 500; color: var(--brown); margin-bottom: 2px; }
+    .del-desc { font-size: 12px; color: var(--gray); }
+    .del-price { font-size: 13.5px; font-weight: 600; color: var(--peach-dk); white-space: nowrap; }
+    .del-price.free { color: var(--sage); }
+
+    /* ── ORDER SUMMARY (RIGHT SIDE) ── */
+    .summary-sticky { position: sticky; top: 100px; }
+    .summary-card {
+      background: var(--ivory);
+      border: 1px solid rgba(242,191,181,0.35);
+      border-radius: 24px; padding: 28px;
+      box-shadow: 0 4px 24px rgba(195,107,74,0.06);
+      margin-bottom: 16px;
+    }
+    .summary-title {
+      font-family: var(--font-d); font-size: 20px; font-weight: 600;
+      color: var(--brown); margin-bottom: 22px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(242,191,181,0.3);
+    }
+    .sum-items { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+    .sum-item { display: flex; align-items: center; gap: 12px; }
+    .sum-thumb {
+      width: 52px; height: 52px; border-radius: 12px;
+      background: var(--blush); display: flex; align-items: center;
+      justify-content: center; font-size: 22px; flex-shrink: 0;
+      position: relative;
+    }
+    .sum-qty-badge {
+      position: absolute; top: -6px; right: -6px;
+      width: 18px; height: 18px; border-radius: 50%;
+      background: var(--peach); color: #fff; font-size: 10px;
+      font-weight: 700; display: flex; align-items: center; justify-content: center;
+    }
+    .sum-name { font-size: 13.5px; font-weight: 500; color: var(--brown); flex: 1; line-height: 1.35; }
+    .sum-price { font-size: 13.5px; color: var(--peach-dk); font-weight: 600; white-space: nowrap; }
+
+    /* promo code */
+    .promo-row {
+      display: flex; gap: 8px; margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px dashed rgba(242,191,181,0.4);
+    }
+    .promo-input {
+      flex: 1; padding: 10px 14px;
+      border: 1.5px solid rgba(195,107,74,0.18);
+      border-radius: 10px; background: var(--cream);
+      font-family: var(--font-b); font-size: 13.5px; color: var(--brown);
+      outline: none; transition: border-color var(--ease);
+    }
+    .promo-input:focus { border-color: var(--peach); }
+    .promo-input::placeholder { color: var(--gray); }
+    .btn-promo {
+      padding: 10px 16px; background: var(--blush); border: none;
+      border-radius: 10px; cursor: pointer;
+      font-family: var(--font-b); font-size: 12.5px; font-weight: 600;
+      color: var(--brown-mid); transition: all var(--ease); white-space: nowrap;
+    }
+    .btn-promo:hover { background: var(--blush-mid); color: var(--peach-dk); }
+
+    /* totals */
+    .sum-totals { display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; }
+    .sum-row { display: flex; justify-content: space-between; align-items: baseline; }
+    .sum-row .lbl { font-size: 13.5px; color: var(--gray); }
+    .sum-row .val { font-size: 13.5px; color: var(--brown); font-weight: 500; }
+    .sum-row .val.free-del { color: var(--sage); font-weight: 600; }
+    .sum-row.total { border-top: 1px solid rgba(242,191,181,0.3); padding-top: 14px; margin-top: 6px; }
+    .sum-row.total .lbl { font-family: var(--font-d); font-size: 17px; font-weight: 600; color: var(--brown); }
+    .sum-row.total .val { font-family: var(--font-d); font-size: 26px; font-weight: 600; color: var(--brown); }
+
+    /* CTA button */
+    .btn-pay {
+      width: 100%; padding: 16px;
+      background: linear-gradient(135deg, var(--peach) 0%, var(--peach-dk) 100%);
+      color: #fff; border: none; border-radius: 999px;
+      font-family: var(--font-b); font-size: 14px; font-weight: 700;
+      letter-spacing: .07em; text-transform: uppercase;
+      cursor: pointer; transition: all var(--ease);
+      box-shadow: 0 4px 18px rgba(195,107,74,0.3);
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
+    .btn-pay:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(195,107,74,0.38); }
+    .btn-pay:active { transform: none; }
+
+    /* trust items */
+    .trust-row {
+      display: flex; justify-content: center; gap: 18px;
+      margin-top: 16px; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 11.5px; color: var(--gray);
+    }
+    .trust-item svg { color: var(--sage); }
+
+    /* note poétique */
+    .poem-note {
+      margin-top: 16px;
+      background: var(--blush);
+      border-radius: 16px; padding: 16px 18px;
+      border-left: 3px solid var(--peach);
+    }
+    .poem-note p { font-family: var(--font-d); font-size: 15px; font-style: italic; color: var(--brown); line-height: 1.65; }
+
+    /* ── SUCCESS STATE ── */
+    .success-wrap {
+      display: none;
+      min-height: 60vh;
+      align-items: center; justify-content: center;
+      padding: 80px 28px;
+      text-align: center;
+      flex-direction: column;
+    }
+    .success-wrap.show { display: flex; }
+    .checkout-form-wrap.hide { display: none; }
+    .success-icon { font-size: 64px; margin-bottom: 20px; animation: pop .5s cubic-bezier(.34,1.5,.64,1); }
+    .success-script { font-family: var(--font-s); font-size: 26px; color: var(--terra); margin-bottom: 8px; }
+    .success-title { font-family: var(--font-d); font-size: 38px; font-weight: 600; color: var(--brown); margin-bottom: 14px; }
+    .success-sub { font-size: 14.5px; color: var(--gray); max-width: 420px; margin: 0 auto 32px; line-height: 1.75; }
+    .btn-back-shop {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; background: var(--peach); color: #fff;
+      border-radius: 999px; font-family: var(--font-b); font-size: 13px; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      border: none; cursor: pointer; transition: all var(--ease);
+      box-shadow: 0 4px 18px rgba(195,107,74,0.25);
+    }
+    .btn-back-shop:hover { background: var(--peach-dk); transform: translateY(-2px); }
+    @keyframes pop { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+    /* ── FOOTER ── */
+    footer { background: var(--brown); color: rgba(255,248,245,0.65); padding: 44px 0 22px; }
+    .footer-inner { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+    .footer-bar {
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+      border-top: 1px solid rgba(255,248,245,0.1); padding-top: 18px;
+    }
+    .footer-bar p { font-size: 12px; }
+    .f-links { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 18px; }
+    .f-links a { font-size: 12.5px; color: rgba(255,248,245,0.5); transition: color var(--ease); }
+    .f-links a:hover { color: var(--peach); }
+
+    /* ── REVEAL ── */
+    .r { opacity: 0; transform: translateY(16px); transition: opacity .55s ease, transform .55s ease; }
+    .r.v { opacity: 1; transform: none; }
+    .d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .checkout-wrap { grid-template-columns: 1fr; }
+      .summary-sticky { position: static; order: -1; }
+    }
+    @media (max-width: 560px) {
+      .f-2col, .f-3col { grid-template-columns: 1fr; }
+      .pay-tabs { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- PROMO BAR -->
+<div class="promo-bar">🌸 Livraison offerte dès 50€ d'achat · Pièces uniques faites à la main</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-top">
+    <div class="nav-left">
+      <a href="index.html" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        Retour
+      </a>
+    </div>
+
+    <a href="index.html" class="nav-logo">
+      <span class="logo-wild">Wild</span>
+      <div class="logo-flower-row">
+        Fl
+        <svg class="logo-flower-icon" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="10" r="5" fill="#F0A882" opacity=".85"/>
+          <circle cx="22" cy="16" r="5" fill="#F0A882" opacity=".75"/>
+          <circle cx="16" cy="22" r="5" fill="#F0A882" opacity=".85"/>
+          <circle cx="10" cy="16" r="5" fill="#F0A882" opacity=".75"/>
+          <circle cx="16" cy="16" r="6" fill="#F5C4A8"/>
+          <circle cx="16" cy="16" r="3.5" fill="#fff" opacity=".7"/>
+        </svg>
+        wer
+      </div>
+      <div style="display:flex;align-items:center;gap:4px;margin-top:1px">
+        <span class="logo-by">by</span>
+        <span class="logo-wm">Wooden Mountain</span>
+      </div>
+    </a>
+
+    <div class="nav-right">
+      <!-- sécurité -->
+      <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--gray)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        Paiement sécurisé
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- PROGRESS -->
+<div class="progress-bar">
+  <div class="progress-inner">
+    <div class="prog-step done">
+      <div class="prog-dot">✓</div>
+      <span>Panier</span>
+    </div>
+    <div class="prog-line done"></div>
+    <div class="prog-step active">
+      <div class="prog-dot">2</div>
+      <span>Livraison &amp; paiement</span>
+    </div>
+    <div class="prog-line"></div>
+    <div class="prog-step">
+      <div class="prog-dot">3</div>
+      <span>Confirmation</span>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS STATE -->
+<div class="success-wrap" id="successWrap">
+  <div class="success-icon">🌸</div>
+  <div class="success-script">Merci infiniment</div>
+  <div class="success-title">Commande confirmée !</div>
+  <p class="success-sub">Votre commande a bien été reçue. Un e-mail de confirmation va vous être envoyé. Vos pampilles seront préparées avec soin et expédiées sous 3–5 jours ouvrés. 💛</p>
+  <a href="index.html#boutique" class="btn-back-shop">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+    Retourner à la boutique
+  </a>
+</div>
+
+<!-- MAIN FORM -->
+<div class="checkout-form-wrap" id="checkoutFormWrap">
+<div class="checkout-wrap">
+
+  <!-- LEFT COL -->
+  <div class="left-col">
+
+    <!-- COORDONNÉES -->
+    <div class="form-card r">
+      <div class="form-card-title">
+        <div class="fc-icon">👤</div>
+        Vos coordonnées
+      </div>
+      <div class="f-2col">
+        <div class="fg"><label>Prénom</label><input type="text" id="fname" placeholder="Léa" autocomplete="given-name"/></div>
+        <div class="fg"><label>Nom</label><input type="text" id="lname" placeholder="Dupont" autocomplete="family-name"/></div>
+      </div>
+      <div class="fg"><label>E-mail</label>
+        <div class="input-wrap">
+          <span class="input-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </span>
+          <input type="email" id="email" placeholder="lea@email.com" autocomplete="email" style="padding-left:42px"/>
+        </div>
+      </div>
+      <div class="fg"><label>Téléphone <span style="font-weight:400;opacity:.6">(facultatif)</span></label>
+        <div class="input-wrap">
+          <span class="input-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 0118 1.82a2 2 0 012 1.99v3.01a2 2 0 01-1.44 1.93l-2 .67a16 16 0 006.38 6.38l.67-2a2 2 0 011.93-1.44z"/></svg>
+          </span>
+          <input type="tel" placeholder="06 00 00 00 00" autocomplete="tel" style="padding-left:42px"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADRESSE LIVRAISON -->
+    <div class="form-card r d1">
+      <div class="form-card-title">
+        <div class="fc-icon">📍</div>
+        Adresse de livraison
+      </div>
+      <div class="fg"><label>Adresse</label><input type="text" id="addr" placeholder="12 rue des Fleurs" autocomplete="street-address"/></div>
+      <div class="fg"><label>Complément <span style="font-weight:400;opacity:.6">(facultatif)</span></label><input type="text" placeholder="Bât. B, Apt. 42…" autocomplete="address-line2"/></div>
+      <div class="f-3col">
+        <div class="fg"><label>Ville</label><input type="text" id="city" placeholder="Paris" autocomplete="address-level2"/></div>
+        <div class="fg"><label>Code postal</label><input type="text" id="zip" placeholder="75000" autocomplete="postal-code" maxlength="5"/></div>
+        <div class="fg"><label>Pays</label>
+          <select autocomplete="country">
+            <option value="FR" selected>🇫🇷 France</option>
+            <option value="BE">🇧🇪 Belgique</option>
+            <option value="CH">🇨🇭 Suisse</option>
+            <option value="LU">🇱🇺 Luxembourg</option>
+            <option value="other">Autre…</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg" style="margin-bottom:0">
+        <label style="display:flex;align-items:center;gap:10px;cursor:pointer;text-transform:none;letter-spacing:0">
+          <input type="checkbox" style="width:auto;margin:0;accent-color:var(--peach)"/>
+          <span style="font-size:13px;font-weight:400;color:var(--brown-mid)">Adresse de facturation identique</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- MODE DE LIVRAISON -->
+    <div class="form-card r d2">
+      <div class="form-card-title">
+        <div class="fc-icon">📦</div>
+        Mode de livraison
+      </div>
+      <div class="delivery-options">
+        <div class="del-opt selected" onclick="selectDel(this, 0)">
+          <div class="del-radio"><div class="del-radio-inner"></div></div>
+          <div class="del-info">
+            <div class="del-name">Lettre suivie — La Poste</div>
+            <div class="del-desc">Livraison en 2–3 jours ouvrés · Suivi inclus</div>
+          </div>
+          <div class="del-price" id="dp0">2,50 €</div>
+        </div>
+        <div class="del-opt" onclick="selectDel(this, 1)">
+          <div class="del-radio"><div class="del-radio-inner"></div></div>
+          <div class="del-info">
+            <div class="del-name">Colissimo avec avis de passage</div>
+            <div class="del-desc">Livraison en 2–3 jours ouvrés · Emballage renforcé</div>
+          </div>
+          <div class="del-price" id="dp1">5,50 €</div>
+        </div>
+        <div class="del-opt" onclick="selectDel(this, 2)">
+          <div class="del-radio"><div class="del-radio-inner"></div></div>
+          <div class="del-info">
+            <div class="del-name">Colissimo International</div>
+            <div class="del-desc">Europe — 5 à 10 jours ouvrés</div>
+          </div>
+          <div class="del-price" id="dp2">8,00 €</div>
+        </div>
+      </div>
+      <div class="secure-row" style="margin-top:16px">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <p>Chaque colis est emballé soigneusement à la main avec une petite attention 🌸 — délai de préparation : 3 à 5 jours ouvrés.</p>
+      </div>
+    </div>
+
+    <!-- PAIEMENT -->
+    <div class="form-card r d3">
+      <div class="form-card-title">
+        <div class="fc-icon">💳</div>
+        Paiement
+      </div>
+
+      <!-- Tabs -->
+      <div class="pay-tabs">
+        <div class="pay-tab active" onclick="switchTab('card', this)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          Carte bancaire
+        </div>
+        <div class="pay-tab" onclick="switchTab('paypal', this)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7.07 21.89l.43-2.72.01-.08-.01.02H5.1l1.97-12.5h4.83c1.58 0 2.74.35 3.42 1.04.65.66.84 1.64.56 2.9-.53 2.53-1.97 3.82-4.28 3.82h-1.08l-.26 1.64-.38 2.4-.04.24H7.07zm1.88-7.19h.72c1.27 0 2.13-.75 2.44-2.18.22-1.01.05-1.67-.52-2-.27-.15-.66-.23-1.2-.23H9.1l-.15.95-.53 3.46z"/></svg>
+          PayPal
+        </div>
+        <div class="pay-tab" onclick="switchTab('virement', this)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+          Virement
+        </div>
+      </div>
+
+      <!-- Card zone -->
+      <div id="zone-card">
+        <!-- Visual card preview -->
+        <div class="card-preview" id="cardPreview">
+          <div class="card-chip">
+            <div class="card-chip-cell"></div>
+            <div class="card-chip-cell"></div>
+            <div class="card-chip-cell"></div>
+            <div class="card-chip-cell"></div>
+          </div>
+          <div class="card-number" id="cardNumDisplay">•••• •••• •••• ••••</div>
+          <div class="card-bottom">
+            <div>
+              <div class="card-label">Titulaire</div>
+              <div class="card-value" id="cardNameDisplay">NOM PRÉNOM</div>
+            </div>
+            <div>
+              <div class="card-label">Expire</div>
+              <div class="card-value" id="cardExpDisplay">MM/AA</div>
+            </div>
+            <div class="card-logo">Wild</div>
+          </div>
+        </div>
+
+        <div class="fg">
+          <label>Numéro de carte</label>
+          <div class="input-wrap">
+            <span class="input-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </span>
+            <input type="text" id="cardNum" placeholder="1234 5678 9012 3456" maxlength="19" oninput="formatCardNum(this)" style="padding-left:42px"/>
+            <div class="input-brand">
+              <span class="card-brand cb-visa">VISA</span>
+              <span class="card-brand cb-mc">MC</span>
+              <span class="card-brand cb-cb">CB</span>
+            </div>
+          </div>
+        </div>
+        <div class="fg">
+          <label>Nom sur la carte</label>
+          <input type="text" id="cardName" placeholder="LÉA DUPONT" oninput="updateCardName(this)" style="text-transform:uppercase" autocomplete="cc-name"/>
+        </div>
+        <div class="f-2col">
+          <div class="fg">
+            <label>Date d'expiration</label>
+            <input type="text" id="cardExp" placeholder="MM/AA" maxlength="5" oninput="formatExp(this)" autocomplete="cc-exp"/>
+          </div>
+          <div class="fg">
+            <label>CVV</label>
+            <div class="input-wrap">
+              <input type="password" id="cardCvv" placeholder="•••" maxlength="4" autocomplete="cc-csc"/>
+              <span class="input-icon" style="left:auto;right:13px;font-size:13px;cursor:help" title="3 chiffres au dos de votre carte">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="secure-row">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          <p>Vos données bancaires sont chiffrées par SSL et ne transitent jamais sur nos serveurs. Paiement 100% sécurisé.</p>
+        </div>
+      </div>
+
+      <!-- PayPal zone -->
+      <div class="paypal-zone" id="zone-paypal">
+        <p>Vous serez redirigé(e) vers PayPal pour finaliser votre paiement en toute sécurité.</p>
+        <button class="btn-paypal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#003087"><path d="M7.07 21.89l.43-2.72h-.01-.01l-.41 2.6-.01.12h.01zM19.26 7.2c.05-.32.08-.65.08-.98 0-2.87-2.12-4.22-5.6-4.22H7.27L4.67 18.28h3.88l.77-4.87h2.08c3.73 0 6.3-1.94 6.91-5.49l.03-.19-.08-.53z"/></svg>
+          Payer avec PayPal
+        </button>
+      </div>
+
+      <!-- Virement zone -->
+      <div class="virement-zone" id="zone-virement">
+        <p><strong>Coordonnées bancaires :</strong><br>
+        Nous vous enverrons les coordonnées bancaires par e-mail après validation de votre commande. L'expédition sera effectuée à réception du virement (2–3 jours ouvrés supplémentaires).</p>
+      </div>
+    </div>
+
+    <!-- NOTE FACULTATIVE -->
+    <div class="form-card r" style="margin-bottom:0">
+      <div class="form-card-title" style="margin-bottom:14px">
+        <div class="fc-icon">💬</div>
+        Note pour votre commande
+        <span style="font-size:12px;font-weight:400;color:var(--gray);margin-left:4px">(facultatif)</span>
+      </div>
+      <div class="fg" style="margin-bottom:0">
+        <textarea placeholder="Ex : c'est un cadeau, pouvez-vous ajouter un petit mot ? Couleur souhaitée pour le papier…" rows="3" style="resize:vertical;border:1.5px solid rgba(195,107,74,0.18);border-radius:10px;background:var(--cream);font-family:var(--font-b);font-size:14px;color:var(--brown);padding:11px 14px;outline:none;transition:border-color var(--ease),box-shadow var(--ease);width:100%" onfocus="this.style.borderColor='var(--peach)';this.style.boxShadow='0 0 0 3px rgba(240,168,130,0.15)'" onblur="this.style.borderColor='rgba(195,107,74,0.18)';this.style.boxShadow=''"></textarea>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT COL — SUMMARY -->
+  <div class="right-col">
+    <div class="summary-sticky">
+      <div class="summary-card r">
+        <div class="summary-title">Votre commande</div>
+        <div class="sum-items" id="summaryItems">
+          <!-- Injected by JS -->
+        </div>
+
+        <!-- Promo code -->
+        <div class="promo-row">
+          <input type="text" class="promo-input" placeholder="Code promo 🌸" id="promoInput"/>
+          <button class="btn-promo" onclick="applyPromo()">Appliquer</button>
+        </div>
+
+        <!-- Totals -->
+        <div class="sum-totals">
+          <div class="sum-row">
+            <span class="lbl">Sous-total</span>
+            <span class="val" id="subtotal">—</span>
+          </div>
+          <div class="sum-row">
+            <span class="lbl">Livraison</span>
+            <span class="val" id="shipping">2,50 €</span>
+          </div>
+          <div class="sum-row" id="promoRow" style="display:none">
+            <span class="lbl" style="color:var(--sage)">Code promo</span>
+            <span class="val" style="color:var(--sage)" id="promoVal">— 0,00 €</span>
+          </div>
+          <div class="sum-row total">
+            <span class="lbl">Total</span>
+            <span class="val" id="totalAmt">—</span>
+          </div>
+        </div>
+
+        <button class="btn-pay" onclick="submitOrder()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          Confirmer &amp; payer
+        </button>
+
+        <div class="trust-row">
+          <div class="trust-item">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            SSL sécurisé
+          </div>
+          <div class="trust-item">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            14j retour
+          </div>
+          <div class="trust-item">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+            Fait en France
+          </div>
+        </div>
+      </div>
+
+      <!-- Poème -->
+      <div class="poem-note r d2">
+        <p>"Chaque pampille part avec un peu de moi — et beaucoup d'amour pour vous." 🌸</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="f-links">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="cgv.html">CGV</a>
+      <a href="politique-confidentialite.html">Confidentialité</a>
+      <a href="livraisons-retours.html">Livraisons &amp; retours</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <div class="footer-bar">
+      <p>© 2025 Wild Flower by Wooden Mountain · Fait avec 🌸 en France</p>
+      <p>Paiement sécurisé · Expédition soignée</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Cart data (read from sessionStorage or demo fallback)
+  let cartItems = [];
+  try {
+    const stored = sessionStorage.getItem('wf_cart');
+    if (stored) cartItems = JSON.parse(stored);
+  } catch(e) {}
+
+  // Demo items if empty
+  if (!cartItems.length) {
+    cartItems = [
+      { name: 'Pampilles + Créoles Motifs', price: 18, emoji: '🌺', qty: 1 },
+      { name: 'Créoles Dorées', price: 5, emoji: '✨', qty: 2 },
+    ];
+  }
+
+  let deliveryCost = 2.50;
+  let promoDiscount = 0;
+
+  // ── Render summary
+  function renderSummary() {
+    const el = document.getElementById('summaryItems');
+    el.innerHTML = '';
+    let sub = 0;
+    cartItems.forEach(item => {
+      sub += item.price * item.qty;
+      const div = document.createElement('div');
+      div.className = 'sum-item';
+      div.innerHTML = `
+        <div class="sum-thumb">
+          ${item.emoji}
+          <span class="sum-qty-badge">${item.qty}</span>
+        </div>
+        <div class="sum-name">${item.name}</div>
+        <div class="sum-price">${(item.price * item.qty).toFixed(2).replace('.',',')} €</div>
+      `;
+      el.appendChild(div);
+    });
+
+    const total = sub + (sub >= 50 ? 0 : deliveryCost) - promoDiscount;
+    document.getElementById('subtotal').textContent = sub.toFixed(2).replace('.',',') + ' €';
+    if (sub >= 50) {
+      document.getElementById('shipping').textContent = 'Offert';
+      document.getElementById('shipping').classList.add('free-del');
+    } else {
+      document.getElementById('shipping').textContent = deliveryCost.toFixed(2).replace('.',',') + ' €';
+      document.getElementById('shipping').classList.remove('free-del');
+    }
+    document.getElementById('totalAmt').textContent = Math.max(0, total).toFixed(2).replace('.',',') + ' €';
+  }
+  renderSummary();
+
+  // ── Delivery selection
+  function selectDel(el, idx) {
+    document.querySelectorAll('.del-opt').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    const prices = [2.50, 5.50, 8.00];
+    deliveryCost = prices[idx];
+    renderSummary();
+  }
+
+  // ── Payment tab switch
+  function switchTab(type, tab) {
+    document.querySelectorAll('.pay-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('zone-card').style.display = type === 'card' ? 'block' : 'none';
+    document.getElementById('zone-paypal').classList.toggle('show', type === 'paypal');
+    document.getElementById('zone-virement').classList.toggle('show', type === 'virement');
+  }
+
+  // ── Card live preview
+  function formatCardNum(input) {
+    let v = input.value.replace(/\D/g, '').slice(0,16);
+    input.value = v.replace(/(.{4})/g, '$1 ').trim();
+    const display = v.padEnd(16,'•').replace(/(.{4})/g, '$1 ').trim();
+    document.getElementById('cardNumDisplay').textContent = display;
+  }
+  function updateCardName(input) {
+    const val = input.value.toUpperCase() || 'NOM PRÉNOM';
+    document.getElementById('cardNameDisplay').textContent = val;
+  }
+  function formatExp(input) {
+    let v = input.value.replace(/\D/g,'').slice(0,4);
+    if (v.length >= 2) v = v.slice(0,2) + '/' + v.slice(2);
+    input.value = v;
+    document.getElementById('cardExpDisplay').textContent = v || 'MM/AA';
+  }
+
+  // ── Promo code
+  const PROMOS = { 'WILDFLOWER10': 10, 'BIENVENUE': 5 };
+  function applyPromo() {
+    const code = document.getElementById('promoInput').value.trim().toUpperCase();
+    if (PROMOS[code]) {
+      promoDiscount = PROMOS[code];
+      document.getElementById('promoRow').style.display = 'flex';
+      document.getElementById('promoVal').textContent = '— ' + promoDiscount.toFixed(2).replace('.',',') + ' €';
+      renderSummary();
+      showToast('Code promo appliqué ! 🌸');
+    } else {
+      showToast('Code invalide ou expiré');
+    }
+  }
+
+  // ── Submit
+  function submitOrder() {
+    const fname = document.getElementById('fname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const addr  = document.getElementById('addr').value.trim();
+    const city  = document.getElementById('city').value.trim();
+    const zip   = document.getElementById('zip').value.trim();
+    if (!fname || !email || !addr || !city || !zip) {
+      showToast('Veuillez remplir tous les champs obligatoires');
+      return;
+    }
+    // Simulate API call
+    document.getElementById('checkoutFormWrap').classList.add('hide');
+    document.getElementById('successWrap').classList.add('show');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ── Toast
+  let toastTimer;
+  function showToast(msg) {
+    let t = document.getElementById('toast');
+    if (!t) {
+      t = document.createElement('div');
+      t.id = 'toast';
+      t.style.cssText = `position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(60px);background:var(--brown);color:var(--cream);padding:10px 22px;border-radius:999px;font-size:13.5px;font-weight:500;z-index:400;pointer-events:none;transition:transform .4s cubic-bezier(.34,1.5,.64,1),opacity .4s;opacity:0;white-space:nowrap;`;
+      document.body.appendChild(t);
+    }
+    t.textContent = msg;
+    t.style.transform = 'translateX(-50%) translateY(0)';
+    t.style.opacity = '1';
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      t.style.transform = 'translateX(-50%) translateY(60px)';
+      t.style.opacity = '0';
+    }, 2800);
+  }
+
+  // ── Enter on promo input
+  document.getElementById('promoInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter') applyPromo();
+  });
+
+  // ── Reveal
+  const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('v'); }), { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  document.querySelectorAll('.r').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

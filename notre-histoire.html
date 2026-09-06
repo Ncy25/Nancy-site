@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notre Histoire — Wild Flower by Wooden Mountain</title>
+  <meta name="description" content="L'histoire de Wild Flower by Wooden Mountain — une passion pour l'argile polymère, les couleurs et les bijoux faits à la main."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --blush:      #F9E8E0;
+      --blush-mid:  #F5D5C8;
+      --peach:      #F0A882;
+      --peach-dk:   #D97A52;
+      --terra:      #C26B4A;
+      --rose:       #F2BFB5;
+      --rose-lt:    #FDEAE5;
+      --cream:      #FFF8F5;
+      --ivory:      #FFFCFA;
+      --gold:       #D4A853;
+      --gold-lt:    #F0D08A;
+      --sage:       #8FAF8A;
+      --sage-lt:    #C4D9BE;
+      --brown:      #6B3D2A;
+      --brown-mid:  #8B5540;
+      --gray:       #9E8880;
+      --font-d: 'Cormorant Garamond', Georgia, serif;
+      --font-s: 'Dancing Script', cursive;
+      --font-b: 'DM Sans', sans-serif;
+      --ease: 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-b); background: var(--ivory); color: var(--brown); overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { display: block; max-width: 100%; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+
+    /* ── SPARKLE ── */
+    .spark { position: absolute; pointer-events: none; animation: spark-pulse 2.5s ease-in-out infinite; }
+    @keyframes spark-pulse {
+      0%,100% { opacity:.5; transform: scale(1) rotate(0deg); }
+      50%      { opacity:1;  transform: scale(1.25) rotate(15deg); }
+    }
+
+    /* ── PROMO BAR ── */
+    .promo-bar {
+      background: var(--peach);
+      text-align: center; padding: 9px 16px;
+      font-size: 12px; font-weight: 500;
+      letter-spacing: .1em; text-transform: uppercase; color: #fff;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(255,252,250,0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(242,191,181,0.3);
+    }
+    .nav-top {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px; max-width: 1160px; margin: 0 auto; padding: 0 28px;
+    }
+    .nav-left { display: flex; align-items: center; gap: 22px; }
+    .nav-search-btn { background: none; border: none; cursor: pointer; color: var(--brown-mid); font-size: 17px; transition: color var(--ease); }
+    .nav-search-btn:hover { color: var(--peach-dk); }
+    .nav-logo { display: flex; flex-direction: column; align-items: center; line-height: 1; }
+    .logo-wild { font-family: var(--font-s); font-size: 28px; color: var(--terra); letter-spacing: -.01em; line-height: 1; }
+    .logo-flower-row { display: flex; align-items: center; font-family: var(--font-b); font-size: 18px; font-weight: 400; letter-spacing: .06em; color: var(--peach); line-height: 1.1; }
+    .logo-flower-icon { width: 18px; height: 18px; margin: 0 1px; display: inline-block; }
+    .logo-by { font-family: var(--font-s); font-size: 9px; color: var(--brown-mid); letter-spacing: .04em; }
+    .logo-wm { font-family: var(--font-b); font-size: 8.5px; font-weight: 500; color: var(--sage); letter-spacing: .06em; text-transform: uppercase; }
+    .nav-right { display: flex; align-items: center; gap: 18px; }
+    .nav-icon-btn { background: none; border: none; cursor: pointer; color: var(--brown-mid); font-size: 17px; position: relative; transition: color var(--ease); }
+    .nav-icon-btn:hover { color: var(--peach-dk); }
+    .cart-badge { position: absolute; top: -6px; right: -6px; width: 16px; height: 16px; border-radius: 50%; background: var(--peach); color: #fff; font-size: 9px; font-weight: 700; display: none; align-items: center; justify-content: center; }
+    .cart-badge.on { display: flex; }
+    .nav-menu { display: flex; justify-content: center; align-items: center; gap: 36px; padding: 0 28px 10px; max-width: 1160px; margin: 0 auto; }
+    .nav-menu a { font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--brown-mid); transition: color var(--ease); }
+    .nav-menu a:hover, .nav-menu a.active { color: var(--peach-dk); }
+    .nav-burger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .nav-burger span { display: block; width: 20px; height: 1.8px; background: var(--brown-mid); border-radius: 2px; }
+    .mobile-nav { display: none; flex-direction: column; gap: 16px; padding: 20px 28px 24px; border-top: 1px solid rgba(242,191,181,0.3); }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 14px; font-weight: 500; color: var(--brown-mid); letter-spacing: .08em; text-transform: uppercase; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      position: relative;
+      min-height: 72vh;
+      overflow: hidden;
+      display: flex; align-items: center;
+      background: linear-gradient(135deg, #FDE8DC 0%, #FCDCC8 30%, #FAD0B4 65%, #F5C8A8 100%);
+    }
+    .ph-blob1 { position: absolute; top: -60px; right: 5%; width: 380px; height: 380px; border-radius: 50%; background: rgba(255,255,255,0.2); }
+    .ph-blob2 { position: absolute; bottom: -80px; left: -60px; width: 300px; height: 300px; border-radius: 50%; background: rgba(255,255,255,0.15); }
+    .ph-wave { position: absolute; bottom: -2px; left: 0; right: 0; height: 80px; }
+    .page-hero-inner {
+      position: relative; z-index: 1;
+      width: 100%; max-width: 1160px; margin: 0 auto; padding: 80px 28px 100px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .hero-text-side { }
+    .hero-eyebrow { font-family: var(--font-s); font-size: 20px; color: var(--brown-mid); margin-bottom: 8px; opacity: 0; animation: fade-up .6s .1s forwards; }
+    .hero-h1 {
+      font-family: var(--font-d);
+      font-size: clamp(52px, 7vw, 84px);
+      font-weight: 600; line-height: .95;
+      letter-spacing: -.02em;
+      color: #fff;
+      text-shadow: 0 2px 16px rgba(195,107,74,0.22);
+      margin-bottom: 24px;
+      opacity: 0; animation: fade-up .6s .2s forwards;
+    }
+    .hero-lead {
+      font-size: 15.5px; color: rgba(255,255,255,0.88); line-height: 1.75;
+      max-width: 400px; margin-bottom: 36px;
+      opacity: 0; animation: fade-up .6s .3s forwards;
+    }
+    .btn-hero-outline {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 13px 30px;
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.7);
+      color: #fff;
+      font-family: var(--font-b); font-size: 12px; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      border-radius: 999px; cursor: pointer;
+      transition: background var(--ease), border-color var(--ease), transform var(--ease);
+      opacity: 0; animation: fade-up .6s .4s forwards;
+    }
+    .btn-hero-outline:hover { background: rgba(255,255,255,0.15); border-color: #fff; transform: translateY(-2px); }
+
+    /* Hero visual side */
+    .hero-visual-side { display: flex; flex-direction: column; gap: 18px; align-items: flex-end; opacity: 0; animation: fade-up .7s .3s forwards; }
+    .quote-card {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(10px);
+      border-radius: 22px;
+      padding: 28px 32px;
+      max-width: 340px;
+      box-shadow: 0 8px 32px rgba(195,107,74,0.12);
+    }
+    .quote-text {
+      font-family: var(--font-d);
+      font-size: 20px; font-style: italic;
+      color: var(--brown); line-height: 1.55;
+      margin-bottom: 14px;
+    }
+    .quote-author { font-size: 11.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--peach-dk); }
+    .stats-row { display: flex; gap: 12px; }
+    .stat-card {
+      background: rgba(255,255,255,0.45);
+      backdrop-filter: blur(8px);
+      border-radius: 18px;
+      padding: 20px 22px;
+      flex: 1;
+      text-align: center;
+      box-shadow: 0 4px 18px rgba(195,107,74,0.1);
+    }
+    .stat-num { font-family: var(--font-d); font-size: 36px; font-weight: 600; color: var(--terra); line-height: 1; margin-bottom: 4px; }
+    .stat-label { font-size: 11px; font-weight: 500; color: var(--brown-mid); letter-spacing: .06em; line-height: 1.3; }
+
+    @keyframes fade-up { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:none; } }
+
+    /* ── VALUES STRIP ── */
+    .values-strip { background: var(--ivory); padding: 48px 0 0; }
+    .values-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+    }
+    .val-item {
+      background: var(--blush);
+      padding: 36px 28px;
+      display: flex; flex-direction: column; gap: 12px;
+      position: relative; overflow: hidden;
+      transition: transform var(--ease);
+    }
+    .val-item:hover { transform: translateY(-3px); z-index: 1; }
+    .val-item:nth-child(1) { background: var(--blush-mid); border-radius: 20px 0 0 0; }
+    .val-item:nth-child(2) { background: var(--rose-lt); }
+    .val-item:nth-child(3) { background: #EDF4EB; }
+    .val-item:nth-child(4) { background: #FDF8E8; border-radius: 0 20px 0 0; }
+    .val-icon { font-size: 28px; }
+    .val-title { font-family: var(--font-d); font-size: 20px; font-weight: 600; color: var(--brown); }
+    .val-desc { font-size: 13px; color: var(--brown-mid); line-height: 1.7; }
+
+    /* ── STORY SECTIONS ── */
+    .story-wrap { padding: 80px 0; background: var(--ivory); }
+
+    /* Alternating text + visual */
+    .story-block {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+      margin-bottom: 100px;
+    }
+    .story-block:last-of-type { margin-bottom: 0; }
+    .story-block.reverse .story-text { order: 2; }
+    .story-block.reverse .story-visual { order: 1; }
+
+    .story-label { font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--peach-dk); background: var(--rose-lt); border-radius: 999px; padding: 5px 14px; display: inline-block; margin-bottom: 16px; }
+    .story-eyebrow { font-family: var(--font-s); font-size: 22px; color: var(--terra); margin-bottom: 8px; }
+    .story-h2 { font-family: var(--font-d); font-size: clamp(30px, 4vw, 46px); font-weight: 600; line-height: 1.05; letter-spacing: -.02em; color: var(--brown); margin-bottom: 20px; }
+    .story-p { font-size: 15px; color: var(--brown-mid); line-height: 1.85; margin-bottom: 14px; }
+    .story-p:last-of-type { margin-bottom: 0; }
+
+    /* Visual boxes */
+    .story-visual { position: relative; }
+    .vis-main {
+      border-radius: 28px;
+      aspect-ratio: 4/5;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; position: relative;
+    }
+    .vis-float {
+      position: absolute;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(8px);
+      border-radius: 18px;
+      padding: 16px 20px;
+      box-shadow: 0 8px 28px rgba(195,107,74,0.12);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .vis-float-icon { font-size: 22px; }
+    .vis-float-text { font-size: 12.5px; font-weight: 500; color: var(--brown); line-height: 1.35; }
+
+    /* Grid visuals for some blocks */
+    .vis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .vis-cell {
+      border-radius: 20px;
+      aspect-ratio: 1;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      transition: transform var(--ease);
+    }
+    .vis-cell:hover { transform: scale(1.03) rotate(-1.5deg); }
+
+    /* ── MATÉRIAUX SECTION ── */
+    .materials { padding: 72px 0; background: linear-gradient(135deg, #FDE8DC 0%, #FCDCC8 50%, #F8D4C0 100%); position: relative; overflow: hidden; }
+    .materials .spark svg { fill: rgba(255,255,255,0.45); }
+    .mat-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .mat-text-label { font-family: var(--font-s); font-size: 22px; color: var(--terra); margin-bottom: 10px; }
+    .mat-h2 { font-family: var(--font-d); font-size: clamp(28px, 4vw, 44px); font-weight: 600; line-height: 1.05; color: var(--brown); margin-bottom: 18px; letter-spacing: -.02em; }
+    .mat-p { font-size: 15px; color: var(--brown-mid); line-height: 1.85; margin-bottom: 14px; }
+    .mat-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .mat-chip { background: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.85); color: var(--brown-mid); font-size: 12.5px; font-weight: 500; padding: 7px 16px; border-radius: 999px; backdrop-filter: blur(6px); transition: transform var(--ease), background var(--ease); cursor: default; }
+    .mat-chip:hover { background: rgba(255,255,255,0.85); transform: translateY(-1px); }
+    .mat-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .mat-cell { border-radius: 22px; aspect-ratio: 1; background: rgba(255,255,255,0.45); display: flex; align-items: center; justify-content: center; transition: transform var(--ease); }
+    .mat-cell:hover { transform: scale(1.04) rotate(-2deg); }
+    .mat-cell:nth-child(1) { border-radius: 22px 22px 60px 22px; background: rgba(255,255,255,0.55); }
+    .mat-cell:nth-child(2) { border-radius: 22px 60px 22px 22px; background: rgba(255,255,255,0.35); }
+    .mat-cell:nth-child(3) { border-radius: 60px 22px 22px 22px; background: rgba(255,255,255,0.4); }
+    .mat-cell:nth-child(4) { border-radius: 22px 22px 22px 60px; background: rgba(255,255,255,0.5); }
+
+    /* ── PROCESS TIMELINE ── */
+    .process { padding: 80px 0 72px; background: var(--ivory); }
+    .process-title { font-family: var(--font-d); font-size: 13px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--peach-dk); text-align: center; margin-bottom: 8px; }
+    .process-h2 { font-family: var(--font-s); font-size: 38px; color: var(--brown-mid); text-align: center; margin-bottom: 56px; }
+    .timeline { position: relative; max-width: 900px; margin: 0 auto; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 50%; top: 0; bottom: 0;
+      width: 1px; background: linear-gradient(to bottom, transparent, var(--blush-mid) 15%, var(--blush-mid) 85%, transparent);
+      transform: translateX(-50%);
+    }
+    .tl-item {
+      display: grid; grid-template-columns: 1fr 56px 1fr; gap: 0;
+      margin-bottom: 48px; align-items: center;
+      opacity: 0; transform: translateY(18px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .tl-item.v { opacity: 1; transform: none; }
+    .tl-left { padding-right: 32px; text-align: right; }
+    .tl-right { padding-left: 32px; }
+    .tl-dot {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--blush);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; flex-shrink: 0;
+      border: 3px solid var(--ivory);
+      box-shadow: 0 0 0 3px var(--blush-mid);
+      transition: transform var(--ease), box-shadow var(--ease);
+      margin: 0 auto;
+    }
+    .tl-item:hover .tl-dot { transform: scale(1.12); box-shadow: 0 0 0 6px var(--peach); }
+    .tl-step { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--peach-dk); margin-bottom: 5px; }
+    .tl-title { font-family: var(--font-d); font-size: 22px; font-weight: 600; color: var(--brown); margin-bottom: 8px; }
+    .tl-desc { font-size: 13.5px; color: var(--gray); line-height: 1.7; }
+    /* alternating alignment */
+    .tl-item:nth-child(even) .tl-left { text-align: left; padding-right: 0; padding-left: 32px; order: 3; }
+    .tl-item:nth-child(even) .tl-dot { order: 2; }
+    .tl-item:nth-child(even) .tl-right { text-align: right; padding-left: 0; padding-right: 32px; order: 1; }
+
+    /* ── ENGAGEMENT SECTION ── */
+    .engagement { padding: 72px 0; background: var(--blush); position: relative; }
+    .eng-wave { height: 60px; background: var(--ivory); border-radius: 0 0 50% 50% / 0 0 100% 100%; }
+    .eng-inner { max-width: 1160px; margin: 0 auto; padding: 52px 28px 0; }
+    .eng-title-wrap { text-align: center; margin-bottom: 48px; }
+    .eng-script { font-family: var(--font-s); font-size: 24px; color: var(--terra); margin-bottom: 6px; }
+    .eng-h2 { font-family: var(--font-d); font-size: clamp(28px, 4vw, 42px); font-weight: 600; color: var(--brown); letter-spacing: -.02em; }
+    .eng-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .eng-card {
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(8px);
+      border-radius: 24px; padding: 36px 28px;
+      border: 1px solid rgba(255,255,255,0.85);
+      transition: transform var(--ease), box-shadow var(--ease);
+      text-align: center;
+    }
+    .eng-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(195,107,74,0.13); }
+    .eng-card-icon { font-size: 36px; margin-bottom: 16px; }
+    .eng-card-title { font-family: var(--font-d); font-size: 22px; font-weight: 600; color: var(--brown); margin-bottom: 10px; }
+    .eng-card-desc { font-size: 13.5px; color: var(--brown-mid); line-height: 1.75; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { padding: 80px 0; background: var(--ivory); }
+    .test-title { font-family: var(--font-d); font-size: 13px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--peach-dk); text-align: center; margin-bottom: 8px; }
+    .test-h2 { font-family: var(--font-s); font-size: 36px; color: var(--brown-mid); text-align: center; margin-bottom: 48px; }
+    .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .test-card {
+      background: var(--blush);
+      border-radius: 22px; padding: 32px 28px;
+      position: relative;
+      transition: transform var(--ease);
+    }
+    .test-card:hover { transform: translateY(-3px); }
+    .test-card:nth-child(2) { background: var(--rose-lt); transform: translateY(-12px); }
+    .test-card:nth-child(2):hover { transform: translateY(-16px); }
+    .test-quote-mark { font-family: var(--font-d); font-size: 56px; line-height: 1; color: var(--peach); opacity: .35; margin-bottom: -12px; }
+    .test-text { font-family: var(--font-d); font-size: 18px; font-style: italic; color: var(--brown); line-height: 1.6; margin-bottom: 20px; }
+    .test-stars { color: var(--gold); font-size: 14px; margin-bottom: 10px; letter-spacing: 2px; }
+    .test-author { font-size: 12px; font-weight: 600; color: var(--peach-dk); letter-spacing: .08em; text-transform: uppercase; }
+    .test-location { font-size: 11.5px; color: var(--gray); margin-top: 2px; }
+
+    /* ── CTA FINAL ── */
+    .cta-final {
+      background: linear-gradient(135deg, var(--peach-dk) 0%, var(--terra) 50%, var(--brown-mid) 100%);
+      padding: 80px 28px;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-final::before { content: ''; position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; border-radius: 50%; background: rgba(255,255,255,0.06); }
+    .cta-final::after { content: ''; position: absolute; bottom: -100px; left: -60px; width: 350px; height: 350px; border-radius: 50%; background: rgba(255,255,255,0.04); }
+    .cta-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+    .cta-script { font-family: var(--font-s); font-size: 24px; color: rgba(255,255,255,0.75); margin-bottom: 10px; }
+    .cta-h2 { font-family: var(--font-d); font-size: clamp(34px, 5vw, 54px); font-weight: 600; color: #fff; line-height: 1.05; letter-spacing: -.02em; margin-bottom: 18px; }
+    .cta-sub { font-size: 15px; color: rgba(255,255,255,0.78); line-height: 1.7; margin-bottom: 36px; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-cta-white {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; background: #fff; color: var(--peach-dk);
+      border-radius: 999px; border: none; cursor: pointer;
+      font-family: var(--font-b); font-size: 12.5px; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      transition: transform var(--ease), box-shadow var(--ease);
+    }
+    .btn-cta-white:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.22); }
+    .btn-cta-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; background: transparent;
+      border: 2px solid rgba(255,255,255,0.55); color: #fff;
+      border-radius: 999px; cursor: pointer;
+      font-family: var(--font-b); font-size: 12.5px; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      transition: background var(--ease), border-color var(--ease), transform var(--ease);
+    }
+    .btn-cta-ghost:hover { background: rgba(255,255,255,0.12); border-color: #fff; transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--brown); color: rgba(255,248,245,0.65); padding: 56px 0 28px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+    .footer-logo-wild { font-family: var(--font-s); font-size: 28px; color: #F2B899; }
+    .footer-logo-row { font-family: var(--font-b); font-size: 13px; letter-spacing: .1em; color: var(--peach); margin-bottom: 12px; }
+    .f-tagline { font-size: 13px; line-height: 1.7; max-width: 230px; }
+    .f-col h4 { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,248,245,0.3); margin-bottom: 14px; }
+    .f-col ul { display: flex; flex-direction: column; gap: 9px; }
+    .f-col a { font-size: 13.5px; color: rgba(255,248,245,0.58); transition: color var(--ease); }
+    .f-col a:hover { color: var(--peach); }
+    .footer-bar { border-top: 1px solid rgba(255,248,245,0.1); padding-top: 22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .footer-bar p { font-size: 12px; }
+
+    /* ── REVEAL ── */
+    .r { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .r.v { opacity: 1; transform: none; }
+    .d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; } .d4 { transition-delay: .4s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .page-hero-inner { grid-template-columns: 1fr; }
+      .hero-visual-side { align-items: flex-start; }
+      .story-block { grid-template-columns: 1fr; gap: 40px; }
+      .story-block.reverse .story-text { order: 1; }
+      .story-block.reverse .story-visual { order: 2; }
+      .mat-inner { grid-template-columns: 1fr; }
+      .eng-grid { grid-template-columns: 1fr; }
+      .test-grid { grid-template-columns: 1fr; }
+      .test-card:nth-child(2) { transform: none; }
+      .test-card:nth-child(2):hover { transform: translateY(-3px); }
+      .timeline::before { left: 28px; }
+      .tl-item { grid-template-columns: 56px 1fr; grid-template-rows: auto auto; gap: 0 16px; }
+      .tl-item .tl-left { display: none; }
+      .tl-item .tl-dot { order: 1; margin: 0; }
+      .tl-item .tl-right { order: 2; padding-left: 0; text-align: left; }
+      .tl-item:nth-child(even) .tl-left { display: none; }
+      .tl-item:nth-child(even) .tl-dot { order: 1; }
+      .tl-item:nth-child(even) .tl-right { order: 2; text-align: left; padding-right: 0; padding-left: 0; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .val-item:nth-child(1) { border-radius: 20px 0 0 0; }
+      .val-item:nth-child(2) { border-radius: 0 20px 0 0; }
+      .val-item:nth-child(3) { border-radius: 0; }
+      .val-item:nth-child(4) { border-radius: 0 0 20px 20px; grid-column: span 2; border-radius: 0 0 20px 20px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .nav-menu { display: none; }
+      .nav-burger { display: flex; }
+      .values-grid { grid-template-columns: 1fr; }
+      .val-item:nth-child(n) { border-radius: 0; }
+      .val-item:first-child { border-radius: 20px 20px 0 0; }
+      .val-item:last-child { border-radius: 0 0 20px 20px; grid-column: auto; }
+      .stats-row { flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- PROMO BAR -->
+<div class="promo-bar">🌸 Livraison offerte dès 50€ d'achat · Pièces uniques faites à la main</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-top">
+    <div class="nav-left">
+      <button class="nav-search-btn" aria-label="Rechercher">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+    </div>
+    <a href="index.html" class="nav-logo" aria-label="Wild Flower by Wooden Mountain">
+      <span class="logo-wild">Wild</span>
+      <div class="logo-flower-row">
+        Fl
+        <svg class="logo-flower-icon" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="10" r="5" fill="#F0A882" opacity=".85"/>
+          <circle cx="22" cy="16" r="5" fill="#F0A882" opacity=".75"/>
+          <circle cx="16" cy="22" r="5" fill="#F0A882" opacity=".85"/>
+          <circle cx="10" cy="16" r="5" fill="#F0A882" opacity=".75"/>
+          <circle cx="16" cy="16" r="6" fill="#F5C4A8"/>
+          <circle cx="16" cy="16" r="3.5" fill="#fff" opacity=".7"/>
+        </svg>
+        wer
+      </div>
+      <div style="display:flex;align-items:center;gap:4px;margin-top:1px">
+        <span class="logo-by">by</span>
+        <span class="logo-wm">Wooden Mountain</span>
+      </div>
+    </a>
+    <div class="nav-right">
+      <button class="nav-icon-btn" aria-label="Compte">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </button>
+      <button class="nav-icon-btn" aria-label="Panier">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      </button>
+      <button class="nav-burger" onclick="document.getElementById('mn').classList.toggle('open')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <ul class="nav-menu">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="boutique.html">Boutique</a></li>
+    <li><a href="notre-histoire.html" class="active">Notre histoire</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="mobile-nav" id="mn">
+    <a href="index.html">Accueil</a>
+    <a href="boutique.html" onclick="this.closest('.mobile-nav').classList.remove('open')">Boutique</a>
+    <a href="notre-histoire.html">Notre histoire</a>
+    <a href="index.html#contact" onclick="this.closest('.mobile-nav').classList.remove('open')">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero" aria-label="Notre histoire">
+  <div class="ph-blob1"></div>
+  <div class="ph-blob2"></div>
+
+  <div class="spark" style="top:15%;left:52%">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(255,255,255,0.65)"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg>
+  </div>
+  <div class="spark" style="top:60%;right:10%;animation-delay:.9s">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="#D4A853"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg>
+  </div>
+  <div class="spark" style="top:28%;right:5%;animation-delay:1.6s">
+    <svg width="9" height="9" viewBox="0 0 24 24" fill="rgba(255,255,255,0.5)"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg>
+  </div>
+
+  <div class="page-hero-inner">
+    <div class="hero-text-side">
+      <div class="hero-eyebrow">Depuis 2023</div>
+      <h1 class="hero-h1">NOTRE<br>HISTOIRE</h1>
+      <p class="hero-lead">Une passion née d'une paire de créoles, un peu d'argile polymère, et l'envie irrésistible de créer des bijoux qui rendent joyeux.</p>
+      <a href="#debut" class="btn-hero-outline">
+        Lire la suite
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+      </a>
+    </div>
+
+    <div class="hero-visual-side">
+      <div class="quote-card">
+        <div class="quote-text">"Je voulais des boucles qui changent d'humeur avec moi — alors je les ai créées."</div>
+        <div class="quote-author">— La créatrice, Wild Flower</div>
+      </div>
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Fait à la main<br>en France</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">∞</div>
+          <div class="stat-label">Combinaisons<br>possibles</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">🌸</div>
+          <div class="stat-label">Pièces uniques<br>avec amour</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <svg class="ph-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#FFFCFA"/>
+  </svg>
+</section>
+
+<!-- VALUES STRIP -->
+<section class="values-strip">
+  <div class="container">
+    <div class="values-grid r">
+      <div class="val-item">
+        <div class="val-icon">✋</div>
+        <div class="val-title">Fait main</div>
+        <div class="val-desc">Chaque pampille naît de mes mains, une par une, sans moule ni série.</div>
+      </div>
+      <div class="val-item">
+        <div class="val-icon">🎨</div>
+        <div class="val-title">Couleurs choisies</div>
+        <div class="val-desc">Des teintes sélectionnées avec soin pour apporter de la joie à votre quotidien.</div>
+      </div>
+      <div class="val-item">
+        <div class="val-icon">🔄</div>
+        <div class="val-title">Interchangeable</div>
+        <div class="val-desc">Un système de clip pensé pour passer d'un style à l'autre en deux secondes.</div>
+      </div>
+      <div class="val-item">
+        <div class="val-icon">🇫🇷</div>
+        <div class="val-title">Made in France</div>
+        <div class="val-desc">Imaginées, façonnées et expédiées avec amour depuis la France.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-wrap" id="debut">
+  <div class="container">
+
+    <!-- Block 1 : Le début -->
+    <div class="story-block r">
+      <div class="story-text">
+        <span class="story-label">Le commencement</span>
+        <div class="story-eyebrow">Tout a commencé</div>
+        <h2 class="story-h2">Avec une paire de créoles et une envie</h2>
+        <p class="story-p">C'est une histoire simple et sincère. Un matin de 2023, face à ma boîte à bijoux débordante de boucles que je ne portais plus vraiment, j'ai eu une évidence : et si on pouvait changer les pendentifs selon son humeur, en gardant toujours la même base ?</p>
+        <p class="story-p">L'idée des pampilles interchangeables est née là — pas dans un bureau de design, mais dans ma cuisine, avec un peu de curiosité et beaucoup d'enthousiasme.</p>
+        <p class="story-p">J'ai commandé mon premier paquet d'argile polymère. Et je ne l'ai plus jamais lâché.</p>
+      </div>
+      <div class="story-visual r d2">
+        <div class="vis-grid">
+          <div class="vis-cell" style="background:#F5D5C8">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <path d="M40 68C24 54 6 44 6 28C6 16 14 8 22 12C28 14.5 34 22 40 32C46 22 52 14.5 58 12C66 8 74 16 74 28C74 44 56 54 40 68Z" fill="#F0A882" opacity=".55"/>
+              <path d="M40 54C28 43 14 35 14 28C14 20 21 14 28 18C32 19.5 36 25 40 33C44 25 48 19.5 52 18C59 14 66 20 66 28C66 35 52 43 40 54Z" fill="#E8907A" opacity=".6"/>
+            </svg>
+          </div>
+          <div class="vis-cell" style="background:#FDE8DC">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <circle cx="40" cy="40" r="28" stroke="#C9A853" stroke-width="6" fill="none" opacity=".65"/>
+              <circle cx="40" cy="68" r="4.5" fill="#C9A853" opacity=".75"/>
+              <circle cx="40" cy="40" r="12" fill="#F0D08A" opacity=".25"/>
+            </svg>
+          </div>
+          <div class="vis-cell" style="background:#EEF2E8">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <circle cx="40" cy="24" r="14" fill="#8FAF8A" opacity=".5"/>
+              <circle cx="56" cy="40" r="14" fill="#8FAF8A" opacity=".45"/>
+              <circle cx="40" cy="56" r="14" fill="#8FAF8A" opacity=".5"/>
+              <circle cx="24" cy="40" r="14" fill="#8FAF8A" opacity=".45"/>
+              <circle cx="40" cy="40" r="13" fill="#C4D9BE" opacity=".8"/>
+              <circle cx="40" cy="40" r="6" fill="#fff" opacity=".4"/>
+            </svg>
+          </div>
+          <div class="vis-cell" style="background:#F9E8E0">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <ellipse cx="40" cy="40" rx="28" ry="34" fill="#E8D5C0" opacity=".7" transform="rotate(-15 40 40)"/>
+              <ellipse cx="40" cy="40" rx="14" ry="18" fill="#D4A853" opacity=".4" transform="rotate(10 40 40)"/>
+              <circle cx="40" cy="40" r="7" fill="#fff" opacity=".35"/>
+            </svg>
+          </div>
+        </div>
+        <div class="vis-float" style="bottom: -16px; left: -16px;">
+          <div class="vis-float-icon">🏺</div>
+          <div class="vis-float-text">Argile polymère<br><span style="color:var(--gray);font-size:11px">matière de cœur</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block 2 : La découverte de l'argile -->
+    <div class="story-block reverse r">
+      <div class="story-text d2">
+        <span class="story-label">La matière</span>
+        <div class="story-eyebrow">L'argile polymère,</div>
+        <h2 class="story-h2">Une évidence lumineuse</h2>
+        <p class="story-p">Parmi toutes les matières que j'aurais pu choisir, l'argile polymère s'est imposée naturellement. Légère à porter — pas de lobe fatigué en fin de journée. Douce à travailler — les formes naissent facilement, les textures sont infinies. Et tellement joyeuse dans les couleurs.</p>
+        <p class="story-p">L'argile polymère supporte le mélange, la superposition, les inclusions de paillettes, de feuille d'or ou d'éclats de nacre. Elle permet de créer des pièces vraiment uniques, jamais exactement identiques d'un exemplaire à l'autre.</p>
+        <p class="story-p">C'est cette imperfection maîtrisée que j'aime. Le signe que la pièce que vous portez n'appartient qu'à vous.</p>
+      </div>
+      <div class="story-visual r d1">
+        <div class="vis-main" style="background: linear-gradient(135deg, #F5D5C8, #FDEAE5);">
+          <svg width="200" height="240" viewBox="0 0 200 240" fill="none">
+            <!-- Large pampille shape -->
+            <ellipse cx="100" cy="120" rx="72" ry="88" fill="#F0A882" opacity=".4" transform="rotate(-12 100 120)"/>
+            <ellipse cx="100" cy="120" rx="72" ry="88" fill="#E8907A" opacity=".25" transform="rotate(12 100 120)"/>
+            <circle cx="100" cy="120" r="36" fill="#F5C4A8" opacity=".85"/>
+            <circle cx="100" cy="120" r="18" fill="#fff" opacity=".45"/>
+            <!-- petals -->
+            <ellipse cx="100" cy="42" rx="16" ry="24" fill="#F0A882" opacity=".5"/>
+            <ellipse cx="100" cy="198" rx="16" ry="24" fill="#F0A882" opacity=".5"/>
+            <ellipse cx="38" cy="120" rx="24" ry="16" fill="#F0A882" opacity=".45"/>
+            <ellipse cx="162" cy="120" rx="24" ry="16" fill="#F0A882" opacity=".45"/>
+          </svg>
+          <div class="vis-float" style="top: 16px; right: -16px;">
+            <div class="vis-float-icon">✨</div>
+            <div class="vis-float-text">Pièce unique<br><span style="color:var(--gray);font-size:11px">jamais deux pareilles</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block 3 : Le système interchangeable -->
+    <div class="story-block r">
+      <div class="story-text">
+        <span class="story-label">L'innovation</span>
+        <div class="story-eyebrow">L'idée qui change tout</div>
+        <h2 class="story-h2">Changer d'humeur en deux secondes</h2>
+        <p class="story-p">Le vrai défi, celui qui m'a occupé des semaines, c'est le système d'attache. Comment créer quelque chose de solide, d'élégant, et qui permette vraiment d'échanger les pampilles en un geste ?</p>
+        <p class="story-p">Après de nombreux essais, j'ai trouvé l'équilibre. Un mécanisme de clip discret, intégré à la créole, qui tient fermement mais se libère sans effort. Vous glissez la pampille, vous entendez le petit clic — et voilà. Une boucle transformée.</p>
+        <p class="story-p">C'est ça, l'esprit Wild Flower : la liberté de changer, d'assortir, de surprendre. Avec le même duo de créoles, une garde-robe entière de personnalités.</p>
+      </div>
+      <div class="story-visual r d2">
+        <div class="vis-main" style="background: linear-gradient(135deg, #EDF4EB, #D8EDD5);">
+          <svg width="200" height="240" viewBox="0 0 200 240" fill="none">
+            <!-- Créole + pampille illustration -->
+            <circle cx="100" cy="90" r="54" stroke="#C9A853" stroke-width="11" fill="none" opacity=".7"/>
+            <circle cx="100" cy="144" r="8" fill="#C9A853" opacity=".8"/>
+            <!-- pampille attachée -->
+            <path d="M100 168C80 188 54 202 54 220C54 231 62 238 70 234C76 231 82 222 100 210C118 222 124 231 130 234C138 238 146 231 146 220C146 202 120 188 100 168Z" fill="#8FAF8A" opacity=".5"/>
+            <path d="M100 185C87 199 72 208 72 220C72 226 76 229 81 227C85 225 89 218 100 210C111 218 115 225 119 227C124 229 128 226 128 220C128 208 113 199 100 185Z" fill="#8FAF8A" opacity=".7"/>
+          </svg>
+          <div class="vis-float" style="bottom: 20px; left: -16px;">
+            <div class="vis-float-icon">🔄</div>
+            <div class="vis-float-text">Interchangeable<br><span style="color:var(--gray);font-size:11px">en 2 secondes</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MATÉRIAUX -->
+<section class="materials">
+  <div class="spark" style="top:8%;left:5%"><svg width="18" height="18" viewBox="0 0 24 24" fill="#D4A853" opacity=".4"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
+  <div class="spark" style="bottom:10%;right:4%;animation-delay:1.3s"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A853" opacity=".35"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
+  <div class="container">
+    <div class="mat-inner">
+      <div class="r">
+        <div class="mat-text-label">Les matériaux</div>
+        <h2 class="mat-h2">Choisis avec le plus grand soin</h2>
+        <p class="mat-p">L'argile polymère que j'utilise est de qualité professionnelle — souple à travailler crue, résistante et légère une fois cuite. Elle ne contient pas de substances nocives et convient aux peaux sensibles.</p>
+        <p class="mat-p">Les créoles sont en alliage hypoallergénique avec finition dorée ou argentée, compatibles avec les oreilles percées ou à clips selon votre demande.</p>
+        <p class="mat-p">Tout est sélectionné pour durer — parce qu'un bijou doit accompagner longtemps.</p>
+        <div class="mat-chips">
+          <span class="mat-chip">🏺 Argile polymère pro</span>
+          <span class="mat-chip">💛 Métal hypoallergénique</span>
+          <span class="mat-chip">🎨 Pigments non toxiques</span>
+          <span class="mat-chip">✨ Finitions dorées & argentées</span>
+          <span class="mat-chip">🌿 Paillettes sans plastique</span>
+          <span class="mat-chip">🌸 Feuille d'or véritable</span>
+        </div>
+      </div>
+      <div class="mat-visual r d2">
+        <div class="mat-cell">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none"><path d="M40 72C24 58 6 48 6 32C6 18 16 10 26 14C32 16.5 37 24 40 32C43 24 48 16.5 54 14C64 10 74 18 74 32C74 48 56 58 40 72Z" fill="#F0A882" opacity=".5"/></svg>
+        </div>
+        <div class="mat-cell">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none"><circle cx="40" cy="26" r="14" fill="#F0A882" opacity=".5"/><circle cx="54" cy="40" r="14" fill="#F0A882" opacity=".45"/><circle cx="40" cy="54" r="14" fill="#F0A882" opacity=".5"/><circle cx="26" cy="40" r="14" fill="#F0A882" opacity=".45"/><circle cx="40" cy="40" r="13" fill="#F5C4A8" opacity=".8"/><circle cx="40" cy="40" r="6" fill="#fff" opacity=".4"/></svg>
+        </div>
+        <div class="mat-cell">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="28" stroke="#C9A853" stroke-width="5" fill="none" opacity=".6"/><circle cx="40" cy="68" r="4" fill="#C9A853" opacity=".7"/></svg>
+        </div>
+        <div class="mat-cell">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none"><ellipse cx="40" cy="40" rx="28" ry="34" fill="#8FAF8A" opacity=".35" transform="rotate(-15 40 40)"/><ellipse cx="40" cy="40" rx="28" ry="34" fill="#8FAF8A" opacity=".2" transform="rotate(15 40 40)"/><circle cx="40" cy="40" r="12" fill="#8FAF8A" opacity=".55"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS TIMELINE -->
+<section class="process">
+  <div class="container">
+    <div class="process-title r">Comment c'est fait</div>
+    <div class="process-h2 r">De l'idée à votre oreille</div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-step">Étape 1</div>
+          <div class="tl-title">L'inspiration</div>
+          <div class="tl-desc">Une couleur aperçue dans la nature, une saison, une humeur. Chaque nouvelle pampille naît d'une envie de raconter quelque chose.</div>
+        </div>
+        <div class="tl-dot">🌈</div>
+        <div class="tl-right"></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left"></div>
+        <div class="tl-dot">🏺</div>
+        <div class="tl-right">
+          <div class="tl-step">Étape 2</div>
+          <div class="tl-title">Le conditionnement</div>
+          <div class="tl-desc">L'argile est malaxée à la main jusqu'à la bonne souplesse. Les couleurs sont mélangées, testées, ajustées jusqu'au ton exact recherché.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-step">Étape 3</div>
+          <div class="tl-title">La création</div>
+          <div class="tl-desc">Chaque pampille est formée à la main. Pas de moule — juste les doigts, des outils simples et beaucoup de soin. C'est là que chaque pièce devient unique.</div>
+        </div>
+        <div class="tl-dot">✋</div>
+        <div class="tl-right"></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left"></div>
+        <div class="tl-dot">🔥</div>
+        <div class="tl-right">
+          <div class="tl-step">Étape 4</div>
+          <div class="tl-title">La cuisson</div>
+          <div class="tl-desc">Direction le four à température précise. La cuisson fixe les couleurs et durcit l'argile sans la fragiliser. Le résultat : une pampille légère et résistante.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-step">Étape 5</div>
+          <div class="tl-title">La finition</div>
+          <div class="tl-desc">Ponçage, lustrage, ajout des finitions dorées ou des inclusions. Chaque détail est vérifié à la loupe — littéralement. Le système clip est fixé.</div>
+        </div>
+        <div class="tl-dot">✨</div>
+        <div class="tl-right"></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left"></div>
+        <div class="tl-dot">🌸</div>
+        <div class="tl-right">
+          <div class="tl-step">Étape 6</div>
+          <div class="tl-title">L'envoi</div>
+          <div class="tl-desc">Votre commande est emballée avec une petite attention, une carte, et beaucoup d'amour. Elle prend la route vers vous.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENTS -->
+<section class="engagement">
+  <div class="eng-wave"></div>
+  <div class="eng-inner">
+    <div class="eng-title-wrap r">
+      <div class="eng-script">Mes engagements</div>
+      <h2 class="eng-h2">Ce que je vous promets</h2>
+    </div>
+    <div class="eng-grid">
+      <div class="eng-card r d1">
+        <div class="eng-card-icon">💛</div>
+        <div class="eng-card-title">Un bijou qui dure</div>
+        <div class="eng-card-desc">Chaque pampille est cuite, poncée et vérifiée avant d'être expédiée. La durabilité fait partie de mon exigence de créatrice. Pas de pièce qui part au premier regard.</div>
+      </div>
+      <div class="eng-card r d2">
+        <div class="eng-card-icon">🎨</div>
+        <div class="eng-card-title">La couleur, toujours</div>
+        <div class="eng-card-desc">Je veux que vous ayez l'embarras du choix. Chaque saison apporte de nouvelles teintes, nouvelles textures. Et si vous avez une couleur en tête, on peut la créer ensemble.</div>
+      </div>
+      <div class="eng-card r d3">
+        <div class="eng-card-icon">🤝</div>
+        <div class="eng-card-title">Une relation sincère</div>
+        <div class="eng-card-desc">Je réponds à chaque message personnellement. Si quelque chose ne va pas, on trouve ensemble une solution. Votre satisfaction est ma priorité, pas une formule vide.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section class="testimonials">
+  <div class="container">
+    <div class="test-title r">Ce qu'on dit de nous</div>
+    <div class="test-h2 r">Elles ont craqué 🌸</div>
+    <div class="test-grid">
+      <div class="test-card r d1">
+        <div class="test-quote-mark">"</div>
+        <div class="test-text">J'avais commandé les pampilles motifs et je les ai reçues dans un emballage tellement soigné, avec un petit mot à l'intérieur. Elles sont exactement comme sur les photos, en encore plus belles en vrai.</div>
+        <div class="test-stars">★★★★★</div>
+        <div class="test-author">Marie-Lou</div>
+        <div class="test-location">Lyon, France</div>
+      </div>
+      <div class="test-card r d2">
+        <div class="test-quote-mark">"</div>
+        <div class="test-text">Idée de génie, les pampilles interchangeables. J'ai les créoles dorées avec trois jeux de pampilles différents — j'en change selon mon humeur chaque matin. Et elles tiennent parfaitement toute la journée.</div>
+        <div class="test-stars">★★★★★</div>
+        <div class="test-author">Camille</div>
+        <div class="test-location">Paris, France</div>
+      </div>
+      <div class="test-card r d3">
+        <div class="test-quote-mark">"</div>
+        <div class="test-text">J'ai commandé un sur-mesure pour offrir à ma meilleure amie. La créatrice a été super réactive, elle m'a envoyé des photos avant d'expédier. Le résultat était parfait — et mon amie a adoré.</div>
+        <div class="test-stars">★★★★★</div>
+        <div class="test-author">Juliette</div>
+        <div class="test-location">Bordeaux, France</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="spark" style="top:15%;left:8%"><svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(255,255,255,0.45)"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
+  <div class="spark" style="bottom:18%;right:7%;animation-delay:1.1s"><svg width="13" height="13" viewBox="0 0 24 24" fill="rgba(255,255,255,0.4)"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
+  <div class="cta-inner r">
+    <div class="cta-script">Et maintenant ?</div>
+    <h2 class="cta-h2">Trouvez votre première pampille</h2>
+    <p class="cta-sub">Chaque paire attend de trouver son oreille. Découvrez nos créations ou écrivez-nous pour un projet sur mesure — on adore les défis.</p>
+    <div class="cta-btns">
+      <a href="boutique.html" class="btn-cta-white">
+        Voir la boutique
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="index.html#contact" class="btn-cta-ghost">
+        Un projet sur mesure
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo-wild">Wild</div>
+        <div class="footer-logo-row">Flower · by Wooden Mountain</div>
+        <p class="f-tagline">Pampilles interchangeables en argile polymère. Colorées, faites à la main, pour changer d'humeur en deux secondes.</p>
+      </div>
+      <div class="f-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="notre-histoire.html">Notre histoire</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Infos</h4>
+        <ul>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="cgv.html">CGV</a></li>
+          <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+          <li><a href="livraisons-retours.html">Livraisons &amp; retours</a></li>
+          <li><a href="mailto:contact@woodenmountain.fr">contact@woodenmountain.fr</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <p>© 2025 Wild Flower by Wooden Mountain · Fait avec 🌸 en France</p>
+      <p>Paiement sécurisé · Expédition soignée</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('v');
+  }), { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+  document.querySelectorAll('.r, .tl-item').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

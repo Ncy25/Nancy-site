@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Boutique — Wild Flower by Wooden Mountain</title>
+  <meta name="description" content="Toutes nos créations de pampilles interchangeables en argile polymère, faites à la main. Wild Flower by Wooden Mountain."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --blush:      #F9E8E0;
+      --blush-mid:  #F5D5C8;
+      --peach:      #F0A882;
+      --peach-dk:   #D97A52;
+      --terra:      #C26B4A;
+      --rose:       #F2BFB5;
+      --rose-lt:    #FDEAE5;
+      --cream:      #FFF8F5;
+      --ivory:      #FFFCFA;
+      --gold:       #D4A853;
+      --gold-lt:    #F0D08A;
+      --sage:       #8FAF8A;
+      --sage-lt:    #C4D9BE;
+      --brown:      #6B3D2A;
+      --brown-mid:  #8B5540;
+      --gray:       #9E8880;
+      --font-d: 'Cormorant Garamond', Georgia, serif;
+      --font-s: 'Dancing Script', cursive;
+      --font-b: 'DM Sans', sans-serif;
+      --ease: 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-b); background: var(--ivory); color: var(--brown); overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── SPARKLE ── */
+    .spark { position: absolute; pointer-events: none; animation: spark-pulse 2.5s ease-in-out infinite; }
+    @keyframes spark-pulse {
+      0%,100% { opacity:.5; transform: scale(1) rotate(0deg); }
+      50%      { opacity:1;  transform: scale(1.25) rotate(15deg); }
+    }
+
+    /* ── PROMO BAR ── */
+    .promo-bar {
+      background: var(--peach);
+      text-align: center; padding: 9px 16px;
+      font-size: 12px; font-weight: 500;
+      letter-spacing: .1em; text-transform: uppercase; color: #fff;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(255,252,250,0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(242,191,181,0.3);
+    }
+    .nav-top {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px; max-width: 1160px; margin: 0 auto; padding: 0 28px;
+    }
+    .nav-left { display: flex; align-items: center; gap: 22px; }
+    .nav-search-btn { background: none; border: none; cursor: pointer; color: var(--brown-mid); font-size: 17px; transition: color var(--ease); }
+    .nav-search-btn:hover { color: var(--peach-dk); }
+    .nav-logo { display: flex; flex-direction: column; align-items: center; line-height: 1; }
+    .logo-wild { font-family: var(--font-s); font-size: 28px; color: var(--terra); letter-spacing: -.01em; line-height: 1; }
+    .logo-flower-row { display: flex; align-items: center; font-family: var(--font-b); font-size: 18px; font-weight: 400; letter-spacing: .06em; color: var(--peach); line-height: 1.1; }
+    .logo-flower-icon { width: 18px; height: 18px; margin: 0 1px; display: inline-block; }
+    .logo-by { font-family: var(--font-s); font-size: 9px; color: var(--brown-mid); letter-spacing: .04em; }
+    .logo-wm { font-family: var(--font-b); font-size: 8.5px; font-weight: 500; color: var(--sage); letter-spacing: .06em; text-transform: uppercase; }
+    .nav-right { display: flex; align-items: center; gap: 18px; }
+    .nav-icon-btn { background: none; border: none; cursor: pointer; color: var(--brown-mid); font-size: 17px; position: relative; transition: color var(--ease); }
+    .nav-icon-btn:hover { color: var(--peach-dk); }
+    .cart-badge { position: absolute; top: -6px; right: -6px; width: 16px; height: 16px; border-radius: 50%; background: var(--peach); color: #fff; font-size: 9px; font-weight: 700; display: none; align-items: center; justify-content: center; }
+    .cart-badge.on { display: flex; }
+    .nav-menu { display: flex; justify-content: center; align-items: center; gap: 36px; padding: 0 28px 10px; max-width: 1160px; margin: 0 auto; }
+    .nav-menu a { font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--brown-mid); transition: color var(--ease); }
+    .nav-menu a:hover, .nav-menu a.active { color: var(--peach-dk); }
+    .nav-burger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .nav-burger span { display: block; width: 20px; height: 1.8px; background: var(--brown-mid); border-radius: 2px; }
+    .mobile-nav { display: none; flex-direction: column; gap: 16px; padding: 20px 28px 24px; border-top: 1px solid rgba(242,191,181,0.3); }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 14px; font-weight: 500; color: var(--brown-mid); letter-spacing: .08em; text-transform: uppercase; }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      background: linear-gradient(135deg, #FDE8DC 0%, #FCDCC8 30%, #FAD0B4 60%, #F8C8A8 100%);
+      padding: 64px 28px 96px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .page-header::after {
+      content: ''; position: absolute; bottom: -2px; left: 0; right: 0;
+      height: 64px; background: var(--ivory);
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    }
+    .ph-blob1 { position: absolute; top: -30px; right: 8%; width: 260px; height: 260px; border-radius: 50%; background: rgba(255,255,255,0.22); }
+    .ph-blob2 { position: absolute; bottom: 20px; left: -40px; width: 180px; height: 180px; border-radius: 50%; background: rgba(255,255,255,0.15); }
+    .ph-spark { position: absolute; animation: spark-pulse 2.5s ease-in-out infinite; pointer-events: none; }
+    .page-header-script { font-family: var(--font-s); font-size: 20px; color: var(--brown); margin-bottom: 8px; opacity: 0; animation: fade-up .6s .1s forwards; }
+    .page-header h1 { font-family: var(--font-d); font-size: clamp(44px, 7vw, 74px); font-weight: 600; line-height: .95; letter-spacing: -.02em; color: #fff; text-shadow: 0 2px 14px rgba(195,107,74,0.22); margin-bottom: 16px; opacity: 0; animation: fade-up .6s .2s forwards; }
+    .page-header-sub { font-size: 14px; color: rgba(107,61,42,0.7); opacity: 0; animation: fade-up .6s .3s forwards; }
+    @keyframes fade-up { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:none; } }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb { display: flex; align-items: center; gap: 8px; padding: 18px 0 0; font-size: 12px; color: var(--gray); }
+    .breadcrumb a { color: var(--peach-dk); transition: color var(--ease); }
+    .breadcrumb a:hover { color: var(--terra); }
+    .breadcrumb svg { flex-shrink: 0; }
+
+    /* ── FILTERS BAR ── */
+    .filters-wrap { padding: 36px 0 0; }
+    .filters-bar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .filter-pill {
+      padding: 8px 18px; border-radius: 999px;
+      border: 1.5px solid rgba(195,107,74,0.2);
+      background: var(--cream); cursor: pointer;
+      font-size: 12px; font-weight: 500;
+      color: var(--brown-mid); letter-spacing: .04em;
+      transition: all var(--ease); white-space: nowrap;
+    }
+    .filter-pill:hover { border-color: var(--peach); color: var(--peach-dk); }
+    .filter-pill.active { background: var(--peach); border-color: var(--peach); color: #fff; }
+    .filters-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+    .sort-select {
+      padding: 8px 14px; border-radius: 999px;
+      border: 1.5px solid rgba(195,107,74,0.2);
+      background: var(--cream); cursor: pointer;
+      font-family: var(--font-b); font-size: 12px; font-weight: 500;
+      color: var(--brown-mid); outline: none;
+      transition: border-color var(--ease);
+      -webkit-appearance: none; appearance: none;
+      padding-right: 32px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239E8880' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 12px center;
+    }
+    .sort-select:focus { border-color: var(--peach); }
+    .count-label { font-size: 12px; color: var(--gray); white-space: nowrap; }
+
+    /* ── PRODUCT GRID ── */
+    .prod-section { padding: 32px 0 80px; }
+    .prod-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 28px;
+    }
+
+    /* ── PRODUCT CARD ── */
+    .p-card {
+      cursor: pointer;
+      opacity: 0; transform: translateY(20px);
+      transition: transform var(--ease), opacity .5s ease;
+    }
+    .p-card.v { opacity: 1; transform: none; }
+    .p-card:hover { transform: translateY(-5px); }
+
+    .p-img {
+      border-radius: 20px; overflow: hidden;
+      aspect-ratio: 1; margin-bottom: 16px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .p-img-content { width: 78%; height: 78%; display: flex; align-items: center; justify-content: center; }
+    .p-shape-anim { transition: transform .5s ease; }
+    .p-card:hover .p-shape-anim { transform: scale(1.09) rotate(6deg); }
+
+    /* Badges */
+    .p-badges { position: absolute; top: 14px; left: 14px; display: flex; flex-direction: column; gap: 6px; z-index: 1; }
+    .p-badge {
+      font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 999px;
+    }
+    .badge-new { background: var(--peach); color: #fff; }
+    .badge-bestseller { background: var(--gold); color: #fff; }
+    .badge-custom { background: var(--sage); color: #fff; }
+
+    /* Wishlist btn */
+    .p-wish {
+      position: absolute; top: 14px; right: 14px;
+      width: 34px; height: 34px; border-radius: 50%;
+      background: rgba(255,255,255,0.75); backdrop-filter: blur(4px);
+      border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all var(--ease); z-index: 1;
+    }
+    .p-wish:hover { background: #fff; transform: scale(1.1); }
+    .p-wish svg { transition: fill var(--ease), stroke var(--ease); }
+    .p-wish.liked svg { fill: var(--peach-dk); stroke: var(--peach-dk); }
+
+    /* Quick add on hover */
+    .p-quick-add {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(107,61,42,0.82) 0%, transparent 100%);
+      border-radius: 0 0 20px 20px;
+      padding: 32px 16px 16px;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(6px);
+      transition: opacity var(--ease), transform var(--ease);
+      pointer-events: none;
+    }
+    .p-card:hover .p-quick-add { opacity: 1; transform: none; pointer-events: all; }
+    .btn-quick-add {
+      padding: 9px 20px; background: #fff; color: var(--peach-dk);
+      border: none; border-radius: 999px; cursor: pointer;
+      font-family: var(--font-b); font-size: 12px; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: flex; align-items: center; gap: 7px;
+      transition: background var(--ease), transform var(--ease);
+    }
+    .btn-quick-add:hover { background: var(--peach); color: #fff; transform: scale(1.04); }
+
+    .p-info { padding: 0 4px; }
+    .p-cat { font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--peach-dk); margin-bottom: 4px; }
+    .p-name { font-family: var(--font-d); font-size: 20px; font-weight: 600; color: var(--brown); margin-bottom: 6px; line-height: 1.1; }
+    .p-desc { font-size: 12.5px; color: var(--gray); line-height: 1.6; margin-bottom: 10px; }
+    .p-bottom { display: flex; align-items: center; justify-content: space-between; }
+    .p-price { font-family: var(--font-d); font-size: 20px; font-weight: 600; color: var(--brown-mid); }
+    .p-stock { font-size: 11px; color: var(--sage); font-weight: 500; display: flex; align-items: center; gap: 4px; }
+    .p-stock-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage); }
+    .p-stock.low { color: var(--gold); }
+    .p-stock.low .p-stock-dot { background: var(--gold); }
+
+    /* ── COLOR SWATCHES ── */
+    .p-colors { display: flex; gap: 6px; margin-bottom: 10px; }
+    .p-color {
+      width: 16px; height: 16px; border-radius: 50%;
+      border: 2px solid transparent;
+      cursor: pointer; transition: transform var(--ease), border-color var(--ease);
+    }
+    .p-color:hover, .p-color.sel { transform: scale(1.2); border-color: var(--brown-mid); }
+
+    /* ── FEATURED BANNER ── */
+    .feat-banner {
+      border-radius: 28px;
+      background: linear-gradient(135deg, var(--peach-dk) 0%, var(--terra) 50%, var(--brown-mid) 100%);
+      padding: 48px 48px;
+      margin-bottom: 32px;
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 32px; align-items: center;
+    }
+    .feat-banner::before {
+      content: ''; position: absolute;
+      top: -60px; right: 120px;
+      width: 280px; height: 280px; border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+    }
+    .feat-banner::after {
+      content: ''; position: absolute;
+      bottom: -80px; right: -40px;
+      width: 240px; height: 240px; border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+    }
+    .feat-banner-tag { font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 10px; }
+    .feat-banner h2 { font-family: var(--font-d); font-size: clamp(28px, 4vw, 40px); font-weight: 600; color: #fff; line-height: 1; margin-bottom: 12px; letter-spacing: -.02em; }
+    .feat-banner p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.65; max-width: 360px; margin-bottom: 22px; }
+    .btn-feat {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; background: #fff; color: var(--peach-dk);
+      border-radius: 999px; border: none; cursor: pointer;
+      font-family: var(--font-b); font-size: 12.5px; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      transition: transform var(--ease), box-shadow var(--ease);
+    }
+    .btn-feat:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
+    .feat-visual {
+      display: flex; gap: 10px; position: relative; z-index: 1;
+    }
+    .feat-card-mini {
+      background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+      border-radius: 16px; padding: 12px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .feat-card-main { width: 120px; height: 120px; }
+    .feat-card-sm { width: 54px; height: 54px; }
+
+    /* ── CATEGORY TABS ── */
+    .cat-tabs {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin: 0 0 8px;
+    }
+    .cat-tab {
+      padding: 10px 22px; border-radius: 14px;
+      background: var(--blush); cursor: pointer;
+      font-family: var(--font-d); font-size: 15px; font-weight: 600;
+      color: var(--brown-mid); letter-spacing: -.01em;
+      border: 1.5px solid transparent;
+      transition: all var(--ease);
+    }
+    .cat-tab:hover { border-color: var(--peach); color: var(--terra); }
+    .cat-tab.active { background: var(--terra); color: #fff; border-color: var(--terra); }
+
+    /* ── MESURE BAND ── */
+    .mesure-band {
+      background: var(--blush);
+      border-radius: 24px; padding: 40px 44px;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 24px; align-items: center;
+      margin-top: 48px;
+      border: 1px solid rgba(242,191,181,0.5);
+    }
+    .mesure-band h3 { font-family: var(--font-d); font-size: 28px; font-weight: 600; color: var(--brown); margin-bottom: 8px; }
+    .mesure-band p { font-size: 14px; color: var(--brown-mid); line-height: 1.7; max-width: 420px; }
+    .mesure-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .mesure-chip { background: rgba(255,255,255,0.65); border: 1px solid rgba(255,255,255,0.9); color: var(--brown-mid); font-size: 12px; font-weight: 500; padding: 5px 12px; border-radius: 999px; }
+    .btn-mesure {
+      padding: 14px 30px; background: var(--terra); color: #fff;
+      border: none; border-radius: 999px; cursor: pointer;
+      font-family: var(--font-b); font-size: 13px; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: flex; align-items: center; gap: 8px; white-space: nowrap;
+      transition: background var(--ease), transform var(--ease);
+    }
+    .btn-mesure:hover { background: var(--brown-mid); transform: translateY(-2px); }
+
+    /* ── MODAL PRODUIT ── */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 500;
+      background: rgba(107,61,42,0.45);
+      opacity: 0; pointer-events: none;
+      transition: opacity var(--ease);
+      backdrop-filter: blur(4px);
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal {
+      position: fixed; z-index: 501;
+      top: 50%; left: 50%; transform: translate(-50%, -48%) scale(.96);
+      width: min(760px, calc(100vw - 32px));
+      max-height: calc(100vh - 48px); overflow-y: auto;
+      background: var(--ivory); border-radius: 28px;
+      box-shadow: 0 24px 80px rgba(107,61,42,0.25);
+      transition: transform .4s cubic-bezier(.34,1.4,.64,1), opacity .3s;
+      opacity: 0;
+    }
+    .modal.open { transform: translate(-50%,-50%) scale(1); opacity: 1; }
+    .modal-inner { display: grid; grid-template-columns: 1fr 1fr; min-height: 420px; }
+    .modal-img {
+      border-radius: 28px 0 0 28px; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      padding: 32px; min-height: 320px;
+    }
+    .modal-body { padding: 36px 32px 36px 28px; display: flex; flex-direction: column; }
+    .modal-close {
+      position: absolute; top: 16px; right: 18px;
+      background: var(--blush); border: none; border-radius: 50%;
+      width: 36px; height: 36px; cursor: pointer;
+      font-size: 16px; color: var(--brown-mid);
+      display: flex; align-items: center; justify-content: center;
+      transition: all var(--ease);
+    }
+    .modal-close:hover { background: var(--peach); color: #fff; }
+    .modal-cat { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--peach-dk); margin-bottom: 8px; }
+    .modal-name { font-family: var(--font-d); font-size: 30px; font-weight: 600; color: var(--brown); margin-bottom: 10px; line-height: 1.05; }
+    .modal-price { font-family: var(--font-d); font-size: 26px; font-weight: 600; color: var(--brown-mid); margin-bottom: 16px; }
+    .modal-desc { font-size: 14px; color: var(--brown-mid); line-height: 1.8; margin-bottom: 22px; flex: 1; }
+    .modal-colors-label { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--brown-mid); margin-bottom: 10px; }
+    .modal-colors { display: flex; gap: 8px; margin-bottom: 22px; flex-wrap: wrap; }
+    .modal-color-btn {
+      width: 28px; height: 28px; border-radius: 50%; cursor: pointer;
+      border: 2.5px solid transparent; transition: transform var(--ease), border-color var(--ease);
+    }
+    .modal-color-btn:hover, .modal-color-btn.sel { transform: scale(1.18); border-color: var(--brown); }
+    .modal-qty-row { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .qty-ctrl { display: flex; align-items: center; gap: 2px; background: var(--blush); border-radius: 999px; padding: 3px; }
+    .qty-btn { width: 30px; height: 30px; border-radius: 50%; background: none; border: none; cursor: pointer; font-size: 15px; color: var(--brown-mid); transition: background var(--ease); display: flex; align-items: center; justify-content: center; }
+    .qty-btn:hover { background: var(--blush-mid); }
+    .qty-val { font-size: 14px; font-weight: 600; min-width: 28px; text-align: center; color: var(--brown); }
+    .btn-add-modal {
+      width: 100%; padding: 14px; background: var(--peach); color: #fff;
+      border: none; border-radius: 999px; cursor: pointer;
+      font-family: var(--font-b); font-size: 13.5px; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      transition: background var(--ease), transform var(--ease);
+      box-shadow: 0 4px 18px rgba(195,107,74,0.25);
+    }
+    .btn-add-modal:hover { background: var(--peach-dk); transform: translateY(-1px); }
+    .modal-trust { display: flex; gap: 14px; margin-top: 14px; flex-wrap: wrap; }
+    .modal-trust-item { display: flex; align-items: center; gap: 5px; font-size: 11.5px; color: var(--gray); }
+
+    /* ── CART DRAWER ── */
+    .overlay { position: fixed; inset: 0; z-index: 300; background: rgba(107,61,42,0.4); opacity: 0; pointer-events: none; transition: opacity var(--ease); }
+    .overlay.open { opacity: 1; pointer-events: all; }
+    .drawer { position: fixed; right: 0; top: 0; bottom: 0; z-index: 301; width: min(400px,100vw); background: var(--ivory); transform: translateX(100%); transition: transform var(--ease); display: flex; flex-direction: column; }
+    .drawer.open { transform: translateX(0); }
+    .dr-head { display: flex; align-items: center; justify-content: space-between; padding: 22px 26px; border-bottom: 1px solid rgba(242,191,181,0.3); }
+    .dr-head h3 { font-family: var(--font-d); font-size: 22px; font-weight: 600; color: var(--brown); }
+    .dr-close { background: none; border: none; cursor: pointer; font-size: 18px; color: var(--gray); transition: color var(--ease); }
+    .dr-close:hover { color: var(--peach-dk); }
+    .dr-items { flex: 1; overflow-y: auto; padding: 18px 26px; }
+    .dr-empty { text-align: center; padding: 50px 0; font-size: 14px; color: var(--gray); }
+    .dr-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(242,191,181,0.25); }
+    .dr-thumb { width: 48px; height: 48px; border-radius: 10px; background: var(--blush); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .dr-info { flex: 1; }
+    .dr-name { font-size: 13.5px; font-weight: 500; color: var(--brown); margin-bottom: 3px; }
+    .dr-price { font-size: 13px; color: var(--peach-dk); }
+    .dr-qty { display: flex; align-items: center; gap: 7px; margin-top: 5px; }
+    .qb { width: 22px; height: 22px; border-radius: 50%; background: var(--blush); border: none; cursor: pointer; font-size: 13px; color: var(--brown); display: flex; align-items: center; justify-content: center; transition: background var(--ease); }
+    .qb:hover { background: var(--peach); color: #fff; }
+    .qv { font-size: 12.5px; font-weight: 600; min-width: 14px; text-align: center; }
+    .dr-foot { padding: 18px 26px 28px; border-top: 1px solid rgba(242,191,181,0.25); }
+    .dr-total { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
+    .dr-total-l { font-size: 14px; color: var(--gray); }
+    .dr-total-v { font-family: var(--font-d); font-size: 26px; font-weight: 600; color: var(--brown); }
+    .dr-co { width: 100%; padding: 13px; background: var(--peach); color: #fff; border: none; border-radius: 999px; font-family: var(--font-b); font-size: 14px; font-weight: 600; cursor: pointer; transition: background var(--ease); }
+    .dr-co:hover { background: var(--peach-dk); }
+
+    /* ── TOAST ── */
+    .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(60px); background: var(--brown); color: var(--cream); padding: 10px 22px; border-radius: 999px; font-size: 13.5px; font-weight: 500; z-index: 600; pointer-events: none; transition: transform .4s cubic-bezier(.34,1.5,.64,1), opacity .4s; opacity: 0; white-space: nowrap; }
+    .toast.on { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--brown); color: rgba(255,248,245,0.65); padding: 56px 0 28px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+    .footer-logo-wild { font-family: var(--font-s); font-size: 28px; color: #F2B899; }
+    .footer-logo-row { font-family: var(--font-b); font-size: 13px; letter-spacing: .1em; color: var(--peach); margin-bottom: 12px; }
+    .f-tagline { font-size: 13px; line-height: 1.7; max-width: 230px; }
+    .f-col h4 { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,248,245,0.3); margin-bottom: 14px; }
+    .f-col ul { display: flex; flex-direction: column; gap: 9px; }
+    .f-col a { font-size: 13.5px; color: rgba(255,248,245,0.58); transition: color var(--ease); }
+    .f-col a:hover { color: var(--peach); }
+    .footer-bar { border-top: 1px solid rgba(255,248,245,0.1); padding-top: 22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .footer-bar p { font-size: 12px; }
+
+    /* ── CONTAINER ── */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .feat-banner { grid-template-columns: 1fr; }
+      .feat-visual { display: none; }
+      .mesure-band { grid-template-columns: 1fr; }
+      .modal-inner { grid-template-columns: 1fr; }
+      .modal-img { border-radius: 28px 28px 0 0; min-height: 220px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .nav-menu { display: none; }
+      .nav-burger { display: flex; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .filters-right { margin-left: 0; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- PROMO BAR -->
+<div class="promo-bar">🌸 Livraison offerte dès 50€ d'achat · Pièces uniques faites à la main</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-top">
+    <div class="nav-left">
+      <button class="nav-search-btn" aria-label="Rechercher">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+    </div>
+    <a href="index.html" class="nav-logo" aria-label="Wild Flower by Wooden Mountain">
+      <span class="logo-wild">Wild</span>
+      <div class="logo-flower-row">
+        Fl
+        <svg class="logo-flower-icon" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="10" r="5" fill="#F0A882" opacity=".85"/>
+          <circle cx="22" cy="16" r="5" fill="#F0A882" opacity=".75"/>
+          <circle cx="16" cy="22" r="5" fill="#F0A882" opacity=".85"/>
+          <circle cx="10" cy="16" r="5" fill="#F0A882" opacity=".75"/>
+          <circle cx="16" cy="16" r="6" fill="#F5C4A8"/>
+          <circle cx="16" cy="16" r="3.5" fill="#fff" opacity=".7"/>
+        </svg>
+        wer
+      </div>
+      <div style="display:flex;align-items:center;gap:4px;margin-top:1px">
+        <span class="logo-by">by</span>
+        <span class="logo-wm">Wooden Mountain</span>
+      </div>
+    </a>
+    <div class="nav-right">
+      <button class="nav-icon-btn" aria-label="Compte">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </button>
+      <button class="nav-icon-btn" onclick="toggleCart()" aria-label="Panier">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-badge" id="cb">0</span>
+      </button>
+      <button class="nav-burger" onclick="document.getElementById('mn').classList.toggle('open')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <ul class="nav-menu">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="#">Nouveautés</a></li>
+    <li><a href="boutique.html" class="active">Boutique</a></li>
+    <li><a href="index.html#histoire">Notre histoire</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="mobile-nav" id="mn">
+    <a href="index.html">Accueil</a>
+    <a href="boutique.html" onclick="this.closest('.mobile-nav').classList.remove('open')">Boutique</a>
+    <a href="index.html#histoire" onclick="this.closest('.mobile-nav').classList.remove('open')">Notre histoire</a>
+    <a href="index.html#contact" onclick="this.closest('.mobile-nav').classList.remove('open')">Contact</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="ph-blob1"></div>
+  <div class="ph-blob2"></div>
+  <div class="ph-spark" style="top:18%;left:8%"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" opacity=".55"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
+  <div class="ph-spark" style="top:30%;right:11%;animation-delay:.8s"><svg width="13" height="13" viewBox="0 0 24 24" fill="#D4A853" opacity=".6"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
+  <div class="ph-spark" style="bottom:32%;left:16%;animation-delay:1.5s"><svg width="10" height="10" viewBox="0 0 24 24" fill="#fff" opacity=".4"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
+  <div class="ph-spark" style="top:20%;right:28%;animation-delay:2s"><svg width="8" height="8" viewBox="0 0 24 24" fill="#fff" opacity=".35"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
+  <div class="page-header-script">Choisissez votre coup de cœur</div>
+  <h1>La Boutique</h1>
+  <p class="page-header-sub">Toutes nos créations · Argile polymère · Faites à la main en France</p>
+</div>
+
+<!-- MAIN -->
+<main>
+  <div class="container">
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb">
+      <a href="index.html">Accueil</a>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      <span>Boutique</span>
+    </div>
+
+    <!-- FEATURED BANNER -->
+    <div class="feat-banner" style="margin-top:32px">
+      <div>
+        <div class="feat-banner-tag">✨ Collection printemps</div>
+        <h2>Joyful Pampilles<br>— Nouvelle saison</h2>
+        <p>Des couleurs fraîches, des formes nouvelles. Chaque pièce est imaginée pour mettre de la joie dans votre quotidien.</p>
+        <button class="btn-feat" onclick="filterCat('new')">
+          Voir les nouveautés
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </div>
+      <div class="feat-visual">
+        <div class="feat-card-main feat-card-mini">
+          <svg width="92" height="92" viewBox="0 0 92 92" fill="none">
+            <circle cx="46" cy="28" r="14" fill="#F0A882" opacity=".55"/>
+            <circle cx="64" cy="46" r="14" fill="#F0A882" opacity=".5"/>
+            <circle cx="46" cy="64" r="14" fill="#F0A882" opacity=".55"/>
+            <circle cx="28" cy="46" r="14" fill="#F0A882" opacity=".5"/>
+            <circle cx="46" cy="46" r="16" fill="#F5C4A8" opacity=".9"/>
+            <circle cx="46" cy="46" r="7" fill="#fff" opacity=".4"/>
+          </svg>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="feat-card-sm feat-card-mini">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="13" stroke="#C9A853" stroke-width="3.5" fill="none" opacity=".8"/><circle cx="18" cy="31" r="3" fill="#C9A853" opacity=".8"/></svg>
+          </div>
+          <div class="feat-card-sm feat-card-mini">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 33C9 25 2 20 2 13C2 6.5 7 3 11 5C14 6.5 16.5 10 18 14C19.5 10 22 6.5 25 5C29 3 34 6.5 34 13C34 20 27 25 18 33Z" fill="#8FAF8A" opacity=".6"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORY TABS -->
+    <div class="cat-tabs">
+      <div class="cat-tab active" onclick="filterCat('all', this)">Tout voir</div>
+      <div class="cat-tab" onclick="filterCat('pampilles-creoles', this)">Pampilles + Créoles</div>
+      <div class="cat-tab" onclick="filterCat('pampilles', this)">Pampilles seules</div>
+      <div class="cat-tab" onclick="filterCat('creoles', this)">Créoles seules</div>
+    </div>
+
+    <!-- FILTERS BAR -->
+    <div class="filters-wrap">
+      <div class="filters-bar">
+        <button class="filter-pill active" onclick="filterTag('all', this)">Tout</button>
+        <button class="filter-pill" onclick="filterTag('new', this)">Nouveautés 🌸</button>
+        <button class="filter-pill" onclick="filterTag('bestseller', this)">Meilleures ventes ⭐</button>
+        <button class="filter-pill" onclick="filterTag('uni', this)">Unies</button>
+        <button class="filter-pill" onclick="filterTag('motifs', this)">Motifs</button>
+        <div class="filters-right">
+          <span class="count-label" id="countLabel">6 créations</span>
+          <select class="sort-select" id="sortSel" onchange="sortProducts()">
+            <option value="default">Tri : défaut</option>
+            <option value="price-asc">Prix croissant</option>
+            <option value="price-desc">Prix décroissant</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCT GRID -->
+    <div class="prod-section">
+      <div class="prod-grid" id="prodGrid">
+
+        <!-- CARD 1 -->
+        <div class="p-card" data-cat="pampilles-creoles" data-tags="bestseller,motifs" data-price="18" onclick="openModal(0)">
+          <div class="p-img" style="background:#F5EDE8">
+            <div class="p-badges">
+              <span class="p-badge badge-bestseller">⭐ Bestseller</span>
+            </div>
+            <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </button>
+            <div class="p-img-content">
+              <svg class="p-shape-anim" width="140" height="140" viewBox="0 0 140 140" fill="none">
+                <circle cx="70" cy="42" r="21" fill="#F0A882" opacity=".5"/>
+                <circle cx="98" cy="70" r="21" fill="#F0A882" opacity=".45"/>
+                <circle cx="70" cy="98" r="21" fill="#F0A882" opacity=".5"/>
+                <circle cx="42" cy="70" r="21" fill="#F0A882" opacity=".45"/>
+                <circle cx="70" cy="70" r="23" fill="#F5C4A8" opacity=".9"/>
+                <circle cx="70" cy="70" r="11" fill="#fff" opacity=".45"/>
+              </svg>
+            </div>
+            <div class="p-quick-add">
+              <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Pampilles + Créoles Motifs',18,'🌺')">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Ajouter au panier
+              </button>
+            </div>
+          </div>
+          <div class="p-info">
+            <div class="p-colors">
+              <div class="p-color sel" style="background:#F0A882"></div>
+              <div class="p-color" style="background:#8FAF8A"></div>
+              <div class="p-color" style="background:#D4A853"></div>
+              <div class="p-color" style="background:#C9A0B8"></div>
+            </div>
+            <div class="p-cat">Pampilles + Créoles</div>
+            <div class="p-name">Motifs</div>
+            <div class="p-desc">Formes florales et graphiques, centro nacré. Le duo signature.</div>
+            <div class="p-bottom">
+              <div class="p-price">18,00 €</div>
+              <div class="p-stock"><span class="p-stock-dot"></span> En stock</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="p-card" data-cat="pampilles-creoles" data-tags="new,uni" data-price="16" onclick="openModal(1)">
+          <div class="p-img" style="background:var(--blush-mid)">
+            <div class="p-badges">
+              <span class="p-badge badge-new">Nouveau</span>
+            </div>
+            <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </button>
+            <div class="p-img-content">
+              <svg class="p-shape-anim" width="140" height="140" viewBox="0 0 140 140" fill="none">
+                <ellipse cx="70" cy="70" rx="50" ry="60" fill="#F0A882" opacity=".55" transform="rotate(-12 70 70)"/>
+                <ellipse cx="70" cy="70" rx="28" ry="34" fill="#E8907A" opacity=".7"/>
+                <ellipse cx="70" cy="70" rx="13" ry="16" fill="#fff" opacity=".3"/>
+              </svg>
+            </div>
+            <div class="p-quick-add">
+              <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Pampilles + Créoles Unies',16,'🌸')">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Ajouter au panier
+              </button>
+            </div>
+          </div>
+          <div class="p-info">
+            <div class="p-colors">
+              <div class="p-color sel" style="background:#F0A882"></div>
+              <div class="p-color" style="background:#C26B4A"></div>
+              <div class="p-color" style="background:#8FAF8A"></div>
+              <div class="p-color" style="background:#B8D4E8"></div>
+              <div class="p-color" style="background:#D4A853"></div>
+            </div>
+            <div class="p-cat">Pampilles + Créoles</div>
+            <div class="p-name">Unies</div>
+            <div class="p-desc">Teintes douces, surface satinée. L'essentiel, parfait.</div>
+            <div class="p-bottom">
+              <div class="p-price">16,00 €</div>
+              <div class="p-stock"><span class="p-stock-dot"></span> En stock</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="p-card" data-cat="pampilles" data-tags="motifs" data-price="15" onclick="openModal(2)">
+          <div class="p-img" style="background:#EEF2E8">
+            <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </button>
+            <div class="p-img-content">
+              <svg class="p-shape-anim" width="140" height="140" viewBox="0 0 140 140" fill="none">
+                <ellipse cx="70" cy="70" rx="46" ry="60" fill="#8FAF8A" opacity=".35" transform="rotate(-22 70 70)"/>
+                <ellipse cx="70" cy="70" rx="46" ry="60" fill="#8FAF8A" opacity=".25" transform="rotate(22 70 70)"/>
+                <circle cx="70" cy="70" r="20" fill="#8FAF8A" opacity=".65"/>
+                <circle cx="70" cy="70" r="9" fill="#fff" opacity=".4"/>
+              </svg>
+            </div>
+            <div class="p-quick-add">
+              <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Pampilles Seules Motifs',15,'🌼')">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Ajouter au panier
+              </button>
+            </div>
+          </div>
+          <div class="p-info">
+            <div class="p-colors">
+              <div class="p-color sel" style="background:#8FAF8A"></div>
+              <div class="p-color" style="background:#F0A882"></div>
+              <div class="p-color" style="background:#C9A0B8"></div>
+            </div>
+            <div class="p-cat">Pampilles seules</div>
+            <div class="p-name">Motifs</div>
+            <div class="p-desc">Formes organiques et textures délicates. Pour vos créoles existantes.</div>
+            <div class="p-bottom">
+              <div class="p-price">15,00 €</div>
+              <div class="p-stock"><span class="p-stock-dot"></span> En stock</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="p-card" data-cat="pampilles" data-tags="uni" data-price="13" onclick="openModal(3)">
+          <div class="p-img" style="background:var(--blush)">
+            <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </button>
+            <div class="p-img-content">
+              <svg class="p-shape-anim" width="140" height="140" viewBox="0 0 140 140" fill="none">
+                <path d="M70 125C44 101 14 83 14 57C14 35 28 22 44 27C54 31 64 44 70 57C76 44 86 31 96 27C112 22 126 35 126 57C126 83 96 101 70 125Z" fill="#E8D5C0" opacity=".8"/>
+                <path d="M70 105C50 87 26 73 26 57C26 44 36 34 46 38C52 40.5 60 51 70 65C80 51 88 40.5 94 38C104 34 114 44 114 57C114 73 90 87 70 105Z" fill="#D4A853" opacity=".35"/>
+              </svg>
+            </div>
+            <div class="p-quick-add">
+              <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Pampilles Seules Unies',13,'🧡')">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Ajouter au panier
+              </button>
+            </div>
+          </div>
+          <div class="p-info">
+            <div class="p-colors">
+              <div class="p-color sel" style="background:#D4A853"></div>
+              <div class="p-color" style="background:#F0A882"></div>
+              <div class="p-color" style="background:#C26B4A"></div>
+              <div class="p-color" style="background:#8FAF8A"></div>
+            </div>
+            <div class="p-cat">Pampilles seules</div>
+            <div class="p-name">Unies</div>
+            <div class="p-desc">Simples et douces. La base idéale pour une tenue épurée.</div>
+            <div class="p-bottom">
+              <div class="p-price">13,00 €</div>
+              <div class="p-stock p-stock low"><span class="p-stock-dot"></span> Dernières pièces</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="p-card" data-cat="creoles" data-tags="uni" data-price="5" onclick="openModal(4)">
+          <div class="p-img" style="background:var(--blush-mid)">
+            <div class="p-badges">
+              <span class="p-badge badge-bestseller">⭐ Bestseller</span>
+            </div>
+            <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </button>
+            <div class="p-img-content">
+              <svg class="p-shape-anim" width="140" height="140" viewBox="0 0 140 140" fill="none">
+                <circle cx="70" cy="70" r="50" stroke="#C9A853" stroke-width="10" fill="none" opacity=".75"/>
+                <circle cx="70" cy="120" r="7" fill="#C9A853" opacity=".85"/>
+                <ellipse cx="70" cy="70" rx="22" ry="22" fill="#F0D08A" opacity=".2"/>
+              </svg>
+            </div>
+            <div class="p-quick-add">
+              <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Créoles Dorées',5,'✨')">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Ajouter au panier
+              </button>
+            </div>
+          </div>
+          <div class="p-info">
+            <div class="p-cat">Créoles seules</div>
+            <div class="p-name">Dorées</div>
+            <div class="p-desc">Finition dorée subtile. Compatibles avec toutes nos pampilles.</div>
+            <div class="p-bottom">
+              <div class="p-price">5,00 €</div>
+              <div class="p-stock"><span class="p-stock-dot"></span> En stock</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="p-card" data-cat="creoles" data-tags="uni" data-price="5" onclick="openModal(5)">
+          <div class="p-img" style="background:var(--blush)">
+            <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </button>
+            <div class="p-img-content">
+              <svg class="p-shape-anim" width="140" height="140" viewBox="0 0 140 140" fill="none">
+                <circle cx="70" cy="70" r="50" stroke="#A8B8C4" stroke-width="10" fill="none" opacity=".75"/>
+                <circle cx="70" cy="120" r="7" fill="#A8B8C4" opacity=".85"/>
+                <ellipse cx="70" cy="70" rx="22" ry="22" fill="#C8D8E0" opacity=".2"/>
+              </svg>
+            </div>
+            <div class="p-quick-add">
+              <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Créoles Argentées',5,'🤍')">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Ajouter au panier
+              </button>
+            </div>
+          </div>
+          <div class="p-info">
+            <div class="p-cat">Créoles seules</div>
+            <div class="p-name">Argentées</div>
+            <div class="p-desc">Finition argentée délicate. Pour un look frais et lumineux.</div>
+            <div class="p-bottom">
+              <div class="p-price">5,00 €</div>
+              <div class="p-stock"><span class="p-stock-dot"></span> En stock</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- MESURE BAND -->
+      <div class="mesure-band">
+        <div>
+          <h3>Une envie sur mesure ? ✋</h3>
+          <p>Couleur précise, motif particulier, commande groupée pour un cadeau — tout est possible. On échange par e-mail et on crée ensemble votre pièce unique.</p>
+          <div class="mesure-chips">
+            <span class="mesure-chip">🎨 Couleur au choix</span>
+            <span class="mesure-chip">✨ Motif personnalisé</span>
+            <span class="mesure-chip">🎁 Idée cadeau</span>
+            <span class="mesure-chip">📦 Commande groupée</span>
+          </div>
+        </div>
+        <a href="index.html#contact" class="btn-mesure">
+          Demander un sur-mesure
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- MODAL PRODUIT -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
+<div class="modal" id="prodModal" role="dialog" aria-modal="true">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <div class="modal-inner">
+    <div class="modal-img" id="modalImg"></div>
+    <div class="modal-body">
+      <div class="modal-cat" id="modalCat"></div>
+      <div class="modal-name" id="modalName"></div>
+      <div class="modal-price" id="modalPrice"></div>
+      <div class="modal-desc" id="modalDesc"></div>
+      <div class="modal-colors-label">Couleur disponible</div>
+      <div class="modal-colors" id="modalColors"></div>
+      <div class="modal-qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="changeQty(-1)">−</button>
+          <span class="qty-val" id="modalQty">1</span>
+          <button class="qty-btn" onclick="changeQty(1)">+</button>
+        </div>
+        <span style="font-size:12px;color:var(--gray)">unité(s)</span>
+      </div>
+      <button class="btn-add-modal" id="modalAddBtn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Ajouter au panier
+      </button>
+      <div class="modal-trust">
+        <div class="modal-trust-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          Fait à la main
+        </div>
+        <div class="modal-trust-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          3–5 jours
+        </div>
+        <div class="modal-trust-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+          Retour 14j
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CART DRAWER -->
+<div class="overlay" id="ov" onclick="toggleCart()"></div>
+<div class="drawer" id="dr" role="dialog" aria-label="Panier">
+  <div class="dr-head"><h3>Mon panier</h3><button class="dr-close" onclick="toggleCart()">✕</button></div>
+  <div class="dr-items" id="di"><div class="dr-empty" id="de">Votre panier est vide 🌸</div></div>
+  <div class="dr-foot">
+    <div class="dr-total"><span class="dr-total-l">Total</span><span class="dr-total-v" id="dt">0,00 €</span></div>
+    <button class="dr-co" onclick="window.location.href='checkout.html'">Passer commande →</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo-wild">Wild</div>
+        <div class="footer-logo-row">Flower · by Wooden Mountain</div>
+        <p class="f-tagline">Pampilles interchangeables en argile polymère. Colorées, faites à la main, pour changer d'humeur en deux secondes.</p>
+      </div>
+      <div class="f-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="index.html#histoire">Notre histoire</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Infos</h4>
+        <ul>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="cgv.html">CGV</a></li>
+          <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+          <li><a href="livraisons-retours.html">Livraisons &amp; retours</a></li>
+          <li><a href="mailto:contact@woodenmountain.fr">contact@woodenmountain.fr</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <p>© 2025 Wild Flower by Wooden Mountain · Fait avec 🌸 en France</p>
+      <p>Paiement sécurisé · Expédition soignée</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ─── PRODUCTS DATA ─── */
+  const products = [
+    {
+      name: 'Pampilles + Créoles Motifs', cat: 'Pampilles + Créoles', price: 18, emoji: '🌺',
+      desc: 'Formes florales et graphiques avec centro nacré — le duo signature de Wild Flower. Chaque pampille est façonnée à la main, une par une. Légères à porter, infiniment interchangeables.',
+      colors: ['#F0A882','#8FAF8A','#D4A853','#C9A0B8'],
+      bg: '#F5EDE8',
+      svg: `<svg width="140" height="140" viewBox="0 0 140 140" fill="none"><circle cx="70" cy="42" r="21" fill="#F0A882" opacity=".5"/><circle cx="98" cy="70" r="21" fill="#F0A882" opacity=".45"/><circle cx="70" cy="98" r="21" fill="#F0A882" opacity=".5"/><circle cx="42" cy="70" r="21" fill="#F0A882" opacity=".45"/><circle cx="70" cy="70" r="23" fill="#F5C4A8" opacity=".9"/><circle cx="70" cy="70" r="11" fill="#fff" opacity=".45"/></svg>`
+    },
+    {
+      name: 'Pampilles + Créoles Unies', cat: 'Pampilles + Créoles', price: 16, emoji: '🌸',
+      desc: 'Teintes douces, surface satinée et formes épurées. L\'essentiel dans sa version la plus pure. Disponibles en de nombreuses couleurs, parfaites pour s\'assortir à toutes les tenues.',
+      colors: ['#F0A882','#C26B4A','#8FAF8A','#B8D4E8','#D4A853'],
+      bg: '#F5D5C8',
+      svg: `<svg width="140" height="140" viewBox="0 0 140 140" fill="none"><ellipse cx="70" cy="70" rx="50" ry="60" fill="#F0A882" opacity=".55" transform="rotate(-12 70 70)"/><ellipse cx="70" cy="70" rx="28" ry="34" fill="#E8907A" opacity=".7"/><ellipse cx="70" cy="70" rx="13" ry="16" fill="#fff" opacity=".3"/></svg>`
+    },
+    {
+      name: 'Pampilles Seules Motifs', cat: 'Pampilles seules', price: 15, emoji: '🌼',
+      desc: 'Formes organiques et textures délicates pour habiller vos créoles existantes. La solution idéale pour renouveler un bijou préféré sans en racheter un entier.',
+      colors: ['#8FAF8A','#F0A882','#C9A0B8'],
+      bg: '#EEF2E8',
+      svg: `<svg width="140" height="140" viewBox="0 0 140 140" fill="none"><ellipse cx="70" cy="70" rx="46" ry="60" fill="#8FAF8A" opacity=".35" transform="rotate(-22 70 70)"/><ellipse cx="70" cy="70" rx="46" ry="60" fill="#8FAF8A" opacity=".25" transform="rotate(22 70 70)"/><circle cx="70" cy="70" r="20" fill="#8FAF8A" opacity=".65"/><circle cx="70" cy="70" r="9" fill="#fff" opacity=".4"/></svg>`
+    },
+    {
+      name: 'Pampilles Seules Unies', cat: 'Pampilles seules', price: 13, emoji: '🧡',
+      desc: 'Simples, douces, déclinées dans de belles teintes. La base parfaite pour une tenue épurée et élégante. À associer avec nos créoles ou les vôtres.',
+      colors: ['#D4A853','#F0A882','#C26B4A','#8FAF8A'],
+      bg: '#F9E8E0',
+      svg: `<svg width="140" height="140" viewBox="0 0 140 140" fill="none"><path d="M70 125C44 101 14 83 14 57C14 35 28 22 44 27C54 31 64 44 70 57C76 44 86 31 96 27C112 22 126 35 126 57C126 83 96 101 70 125Z" fill="#E8D5C0" opacity=".8"/><path d="M70 105C50 87 26 73 26 57C26 44 36 34 46 38C52 40.5 60 51 70 65C80 51 88 40.5 94 38C104 34 114 44 114 57C114 73 90 87 70 105Z" fill="#D4A853" opacity=".35"/></svg>`
+    },
+    {
+      name: 'Créoles Dorées', cat: 'Créoles seules', price: 5, emoji: '✨',
+      desc: 'Anneau fin à fermoir clipsable, finition dorée subtile. Compatibles avec l\'ensemble de nos pampilles. La base idéale pour construire votre duo signature.',
+      colors: ['#C9A853'],
+      bg: '#F5D5C8',
+      svg: `<svg width="140" height="140" viewBox="0 0 140 140" fill="none"><circle cx="70" cy="70" r="50" stroke="#C9A853" stroke-width="10" fill="none" opacity=".75"/><circle cx="70" cy="120" r="7" fill="#C9A853" opacity=".85"/><ellipse cx="70" cy="70" rx="22" ry="22" fill="#F0D08A" opacity=".2"/></svg>`
+    },
+    {
+      name: 'Créoles Argentées', cat: 'Créoles seules', price: 5, emoji: '🤍',
+      desc: 'Anneau fin à fermoir clipsable, finition argentée délicate. Pour un look plus frais et lumineux. Se marient parfaitement avec les tons pastel et sages de nos pampilles.',
+      colors: ['#A8B8C4'],
+      bg: '#F9E8E0',
+      svg: `<svg width="140" height="140" viewBox="0 0 140 140" fill="none"><circle cx="70" cy="70" r="50" stroke="#A8B8C4" stroke-width="10" fill="none" opacity=".75"/><circle cx="70" cy="120" r="7" fill="#A8B8C4" opacity=".85"/><ellipse cx="70" cy="70" rx="22" ry="22" fill="#C8D8E0" opacity=".2"/></svg>`
+    }
+  ];
+
+  /* ─── MODAL ─── */
+  let currentProduct = null, modalQty = 1;
+
+  function openModal(idx) {
+    const p = products[idx];
+    currentProduct = p;
+    modalQty = 1;
+    document.getElementById('modalQty').textContent = 1;
+    document.getElementById('modalCat').textContent = p.cat;
+    document.getElementById('modalName').textContent = p.name;
+    document.getElementById('modalPrice').textContent = p.price.toFixed(2).replace('.',',') + ' €';
+    document.getElementById('modalDesc').textContent = p.desc;
+    document.getElementById('modalImg').style.background = p.bg;
+    document.getElementById('modalImg').innerHTML = p.svg;
+    const mc = document.getElementById('modalColors');
+    mc.innerHTML = p.colors.map((c,i) => `<div class="modal-color-btn ${i===0?'sel':''}" style="background:${c}" onclick="selectColor(this)"></div>`).join('');
+    document.getElementById('modalAddBtn').onclick = () => {
+      for (let i = 0; i < modalQty; i++) addToCart(p.name, p.price, p.emoji);
+      closeModal();
+    };
+    document.getElementById('modalOverlay').classList.add('open');
+    document.getElementById('prodModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('open');
+    document.getElementById('prodModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function changeQty(d) {
+    modalQty = Math.max(1, modalQty + d);
+    document.getElementById('modalQty').textContent = modalQty;
+  }
+
+  function selectColor(el) {
+    el.closest('.modal-colors').querySelectorAll('.modal-color-btn').forEach(b => b.classList.remove('sel'));
+    el.classList.add('sel');
+  }
+
+  /* ─── WISHLIST ─── */
+  function toggleWish(e, btn) {
+    e.stopPropagation();
+    btn.classList.toggle('liked');
+    toast(btn.classList.contains('liked') ? 'Ajouté aux coups de cœur 🌸' : 'Retiré des coups de cœur');
+  }
+
+  /* ─── FILTER / SORT ─── */
+  let activeTag = 'all', activeCat = 'all';
+
+  function filterCat(cat, el) {
+    activeCat = cat;
+    if (el) { document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active')); el.classList.add('active'); }
+    applyFilters();
+  }
+
+  function filterTag(tag, el) {
+    activeTag = tag;
+    document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+    el.classList.add('active');
+    applyFilters();
+  }
+
+  function applyFilters() {
+    const cards = document.querySelectorAll('.p-card');
+    let visible = 0;
+    cards.forEach(c => {
+      const catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
+      const tags = c.dataset.tags ? c.dataset.tags.split(',') : [];
+      const tagMatch = activeTag === 'all' || tags.includes(activeTag);
+      const show = catMatch && tagMatch;
+      c.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    document.getElementById('countLabel').textContent = visible + ' création' + (visible > 1 ? 's' : '');
+  }
+
+  function sortProducts() {
+    const grid = document.getElementById('prodGrid');
+    const cards = [...grid.querySelectorAll('.p-card')];
+    const sort = document.getElementById('sortSel').value;
+    if (sort === 'price-asc') cards.sort((a,b) => +a.dataset.price - +b.dataset.price);
+    else if (sort === 'price-desc') cards.sort((a,b) => +b.dataset.price - +a.dataset.price);
+    cards.forEach(c => grid.appendChild(c));
+  }
+
+  /* ─── CART ─── */
+  let cart = [];
+
+  function addToCart(name, price, emoji) {
+    const ex = cart.find(i => i.name === name);
+    ex ? ex.qty++ : cart.push({ name, price, emoji, qty: 1 });
+    renderCart(); toast('Ajouté au panier 🌸'); openCart();
+  }
+
+  function renderCart() {
+    const di = document.getElementById('di');
+    const de = document.getElementById('de');
+    di.querySelectorAll('.dr-item').forEach(e => e.remove());
+    if (!cart.length) {
+      de.style.display = 'block';
+      document.getElementById('dt').textContent = '0,00 €';
+      document.getElementById('cb').classList.remove('on'); return;
+    }
+    de.style.display = 'none';
+    let total = 0, count = 0;
+    cart.forEach((item, i) => {
+      total += item.price * item.qty; count += item.qty;
+      const el = document.createElement('div'); el.className = 'dr-item';
+      el.innerHTML = `<div class="dr-thumb">${item.emoji}</div><div class="dr-info"><div class="dr-name">${item.name}</div><div class="dr-price">${item.price},00 €</div><div class="dr-qty"><button class="qb" onclick="chQty(${i},-1)">−</button><span class="qv">${item.qty}</span><button class="qb" onclick="chQty(${i},1)">+</button></div></div>`;
+      di.appendChild(el);
+    });
+    document.getElementById('dt').textContent = total.toFixed(2).replace('.',',') + ' €';
+    const cb = document.getElementById('cb');
+    cb.textContent = count; cb.classList.toggle('on', count > 0);
+  }
+
+  function chQty(i, d) { cart[i].qty += d; if (cart[i].qty <= 0) cart.splice(i, 1); renderCart(); }
+  function openCart() { document.getElementById('dr').classList.add('open'); document.getElementById('ov').classList.add('open'); }
+  function toggleCart() { document.getElementById('dr').classList.toggle('open'); document.getElementById('ov').classList.toggle('open'); }
+
+  /* ─── TOAST ─── */
+  function toast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('on');
+    setTimeout(() => t.classList.remove('on'), 2800);
+  }
+
+  /* ─── REVEAL ─── */
+  const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }), { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  document.querySelectorAll('.p-card').forEach((el, i) => {
+    el.style.transitionDelay = (i % 3) * 0.1 + 's';
+    obs.observe(el);
+  });
+
+  /* ─── ESC to close modal ─── */
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>
