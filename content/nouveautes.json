@@ -2,9 +2,9 @@
   "countdown_title": "🌸 Prochain drop — Collection Été",
   "countdown_subtitle": "Les prochaines pampilles arrivent bientôt. Inscrivez-vous pour être prévenue en avant-première.",
   "feature": {
-    "tag": "✨ Édition limitée printemps",
-    "name": "Duo Floral — Édition Printemps",
-    "price": 24,
+    "tag": "✨ Collection PADAPOM",
+    "name": "Coeur - Jeans",
+    "price": 17,
     "emoji": "🌺",
     "description": "Notre création la plus joyeuse : deux formes florales différentes, dégradé nacré, finition or. Une seule paire de créoles, deux personnalités.",
     "image": ""
@@ -13,11 +13,15 @@
     {
       "id": "lilas-douceur",
       "name": "Lilas Douceur",
-      "category": "Pampilles + Créoles",
+      "category": "Pampilles seules",
       "price": 18,
       "emoji": "💜",
       "description": "Nouvelles teintes mauve et parme, satinées. Un classique Wild Flower dans une couleur inédite.",
-      "colors": ["#C9A0B8", "#F0A882", "#B8D4E8"],
+      "colors": [
+        "#C9A0B8",
+        "#F0A882",
+        "#B8D4E8"
+      ],
       "bg": "#F0EAF8",
       "badge": "new",
       "stock": "in_stock",
@@ -30,7 +34,10 @@
       "price": 17,
       "emoji": "🌿",
       "description": "Argile sauge avec inclusions de feuille d'or. Texture organique, effet patiné unique.",
-      "colors": ["#8FAF8A", "#D4A853"],
+      "colors": [
+        "#8FAF8A",
+        "#D4A853"
+      ],
       "bg": "#F0F4E8",
       "badge": "exclu",
       "stock": "low",
@@ -43,7 +50,11 @@
       "price": 19,
       "emoji": "🩵",
       "description": "Bleu ciel et porcelaine, forme florale multi-pétales. La fraîcheur à l'oreille.",
-      "colors": ["#A8C8E0", "#B8D4F0", "#D0E8F8"],
+      "colors": [
+        "#A8C8E0",
+        "#B8D4F0",
+        "#D0E8F8"
+      ],
       "bg": "#E8F2F8",
       "badge": "new",
       "stock": "in_stock",
@@ -51,15 +62,17 @@
     },
     {
       "id": "twist-dorees",
-      "name": "Twist Dorées",
+      "name": "Twist dorées",
       "category": "Créoles seules",
       "price": 7,
       "emoji": "✨",
-      "description": "Nouvelle forme torsadée, finition dorée mate. Élégantes seules ou avec pampilles.",
-      "colors": ["#C9A853"],
+      "description": "Nouvelle forme torsadée, finition dorée",
+      "colors": [
+        "#C9A853"
+      ],
       "bg": "#FDF6E0",
       "badge": "exclu",
-      "stock": "low",
+      "stock": "in_stock",
       "image": ""
     },
     {
@@ -69,7 +82,11 @@
       "price": 15,
       "emoji": "🩷",
       "description": "Forme cœur graphique, nuances corail et abricot. Le petit geste joyeux du quotidien.",
-      "colors": ["#F5B8A0", "#F0A882", "#E88070"],
+      "colors": [
+        "#F5B8A0",
+        "#F0A882",
+        "#E88070"
+      ],
       "bg": "#FFF0E8",
       "badge": "new",
       "stock": "in_stock",
@@ -82,7 +99,10 @@
       "price": 20,
       "emoji": "✨",
       "description": "Effet marbré or et crème, technique avancée. Chaque pièce est vraiment unique.",
-      "colors": ["#D4A853", "#C9A853"],
+      "colors": [
+        "#D4A853",
+        "#C9A853"
+      ],
       "bg": "#F8F0E8",
       "badge": "new",
       "stock": "low",
