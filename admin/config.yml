@@ -1,0 +1,143 @@
+backend:
+  name: github
+  repo: Ncy25/Nancy-site
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "site"
+    label: "Réglages du site"
+    files:
+      - name: "site"
+        label: "Logo & informations générales"
+        file: "content/site.json"
+        fields:
+          - { label: "Logo (image)", name: "logo_image", widget: "image", required: false, hint: "Laisser vide pour garder le logo texte actuel." }
+          - { label: "Nom de la marque", name: "brand_name", widget: "string" }
+          - { label: "Email de contact", name: "contact_email", widget: "string" }
+
+  - name: "home"
+    label: "Page d'accueil"
+    files:
+      - name: "home"
+        label: "Textes de la page d'accueil"
+        file: "content/home.json"
+        fields:
+          - { label: "Bandeau promo (haut de page)", name: "promo_bar", widget: "string" }
+          - label: "Hero (grand titre d'accueil)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Petite phrase manuscrite", name: "script", widget: "string" }
+              - { label: "Titre — ligne 1", name: "title_line1", widget: "string" }
+              - { label: "Titre — ligne 2", name: "title_line2", widget: "string" }
+              - { label: "Sous-titre", name: "subtitle", widget: "text" }
+              - { label: "Texte du bouton", name: "button_text", widget: "string" }
+          - { label: "Titre section 'lifestyle'", name: "lifestyle_title", widget: "string" }
+          - { label: "Titre section boutique", name: "boutique_title", widget: "string" }
+          - { label: "Sous-titre section boutique", name: "boutique_subtitle", widget: "string" }
+          - label: "Notre histoire"
+            name: "histoire"
+            widget: "object"
+            fields:
+              - { label: "Étiquette", name: "label", widget: "string" }
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Paragraphe 1", name: "paragraph1", widget: "text" }
+              - { label: "Paragraphe 2", name: "paragraph2", widget: "text" }
+              - { label: "Badges (liste)", name: "chips", widget: "list" }
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Étiquette", name: "label", widget: "string" }
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Titre intro", name: "intro_title", widget: "string" }
+              - { label: "Texte intro", name: "intro_text", widget: "text" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Note expédition", name: "shipping_note", widget: "string" }
+              - { label: "Note sur-mesure", name: "custom_note", widget: "string" }
+              - { label: "Citation", name: "quote", widget: "text" }
+          - { label: "Tagline du pied de page", name: "footer_tagline", widget: "text" }
+          - { label: "Copyright pied de page", name: "footer_copyright", widget: "string" }
+
+  - name: "products"
+    label: "Produits — Boutique"
+    files:
+      - name: "products"
+        label: "Liste des produits (boutique)"
+        file: "content/products.json"
+        fields:
+          - name: "products"
+            label: "Produits"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.category}} ({{fields.price}}€)"
+            fields:
+              - { label: "Identifiant (unique, sans espace)", name: "id", widget: "string" }
+              - { label: "Nom", name: "name", widget: "string" }
+              - label: "Catégorie"
+                name: "category"
+                widget: "select"
+                options: ["Pampilles + Créoles", "Pampilles seules", "Créoles seules"]
+              - { label: "Prix (€)", name: "price", widget: "number", value_type: "float" }
+              - { label: "Emoji (utilisé si pas de photo)", name: "emoji", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Couleurs disponibles (codes hex)", name: "colors", widget: "list" }
+              - { label: "Couleur de fond de la vignette", name: "bg", widget: "color" }
+              - label: "Badge"
+                name: "badge"
+                widget: "select"
+                options: ["", "new", "bestseller"]
+                required: false
+              - label: "Stock"
+                name: "stock"
+                widget: "select"
+                options: ["in_stock", "low"]
+              - { label: "Photo du produit", name: "image", widget: "image", required: false, hint: "Laisser vide pour garder l'illustration actuelle." }
+
+  - name: "nouveautes"
+    label: "Nouveautés"
+    files:
+      - name: "nouveautes"
+        label: "Page Nouveautés"
+        file: "content/nouveautes.json"
+        fields:
+          - { label: "Titre du compte à rebours", name: "countdown_title", widget: "string" }
+          - { label: "Sous-titre du compte à rebours", name: "countdown_subtitle", widget: "text" }
+          - label: "Produit vedette (grande bannière)"
+            name: "feature"
+            widget: "object"
+            fields:
+              - { label: "Étiquette", name: "tag", widget: "string" }
+              - { label: "Nom", name: "name", widget: "string" }
+              - { label: "Prix (€)", name: "price", widget: "number", value_type: "float" }
+              - { label: "Emoji", name: "emoji", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Photo", name: "image", widget: "image", required: false }
+          - name: "products"
+            label: "Produits nouveautés"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.category}} ({{fields.price}}€)"
+            fields:
+              - { label: "Identifiant (unique, sans espace)", name: "id", widget: "string" }
+              - { label: "Nom", name: "name", widget: "string" }
+              - label: "Catégorie"
+                name: "category"
+                widget: "select"
+                options: ["Pampilles + Créoles", "Pampilles seules", "Créoles seules"]
+              - { label: "Prix (€)", name: "price", widget: "number", value_type: "float" }
+              - { label: "Emoji (utilisé si pas de photo)", name: "emoji", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Couleurs disponibles (codes hex)", name: "colors", widget: "list" }
+              - { label: "Couleur de fond de la vignette", name: "bg", widget: "color" }
+              - label: "Badge"
+                name: "badge"
+                widget: "select"
+                options: ["", "new", "exclu"]
+                required: false
+              - label: "Stock"
+                name: "stock"
+                widget: "select"
+                options: ["in_stock", "low"]
+              - { label: "Photo du produit", name: "image", widget: "image", required: false }
