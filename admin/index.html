@@ -4,8 +4,191 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Administration — Wild Flower by Wooden Mountain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
   <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js" type="module"></script>
+
+  <script type="module">
+    /* ── Attendre que l'objet CMS soit disponible ── */
+    function whenCmsReady(cb) {
+      if (window.CMS) { cb(window.CMS); return; }
+      let tries = 0;
+      const t = setInterval(() => {
+        tries++;
+        if (window.CMS) { clearInterval(t); cb(window.CMS); }
+        else if (tries > 100) { clearInterval(t); }
+      }, 50);
+    }
+
+    whenCmsReady(function (CMS) {
+
+      /* ── STYLE GLOBAL DE L'APERÇU (reprend les couleurs et polices du site) ── */
+      CMS.registerPreviewStyle(`
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Dancing+Script:wght@600;700&display=swap');
+        :root {
+          --blush: #F9E8E0; --blush-mid: #F5D5C8; --peach: #F0A882; --peach-dk: #D97A52;
+          --terra: #C26B4A; --rose: #F2BFB5; --rose-lt: #FDEAE5; --cream: #FFF8F5;
+          --ivory: #FFFCFA; --gold: #D4A853; --sage: #8FAF8A; --sage-lt: #C4D9BE;
+          --brown: #6B3D2A; --brown-mid: #8B5540; --gray: #9E8880;
+          --font-d: 'Cormorant Garamond', Georgia, serif;
+          --font-s: 'Dancing Script', cursive;
+          --font-b: 'DM Sans', sans-serif;
+        }
+        body { font-family: var(--font-b); background: var(--ivory); color: var(--brown); margin: 0; padding: 24px; }
+        .wf-promo { background: var(--peach); color: #fff; text-align: center; padding: 8px 14px; font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; border-radius: 8px; margin-bottom: 20px; }
+        .wf-hero { background: linear-gradient(135deg, #FDE8DC 0%, #FAD0B4 60%, #F5C0A0 100%); border-radius: 20px; padding: 36px 28px; text-align: center; margin-bottom: 24px; }
+        .wf-script { font-family: var(--font-s); font-size: 18px; color: var(--brown); margin-bottom: 4px; }
+        .wf-h1 { font-family: var(--font-d); font-size: 40px; font-weight: 600; line-height: 1; color: #fff; text-shadow: 0 2px 10px rgba(195,107,74,0.25); margin: 4px 0 12px; }
+        .wf-sub { font-size: 13.5px; color: rgba(255,255,255,0.92); max-width: 380px; margin: 0 auto 16px; line-height: 1.6; }
+        .wf-btn { display: inline-block; padding: 9px 22px; background: #fff; color: var(--peach-dk); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border-radius: 999px; }
+        .wf-section-title { font-family: var(--font-d); font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--peach-dk); text-align: center; margin-bottom: 4px; }
+        .wf-section-h2 { font-family: var(--font-s); font-size: 26px; color: var(--brown-mid); text-align: center; margin-bottom: 18px; }
+        .wf-block { background: var(--blush); border-radius: 16px; padding: 22px 24px; margin-bottom: 18px; }
+        .wf-block h3 { font-family: var(--font-d); font-size: 20px; font-weight: 600; color: var(--brown); margin: 0 0 10px; }
+        .wf-block p { font-size: 13.5px; color: var(--brown-mid); line-height: 1.7; margin: 0 0 8px; }
+        .wf-chip { display: inline-block; background: rgba(255,255,255,0.7); color: var(--brown-mid); font-size: 11.5px; font-weight: 500; padding: 5px 12px; border-radius: 999px; margin: 3px 4px 0 0; }
+        .wf-quote { font-family: var(--font-d); font-style: italic; font-size: 15px; color: var(--brown); border-left: 3px solid var(--peach); padding-left: 14px; margin: 10px 0; }
+        .wf-footer { background: var(--brown); color: rgba(255,248,245,0.75); border-radius: 16px; padding: 20px 24px; text-align: center; }
+        .wf-footer p { font-size: 12px; margin: 4px 0; }
+        .wf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px,1fr)); gap: 14px; }
+        .wf-card { background: var(--ivory); border: 1px solid rgba(242,191,181,0.4); border-radius: 14px; overflow: hidden; }
+        .wf-card-img { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; position: relative; }
+        .wf-card-badge { position: absolute; top: 8px; left: 8px; font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #fff; padding: 3px 8px; border-radius: 999px; }
+        .wf-card-badge.new { background: var(--peach); }
+        .wf-card-badge.bestseller, .wf-card-badge.exclu { background: var(--gold); }
+        .wf-card-body { padding: 10px 12px; }
+        .wf-card-cat { font-size: 9.5px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--peach-dk); }
+        .wf-card-name { font-family: var(--font-d); font-size: 16px; font-weight: 600; color: var(--brown); margin: 2px 0; }
+        .wf-card-desc { font-size: 11px; color: var(--gray); line-height: 1.4; margin-bottom: 6px; }
+        .wf-card-price { font-family: var(--font-d); font-size: 15px; font-weight: 600; color: var(--brown-mid); }
+        .wf-colors { display: flex; gap: 4px; margin-top: 6px; }
+        .wf-color-dot { width: 12px; height: 12px; border-radius: 50%; }
+        .wf-feature { background: linear-gradient(135deg, var(--peach-dk), var(--terra)); border-radius: 18px; padding: 24px; color: #fff; margin-bottom: 18px; }
+        .wf-feature-tag { font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; opacity: .7; }
+        .wf-feature h2 { font-family: var(--font-d); font-size: 24px; margin: 6px 0 8px; }
+        .wf-feature p { font-size: 12.5px; opacity: .85; line-height: 1.6; max-width: 340px; }
+        .wf-logo-box { display: flex; align-items: center; gap: 14px; background: var(--blush); border-radius: 16px; padding: 18px 22px; }
+        .wf-logo-box img { height: 56px; width: auto; border-radius: 8px; }
+        .wf-logo-box .wf-wild { font-family: var(--font-s); font-size: 30px; color: var(--terra); }
+      `, { raw: true });
+
+      const h = window.h;
+      const createClass = window.createClass;
+
+      function fmtPrice(p) {
+        const n = typeof p === 'number' ? p : parseFloat(p || 0);
+        return n.toFixed(2).replace('.', ',') + ' €';
+      }
+
+      /* ── APERÇU : Réglages du site (logo) ── */
+      CMS.registerPreviewTemplate('site', createClass({
+        render: function () {
+          const { entry, getAsset } = this.props;
+          const logoPath = entry.getIn(['data', 'logo_image']);
+          const asset = logoPath ? getAsset(logoPath) : null;
+          const brand = entry.getIn(['data', 'brand_name']) || 'Wild Flower by Wooden Mountain';
+          const email = entry.getIn(['data', 'contact_email']) || '';
+          return h('div', {},
+            h('div', { className: 'wf-logo-box' },
+              asset ? h('img', { src: asset.url, alt: brand }) : h('span', { className: 'wf-wild' }, 'Wild'),
+              h('div', {},
+                h('div', { style: { fontFamily: 'var(--font-b)', fontWeight: 600, color: 'var(--brown)' } }, brand),
+                h('div', { style: { fontSize: '12px', color: 'var(--gray)' } }, email)
+              )
+            )
+          );
+        }
+      }));
+
+      /* ── APERÇU : Page d'accueil ── */
+      CMS.registerPreviewTemplate('home', createClass({
+        render: function () {
+          const { entry } = this.props;
+          const g = (path) => entry.getIn(['data', ...path]) || '';
+          const chips = entry.getIn(['data', 'histoire', 'chips']);
+          const chipsArr = chips && chips.toJS ? chips.toJS() : (Array.isArray(chips) ? chips : []);
+
+          return h('div', {},
+            h('div', { className: 'wf-promo' }, g(['promo_bar'])),
+            h('div', { className: 'wf-hero' },
+              h('div', { className: 'wf-script' }, g(['hero', 'script'])),
+              h('div', { className: 'wf-h1' }, g(['hero', 'title_line1']) + ' ' + g(['hero', 'title_line2'])),
+              h('div', { className: 'wf-sub' }, g(['hero', 'subtitle'])),
+              h('span', { className: 'wf-btn' }, g(['hero', 'button_text']))
+            ),
+            h('div', { className: 'wf-section-title' }, 'Section boutique'),
+            h('div', { className: 'wf-section-h2' }, g(['boutique_title']) + ' — ' + g(['boutique_subtitle'])),
+            h('div', { className: 'wf-block' },
+              h('h3', {}, g(['histoire', 'title'])),
+              h('p', {}, g(['histoire', 'paragraph1'])),
+              h('p', {}, g(['histoire', 'paragraph2'])),
+              h('div', {}, chipsArr.map((c, i) => h('span', { key: i, className: 'wf-chip' }, c)))
+            ),
+            h('div', { className: 'wf-block' },
+              h('h3', {}, g(['contact', 'intro_title'])),
+              h('p', {}, g(['contact', 'intro_text'])),
+              h('p', { style: { fontSize: '12.5px' } }, '📧 ' + g(['contact', 'email'])),
+              h('div', { className: 'wf-quote' }, '"' + g(['contact', 'quote']) + '"')
+            ),
+            h('div', { className: 'wf-footer' },
+              h('p', {}, g(['footer_tagline'])),
+              h('p', {}, g(['footer_copyright']))
+            )
+          );
+        }
+      }));
+
+      /* ── APERÇU : Produits Boutique & Nouveautés (même logique) ── */
+      function renderProductGrid(entry, getAsset, includeFeature) {
+        const products = entry.getIn(['data', 'products']);
+        const arr = products && products.toJS ? products.toJS() : (Array.isArray(products) ? products : []);
+        const feature = includeFeature ? entry.getIn(['data', 'feature']) : null;
+        const featureObj = feature && feature.toJS ? feature.toJS() : feature;
+
+        const cards = arr.map((p, i) => {
+          const asset = p.image ? getAsset(p.image) : null;
+          return h('div', { key: i, className: 'wf-card' },
+            h('div', { className: 'wf-card-img', style: { background: p.bg || '#F5EDE8' } },
+              p.badge ? h('span', { className: 'wf-card-badge ' + p.badge }, p.badge === 'bestseller' ? '⭐ Bestseller' : p.badge === 'exclu' ? 'Exclu' : 'Nouveau') : null,
+              asset ? h('img', { src: asset.url, style: { width: '100%', height: '100%', objectFit: 'cover' } }) : h('span', { style: { fontSize: '38px' } }, p.emoji || '')
+            ),
+            h('div', { className: 'wf-card-body' },
+              h('div', { className: 'wf-card-cat' }, p.category || ''),
+              h('div', { className: 'wf-card-name' }, p.name || ''),
+              h('div', { className: 'wf-card-desc' }, p.description || ''),
+              h('div', { className: 'wf-card-price' }, fmtPrice(p.price)),
+              (p.colors && p.colors.length) ? h('div', { className: 'wf-colors' }, p.colors.map((c, ci) => h('span', { key: ci, className: 'wf-color-dot', style: { background: c } }))) : null
+            )
+          );
+        });
+
+        return h('div', {},
+          featureObj ? h('div', { className: 'wf-feature' },
+            h('div', { className: 'wf-feature-tag' }, featureObj.tag || ''),
+            h('h2', {}, featureObj.name || ''),
+            h('p', {}, featureObj.description || ''),
+            h('div', { style: { marginTop: '10px', fontWeight: 700 } }, fmtPrice(featureObj.price))
+          ) : null,
+          h('div', { className: 'wf-grid' }, cards)
+        );
+      }
+
+      CMS.registerPreviewTemplate('products', createClass({
+        render: function () {
+          return renderProductGrid(this.props.entry, this.props.getAsset, false);
+        }
+      }));
+
+      CMS.registerPreviewTemplate('nouveautes', createClass({
+        render: function () {
+          return renderProductGrid(this.props.entry, this.props.getAsset, true);
+        }
+      }));
+
+    });
+  </script>
 </body>
 </html>
