@@ -2,8 +2,8 @@
   "promo_bar": "🌸 Livraison offerte dès 50€ d'achat · Pièces uniques faites à la main",
   "hero": {
     "script": "Nouvelle collection",
-    "title_line1": "JOYFUL",
-    "title_line2": "PAMPILLES",
+    "title_line1": "PADAPOM",
+    "title_line2": "Collection",
     "subtitle": "Des créations interchangeables en argile polymère, colorées et façonnées à la main — pour changer d'humeur en deux secondes.",
     "button_text": "Découvrir maintenant"
   },
@@ -15,18 +15,23 @@
     "title": "Née d'une passion pour l'argile et la couleur",
     "paragraph1": "Tout a commencé avec une paire de créoles et une envie irrésistible de les transformer. L'argile polymère s'est imposée comme une évidence : légère à porter, douce à travailler, infinie dans ses possibilités.",
     "paragraph2": "Chaque pampille Wild Flower est façonnée à la main, une par une. Pas de moule, pas de série — juste du soin, de la couleur, et l'envie de créer des petits objets qui rendent joyeux.",
-    "chips": ["✋ Fait main", "🏺 Argile polymère", "🎨 Pièces uniques", "🇫🇷 France"]
+    "chips": [
+      "✋ Fait main",
+      "🏺 Argile polymère",
+      "🎨 Pièces uniques",
+      "🇫🇷 France"
+    ]
   },
   "contact": {
     "label": "Une question ?",
     "title": "Écrivons-nous",
     "intro_title": "Parlons de votre projet",
     "intro_text": "Couleur précise, commande groupée, cadeau original — on répond sous 48h.",
-    "email": "contact@woodenmountain.fr",
+    "email": "woodenmountain05@gmail.com",
     "shipping_note": "Expédition soignée sous 3–5 jours",
     "custom_note": "Sur-mesure & commandes groupées bienvenues",
     "quote": "Des pampilles qui changent tout — interchangeables, colorées, faites à la main."
   },
   "footer_tagline": "Pampilles interchangeables en argile polymère. Colorées, faites à la main, pour changer d'humeur en deux secondes.",
-  "footer_copyright": "© 2025 Wild Flower by Wooden Mountain · Fait avec 🌸 en France"
+  "footer_copyright": "© 2026 WildFlower by WoodenMountain · Fait avec 🌸 en France"
 }
