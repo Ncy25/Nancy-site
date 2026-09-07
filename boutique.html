@@ -459,7 +459,7 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </button>
     </div>
-    <a href="index.html" class="nav-logo" aria-label="Wild Flower by Wooden Mountain">
+    <a href="index.html" class="nav-logo" aria-label="Wild Flower by Wooden Mountain" id="navLogo">
       <span class="logo-wild">Wild</span>
       <div class="logo-flower-row">
         Fl
@@ -590,231 +590,7 @@
 
     <!-- PRODUCT GRID -->
     <div class="prod-section">
-      <div class="prod-grid" id="prodGrid">
-
-        <!-- CARD 1 -->
-        <div class="p-card" data-cat="pampilles-creoles" data-tags="bestseller,motifs" data-price="18" onclick="openModal(0)">
-          <div class="p-img" style="background:#F5EDE8">
-            <div class="p-badges">
-              <span class="p-badge badge-bestseller">⭐ Bestseller</span>
-            </div>
-            <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-            </button>
-            <div class="p-img-content">
-              <svg class="p-shape-anim" width="140" height="140" viewBox="0 0 140 140" fill="none">
-                <circle cx="70" cy="42" r="21" fill="#F0A882" opacity=".5"/>
-                <circle cx="98" cy="70" r="21" fill="#F0A882" opacity=".45"/>
-                <circle cx="70" cy="98" r="21" fill="#F0A882" opacity=".5"/>
-                <circle cx="42" cy="70" r="21" fill="#F0A882" opacity=".45"/>
-                <circle cx="70" cy="70" r="23" fill="#F5C4A8" opacity=".9"/>
-                <circle cx="70" cy="70" r="11" fill="#fff" opacity=".45"/>
-              </svg>
-            </div>
-            <div class="p-quick-add">
-              <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Pampilles + Créoles Motifs',18,'🌺')">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                Ajouter au panier
-              </button>
-            </div>
-          </div>
-          <div class="p-info">
-            <div class="p-colors">
-              <div class="p-color sel" style="background:#F0A882"></div>
-              <div class="p-color" style="background:#8FAF8A"></div>
-              <div class="p-color" style="background:#D4A853"></div>
-              <div class="p-color" style="background:#C9A0B8"></div>
-            </div>
-            <div class="p-cat">Pampilles + Créoles</div>
-            <div class="p-name">Motifs</div>
-            <div class="p-desc">Formes florales et graphiques, centro nacré. Le duo signature.</div>
-            <div class="p-bottom">
-              <div class="p-price">18,00 €</div>
-              <div class="p-stock"><span class="p-stock-dot"></span> En stock</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 2 -->
-        <div class="p-card" data-cat="pampilles-creoles" data-tags="new,uni" data-price="16" onclick="openModal(1)">
-          <div class="p-img" style="background:var(--blush-mid)">
-            <div class="p-badges">
-              <span class="p-badge badge-new">Nouveau</span>
-            </div>
-            <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-            </button>
-            <div class="p-img-content">
-              <svg class="p-shape-anim" width="140" height="140" viewBox="0 0 140 140" fill="none">
-                <ellipse cx="70" cy="70" rx="50" ry="60" fill="#F0A882" opacity=".55" transform="rotate(-12 70 70)"/>
-                <ellipse cx="70" cy="70" rx="28" ry="34" fill="#E8907A" opacity=".7"/>
-                <ellipse cx="70" cy="70" rx="13" ry="16" fill="#fff" opacity=".3"/>
-              </svg>
-            </div>
-            <div class="p-quick-add">
-              <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Pampilles + Créoles Unies',16,'🌸')">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                Ajouter au panier
-              </button>
-            </div>
-          </div>
-          <div class="p-info">
-            <div class="p-colors">
-              <div class="p-color sel" style="background:#F0A882"></div>
-              <div class="p-color" style="background:#C26B4A"></div>
-              <div class="p-color" style="background:#8FAF8A"></div>
-              <div class="p-color" style="background:#B8D4E8"></div>
-              <div class="p-color" style="background:#D4A853"></div>
-            </div>
-            <div class="p-cat">Pampilles + Créoles</div>
-            <div class="p-name">Unies</div>
-            <div class="p-desc">Teintes douces, surface satinée. L'essentiel, parfait.</div>
-            <div class="p-bottom">
-              <div class="p-price">16,00 €</div>
-              <div class="p-stock"><span class="p-stock-dot"></span> En stock</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="p-card" data-cat="pampilles" data-tags="motifs" data-price="15" onclick="openModal(2)">
-          <div class="p-img" style="background:#EEF2E8">
-            <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-            </button>
-            <div class="p-img-content">
-              <svg class="p-shape-anim" width="140" height="140" viewBox="0 0 140 140" fill="none">
-                <ellipse cx="70" cy="70" rx="46" ry="60" fill="#8FAF8A" opacity=".35" transform="rotate(-22 70 70)"/>
-                <ellipse cx="70" cy="70" rx="46" ry="60" fill="#8FAF8A" opacity=".25" transform="rotate(22 70 70)"/>
-                <circle cx="70" cy="70" r="20" fill="#8FAF8A" opacity=".65"/>
-                <circle cx="70" cy="70" r="9" fill="#fff" opacity=".4"/>
-              </svg>
-            </div>
-            <div class="p-quick-add">
-              <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Pampilles Seules Motifs',15,'🌼')">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                Ajouter au panier
-              </button>
-            </div>
-          </div>
-          <div class="p-info">
-            <div class="p-colors">
-              <div class="p-color sel" style="background:#8FAF8A"></div>
-              <div class="p-color" style="background:#F0A882"></div>
-              <div class="p-color" style="background:#C9A0B8"></div>
-            </div>
-            <div class="p-cat">Pampilles seules</div>
-            <div class="p-name">Motifs</div>
-            <div class="p-desc">Formes organiques et textures délicates. Pour vos créoles existantes.</div>
-            <div class="p-bottom">
-              <div class="p-price">15,00 €</div>
-              <div class="p-stock"><span class="p-stock-dot"></span> En stock</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 4 -->
-        <div class="p-card" data-cat="pampilles" data-tags="uni" data-price="13" onclick="openModal(3)">
-          <div class="p-img" style="background:var(--blush)">
-            <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-            </button>
-            <div class="p-img-content">
-              <svg class="p-shape-anim" width="140" height="140" viewBox="0 0 140 140" fill="none">
-                <path d="M70 125C44 101 14 83 14 57C14 35 28 22 44 27C54 31 64 44 70 57C76 44 86 31 96 27C112 22 126 35 126 57C126 83 96 101 70 125Z" fill="#E8D5C0" opacity=".8"/>
-                <path d="M70 105C50 87 26 73 26 57C26 44 36 34 46 38C52 40.5 60 51 70 65C80 51 88 40.5 94 38C104 34 114 44 114 57C114 73 90 87 70 105Z" fill="#D4A853" opacity=".35"/>
-              </svg>
-            </div>
-            <div class="p-quick-add">
-              <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Pampilles Seules Unies',13,'🧡')">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                Ajouter au panier
-              </button>
-            </div>
-          </div>
-          <div class="p-info">
-            <div class="p-colors">
-              <div class="p-color sel" style="background:#D4A853"></div>
-              <div class="p-color" style="background:#F0A882"></div>
-              <div class="p-color" style="background:#C26B4A"></div>
-              <div class="p-color" style="background:#8FAF8A"></div>
-            </div>
-            <div class="p-cat">Pampilles seules</div>
-            <div class="p-name">Unies</div>
-            <div class="p-desc">Simples et douces. La base idéale pour une tenue épurée.</div>
-            <div class="p-bottom">
-              <div class="p-price">13,00 €</div>
-              <div class="p-stock p-stock low"><span class="p-stock-dot"></span> Dernières pièces</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 5 -->
-        <div class="p-card" data-cat="creoles" data-tags="uni" data-price="5" onclick="openModal(4)">
-          <div class="p-img" style="background:var(--blush-mid)">
-            <div class="p-badges">
-              <span class="p-badge badge-bestseller">⭐ Bestseller</span>
-            </div>
-            <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-            </button>
-            <div class="p-img-content">
-              <svg class="p-shape-anim" width="140" height="140" viewBox="0 0 140 140" fill="none">
-                <circle cx="70" cy="70" r="50" stroke="#C9A853" stroke-width="10" fill="none" opacity=".75"/>
-                <circle cx="70" cy="120" r="7" fill="#C9A853" opacity=".85"/>
-                <ellipse cx="70" cy="70" rx="22" ry="22" fill="#F0D08A" opacity=".2"/>
-              </svg>
-            </div>
-            <div class="p-quick-add">
-              <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Créoles Dorées',5,'✨')">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                Ajouter au panier
-              </button>
-            </div>
-          </div>
-          <div class="p-info">
-            <div class="p-cat">Créoles seules</div>
-            <div class="p-name">Dorées</div>
-            <div class="p-desc">Finition dorée subtile. Compatibles avec toutes nos pampilles.</div>
-            <div class="p-bottom">
-              <div class="p-price">5,00 €</div>
-              <div class="p-stock"><span class="p-stock-dot"></span> En stock</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 6 -->
-        <div class="p-card" data-cat="creoles" data-tags="uni" data-price="5" onclick="openModal(5)">
-          <div class="p-img" style="background:var(--blush)">
-            <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-            </button>
-            <div class="p-img-content">
-              <svg class="p-shape-anim" width="140" height="140" viewBox="0 0 140 140" fill="none">
-                <circle cx="70" cy="70" r="50" stroke="#A8B8C4" stroke-width="10" fill="none" opacity=".75"/>
-                <circle cx="70" cy="120" r="7" fill="#A8B8C4" opacity=".85"/>
-                <ellipse cx="70" cy="70" rx="22" ry="22" fill="#C8D8E0" opacity=".2"/>
-              </svg>
-            </div>
-            <div class="p-quick-add">
-              <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Créoles Argentées',5,'🤍')">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                Ajouter au panier
-              </button>
-            </div>
-          </div>
-          <div class="p-info">
-            <div class="p-cat">Créoles seules</div>
-            <div class="p-name">Argentées</div>
-            <div class="p-desc">Finition argentée délicate. Pour un look frais et lumineux.</div>
-            <div class="p-bottom">
-              <div class="p-price">5,00 €</div>
-              <div class="p-stock"><span class="p-stock-dot"></span> En stock</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
+      <div class="prod-grid" id="prodGrid"></div>
 
       <!-- MESURE BAND -->
       <div class="mesure-band">
@@ -930,51 +706,76 @@
 </footer>
 
 <script>
-  /* ─── PRODUCTS DATA ─── */
-  const products = [
-    {
-      name: 'Pampilles + Créoles Motifs', cat: 'Pampilles + Créoles', price: 18, emoji: '🌺',
-      desc: 'Formes florales et graphiques avec centro nacré — le duo signature de Wild Flower. Chaque pampille est façonnée à la main, une par une. Légères à porter, infiniment interchangeables.',
-      colors: ['#F0A882','#8FAF8A','#D4A853','#C9A0B8'],
-      bg: '#F5EDE8',
-      svg: `<svg width="140" height="140" viewBox="0 0 140 140" fill="none"><circle cx="70" cy="42" r="21" fill="#F0A882" opacity=".5"/><circle cx="98" cy="70" r="21" fill="#F0A882" opacity=".45"/><circle cx="70" cy="98" r="21" fill="#F0A882" opacity=".5"/><circle cx="42" cy="70" r="21" fill="#F0A882" opacity=".45"/><circle cx="70" cy="70" r="23" fill="#F5C4A8" opacity=".9"/><circle cx="70" cy="70" r="11" fill="#fff" opacity=".45"/></svg>`
-    },
-    {
-      name: 'Pampilles + Créoles Unies', cat: 'Pampilles + Créoles', price: 16, emoji: '🌸',
-      desc: 'Teintes douces, surface satinée et formes épurées. L\'essentiel dans sa version la plus pure. Disponibles en de nombreuses couleurs, parfaites pour s\'assortir à toutes les tenues.',
-      colors: ['#F0A882','#C26B4A','#8FAF8A','#B8D4E8','#D4A853'],
-      bg: '#F5D5C8',
-      svg: `<svg width="140" height="140" viewBox="0 0 140 140" fill="none"><ellipse cx="70" cy="70" rx="50" ry="60" fill="#F0A882" opacity=".55" transform="rotate(-12 70 70)"/><ellipse cx="70" cy="70" rx="28" ry="34" fill="#E8907A" opacity=".7"/><ellipse cx="70" cy="70" rx="13" ry="16" fill="#fff" opacity=".3"/></svg>`
-    },
-    {
-      name: 'Pampilles Seules Motifs', cat: 'Pampilles seules', price: 15, emoji: '🌼',
-      desc: 'Formes organiques et textures délicates pour habiller vos créoles existantes. La solution idéale pour renouveler un bijou préféré sans en racheter un entier.',
-      colors: ['#8FAF8A','#F0A882','#C9A0B8'],
-      bg: '#EEF2E8',
-      svg: `<svg width="140" height="140" viewBox="0 0 140 140" fill="none"><ellipse cx="70" cy="70" rx="46" ry="60" fill="#8FAF8A" opacity=".35" transform="rotate(-22 70 70)"/><ellipse cx="70" cy="70" rx="46" ry="60" fill="#8FAF8A" opacity=".25" transform="rotate(22 70 70)"/><circle cx="70" cy="70" r="20" fill="#8FAF8A" opacity=".65"/><circle cx="70" cy="70" r="9" fill="#fff" opacity=".4"/></svg>`
-    },
-    {
-      name: 'Pampilles Seules Unies', cat: 'Pampilles seules', price: 13, emoji: '🧡',
-      desc: 'Simples, douces, déclinées dans de belles teintes. La base parfaite pour une tenue épurée et élégante. À associer avec nos créoles ou les vôtres.',
-      colors: ['#D4A853','#F0A882','#C26B4A','#8FAF8A'],
-      bg: '#F9E8E0',
-      svg: `<svg width="140" height="140" viewBox="0 0 140 140" fill="none"><path d="M70 125C44 101 14 83 14 57C14 35 28 22 44 27C54 31 64 44 70 57C76 44 86 31 96 27C112 22 126 35 126 57C126 83 96 101 70 125Z" fill="#E8D5C0" opacity=".8"/><path d="M70 105C50 87 26 73 26 57C26 44 36 34 46 38C52 40.5 60 51 70 65C80 51 88 40.5 94 38C104 34 114 44 114 57C114 73 90 87 70 105Z" fill="#D4A853" opacity=".35"/></svg>`
-    },
-    {
-      name: 'Créoles Dorées', cat: 'Créoles seules', price: 5, emoji: '✨',
-      desc: 'Anneau fin à fermoir clipsable, finition dorée subtile. Compatibles avec l\'ensemble de nos pampilles. La base idéale pour construire votre duo signature.',
-      colors: ['#C9A853'],
-      bg: '#F5D5C8',
-      svg: `<svg width="140" height="140" viewBox="0 0 140 140" fill="none"><circle cx="70" cy="70" r="50" stroke="#C9A853" stroke-width="10" fill="none" opacity=".75"/><circle cx="70" cy="120" r="7" fill="#C9A853" opacity=".85"/><ellipse cx="70" cy="70" rx="22" ry="22" fill="#F0D08A" opacity=".2"/></svg>`
-    },
-    {
-      name: 'Créoles Argentées', cat: 'Créoles seules', price: 5, emoji: '🤍',
-      desc: 'Anneau fin à fermoir clipsable, finition argentée délicate. Pour un look plus frais et lumineux. Se marient parfaitement avec les tons pastel et sages de nos pampilles.',
-      colors: ['#A8B8C4'],
-      bg: '#F9E8E0',
-      svg: `<svg width="140" height="140" viewBox="0 0 140 140" fill="none"><circle cx="70" cy="70" r="50" stroke="#A8B8C4" stroke-width="10" fill="none" opacity=".75"/><circle cx="70" cy="120" r="7" fill="#A8B8C4" opacity=".85"/><ellipse cx="70" cy="70" rx="22" ry="22" fill="#C8D8E0" opacity=".2"/></svg>`
+  /* ─── PRODUCTS DATA (chargées depuis content/products.json — éditable via Sveltia CMS) ─── */
+  let products = [];
+
+  function productVisual(p) {
+    if (p.image) return `<img src="${p.image}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;border-radius:50%">`;
+    const c = (p.colors && p.colors[0]) || '#F0A882';
+    return `<div style="width:100%;height:100%;border-radius:50%;background:${c};opacity:.35;display:flex;align-items:center;justify-content:center;font-size:44px">${p.emoji || ''}</div>`;
+  }
+
+  function tagsFor(p) {
+    const tags = [];
+    if (p.badge) tags.push(p.badge);
+    tags.push(/motif/i.test(p.name) ? 'motifs' : 'uni');
+    return tags.join(',');
+  }
+
+  function catSlug(cat) {
+    if (cat === 'Pampilles + Créoles') return 'pampilles-creoles';
+    if (cat === 'Pampilles seules') return 'pampilles';
+    if (cat === 'Créoles seules') return 'creoles';
+    return '';
+  }
+
+  function renderProducts() {
+    const grid = document.getElementById('prodGrid');
+    grid.innerHTML = products.map((p, idx) => `
+      <div class="p-card" data-cat="${catSlug(p.category)}" data-tags="${tagsFor(p)}" data-price="${p.price}" onclick="openModal(${idx})">
+        <div class="p-img" style="background:${p.bg || '#F5EDE8'}">
+          ${p.badge === 'bestseller' ? '<div class="p-badges"><span class="p-badge badge-bestseller">⭐ Bestseller</span></div>' : ''}
+          ${p.badge === 'new' ? '<div class="p-badges"><span class="p-badge badge-new">Nouveau</span></div>' : ''}
+          <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </button>
+          <div class="p-img-content">${productVisual(p)}</div>
+          <div class="p-quick-add">
+            <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('${(p.category + ' ' + p.name).replace(/'/g,"\\'")}', ${p.price}, '${p.emoji || ''}')">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Ajouter au panier
+            </button>
+          </div>
+        </div>
+        <div class="p-info">
+          ${(p.colors && p.colors.length) ? `<div class="p-colors">${p.colors.map((c,i) => `<div class="p-color ${i===0?'sel':''}" style="background:${c}"></div>`).join('')}</div>` : ''}
+          <div class="p-cat">${p.category}</div>
+          <div class="p-name">${p.name}</div>
+          <div class="p-desc">${p.description || ''}</div>
+          <div class="p-bottom">
+            <div class="p-price">${p.price.toFixed(2).replace('.',',')} €</div>
+            <div class="p-stock ${p.stock === 'low' ? 'low' : ''}"><span class="p-stock-dot"></span> ${p.stock === 'low' ? 'Dernières pièces' : 'En stock'}</div>
+          </div>
+        </div>
+      </div>
+    `).join('');
+    document.getElementById('countLabel').textContent = products.length + ' création' + (products.length > 1 ? 's' : '');
+    const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }), { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+    document.querySelectorAll('.p-card').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 0.1 + 's'; obs.observe(el); });
+    applyFilters();
+  }
+
+  fetch('content/products.json').then(r => r.json()).then(data => {
+    products = data.products || [];
+    renderProducts();
+  }).catch(() => { document.getElementById('countLabel').textContent = 'Produits indisponibles pour le moment'; });
+
+  fetch('content/site.json').then(r => r.json()).then(site => {
+    if (site.logo_image) {
+      const logo = document.getElementById('navLogo');
+      if (logo) logo.innerHTML = `<img src="${site.logo_image}" alt="${site.brand_name || 'Wild Flower by Wooden Mountain'}" style="height:48px;width:auto;display:block">`;
     }
-  ];
+  }).catch(() => {});
 
   /* ─── MODAL ─── */
   let currentProduct = null, modalQty = 1;
@@ -984,16 +785,16 @@
     currentProduct = p;
     modalQty = 1;
     document.getElementById('modalQty').textContent = 1;
-    document.getElementById('modalCat').textContent = p.cat;
+    document.getElementById('modalCat').textContent = p.category;
     document.getElementById('modalName').textContent = p.name;
     document.getElementById('modalPrice').textContent = p.price.toFixed(2).replace('.',',') + ' €';
-    document.getElementById('modalDesc').textContent = p.desc;
-    document.getElementById('modalImg').style.background = p.bg;
-    document.getElementById('modalImg').innerHTML = p.svg;
+    document.getElementById('modalDesc').textContent = p.description;
+    document.getElementById('modalImg').style.background = p.bg || '#F5EDE8';
+    document.getElementById('modalImg').innerHTML = productVisual(p);
     const mc = document.getElementById('modalColors');
-    mc.innerHTML = p.colors.map((c,i) => `<div class="modal-color-btn ${i===0?'sel':''}" style="background:${c}" onclick="selectColor(this)"></div>`).join('');
+    mc.innerHTML = (p.colors || []).map((c,i) => `<div class="modal-color-btn ${i===0?'sel':''}" style="background:${c}" onclick="selectColor(this)"></div>`).join('');
     document.getElementById('modalAddBtn').onclick = () => {
-      for (let i = 0; i < modalQty; i++) addToCart(p.name, p.price, p.emoji);
+      for (let i = 0; i < modalQty; i++) addToCart(p.category + ' ' + p.name, p.price, p.emoji);
       closeModal();
     };
     document.getElementById('modalOverlay').classList.add('open');
@@ -1104,13 +905,6 @@
     t.textContent = msg; t.classList.add('on');
     setTimeout(() => t.classList.remove('on'), 2800);
   }
-
-  /* ─── REVEAL ─── */
-  const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }), { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
-  document.querySelectorAll('.p-card').forEach((el, i) => {
-    el.style.transitionDelay = (i % 3) * 0.1 + 's';
-    obs.observe(el);
-  });
 
   /* ─── ESC to close modal ─── */
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });

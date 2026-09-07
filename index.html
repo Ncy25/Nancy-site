@@ -512,7 +512,7 @@
 <body>
 
 <!-- PROMO BAR -->
-<div class="promo-bar">🌸 Livraison offerte dès 50€ d'achat · Pièces uniques faites à la main</div>
+<div class="promo-bar" id="promoBarText">🌸 Livraison offerte dès 50€ d'achat · Pièces uniques faites à la main</div>
 
 <!-- NAV -->
 <nav>
@@ -524,7 +524,7 @@
     </div>
 
     <!-- LOGO -->
-    <a href="#" class="nav-logo" aria-label="Wild Flower by Wooden Mountain">
+    <a href="#" class="nav-logo" aria-label="Wild Flower by Wooden Mountain" id="navLogo">
       <span class="logo-wild">Wild</span>
       <div class="logo-flower-row">
         Fl
@@ -625,11 +625,11 @@
     </div>
 
     <div class="hero-text">
-      <div class="hero-script">Nouvelle collection</div>
-      <h1 class="hero-h1">JOYFUL<br>PAMPILLES</h1>
-      <p class="hero-sub">Des créations interchangeables en argile polymère, colorées et façonnées à la main — pour changer d'humeur en deux secondes.</p>
+      <div class="hero-script" id="heroScript">Nouvelle collection</div>
+      <h1 class="hero-h1"><span id="heroTitle1">JOYFUL</span><br><span id="heroTitle2">PAMPILLES</span></h1>
+      <p class="hero-sub" id="heroSubtitle">Des créations interchangeables en argile polymère, colorées et façonnées à la main — pour changer d'humeur en deux secondes.</p>
       <a href="#boutique" class="btn-hero">
-        Découvrir maintenant
+        <span id="heroButtonText">Découvrir maintenant</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
     </div>
@@ -663,7 +663,7 @@
 <section id="lifestyle">
   <div class="lifestyle-wave-top"></div>
   <div class="lifestyle-inner">
-    <div class="lifestyle-title r">Faites à la main, portées avec amour</div>
+    <div class="lifestyle-title r" id="lifestyleTitle">Faites à la main, portées avec amour</div>
     <div class="lifestyle-circles">
       <div class="life-circle r d1">
         <div class="life-circle-inner">
@@ -706,8 +706,8 @@
 <!-- BOUTIQUE -->
 <section id="boutique">
   <div class="container">
-    <div class="boutique-title r">Nos créations</div>
-    <div class="boutique-h2 r">C'est le moment d'ajouter au panier</div>
+    <div class="boutique-title r" id="boutiqueTitle">Nos créations</div>
+    <div class="boutique-h2 r" id="boutiqueSubtitle">C'est le moment d'ajouter au panier</div>
 
     <div class="prod-grid">
 
@@ -832,11 +832,11 @@
       </div>
     </div>
     <div class="about-text r d2">
-      <div class="about-text-label">Notre histoire</div>
-      <h2>Née d'une passion pour<br>l'argile et la couleur</h2>
-      <p>Tout a commencé avec une paire de créoles et une envie irrésistible de les transformer. L'argile polymère s'est imposée comme une évidence : légère à porter, douce à travailler, infinie dans ses possibilités.</p>
-      <p>Chaque pampille Wild Flower est façonnée à la main, une par une. Pas de moule, pas de série — juste du soin, de la couleur, et l'envie de créer des petits objets qui rendent joyeux.</p>
-      <div class="about-chips">
+      <div class="about-text-label" id="histoireLabel">Notre histoire</div>
+      <h2 id="histoireTitle">Née d'une passion pour<br>l'argile et la couleur</h2>
+      <p id="histoireP1">Tout a commencé avec une paire de créoles et une envie irrésistible de les transformer. L'argile polymère s'est imposée comme une évidence : légère à porter, douce à travailler, infinie dans ses possibilités.</p>
+      <p id="histoireP2">Chaque pampille Wild Flower est façonnée à la main, une par une. Pas de moule, pas de série — juste du soin, de la couleur, et l'envie de créer des petits objets qui rendent joyeux.</p>
+      <div class="about-chips" id="histoireChips">
         <span class="about-chip">✋ Fait main</span>
         <span class="about-chip">🏺 Argile polymère</span>
         <span class="about-chip">🎨 Pièces uniques</span>
@@ -850,18 +850,18 @@
 <section id="contact">
   <div class="container">
     <div style="text-align:center;margin-bottom:48px" class="r">
-      <div style="font-family:var(--font-d);font-size:14px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--peach-dk);margin-bottom:8px">Une question ?</div>
-      <div style="font-family:var(--font-s);font-size:38px;color:var(--brown-mid)">Écrivons-nous</div>
+      <div style="font-family:var(--font-d);font-size:14px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--peach-dk);margin-bottom:8px" id="contactLabel">Une question ?</div>
+      <div style="font-family:var(--font-s);font-size:38px;color:var(--brown-mid)" id="contactTitle">Écrivons-nous</div>
     </div>
     <div class="contact-grid">
       <div class="contact-left r">
-        <h3>Parlons de votre projet</h3>
-        <p>Couleur précise, commande groupée, cadeau original — on répond sous 48h.</p>
-        <div class="c-row"><div class="c-ico">📧</div><div class="c-txt"><a href="mailto:contact@woodenmountain.fr">contact@woodenmountain.fr</a></div></div>
-        <div class="c-row"><div class="c-ico">📦</div><div class="c-txt">Expédition soignée sous 3–5 jours</div></div>
-        <div class="c-row"><div class="c-ico">🤝</div><div class="c-txt">Sur-mesure & commandes groupées bienvenues</div></div>
+        <h3 id="contactIntroTitle">Parlons de votre projet</h3>
+        <p id="contactIntroText">Couleur précise, commande groupée, cadeau original — on répond sous 48h.</p>
+        <div class="c-row"><div class="c-ico">📧</div><div class="c-txt"><a href="mailto:contact@woodenmountain.fr" id="contactEmailLink">contact@woodenmountain.fr</a></div></div>
+        <div class="c-row"><div class="c-ico">📦</div><div class="c-txt" id="contactShippingNote">Expédition soignée sous 3–5 jours</div></div>
+        <div class="c-row"><div class="c-ico">🤝</div><div class="c-txt" id="contactCustomNote">Sur-mesure & commandes groupées bienvenues</div></div>
         <div class="c-note">
-          <p>"Des pampilles qui changent tout — interchangeables, colorées, faites à la main."</p>
+          <p id="contactQuote">"Des pampilles qui changent tout — interchangeables, colorées, faites à la main."</p>
         </div>
       </div>
       <div class="r d2">
@@ -893,7 +893,7 @@
       <div class="f-brand">
         <div class="footer-logo-wild">Wild</div>
         <div class="footer-logo-row">Flower · by Wooden Mountain</div>
-        <p class="f-tagline">Pampilles interchangeables en argile polymère. Colorées, faites à la main, pour changer d'humeur en deux secondes.</p>
+        <p class="f-tagline" id="footerTagline">Pampilles interchangeables en argile polymère. Colorées, faites à la main, pour changer d'humeur en deux secondes.</p>
       </div>
       <div class="f-col">
         <h4>Navigation</h4>
@@ -901,11 +901,11 @@
       </div>
       <div class="f-col">
         <h4>Infos</h4>
-        <ul><li><a href="/mentions-legales.html">Mentions légales</a></li><li><a href="/cgv.html">CGV</a></li><li><a href="/politique-confidentialite.html">Confidentialité</a></li><li><a href="mailto:contact@woodenmountain.fr">contact@woodenmountain.fr</a></li></ul>
+        <ul><li><a href="/mentions-legales.html">Mentions légales</a></li><li><a href="/cgv.html">CGV</a></li><li><a href="/politique-confidentialite.html">Confidentialité</a></li><li><a href="mailto:contact@woodenmountain.fr" id="footerEmailLink">contact@woodenmountain.fr</a></li></ul>
       </div>
     </div>
     <div class="footer-bar">
-      <p>© 2025 Wild Flower by Wooden Mountain · Fait avec 🌸 en France</p>
+      <p id="footerCopyright">© 2025 Wild Flower by Wooden Mountain · Fait avec 🌸 en France</p>
       <p>Paiement sécurisé · Expédition soignée</p>
     </div>
   </div>
@@ -978,6 +978,61 @@
 
   const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }), { threshold: 0.1, rootMargin: '0px 0px -28px 0px' });
   document.querySelectorAll('.r').forEach(el => obs.observe(el));
+</script>
+
+<!-- ── CONTENU ÉDITABLE (Sveltia CMS) ── -->
+<script>
+  function setText(id, value) {
+    const el = document.getElementById(id);
+    if (el && value !== undefined && value !== null && value !== '') el.textContent = value;
+  }
+
+  // Logo
+  fetch('content/site.json').then(r => r.json()).then(site => {
+    if (site.logo_image) {
+      const logo = document.getElementById('navLogo');
+      if (logo) logo.innerHTML = `<img src="${site.logo_image}" alt="${site.brand_name || 'Wild Flower by Wooden Mountain'}" style="height:48px;width:auto;display:block">`;
+    }
+    document.querySelectorAll('#contactEmailLink, #footerEmailLink').forEach(a => {
+      if (site.contact_email) { a.textContent = site.contact_email; a.href = 'mailto:' + site.contact_email; }
+    });
+  }).catch(() => {});
+
+  // Textes de la page d'accueil
+  fetch('content/home.json').then(r => r.json()).then(d => {
+    setText('promoBarText', d.promo_bar);
+    if (d.hero) {
+      setText('heroScript', d.hero.script);
+      setText('heroTitle1', d.hero.title_line1);
+      setText('heroTitle2', d.hero.title_line2);
+      setText('heroSubtitle', d.hero.subtitle);
+      setText('heroButtonText', d.hero.button_text);
+    }
+    setText('lifestyleTitle', d.lifestyle_title);
+    setText('boutiqueTitle', d.boutique_title);
+    setText('boutiqueSubtitle', d.boutique_subtitle);
+    if (d.histoire) {
+      setText('histoireLabel', d.histoire.label);
+      setText('histoireTitle', d.histoire.title);
+      setText('histoireP1', d.histoire.paragraph1);
+      setText('histoireP2', d.histoire.paragraph2);
+      if (Array.isArray(d.histoire.chips)) {
+        const wrap = document.getElementById('histoireChips');
+        if (wrap) wrap.innerHTML = d.histoire.chips.map(c => `<span class="about-chip">${c}</span>`).join('');
+      }
+    }
+    if (d.contact) {
+      setText('contactLabel', d.contact.label);
+      setText('contactTitle', d.contact.title);
+      setText('contactIntroTitle', d.contact.intro_title);
+      setText('contactIntroText', d.contact.intro_text);
+      setText('contactShippingNote', d.contact.shipping_note);
+      setText('contactCustomNote', d.contact.custom_note);
+      setText('contactQuote', d.contact.quote ? ('"' + d.contact.quote + '"') : undefined);
+    }
+    setText('footerTagline', d.footer_tagline);
+    setText('footerCopyright', d.footer_copyright);
+  }).catch(() => {});
 </script>
 </body>
 </html>

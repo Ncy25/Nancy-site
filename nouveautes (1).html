@@ -513,7 +513,7 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </button>
     </div>
-    <a href="index.html" class="nav-logo" aria-label="Wild Flower by Wooden Mountain">
+    <a href="index.html" class="nav-logo" aria-label="Wild Flower by Wooden Mountain" id="navLogo">
       <span class="logo-wild">Wild</span>
       <div class="logo-flower-row">
         Fl
@@ -675,260 +675,7 @@
     </div>
 
     <!-- GRID -->
-    <div class="prod-grid" id="prodGrid">
-
-      <!-- FEATURE CARD (wide) -->
-      <div class="feature-card r" data-cat="pampilles-creoles" data-tags="exclu,new" data-price="24" onclick="addToCart('Édition Printemps — Duo Floral', 24, '🌺')">
-        <div>
-          <div class="fc-tag">✨ Édition limitée printemps</div>
-          <div class="fc-title">Duo Floral<br>— Édition Printemps</div>
-          <div class="fc-desc">Notre création la plus joyeuse : deux formes florales différentes, dégradé nacré, finition or. Une seule paire de créoles, deux personnalités.</div>
-          <button class="btn-fc" onclick="event.stopPropagation(); addToCart('Édition Printemps — Duo Floral', 24, '🌺')">
-            Ajouter au panier — 24,00 €
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </button>
-        </div>
-        <div class="fc-visual">
-          <div class="fc-mini-lg fc-mini">
-            <svg width="98" height="98" viewBox="0 0 98 98" fill="none">
-              <circle cx="49" cy="29" r="16" fill="#F0A882" opacity=".55"/>
-              <circle cx="69" cy="49" r="16" fill="#F0A882" opacity=".5"/>
-              <circle cx="49" cy="69" r="16" fill="#F0A882" opacity=".55"/>
-              <circle cx="29" cy="49" r="16" fill="#F0A882" opacity=".5"/>
-              <circle cx="49" cy="49" r="18" fill="#F5C4A8" opacity=".9"/>
-              <circle cx="49" cy="49" r="8" fill="#fff" opacity=".45"/>
-            </svg>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:10px">
-            <div class="fc-mini-sm fc-mini">
-              <svg width="38" height="38" viewBox="0 0 38 38" fill="none"><circle cx="19" cy="19" r="13.5" stroke="#C9A853" stroke-width="4" fill="none" opacity=".8"/><circle cx="19" cy="32.5" r="3" fill="#C9A853" opacity=".8"/></svg>
-            </div>
-            <div class="fc-mini-sm fc-mini">
-              <svg width="38" height="38" viewBox="0 0 38 38" fill="none"><path d="M19 35C11 27.5 3 22 3 14C3 8 7.5 4.5 11.5 6C14 7 16.5 11 19 15C21.5 11 24 7 26.5 6C30.5 4.5 35 8 35 14C35 22 27 27.5 19 35Z" fill="#8FAF8A" opacity=".6"/></svg>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CARD 1 -->
-      <div class="p-card" data-cat="pampilles-creoles" data-tags="new" data-price="18" onclick="openModal(0)">
-        <div class="p-img" style="background:#F0EAF8">
-          <div class="p-badges"><span class="p-badge badge-new">Nouveau</span></div>
-          <button class="p-wish" onclick="toggleWish(event,this)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
-          <div class="p-img-content">
-            <svg class="p-shape-anim" width="130" height="130" viewBox="0 0 130 130" fill="none">
-              <ellipse cx="65" cy="65" rx="50" ry="58" fill="#C9A0B8" opacity=".38" transform="rotate(-14 65 65)"/>
-              <ellipse cx="65" cy="65" rx="50" ry="58" fill="#B888A8" opacity=".22" transform="rotate(14 65 65)"/>
-              <circle cx="65" cy="65" r="22" fill="#D4B0C4" opacity=".8"/>
-              <circle cx="65" cy="65" r="11" fill="#fff" opacity=".4"/>
-            </svg>
-          </div>
-          <div class="p-quick-add">
-            <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Pampilles Lilas + Créoles',18,'💜')">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              Ajouter au panier
-            </button>
-          </div>
-        </div>
-        <div class="p-info">
-          <div class="p-colors">
-            <div class="p-color sel" style="background:#C9A0B8"></div>
-            <div class="p-color" style="background:#F0A882"></div>
-            <div class="p-color" style="background:#B8D4E8"></div>
-          </div>
-          <div class="p-tag">Pampilles + Créoles</div>
-          <div class="p-name">Lilas Douceur</div>
-          <div class="p-desc">Nouvelles teintes mauve et parme, satinées. Un classique Wild Flower dans une couleur inédite.</div>
-          <div class="p-bottom">
-            <div class="p-price">18,00 €</div>
-            <div class="p-stock"><span class="p-stock-dot"></span> En stock</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CARD 2 -->
-      <div class="p-card" data-cat="pampilles" data-tags="new,exclu" data-price="17" onclick="openModal(1)">
-        <div class="p-img" style="background:#F0F4E8">
-          <div class="p-badges"><span class="p-badge badge-new">Nouveau</span><span class="p-badge badge-exclu">Exclu</span></div>
-          <button class="p-wish" onclick="toggleWish(event,this)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
-          <div class="p-img-content">
-            <svg class="p-shape-anim" width="130" height="130" viewBox="0 0 130 130" fill="none">
-              <ellipse cx="65" cy="65" rx="44" ry="56" fill="#8FAF8A" opacity=".32" transform="rotate(-20 65 65)"/>
-              <ellipse cx="65" cy="65" rx="44" ry="56" fill="#8FAF8A" opacity=".22" transform="rotate(20 65 65)"/>
-              <circle cx="65" cy="65" r="18" fill="#8FAF8A" opacity=".65"/>
-              <circle cx="65" cy="65" r="7" fill="#fff" opacity=".4"/>
-              <!-- gold flecks -->
-              <circle cx="52" cy="42" r="3" fill="#D4A853" opacity=".5"/>
-              <circle cx="80" cy="55" r="2" fill="#D4A853" opacity=".45"/>
-              <circle cx="48" cy="78" r="2.5" fill="#D4A853" opacity=".5"/>
-            </svg>
-          </div>
-          <div class="p-quick-add">
-            <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Pampilles Sauge Dorée',17,'🌿')">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              Ajouter au panier
-            </button>
-          </div>
-        </div>
-        <div class="p-info">
-          <div class="p-colors">
-            <div class="p-color sel" style="background:#8FAF8A"></div>
-            <div class="p-color" style="background:#D4A853"></div>
-          </div>
-          <div class="p-tag">Pampilles seules</div>
-          <div class="p-name">Sauge Dorée</div>
-          <div class="p-desc">Argile sauge avec inclusions de feuille d'or. Texture organique, effet patiné unique.</div>
-          <div class="p-bottom">
-            <div class="p-price">17,00 €</div>
-            <div class="p-stock p-stock low"><span class="p-stock-dot"></span> Dernières pièces</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CARD 3 -->
-      <div class="p-card" data-cat="pampilles-creoles" data-tags="new" data-price="19" onclick="openModal(2)">
-        <div class="p-img" style="background:#E8F2F8">
-          <div class="p-badges"><span class="p-badge badge-new">Nouveau</span></div>
-          <button class="p-wish" onclick="toggleWish(event,this)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
-          <div class="p-img-content">
-            <svg class="p-shape-anim" width="130" height="130" viewBox="0 0 130 130" fill="none">
-              <circle cx="65" cy="40" r="18" fill="#A8C8E0" opacity=".5"/>
-              <circle cx="90" cy="65" r="18" fill="#A8C8E0" opacity=".45"/>
-              <circle cx="65" cy="90" r="18" fill="#A8C8E0" opacity=".5"/>
-              <circle cx="40" cy="65" r="18" fill="#A8C8E0" opacity=".45"/>
-              <circle cx="65" cy="65" r="20" fill="#C0DCF0" opacity=".88"/>
-              <circle cx="65" cy="65" r="9" fill="#fff" opacity=".45"/>
-            </svg>
-          </div>
-          <div class="p-quick-add">
-            <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Pampilles Azur + Créoles',19,'🩵')">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              Ajouter au panier
-            </button>
-          </div>
-        </div>
-        <div class="p-info">
-          <div class="p-colors">
-            <div class="p-color sel" style="background:#A8C8E0"></div>
-            <div class="p-color" style="background:#B8D4F0"></div>
-            <div class="p-color" style="background:#D0E8F8"></div>
-          </div>
-          <div class="p-tag">Pampilles + Créoles</div>
-          <div class="p-name">Azur Ciel</div>
-          <div class="p-desc">Bleu ciel et porcelaine, forme florale multi-pétales. La fraîcheur à l'oreille.</div>
-          <div class="p-bottom">
-            <div class="p-price">19,00 €</div>
-            <div class="p-stock"><span class="p-stock-dot"></span> En stock</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CARD 4 -->
-      <div class="p-card" data-cat="creoles" data-tags="new,exclu" data-price="7" onclick="openModal(3)">
-        <div class="p-img" style="background:#FDF6E0">
-          <div class="p-badges"><span class="p-badge badge-exclu">Exclu</span></div>
-          <button class="p-wish" onclick="toggleWish(event,this)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
-          <div class="p-img-content">
-            <svg class="p-shape-anim" width="130" height="130" viewBox="0 0 130 130" fill="none">
-              <!-- Twisted hoop shape -->
-              <ellipse cx="65" cy="65" rx="46" ry="46" stroke="#C9A853" stroke-width="9" fill="none" opacity=".7"/>
-              <ellipse cx="65" cy="65" rx="32" ry="32" stroke="#D4A853" stroke-width="3" stroke-dasharray="6 6" fill="none" opacity=".35"/>
-              <circle cx="65" cy="111" r="6.5" fill="#C9A853" opacity=".85"/>
-              <circle cx="65" cy="65" r="16" fill="#F0D08A" opacity=".18"/>
-            </svg>
-          </div>
-          <div class="p-quick-add">
-            <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Créoles Twist Dorées',7,'✨')">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              Ajouter au panier
-            </button>
-          </div>
-        </div>
-        <div class="p-info">
-          <div class="p-tag">Créoles seules</div>
-          <div class="p-name">Twist Dorées</div>
-          <div class="p-desc">Nouvelle forme torsadée, finition dorée mate. Élégantes seules ou avec pampilles.</div>
-          <div class="p-bottom">
-            <div class="p-price">7,00 €</div>
-            <div class="p-stock p-stock low"><span class="p-stock-dot"></span> Très peu de stock</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CARD 5 -->
-      <div class="p-card" data-cat="pampilles" data-tags="new" data-price="15" onclick="openModal(4)">
-        <div class="p-img" style="background:#FFF0E8">
-          <div class="p-badges"><span class="p-badge badge-new">Nouveau</span></div>
-          <button class="p-wish" onclick="toggleWish(event,this)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
-          <div class="p-img-content">
-            <svg class="p-shape-anim" width="130" height="130" viewBox="0 0 130 130" fill="none">
-              <path d="M65 118C40 96 10 78 10 52C10 32 23 19 38 24C47 27 56 39 65 52C74 39 83 27 92 24C107 19 120 32 120 52C120 78 90 96 65 118Z" fill="#F5B8A0" opacity=".65"/>
-              <path d="M65 100C46 82 22 68 22 52C22 39 30 31 40 35C46 37 54 48 65 62C76 48 84 37 90 35C100 31 108 39 108 52C108 68 84 82 65 100Z" fill="#E89880" opacity=".5"/>
-            </svg>
-          </div>
-          <div class="p-quick-add">
-            <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Pampilles Corail Cœur',15,'🩷')">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              Ajouter au panier
-            </button>
-          </div>
-        </div>
-        <div class="p-info">
-          <div class="p-colors">
-            <div class="p-color sel" style="background:#F5B8A0"></div>
-            <div class="p-color" style="background:#F0A882"></div>
-            <div class="p-color" style="background:#E88070"></div>
-          </div>
-          <div class="p-tag">Pampilles seules</div>
-          <div class="p-name">Corail Cœur</div>
-          <div class="p-desc">Forme cœur graphique, nuances corail et abricot. Le petit geste joyeux du quotidien.</div>
-          <div class="p-bottom">
-            <div class="p-price">15,00 €</div>
-            <div class="p-stock"><span class="p-stock-dot"></span> En stock</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CARD 6 -->
-      <div class="p-card" data-cat="pampilles-creoles" data-tags="new" data-price="20" onclick="openModal(5)">
-        <div class="p-img" style="background:#F8F0E8">
-          <div class="p-badges"><span class="p-badge badge-new">Nouveau</span></div>
-          <button class="p-wish" onclick="toggleWish(event,this)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
-          <div class="p-img-content">
-            <svg class="p-shape-anim" width="130" height="130" viewBox="0 0 130 130" fill="none">
-              <!-- Marbled effect -->
-              <ellipse cx="65" cy="65" rx="48" ry="56" fill="#D4A853" opacity=".22" transform="rotate(-10 65 65)"/>
-              <ellipse cx="65" cy="65" rx="36" ry="44" fill="#C9A853" opacity=".3" transform="rotate(8 65 65)"/>
-              <circle cx="65" cy="65" r="24" fill="#E8C870" opacity=".55"/>
-              <circle cx="65" cy="65" r="13" fill="#fff" opacity=".32"/>
-              <!-- swirl lines -->
-              <path d="M42 52 Q65 40 88 58" stroke="#C9A853" stroke-width="1.5" fill="none" opacity=".3"/>
-              <path d="M38 70 Q65 62 92 75" stroke="#C9A853" stroke-width="1.5" fill="none" opacity=".25"/>
-            </svg>
-          </div>
-          <div class="p-quick-add">
-            <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Pampilles Marbre Or + Créoles',20,'✨')">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              Ajouter au panier
-            </button>
-          </div>
-        </div>
-        <div class="p-info">
-          <div class="p-colors">
-            <div class="p-color sel" style="background:#D4A853"></div>
-            <div class="p-color" style="background:#C9A853"></div>
-          </div>
-          <div class="p-tag">Pampilles + Créoles</div>
-          <div class="p-name">Marbre Or</div>
-          <div class="p-desc">Effet marbré or et crème, technique avancée. Chaque pièce est vraiment unique.</div>
-          <div class="p-bottom">
-            <div class="p-price">20,00 €</div>
-            <div class="p-stock p-stock low"><span class="p-stock-dot"></span> Série limitée</div>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /prod-grid -->
+    <div class="prod-grid" id="prodGrid"></div><!-- /prod-grid -->
   </div>
 </section>
 
@@ -1092,6 +839,101 @@
 </footer>
 
 <script>
+  /* ─── NOUVEAUTÉS DATA (chargées depuis content/nouveautes.json — éditable via Sveltia CMS) ─── */
+  let novProducts = [];
+
+  function novVisual(p) {
+    if (p.image) return `<img src="${p.image}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;border-radius:50%">`;
+    const c = (p.colors && p.colors[0]) || '#F0A882';
+    return `<div style="width:100%;height:100%;border-radius:50%;background:${c};opacity:.35;display:flex;align-items:center;justify-content:center;font-size:44px">${p.emoji || ''}</div>`;
+  }
+
+  function novCatSlug(cat) {
+    if (cat === 'Pampilles + Créoles') return 'pampilles-creoles';
+    if (cat === 'Pampilles seules') return 'pampilles';
+    if (cat === 'Créoles seules') return 'creoles';
+    return '';
+  }
+
+  function novTags(p) {
+    const tags = [];
+    if (p.badge) tags.push(p.badge);
+    return tags.join(',');
+  }
+
+  function renderNouveautes(data) {
+    const grid = document.getElementById('prodGrid');
+    novProducts = data.products || [];
+    const f = data.feature || {};
+
+    const featureHtml = `
+      <div class="feature-card r" data-cat="" data-tags="exclu,new" data-price="${f.price || 0}" onclick="addToCart('${(f.name||'').replace(/'/g,"\\'")}', ${f.price || 0}, '${f.emoji || ''}')">
+        <div>
+          <div class="fc-tag">${f.tag || ''}</div>
+          <div class="fc-title">${(f.name || '').replace(' — ', '<br>— ')}</div>
+          <div class="fc-desc">${f.description || ''}</div>
+          <button class="btn-fc" onclick="event.stopPropagation(); addToCart('${(f.name||'').replace(/'/g,"\\'")}', ${f.price || 0}, '${f.emoji || ''}')">
+            Ajouter au panier — ${(f.price || 0).toFixed(2).replace('.',',')} €
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+        </div>
+        <div class="fc-visual">
+          <div class="fc-mini-lg fc-mini">${novVisual(f)}</div>
+        </div>
+      </div>`;
+
+    const cardsHtml = novProducts.map((p, idx) => `
+      <div class="p-card" data-cat="${novCatSlug(p.category)}" data-tags="${novTags(p)}" data-price="${p.price}" onclick="openModal(${idx})">
+        <div class="p-img" style="background:${p.bg || '#F5EDE8'}">
+          ${p.badge === 'new' ? '<div class="p-badges"><span class="p-badge badge-new">Nouveau</span></div>' : ''}
+          ${p.badge === 'exclu' ? '<div class="p-badges"><span class="p-badge badge-exclu">Exclu</span></div>' : ''}
+          <button class="p-wish" onclick="toggleWish(event,this)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+          <div class="p-img-content">${novVisual(p)}</div>
+          <div class="p-quick-add">
+            <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('${(p.name||'').replace(/'/g,"\\'")}', ${p.price}, '${p.emoji || ''}')">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Ajouter au panier
+            </button>
+          </div>
+        </div>
+        <div class="p-info">
+          ${(p.colors && p.colors.length) ? `<div class="p-colors">${p.colors.map((c,i) => `<div class="p-color ${i===0?'sel':''}" style="background:${c}"></div>`).join('')}</div>` : ''}
+          <div class="p-tag">${p.category}</div>
+          <div class="p-name">${p.name}</div>
+          <div class="p-desc">${p.description || ''}</div>
+          <div class="p-bottom">
+            <div class="p-price">${p.price.toFixed(2).replace('.',',')} €</div>
+            <div class="p-stock ${p.stock === 'low' ? 'low' : ''}"><span class="p-stock-dot"></span> ${p.stock === 'low' ? 'Dernières pièces' : 'En stock'}</div>
+          </div>
+        </div>
+      </div>`).join('');
+
+    grid.innerHTML = featureHtml + cardsHtml + '<!-- /prod-grid -->';
+
+    const lbl = document.getElementById('countLabel');
+    if (lbl) lbl.textContent = novProducts.length + ' création' + (novProducts.length > 1 ? 's' : '');
+
+    const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }), { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+    document.querySelectorAll('.p-card, .feature-card').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 0.1 + 's'; obs.observe(el); });
+  }
+
+  fetch('content/nouveautes.json').then(r => r.json()).then(data => {
+    document.getElementById('countdown-title-el') && (document.getElementById('countdown-title-el').textContent = data.countdown_title);
+    const cbTitle = document.querySelector('.cb-title'); if (cbTitle && data.countdown_title) cbTitle.textContent = data.countdown_title;
+    const cbSub = document.querySelector('.cb-sub'); if (cbSub && data.countdown_subtitle) cbSub.textContent = data.countdown_subtitle;
+    renderNouveautes(data);
+  }).catch(() => {
+    const lbl = document.getElementById('countLabel');
+    if (lbl) lbl.textContent = 'Produits indisponibles pour le moment';
+  });
+
+  fetch('content/site.json').then(r => r.json()).then(site => {
+    if (site.logo_image) {
+      const logo = document.getElementById('navLogo');
+      if (logo) logo.innerHTML = `<img src="${site.logo_image}" alt="${site.brand_name || 'Wild Flower by Wooden Mountain'}" style="height:48px;width:auto;display:block">`;
+    }
+  }).catch(() => {});
+
   /* ─── COUNTDOWN ─── */
   const target = new Date();
   target.setDate(target.getDate() + 14);
