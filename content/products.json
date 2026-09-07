@@ -74,11 +74,11 @@
     },
     {
       "id": "creoles-dorees",
-      "name": "Dorées",
+      "name": "Créoles Martelées dorées",
       "category": "Créoles seules",
-      "price": 5,
+      "price": 7,
       "emoji": "✨",
-      "description": "Anneau fin à fermoir clipsable, finition dorée subtile. Compatibles avec l'ensemble de nos pampilles.",
+      "description": "Anneaux martelées à fermoir clipsable, finition dorée. Compatibles avec l'ensemble de nos pampilles.",
       "colors": [
         "#C9A853"
       ],
@@ -88,16 +88,31 @@
       "image": ""
     },
     {
-      "id": "creoles-argentees",
-      "name": "Argentées",
+      "id": "créoles-dorées",
+      "name": "Créoles torsadées dorées",
       "category": "Créoles seules",
-      "price": 5,
+      "price": 7,
       "emoji": "🤍",
-      "description": "Anneau fin à fermoir clipsable, finition argentée délicate. Pour un look plus frais et lumineux.",
+      "description": "Anneaux torsadées à fermoir clipsable, finition dorée. Compatibles avec l'ensemble de nos pampilles.",
       "colors": [
         "#A8B8C4"
       ],
       "bg": "#F9E8E0",
+      "badge": "",
+      "stock": "in_stock",
+      "image": ""
+    },
+    {
+      "id": "créoles-dorées",
+      "name": "Créoles rotatives dorées",
+      "category": "Créoles seules",
+      "price": 7,
+      "emoji": "🤍",
+      "description": "Anneaux rotatives à fermoir clipsable, finition dorée. Compatibles avec l'ensemble de nos pampilles.",
+      "colors": [
+        "#A8B8C4"
+      ],
+      "bg": "#f9e8e0",
       "badge": "",
       "stock": "in_stock",
       "image": ""
