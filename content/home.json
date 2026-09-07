@@ -1,0 +1,32 @@
+{
+  "promo_bar": "🌸 Livraison offerte dès 50€ d'achat · Pièces uniques faites à la main",
+  "hero": {
+    "script": "Nouvelle collection",
+    "title_line1": "JOYFUL",
+    "title_line2": "PAMPILLES",
+    "subtitle": "Des créations interchangeables en argile polymère, colorées et façonnées à la main — pour changer d'humeur en deux secondes.",
+    "button_text": "Découvrir maintenant"
+  },
+  "lifestyle_title": "Faites à la main, portées avec amour",
+  "boutique_title": "Nos créations",
+  "boutique_subtitle": "C'est le moment d'ajouter au panier",
+  "histoire": {
+    "label": "Notre histoire",
+    "title": "Née d'une passion pour l'argile et la couleur",
+    "paragraph1": "Tout a commencé avec une paire de créoles et une envie irrésistible de les transformer. L'argile polymère s'est imposée comme une évidence : légère à porter, douce à travailler, infinie dans ses possibilités.",
+    "paragraph2": "Chaque pampille Wild Flower est façonnée à la main, une par une. Pas de moule, pas de série — juste du soin, de la couleur, et l'envie de créer des petits objets qui rendent joyeux.",
+    "chips": ["✋ Fait main", "🏺 Argile polymère", "🎨 Pièces uniques", "🇫🇷 France"]
+  },
+  "contact": {
+    "label": "Une question ?",
+    "title": "Écrivons-nous",
+    "intro_title": "Parlons de votre projet",
+    "intro_text": "Couleur précise, commande groupée, cadeau original — on répond sous 48h.",
+    "email": "contact@woodenmountain.fr",
+    "shipping_note": "Expédition soignée sous 3–5 jours",
+    "custom_note": "Sur-mesure & commandes groupées bienvenues",
+    "quote": "Des pampilles qui changent tout — interchangeables, colorées, faites à la main."
+  },
+  "footer_tagline": "Pampilles interchangeables en argile polymère. Colorées, faites à la main, pour changer d'humeur en deux secondes.",
+  "footer_copyright": "© 2025 Wild Flower by Wooden Mountain · Fait avec 🌸 en France"
+}

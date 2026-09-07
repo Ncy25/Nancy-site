@@ -1,0 +1,82 @@
+{
+  "products": [
+    {
+      "id": "pampilles-creoles-motifs",
+      "name": "Motifs",
+      "category": "Pampilles + Créoles",
+      "price": 18,
+      "emoji": "🌺",
+      "description": "Formes florales et graphiques avec centro nacré — le duo signature de Wild Flower. Chaque pampille est façonnée à la main, une par une.",
+      "colors": ["#F0A882", "#8FAF8A", "#D4A853", "#C9A0B8"],
+      "bg": "#F5EDE8",
+      "badge": "bestseller",
+      "stock": "in_stock",
+      "image": ""
+    },
+    {
+      "id": "pampilles-creoles-unies",
+      "name": "Unies",
+      "category": "Pampilles + Créoles",
+      "price": 16,
+      "emoji": "🌸",
+      "description": "Teintes douces, surface satinée et formes épurées. L'essentiel dans sa version la plus pure.",
+      "colors": ["#F0A882", "#C26B4A", "#8FAF8A", "#B8D4E8", "#D4A853"],
+      "bg": "#F5D5C8",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": ""
+    },
+    {
+      "id": "pampilles-seules-motifs",
+      "name": "Motifs",
+      "category": "Pampilles seules",
+      "price": 15,
+      "emoji": "🌼",
+      "description": "Formes organiques et textures délicates pour habiller vos créoles existantes.",
+      "colors": ["#8FAF8A", "#F0A882", "#C9A0B8"],
+      "bg": "#EEF2E8",
+      "badge": "",
+      "stock": "in_stock",
+      "image": ""
+    },
+    {
+      "id": "pampilles-seules-unies",
+      "name": "Unies",
+      "category": "Pampilles seules",
+      "price": 13,
+      "emoji": "🧡",
+      "description": "Simples, douces, déclinées dans de belles teintes. La base parfaite pour une tenue épurée.",
+      "colors": ["#D4A853", "#F0A882", "#C26B4A", "#8FAF8A"],
+      "bg": "#F9E8E0",
+      "badge": "",
+      "stock": "low",
+      "image": ""
+    },
+    {
+      "id": "creoles-dorees",
+      "name": "Dorées",
+      "category": "Créoles seules",
+      "price": 5,
+      "emoji": "✨",
+      "description": "Anneau fin à fermoir clipsable, finition dorée subtile. Compatibles avec l'ensemble de nos pampilles.",
+      "colors": ["#C9A853"],
+      "bg": "#F5D5C8",
+      "badge": "bestseller",
+      "stock": "in_stock",
+      "image": ""
+    },
+    {
+      "id": "creoles-argentees",
+      "name": "Argentées",
+      "category": "Créoles seules",
+      "price": 5,
+      "emoji": "🤍",
+      "description": "Anneau fin à fermoir clipsable, finition argentée délicate. Pour un look plus frais et lumineux.",
+      "colors": ["#A8B8C4"],
+      "bg": "#F9E8E0",
+      "badge": "",
+      "stock": "in_stock",
+      "image": ""
+    }
+  ]
+}
