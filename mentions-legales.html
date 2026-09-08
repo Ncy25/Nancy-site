@@ -111,7 +111,7 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </button>
     </div>
-    <a href="index.html" class="nav-logo" aria-label="Wild Flower by Wooden Mountain">
+    <a href="index.html" class="nav-logo" aria-label="Wild Flower by Wooden Mountain" id="navLogo">
       <span class="logo-wild">Wild</span>
       <div class="logo-flower-row">Fl<svg class="logo-flower-icon" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="10" r="5" fill="#F0A882" opacity=".85"/><circle cx="22" cy="16" r="5" fill="#F0A882" opacity=".75"/><circle cx="16" cy="22" r="5" fill="#F0A882" opacity=".85"/><circle cx="10" cy="16" r="5" fill="#F0A882" opacity=".75"/><circle cx="16" cy="16" r="6" fill="#F5C4A8"/><circle cx="16" cy="16" r="3.5" fill="#fff" opacity=".7"/></svg>wer</div>
       <div style="display:flex;align-items:center;gap:4px;margin-top:1px"><span class="logo-by">by</span><span class="logo-wm">Wooden Mountain</span></div>
@@ -133,123 +133,24 @@
   <div class="ph-spark" style="top:18%;left:8%"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" opacity=".55"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
   <div class="ph-spark" style="top:25%;right:10%;animation-delay:.9s"><svg width="12" height="12" viewBox="0 0 24 24" fill="#D4A853" opacity=".6"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
   <div class="ph-spark" style="bottom:30%;left:15%;animation-delay:1.6s"><svg width="10" height="10" viewBox="0 0 24 24" fill="#fff" opacity=".4"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
-  <div class="page-header-script">Documents légaux</div>
-  <h1>Mentions légales</h1>
-  <p class="page-header-sub">Dernière mise à jour : juin 2025</p>
+  <div class="page-header-script" id="pageHeaderScript">Documents légaux</div>
+  <h1 id="pageHeaderTitle">Mentions légales</h1>
+  <p class="page-header-sub" id="pageHeaderSub">Dernière mise à jour : juin 2025</p>
 </div>
 
 <div class="page-body">
   <div class="container">
     <div class="updated-badge">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      Mis à jour le 1er juin 2025
+      <span id="updatedLabel">Mis à jour le 1er juin 2025</span>
     </div>
     <div class="ml-layout">
-      <aside class="toc">
+      <aside class="toc" id="tocAside">
         <div class="toc-label">Sommaire</div>
-        <ul>
-          <li><a href="#editeur">🌸 Éditeur du site</a></li>
-          <li><a href="#hebergement">🌿 Hébergement</a></li>
-          <li><a href="#propriete">✨ Propriété intellectuelle</a></li>
-          <li><a href="#donnees">🔒 Données personnelles</a></li>
-          <li><a href="#cookies">🍪 Cookies</a></li>
-          <li><a href="#responsabilite">⚖️ Responsabilité</a></li>
-          <li><a href="#contact-ml">📧 Contact</a></li>
-        </ul>
+        <ul id="tocList"></ul>
       </aside>
 
-      <div>
-        <section class="ml-section" id="editeur">
-          <span class="ml-section-tag">Article 1</span>
-          <h2>Éditeur du site</h2>
-          <div class="info-box">
-            <p>
-              <strong>Nom commercial :</strong> Wild Flower by Wooden Mountain<br>
-              <strong>Forme juridique :</strong> Micro-entreprise (auto-entrepreneur)<br>
-              <strong>Nom du responsable :</strong> [Prénom Nom du responsable]<br>
-              <strong>Adresse :</strong> [Votre adresse postale complète]<br>
-              <strong>SIRET :</strong> [Numéro SIRET]<br>
-              <strong>Email :</strong> <a href="mailto:contact@woodenmountain.fr">contact@woodenmountain.fr</a><br>
-              <strong>Directrice de la publication :</strong> [Prénom Nom]
-            </p>
-          </div>
-          <p>Le site <strong>wildflower.woodenmountain.fr</strong> est édité à titre personnel par la créatrice de la marque Wild Flower by Wooden Mountain, dans le cadre d'une activité artisanale de fabrication et de vente de bijoux et accessoires en argile polymère.</p>
-          <p>Conformément à l'article 6 de la loi n°2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, les coordonnées complètes de l'éditeur sont accessibles via les présentes mentions légales.</p>
-        </section>
-        <div class="petal-div">🌸 · · ·</div>
-
-        <section class="ml-section" id="hebergement">
-          <span class="ml-section-tag">Article 2</span>
-          <h2>Hébergement</h2>
-          <div class="info-box">
-            <p>
-              <strong>Hébergeur :</strong> [Nom de l'hébergeur, ex : o2switch / Vercel / OVHcloud]<br>
-              <strong>Adresse :</strong> [Adresse complète de l'hébergeur]<br>
-              <strong>Téléphone :</strong> [Numéro de l'hébergeur]<br>
-              <strong>Site web :</strong> <a href="#" rel="noopener">[site-hebergeur.fr]</a>
-            </p>
-          </div>
-          <p>En cas de litige relatif au contenu ou au fonctionnement du site, merci de prendre contact directement par e-mail avant toute démarche formelle. Nous nous engageons à répondre sous 48 heures ouvrées.</p>
-        </section>
-        <div class="petal-div">🌸 · · ·</div>
-
-        <section class="ml-section" id="propriete">
-          <span class="ml-section-tag">Article 3</span>
-          <h2>Propriété intellectuelle</h2>
-          <p>L'ensemble des éléments constituant ce site — textes, visuels, photographies, illustrations, nom de marque <strong>Wild Flower by Wooden Mountain</strong>, logo, design graphique — sont la propriété exclusive de leur créatrice et sont protégés par les lois françaises et internationales relatives à la propriété intellectuelle.</p>
-          <p>Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie de ces éléments, quel que soit le moyen ou le procédé utilisé, est interdite sans l'autorisation écrite préalable de la titulaire des droits.</p>
-          <p>Les créations artisanales (pampilles, bijoux en argile polymère) présentées sur ce site sont des œuvres originales. Leur reproduction à des fins commerciales ou l'imitation de leur style distinctif est strictement interdite et pourra faire l'objet de poursuites judiciaires.</p>
-        </section>
-        <div class="petal-div">🌸 · · ·</div>
-
-        <section class="ml-section" id="donnees">
-          <span class="ml-section-tag">Article 4</span>
-          <h2>Données personnelles &amp; RGPD</h2>
-          <p>Wild Flower by Wooden Mountain collecte uniquement les données strictement nécessaires au bon traitement des commandes et des demandes de contact, conformément au Règlement Général sur la Protection des Données (RGPD – UE 2016/679) et à la loi Informatique et Libertés.</p>
-          <div class="info-box">
-            <p>
-              <strong>Données collectées :</strong> prénom, nom, adresse e-mail, adresse postale (pour les commandes), message libre.<br>
-              <strong>Finalité :</strong> traitement des commandes, réponse aux demandes, relation client.<br>
-              <strong>Durée de conservation :</strong> 3 ans à compter du dernier contact, sauf obligation légale contraire.<br>
-              <strong>Aucune cession</strong> de vos données à des tiers à des fins commerciales.
-            </p>
-          </div>
-          <p>Conformément aux articles 15 à 22 du RGPD, vous disposez d'un droit d'accès, de rectification, de suppression, de portabilité et d'opposition à vos données. Pour exercer ces droits : <a href="mailto:contact@woodenmountain.fr">contact@woodenmountain.fr</a>.</p>
-          <p>En cas de réclamation non résolue, vous avez la possibilité d'introduire une réclamation auprès de la <strong>CNIL</strong> : <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>.</p>
-        </section>
-        <div class="petal-div">🌸 · · ·</div>
-
-        <section class="ml-section" id="cookies">
-          <span class="ml-section-tag">Article 5</span>
-          <h2>Cookies</h2>
-          <p>Ce site utilise uniquement des cookies techniques strictement nécessaires à son bon fonctionnement (gestion du panier, préférences de navigation). Ces cookies ne collectent aucune donnée personnelle à des fins de profilage ou de publicité ciblée.</p>
-          <p>Aucun cookie tiers à vocation publicitaire ou analytique n'est déposé sans votre consentement explicite. Vous pouvez configurer votre navigateur pour refuser les cookies ; certaines fonctionnalités du site pourraient alors être limitées.</p>
-          <p>Pour en savoir plus : <a href="https://www.cnil.fr/fr/cookies-et-autres-traceurs" target="_blank" rel="noopener">cnil.fr/fr/cookies-et-autres-traceurs</a>.</p>
-        </section>
-        <div class="petal-div">🌸 · · ·</div>
-
-        <section class="ml-section" id="responsabilite">
-          <span class="ml-section-tag">Article 6</span>
-          <h2>Limitation de responsabilité</h2>
-          <p>Wild Flower by Wooden Mountain s'efforce de maintenir les informations publiées sur ce site exactes et à jour. Toutefois, l'éditrice ne saurait être tenue responsable des erreurs ou omissions dans les contenus, ni des dommages directs ou indirects résultant de l'utilisation du site.</p>
-          <p>Les photographies et visuels des produits sont représentatifs mais non contractuels : les couleurs peuvent légèrement varier selon les écrans et les lots de fabrication artisanale. Chaque pièce étant unique et façonnée à la main, de légères variations font partie de l'essence même des créations Wild Flower.</p>
-          <p>L'éditrice se réserve le droit de modifier à tout moment et sans préavis le contenu de ce site, ainsi que les présentes mentions légales.</p>
-        </section>
-        <div class="petal-div">🌸 · · ·</div>
-
-        <section class="ml-section" id="contact-ml">
-          <span class="ml-section-tag">Article 7</span>
-          <h2>Contact</h2>
-          <div class="info-box">
-            <p>
-              📧 <strong>E-mail :</strong> <a href="mailto:contact@woodenmountain.fr">contact@woodenmountain.fr</a><br>
-              📮 <strong>Courrier :</strong> Wild Flower by Wooden Mountain — [Votre adresse postale]<br>
-              ⏱ <strong>Délai de réponse :</strong> sous 48 heures ouvrées.
-            </p>
-          </div>
-          <p style="margin-top:20px;font-family:var(--font-d);font-style:italic;color:var(--terra);font-size:16px;">Merci de votre confiance — et de votre amour pour les petites choses faites à la main. 🌸</p>
-        </section>
-      </div>
+      <div id="sectionsContainer"></div>
     </div>
   </div>
 </div>
@@ -268,6 +169,62 @@
 <script>
   const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('v'); }), {threshold:.08,rootMargin:'0px 0px -20px 0px'});
   document.querySelectorAll('.ml-section').forEach(el => obs.observe(el));
+</script>
+<script>
+  function escapeHtml(str) {
+    return String(str || '')
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function renderBody(body) {
+    if (!body) return '';
+    const blocks = body.split('\n\n');
+    return blocks.map(block => {
+      if (block.startsWith('[ENCADRÉ] ')) {
+        return '<div class="info-box"><p>' + escapeHtml(block.slice(10)) + '</p></div>';
+      }
+      const lines = block.split('\n');
+      if (lines.length && lines.every(l => l.startsWith('- '))) {
+        return '<ul class="list">' + lines.map(l => '<li>' + escapeHtml(l.slice(2)) + '</li>').join('') + '</ul>';
+      }
+      return '<p>' + escapeHtml(block) + '</p>';
+    }).join('');
+  }
+
+  fetch('content/mentions-legales.json').then(r => r.json()).then(d => {
+    const setText = (id, val) => { const el = document.getElementById(id); if (el && val) el.textContent = val; };
+    setText('pageHeaderScript', d.header_script);
+    setText('pageHeaderTitle', d.header_title);
+    setText('pageHeaderSub', d.header_subtitle);
+    setText('updatedLabel', d.updated_label);
+
+    const tocList = document.getElementById('tocList');
+    const sectionsContainer = document.getElementById('sectionsContainer');
+    if (tocList && sectionsContainer && Array.isArray(d.sections)) {
+      tocList.innerHTML = d.sections.map(s =>
+        '<li><a href="#' + s.slug + '">' + (s.toc_emoji || '📄') + ' ' + escapeHtml(s.toc_label || s.title) + '</a></li>'
+      ).join('');
+
+      sectionsContainer.innerHTML = '<div>' + d.sections.map((s, i) => `
+        <section class="ml-section" id="${s.slug}">
+          <span class="ml-section-tag">${escapeHtml(s.tag)}</span>
+          <h2>${escapeHtml(s.title)}</h2>
+          ${renderBody(s.body)}
+        </section>
+        ${i < d.sections.length - 1 ? '<div class="petal-div">🌸 · · ·</div>' : ''}
+      `).join('') + '</div>';
+
+      const obs2 = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }), { threshold: .08, rootMargin: '0px 0px -20px 0px' });
+      document.querySelectorAll('.ml-section').forEach(el => obs2.observe(el));
+    }
+  }).catch(() => {});
+
+  fetch('content/site.json').then(r => r.json()).then(site => {
+    if (site.logo_image) {
+      const logo = document.getElementById('navLogo');
+      if (logo) logo.innerHTML = `<img src="${site.logo_image}" alt="${site.brand_name || 'Wild Flower by Wooden Mountain'}" style="height:48px;width:auto;display:block">`;
+    }
+  }).catch(() => {});
 </script>
 </body>
 </html>
