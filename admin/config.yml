@@ -35,6 +35,10 @@ collections:
               - { label: "Titre — ligne 2", name: "title_line2", widget: "string" }
               - { label: "Sous-titre", name: "subtitle", widget: "text" }
               - { label: "Texte du bouton", name: "button_text", widget: "string" }
+              - { label: "Photo principale (grande vignette)", name: "main_image", widget: "image", required: false, hint: "Laisser vide pour garder l'illustration actuelle." }
+              - { label: "Petite photo 1", name: "small_image_1", widget: "image", required: false }
+              - { label: "Petite photo 2", name: "small_image_2", widget: "image", required: false }
+              - { label: "Petite photo 3", name: "small_image_3", widget: "image", required: false }
           - { label: "Titre section 'lifestyle'", name: "lifestyle_title", widget: "string" }
           - { label: "Titre section boutique", name: "boutique_title", widget: "string" }
           - { label: "Sous-titre section boutique", name: "boutique_subtitle", widget: "string" }
