@@ -118,10 +118,15 @@
       /* ── APERÇU : Page d'accueil ── */
       CMS.registerPreviewTemplate('home', createClass({
         render: function () {
-          const { entry } = this.props;
+          const { entry, getAsset } = this.props;
           const g = (path) => entry.getIn(['data', ...path]) || '';
           const chips = entry.getIn(['data', 'histoire', 'chips']);
           const chipsArr = chips && chips.toJS ? chips.toJS() : (Array.isArray(chips) ? chips : []);
+          const heroImg = (path) => {
+            if (!path) return h('div', { style: { width: '100%', height: '100%', borderRadius: 'inherit', background: 'rgba(255,255,255,0.35)' } });
+            const asset = getAsset(path);
+            return h('img', { src: asset ? asset.url : '', style: { width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit' } });
+          };
 
           return h('div', {},
             h('div', { className: 'wf-promo' }, g(['promo_bar'])),
@@ -129,7 +134,13 @@
               h('div', { className: 'wf-script' }, g(['hero', 'script'])),
               h('div', { className: 'wf-h1' }, g(['hero', 'title_line1']) + ' ' + g(['hero', 'title_line2'])),
               h('div', { className: 'wf-sub' }, g(['hero', 'subtitle'])),
-              h('span', { className: 'wf-btn' }, g(['hero', 'button_text']))
+              h('span', { className: 'wf-btn' }, g(['hero', 'button_text'])),
+              h('div', { style: { display: 'flex', gap: '10px', justifyContent: 'center', marginTop: '18px' } },
+                h('div', { style: { width: '80px', height: '80px', borderRadius: '14px', overflow: 'hidden' } }, heroImg(entry.getIn(['data', 'hero', 'main_image']))),
+                h('div', { style: { width: '40px', height: '40px', borderRadius: '10px', overflow: 'hidden' } }, heroImg(entry.getIn(['data', 'hero', 'small_image_1']))),
+                h('div', { style: { width: '40px', height: '40px', borderRadius: '10px', overflow: 'hidden' } }, heroImg(entry.getIn(['data', 'hero', 'small_image_2']))),
+                h('div', { style: { width: '40px', height: '40px', borderRadius: '10px', overflow: 'hidden' } }, heroImg(entry.getIn(['data', 'hero', 'small_image_3'])))
+              )
             ),
             h('div', { className: 'wf-section-title' }, 'Section boutique'),
             h('div', { className: 'wf-section-h2' }, g(['boutique_title']) + ' — ' + g(['boutique_subtitle'])),
