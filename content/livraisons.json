@@ -1,0 +1,80 @@
+{
+  "header_script": "Expédié avec amour",
+  "header_title": "Livraisons &amp; Retours",
+  "header_subtitle": "Chaque colis est emballé à la main, avec soin ✨",
+  "updated_label": "",
+  "sections": [
+    {
+      "slug": "lv-preparation",
+      "toc_emoji": "🏺",
+      "toc_label": "Préparation",
+      "tag": "Préparation",
+      "title": "Préparation des commandes",
+      "body": "Chaque commande est préparée à la main, avec le même soin apporté à la fabrication des pièces elles-mêmes. Les commandes sont traitées du lundi au vendredi .\n\nVous recevrez un e-mail de confirmation d'expédition avec votre numéro de suivi dès que votre colis sera remis au transporteur."
+    },
+    {
+      "slug": "lv-modes",
+      "toc_emoji": "📦",
+      "toc_label": "Modes de livraison",
+      "tag": "Modes de livraison",
+      "title": "Modes de livraison disponibles",
+      "body": "Plusieurs options d'expédition sont proposées selon votre destination :\n\n[ENCADRÉ] 🇫🇷 France métropolitaine : — Lettre suivie (La Poste) pour les petits envois légers — Colissimo avec suivi et avis de passage 🇪🇺 Europe : — Colissimo International avec numéro de suivi 🌍 Reste du monde : — Colissimo International ou Chronopost selon la destination — Nous contacter pour un devis personnalisé\n\nLes bijoux en argile polymère sont légers et compacts — ils voyagent très bien ! Chaque envoi est soigneusement protégé pour arriver intact."
+    },
+    {
+      "slug": "lv-tarifs",
+      "toc_emoji": "💛",
+      "toc_label": "Tarifs & délais",
+      "tag": "Tarifs & délais",
+      "title": "Tarifs et délais de livraison",
+      "body": "Les délais sont indicatifs et peuvent varier en période de forte activité postale (Noël, soldes, etc.)."
+    },
+    {
+      "slug": "lv-suivi",
+      "toc_emoji": "🔍",
+      "toc_label": "Suivi de colis",
+      "tag": "Suivi",
+      "title": "Suivi de votre colis",
+      "body": "Dès l'expédition de votre commande, vous recevez un e-mail contenant votre numéro de suivi . Vous pouvez suivre l'acheminement de votre colis directement sur le site de La Poste ou du transporteur concerné.\n\nEn cas d'absence lors de la livraison, un avis de passage est déposé dans votre boîte aux lettres. Le colis est généralement mis à disposition au bureau de poste le plus proche pendant 15 jours."
+    },
+    {
+      "slug": "lv-probleme",
+      "toc_emoji": "⚠️",
+      "toc_label": "Problème livraison",
+      "tag": "Problème ?",
+      "title": "Problème à la livraison",
+      "body": "Malgré tout le soin apporté à l'emballage, il peut arriver qu'un colis arrive endommagé ou soit perdu. Voici comment nous pouvons vous aider :\n\n- Colis endommagé : prenez des photos avant d'ouvrir le colis, puis contactez-nous sous 48h avec les photos. Nous ouvrirons une réclamation et trouverons une solution (remplacement ou remboursement).\n- Colis perdu : si le suivi n'évolue plus depuis plus de 10 jours ouvrés, contactez-nous. Nous effectuerons une recherche auprès du transporteur.\n- Erreur de commande : si vous avez reçu un article différent de celui commandé, contactez-nous immédiatement. Nous prenons en charge les frais de retour et renvoyons le bon article.\n\nDans tous les cas : contact@woodenmountain.fr — nous sommes là pour vous. 🌸"
+    },
+    {
+      "slug": "lv-retractation",
+      "toc_emoji": "↩️",
+      "toc_label": "Rétractation",
+      "tag": "Rétractation",
+      "title": "Droit de rétractation",
+      "body": "Conformément à l'article L.221-18 du Code de la consommation, vous disposez d'un délai de 14 jours calendaires à compter de la réception de votre commande pour exercer votre droit de rétractation, sans motif à donner.\n\n[ENCADRÉ] 📧 Notifiez-nous par e-mail à contact@woodenmountain.fr avant l'expiration du délai, en précisant votre numéro de commande.\n\n[ENCADRÉ] ⚠️ Exception — Sur mesure : Le droit de rétractation ne s'applique pas aux commandes personnalisées (couleur, forme ou motif spécifiques choisis sur mesure), conformément à l'article L.221-28 du Code de la consommation."
+    },
+    {
+      "slug": "lv-retours",
+      "toc_emoji": "🔄",
+      "toc_label": "Retours",
+      "tag": "Retours",
+      "title": "Procédure de retour",
+      "body": "Pour effectuer un retour, suivez ces étapes :"
+    },
+    {
+      "slug": "lv-remboursement",
+      "toc_emoji": "💸",
+      "toc_label": "Remboursement",
+      "tag": "Remboursement",
+      "title": "Modalités de remboursement",
+      "body": "Le remboursement est effectué dans les 14 jours suivant la réception du retour ou la preuve d'expédition du colis (le premier des deux termes).\n\n[ENCADRÉ] Montant remboursé : prix du ou des produits retournés + frais de port initiaux si l'intégralité de la commande est retournée Frais de retour : à la charge de l'acheteur (sauf erreur/défaut de notre part) Mode de remboursement : via le moyen de paiement utilisé lors de la commande Délai bancaire : 3 à 5 jours supplémentaires selon votre établissement\n\nEn cas de retour partiel, seul le montant des articles retournés est remboursé. Les frais de port initiaux ne sont pas remboursés dans ce cas."
+    },
+    {
+      "slug": "lv-contact",
+      "toc_emoji": "📧",
+      "toc_label": "Contact",
+      "tag": "Contact",
+      "title": "Une question ? On est là 🌸",
+      "body": "[ENCADRÉ] 📧 E-mail : contact@woodenmountain.fr ⏱ Délai de réponse : sous 48 heures ouvrées 📦 Pour tout retour : toujours nous contacter en premier\n\nChaque colis part avec une petite attention — parce que vous méritez de sourire en l'ouvrant. 🌸"
+    }
+  ]
+}

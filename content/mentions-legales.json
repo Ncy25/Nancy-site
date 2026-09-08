@@ -1,0 +1,64 @@
+{
+  "header_script": "Documents légaux",
+  "header_title": "Mentions légales",
+  "header_subtitle": "Dernière mise à jour : juin 2025",
+  "updated_label": "Mis à jour le 1er juin 2025",
+  "sections": [
+    {
+      "slug": "editeur",
+      "toc_emoji": "🌸",
+      "toc_label": "Éditeur du site",
+      "tag": "Article 1",
+      "title": "Éditeur du site",
+      "body": "[ENCADRÉ] Nom commercial : Wild Flower by Wooden Mountain Forme juridique : Micro-entreprise (auto-entrepreneur) Nom du responsable : [Prénom Nom du responsable] Adresse : [Votre adresse postale complète] SIRET : [Numéro SIRET] Email : contact@woodenmountain.fr Directrice de la publication : [Prénom Nom]\n\nLe site wildflower.woodenmountain.fr est édité à titre personnel par la créatrice de la marque Wild Flower by Wooden Mountain, dans le cadre d'une activité artisanale de fabrication et de vente de bijoux et accessoires en argile polymère.\n\nConformément à l'article 6 de la loi n°2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, les coordonnées complètes de l'éditeur sont accessibles via les présentes mentions légales."
+    },
+    {
+      "slug": "hebergement",
+      "toc_emoji": "🌿",
+      "toc_label": "Hébergement",
+      "tag": "Article 2",
+      "title": "Hébergement",
+      "body": "[ENCADRÉ] Hébergeur : [Nom de l'hébergeur, ex : o2switch / Vercel / OVHcloud] Adresse : [Adresse complète de l'hébergeur] Téléphone : [Numéro de l'hébergeur] Site web : [site-hebergeur.fr]\n\nEn cas de litige relatif au contenu ou au fonctionnement du site, merci de prendre contact directement par e-mail avant toute démarche formelle. Nous nous engageons à répondre sous 48 heures ouvrées."
+    },
+    {
+      "slug": "propriete",
+      "toc_emoji": "✨",
+      "toc_label": "Propriété intellectuelle",
+      "tag": "Article 3",
+      "title": "Propriété intellectuelle",
+      "body": "L'ensemble des éléments constituant ce site — textes, visuels, photographies, illustrations, nom de marque Wild Flower by Wooden Mountain , logo, design graphique — sont la propriété exclusive de leur créatrice et sont protégés par les lois françaises et internationales relatives à la propriété intellectuelle.\n\nToute reproduction, représentation, modification, publication ou adaptation de tout ou partie de ces éléments, quel que soit le moyen ou le procédé utilisé, est interdite sans l'autorisation écrite préalable de la titulaire des droits.\n\nLes créations artisanales (pampilles, bijoux en argile polymère) présentées sur ce site sont des œuvres originales. Leur reproduction à des fins commerciales ou l'imitation de leur style distinctif est strictement interdite et pourra faire l'objet de poursuites judiciaires."
+    },
+    {
+      "slug": "donnees",
+      "toc_emoji": "🔒",
+      "toc_label": "Données personnelles",
+      "tag": "Article 4",
+      "title": "Données personnelles & RGPD",
+      "body": "Wild Flower by Wooden Mountain collecte uniquement les données strictement nécessaires au bon traitement des commandes et des demandes de contact, conformément au Règlement Général sur la Protection des Données (RGPD – UE 2016/679) et à la loi Informatique et Libertés.\n\n[ENCADRÉ] Données collectées : prénom, nom, adresse e-mail, adresse postale (pour les commandes), message libre. Finalité : traitement des commandes, réponse aux demandes, relation client. Durée de conservation : 3 ans à compter du dernier contact, sauf obligation légale contraire. Aucune cession de vos données à des tiers à des fins commerciales.\n\nConformément aux articles 15 à 22 du RGPD, vous disposez d'un droit d'accès, de rectification, de suppression, de portabilité et d'opposition à vos données. Pour exercer ces droits : contact@woodenmountain.fr .\n\nEn cas de réclamation non résolue, vous avez la possibilité d'introduire une réclamation auprès de la CNIL : www.cnil.fr ."
+    },
+    {
+      "slug": "cookies",
+      "toc_emoji": "🍪",
+      "toc_label": "Cookies",
+      "tag": "Article 5",
+      "title": "Cookies",
+      "body": "Ce site utilise uniquement des cookies techniques strictement nécessaires à son bon fonctionnement (gestion du panier, préférences de navigation). Ces cookies ne collectent aucune donnée personnelle à des fins de profilage ou de publicité ciblée.\n\nAucun cookie tiers à vocation publicitaire ou analytique n'est déposé sans votre consentement explicite. Vous pouvez configurer votre navigateur pour refuser les cookies ; certaines fonctionnalités du site pourraient alors être limitées.\n\nPour en savoir plus : cnil.fr/fr/cookies-et-autres-traceurs ."
+    },
+    {
+      "slug": "responsabilite",
+      "toc_emoji": "⚖️",
+      "toc_label": "Responsabilité",
+      "tag": "Article 6",
+      "title": "Limitation de responsabilité",
+      "body": "Wild Flower by Wooden Mountain s'efforce de maintenir les informations publiées sur ce site exactes et à jour. Toutefois, l'éditrice ne saurait être tenue responsable des erreurs ou omissions dans les contenus, ni des dommages directs ou indirects résultant de l'utilisation du site.\n\nLes photographies et visuels des produits sont représentatifs mais non contractuels : les couleurs peuvent légèrement varier selon les écrans et les lots de fabrication artisanale. Chaque pièce étant unique et façonnée à la main, de légères variations font partie de l'essence même des créations Wild Flower.\n\nL'éditrice se réserve le droit de modifier à tout moment et sans préavis le contenu de ce site, ainsi que les présentes mentions légales."
+    },
+    {
+      "slug": "contact-ml",
+      "toc_emoji": "📧",
+      "toc_label": "Contact",
+      "tag": "Article 7",
+      "title": "Contact",
+      "body": "[ENCADRÉ] 📧 E-mail : contact@woodenmountain.fr 📮 Courrier : Wild Flower by Wooden Mountain — [Votre adresse postale] ⏱ Délai de réponse : sous 48 heures ouvrées.\n\nMerci de votre confiance — et de votre amour pour les petites choses faites à la main. 🌸"
+    }
+  ]
+}

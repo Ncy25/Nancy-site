@@ -1,0 +1,80 @@
+{
+  "header_script": "Vos données, notre respect",
+  "header_title": "Politique de Confidentialité",
+  "header_subtitle": "Dernière mise à jour : juin 2025 · Conforme RGPD",
+  "updated_label": "Mis à jour le 1er juin 2025 — conforme RGPD (UE 2016/679)",
+  "sections": [
+    {
+      "slug": "pc-responsable",
+      "toc_emoji": "🌸",
+      "toc_label": "Responsable",
+      "tag": "Article 1",
+      "title": "Responsable du traitement",
+      "body": "[ENCADRÉ] Responsable : Wild Flower by Wooden Mountain Représentant : [Prénom Nom] Adresse : [Votre adresse postale] Email : contact@woodenmountain.fr\n\nWild Flower by Wooden Mountain s'engage à traiter vos données personnelles avec la plus grande transparence, dans le respect du Règlement Général sur la Protection des Données (RGPD – UE 2016/679) et de la loi Informatique et Libertés modifiée."
+    },
+    {
+      "slug": "pc-collecte",
+      "toc_emoji": "📋",
+      "toc_label": "Données collectées",
+      "tag": "Article 2",
+      "title": "Données collectées",
+      "body": "Nous collectons uniquement les données strictement nécessaires à nos activités :\n\n[ENCADRÉ] Via le formulaire de contact : prénom, nom, adresse e-mail, message libre, sujet. Via une commande : prénom, nom, adresse e-mail, adresse postale de livraison, détail de la commande. Via la navigation : données de connexion techniques (adresse IP, type de navigateur) à des fins de sécurité et statistiques anonymes uniquement. Ce que nous ne collectons PAS : données bancaires (traitées exclusivement par nos prestataires de paiement sécurisés), numéro de téléphone (sauf demande explicite), données sensibles."
+    },
+    {
+      "slug": "pc-finalites",
+      "toc_emoji": "🎯",
+      "toc_label": "Finalités",
+      "tag": "Article 3",
+      "title": "Finalités du traitement",
+      "body": "Vos données sont collectées et traitées pour les finalités suivantes :\n\n- Traitement des commandes — exécution du contrat (article 6.1.b RGPD)\n- Service client et réponses — intérêt légitime et exécution du contrat\n- Gestion comptable — obligation légale (article 6.1.c RGPD)\n- Amélioration du site — statistiques anonymes, intérêt légitime\n- Communication commerciale — uniquement avec votre consentement explicite\n\nNous ne procédons à aucun traitement automatisé ni profilage à des fins publicitaires."
+    },
+    {
+      "slug": "pc-conservation",
+      "toc_emoji": "⏳",
+      "toc_label": "Conservation",
+      "tag": "Article 4",
+      "title": "Durée de conservation",
+      "body": "[ENCADRÉ] Données de contact : 3 ans à compter du dernier contact Données de commande : 5 ans (obligation comptable légale) Données de navigation : 13 mois maximum Données de consentement marketing : jusqu'au retrait du consentement + 3 ans\n\nÀ l'expiration de ces délais, vos données sont supprimées ou anonymisées de manière irréversible."
+    },
+    {
+      "slug": "pc-partage",
+      "toc_emoji": "🤝",
+      "toc_label": "Partage",
+      "tag": "Article 5",
+      "title": "Partage des données",
+      "body": "Wild Flower by Wooden Mountain ne vend ni ne loue vos données personnelles à des tiers. Vos données peuvent être partagées avec :\n\n- Prestataires de paiement (ex : Stripe, PayPal) — pour sécuriser les transactions\n- Transporteurs (ex : La Poste, Colissimo) — pour l'acheminement des colis\n- Hébergeur du site — dans le cadre de l'exploitation technique\n\nCes tiers sont soumis à leurs propres politiques de confidentialité et n'utilisent vos données qu'aux fins pour lesquelles elles ont été transmises."
+    },
+    {
+      "slug": "pc-droits",
+      "toc_emoji": "✊",
+      "toc_label": "Vos droits",
+      "tag": "Article 6",
+      "title": "Vos droits",
+      "body": "Conformément aux articles 15 à 22 du RGPD, vous disposez des droits suivants :\n\nPour exercer ces droits, écrivez à : contact@woodenmountain.fr . Nous répondrons dans un délai d'un mois.\n\nEn cas de réclamation non résolue, vous pouvez saisir la CNIL : www.cnil.fr ."
+    },
+    {
+      "slug": "pc-cookies",
+      "toc_emoji": "🍪",
+      "toc_label": "Cookies",
+      "tag": "Article 7",
+      "title": "Cookies & traceurs",
+      "body": "Ce site utilise uniquement des cookies techniques essentiels (gestion du panier, session de navigation). Aucun cookie publicitaire ou de profilage n'est déposé sans votre consentement.\n\n[ENCADRÉ] Cookies essentiels : nécessaires au fonctionnement du site — aucun consentement requis Cookies analytiques : uniquement avec votre accord explicite Cookies tiers : aucun sans consentement Durée max : 13 mois conformément aux recommandations CNIL\n\nVous pouvez gérer ou supprimer les cookies via les paramètres de votre navigateur à tout moment. Plus d'informations : cnil.fr/fr/cookies-et-autres-traceurs ."
+    },
+    {
+      "slug": "pc-securite",
+      "toc_emoji": "🔒",
+      "toc_label": "Sécurité",
+      "tag": "Article 8",
+      "title": "Sécurité des données",
+      "body": "Wild Flower by Wooden Mountain met en œuvre les mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès non autorisé, perte, altération ou divulgation.\n\nLes transmissions de données sensibles (paiement, informations personnelles) sont chiffrées via le protocole SSL/TLS. Aucun numéro de carte bancaire n'est conservé sur nos serveurs.\n\nEn cas de violation de données susceptible d'engendrer un risque pour vos droits et libertés, nous nous engageons à en informer la CNIL dans les 72 heures et à vous notifier directement si le risque est élevé."
+    },
+    {
+      "slug": "pc-contact",
+      "toc_emoji": "📧",
+      "toc_label": "Contact",
+      "tag": "Article 9",
+      "title": "Contact & réclamations",
+      "body": "[ENCADRÉ] 📧 E-mail : contact@woodenmountain.fr 📮 Courrier : Wild Flower by Wooden Mountain — [Votre adresse] ⏱ Délai de réponse : sous 30 jours (RGPD) · en pratique sous 48h ouvrées 🏛️ Autorité de contrôle : CNIL — www.cnil.fr\n\nVotre confiance est aussi précieuse que chaque pampille façonnée à la main. 🌸"
+    }
+  ]
+}

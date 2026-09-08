@@ -1,0 +1,96 @@
+{
+  "header_script": "Acheter en confiance",
+  "header_title": "Conditions Générales de Vente",
+  "header_subtitle": "Dernière mise à jour : juin 2025",
+  "updated_label": "Mis à jour le 1er juin 2025",
+  "sections": [
+    {
+      "slug": "cgv-objet",
+      "toc_emoji": "🌸",
+      "toc_label": "Objet",
+      "tag": "Article 1",
+      "title": "Objet",
+      "body": "Les présentes Conditions Générales de Vente (ci-après « CGV ») régissent les relations contractuelles entre Wild Flower by Wooden Mountain (micro-entreprise, SIRET : [numéro]) et toute personne physique effectuant un achat sur le site ou par tout autre canal de vente proposé par la marque.\n\nEn passant commande, l'acheteur reconnaît avoir pris connaissance des présentes CGV et les accepter sans réserve. Ces CGV prévalent sur tout autre document."
+    },
+    {
+      "slug": "cgv-produits",
+      "toc_emoji": "🏺",
+      "toc_label": "Produits",
+      "tag": "Article 2",
+      "title": "Produits",
+      "body": "Wild Flower by Wooden Mountain propose des bijoux et accessoires artisanaux fabriqués à la main en argile polymère, principalement des pampilles interchangeables et des créoles.\n\n[ENCADRÉ] ⚠️ Important — Nature artisanale : Chaque pièce étant réalisée à la main, des légères variations de forme, de teinte ou de texture par rapport aux photos sont inhérentes au processus de fabrication et font partie de l'essence de chaque création. Ces variations ne constituent pas un défaut.\n\nLes photographies présentées sur le site sont aussi fidèles que possible, mais peuvent varier selon les calibrations des écrans. En cas de doute sur une couleur ou un modèle, n'hésitez pas à nous contacter avant commande."
+    },
+    {
+      "slug": "cgv-commande",
+      "toc_emoji": "🛒",
+      "toc_label": "Commande",
+      "tag": "Article 3",
+      "title": "Passation de commande",
+      "body": "La commande est validée à réception du paiement complet. Un e-mail de confirmation est adressé à l'acheteur dans les 24 heures suivant la validation du paiement.\n\nWild Flower by Wooden Mountain se réserve le droit d'annuler une commande en cas de rupture de stock, d'erreur manifeste de prix ou de suspicion de fraude. L'acheteur sera informé sans délai et remboursé intégralement le cas échéant.\n\nLes commandes sont traitées du lundi au vendredi. Les commandes reçues le week-end ou jours fériés sont traitées le premier jour ouvré suivant."
+    },
+    {
+      "slug": "cgv-prix",
+      "toc_emoji": "💛",
+      "toc_label": "Prix",
+      "tag": "Article 4",
+      "title": "Prix",
+      "body": "Les prix sont affichés en euros (€), toutes taxes comprises (TTC). En tant que micro-entreprise en franchise de TVA (article 293 B du CGI), Wild Flower by Wooden Mountain ne collecte pas de TVA — la mention « TVA non applicable » s'applique.\n\n[ENCADRÉ] Pampilles + Créoles Unies : 16,00 € Pampilles + Créoles Motifs : 18,00 € Pampilles seules Unies : 13,00 € Pampilles seules Motifs : 15,00 € Créoles seules Dorées : 5,00 € Créoles seules Argentées : 5,00 € Frais de port : offerts dès 50€ d'achat\n\nLes prix peuvent être modifiés à tout moment. Le prix applicable est celui affiché au moment de la validation de la commande."
+    },
+    {
+      "slug": "cgv-paiement",
+      "toc_emoji": "💳",
+      "toc_label": "Paiement",
+      "tag": "Article 5",
+      "title": "Paiement",
+      "body": "Le paiement est exigible à la commande. Les moyens de paiement acceptés sont :\n\n- Carte bancaire (Visa, Mastercard, CB) — via un prestataire sécurisé\n- PayPal\n- Virement bancaire (sur demande, pour les commandes sur mesure)\n\nLes transactions sont sécurisées par chiffrement SSL. Wild Flower by Wooden Mountain ne conserve aucune donnée bancaire."
+    },
+    {
+      "slug": "cgv-livraison",
+      "toc_emoji": "📦",
+      "toc_label": "Livraison",
+      "tag": "Article 6",
+      "title": "Livraison",
+      "body": "Les commandes sont expédiées sous 3 à 5 jours ouvrés après confirmation du paiement, emballées avec soin.\n\n[ENCADRÉ] France métropolitaine : Lettre suivie ou Colissimo sous 2–3 jours DOM-TOM & International : Colissimo International, délais variables Livraison offerte dès 50€ d'achat en France métropolitaine En dessous de 50€ : frais de port selon le mode d'expédition choisi\n\nWild Flower by Wooden Mountain ne peut être tenue responsable des retards imputables aux transporteurs ou aux services postaux. En cas de colis perdu, une réclamation sera ouverte auprès du transporteur dans les meilleurs délais."
+    },
+    {
+      "slug": "cgv-retractation",
+      "toc_emoji": "↩️",
+      "toc_label": "Rétractation",
+      "tag": "Article 7",
+      "title": "Droit de rétractation",
+      "body": "Conformément aux articles L.221-18 et suivants du Code de la consommation, l'acheteur dispose d'un délai de 14 jours calendaires à compter de la réception du colis pour exercer son droit de rétractation, sans motif à donner.\n\nPour exercer ce droit, il suffit d'en informer Wild Flower by Wooden Mountain par e-mail à contact@woodenmountain.fr avant l'expiration du délai.\n\n[ENCADRÉ] ⚠️ Exception — Commandes sur mesure : Conformément à l'article L.221-28 du Code de la consommation, le droit de rétractation ne s'applique pas aux produits clairement personnalisés ou réalisés selon les spécifications de l'acheteur.\n\nLe remboursement intégral (hors frais de retour à la charge de l'acheteur) sera effectué dans les 14 jours suivant la réception du retour ou la preuve d'expédition du colis."
+    },
+    {
+      "slug": "cgv-retours",
+      "toc_emoji": "🔄",
+      "toc_label": "Retours",
+      "tag": "Article 8",
+      "title": "Retours & échanges",
+      "body": "Les produits doivent être retournés dans leur état d'origine, non portés, dans leur emballage d'origine, dans un délai de 14 jours après notification du retour.\n\nLes frais de retour sont à la charge de l'acheteur, sauf en cas d'erreur de notre part ou de produit défectueux.\n\nPour tout retour ou échange, contacter préalablement contact@woodenmountain.fr afin d'obtenir les instructions d'expédition. Aucun retour ne sera accepté sans accord préalable."
+    },
+    {
+      "slug": "cgv-garanties",
+      "toc_emoji": "🛡️",
+      "toc_label": "Garanties",
+      "tag": "Article 9",
+      "title": "Garanties légales",
+      "body": "Tous les produits bénéficient de la garantie légale de conformité (articles L.217-4 à L.217-14 du Code de la consommation) et de la garantie légale contre les vices cachés (articles 1641 à 1649 du Code civil).\n\nEn cas de produit non conforme ou défectueux, l'acheteur doit contacter Wild Flower by Wooden Mountain dans les meilleurs délais. Une solution sera proposée : remplacement, avoir ou remboursement.\n\nL'usure normale liée au port, notamment la décoloration due à des projections d'eau ou de produits cosmétiques, n'entre pas dans le cadre des garanties légales."
+    },
+    {
+      "slug": "cgv-mesure",
+      "toc_emoji": "✋",
+      "toc_label": "Sur mesure",
+      "tag": "Article 10",
+      "title": "Commandes sur mesure",
+      "body": "Wild Flower by Wooden Mountain propose des créations sur mesure (couleur, motif, forme spécifique). Ces commandes font l'objet d'un échange préalable par e-mail pour définir le projet.\n\n[ENCADRÉ] Délai de réalisation : 2 à 4 semaines selon la complexité Acompte : 50% à la commande, solde à l'expédition Annulation : l'acompte versé est non remboursable si la production a démarré Droit de rétractation : non applicable (article L.221-28 du Code de la consommation)\n\nDes photos de validation seront envoyées avant expédition pour s'assurer de votre satisfaction."
+    },
+    {
+      "slug": "cgv-contact",
+      "toc_emoji": "📧",
+      "toc_label": "Contact",
+      "tag": "Article 11",
+      "title": "Contact & litiges",
+      "body": "Pour toute question relative à une commande, un retour ou une réclamation :\n\n[ENCADRÉ] 📧 E-mail : contact@woodenmountain.fr ⏱ Délai de réponse : sous 48 heures ouvrées.\n\nEn cas de litige non résolu, l'acheteur peut recourir gratuitement à un médiateur de la consommation. Les présentes CGV sont soumises au droit français. Tout litige relève de la compétence des tribunaux français.\n\nChaque commande est préparée avec beaucoup d'amour — et la promesse que vous repartirez avec un sourire. 🌸"
+    }
+  ]
+}
