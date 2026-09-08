@@ -590,7 +590,7 @@
   <div class="hero-inner">
     <!-- Visual tiles -->
     <div class="hero-visual">
-      <div class="hero-card hero-card-main">
+      <div class="hero-card hero-card-main" id="heroImgMain">
         <svg width="160" height="160" viewBox="0 0 160 160" fill="none">
           <!-- main pampille shape -->
           <ellipse cx="80" cy="80" rx="52" ry="62" fill="#F0A882" opacity=".6" transform="rotate(-15 80 80)"/>
@@ -605,13 +605,13 @@
         </svg>
       </div>
       <div style="display:flex;flex-direction:column;gap:14px">
-        <div class="hero-card hero-card-sm">
+        <div class="hero-card hero-card-sm" id="heroImgSmall1">
           <svg width="56" height="56" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="20" stroke="#C9A853" stroke-width="4" fill="none"/><circle cx="28" cy="48" r="3.5" fill="#C9A853"/></svg>
         </div>
-        <div class="hero-card hero-card-sm">
+        <div class="hero-card hero-card-sm" id="heroImgSmall2">
           <svg width="56" height="56" viewBox="0 0 56 56" fill="none"><path d="M28 50C16 38 4 30 4 20C4 11 11 6 18 9C22.5 11 26 17 28 22C30 17 33.5 11 38 9C45 6 52 11 52 20C52 30 40 38 28 50Z" fill="#8FAF8A" opacity=".6"/></svg>
         </div>
-        <div class="hero-card hero-card-sm">
+        <div class="hero-card hero-card-sm" id="heroImgSmall3">
           <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
             <circle cx="28" cy="18" r="9" fill="#F0A882" opacity=".55"/>
             <circle cx="38" cy="28" r="9" fill="#F0A882" opacity=".5"/>
@@ -1007,6 +1007,14 @@
       setText('heroTitle2', d.hero.title_line2);
       setText('heroSubtitle', d.hero.subtitle);
       setText('heroButtonText', d.hero.button_text);
+      const setImg = (id, path) => {
+        const el = document.getElementById(id);
+        if (el && path) el.innerHTML = `<img src="${path}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit">`;
+      };
+      setImg('heroImgMain', d.hero.main_image);
+      setImg('heroImgSmall1', d.hero.small_image_1);
+      setImg('heroImgSmall2', d.hero.small_image_2);
+      setImg('heroImgSmall3', d.hero.small_image_3);
     }
     setText('lifestyleTitle', d.lifestyle_title);
     setText('boutiqueTitle', d.boutique_title);
