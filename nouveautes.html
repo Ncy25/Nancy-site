@@ -658,6 +658,11 @@
       <span class="section-count" id="countLabel">7 créations</span>
     </div>
 
+    <!-- Search -->
+    <div style="margin-bottom:14px">
+      <input type="text" id="nouveautesSearchInput" placeholder="🔍 Rechercher un produit par nom..." oninput="applyFilter()" style="width:100%;max-width:420px;border:1px solid rgba(195,107,74,0.2);border-radius:999px;padding:10px 18px;font-size:14px;font-family:inherit;color:inherit;background:var(--ivory,#FFFCFA);outline:none">
+    </div>
+
     <!-- Filters -->
     <div class="filter-row r">
       <button class="filter-pill active" onclick="filterPill('all', this)">Tout voir</button>
@@ -923,6 +928,12 @@
     const cbTitle = document.querySelector('.cb-title'); if (cbTitle && data.countdown_title) cbTitle.textContent = data.countdown_title;
     const cbSub = document.querySelector('.cb-sub'); if (cbSub && data.countdown_subtitle) cbSub.textContent = data.countdown_subtitle;
     renderNouveautes(data);
+    const urlParams = new URLSearchParams(window.location.search);
+    const q = urlParams.get('q');
+    if (q) {
+      const si = document.getElementById('nouveautesSearchInput');
+      if (si) { si.value = q; applyFilter(); }
+    }
   }).catch(() => {
     const lbl = document.getElementById('countLabel');
     if (lbl) lbl.textContent = 'Produits indisponibles pour le moment';
@@ -972,13 +983,23 @@
 
   function applyFilter() {
     const cards = document.querySelectorAll('.p-card, .feature-card');
+    const searchInput = document.getElementById('nouveautesSearchInput');
+    const q = searchInput ? searchInput.value.trim().toLowerCase() : '';
     let count = 0;
     cards.forEach(c => {
       const cat = c.dataset.cat || '';
       const tags = (c.dataset.tags || '').split(',');
-      const show = activeFilter === 'all'
+      const catTagMatch = activeFilter === 'all'
         || cat === activeFilter
         || tags.includes(activeFilter);
+      let searchMatch = true;
+      if (q) {
+        const nameEl = c.querySelector('.p-name, .fc-title');
+        const descEl = c.querySelector('.p-desc, .fc-desc');
+        const text = ((nameEl ? nameEl.textContent : '') + ' ' + (descEl ? descEl.textContent : '')).toLowerCase();
+        searchMatch = text.includes(q);
+      }
+      const show = catTagMatch && searchMatch;
       c.style.display = show ? '' : 'none';
       if (show) count++;
     });
