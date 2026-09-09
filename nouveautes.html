@@ -574,13 +574,13 @@
   <div class="hero-inner">
     <!-- TEXT -->
     <div class="hero-text">
-      <div class="hero-eyebrow">Collection Printemps 2025</div>
-      <h1 class="hero-h1">JOYFUL<br>NOUVEAUTÉS</h1>
-      <p class="hero-sub">De nouvelles teintes, de nouvelles textures — toujours façonnées à la main avec la même passion pour la couleur et le détail.</p>
+      <div class="hero-eyebrow" id="nvHeroEyebrow">Collection Printemps 2025</div>
+      <h1 class="hero-h1"><span id="nvHeroTitle1">JOYFUL</span><br><span id="nvHeroTitle2">NOUVEAUTÉS</span></h1>
+      <p class="hero-sub" id="nvHeroSub">De nouvelles teintes, de nouvelles textures — toujours façonnées à la main avec la même passion pour la couleur et le détail.</p>
       <div class="hero-tags">
-        <span class="hero-tag">✨ Arrivages frais</span>
-        <span class="hero-tag">🏺 Argile polymère</span>
-        <span class="hero-tag">🇫🇷 Fait en France</span>
+        <span class="hero-tag" id="nvTag1">✨ Arrivages frais</span>
+        <span class="hero-tag" id="nvTag2">🏺 Argile polymère</span>
+        <span class="hero-tag" id="nvTag3">🇫🇷 Fait en France</span>
       </div>
       <a href="#nouveautes" class="btn-hero">
         Voir les nouveautés
@@ -652,8 +652,8 @@
     <!-- Intro -->
     <div class="section-intro-inner r">
       <div>
-        <div class="section-label">Nos créations fraîches</div>
-        <div class="section-h2">Ce qui vient d'arriver</div>
+        <div class="section-label" id="nvSectionLabel">Nos créations fraîches</div>
+        <div class="section-h2" id="nvSectionTitle">Ce qui vient d'arriver</div>
       </div>
       <span class="section-count" id="countLabel">7 créations</span>
     </div>
@@ -924,6 +924,16 @@
   }
 
   fetch('content/nouveautes.json').then(r => r.json()).then(data => {
+    const setText = (id, val) => { const el = document.getElementById(id); if (el && val) el.textContent = val; };
+    setText('nvHeroEyebrow', data.hero_eyebrow);
+    setText('nvHeroTitle1', data.hero_title_line1);
+    setText('nvHeroTitle2', data.hero_title_line2);
+    setText('nvHeroSub', data.hero_subtitle);
+    setText('nvTag1', data.hero_tag1);
+    setText('nvTag2', data.hero_tag2);
+    setText('nvTag3', data.hero_tag3);
+    setText('nvSectionLabel', data.section_label);
+    setText('nvSectionTitle', data.section_title);
     document.getElementById('countdown-title-el') && (document.getElementById('countdown-title-el').textContent = data.countdown_title);
     const cbTitle = document.querySelector('.cb-title'); if (cbTitle && data.countdown_title) cbTitle.textContent = data.countdown_title;
     const cbSub = document.querySelector('.cb-sub'); if (cbSub && data.countdown_subtitle) cbSub.textContent = data.countdown_subtitle;
