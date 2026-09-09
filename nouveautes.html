@@ -592,36 +592,44 @@
     <div class="hero-mosaic">
       <div class="mosaic-card">
         <span class="mosaic-badge">Nouveau</span>
-        <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-          <circle cx="50" cy="30" r="16" fill="#F0A882" opacity=".55"/>
-          <circle cx="70" cy="50" r="16" fill="#F0A882" opacity=".5"/>
-          <circle cx="50" cy="70" r="16" fill="#F0A882" opacity=".55"/>
-          <circle cx="30" cy="50" r="16" fill="#F0A882" opacity=".5"/>
-          <circle cx="50" cy="50" r="17" fill="#F5C4A8" opacity=".9"/>
-          <circle cx="50" cy="50" r="8" fill="#fff" opacity=".45"/>
-        </svg>
+        <div class="mosaic-img-slot" id="nvMosaic1" style="width:100px;height:100px;display:flex;align-items:center;justify-content:center">
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="30" r="16" fill="#F0A882" opacity=".55"/>
+            <circle cx="70" cy="50" r="16" fill="#F0A882" opacity=".5"/>
+            <circle cx="50" cy="70" r="16" fill="#F0A882" opacity=".55"/>
+            <circle cx="30" cy="50" r="16" fill="#F0A882" opacity=".5"/>
+            <circle cx="50" cy="50" r="17" fill="#F5C4A8" opacity=".9"/>
+            <circle cx="50" cy="50" r="8" fill="#fff" opacity=".45"/>
+          </svg>
+        </div>
       </div>
       <div class="mosaic-card">
         <span class="mosaic-badge gold">Exclusif</span>
-        <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-          <circle cx="50" cy="50" r="36" stroke="#C9A853" stroke-width="7.5" fill="none" opacity=".75"/>
-          <circle cx="50" cy="86" r="5.5" fill="#C9A853" opacity=".85"/>
-          <circle cx="50" cy="50" r="16" fill="#F0D08A" opacity=".22"/>
-        </svg>
+        <div class="mosaic-img-slot" id="nvMosaic2" style="width:100px;height:100px;display:flex;align-items:center;justify-content:center">
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="36" stroke="#C9A853" stroke-width="7.5" fill="none" opacity=".75"/>
+            <circle cx="50" cy="86" r="5.5" fill="#C9A853" opacity=".85"/>
+            <circle cx="50" cy="50" r="16" fill="#F0D08A" opacity=".22"/>
+          </svg>
+        </div>
       </div>
       <div class="mosaic-card">
         <span class="mosaic-badge sage">Saison</span>
-        <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-          <path d="M50 90C34 74 10 62 10 44C10 28 21 18 32 22C39 24.5 45 34 50 44C55 34 61 24.5 68 22C79 18 90 28 90 44C90 62 66 74 50 90Z" fill="#8FAF8A" opacity=".5"/>
-          <path d="M50 76C38 64 20 55 20 44C20 34 28 27 36 30C41 32 46 40 50 48C54 40 59 32 64 30C72 27 80 34 80 44C80 55 62 64 50 76Z" fill="#8FAF8A" opacity=".65"/>
-        </svg>
+        <div class="mosaic-img-slot" id="nvMosaic3" style="width:100px;height:100px;display:flex;align-items:center;justify-content:center">
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+            <path d="M50 90C34 74 10 62 10 44C10 28 21 18 32 22C39 24.5 45 34 50 44C55 34 61 24.5 68 22C79 18 90 28 90 44C90 62 66 74 50 90Z" fill="#8FAF8A" opacity=".5"/>
+            <path d="M50 76C38 64 20 55 20 44C20 34 28 27 36 30C41 32 46 40 50 48C54 40 59 32 64 30C72 27 80 34 80 44C80 55 62 64 50 76Z" fill="#8FAF8A" opacity=".65"/>
+          </svg>
+        </div>
       </div>
       <div class="mosaic-card">
-        <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-          <ellipse cx="50" cy="50" rx="38" ry="46" fill="#F0A882" opacity=".45" transform="rotate(-14 50 50)"/>
-          <ellipse cx="50" cy="50" rx="22" ry="28" fill="#E8907A" opacity=".65"/>
-          <ellipse cx="50" cy="50" rx="10" ry="13" fill="#fff" opacity=".3"/>
-        </svg>
+        <div class="mosaic-img-slot" id="nvMosaic4" style="width:100px;height:100px;display:flex;align-items:center;justify-content:center">
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+            <ellipse cx="50" cy="50" rx="38" ry="46" fill="#F0A882" opacity=".45" transform="rotate(-14 50 50)"/>
+            <ellipse cx="50" cy="50" rx="22" ry="28" fill="#E8907A" opacity=".65"/>
+            <ellipse cx="50" cy="50" rx="10" ry="13" fill="#fff" opacity=".3"/>
+          </svg>
+        </div>
       </div>
     </div>
   </div>
@@ -934,6 +942,14 @@
     setText('nvTag3', data.hero_tag3);
     setText('nvSectionLabel', data.section_label);
     setText('nvSectionTitle', data.section_title);
+    const setImg = (id, path) => {
+      const el = document.getElementById(id);
+      if (el && path) el.innerHTML = `<img src="${path}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit">`;
+    };
+    setImg('nvMosaic1', data.mosaic_image_1);
+    setImg('nvMosaic2', data.mosaic_image_2);
+    setImg('nvMosaic3', data.mosaic_image_3);
+    setImg('nvMosaic4', data.mosaic_image_4);
     document.getElementById('countdown-title-el') && (document.getElementById('countdown-title-el').textContent = data.countdown_title);
     const cbTitle = document.querySelector('.cb-title'); if (cbTitle && data.countdown_title) cbTitle.textContent = data.countdown_title;
     const cbSub = document.querySelector('.cb-sub'); if (cbSub && data.countdown_subtitle) cbSub.textContent = data.countdown_subtitle;
