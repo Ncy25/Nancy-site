@@ -1,0 +1,65 @@
+{
+  "hero": {
+    "eyebrow": "Depuis 2023",
+    "title_line1": "NOTRE",
+    "title_line2": "HISTOIRE",
+    "lead": "Une passion née d'une paire de créoles, un peu d'argile polymère, et l'envie irrésistible de créer des bijoux qui rendent joyeux.",
+    "quote_text": "\"Je voulais des boucles qui changent d'humeur avec moi — alors je les ai créées.\"",
+    "quote_author": "— La créatrice, Wild Flower",
+    "stat1_num": "100%",
+    "stat1_label": "Fait à la main en France",
+    "stat2_num": "∞",
+    "stat2_label": "Combinaisons possibles",
+    "stat3_num": "🌸",
+    "stat3_label": "Pièces uniques avec amour"
+  },
+  "values": [
+    { "icon": "✋", "title": "Fait main", "desc": "Chaque pampille naît de mes mains, une par une, sans moule ni série." },
+    { "icon": "🎨", "title": "Couleurs choisies", "desc": "Des teintes sélectionnées avec soin pour apporter de la joie à votre quotidien." },
+    { "icon": "🔄", "title": "Interchangeable", "desc": "Un système de clip pensé pour passer d'un style à l'autre en deux secondes." },
+    { "icon": "🇫🇷", "title": "Made in France", "desc": "Imaginées, façonnées et expédiées avec amour depuis la France." }
+  ],
+  "block1": {
+    "label": "Le commencement",
+    "eyebrow": "Tout a commencé",
+    "title": "Avec une paire de créoles et une envie",
+    "p1": "C'est une histoire simple et sincère. Un matin de 2023, face à ma boîte à bijoux débordante de boucles que je ne portais plus vraiment, j'ai eu une évidence : et si on pouvait changer les pendentifs selon son humeur, en gardant toujours la même base ?",
+    "p2": "L'idée des pampilles interchangeables est née là — pas dans un bureau de design, mais dans ma cuisine, avec un peu de curiosité et beaucoup d'enthousiasme.",
+    "p3": "J'ai commandé mon premier paquet d'argile polymère. Et je ne l'ai plus jamais lâché.",
+    "float_icon": "🏺",
+    "float_text": "Argile polymère"
+  },
+  "block2": {
+    "label": "La matière",
+    "eyebrow": "L'argile polymère,",
+    "title": "Une évidence lumineuse",
+    "p1": "Parmi toutes les matières que j'aurais pu choisir, l'argile polymère s'est imposée naturellement. Légère à porter — pas de lobe fatigué en fin de journée. Douce à travailler — les formes naissent facilement, les textures sont infinies. Et tellement joyeuse dans les couleurs.",
+    "p2": "L'argile polymère supporte le mélange, la superposition, les inclusions de paillettes, de feuille d'or ou d'éclats de nacre. Elle permet de créer des pièces vraiment uniques, jamais exactement identiques d'un exemplaire à l'autre.",
+    "p3": "C'est cette imperfection maîtrisée que j'aime. Le signe que la pièce que vous portez n'appartient qu'à vous.",
+    "float_icon": "✨",
+    "float_text": "Pièce unique"
+  },
+  "block3": {
+    "label": "L'innovation",
+    "eyebrow": "L'idée qui change tout",
+    "title": "Changer d'humeur en deux secondes",
+    "p1": "Le vrai défi, celui qui m'a occupé des semaines, c'est le système d'attache. Comment créer quelque chose de solide, d'élégant, et qui permette vraiment d'échanger les pampilles en un geste ?",
+    "p2": "Après de nombreux essais, j'ai trouvé l'équilibre. Un mécanisme de clip discret, intégré à la créole, qui tient fermement mais se libère sans effort. Vous glissez la pampille, vous entendez le petit clic — et voilà. Une boucle transformée.",
+    "p3": "C'est ça, l'esprit Wild Flower : la liberté de changer, d'assortir, de surprendre. Avec le même duo de créoles, une garde-robe entière de personnalités.",
+    "float_icon": "🔄",
+    "float_text": "Interchangeable"
+  },
+  "materials": {
+    "label": "Les matériaux",
+    "title": "Choisis avec le plus grand soin",
+    "p1": "L'argile polymère que j'utilise est de qualité professionnelle — souple à travailler crue, résistante et légère une fois cuite. Elle ne contient pas de substances nocives et convient aux peaux sensibles.",
+    "p2": "Les créoles sont en alliage hypoallergénique avec finition dorée ou argentée, compatibles avec les oreilles percées ou à clips selon votre demande.",
+    "p3": "Tout est sélectionné pour durer — parce qu'un bijou doit accompagner longtemps.",
+    "chip1": "🏺 Argile polymère pro",
+    "chip2": "💛 Métal hypoallergénique",
+    "chip3": "🎨 Pigments non toxiques",
+    "chip4": "✨ Finitions dorées & argentées",
+    "chip5": "🌿 Paillettes sans plastique",
+    "chip6": "🌸 Feuille d'or véritable"
+  }
+}
