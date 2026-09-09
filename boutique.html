@@ -718,7 +718,7 @@
   function tagsFor(p) {
     const tags = [];
     if (p.badge) tags.push(p.badge);
-    tags.push(/motif/i.test(p.name) ? 'motifs' : 'uni');
+    tags.push(p.variant === 'motifs' ? 'motifs' : 'uni');
     return tags.join(',');
   }
 
