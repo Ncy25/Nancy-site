@@ -124,6 +124,10 @@ collections:
           - { label: "Badge 3", name: "hero_tag3", widget: "string" }
           - { label: "Étiquette section produits", name: "section_label", widget: "string" }
           - { label: "Titre section produits", name: "section_title", widget: "string" }
+          - { label: "Photo mosaïque 1 (badge Nouveau)", name: "mosaic_image_1", widget: "image", required: false, hint: "Laisser vide pour garder l'illustration actuelle." }
+          - { label: "Photo mosaïque 2 (badge Exclusif)", name: "mosaic_image_2", widget: "image", required: false }
+          - { label: "Photo mosaïque 3 (badge Saison)", name: "mosaic_image_3", widget: "image", required: false }
+          - { label: "Photo mosaïque 4", name: "mosaic_image_4", widget: "image", required: false }
           - { label: "Titre du compte à rebours", name: "countdown_title", widget: "string" }
           - { label: "Sous-titre du compte à rebours", name: "countdown_subtitle", widget: "text" }
           - label: "Produit vedette (grande bannière)"

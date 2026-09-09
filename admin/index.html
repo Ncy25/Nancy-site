@@ -217,6 +217,11 @@
         render: function () {
           const { entry, getAsset } = this.props;
           const g = (path) => entry.getIn(['data', ...path]) || '';
+          const mosaicImg = (path) => {
+            if (!path) return h('div', { style: { width: '100%', height: '100%', borderRadius: '14px', background: 'rgba(255,255,255,0.35)' } });
+            const asset = getAsset(path);
+            return h('img', { src: asset ? asset.url : '', style: { width: '100%', height: '100%', objectFit: 'cover', borderRadius: '14px' } });
+          };
           return h('div', {},
             h('div', { className: 'wf-hero' },
               h('div', { className: 'wf-script' }, g(['hero_eyebrow'])),
@@ -225,6 +230,11 @@
               h('div', { style: { marginTop: '10px' } },
                 [g(['hero_tag1']), g(['hero_tag2']), g(['hero_tag3'])].filter(Boolean).map((t, i) =>
                   h('span', { key: i, className: 'wf-chip', style: { marginRight: '6px' } }, t))
+              ),
+              h('div', { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', maxWidth: '220px', margin: '18px auto 0' } },
+                ['mosaic_image_1', 'mosaic_image_2', 'mosaic_image_3', 'mosaic_image_4'].map((f, i) =>
+                  h('div', { key: i, style: { width: '100%', aspectRatio: '1', overflow: 'hidden' } }, mosaicImg(entry.getIn(['data', f])))
+                )
               )
             ),
             h('div', { className: 'wf-section-title' }, g(['section_label'])),
