@@ -378,6 +378,49 @@
         }
       }));
 
+    /* ── APERÇU : Chronologie, engagements, témoignages, CTA ── */
+    CMS.registerPreviewTemplate('histoire-suite', createClass({
+      render: function () {
+        const { entry } = this.props;
+        const g = (path) => entry.getIn(['data', ...path]) || '';
+        const toArr = (v) => v && v.toJS ? v.toJS() : (Array.isArray(v) ? v : []);
+        const steps = toArr(entry.getIn(['data', 'timeline', 'steps']));
+        const cards = toArr(entry.getIn(['data', 'engagement', 'cards']));
+        const reviews = toArr(entry.getIn(['data', 'testimonials', 'reviews']));
+
+        return h('div', {},
+          h('div', { className: 'wf-section-title' }, g(['timeline', 'label'])),
+          h('div', { className: 'wf-section-h2' }, g(['timeline', 'title'])),
+          h('div', {}, steps.map((s, i) => h('div', { key: i, className: 'wf-article' },
+            h('span', { className: 'wf-article-tag' }, (s.dot || '') + ' ' + (s.step || '')),
+            h('h3', {}, s.title || ''),
+            h('p', {}, s.desc || '')
+          ))),
+          h('div', { className: 'wf-section-title', style: { marginTop: '20px' } }, g(['engagement', 'label'])),
+          h('div', { className: 'wf-section-h2' }, g(['engagement', 'title'])),
+          h('div', { className: 'wf-grid' }, cards.map((c, i) => h('div', { key: i, className: 'wf-card' },
+            h('div', { className: 'wf-card-body' },
+              h('div', { style: { fontSize: '28px' } }, c.icon || ''),
+              h('div', { className: 'wf-card-name' }, c.title || ''),
+              h('div', { className: 'wf-card-desc' }, c.desc || '')
+            )
+          ))),
+          h('div', { className: 'wf-section-title', style: { marginTop: '20px' } }, g(['testimonials', 'label'])),
+          h('div', { className: 'wf-section-h2' }, g(['testimonials', 'title'])),
+          h('div', {}, reviews.map((rv, i) => h('div', { key: i, className: 'wf-block' },
+            h('p', { style: { fontStyle: 'italic' } }, '"' + (rv.text || '') + '"'),
+            h('div', { style: { fontWeight: 600 } }, rv.author || ''),
+            h('div', { style: { fontSize: '12px', color: 'var(--gray)' } }, rv.location || '')
+          ))),
+          h('div', { className: 'wf-feature', style: { marginTop: '20px', textAlign: 'center' } },
+            h('div', { className: 'wf-feature-tag' }, g(['cta', 'script'])),
+            h('h2', {}, g(['cta', 'title'])),
+            h('p', {}, g(['cta', 'subtitle']))
+          )
+        );
+      }
+    }));
+
     });
   </script>
 </body>

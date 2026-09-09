@@ -371,3 +371,61 @@ collections:
               - { label: "Badge 4", name: "chip4", widget: "string" }
               - { label: "Badge 5", name: "chip5", widget: "string" }
               - { label: "Badge 6", name: "chip6", widget: "string" }
+
+  - name: "histoire-suite"
+    label: "Chronologie & Témoignages"
+    files:
+      - name: "histoire-suite"
+        label: "Chronologie, engagements, témoignages, CTA"
+        file: "content/histoire-suite.json"
+        fields:
+          - label: "Chronologie de fabrication"
+            name: "timeline"
+            widget: "object"
+            fields:
+              - { label: "Étiquette de section", name: "label", widget: "string" }
+              - { label: "Titre de section", name: "title", widget: "string" }
+              - name: "steps"
+                label: "Étapes"
+                widget: "list"
+                summary: "{{fields.step}} — {{fields.title}}"
+                fields:
+                  - { label: "Émoji", name: "dot", widget: "string" }
+                  - { label: "Numéro (ex: Étape 1)", name: "step", widget: "string" }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Description", name: "desc", widget: "text" }
+          - label: "Engagements"
+            name: "engagement"
+            widget: "object"
+            fields:
+              - { label: "Étiquette de section", name: "label", widget: "string" }
+              - { label: "Titre de section", name: "title", widget: "string" }
+              - name: "cards"
+                label: "Cartes"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Émoji", name: "icon", widget: "string" }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Description", name: "desc", widget: "text" }
+          - label: "Témoignages"
+            name: "testimonials"
+            widget: "object"
+            fields:
+              - { label: "Étiquette de section", name: "label", widget: "string" }
+              - { label: "Titre de section", name: "title", widget: "string" }
+              - name: "reviews"
+                label: "Avis"
+                widget: "list"
+                summary: "{{fields.author}}"
+                fields:
+                  - { label: "Texte de l'avis", name: "text", widget: "text" }
+                  - { label: "Prénom", name: "author", widget: "string" }
+                  - { label: "Ville", name: "location", widget: "string" }
+          - label: "Bandeau final (CTA)"
+            name: "cta"
+            widget: "object"
+            fields:
+              - { label: "Petite phrase", name: "script", widget: "string" }
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Sous-titre", name: "subtitle", widget: "text" }
