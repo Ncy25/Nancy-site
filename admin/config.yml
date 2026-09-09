@@ -17,6 +17,8 @@ collections:
           - { label: "Logo (image)", name: "logo_image", widget: "image", required: false, hint: "Laisser vide pour garder le logo texte actuel." }
           - { label: "Nom de la marque", name: "brand_name", widget: "string" }
           - { label: "Email de contact", name: "contact_email", widget: "string" }
+          - { label: "Logo texte — 1ère ligne (script, ex: Wild)", name: "footer_logo_script", widget: "string" }
+          - { label: "Logo texte — 2ème ligne (ex: Flower · by Wooden Mountain)", name: "footer_logo_line", widget: "string" }
 
   - name: "home"
     label: "Page d'accueil"
