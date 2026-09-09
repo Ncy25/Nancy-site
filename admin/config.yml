@@ -87,6 +87,12 @@ collections:
                 widget: "select"
                 options: ["Pampilles + Créoles", "Pampilles seules", "Créoles seules"]
               - { label: "Prix (€)", name: "price", widget: "number", value_type: "float" }
+              - label: "Motif ou uni ?"
+                name: "variant"
+                widget: "select"
+                options: [{ label: "Uni", value: "uni" }, { label: "Motifs", value: "motifs" }]
+                default: "uni"
+                hint: "Utilisé par les filtres 'Unies' / 'Motifs' de la boutique."
               - { label: "Emoji (utilisé si pas de photo)", name: "emoji", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Couleurs disponibles (codes hex)", name: "colors", widget: "list" }
