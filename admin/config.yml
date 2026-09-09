@@ -226,6 +226,24 @@ collections:
                 widget: "text"
                 hint: "Sépare les paragraphes par une ligne vide. Pour une liste à puces, commence chaque ligne par '- '. Pour un encadré coloré, commence le paragraphe par '[ENCADRÉ] '."
 
+  - name: "histoire-photos"
+    label: "Photos — Notre histoire"
+    files:
+      - name: "histoire"
+        label: "Photos de la page Notre histoire"
+        file: "content/histoire.json"
+        fields:
+          - { label: "Bloc 1 — photo 1 (haut gauche)", name: "block1_image_1", widget: "image", required: false, hint: "Laisser vide pour garder l'illustration actuelle." }
+          - { label: "Bloc 1 — photo 2 (haut droite)", name: "block1_image_2", widget: "image", required: false }
+          - { label: "Bloc 1 — photo 3 (bas gauche)", name: "block1_image_3", widget: "image", required: false }
+          - { label: "Bloc 1 — photo 4 (bas droite)", name: "block1_image_4", widget: "image", required: false }
+          - { label: "Bloc 2 — 'L'argile polymère' (grande photo)", name: "block2_image", widget: "image", required: false }
+          - { label: "Bloc 3 — 'Changer d'humeur' (grande photo)", name: "block3_image", widget: "image", required: false }
+          - { label: "Matériaux — photo 1", name: "materials_image_1", widget: "image", required: false }
+          - { label: "Matériaux — photo 2", name: "materials_image_2", widget: "image", required: false }
+          - { label: "Matériaux — photo 3", name: "materials_image_3", widget: "image", required: false }
+          - { label: "Matériaux — photo 4", name: "materials_image_4", widget: "image", required: false }
+
   - name: "livraisons"
     label: "Livraisons & Retours"
     files:
