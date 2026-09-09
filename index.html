@@ -891,8 +891,8 @@
   <div class="container">
     <div class="footer-grid">
       <div class="f-brand">
-        <div class="footer-logo-wild">Wild</div>
-        <div class="footer-logo-row">Flower · by Wooden Mountain</div>
+        <div class="footer-logo-wild" id="footerLogoWild">Wild</div>
+        <div class="footer-logo-row" id="footerLogoRow">Flower · by Wooden Mountain</div>
         <p class="f-tagline" id="footerTagline">Pampilles interchangeables en argile polymère. Colorées, faites à la main, pour changer d'humeur en deux secondes.</p>
       </div>
       <div class="f-col">
@@ -993,6 +993,10 @@
       const logo = document.getElementById('navLogo');
       if (logo) logo.innerHTML = `<img src="${site.logo_image}" alt="${site.brand_name || 'Wild Flower by Wooden Mountain'}" style="height:48px;width:auto;display:block">`;
     }
+    const flw = document.getElementById('footerLogoWild');
+    const flr = document.getElementById('footerLogoRow');
+    if (flw && site.footer_logo_script) flw.textContent = site.footer_logo_script;
+    if (flr && site.footer_logo_line) flr.textContent = site.footer_logo_line;
     document.querySelectorAll('#contactEmailLink, #footerEmailLink').forEach(a => {
       if (site.contact_email) { a.textContent = site.contact_email; a.href = 'mailto:' + site.contact_email; }
     });

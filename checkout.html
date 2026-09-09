@@ -456,7 +456,7 @@
       </a>
     </div>
 
-    <a href="index.html" class="nav-logo">
+    <a href="index.html" class="nav-logo" id="navLogo">
       <span class="logo-wild">Wild</span>
       <div class="logo-flower-row">
         Fl
@@ -967,6 +967,15 @@
   // ── Reveal
   const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('v'); }), { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
   document.querySelectorAll('.r').forEach(el => obs.observe(el));
+</script>
+
+<script>
+  fetch('content/site.json').then(r => r.json()).then(site => {
+    if (site.logo_image) {
+      const logo = document.getElementById('navLogo');
+      if (logo) logo.innerHTML = `<img src="${site.logo_image}" alt="${site.brand_name || 'Wild Flower by Wooden Mountain'}" style="height:48px;width:auto;display:block">`;
+    }
+  }).catch(() => {});
 </script>
 </body>
 </html>
