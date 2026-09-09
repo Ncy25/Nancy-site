@@ -115,6 +115,15 @@ collections:
         label: "Page Nouveautés"
         file: "content/nouveautes.json"
         fields:
+          - { label: "Phrase (haut de page)", name: "hero_eyebrow", widget: "string" }
+          - { label: "Titre — ligne 1", name: "hero_title_line1", widget: "string" }
+          - { label: "Titre — ligne 2", name: "hero_title_line2", widget: "string" }
+          - { label: "Sous-titre du hero", name: "hero_subtitle", widget: "text" }
+          - { label: "Badge 1", name: "hero_tag1", widget: "string" }
+          - { label: "Badge 2", name: "hero_tag2", widget: "string" }
+          - { label: "Badge 3", name: "hero_tag3", widget: "string" }
+          - { label: "Étiquette section produits", name: "section_label", widget: "string" }
+          - { label: "Titre section produits", name: "section_title", widget: "string" }
           - { label: "Titre du compte à rebours", name: "countdown_title", widget: "string" }
           - { label: "Sous-titre du compte à rebours", name: "countdown_subtitle", widget: "text" }
           - label: "Produit vedette (grande bannière)"
@@ -275,3 +284,86 @@ collections:
                 name: "body"
                 widget: "text"
                 hint: "Sépare les paragraphes par une ligne vide. Pour une liste à puces, commence chaque ligne par '- '. Pour un encadré coloré, commence le paragraphe par '[ENCADRÉ] '."
+
+  - name: "histoire-textes"
+    label: "Textes — Notre histoire"
+    files:
+      - name: "histoire-textes"
+        label: "Textes de la page Notre histoire"
+        file: "content/histoire-texts.json"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Petite phrase (ex: Depuis 2023)", name: "eyebrow", widget: "string" }
+              - { label: "Titre — ligne 1", name: "title_line1", widget: "string" }
+              - { label: "Titre — ligne 2", name: "title_line2", widget: "string" }
+              - { label: "Texte d'intro", name: "lead", widget: "text" }
+              - { label: "Citation", name: "quote_text", widget: "text" }
+              - { label: "Auteur de la citation", name: "quote_author", widget: "string" }
+              - { label: "Statistique 1 — chiffre", name: "stat1_num", widget: "string" }
+              - { label: "Statistique 1 — légende", name: "stat1_label", widget: "string" }
+              - { label: "Statistique 2 — chiffre", name: "stat2_num", widget: "string" }
+              - { label: "Statistique 2 — légende", name: "stat2_label", widget: "string" }
+              - { label: "Statistique 3 — chiffre", name: "stat3_num", widget: "string" }
+              - { label: "Statistique 3 — légende", name: "stat3_label", widget: "string" }
+          - name: "values"
+            label: "Bande des 4 valeurs"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Émoji", name: "icon", widget: "string" }
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+          - label: "Bloc 1 — Le commencement"
+            name: "block1"
+            widget: "object"
+            fields:
+              - { label: "Étiquette", name: "label", widget: "string" }
+              - { label: "Phrase d'intro", name: "eyebrow", widget: "string" }
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Paragraphe 1", name: "p1", widget: "text" }
+              - { label: "Paragraphe 2", name: "p2", widget: "text" }
+              - { label: "Paragraphe 3", name: "p3", widget: "text" }
+              - { label: "Badge flottant — émoji", name: "float_icon", widget: "string" }
+              - { label: "Badge flottant — texte", name: "float_text", widget: "string" }
+          - label: "Bloc 2 — La matière"
+            name: "block2"
+            widget: "object"
+            fields:
+              - { label: "Étiquette", name: "label", widget: "string" }
+              - { label: "Phrase d'intro", name: "eyebrow", widget: "string" }
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Paragraphe 1", name: "p1", widget: "text" }
+              - { label: "Paragraphe 2", name: "p2", widget: "text" }
+              - { label: "Paragraphe 3", name: "p3", widget: "text" }
+              - { label: "Badge flottant — émoji", name: "float_icon", widget: "string" }
+              - { label: "Badge flottant — texte", name: "float_text", widget: "string" }
+          - label: "Bloc 3 — L'innovation"
+            name: "block3"
+            widget: "object"
+            fields:
+              - { label: "Étiquette", name: "label", widget: "string" }
+              - { label: "Phrase d'intro", name: "eyebrow", widget: "string" }
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Paragraphe 1", name: "p1", widget: "text" }
+              - { label: "Paragraphe 2", name: "p2", widget: "text" }
+              - { label: "Paragraphe 3", name: "p3", widget: "text" }
+              - { label: "Badge flottant — émoji", name: "float_icon", widget: "string" }
+              - { label: "Badge flottant — texte", name: "float_text", widget: "string" }
+          - label: "Matériaux"
+            name: "materials"
+            widget: "object"
+            fields:
+              - { label: "Étiquette", name: "label", widget: "string" }
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Paragraphe 1", name: "p1", widget: "text" }
+              - { label: "Paragraphe 2", name: "p2", widget: "text" }
+              - { label: "Paragraphe 3", name: "p3", widget: "text" }
+              - { label: "Badge 1", name: "chip1", widget: "string" }
+              - { label: "Badge 2", name: "chip2", widget: "string" }
+              - { label: "Badge 3", name: "chip3", widget: "string" }
+              - { label: "Badge 4", name: "chip4", widget: "string" }
+              - { label: "Badge 5", name: "chip5", widget: "string" }
+              - { label: "Badge 6", name: "chip6", widget: "string" }

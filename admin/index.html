@@ -215,7 +215,22 @@
 
       CMS.registerPreviewTemplate('nouveautes', createClass({
         render: function () {
-          return renderProductGrid(this.props.entry, this.props.getAsset, true);
+          const { entry, getAsset } = this.props;
+          const g = (path) => entry.getIn(['data', ...path]) || '';
+          return h('div', {},
+            h('div', { className: 'wf-hero' },
+              h('div', { className: 'wf-script' }, g(['hero_eyebrow'])),
+              h('div', { className: 'wf-h1' }, g(['hero_title_line1']) + ' ' + g(['hero_title_line2'])),
+              h('div', { className: 'wf-sub' }, g(['hero_subtitle'])),
+              h('div', { style: { marginTop: '10px' } },
+                [g(['hero_tag1']), g(['hero_tag2']), g(['hero_tag3'])].filter(Boolean).map((t, i) =>
+                  h('span', { key: i, className: 'wf-chip', style: { marginRight: '6px' } }, t))
+              )
+            ),
+            h('div', { className: 'wf-section-title' }, g(['section_label'])),
+            h('div', { className: 'wf-section-h2' }, g(['section_title'])),
+            renderProductGrid(entry, getAsset, true)
+          );
         }
       }));
 
@@ -254,6 +269,55 @@
           }
         }));
       });
+
+      /* ── APERÇU : Textes de la page Notre histoire ── */
+      CMS.registerPreviewTemplate('histoire-textes', createClass({
+        render: function () {
+          const { entry } = this.props;
+          const g = (path) => entry.getIn(['data', ...path]) || '';
+          const values = entry.getIn(['data', 'values']);
+          const valuesArr = values && values.toJS ? values.toJS() : (Array.isArray(values) ? values : []);
+
+          function block(key, label) {
+            return h('div', { className: 'wf-block' },
+              h('div', { className: 'wf-article-tag' }, g([key, 'label'])),
+              h('h3', {}, g([key, 'title'])),
+              h('p', { style: { fontStyle: 'italic', color: 'var(--peach-dk)' } }, g([key, 'eyebrow'])),
+              h('p', {}, g([key, 'p1'])),
+              h('p', {}, g([key, 'p2'])),
+              h('p', {}, g([key, 'p3'])),
+              h('div', { className: 'wf-chip', style: { display: 'inline-block' } }, (g([key, 'float_icon']) + ' ' + g([key, 'float_text'])).trim())
+            );
+          }
+
+          return h('div', {},
+            h('div', { className: 'wf-legal-header' },
+              h('div', { className: 'wf-legal-script' }, g(['hero', 'eyebrow'])),
+              h('div', { className: 'wf-legal-title' }, g(['hero', 'title_line1']) + ' ' + g(['hero', 'title_line2'])),
+              h('div', { className: 'wf-legal-sub' }, g(['hero', 'lead']))
+            ),
+            h('div', { className: 'wf-quote' }, g(['hero', 'quote_text'])),
+            h('p', { style: { fontSize: '12px', color: 'var(--gray)', marginBottom: '16px' } }, g(['hero', 'quote_author'])),
+            h('div', { className: 'wf-grid', style: { marginBottom: '18px' } },
+              [1, 2, 3].map(n => h('div', { key: n, style: { fontSize: '12px' } },
+                g(['hero', 'stat' + n + '_num']) + ' — ' + g(['hero', 'stat' + n + '_label'])
+              ))
+            ),
+            h('div', { className: 'wf-toc' }, valuesArr.map((v, i) =>
+              h('span', { key: i }, (v.icon || '') + ' ' + (v.title || ''))
+            )),
+            block('block1'),
+            block('block2'),
+            block('block3'),
+            h('div', { className: 'wf-block' },
+              h('h3', {}, g(['materials', 'title'])),
+              h('p', {}, g(['materials', 'p1'])),
+              h('p', {}, g(['materials', 'p2'])),
+              h('p', {}, g(['materials', 'p3']))
+            )
+          );
+        }
+      }));
 
       /* ── APERÇU : Photos de la page Notre Histoire ── */
       CMS.registerPreviewTemplate('histoire', createClass({
