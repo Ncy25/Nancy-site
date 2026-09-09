@@ -813,7 +813,7 @@
       <a href="index.html#contact">Contact</a>
     </div>
     <div class="footer-bar">
-      <p>© 2025 Wild Flower by Wooden Mountain · Fait avec 🌸 en France</p>
+      <p id="footerCopyright">© 2025 Wild Flower by Wooden Mountain · Fait avec 🌸 en France</p>
       <p>Paiement sécurisé · Expédition soignée</p>
     </div>
   </div>
@@ -975,6 +975,12 @@
       const logo = document.getElementById('navLogo');
       if (logo) logo.innerHTML = `<img src="${site.logo_image}" alt="${site.brand_name || 'Wild Flower by Wooden Mountain'}" style="height:48px;width:auto;display:block">`;
     }
+  }).catch(() => {});
+</script>
+<script>
+  fetch('content/home.json').then(r => r.json()).then(d => {
+    const fc = document.getElementById('footerCopyright');
+    if (fc && d.footer_copyright) fc.textContent = d.footer_copyright;
   }).catch(() => {});
 </script>
 </body>

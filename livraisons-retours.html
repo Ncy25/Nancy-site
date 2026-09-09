@@ -228,11 +228,11 @@
 <footer>
   <div class="footer-container">
     <div class="footer-grid">
-      <div><div class="footer-logo-wild" id="footerLogoWild">Wild</div><div class="footer-logo-row" id="footerLogoRow">Flower · by Wooden Mountain</div><p class="f-tagline">Pampilles interchangeables en argile polymère. Colorées, faites à la main, pour changer d'humeur en deux secondes.</p></div>
+      <div><div class="footer-logo-wild" id="footerLogoWild">Wild</div><div class="footer-logo-row" id="footerLogoRow">Flower · by Wooden Mountain</div><p class="f-tagline" id="footerTagline">Pampilles interchangeables en argile polymère. Colorées, faites à la main, pour changer d'humeur en deux secondes.</p></div>
       <div class="f-col"><h4>Navigation</h4><ul><li><a href="index.html#boutique">Boutique</a></li><li><a href="index.html#histoire">Notre histoire</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
       <div class="f-col"><h4>Légal</h4><ul><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="cgv.html">CGV</a></li><li><a href="politique-confidentialite.html">Confidentialité</a></li><li><a href="livraisons-retours.html">Livraisons &amp; retours</a></li></ul></div>
     </div>
-    <div class="footer-bar"><p>© 2025 Wild Flower by Wooden Mountain · Fait avec 🌸 en France</p><p>Paiement sécurisé · Expédition soignée</p></div>
+    <div class="footer-bar"><p id="footerCopyright">© 2025 Wild Flower by Wooden Mountain · Fait avec 🌸 en France</p><p>Paiement sécurisé · Expédition soignée</p></div>
   </div>
 </footer>
 
@@ -298,6 +298,14 @@
     const flr = document.getElementById('footerLogoRow');
     if (flw && site.footer_logo_script) flw.textContent = site.footer_logo_script;
     if (flr && site.footer_logo_line) flr.textContent = site.footer_logo_line;
+  }).catch(() => {});
+</script>
+<script>
+  fetch('content/home.json').then(r => r.json()).then(d => {
+    const ft = document.getElementById('footerTagline');
+    const fc = document.getElementById('footerCopyright');
+    if (ft && d.footer_tagline) ft.textContent = d.footer_tagline;
+    if (fc && d.footer_copyright) fc.textContent = d.footer_copyright;
   }).catch(() => {});
 </script>
 </body>

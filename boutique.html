@@ -676,7 +676,7 @@
       <div>
         <div class="footer-logo-wild" id="footerLogoWild">Wild</div>
         <div class="footer-logo-row" id="footerLogoRow">Flower · by Wooden Mountain</div>
-        <p class="f-tagline">Pampilles interchangeables en argile polymère. Colorées, faites à la main, pour changer d'humeur en deux secondes.</p>
+        <p class="f-tagline" id="footerTagline">Pampilles interchangeables en argile polymère. Colorées, faites à la main, pour changer d'humeur en deux secondes.</p>
       </div>
       <div class="f-col">
         <h4>Navigation</h4>
@@ -699,7 +699,7 @@
       </div>
     </div>
     <div class="footer-bar">
-      <p>© 2025 Wild Flower by Wooden Mountain · Fait avec 🌸 en France</p>
+      <p id="footerCopyright">© 2025 Wild Flower by Wooden Mountain · Fait avec 🌸 en France</p>
       <p>Paiement sécurisé · Expédition soignée</p>
     </div>
   </div>
@@ -912,6 +912,14 @@
 
   /* ─── ESC to close modal ─── */
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+<script>
+  fetch('content/home.json').then(r => r.json()).then(d => {
+    const ft = document.getElementById('footerTagline');
+    const fc = document.getElementById('footerCopyright');
+    if (ft && d.footer_tagline) ft.textContent = d.footer_tagline;
+    if (fc && d.footer_copyright) fc.textContent = d.footer_copyright;
+  }).catch(() => {});
 </script>
 </body>
 </html>
