@@ -1,0 +1,37 @@
+{
+  "timeline": {
+    "label": "Comment c'est fait",
+    "title": "De l'idée à votre oreille",
+    "steps": [
+      { "dot": "🌈", "step": "Étape 1", "title": "L'inspiration", "desc": "Une couleur aperçue dans la nature, une saison, une humeur. Chaque nouvelle pampille naît d'une envie de raconter quelque chose." },
+      { "dot": "🏺", "step": "Étape 2", "title": "Le conditionnement", "desc": "L'argile est malaxée à la main jusqu'à la bonne souplesse. Les couleurs sont mélangées, testées, ajustées jusqu'au ton exact recherché." },
+      { "dot": "✋", "step": "Étape 3", "title": "La création", "desc": "Chaque pampille est formée à la main. Pas de moule — juste les doigts, des outils simples et beaucoup de soin. C'est là que chaque pièce devient unique." },
+      { "dot": "🔥", "step": "Étape 4", "title": "La cuisson", "desc": "Direction le four à température précise. La cuisson fixe les couleurs et durcit l'argile sans la fragiliser. Le résultat : une pampille légère et résistante." },
+      { "dot": "✨", "step": "Étape 5", "title": "La finition", "desc": "Ponçage, lustrage, ajout des finitions dorées ou des inclusions. Chaque détail est vérifié à la loupe — littéralement. Le système clip est fixé." },
+      { "dot": "🌸", "step": "Étape 6", "title": "L'envoi", "desc": "Votre commande est emballée avec une petite attention, une carte, et beaucoup d'amour. Elle prend la route vers vous." }
+    ]
+  },
+  "engagement": {
+    "label": "Mes engagements",
+    "title": "Ce que je vous promets",
+    "cards": [
+      { "icon": "💛", "title": "Un bijou qui dure", "desc": "Chaque pampille est cuite, poncée et vérifiée avant d'être expédiée. La durabilité fait partie de mon exigence de créatrice. Pas de pièce qui part au premier regard." },
+      { "icon": "🎨", "title": "La couleur, toujours", "desc": "Je veux que vous ayez l'embarras du choix. Chaque saison apporte de nouvelles teintes, nouvelles textures. Et si vous avez une couleur en tête, on peut la créer ensemble." },
+      { "icon": "🤝", "title": "Une relation sincère", "desc": "Je réponds à chaque message personnellement. Si quelque chose ne va pas, on trouve ensemble une solution. Votre satisfaction est ma priorité, pas une formule vide." }
+    ]
+  },
+  "testimonials": {
+    "label": "Ce qu'on dit de nous",
+    "title": "Elles ont craqué 🌸",
+    "reviews": [
+      { "text": "J'avais commandé les pampilles motifs et je les ai reçues dans un emballage tellement soigné, avec un petit mot à l'intérieur. Elles sont exactement comme sur les photos, en encore plus belles en vrai.", "author": "Marie-Lou", "location": "Lyon, France" },
+      { "text": "Idée de génie, les pampilles interchangeables. J'ai les créoles dorées avec trois jeux de pampilles différents — j'en change selon mon humeur chaque matin. Et elles tiennent parfaitement toute la journée.", "author": "Camille", "location": "Paris, France" },
+      { "text": "J'ai commandé un sur-mesure pour offrir à ma meilleure amie. La créatrice a été super réactive, elle m'a envoyé des photos avant d'expédier. Le résultat était parfait — et mon amie a adoré.", "author": "Juliette", "location": "Bordeaux, France" }
+    ]
+  },
+  "cta": {
+    "script": "Et maintenant ?",
+    "title": "Trouvez votre première pampille",
+    "subtitle": "Chaque paire attend de trouver son oreille. Découvrez nos créations ou écrivez-nous pour un projet sur mesure — on adore les défis."
+  }
+}
