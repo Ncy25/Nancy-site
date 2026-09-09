@@ -456,9 +456,12 @@
 <nav>
   <div class="nav-top">
     <div class="nav-left">
-      <button class="nav-search-btn" aria-label="Rechercher">
+      <button class="nav-search-btn" id="navSearchBtn" onclick="toggleNavSearch()" aria-label="Rechercher">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </button>
+      <div class="nav-search-wrap" id="navSearchWrap" style="display:none;align-items:center;margin-left:8px">
+        <input type="text" id="navSearchInput" placeholder="Rechercher un produit..." onkeydown="if(event.key==='Enter') submitNavSearch()" style="border:none;border-bottom:1px solid var(--peach, #F0A882);background:transparent;outline:none;font-size:13px;padding:4px 2px;width:160px;color:inherit;font-family:inherit">
+      </div>
     </div>
     <a href="index.html" class="nav-logo" aria-label="Wild Flower by Wooden Mountain" id="navLogo">
       <span class="logo-wild">Wild</span>
@@ -480,9 +483,6 @@
       </div>
     </a>
     <div class="nav-right">
-      <button class="nav-icon-btn" aria-label="Compte">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-      </button>
       <button class="nav-icon-btn" onclick="toggleCart()" aria-label="Panier">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
         <span class="cart-badge" id="cb">0</span>
@@ -572,6 +572,9 @@
 
     <!-- FILTERS BAR -->
     <div class="filters-wrap">
+      <div style="margin-bottom:14px">
+        <input type="text" id="boutiqueSearchInput" placeholder="🔍 Rechercher un produit par nom..." oninput="applyFilters()" style="width:100%;max-width:420px;border:1px solid rgba(195,107,74,0.2);border-radius:999px;padding:10px 18px;font-size:14px;font-family:inherit;color:inherit;background:var(--ivory,#FFFCFA);outline:none">
+      </div>
       <div class="filters-bar">
         <button class="filter-pill active" onclick="filterTag('all', this)">Tout</button>
         <button class="filter-pill" onclick="filterTag('new', this)">Nouveautés 🌸</button>
@@ -768,6 +771,12 @@
 
   fetch('content/products.json').then(r => r.json()).then(data => {
     products = data.products || [];
+    const urlParams = new URLSearchParams(window.location.search);
+    const q = urlParams.get('q');
+    if (q) {
+      const si = document.getElementById('boutiqueSearchInput');
+      if (si) si.value = q;
+    }
     renderProducts();
   }).catch(() => { document.getElementById('countLabel').textContent = 'Produits indisponibles pour le moment'; });
 
@@ -848,12 +857,21 @@
 
   function applyFilters() {
     const cards = document.querySelectorAll('.p-card');
+    const searchInput = document.getElementById('boutiqueSearchInput');
+    const q = searchInput ? searchInput.value.trim().toLowerCase() : '';
     let visible = 0;
     cards.forEach(c => {
       const catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
       const tags = c.dataset.tags ? c.dataset.tags.split(',') : [];
       const tagMatch = activeTag === 'all' || tags.includes(activeTag);
-      const show = catMatch && tagMatch;
+      let searchMatch = true;
+      if (q) {
+        const nameEl = c.querySelector('.p-name');
+        const descEl = c.querySelector('.p-desc');
+        const text = ((nameEl ? nameEl.textContent : '') + ' ' + (descEl ? descEl.textContent : '')).toLowerCase();
+        searchMatch = text.includes(q);
+      }
+      const show = catMatch && tagMatch && searchMatch;
       c.style.display = show ? '' : 'none';
       if (show) visible++;
     });
@@ -921,6 +939,22 @@
     if (ft && d.footer_tagline) ft.textContent = d.footer_tagline;
     if (fc && d.footer_copyright) fc.textContent = d.footer_copyright;
   }).catch(() => {});
+</script>
+<script>
+  function toggleNavSearch() {
+    const wrap = document.getElementById('navSearchWrap');
+    const input = document.getElementById('navSearchInput');
+    if (!wrap) return;
+    const isOpen = wrap.style.display === 'flex';
+    wrap.style.display = isOpen ? 'none' : 'flex';
+    if (!isOpen && input) setTimeout(() => input.focus(), 50);
+  }
+  function submitNavSearch() {
+    const input = document.getElementById('navSearchInput');
+    if (!input) return;
+    const q = input.value.trim();
+    if (q) window.location.href = 'boutique.html?q=' + encodeURIComponent(q);
+  }
 </script>
 </body>
 </html>
