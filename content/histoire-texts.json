@@ -1,9 +1,9 @@
 {
   "hero": {
-    "eyebrow": "Depuis 2023",
+    "eyebrow": "Depuis 2025",
     "title_line1": "NOTRE",
     "title_line2": "HISTOIRE",
-    "lead": "Une passion née d'une paire de créoles, un peu d'argile polymère, et l'envie irrésistible de créer des bijoux qui rendent joyeux.",
+    "lead": "Une passion née d'une paire de créoles, un peu de pâte polymère, et l'envie irrésistible de créer des bijoux qui rendent joyeux.",
     "quote_text": "\"Je voulais des boucles qui changent d'humeur avec moi — alors je les ai créées.\"",
     "quote_author": "— La créatrice, Wild Flower",
     "stat1_num": "100%",
@@ -14,10 +14,26 @@
     "stat3_label": "Pièces uniques avec amour"
   },
   "values": [
-    { "icon": "✋", "title": "Fait main", "desc": "Chaque pampille naît de mes mains, une par une, sans moule ni série." },
-    { "icon": "🎨", "title": "Couleurs choisies", "desc": "Des teintes sélectionnées avec soin pour apporter de la joie à votre quotidien." },
-    { "icon": "🔄", "title": "Interchangeable", "desc": "Un système de clip pensé pour passer d'un style à l'autre en deux secondes." },
-    { "icon": "🇫🇷", "title": "Made in France", "desc": "Imaginées, façonnées et expédiées avec amour depuis la France." }
+    {
+      "icon": "✋",
+      "title": "Fait main",
+      "desc": "Chaque pampille naît de mes mains, une par une, sans moule ni série."
+    },
+    {
+      "icon": "🎨",
+      "title": "Couleurs choisies",
+      "desc": "Des teintes sélectionnées avec soin pour apporter de la joie à votre quotidien."
+    },
+    {
+      "icon": "🔄",
+      "title": "Interchangeable",
+      "desc": "Un système de clip pensé pour passer d'un style à l'autre en deux secondes."
+    },
+    {
+      "icon": "🇫🇷",
+      "title": "Made in France",
+      "desc": "Imaginées, façonnées et expédiées avec amour depuis la France."
+    }
   ],
   "block1": {
     "label": "Le commencement",
@@ -55,7 +71,7 @@
     "p1": "L'argile polymère que j'utilise est de qualité professionnelle — souple à travailler crue, résistante et légère une fois cuite. Elle ne contient pas de substances nocives et convient aux peaux sensibles.",
     "p2": "Les créoles sont en alliage hypoallergénique avec finition dorée ou argentée, compatibles avec les oreilles percées ou à clips selon votre demande.",
     "p3": "Tout est sélectionné pour durer — parce qu'un bijou doit accompagner longtemps.",
-    "chip1": "🏺 Argile polymère pro",
+    "chip1": "🏺 Pâte polymère pro",
     "chip2": "💛 Métal hypoallergénique",
     "chip3": "🎨 Pigments non toxiques",
     "chip4": "✨ Finitions dorées & argentées",
