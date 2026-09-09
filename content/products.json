@@ -5,6 +5,7 @@
       "name": "Coeur - Jeans",
       "category": "Pampilles seules",
       "price": 17,
+      "variant": "motifs",
       "emoji": "🌺",
       "description": "Blue jeans",
       "colors": [
@@ -20,14 +21,11 @@
       "name": "Théa - Aquarelle d'automne",
       "category": "Pampilles seules",
       "price": 17,
+      "variant": "uni",
       "emoji": "🌸",
       "description": "Une paire joyeuse et sophistiquée, parfaite pour prolonger l'été ou pimenter la rentrée.",
       "colors": [
-        "#F0A882",
-        "#C26B4A",
-        "#8FAF8A",
-        "#B8D4E8",
-        "#D4A853"
+        "#F0A882"
       ],
       "bg": "#F5D5C8",
       "badge": "new",
@@ -39,6 +37,7 @@
       "name": "unies",
       "category": "Pampilles seules",
       "price": 13,
+      "variant": "uni",
       "emoji": "🌼",
       "description": "Formes organiques et textures délicates pour habiller vos créoles existantes.",
       "colors": [
@@ -56,6 +55,7 @@
       "name": "Unies",
       "category": "Pampilles seules",
       "price": 13,
+      "variant": "uni",
       "emoji": "🧡",
       "description": "Simples, douces, déclinées dans de belles teintes. La base parfaite pour une tenue épurée.",
       "colors": [
@@ -74,6 +74,7 @@
       "name": "Créoles Martelées dorées",
       "category": "Créoles seules",
       "price": 7,
+      "variant": "uni",
       "emoji": "✨",
       "description": "Anneaux martelées à fermoir clipsable, finition dorée. Compatibles avec l'ensemble de nos pampilles.",
       "colors": [
@@ -89,6 +90,7 @@
       "name": "Créoles torsadées dorées",
       "category": "Créoles seules",
       "price": 7,
+      "variant": "uni",
       "emoji": "🤍",
       "description": "Anneaux torsadées à fermoir clipsable, finition dorée. Compatibles avec l'ensemble de nos pampilles.",
       "colors": [
@@ -104,6 +106,7 @@
       "name": "Créoles rotatives dorées",
       "category": "Créoles seules",
       "price": 7,
+      "variant": "uni",
       "emoji": "🤍",
       "description": "Anneaux rotatives à fermoir clipsable, finition dorée. Compatibles avec l'ensemble de nos pampilles.",
       "colors": [
