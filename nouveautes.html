@@ -833,7 +833,7 @@
           <li><a href="cgv.html">CGV</a></li>
           <li><a href="politique-confidentialite.html">Confidentialité</a></li>
           <li><a href="livraisons-retours.html">Livraisons &amp; retours</a></li>
-          <li><a href="mailto:contact@woodenmountain.fr">contact@woodenmountain.fr</a></li>
+          <li><a href="mailto:contact@woodenmountain.fr" id="footerEmailLink">contact@woodenmountain.fr</a></li>
         </ul>
       </div>
     </div>
@@ -947,6 +947,8 @@
     const flw = document.getElementById('footerLogoWild');
     const flr = document.getElementById('footerLogoRow');
     if (flw && site.footer_logo_script) flw.textContent = site.footer_logo_script;
+    const feLink = document.getElementById('footerEmailLink');
+    if (feLink && site.contact_email) { feLink.textContent = site.contact_email; feLink.href = 'mailto:' + site.contact_email; }
     if (flr && site.footer_logo_line) flr.textContent = site.footer_logo_line;
   }).catch(() => {});
 
