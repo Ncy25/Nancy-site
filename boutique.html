@@ -580,17 +580,17 @@
 
     <!-- CHOISIS TES CRÉOLES -->
     <div class="creoles-section">
-      <h2 class="creoles-title">Choisis tes créoles</h2>
+      <h2 class="creoles-title" id="creolesTitle">Choisis tes créoles</h2>
       <div class="prod-grid" id="creolesGrid"></div>
     </div>
 
     <!-- CHOISIS TES PAMPILLES -->
     <div class="creoles-section">
-      <h2 class="creoles-title">Choisis tes pampilles</h2>
+      <h2 class="creoles-title" id="pampillesTitle">Choisis tes pampilles</h2>
       <div class="cat-tabs" id="pampillesTabs">
-        <div class="cat-tab active" onclick="filterPampilles('all', this)">Tout voir</div>
-        <div class="cat-tab" onclick="filterPampilles('uni', this)">Pampilles unies</div>
-        <div class="cat-tab" onclick="filterPampilles('motifs', this)">Pampilles à motifs</div>
+        <div class="cat-tab active" onclick="filterPampilles('all', this)" id="pampillesTabAll">Tout voir</div>
+        <div class="cat-tab" onclick="filterPampilles('uni', this)" id="pampillesTabUni">Pampilles unies</div>
+        <div class="cat-tab" onclick="filterPampilles('motifs', this)" id="pampillesTabMotifs">Pampilles à motifs</div>
       </div>
       <div class="prod-grid" id="pampillesGrid"></div>
     </div>
@@ -816,6 +816,11 @@
     const featTitleEl = document.getElementById('featTitle');
     if (featTitleEl && data.feat_title) featTitleEl.innerHTML = data.feat_title.replace(/\n/g, '<br>');
     setText('featDesc', data.feat_desc);
+    setText('creolesTitle', data.creoles_title);
+    setText('pampillesTitle', data.pampilles_title);
+    setText('pampillesTabAll', data.pampilles_tab_all);
+    setText('pampillesTabUni', data.pampilles_tab_uni);
+    setText('pampillesTabMotifs', data.pampilles_tab_motifs);
     const featBtnEl = document.getElementById('featBtn');
     if (featBtnEl) {
       const icon = featBtnEl.querySelector('svg');
