@@ -314,8 +314,8 @@
       text-align: center; margin-bottom: 44px;
     }
     .prod-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr));
-      gap: 24px; margin-bottom: 36px;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 22px; margin-bottom: 36px;
     }
     .p-card {
       cursor: pointer;
@@ -331,9 +331,17 @@
       display: flex; align-items: center; justify-content: center;
       position: relative;
     }
-    .p-img-content { width: 80%; height: 80%; display: flex; align-items: center; justify-content: center; }
-    .p-shape-anim { transition: transform .5s ease; }
-    .p-card:hover .p-shape-anim { transform: scale(1.08) rotate(5deg); }
+    .p-img-content, .p-img-photo-wrap { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+    .p-badges { position: absolute; top: 10px; left: 10px; display: flex; flex-direction: column; gap: 6px; z-index: 1; }
+    .p-badge { font-size: 10px; font-weight: 700; letter-spacing: .04em; padding: 4px 10px; border-radius: 999px; color: #fff; }
+    .badge-new { background: var(--peach); }
+    .badge-bestseller { background: var(--gold); }
+    .badge-exclu { background: #8FAF8A; }
+    .p-wish { position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,0.85); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 1; transition: transform var(--ease); }
+    .p-wish:hover { transform: scale(1.1); }
+    .p-wish.liked svg { fill: var(--peach-dk); }
+    .p-colors { display: flex; gap: 5px; margin-bottom: 6px; }
+    .p-color { width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid rgba(0,0,0,0.08); }
     .p-cat {
       font-size: 11px; font-weight: 500;
       letter-spacing: .12em; text-transform: uppercase;
@@ -344,9 +352,82 @@
       font-size: 18px; font-weight: 600;
       color: var(--brown); margin-bottom: 4px;
     }
+    .p-desc { font-size: 12.5px; color: var(--gray); line-height: 1.5; margin-bottom: 8px; }
+    .p-bottom { display: flex; align-items: center; justify-content: space-between; }
     .p-price {
       font-size: 13px; font-weight: 500; color: var(--gray);
     }
+    .p-stock { font-size: 11px; color: var(--sage); display: flex; align-items: center; gap: 4px; }
+    .p-stock.low { color: var(--terra); }
+    .p-stock-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; display: inline-block; }
+    .p-quick-add { position: absolute; left: 0; right: 0; bottom: 0; padding: 10px; opacity: 0; pointer-events: none; transition: opacity var(--ease); background: linear-gradient(to top, rgba(0,0,0,0.35), transparent); }
+    .p-card:hover .p-quick-add { opacity: 1; pointer-events: all; }
+    .btn-quick-add { width: 100%; padding: 9px; background: #fff; color: var(--brown); border: none; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; }
+
+    /* ── MODAL PRODUIT ── */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 500;
+      background: rgba(107,61,42,0.45);
+      opacity: 0; pointer-events: none;
+      transition: opacity var(--ease);
+      backdrop-filter: blur(4px);
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal {
+      position: fixed; z-index: 501;
+      top: 50%; left: 50%; transform: translate(-50%, -48%) scale(.96);
+      width: min(760px, calc(100vw - 32px));
+      max-height: calc(100vh - 48px); overflow-y: auto;
+      background: var(--ivory); border-radius: 28px;
+      box-shadow: 0 24px 80px rgba(107,61,42,0.25);
+      transition: transform .4s cubic-bezier(.34,1.4,.64,1), opacity .3s;
+      opacity: 0; pointer-events: none;
+    }
+    .modal.open { transform: translate(-50%,-50%) scale(1); opacity: 1; pointer-events: all; }
+    .modal-inner { display: grid; grid-template-columns: 1fr 1fr; min-height: 420px; }
+    .modal-img {
+      border-radius: 28px 0 0 28px; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      padding: 32px; min-height: 320px;
+    }
+    .modal-body { padding: 36px 32px 36px 28px; display: flex; flex-direction: column; }
+    .modal-close {
+      position: absolute; top: 16px; right: 18px;
+      background: var(--blush); border: none; border-radius: 50%;
+      width: 36px; height: 36px; cursor: pointer;
+      font-size: 16px; color: var(--brown-mid);
+      display: flex; align-items: center; justify-content: center;
+      transition: all var(--ease);
+    }
+    .modal-close:hover { background: var(--peach); color: #fff; }
+    .modal-cat { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--peach-dk); margin-bottom: 8px; }
+    .modal-name { font-family: var(--font-d); font-size: 30px; font-weight: 600; color: var(--brown); margin-bottom: 10px; line-height: 1.05; }
+    .modal-price { font-family: var(--font-d); font-size: 26px; font-weight: 600; color: var(--brown-mid); margin-bottom: 16px; }
+    .modal-desc { font-size: 14px; color: var(--brown-mid); line-height: 1.8; margin-bottom: 22px; flex: 1; }
+    .modal-colors-label { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--brown-mid); margin-bottom: 10px; }
+    .modal-colors { display: flex; gap: 8px; margin-bottom: 22px; flex-wrap: wrap; }
+    .modal-color-btn {
+      width: 28px; height: 28px; border-radius: 50%; cursor: pointer;
+      border: 2.5px solid transparent; transition: transform var(--ease), border-color var(--ease);
+    }
+    .modal-color-btn:hover, .modal-color-btn.sel { transform: scale(1.18); border-color: var(--brown); }
+    .modal-qty-row { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .qty-ctrl { display: flex; align-items: center; gap: 2px; background: var(--blush); border-radius: 999px; padding: 3px; }
+    .qty-btn { width: 30px; height: 30px; border-radius: 50%; background: none; border: none; cursor: pointer; font-size: 15px; color: var(--brown-mid); transition: background var(--ease); display: flex; align-items: center; justify-content: center; }
+    .qty-btn:hover { background: var(--blush-mid); }
+    .qty-val { font-size: 14px; font-weight: 600; min-width: 28px; text-align: center; color: var(--brown); }
+    .btn-add-modal {
+      width: 100%; padding: 14px; background: var(--peach); color: #fff;
+      border: none; border-radius: 999px; cursor: pointer;
+      font-family: var(--font-b); font-size: 13.5px; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      transition: background var(--ease), transform var(--ease);
+      box-shadow: 0 4px 18px rgba(195,107,74,0.25);
+    }
+    .btn-add-modal:hover { background: var(--peach-dk); transform: translateY(-1px); }
+    .modal-trust { display: flex; gap: 14px; margin-top: 14px; flex-wrap: wrap; }
+    .modal-trust-item { display: flex; align-items: center; gap: 5px; font-size: 11.5px; color: var(--gray); }
     .prod-cta { text-align: center; }
     .btn-outline-peach {
       display: inline-flex; align-items: center; gap: 8px;
@@ -513,8 +594,28 @@
       .cat-block-label { font-size: 15px; }
       .prod-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
       .p-name { font-size: 15px; }
+      .p-desc { display: none; }
       .p-price { font-size: 14px; }
       .p-cat { font-size: 9px; }
+      .p-quick-add { display: none !important; }
+      .modal-inner { grid-template-columns: 1fr; min-height: 0; }
+      .modal { width: calc(100vw - 24px); max-height: calc(100vh - 32px); border-radius: 20px; }
+      .modal-img { border-radius: 20px 20px 0 0; height: 175px; min-height: 0; max-height: 175px; padding: 10px; overflow: hidden; }
+      .modal-body { padding: 14px 16px 18px; }
+      .modal-close { width: 26px; height: 26px; top: 8px; right: 8px; font-size: 12px; }
+      .modal-cat { font-size: 10px; }
+      .modal-name { font-size: 19px; margin-bottom: 4px; }
+      .modal-price { font-size: 16px; margin-bottom: 8px; }
+      .modal-desc { font-size: 11.5px; line-height: 1.45; margin-bottom: 10px; }
+      .modal-colors-label { font-size: 10px; }
+      .modal-colors { margin-bottom: 10px; }
+      .modal-colors .modal-color-btn { width: 24px; height: 24px; }
+      .modal-qty-row { margin-bottom: 10px; }
+      .btn-add-modal { padding: 11px; font-size: 12px; }
+      .modal-trust { font-size: 10px; margin-top: 8px; gap: 8px; }
+    }
+    @media (max-width: 900px) {
+      .prod-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -719,102 +820,7 @@
     <div class="boutique-title r" id="boutiqueTitle">Nos créations</div>
     <div class="boutique-h2 r" id="boutiqueSubtitle">C'est le moment d'ajouter au panier</div>
 
-    <div class="prod-grid">
-
-      <div class="p-card r d1" onclick="addToCart('Pampilles + Créoles Unies',16,'🌸')">
-        <div class="p-img" style="background:var(--blush-mid)">
-          <div class="p-img-content">
-            <svg class="p-shape-anim" width="120" height="120" viewBox="0 0 120 120" fill="none">
-              <ellipse cx="60" cy="60" rx="44" ry="52" fill="#F0A882" opacity=".55" transform="rotate(-10 60 60)"/>
-              <ellipse cx="60" cy="60" rx="24" ry="28" fill="#E8907A" opacity=".7"/>
-              <ellipse cx="60" cy="60" rx="12" ry="14" fill="#fff" opacity=".3"/>
-            </svg>
-          </div>
-        </div>
-        <div class="p-cat">Pampilles + Créoles</div>
-        <div class="p-name">Unies</div>
-        <div class="p-price">16,00 €</div>
-      </div>
-
-      <div class="p-card r d2" onclick="addToCart('Pampilles + Créoles Motifs',18,'🌺')">
-        <div class="p-img" style="background:#F5EDE8">
-          <div class="p-img-content">
-            <svg class="p-shape-anim" width="120" height="120" viewBox="0 0 120 120" fill="none">
-              <circle cx="60" cy="36" r="18" fill="#F0A882" opacity=".5"/>
-              <circle cx="84" cy="60" r="18" fill="#F0A882" opacity=".45"/>
-              <circle cx="60" cy="84" r="18" fill="#F0A882" opacity=".5"/>
-              <circle cx="36" cy="60" r="18" fill="#F0A882" opacity=".45"/>
-              <circle cx="60" cy="60" r="20" fill="#F5C4A8" opacity=".9"/>
-              <circle cx="60" cy="60" r="9" fill="#fff" opacity=".45"/>
-            </svg>
-          </div>
-        </div>
-        <div class="p-cat">Pampilles + Créoles</div>
-        <div class="p-name">Motifs</div>
-        <div class="p-price">18,00 €</div>
-      </div>
-
-      <div class="p-card r d3" onclick="addToCart('Pampilles Seules Unies',13,'🧡')">
-        <div class="p-img" style="background:var(--blush)">
-          <div class="p-img-content">
-            <svg class="p-shape-anim" width="120" height="120" viewBox="0 0 120 120" fill="none">
-              <path d="M60 108C36 88 8 72 8 48C8 28 22 16 38 22C47 26 55 38 60 50C65 38 73 26 82 22C98 16 112 28 112 48C112 72 84 88 60 108Z" fill="#E8D5C0" opacity=".8"/>
-              <path d="M60 90C42 74 22 62 22 48C22 36 31 28 40 32C46 34.5 53 44 60 56C67 44 74 34.5 80 32C89 28 98 36 98 48C98 62 78 74 60 90Z" fill="#D4A853" opacity=".35"/>
-            </svg>
-          </div>
-        </div>
-        <div class="p-cat">Pampilles seules</div>
-        <div class="p-name">Unies</div>
-        <div class="p-price">13,00 €</div>
-      </div>
-
-      <div class="p-card r d4" onclick="addToCart('Pampilles Seules Motifs',15,'🌼')">
-        <div class="p-img" style="background:#EEF2E8">
-          <div class="p-img-content">
-            <svg class="p-shape-anim" width="120" height="120" viewBox="0 0 120 120" fill="none">
-              <ellipse cx="60" cy="60" rx="40" ry="52" fill="#8FAF8A" opacity=".35" transform="rotate(-20 60 60)"/>
-              <ellipse cx="60" cy="60" rx="40" ry="52" fill="#8FAF8A" opacity=".25" transform="rotate(20 60 60)"/>
-              <circle cx="60" cy="60" r="18" fill="#8FAF8A" opacity=".6"/>
-              <circle cx="60" cy="60" r="8" fill="#fff" opacity=".4"/>
-            </svg>
-          </div>
-        </div>
-        <div class="p-cat">Pampilles seules</div>
-        <div class="p-name">Motifs</div>
-        <div class="p-price">15,00 €</div>
-      </div>
-
-      <div class="p-card r d1" onclick="addToCart('Créoles Dorées',5,'✨')">
-        <div class="p-img" style="background:var(--blush-mid)">
-          <div class="p-img-content">
-            <svg class="p-shape-anim" width="120" height="120" viewBox="0 0 120 120" fill="none">
-              <circle cx="60" cy="60" r="42" stroke="#C9A853" stroke-width="8.5" fill="none" opacity=".75"/>
-              <circle cx="60" cy="102" r="6" fill="#C9A853" opacity=".85"/>
-              <ellipse cx="60" cy="60" rx="18" ry="18" fill="#F0D08A" opacity=".2"/>
-            </svg>
-          </div>
-        </div>
-        <div class="p-cat">Créoles seules</div>
-        <div class="p-name">Dorées</div>
-        <div class="p-price">5,00 €</div>
-      </div>
-
-      <div class="p-card r d2" onclick="addToCart('Créoles Argentées',5,'🤍')">
-        <div class="p-img" style="background:var(--blush)">
-          <div class="p-img-content">
-            <svg class="p-shape-anim" width="120" height="120" viewBox="0 0 120 120" fill="none">
-              <circle cx="60" cy="60" r="42" stroke="#A8B8C4" stroke-width="8.5" fill="none" opacity=".75"/>
-              <circle cx="60" cy="102" r="6" fill="#A8B8C4" opacity=".85"/>
-              <ellipse cx="60" cy="60" rx="18" ry="18" fill="#C8D8E0" opacity=".2"/>
-            </svg>
-          </div>
-        </div>
-        <div class="p-cat">Créoles seules</div>
-        <div class="p-name">Argentées</div>
-        <div class="p-price">5,00 €</div>
-      </div>
-
-    </div>
+    <div class="prod-grid" id="prodGrid"></div>
 
     <div class="prod-cta r">
       <a href="#contact" class="btn-outline-peach">Pièce sur mesure →</a>
@@ -921,6 +927,49 @@
   </div>
 </footer>
 
+<!-- MODAL PRODUIT -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
+<div class="modal" id="prodModal" role="dialog" aria-modal="true">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <div class="modal-inner">
+    <div class="modal-img" id="modalImg"></div>
+    <div class="modal-body">
+      <div class="modal-cat" id="modalCat"></div>
+      <div class="modal-name" id="modalName"></div>
+      <div class="modal-price" id="modalPrice"></div>
+      <div class="modal-desc" id="modalDesc"></div>
+      <div class="modal-colors-label">Couleur disponible</div>
+      <div class="modal-colors" id="modalColors"></div>
+      <div class="modal-qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="changeQty(-1)">−</button>
+          <span class="qty-val" id="modalQty">1</span>
+          <button class="qty-btn" onclick="changeQty(1)">+</button>
+        </div>
+        <span style="font-size:12px;color:var(--gray)">unité(s)</span>
+      </div>
+      <button class="btn-add-modal" id="modalAddBtn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Ajouter au panier
+      </button>
+      <div class="modal-trust">
+        <div class="modal-trust-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          Fait à la main
+        </div>
+        <div class="modal-trust-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          3–5 jours
+        </div>
+        <div class="modal-trust-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+          Retour 14j
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- CART -->
 <div class="overlay" id="ov" onclick="toggleCart()"></div>
 <div class="drawer" id="dr" role="dialog" aria-label="Panier">
@@ -935,12 +984,105 @@
 
 <script>
   let cart = [];
+  let products = [];
+  let currentProduct = null, modalQty = 1;
 
   function addToCart(name, price, emoji) {
     const ex = cart.find(i => i.name === name);
     ex ? ex.qty++ : cart.push({ name, price, emoji, qty: 1 });
     renderCart(); toast('Ajouté au panier 🌸'); openCart();
   }
+
+  function productVisual(p) {
+    if (p.image) return `<img src="${p.image}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover">`;
+    const c = (p.colors && p.colors[0]) || '#F0A882';
+    return `<div style="width:100%;height:100%;border-radius:50%;background:${c};opacity:.35;display:flex;align-items:center;justify-content:center;font-size:44px">${p.emoji || ''}</div>`;
+  }
+
+  function toggleWish(e, el) {
+    e.stopPropagation();
+    el.classList.toggle('liked');
+  }
+
+  function renderHomeProducts() {
+    const grid = document.getElementById('prodGrid');
+    if (!grid) return;
+    grid.innerHTML = products.map((p, idx) => `
+      <div class="p-card r" data-cat="" data-tags="" data-price="${p.price}" onclick="openModal(${idx})">
+        <div class="p-img" style="background:${p.bg || '#F5EDE8'}">
+          ${p.badge === 'bestseller' ? '<div class="p-badges"><span class="p-badge badge-bestseller">⭐ Bestseller</span></div>' : ''}
+          ${p.badge === 'new' ? '<div class="p-badges"><span class="p-badge badge-new">Nouveau</span></div>' : ''}
+          ${p.badge === 'exclu' ? '<div class="p-badges"><span class="p-badge badge-exclu">✨ Exclu</span></div>' : ''}
+          <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </button>
+          <div class="${p.image ? 'p-img-photo-wrap' : 'p-img-content'}">${productVisual(p)}</div>
+          <div class="p-quick-add">
+            <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('${(p.name||'').replace(/'/g,"\\'")}', ${p.price}, '${p.emoji || ''}')">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Ajouter au panier
+            </button>
+          </div>
+        </div>
+        ${(p.colors && p.colors.length) ? `<div class="p-colors">${p.colors.map((c,i) => `<div class="p-color" style="background:${c}"></div>`).join('')}</div>` : ''}
+        <div class="p-cat">${p.category}</div>
+        <div class="p-name">${p.name}</div>
+        <div class="p-desc">${p.description || ''}</div>
+        <div class="p-bottom">
+          <div class="p-price">${p.price.toFixed(2).replace('.',',')} €</div>
+          <div class="p-stock ${p.stock === 'low' ? 'low' : ''}"><span class="p-stock-dot"></span> ${p.stock === 'low' ? 'Dernières pièces' : 'En stock'}</div>
+        </div>
+      </div>`).join('');
+    const prodObs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }), { threshold: 0.1, rootMargin: '0px 0px -28px 0px' });
+    grid.querySelectorAll('.p-card').forEach(el => prodObs.observe(el));
+  }
+
+  function openModal(idx) {
+    const p = products[idx];
+    if (!p) return;
+    currentProduct = p;
+    modalQty = 1;
+    document.getElementById('modalQty').textContent = 1;
+    document.getElementById('modalCat').textContent = p.category;
+    document.getElementById('modalName').textContent = p.name;
+    document.getElementById('modalPrice').textContent = p.price.toFixed(2).replace('.',',') + ' €';
+    document.getElementById('modalDesc').textContent = p.description;
+    document.getElementById('modalImg').style.background = p.bg || '#F5EDE8';
+    document.getElementById('modalImg').innerHTML = productVisual(p);
+    const mc = document.getElementById('modalColors');
+    mc.innerHTML = (p.colors || []).map((c,i) => `<div class="modal-color-btn ${i===0?'sel':''}" style="background:${c}" onclick="selectColor(this)"></div>`).join('');
+    document.getElementById('modalAddBtn').onclick = () => {
+      for (let i = 0; i < modalQty; i++) addToCart(p.category + ' ' + p.name, p.price, p.emoji);
+      closeModal();
+    };
+    document.getElementById('modalOverlay').classList.add('open');
+    document.getElementById('prodModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('open');
+    document.getElementById('prodModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function changeQty(d) {
+    modalQty = Math.max(1, modalQty + d);
+    document.getElementById('modalQty').textContent = modalQty;
+  }
+
+  function selectColor(el) {
+    el.closest('.modal-colors').querySelectorAll('.modal-color-btn').forEach(b => b.classList.remove('sel'));
+    el.classList.add('sel');
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  fetch('content/products.json').then(r => r.json()).then(data => {
+    products = data.products || [];
+    renderHomeProducts();
+  }).catch(() => {});
+
 
   function renderCart() {
     const di = document.getElementById('di');
