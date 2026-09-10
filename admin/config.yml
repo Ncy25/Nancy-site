@@ -139,16 +139,6 @@ collections:
           - { label: "Photo mosaïque 4", name: "mosaic_image_4", widget: "image", required: false }
           - { label: "Titre du compte à rebours", name: "countdown_title", widget: "string" }
           - { label: "Sous-titre du compte à rebours", name: "countdown_subtitle", widget: "text" }
-          - label: "Produit vedette (grande bannière)"
-            name: "feature"
-            widget: "object"
-            fields:
-              - { label: "Étiquette", name: "tag", widget: "string" }
-              - { label: "Nom", name: "name", widget: "string" }
-              - { label: "Prix (€)", name: "price", widget: "number", value_type: "float" }
-              - { label: "Emoji", name: "emoji", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Photo", name: "image", widget: "image", required: false }
           - name: "products"
             label: "Produits nouveautés"
             widget: "list"
