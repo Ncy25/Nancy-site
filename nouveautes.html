@@ -1062,15 +1062,15 @@
         message: `Merci de me prévenir quand "${productName}" sera disponible ! (inscription depuis la page Nouveautés, section "Aperçu de la prochaine collection")`
       })
     }).then(r => r.json()).then(res => {
-      if (!res.ok) throw new Error('Échec');
+      if (!res.ok) throw new Error(res.error || res.detail || 'Échec');
       btn.classList.add('notified');
       btn.textContent = 'Inscrite ✓';
       if (emailInput) emailInput.style.display = 'none';
       showToast('Vous serez prévenue à l\'arrivée 🌸');
-    }).catch(() => {
+    }).catch((err) => {
       btn.disabled = false;
       btn.textContent = originalText;
-      showToast('Erreur d\'envoi, réessaie dans un instant');
+      showToast('Erreur : ' + (err.message || 'réessaie dans un instant'), 8000);
     });
   }
 
@@ -1124,11 +1124,11 @@
 
   /* ─── TOAST ─── */
   let toastTimer;
-  function showToast(msg) {
+  function showToast(msg, duration) {
     const t = document.getElementById('toast');
     t.textContent = msg; t.classList.add('on');
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => t.classList.remove('on'), 2800);
+    toastTimer = setTimeout(() => t.classList.remove('on'), duration || 2800);
   }
 
   /* ─── REVEAL ─── */
