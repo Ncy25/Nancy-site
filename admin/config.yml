@@ -85,8 +85,8 @@ collections:
               - label: "Catégorie"
                 name: "category"
                 widget: "select"
-                options: ["Pampilles + Créoles", "Pampilles", "Créoles", "Exclusivités"]
-                hint: "Coche la catégorie de ce produit. Un bouton de filtre apparaît automatiquement sur la boutique pour chaque catégorie utilisée par au moins un produit."
+                options: ["Pampilles", "Créoles", "Exclusivités"]
+                hint: "Coche la catégorie de ce produit."
               - { label: "Prix (€)", name: "price", widget: "number", value_type: "float" }
               - label: "Motif ou uni ?"
                 name: "variant"
