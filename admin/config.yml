@@ -83,6 +83,11 @@ collections:
           - { label: "Bannière — Description", name: "feat_desc", widget: "text" }
           - { label: "Bannière — Texte du bouton", name: "feat_btn_text", widget: "string" }
           - { label: "Bannière — Lien du bouton", name: "feat_btn_link", widget: "string" }
+          - { label: "Titre section \"Choisis tes créoles\"", name: "creoles_title", widget: "string" }
+          - { label: "Titre section \"Choisis tes pampilles\"", name: "pampilles_title", widget: "string" }
+          - { label: "Bouton pampilles — Tout voir", name: "pampilles_tab_all", widget: "string" }
+          - { label: "Bouton pampilles — Unies", name: "pampilles_tab_uni", widget: "string" }
+          - { label: "Bouton pampilles — Motifs", name: "pampilles_tab_motifs", widget: "string" }
           - name: "products"
             label: "Produits"
             widget: "list"
