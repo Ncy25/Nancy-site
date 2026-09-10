@@ -568,6 +568,9 @@
     <!-- CATEGORY TABS -->
     <div class="cat-tabs" id="catTabs">
       <div class="cat-tab active" onclick="filterCat('all', this)">Tout voir</div>
+      <div class="cat-tab" onclick="filterCat('pampilles', this)">Pampilles</div>
+      <div class="cat-tab" onclick="filterCat('creoles', this)">Créoles</div>
+      <div class="cat-tab" onclick="filterCat('exclusivites', this)">Exclusivités ✨</div>
     </div>
 
     <!-- FILTERS BAR -->
@@ -750,7 +753,6 @@
   }
 
   function renderProducts() {
-    renderCatTabs();
     const grid = document.getElementById('prodGrid');
     grid.innerHTML = products.map((p, idx) => `
       <div class="p-card" data-cat="${catSlug(p.category)}" data-tags="${tagsFor(p)}" data-price="${p.price}" onclick="openModal(${idx})">
