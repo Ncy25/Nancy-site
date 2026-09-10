@@ -1028,50 +1028,12 @@
         <div class="sneak-info">
           <div class="sneak-name">${c.name || ''}</div>
           <div class="sneak-date">${c.date || ''}</div>
-          <input type="email" class="sneak-email-input" placeholder="Ton adresse email" id="sneakEmail${i}">
-          <button class="sneak-notify-btn" onclick="notifyMe(this, '${(c.name || '').replace(/'/g, "\\'")}', ${i})">Me prévenir</button>
         </div>
       </div>
     `).join('');
 
     const sneakObs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }), { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
     row.querySelectorAll('.sneak-card').forEach(el => sneakObs.observe(el));
-  }
-
-  function notifyMe(btn, productName, idx) {
-    if (btn.classList.contains('notified') || btn.disabled) return;
-    const emailInput = document.getElementById('sneakEmail' + idx);
-    const email = emailInput ? emailInput.value.trim() : '';
-    if (!email || !email.includes('@')) {
-      showToast('Merci de saisir un email valide');
-      if (emailInput) emailInput.focus();
-      return;
-    }
-    btn.disabled = true;
-    const originalText = btn.textContent;
-    btn.textContent = 'Envoi...';
-
-    fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        fname: 'Visiteuse',
-        lname: '',
-        email: email,
-        sujet: 'Inscription prochaine collection',
-        message: `Merci de me prévenir quand "${productName}" sera disponible ! (inscription depuis la page Nouveautés, section "Aperçu de la prochaine collection")`
-      })
-    }).then(r => r.json()).then(res => {
-      if (!res.ok) throw new Error(res.detail || res.error || 'Échec');
-      btn.classList.add('notified');
-      btn.textContent = 'Inscrite ✓';
-      if (emailInput) emailInput.style.display = 'none';
-      showToast('Vous serez prévenue à l\'arrivée 🌸');
-    }).catch((err) => {
-      btn.disabled = false;
-      btn.textContent = originalText;
-      showToast('Erreur : ' + (err.message || 'réessaie dans un instant'), 15000);
-    });
   }
 
   /* ─── NEWSLETTER ─── */
