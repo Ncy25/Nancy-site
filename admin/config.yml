@@ -144,6 +144,7 @@ collections:
           - { label: "Photo mosaïque 4", name: "mosaic_image_4", widget: "image", required: false }
           - { label: "Titre du compte à rebours", name: "countdown_title", widget: "string" }
           - { label: "Sous-titre du compte à rebours", name: "countdown_subtitle", widget: "text" }
+          - { label: "Date et heure de fin du compte à rebours", name: "countdown_end", widget: "datetime", hint: "Le compte à rebours affichera le temps restant jusqu'à cette date précise." }
           - name: "products"
             label: "Produits nouveautés"
             widget: "list"
