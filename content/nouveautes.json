@@ -8,8 +8,12 @@
   "hero_tag3": "🇫🇷 Fait en France",
   "section_label": "Nos créations fraîches",
   "section_title": "Ce qui vient d'arriver",
+  "mosaic_image_1": "",
+  "mosaic_image_2": "",
+  "mosaic_image_3": "",
+  "mosaic_image_4": "",
   "countdown_title": "🌸 Prochain drop — Collection",
-  "countdown_subtitle": "Les prochaines pampilles arrivent bientôt. Inscrivez-vous pour être prévenue en avant-première.",
+  "countdown_subtitle": "Les prochaines pampilles arrivent bientôt.",
   "feature": {
     "tag": "✨ Collection PADAPOM",
     "name": "Coeur - Jeans",
@@ -22,7 +26,7 @@
     {
       "id": "lilas-douceur",
       "name": "Lilas Douceur",
-      "category": "Pampilles seules",
+      "category": "Pampilles",
       "price": 18,
       "emoji": "💜",
       "description": "Nouvelles teintes mauve et parme, satinées. Un classique Wild Flower dans une couleur inédite.",
