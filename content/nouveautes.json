@@ -18,7 +18,7 @@
     {
       "id": "lilas-douceur",
       "name": "Lilas Douceur",
-      "category": "Pampilles + Créoles",
+      "category": "Pampilles",
       "price": 18,
       "emoji": "💜",
       "description": "Nouvelles teintes mauve et parme, satinées. Un classique Wild Flower dans une couleur inédite.",
@@ -35,7 +35,7 @@
     {
       "id": "sauge-doree",
       "name": "Sauge Dorée",
-      "category": "Pampilles seules",
+      "category": "Pampilles",
       "price": 17,
       "emoji": "🌿",
       "description": "Argile sauge avec inclusions de feuille d'or. Texture organique, effet patiné unique.",
@@ -51,7 +51,7 @@
     {
       "id": "azur-ciel",
       "name": "Azur Ciel",
-      "category": "Pampilles + Créoles",
+      "category": "Pampilles",
       "price": 19,
       "emoji": "🩵",
       "description": "Bleu ciel et porcelaine, forme florale multi-pétales. La fraîcheur à l'oreille.",
