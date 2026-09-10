@@ -85,7 +85,8 @@ collections:
               - label: "Catégorie"
                 name: "category"
                 widget: "select"
-                options: ["Pampilles + Créoles", "Pampilles seules", "Créoles seules"]
+                options: ["Pampilles + Créoles", "Pampilles", "Créoles", "Exclusivités"]
+                hint: "Coche la catégorie de ce produit. Un bouton de filtre apparaît automatiquement sur la boutique pour chaque catégorie utilisée par au moins un produit."
               - { label: "Prix (€)", name: "price", widget: "number", value_type: "float" }
               - label: "Motif ou uni ?"
                 name: "variant"
@@ -150,7 +151,7 @@ collections:
               - label: "Catégorie"
                 name: "category"
                 widget: "select"
-                options: ["Pampilles + Créoles", "Pampilles seules", "Créoles seules"]
+                options: ["Pampilles + Créoles", "Pampilles", "Créoles", "Exclusivités"]
               - { label: "Prix (€)", name: "price", widget: "number", value_type: "float" }
               - { label: "Emoji (utilisé si pas de photo)", name: "emoji", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
