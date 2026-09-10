@@ -1035,6 +1035,10 @@
     document.getElementById('countdown-title-el') && (document.getElementById('countdown-title-el').textContent = data.countdown_title);
     const cbTitle = document.querySelector('.cb-title'); if (cbTitle && data.countdown_title) cbTitle.textContent = data.countdown_title;
     const cbSub = document.querySelector('.cb-sub'); if (cbSub && data.countdown_subtitle) cbSub.textContent = data.countdown_subtitle;
+    if (data.countdown_end) {
+      const parsed = new Date(data.countdown_end);
+      if (!isNaN(parsed)) { target = parsed; updateCountdown(); }
+    }
     renderNouveautes(data);
     if (data.sneak) renderSneak(data.sneak);
     const urlParams = new URLSearchParams(window.location.search);
@@ -1062,11 +1066,10 @@
   }).catch(() => {});
 
   /* ─── COUNTDOWN ─── */
-  const target = new Date();
-  target.setDate(target.getDate() + 14);
-  target.setHours(6, 32, 0, 0);
+  let target = null;
 
   function updateCountdown() {
+    if (!target) return;
     const now = new Date();
     const diff = Math.max(0, target - now);
     const d = Math.floor(diff / 86400000);
@@ -1078,6 +1081,10 @@
     document.getElementById('cd-h').textContent = fmt(h);
     document.getElementById('cd-m').textContent = fmt(m);
     document.getElementById('cd-s').textContent = fmt(s);
+    if (diff <= 0) {
+      const banner = document.querySelector('.countdown-banner');
+      if (banner) banner.style.display = 'none';
+    }
   }
   updateCountdown();
   setInterval(updateCountdown, 1000);
