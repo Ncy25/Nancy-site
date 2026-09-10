@@ -264,11 +264,11 @@
     .feat-banner h2 { font-family: var(--font-d); font-size: clamp(28px, 4vw, 40px); font-weight: 600; color: #fff; line-height: 1; margin-bottom: 12px; letter-spacing: -.02em; }
     .feat-banner p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.65; max-width: 360px; margin-bottom: 22px; }
     .btn-feat {
-      display: inline-flex; align-items: center; gap: 8px;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
       padding: 13px 28px; background: #fff; color: var(--peach-dk);
       border-radius: 999px; border: none; cursor: pointer;
       font-family: var(--font-b); font-size: 12.5px; font-weight: 700;
-      letter-spacing: .08em; text-transform: uppercase;
+      letter-spacing: .08em; text-transform: uppercase; text-align: center;
       transition: transform var(--ease), box-shadow var(--ease);
     }
     .btn-feat:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
@@ -792,8 +792,16 @@
     if (featTitleEl && data.feat_title) featTitleEl.innerHTML = data.feat_title.replace(/\n/g, '<br>');
     setText('featDesc', data.feat_desc);
     const featBtnEl = document.getElementById('featBtn');
-    if (featBtnEl && data.feat_btn_text) featBtnEl.childNodes[0].textContent = data.feat_btn_text + ' ';
-    if (featBtnEl && data.feat_btn_link) featBtnEl.setAttribute('href', data.feat_btn_link);
+    if (featBtnEl) {
+      const icon = featBtnEl.querySelector('svg');
+      if (data.feat_btn_text) featBtnEl.childNodes[0].textContent = data.feat_btn_text;
+      if (data.feat_btn_link) {
+        // Tolère un lien collé au format Markdown [texte](url) : on extrait juste l'URL
+        const md = data.feat_btn_link.match(/\(([^)]+)\)\s*$/);
+        const url = md ? md[1] : data.feat_btn_link.trim();
+        featBtnEl.setAttribute('href', url);
+      }
+    }
 
     const urlParams = new URLSearchParams(window.location.search);
     const q = urlParams.get('q');
