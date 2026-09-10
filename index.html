@@ -984,6 +984,15 @@
 
 <script>
   let cart = [];
+  try {
+    const stored = sessionStorage.getItem("wf_cart");
+    if (stored) cart = JSON.parse(stored);
+  } catch(e) {}
+  function saveCart() {
+    try { sessionStorage.setItem("wf_cart", JSON.stringify(cart)); } catch(e) {}
+  }
+  document.addEventListener("DOMContentLoaded", renderCart);
+  if (document.readyState !== "loading") renderCart();
   let products = [];
   let currentProduct = null, modalQty = 1;
 
@@ -1085,6 +1094,7 @@
 
 
   function renderCart() {
+    saveCart();
     const di = document.getElementById('di');
     const de = document.getElementById('de');
     const dt = document.getElementById('dt');
