@@ -977,7 +977,7 @@
     const f = data.feature || {};
 
     const featureHtml = `
-      <div class="feature-card r" data-cat="" data-tags="exclu,new" data-price="${f.price || 0}" onclick="addToCart('${(f.name||'').replace(/'/g,"\\'")}', ${f.price || 0}, '${f.emoji || ''}')">
+      <div class="feature-card r" data-cat="" data-tags="exclu,new" data-price="${f.price || 0}">
         <div>
           <div class="fc-tag">${f.tag || ''}</div>
           <div class="fc-title">${(f.name || '').replace(' — ', '<br>— ')}</div>
