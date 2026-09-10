@@ -677,9 +677,7 @@
     <!-- Filters -->
     <div class="filter-row r">
       <button class="filter-pill active" onclick="filterPill('all', this)">Tout voir</button>
-      <button class="filter-pill" onclick="filterPill('pampilles-creoles', this)">Pampilles + Créoles</button>
-      <button class="filter-pill" onclick="filterPill('pampilles', this)">Pampilles seules</button>
-      <button class="filter-pill" onclick="filterPill('creoles', this)">Créoles</button>
+      <span id="nvCatPills"></span>
       <button class="filter-pill" onclick="filterPill('exclu', this)">Exclusivités ✨</button>
       <div class="filter-right">
         <select class="sort-select" id="sortSel" onchange="sortProducts()">
@@ -866,10 +864,27 @@
   }
 
   function novCatSlug(cat) {
-    if (cat === 'Pampilles + Créoles') return 'pampilles-creoles';
-    if (cat === 'Pampilles seules') return 'pampilles';
-    if (cat === 'Créoles seules') return 'creoles';
-    return '';
+    if (!cat) return '';
+    return cat.toString().trim().toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  }
+
+  function renderNvCatPills() {
+    const wrap = document.getElementById('nvCatPills');
+    if (!wrap) return;
+    const seen = new Map();
+    novProducts.forEach(p => {
+      if (p.category) {
+        const slug = novCatSlug(p.category);
+        if (slug && !seen.has(slug)) seen.set(slug, p.category);
+      }
+    });
+    let html = '';
+    seen.forEach((label, slug) => {
+      html += `<button class="filter-pill" onclick="filterPill('${slug}', this)">${label}</button>`;
+    });
+    wrap.innerHTML = html;
   }
 
   function novTags(p) {
@@ -881,6 +896,7 @@
   function renderNouveautes(data) {
     const grid = document.getElementById('prodGrid');
     novProducts = data.products || [];
+    renderNvCatPills();
     const f = data.feature || {};
 
     const featureHtml = `

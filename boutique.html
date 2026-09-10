@@ -566,11 +566,8 @@
     </div>
 
     <!-- CATEGORY TABS -->
-    <div class="cat-tabs">
+    <div class="cat-tabs" id="catTabs">
       <div class="cat-tab active" onclick="filterCat('all', this)">Tout voir</div>
-      <div class="cat-tab" onclick="filterCat('pampilles-creoles', this)">Pampilles + Créoles</div>
-      <div class="cat-tab" onclick="filterCat('pampilles', this)">Pampilles seules</div>
-      <div class="cat-tab" onclick="filterCat('creoles', this)">Créoles seules</div>
     </div>
 
     <!-- FILTERS BAR -->
@@ -730,13 +727,30 @@
   }
 
   function catSlug(cat) {
-    if (cat === 'Pampilles + Créoles') return 'pampilles-creoles';
-    if (cat === 'Pampilles seules') return 'pampilles';
-    if (cat === 'Créoles seules') return 'creoles';
-    return '';
+    if (!cat) return '';
+    return cat.toString().trim().toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // retire les accents
+      .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  }
+
+  function renderCatTabs() {
+    const wrap = document.getElementById('catTabs');
+    const seen = new Map(); // slug -> label d'origine
+    products.forEach(p => {
+      if (p.category) {
+        const slug = catSlug(p.category);
+        if (slug && !seen.has(slug)) seen.set(slug, p.category);
+      }
+    });
+    const tabsHtml = ['<div class="cat-tab active" onclick="filterCat(\'all\', this)">Tout voir</div>'];
+    seen.forEach((label, slug) => {
+      tabsHtml.push(`<div class="cat-tab" onclick="filterCat('${slug}', this)">${label}</div>`);
+    });
+    wrap.innerHTML = tabsHtml.join('');
   }
 
   function renderProducts() {
+    renderCatTabs();
     const grid = document.getElementById('prodGrid');
     grid.innerHTML = products.map((p, idx) => `
       <div class="p-card" data-cat="${catSlug(p.category)}" data-tags="${tagsFor(p)}" data-price="${p.price}" onclick="openModal(${idx})">
