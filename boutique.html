@@ -542,10 +542,10 @@
     <!-- FEATURED BANNER -->
     <div class="feat-banner" style="margin-top:32px">
       <div>
-        <div class="feat-banner-tag">✨ Collection printemps</div>
-        <h2>Joyful Pampilles<br>— Nouvelle saison</h2>
-        <p>Des couleurs fraîches, des formes nouvelles. Chaque pièce est imaginée pour mettre de la joie dans votre quotidien.</p>
-        <a href="nouveautes.html" class="btn-feat">
+        <div class="feat-banner-tag" id="featTag">✨ Collection printemps</div>
+        <h2 id="featTitle">Joyful Pampilles<br>— Nouvelle saison</h2>
+        <p id="featDesc">Des couleurs fraîches, des formes nouvelles. Chaque pièce est imaginée pour mettre de la joie dans votre quotidien.</p>
+        <a href="nouveautes.html" class="btn-feat" id="featBtn">
           Voir les nouveautés
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
@@ -787,6 +787,13 @@
     setText('pageHeaderScript', data.header_script);
     setText('pageHeaderTitle', data.header_title);
     setText('pageHeaderSub', data.header_subtitle);
+    setText('featTag', data.feat_tag);
+    const featTitleEl = document.getElementById('featTitle');
+    if (featTitleEl && data.feat_title) featTitleEl.innerHTML = data.feat_title.replace(/\n/g, '<br>');
+    setText('featDesc', data.feat_desc);
+    const featBtnEl = document.getElementById('featBtn');
+    if (featBtnEl && data.feat_btn_text) featBtnEl.childNodes[0].textContent = data.feat_btn_text + ' ';
+    if (featBtnEl && data.feat_btn_link) featBtnEl.setAttribute('href', data.feat_btn_link);
 
     const urlParams = new URLSearchParams(window.location.search);
     const q = urlParams.get('q');
