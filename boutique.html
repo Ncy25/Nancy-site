@@ -299,29 +299,6 @@
     .cat-tab:hover { border-color: var(--peach); color: var(--terra); }
     .cat-tab.active { background: var(--terra); color: #fff; border-color: var(--terra); }
 
-    /* ── MESURE BAND ── */
-    .mesure-band {
-      background: var(--blush);
-      border-radius: 24px; padding: 40px 44px;
-      display: grid; grid-template-columns: 1fr auto;
-      gap: 24px; align-items: center;
-      margin-top: 48px;
-      border: 1px solid rgba(242,191,181,0.5);
-    }
-    .mesure-band h3 { font-family: var(--font-d); font-size: 28px; font-weight: 600; color: var(--brown); margin-bottom: 8px; }
-    .mesure-band p { font-size: 14px; color: var(--brown-mid); line-height: 1.7; max-width: 420px; }
-    .mesure-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-    .mesure-chip { background: rgba(255,255,255,0.65); border: 1px solid rgba(255,255,255,0.9); color: var(--brown-mid); font-size: 12px; font-weight: 500; padding: 5px 12px; border-radius: 999px; }
-    .btn-mesure {
-      padding: 14px 30px; background: var(--terra); color: #fff;
-      border: none; border-radius: 999px; cursor: pointer;
-      font-family: var(--font-b); font-size: 13px; font-weight: 600;
-      letter-spacing: .08em; text-transform: uppercase;
-      display: flex; align-items: center; gap: 8px; white-space: nowrap;
-      transition: background var(--ease), transform var(--ease);
-    }
-    .btn-mesure:hover { background: var(--brown-mid); transform: translateY(-2px); }
-
     /* ── MODAL PRODUIT ── */
     .modal-overlay {
       position: fixed; inset: 0; z-index: 500;
@@ -438,7 +415,6 @@
     @media (max-width: 860px) {
       .feat-banner { grid-template-columns: 1fr; }
       .feat-visual { display: none; }
-      .mesure-band { grid-template-columns: 1fr; }
       .modal-inner { grid-template-columns: 1fr; }
       .modal-img { border-radius: 28px 28px 0 0; min-height: 220px; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -477,12 +453,6 @@
       .p-desc { display: none; }
       .p-price { font-size: 14px; }
       .p-cat { font-size: 9px; }
-      .mesure-band { padding: 28px 22px; text-align: center; }
-      .mesure-band h3 { font-size: 21px; }
-      .mesure-band p { max-width: none; font-size: 13px; }
-      .mesure-chips { justify-content: center; }
-      .mesure-chip { font-size: 11px; }
-      .btn-mesure { margin: 18px auto 0; justify-content: center; width: 100%; }
     }
   </style>
 </head>
@@ -635,24 +605,6 @@
     <!-- PRODUCT GRID -->
     <div class="prod-section">
       <div class="prod-grid" id="prodGrid"></div>
-
-      <!-- MESURE BAND -->
-      <div class="mesure-band">
-        <div>
-          <h3>Une envie sur mesure ? ✋</h3>
-          <p>Couleur précise, motif particulier, commande groupée pour un cadeau — tout est possible. On échange par e-mail et on crée ensemble votre pièce unique.</p>
-          <div class="mesure-chips">
-            <span class="mesure-chip">🎨 Couleur au choix</span>
-            <span class="mesure-chip">✨ Motif personnalisé</span>
-            <span class="mesure-chip">🎁 Idée cadeau</span>
-            <span class="mesure-chip">📦 Commande groupée</span>
-          </div>
-        </div>
-        <a href="index.html#contact" class="btn-mesure">
-          Demander un sur-mesure
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
 
     </div>
   </div>
