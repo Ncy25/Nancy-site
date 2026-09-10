@@ -1,10 +1,10 @@
 {
-  "hero_eyebrow": "Collection Automne 2026",
+  "hero_eyebrow": "Collection Printemps 2025",
   "hero_title_line1": "JOYFUL",
   "hero_title_line2": "NOUVEAUTÉS",
   "hero_subtitle": "De nouvelles teintes, de nouvelles textures — toujours façonnées à la main avec la même passion pour la couleur et le détail.",
   "hero_tag1": "✨ Arrivages frais",
-  "hero_tag2": "🏺 Pâte polymère",
+  "hero_tag2": "🏺 Argile polymère",
   "hero_tag3": "🇫🇷 Fait en France",
   "section_label": "Nos créations fraîches",
   "section_title": "Ce qui vient d'arriver",
@@ -12,12 +12,12 @@
   "mosaic_image_2": "",
   "mosaic_image_3": "",
   "mosaic_image_4": "",
-  "countdown_title": "🌸 Prochain drop — Collection",
-  "countdown_subtitle": "Les prochaines pampilles arrivent bientôt.",
+  "countdown_title": "🌸 Prochain drop — Collection Été",
+  "countdown_subtitle": "Les prochaines pampilles arrivent bientôt. Inscrivez-vous pour être prévenue en avant-première.",
   "feature": {
-    "tag": "✨ Collection PADAPOM",
-    "name": "Coeur - Jeans",
-    "price": 17,
+    "tag": "✨ Édition limitée printemps",
+    "name": "Duo Floral — Édition Printemps",
+    "price": 24,
     "emoji": "🌺",
     "description": "Notre création la plus joyeuse : deux formes florales différentes, dégradé nacré, finition or. Une seule paire de créoles, deux personnalités.",
     "image": ""
@@ -26,7 +26,7 @@
     {
       "id": "lilas-douceur",
       "name": "Lilas Douceur",
-      "category": "Pampilles",
+      "category": "Pampilles + Créoles",
       "price": 18,
       "emoji": "💜",
       "description": "Nouvelles teintes mauve et parme, satinées. Un classique Wild Flower dans une couleur inédite.",
@@ -36,7 +36,7 @@
         "#B8D4E8"
       ],
       "bg": "#F0EAF8",
-      "badge": "exclu",
+      "badge": "new",
       "stock": "in_stock",
       "image": ""
     },
@@ -75,17 +75,17 @@
     },
     {
       "id": "twist-dorees",
-      "name": "Twist dorées",
+      "name": "Twist Dorées",
       "category": "Créoles seules",
       "price": 7,
       "emoji": "✨",
-      "description": "Nouvelle forme torsadée, finition dorée",
+      "description": "Nouvelle forme torsadée, finition dorée mate. Élégantes seules ou avec pampilles.",
       "colors": [
         "#C9A853"
       ],
       "bg": "#FDF6E0",
       "badge": "exclu",
-      "stock": "in_stock",
+      "stock": "low",
       "image": ""
     },
     {
@@ -121,5 +121,35 @@
       "stock": "low",
       "image": ""
     }
-  ]
+  ],
+  "sneak": {
+    "script": "Bientôt disponible",
+    "title": "Aperçu de la prochaine collection",
+    "cards": [
+      {
+        "name": "Prune & Parme",
+        "date": "Collection Été — Juin 2025",
+        "bg": "#EDE8F8",
+        "accent": "#9B8FD4"
+      },
+      {
+        "name": "Menthe Glacée",
+        "date": "Collection Été — Juin 2025",
+        "bg": "#E8F8F0",
+        "accent": "#68C89A"
+      },
+      {
+        "name": "Rose Poudré",
+        "date": "Collection Été — Juillet 2025",
+        "bg": "#F8EEF8",
+        "accent": "#E890C0"
+      },
+      {
+        "name": "Citron Doré",
+        "date": "Collection Été — Juillet 2025",
+        "bg": "#F8F4E0",
+        "accent": "#D4B060"
+      }
+    ]
+  }
 }
