@@ -3,7 +3,7 @@
     {
       "id": "pampilles-motifs",
       "name": "Coeur - Jeans",
-      "category": "Pampilles seules",
+      "category": "Pampilles",
       "price": 17,
       "variant": "motifs",
       "emoji": "🌺",
@@ -19,7 +19,7 @@
     {
       "id": "pampilles-motifs",
       "name": "Théa - Aquarelle d'automne",
-      "category": "Pampilles seules",
+      "category": "Exclusivités",
       "price": 17,
       "variant": "uni",
       "emoji": "🌸",
