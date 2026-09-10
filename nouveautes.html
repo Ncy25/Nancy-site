@@ -977,23 +977,6 @@
   function renderNouveautes(data) {
     const grid = document.getElementById('prodGrid');
     novProducts = data.products || [];
-    const f = data.feature || {};
-
-    const featureHtml = `
-      <div class="feature-card r" data-cat="" data-tags="exclu,new" data-price="${f.price || 0}">
-        <div>
-          <div class="fc-tag">${f.tag || ''}</div>
-          <div class="fc-title">${(f.name || '').replace(' — ', '<br>— ')}</div>
-          <div class="fc-desc">${f.description || ''}</div>
-          <button class="btn-fc" onclick="event.stopPropagation(); addToCart('${(f.name||'').replace(/'/g,"\\'")}', ${f.price || 0}, '${f.emoji || ''}')">
-            Ajouter au panier — ${(f.price || 0).toFixed(2).replace('.',',')} €
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </button>
-        </div>
-        <div class="fc-visual">
-          <div class="fc-mini-lg fc-mini">${novVisual(f)}</div>
-        </div>
-      </div>`;
 
     const cardsHtml = novProducts.map((p, idx) => `
       <div class="p-card" data-cat="${novCatSlug(p.category)}" data-tags="${novTags(p)}" data-price="${p.price}" onclick="openModal(${idx})">
@@ -1021,7 +1004,7 @@
         </div>
       </div>`).join('');
 
-    grid.innerHTML = featureHtml + cardsHtml + '<!-- /prod-grid -->';
+    grid.innerHTML = cardsHtml + '<!-- /prod-grid -->';
 
     const lbl = document.getElementById('countLabel');
     if (lbl) lbl.textContent = novProducts.length + ' création' + (novProducts.length > 1 ? 's' : '');
