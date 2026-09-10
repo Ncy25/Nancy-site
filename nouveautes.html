@@ -469,7 +469,7 @@
     .dr-co:hover { background: var(--peach-dk); }
 
     /* ── TOAST ── */
-    .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(60px); background: var(--brown); color: var(--cream); padding: 10px 22px; border-radius: 999px; font-size: 13.5px; font-weight: 500; z-index: 500; pointer-events: none; transition: transform .4s cubic-bezier(.34,1.5,.64,1), opacity .4s; opacity: 0; white-space: nowrap; }
+    .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(60px); background: var(--brown); color: var(--cream); padding: 10px 22px; border-radius: 16px; font-size: 12.5px; font-weight: 500; z-index: 500; pointer-events: none; transition: transform .4s cubic-bezier(.34,1.5,.64,1), opacity .4s; opacity: 0; max-width: min(90vw, 560px); white-space: pre-wrap; word-break: break-word; text-align: left; }
     .toast.on { transform: translateX(-50%) translateY(0); opacity: 1; }
 
     /* ── FOOTER ── */
@@ -1070,7 +1070,7 @@
     }).catch((err) => {
       btn.disabled = false;
       btn.textContent = originalText;
-      showToast('Erreur : ' + (err.message || 'réessaie dans un instant'), 8000);
+      showToast('Erreur : ' + (err.message || 'réessaie dans un instant'), 15000);
     });
   }
 
