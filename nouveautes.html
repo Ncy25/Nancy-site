@@ -677,7 +677,8 @@
     <!-- Filters -->
     <div class="filter-row r">
       <button class="filter-pill active" onclick="filterPill('all', this)">Tout voir</button>
-      <span id="nvCatPills"></span>
+      <button class="filter-pill" onclick="filterPill('pampilles', this)">Pampilles</button>
+      <button class="filter-pill" onclick="filterPill('creoles', this)">Créoles</button>
       <button class="filter-pill" onclick="filterPill('exclu', this)">Exclusivités ✨</button>
       <div class="filter-right">
         <select class="sort-select" id="sortSel" onchange="sortProducts()">
@@ -896,7 +897,6 @@
   function renderNouveautes(data) {
     const grid = document.getElementById('prodGrid');
     novProducts = data.products || [];
-    renderNvCatPills();
     const f = data.feature || {};
 
     const featureHtml = `
