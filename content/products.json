@@ -35,7 +35,7 @@
     {
       "id": "pampilles-unies",
       "name": "unies",
-      "category": "Pampilles seules",
+      "category": "Pampilles",
       "price": 13,
       "variant": "uni",
       "emoji": "🌼",
@@ -47,7 +47,7 @@
       ],
       "bg": "#EEF2E8",
       "badge": "",
-      "stock": "in_stock",
+      "stock": "low",
       "image": ""
     },
     {
