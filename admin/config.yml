@@ -78,6 +78,11 @@ collections:
           - { label: "Phrase (haut de page)", name: "header_script", widget: "string" }
           - { label: "Titre de la page", name: "header_title", widget: "string" }
           - { label: "Sous-titre de la page", name: "header_subtitle", widget: "string" }
+          - { label: "Bannière — Étiquette (encadré orange)", name: "feat_tag", widget: "string" }
+          - { label: "Bannière — Titre (une nouvelle ligne = retour à la ligne)", name: "feat_title", widget: "text" }
+          - { label: "Bannière — Description", name: "feat_desc", widget: "text" }
+          - { label: "Bannière — Texte du bouton", name: "feat_btn_text", widget: "string" }
+          - { label: "Bannière — Lien du bouton", name: "feat_btn_link", widget: "string" }
           - name: "products"
             label: "Produits"
             widget: "list"
