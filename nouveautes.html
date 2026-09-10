@@ -503,7 +503,11 @@
     @media (max-width: 600px) {
       .nav-menu { display: none; }
       .nav-burger { display: flex; }
-      .prod-grid { grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); }
+      .prod-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .feature-card { grid-column: 1 / -1; }
+      .p-name { font-size: 15px; }
+      .p-desc { display: none; }
+      .p-price { font-size: 14px; }
       .nl-form { flex-direction: column; }
       .nl-btn { width: 100%; text-align: center; }
       .filter-right { margin-left: 0; width: 100%; }
