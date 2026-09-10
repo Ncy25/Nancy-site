@@ -448,6 +448,12 @@
       .nav-burger { display: flex; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .filters-right { margin-left: 0; width: 100%; }
+      .cat-tabs { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 4px; margin: 0 -28px 8px; padding-left: 28px; padding-right: 28px; }
+      .cat-tabs::-webkit-scrollbar { display: none; }
+      .cat-tab { flex-shrink: 0; padding: 8px 16px; font-size: 13px; }
+      .filter-pills-row { display: flex; gap: 8px; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin: 0 -28px; padding: 0 28px 4px; }
+      .filter-pills-row::-webkit-scrollbar { display: none; }
+      .filter-pill { flex-shrink: 0; padding: 8px 14px; font-size: 12.5px; white-space: nowrap; }
       .prod-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
       .p-name { font-size: 15px; }
       .p-desc { display: none; }
@@ -591,11 +597,13 @@
         <input type="text" id="boutiqueSearchInput" placeholder="🔍 Rechercher un produit par nom..." oninput="applyFilters()" style="width:100%;max-width:420px;border:1px solid rgba(195,107,74,0.2);border-radius:999px;padding:10px 18px;font-size:14px;font-family:inherit;color:inherit;background:var(--ivory,#FFFCFA);outline:none">
       </div>
       <div class="filters-bar">
-        <button class="filter-pill active" onclick="filterTag('all', this)">Tout</button>
-        <button class="filter-pill" onclick="filterTag('new', this)">Nouveautés 🌸</button>
-        <button class="filter-pill" onclick="filterTag('bestseller', this)">Meilleures ventes ⭐</button>
-        <button class="filter-pill" onclick="filterTag('uni', this)">Unies</button>
-        <button class="filter-pill" onclick="filterTag('motifs', this)">Motifs</button>
+        <div class="filter-pills-row" id="filterPillsRow">
+          <button class="filter-pill active" onclick="filterTag('all', this)">Tout</button>
+          <button class="filter-pill" onclick="filterTag('new', this)">Nouveautés 🌸</button>
+          <button class="filter-pill" onclick="filterTag('bestseller', this)">Meilleures ventes ⭐</button>
+          <button class="filter-pill" onclick="filterTag('uni', this)">Unies</button>
+          <button class="filter-pill" onclick="filterTag('motifs', this)">Motifs</button>
+        </div>
         <div class="filters-right">
           <span class="count-label" id="countLabel">6 créations</span>
           <select class="sort-select" id="sortSel" onchange="sortProducts()">

@@ -511,6 +511,9 @@
       .nl-form { flex-direction: column; }
       .nl-btn { width: 100%; text-align: center; }
       .filter-right { margin-left: 0; width: 100%; }
+      .filter-pills-row { display: flex; gap: 8px; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin: 0 -28px; padding: 0 28px 4px; }
+      .filter-pills-row::-webkit-scrollbar { display: none; }
+      .filter-pill { flex-shrink: 0; padding: 8px 14px; font-size: 12.5px; white-space: nowrap; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .hero-h1 { font-size: 11vw; }
       .hero-mosaic { max-width: 280px; gap: 10px; }
@@ -699,10 +702,12 @@
 
     <!-- Filters -->
     <div class="filter-row r">
-      <button class="filter-pill active" onclick="filterPill('all', this)">Tout voir</button>
-      <button class="filter-pill" onclick="filterPill('pampilles', this)">Pampilles</button>
-      <button class="filter-pill" onclick="filterPill('creoles', this)">Créoles</button>
-      <button class="filter-pill" onclick="filterPill('exclu', this)">Exclusivités ✨</button>
+      <div class="filter-pills-row" id="filterPillsRow">
+        <button class="filter-pill active" onclick="filterPill('all', this)">Tout voir</button>
+        <button class="filter-pill" onclick="filterPill('pampilles', this)">Pampilles</button>
+        <button class="filter-pill" onclick="filterPill('creoles', this)">Créoles</button>
+        <button class="filter-pill" onclick="filterPill('exclu', this)">Exclusivités ✨</button>
+      </div>
       <div class="filter-right">
         <select class="sort-select" id="sortSel" onchange="sortProducts()">
           <option value="default">Tri : défaut</option>
