@@ -441,6 +441,71 @@
     .nl-ok .ok-icon { font-size: 36px; margin-bottom: 10px; }
     .nl-ok p { font-family: var(--font-d); font-size: 20px; color: var(--brown); }
 
+    /* ── MODAL PRODUIT ── */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 500;
+      background: rgba(107,61,42,0.45);
+      opacity: 0; pointer-events: none;
+      transition: opacity var(--ease);
+      backdrop-filter: blur(4px);
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal {
+      position: fixed; z-index: 501;
+      top: 50%; left: 50%; transform: translate(-50%, -48%) scale(.96);
+      width: min(760px, calc(100vw - 32px));
+      max-height: calc(100vh - 48px); overflow-y: auto;
+      background: var(--ivory); border-radius: 28px;
+      box-shadow: 0 24px 80px rgba(107,61,42,0.25);
+      transition: transform .4s cubic-bezier(.34,1.4,.64,1), opacity .3s;
+      opacity: 0; pointer-events: none;
+    }
+    .modal.open { transform: translate(-50%,-50%) scale(1); opacity: 1; pointer-events: all; }
+    .modal-inner { display: grid; grid-template-columns: 1fr 1fr; min-height: 420px; }
+    .modal-img {
+      border-radius: 28px 0 0 28px; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      padding: 32px; min-height: 320px;
+    }
+    .modal-body { padding: 36px 32px 36px 28px; display: flex; flex-direction: column; }
+    .modal-close {
+      position: absolute; top: 16px; right: 18px;
+      background: var(--blush); border: none; border-radius: 50%;
+      width: 36px; height: 36px; cursor: pointer;
+      font-size: 16px; color: var(--brown-mid);
+      display: flex; align-items: center; justify-content: center;
+      transition: all var(--ease);
+    }
+    .modal-close:hover { background: var(--peach); color: #fff; }
+    .modal-cat { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--peach-dk); margin-bottom: 8px; }
+    .modal-name { font-family: var(--font-d); font-size: 30px; font-weight: 600; color: var(--brown); margin-bottom: 10px; line-height: 1.05; }
+    .modal-price { font-family: var(--font-d); font-size: 26px; font-weight: 600; color: var(--brown-mid); margin-bottom: 16px; }
+    .modal-desc { font-size: 14px; color: var(--brown-mid); line-height: 1.8; margin-bottom: 22px; flex: 1; }
+    .modal-colors-label { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--brown-mid); margin-bottom: 10px; }
+    .modal-colors { display: flex; gap: 8px; margin-bottom: 22px; flex-wrap: wrap; }
+    .modal-color-btn {
+      width: 28px; height: 28px; border-radius: 50%; cursor: pointer;
+      border: 2.5px solid transparent; transition: transform var(--ease), border-color var(--ease);
+    }
+    .modal-color-btn:hover, .modal-color-btn.sel { transform: scale(1.18); border-color: var(--brown); }
+    .modal-qty-row { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .qty-ctrl { display: flex; align-items: center; gap: 2px; background: var(--blush); border-radius: 999px; padding: 3px; }
+    .qty-btn { width: 30px; height: 30px; border-radius: 50%; background: none; border: none; cursor: pointer; font-size: 15px; color: var(--brown-mid); transition: background var(--ease); display: flex; align-items: center; justify-content: center; }
+    .qty-btn:hover { background: var(--blush-mid); }
+    .qty-val { font-size: 14px; font-weight: 600; min-width: 28px; text-align: center; color: var(--brown); }
+    .btn-add-modal {
+      width: 100%; padding: 14px; background: var(--peach); color: #fff;
+      border: none; border-radius: 999px; cursor: pointer;
+      font-family: var(--font-b); font-size: 13.5px; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      transition: background var(--ease), transform var(--ease);
+      box-shadow: 0 4px 18px rgba(195,107,74,0.25);
+    }
+    .btn-add-modal:hover { background: var(--peach-dk); transform: translateY(-1px); }
+    .modal-trust { display: flex; gap: 14px; margin-top: 14px; flex-wrap: wrap; }
+    .modal-trust-item { display: flex; align-items: center; gap: 5px; font-size: 11.5px; color: var(--gray); }
+
     /* ── CART DRAWER ── */
     .overlay { position: fixed; inset: 0; z-index: 300; background: rgba(107,61,42,0.4); opacity: 0; pointer-events: none; transition: opacity var(--ease); }
     .overlay.open { opacity: 1; pointer-events: all; }
@@ -515,6 +580,21 @@
       .filter-pills-row::-webkit-scrollbar { display: none; }
       .filter-pill { flex-shrink: 0; padding: 8px 14px; font-size: 12.5px; white-space: nowrap; }
       .p-quick-add { display: none !important; }
+      .modal-inner { grid-template-columns: 1fr; min-height: 0; }
+      .modal { width: calc(100vw - 24px); max-height: calc(100vh - 32px); border-radius: 20px; }
+      .modal-img { border-radius: 20px 20px 0 0; height: 150px; min-height: 0; max-height: 150px; padding: 10px; overflow: hidden; }
+      .modal-body { padding: 14px 16px 18px; }
+      .modal-close { width: 26px; height: 26px; top: 8px; right: 8px; font-size: 12px; }
+      .modal-cat { font-size: 10px; }
+      .modal-name { font-size: 19px; margin-bottom: 4px; }
+      .modal-price { font-size: 16px; margin-bottom: 8px; }
+      .modal-desc { font-size: 11.5px; line-height: 1.45; margin-bottom: 10px; }
+      .modal-colors-label { font-size: 10px; }
+      .modal-colors { margin-bottom: 10px; }
+      .modal-colors .modal-color-btn { width: 24px; height: 24px; }
+      .modal-qty-row { margin-bottom: 10px; }
+      .btn-add-modal { padding: 11px; font-size: 12px; }
+      .modal-trust { font-size: 10px; margin-top: 8px; gap: 8px; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .hero-h1 { font-size: 11vw; }
       .hero-mosaic { max-width: 280px; gap: 10px; }
@@ -757,6 +837,49 @@
     </div>
   </div>
 </section>
+
+<!-- MODAL PRODUIT -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
+<div class="modal" id="prodModal" role="dialog" aria-modal="true">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <div class="modal-inner">
+    <div class="modal-img" id="modalImg"></div>
+    <div class="modal-body">
+      <div class="modal-cat" id="modalCat"></div>
+      <div class="modal-name" id="modalName"></div>
+      <div class="modal-price" id="modalPrice"></div>
+      <div class="modal-desc" id="modalDesc"></div>
+      <div class="modal-colors-label">Couleur disponible</div>
+      <div class="modal-colors" id="modalColors"></div>
+      <div class="modal-qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="changeQty(-1)">−</button>
+          <span class="qty-val" id="modalQty">1</span>
+          <button class="qty-btn" onclick="changeQty(1)">+</button>
+        </div>
+        <span style="font-size:12px;color:var(--gray)">unité(s)</span>
+      </div>
+      <button class="btn-add-modal" id="modalAddBtn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Ajouter au panier
+      </button>
+      <div class="modal-trust">
+        <div class="modal-trust-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          Fait à la main
+        </div>
+        <div class="modal-trust-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          3–5 jours
+        </div>
+        <div class="modal-trust-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+          Retour 14j
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- CART DRAWER -->
 <div class="overlay" id="ov" onclick="toggleCart()"></div>
@@ -1104,7 +1227,48 @@
   function toggleCart() { document.getElementById('dr').classList.toggle('open'); document.getElementById('ov').classList.toggle('open'); }
 
   /* ─── MODAL (stub) ─── */
-  function openModal(idx) { /* future: open product modal */ }
+  let currentProduct = null, modalQty = 1;
+
+  function openModal(idx) {
+    const p = novProducts[idx];
+    if (!p) return;
+    currentProduct = p;
+    modalQty = 1;
+    document.getElementById('modalQty').textContent = 1;
+    document.getElementById('modalCat').textContent = p.category;
+    document.getElementById('modalName').textContent = p.name;
+    document.getElementById('modalPrice').textContent = p.price.toFixed(2).replace('.',',') + ' €';
+    document.getElementById('modalDesc').textContent = p.description;
+    document.getElementById('modalImg').style.background = p.bg || '#F5EDE8';
+    document.getElementById('modalImg').innerHTML = novVisual(p);
+    const mc = document.getElementById('modalColors');
+    mc.innerHTML = (p.colors || []).map((c,i) => `<div class="modal-color-btn ${i===0?'sel':''}" style="background:${c}" onclick="selectColor(this)"></div>`).join('');
+    document.getElementById('modalAddBtn').onclick = () => {
+      for (let i = 0; i < modalQty; i++) addToCart(p.category + ' ' + p.name, p.price, p.emoji);
+      closeModal();
+    };
+    document.getElementById('modalOverlay').classList.add('open');
+    document.getElementById('prodModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('open');
+    document.getElementById('prodModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function changeQty(d) {
+    modalQty = Math.max(1, modalQty + d);
+    document.getElementById('modalQty').textContent = modalQty;
+  }
+
+  function selectColor(el) {
+    el.closest('.modal-colors').querySelectorAll('.modal-color-btn').forEach(b => b.classList.remove('sel'));
+    el.classList.add('sel');
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
   /* ─── TOAST ─── */
   let toastTimer;
