@@ -85,7 +85,7 @@ collections:
               - label: "Catégorie"
                 name: "category"
                 widget: "select"
-                options: ["Pampilles", "Créoles", "Exclusivités"]
+                options: ["Pampilles", "Créoles"]
                 hint: "Coche la catégorie de ce produit."
               - { label: "Prix (€)", name: "price", widget: "number", value_type: "float" }
               - label: "Motif ou uni ?"
@@ -101,7 +101,7 @@ collections:
               - label: "Badge"
                 name: "badge"
                 widget: "select"
-                options: ["", "new", "bestseller"]
+                options: [{ label: "Aucun", value: "" }, { label: "Nouveau", value: "new" }, { label: "Bestseller", value: "bestseller" }, { label: "Exclu", value: "exclu" }]
                 required: false
               - label: "Stock"
                 name: "stock"
