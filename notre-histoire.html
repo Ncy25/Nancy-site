@@ -403,13 +403,12 @@
       .test-card:nth-child(2) { transform: none; }
       .test-card:nth-child(2):hover { transform: translateY(-3px); }
       .timeline::before { left: 28px; }
-      .tl-item { grid-template-columns: 56px 1fr; grid-template-rows: auto auto; gap: 0 16px; }
-      .tl-item .tl-left { display: none; }
-      .tl-item .tl-dot { order: 1; margin: 0; }
-      .tl-item .tl-right { order: 2; padding-left: 0; text-align: left; }
-      .tl-item:nth-child(even) .tl-left { display: none; }
-      .tl-item:nth-child(even) .tl-dot { order: 1; }
-      .tl-item:nth-child(even) .tl-right { order: 2; text-align: left; padding-right: 0; padding-left: 0; }
+      .tl-item { grid-template-columns: 56px 1fr; grid-template-rows: auto; gap: 0 16px; }
+      .tl-item .tl-left:empty { display: none; }
+      .tl-item .tl-right:empty { display: none; }
+      .tl-item .tl-left { order: 2; grid-column: 2; text-align: left !important; padding-right: 0; padding-left: 0 !important; }
+      .tl-item .tl-dot { order: 1; margin: 0; grid-column: 1; }
+      .tl-item .tl-right { order: 2; grid-column: 2; padding-left: 0 !important; text-align: left !important; }
       .values-grid { grid-template-columns: 1fr 1fr; }
       .val-item:nth-child(1) { border-radius: 20px 0 0 0; }
       .val-item:nth-child(2) { border-radius: 0 20px 0 0; }
@@ -439,8 +438,6 @@
       .story-label { margin: 0 auto; }
       .mat-inner > div { text-align: center; }
       .mat-chips { justify-content: center; }
-      .tl-item { justify-items: center; text-align: center; }
-      .tl-item .tl-left, .tl-item .tl-right { text-align: center; }
       .test-card { text-align: center; }
       .cta-inner { text-align: center; }
     }
