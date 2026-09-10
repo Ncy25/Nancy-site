@@ -1062,7 +1062,7 @@
         message: `Merci de me prévenir quand "${productName}" sera disponible ! (inscription depuis la page Nouveautés, section "Aperçu de la prochaine collection")`
       })
     }).then(r => r.json()).then(res => {
-      if (!res.ok) throw new Error(res.error || res.detail || 'Échec');
+      if (!res.ok) throw new Error(res.detail || res.error || 'Échec');
       btn.classList.add('notified');
       btn.textContent = 'Inscrite ✓';
       if (emailInput) emailInput.style.display = 'none';
