@@ -1033,6 +1033,9 @@
         </div>
       </div>
     `).join('');
+
+    const sneakObs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }), { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+    row.querySelectorAll('.sneak-card').forEach(el => sneakObs.observe(el));
   }
 
   function notifyMe(btn, productName, idx) {
