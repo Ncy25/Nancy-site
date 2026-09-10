@@ -517,9 +517,9 @@
   <div class="ph-spark" style="top:30%;right:11%;animation-delay:.8s"><svg width="13" height="13" viewBox="0 0 24 24" fill="#D4A853" opacity=".6"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
   <div class="ph-spark" style="bottom:32%;left:16%;animation-delay:1.5s"><svg width="10" height="10" viewBox="0 0 24 24" fill="#fff" opacity=".4"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
   <div class="ph-spark" style="top:20%;right:28%;animation-delay:2s"><svg width="8" height="8" viewBox="0 0 24 24" fill="#fff" opacity=".35"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
-  <div class="page-header-script">Choisissez votre coup de cœur</div>
-  <h1>La Boutique</h1>
-  <p class="page-header-sub">Toutes nos créations · Argile polymère · Faites à la main en France</p>
+  <div class="page-header-script" id="pageHeaderScript">Choisissez votre coup de cœur</div>
+  <h1 id="pageHeaderTitle">La Boutique</h1>
+  <p class="page-header-sub" id="pageHeaderSub">Toutes nos créations · Argile polymère · Faites à la main en France</p>
 </div>
 
 <!-- MAIN -->
@@ -792,6 +792,11 @@
   fetch('content/products.json').then(r => r.json()).then(data => {
     products = data.products || [];
     renderProducts();
+
+    const setText = (id, val) => { const el = document.getElementById(id); if (el && val) el.textContent = val; };
+    setText('pageHeaderScript', data.header_script);
+    setText('pageHeaderTitle', data.header_title);
+    setText('pageHeaderSub', data.header_subtitle);
 
     const urlParams = new URLSearchParams(window.location.search);
     const q = urlParams.get('q');
