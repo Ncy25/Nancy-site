@@ -403,6 +403,13 @@
     }
     .sneak-notify-btn:hover { background: var(--peach); color: #fff; }
     .sneak-notify-btn.notified { background: var(--sage-lt); border-color: var(--sage); color: var(--sage); cursor: default; }
+    .sneak-email-input {
+      margin-top: 8px; width: 100%; padding: 7px 12px; box-sizing: border-box;
+      border: 1px solid rgba(195,107,74,0.25); border-radius: 999px;
+      font-family: var(--font-b); font-size: 12px; color: var(--brown);
+      outline: none; background: var(--ivory);
+    }
+    .sneak-email-input:focus { border-color: var(--peach); }
 
     /* ── NEWSLETTER BAND ── */
     .newsletter { padding: 80px 0; background: var(--blush); position: relative; }
@@ -699,86 +706,10 @@
 <section class="sneak-section">
   <div class="container">
     <div class="sneak-header r">
-      <div class="sneak-script">Bientôt disponible</div>
-      <h2 class="sneak-h2">Aperçu de la prochaine collection</h2>
+      <div class="sneak-script" id="sneakScript">Bientôt disponible</div>
+      <h2 class="sneak-h2" id="sneakTitle">Aperçu de la prochaine collection</h2>
     </div>
-    <div class="sneak-row">
-
-      <div class="sneak-card r d1">
-        <div class="sneak-img" style="background:#EDE8F8">
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="filter:blur(3px)">
-            <circle cx="40" cy="25" r="12" fill="#9B8FD4" opacity=".55"/>
-            <circle cx="55" cy="40" r="12" fill="#9B8FD4" opacity=".5"/>
-            <circle cx="40" cy="55" r="12" fill="#9B8FD4" opacity=".55"/>
-            <circle cx="25" cy="40" r="12" fill="#9B8FD4" opacity=".5"/>
-            <circle cx="40" cy="40" r="13" fill="#B8B0E0" opacity=".8"/>
-          </svg>
-          <div class="sneak-blur">
-            <div class="sneak-blur-icon">🔒</div>
-            <div class="sneak-blur-text">Bientôt</div>
-          </div>
-        </div>
-        <div class="sneak-info">
-          <div class="sneak-name">Prune & Parme</div>
-          <div class="sneak-date">Collection Été — Juin 2025</div>
-          <button class="sneak-notify-btn" onclick="notifyMe(this)">Me prévenir</button>
-        </div>
-      </div>
-
-      <div class="sneak-card r d2">
-        <div class="sneak-img" style="background:#E8F8F0">
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="filter:blur(3px)">
-            <path d="M40 72C26 58 8 48 8 32C8 18 18 10 27 14C33 16 38 24 40 32C42 24 47 16 53 14C62 10 72 18 72 32C72 48 54 58 40 72Z" fill="#68C89A" opacity=".5"/>
-          </svg>
-          <div class="sneak-blur">
-            <div class="sneak-blur-icon">🔒</div>
-            <div class="sneak-blur-text">Bientôt</div>
-          </div>
-        </div>
-        <div class="sneak-info">
-          <div class="sneak-name">Menthe Glacée</div>
-          <div class="sneak-date">Collection Été — Juin 2025</div>
-          <button class="sneak-notify-btn" onclick="notifyMe(this)">Me prévenir</button>
-        </div>
-      </div>
-
-      <div class="sneak-card r d3">
-        <div class="sneak-img" style="background:#F8EEF8">
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="filter:blur(3px)">
-            <ellipse cx="40" cy="40" rx="30" ry="36" fill="#E890C0" opacity=".4" transform="rotate(-12 40 40)"/>
-            <circle cx="40" cy="40" r="16" fill="#E890C0" opacity=".6"/>
-          </svg>
-          <div class="sneak-blur">
-            <div class="sneak-blur-icon">🔒</div>
-            <div class="sneak-blur-text">Bientôt</div>
-          </div>
-        </div>
-        <div class="sneak-info">
-          <div class="sneak-name">Rose Poudré</div>
-          <div class="sneak-date">Collection Été — Juillet 2025</div>
-          <button class="sneak-notify-btn" onclick="notifyMe(this)">Me prévenir</button>
-        </div>
-      </div>
-
-      <div class="sneak-card r d4">
-        <div class="sneak-img" style="background:#F8F4E0">
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="filter:blur(3px)">
-            <circle cx="40" cy="40" r="30" stroke="#D4B060" stroke-width="6" fill="none" opacity=".6"/>
-            <circle cx="40" cy="40" r="18" fill="#E8C870" opacity=".3"/>
-          </svg>
-          <div class="sneak-blur">
-            <div class="sneak-blur-icon">🔒</div>
-            <div class="sneak-blur-text">Bientôt</div>
-          </div>
-        </div>
-        <div class="sneak-info">
-          <div class="sneak-name">Citron Doré</div>
-          <div class="sneak-date">Collection Été — Juillet 2025</div>
-          <button class="sneak-notify-btn" onclick="notifyMe(this)">Me prévenir</button>
-        </div>
-      </div>
-
-    </div>
+    <div class="sneak-row" id="sneakRow"></div>
   </div>
 </section>
 
@@ -973,6 +904,7 @@
     const cbTitle = document.querySelector('.cb-title'); if (cbTitle && data.countdown_title) cbTitle.textContent = data.countdown_title;
     const cbSub = document.querySelector('.cb-sub'); if (cbSub && data.countdown_subtitle) cbSub.textContent = data.countdown_subtitle;
     renderNouveautes(data);
+    if (data.sneak) renderSneak(data.sneak);
     const urlParams = new URLSearchParams(window.location.search);
     const q = urlParams.get('q');
     if (q) {
@@ -1074,12 +1006,69 @@
     showToast(btn.classList.contains('liked') ? 'Ajouté aux coups de cœur 🌸' : 'Retiré des coups de cœur');
   }
 
-  /* ─── NOTIFY ME ─── */
-  function notifyMe(btn) {
-    if (btn.classList.contains('notified')) return;
-    btn.classList.add('notified');
-    btn.textContent = 'Inscrite ✓';
-    showToast('Vous serez prévenue à l\'arrivée 🌸');
+  /* ─── SNEAK PEEK : rendu + collecte d'email réelle ─── */
+  function renderSneak(sneak) {
+    const scriptEl = document.getElementById('sneakScript');
+    const titleEl = document.getElementById('sneakTitle');
+    if (scriptEl && sneak.script) scriptEl.textContent = sneak.script;
+    if (titleEl && sneak.title) titleEl.textContent = sneak.title;
+
+    const row = document.getElementById('sneakRow');
+    if (!row) return;
+    const cards = Array.isArray(sneak.cards) ? sneak.cards : [];
+    row.innerHTML = cards.map((c, i) => `
+      <div class="sneak-card r d${i + 1}">
+        <div class="sneak-img" style="background:${c.bg || '#F5EDE8'}">
+          <div style="width:80px;height:80px;border-radius:50%;background:${c.accent || '#D4A0A0'};opacity:.5;filter:blur(3px)"></div>
+          <div class="sneak-blur">
+            <div class="sneak-blur-icon">🔒</div>
+            <div class="sneak-blur-text">Bientôt</div>
+          </div>
+        </div>
+        <div class="sneak-info">
+          <div class="sneak-name">${c.name || ''}</div>
+          <div class="sneak-date">${c.date || ''}</div>
+          <input type="email" class="sneak-email-input" placeholder="Ton adresse email" id="sneakEmail${i}">
+          <button class="sneak-notify-btn" onclick="notifyMe(this, '${(c.name || '').replace(/'/g, "\\'")}', ${i})">Me prévenir</button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function notifyMe(btn, productName, idx) {
+    if (btn.classList.contains('notified') || btn.disabled) return;
+    const emailInput = document.getElementById('sneakEmail' + idx);
+    const email = emailInput ? emailInput.value.trim() : '';
+    if (!email || !email.includes('@')) {
+      showToast('Merci de saisir un email valide');
+      if (emailInput) emailInput.focus();
+      return;
+    }
+    btn.disabled = true;
+    const originalText = btn.textContent;
+    btn.textContent = 'Envoi...';
+
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        fname: 'Visiteuse',
+        lname: '',
+        email: email,
+        sujet: 'Inscription prochaine collection',
+        message: `Merci de me prévenir quand "${productName}" sera disponible ! (inscription depuis la page Nouveautés, section "Aperçu de la prochaine collection")`
+      })
+    }).then(r => r.json()).then(res => {
+      if (!res.ok) throw new Error('Échec');
+      btn.classList.add('notified');
+      btn.textContent = 'Inscrite ✓';
+      if (emailInput) emailInput.style.display = 'none';
+      showToast('Vous serez prévenue à l\'arrivée 🌸');
+    }).catch(() => {
+      btn.disabled = false;
+      btn.textContent = originalText;
+      showToast('Erreur d\'envoi, réessaie dans un instant');
+    });
   }
 
   /* ─── NEWSLETTER ─── */
