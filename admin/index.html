@@ -209,7 +209,31 @@
 
       CMS.registerPreviewTemplate('products', createClass({
         render: function () {
-          return renderProductGrid(this.props.entry, this.props.getAsset, false);
+          const { entry, getAsset } = this.props;
+          const g = (path) => entry.getIn(['data', ...path]) || '';
+          return h('div', {},
+            h('div', { className: 'wf-legal-header' },
+              h('div', { className: 'wf-legal-script' }, g(['header_script'])),
+              h('div', { className: 'wf-legal-title' }, g(['header_title'])),
+              h('div', { className: 'wf-legal-sub' }, g(['header_subtitle']))
+            ),
+            h('div', {
+              style: {
+                background: 'linear-gradient(135deg, #D97A52 0%, #C1653F 60%, #8B5A3C 100%)',
+                borderRadius: '20px', padding: '32px 36px', margin: '16px 0 24px', color: '#fff'
+              }
+            },
+              h('div', { style: { fontSize: '10px', fontWeight: 700, letterSpacing: '.16em', textTransform: 'uppercase', opacity: .7, marginBottom: '8px' } }, g(['feat_tag'])),
+              h('div', {
+                style: { fontFamily: 'Playfair Display, serif', fontSize: '26px', fontWeight: 600, marginBottom: '10px', whiteSpace: 'pre-line' }
+              }, g(['feat_title'])),
+              h('div', { style: { fontSize: '13px', opacity: .85, marginBottom: '14px', maxWidth: '380px' } }, g(['feat_desc'])),
+              h('div', {
+                style: { display: 'inline-block', background: '#fff', color: '#C1653F', padding: '10px 22px', borderRadius: '999px', fontSize: '11px', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase' }
+              }, g(['feat_btn_text']))
+            ),
+            renderProductGrid(entry, getAsset, false)
+          );
         }
       }));
 
