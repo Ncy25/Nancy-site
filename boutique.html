@@ -301,6 +301,8 @@
     }
     .cat-tab:hover { border-color: var(--peach); color: var(--terra); }
     .cat-tab.active { background: var(--terra); color: #fff; border-color: var(--terra); }
+    .creoles-section { margin: 44px 0; }
+    .creoles-title { font-family: var(--font-d); font-size: 26px; font-weight: 600; color: var(--brown); margin-bottom: 22px; }
 
     /* ── MODAL PRODUIT ── */
     .modal-overlay {
@@ -576,6 +578,12 @@
       </div>
     </div>
 
+    <!-- CHOISIS TES CRÉOLES -->
+    <div class="creoles-section">
+      <h2 class="creoles-title">Choisis tes créoles</h2>
+      <div class="prod-grid" id="creolesGrid"></div>
+    </div>
+
     <!-- CATEGORY TABS -->
     <div class="cat-tabs" id="catTabs">
       <div class="cat-tab active" onclick="filterCat('all', this)">Tout voir</div>
@@ -783,9 +791,50 @@
     applyFilters();
   }
 
+  function renderCreolesSection() {
+    const grid = document.getElementById('creolesGrid');
+    if (!grid) return;
+    const creoleIndexes = [];
+    products.forEach((p, idx) => { if (catSlug(p.category) === 'creoles') creoleIndexes.push(idx); });
+    grid.innerHTML = creoleIndexes.map(idx => {
+      const p = products[idx];
+      return `
+      <div class="p-card" onclick="openModal(${idx})">
+        <div class="p-img" style="background:${p.bg || '#F5EDE8'}">
+          ${p.badge === 'bestseller' ? '<div class="p-badges"><span class="p-badge badge-bestseller">⭐ Bestseller</span></div>' : ''}
+          ${p.badge === 'new' ? '<div class="p-badges"><span class="p-badge badge-new">Nouveau</span></div>' : ''}
+          ${p.badge === 'exclu' ? '<div class="p-badges"><span class="p-badge badge-exclu">✨ Exclu</span></div>' : ''}
+          <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </button>
+          <div class="${p.image ? 'p-img-photo-wrap' : 'p-img-content'}">${productVisual(p)}</div>
+          <div class="p-quick-add">
+            <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('${(p.category + ' ' + p.name).replace(/'/g,"\\'")}', ${p.price}, '${p.emoji || ''}')">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Ajouter au panier
+            </button>
+          </div>
+        </div>
+        <div class="p-info">
+          ${(p.colors && p.colors.length) ? `<div class="p-colors">${p.colors.map((c,i) => `<div class="p-color ${i===0?'sel':''}" style="background:${c}"></div>`).join('')}</div>` : ''}
+          <div class="p-cat">${p.category}</div>
+          <div class="p-name">${p.name}</div>
+          <div class="p-desc">${p.description || ''}</div>
+          <div class="p-bottom">
+            <div class="p-price">${p.price.toFixed(2).replace('.',',')} €</div>
+            <div class="p-stock ${p.stock === 'low' ? 'low' : ''}"><span class="p-stock-dot"></span> ${p.stock === 'low' ? 'Dernières pièces' : 'En stock'}</div>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+    const obs2 = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }), { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+    grid.querySelectorAll('.p-card').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 0.1 + 's'; obs2.observe(el); });
+  }
+
   fetch('content/products.json').then(r => r.json()).then(data => {
     products = data.products || [];
     renderProducts();
+    renderCreolesSection();
 
     const setText = (id, val) => { const el = document.getElementById(id); if (el && val) el.textContent = val; };
     setText('pageHeaderScript', data.header_script);
