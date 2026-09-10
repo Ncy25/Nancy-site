@@ -2,6 +2,11 @@
   "header_script": "Choisissez votre coup de cœur",
   "header_title": "Boutique",
   "header_subtitle": "Toutes nos créations · Pâte polymère · Faites à la main en France",
+  "feat_tag": "Collection",
+  "feat_title": "Joyful Pampilles\n— Nouvelle saison",
+  "feat_desc": "Des couleurs fraîches, des formes nouvelles. Chaque pièce est imaginée pour mettre de la joie dans votre quotidien.",
+  "feat_btn_text": "voir les nouveautés",
+  "feat_btn_link": "https://wildflower-wm.fr/nouveautes.html",
   "products": [
     {
       "id": "pampilles-motifs",
