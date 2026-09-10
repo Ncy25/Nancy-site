@@ -584,40 +584,15 @@
       <div class="prod-grid" id="creolesGrid"></div>
     </div>
 
-    <!-- CATEGORY TABS -->
-    <div class="cat-tabs" id="catTabs">
-      <div class="cat-tab active" onclick="filterCat('all', this)">Tout voir</div>
-      <div class="cat-tab" onclick="filterCat('pampilles', this)">Pampilles</div>
-      <div class="cat-tab" onclick="filterCat('creoles', this)">Créoles</div>
-    </div>
-
-    <!-- FILTERS BAR -->
-    <div class="filters-wrap">
-      <div style="margin-bottom:14px">
-        <input type="text" id="boutiqueSearchInput" placeholder="🔍 Rechercher un produit par nom..." oninput="applyFilters()" style="width:100%;max-width:420px;border:1px solid rgba(195,107,74,0.2);border-radius:999px;padding:10px 18px;font-size:14px;font-family:inherit;color:inherit;background:var(--ivory,#FFFCFA);outline:none">
+    <!-- CHOISIS TES PAMPILLES -->
+    <div class="creoles-section">
+      <h2 class="creoles-title">Choisis tes pampilles</h2>
+      <div class="cat-tabs" id="pampillesTabs">
+        <div class="cat-tab active" onclick="filterPampilles('all', this)">Tout voir</div>
+        <div class="cat-tab" onclick="filterPampilles('uni', this)">Pampilles unies</div>
+        <div class="cat-tab" onclick="filterPampilles('motifs', this)">Pampilles à motifs</div>
       </div>
-      <div class="filters-bar">
-        <div class="filter-pills-row" id="filterPillsRow">
-          <button class="filter-pill active" onclick="filterTag('all', this)">Tout</button>
-          <button class="filter-pill" onclick="filterTag('uni', this)">Unies</button>
-          <button class="filter-pill" onclick="filterTag('motifs', this)">Motifs</button>
-          <button class="filter-pill" onclick="filterTag('new', this)">Nouveautés 🌸</button>
-        </div>
-        <div class="filters-right">
-          <span class="count-label" id="countLabel">6 créations</span>
-          <select class="sort-select" id="sortSel" onchange="sortProducts()">
-            <option value="default">Tri : défaut</option>
-            <option value="price-asc">Prix croissant</option>
-            <option value="price-desc">Prix décroissant</option>
-          </select>
-        </div>
-      </div>
-    </div>
-
-    <!-- PRODUCT GRID -->
-    <div class="prod-section">
-      <div class="prod-grid" id="prodGrid"></div>
-
+      <div class="prod-grid" id="pampillesGrid"></div>
     </div>
   </div>
 </main>
@@ -738,59 +713,6 @@
       .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
   }
 
-  function renderCatTabs() {
-    const wrap = document.getElementById('catTabs');
-    const seen = new Map(); // slug -> label d'origine
-    products.forEach(p => {
-      if (p.category) {
-        const slug = catSlug(p.category);
-        if (slug && !seen.has(slug)) seen.set(slug, p.category);
-      }
-    });
-    const tabsHtml = ['<div class="cat-tab active" onclick="filterCat(\'all\', this)">Tout voir</div>'];
-    seen.forEach((label, slug) => {
-      tabsHtml.push(`<div class="cat-tab" onclick="filterCat('${slug}', this)">${label}</div>`);
-    });
-    wrap.innerHTML = tabsHtml.join('');
-  }
-
-  function renderProducts() {
-    const grid = document.getElementById('prodGrid');
-    grid.innerHTML = products.map((p, idx) => `
-      <div class="p-card" data-cat="${catSlug(p.category)}" data-tags="${tagsFor(p)}" data-price="${p.price}" onclick="openModal(${idx})">
-        <div class="p-img" style="background:${p.bg || '#F5EDE8'}">
-          ${p.badge === 'bestseller' ? '<div class="p-badges"><span class="p-badge badge-bestseller">⭐ Bestseller</span></div>' : ''}
-          ${p.badge === 'new' ? '<div class="p-badges"><span class="p-badge badge-new">Nouveau</span></div>' : ''}
-          ${p.badge === 'exclu' ? '<div class="p-badges"><span class="p-badge badge-exclu">✨ Exclu</span></div>' : ''}
-          <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-          </button>
-          <div class="${p.image ? 'p-img-photo-wrap' : 'p-img-content'}">${productVisual(p)}</div>
-          <div class="p-quick-add">
-            <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('${(p.category + ' ' + p.name).replace(/'/g,"\\'")}', ${p.price}, '${p.emoji || ''}')">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              Ajouter au panier
-            </button>
-          </div>
-        </div>
-        <div class="p-info">
-          ${(p.colors && p.colors.length) ? `<div class="p-colors">${p.colors.map((c,i) => `<div class="p-color ${i===0?'sel':''}" style="background:${c}"></div>`).join('')}</div>` : ''}
-          <div class="p-cat">${p.category}</div>
-          <div class="p-name">${p.name}</div>
-          <div class="p-desc">${p.description || ''}</div>
-          <div class="p-bottom">
-            <div class="p-price">${p.price.toFixed(2).replace('.',',')} €</div>
-            <div class="p-stock ${p.stock === 'low' ? 'low' : ''}"><span class="p-stock-dot"></span> ${p.stock === 'low' ? 'Dernières pièces' : 'En stock'}</div>
-          </div>
-        </div>
-      </div>
-    `).join('');
-    document.getElementById('countLabel').textContent = products.length + ' création' + (products.length > 1 ? 's' : '');
-    const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }), { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
-    document.querySelectorAll('.p-card').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 0.1 + 's'; obs.observe(el); });
-    applyFilters();
-  }
-
   function renderCreolesSection() {
     const grid = document.getElementById('creolesGrid');
     if (!grid) return;
@@ -831,10 +753,60 @@
     grid.querySelectorAll('.p-card').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 0.1 + 's'; obs2.observe(el); });
   }
 
+  let pampillesIndexes = [];
+
+  function renderPampillesSection() {
+    const grid = document.getElementById('pampillesGrid');
+    if (!grid) return;
+    pampillesIndexes = [];
+    products.forEach((p, idx) => { if (catSlug(p.category) === 'pampilles') pampillesIndexes.push(idx); });
+    grid.innerHTML = pampillesIndexes.map(idx => {
+      const p = products[idx];
+      return `
+      <div class="p-card" data-variant="${p.variant === 'motifs' ? 'motifs' : 'uni'}" onclick="openModal(${idx})">
+        <div class="p-img" style="background:${p.bg || '#F5EDE8'}">
+          ${p.badge === 'bestseller' ? '<div class="p-badges"><span class="p-badge badge-bestseller">⭐ Bestseller</span></div>' : ''}
+          ${p.badge === 'new' ? '<div class="p-badges"><span class="p-badge badge-new">Nouveau</span></div>' : ''}
+          ${p.badge === 'exclu' ? '<div class="p-badges"><span class="p-badge badge-exclu">✨ Exclu</span></div>' : ''}
+          <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </button>
+          <div class="${p.image ? 'p-img-photo-wrap' : 'p-img-content'}">${productVisual(p)}</div>
+          <div class="p-quick-add">
+            <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('${(p.category + ' ' + p.name).replace(/'/g,"\\'")}', ${p.price}, '${p.emoji || ''}')">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Ajouter au panier
+            </button>
+          </div>
+        </div>
+        <div class="p-info">
+          ${(p.colors && p.colors.length) ? `<div class="p-colors">${p.colors.map((c,i) => `<div class="p-color ${i===0?'sel':''}" style="background:${c}"></div>`).join('')}</div>` : ''}
+          <div class="p-cat">${p.category}</div>
+          <div class="p-name">${p.name}</div>
+          <div class="p-desc">${p.description || ''}</div>
+          <div class="p-bottom">
+            <div class="p-price">${p.price.toFixed(2).replace('.',',')} €</div>
+            <div class="p-stock ${p.stock === 'low' ? 'low' : ''}"><span class="p-stock-dot"></span> ${p.stock === 'low' ? 'Dernières pièces' : 'En stock'}</div>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+    const obs3 = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }), { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+    grid.querySelectorAll('.p-card').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 0.1 + 's'; obs3.observe(el); });
+  }
+
+  function filterPampilles(variant, el) {
+    document.querySelectorAll('#pampillesTabs .cat-tab').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    document.querySelectorAll('#pampillesGrid .p-card').forEach(c => {
+      c.style.display = (variant === 'all' || c.dataset.variant === variant) ? '' : 'none';
+    });
+  }
+
   fetch('content/products.json').then(r => r.json()).then(data => {
     products = data.products || [];
-    renderProducts();
     renderCreolesSection();
+    renderPampillesSection();
 
     const setText = (id, val) => { const el = document.getElementById(id); if (el && val) el.textContent = val; };
     setText('pageHeaderScript', data.header_script);
@@ -855,25 +827,7 @@
         featBtnEl.setAttribute('href', url);
       }
     }
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const q = urlParams.get('q');
-    if (q) {
-      const si = document.getElementById('boutiqueSearchInput');
-      if (si) si.value = q;
-    }
-    const tag = urlParams.get('tag');
-    if (tag) {
-      const btn = Array.from(document.querySelectorAll('.filter-pill')).find(el => (el.getAttribute('onclick') || '').includes(`filterTag('${tag}'`));
-      if (btn) filterTag(tag, btn);
-    }
-    const cat = urlParams.get('cat');
-    if (cat) {
-      const btn = Array.from(document.querySelectorAll('.cat-tab')).find(el => (el.getAttribute('onclick') || '').includes(`filterCat('${cat}'`));
-      if (btn) filterCat(cat, btn);
-    }
-    if (q) applyFilters();
-  }).catch(() => { document.getElementById('countLabel').textContent = 'Produits indisponibles pour le moment'; });
+  }).catch(() => {});
 
   fetch('content/site.json').then(r => r.json()).then(site => {
     if (site.logo_image) {
@@ -934,54 +888,6 @@
     e.stopPropagation();
     btn.classList.toggle('liked');
     toast(btn.classList.contains('liked') ? 'Ajouté aux coups de cœur 🌸' : 'Retiré des coups de cœur');
-  }
-
-  /* ─── FILTER / SORT ─── */
-  let activeTag = 'all', activeCat = 'all';
-
-  function filterCat(cat, el) {
-    activeCat = cat;
-    if (el) { document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active')); el.classList.add('active'); }
-    applyFilters();
-  }
-
-  function filterTag(tag, el) {
-    activeTag = tag;
-    document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
-    el.classList.add('active');
-    applyFilters();
-  }
-
-  function applyFilters() {
-    const cards = document.querySelectorAll('.p-card');
-    const searchInput = document.getElementById('boutiqueSearchInput');
-    const q = searchInput ? searchInput.value.trim().toLowerCase() : '';
-    let visible = 0;
-    cards.forEach(c => {
-      const catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
-      const tags = c.dataset.tags ? c.dataset.tags.split(',') : [];
-      const tagMatch = activeTag === 'all' || tags.includes(activeTag);
-      let searchMatch = true;
-      if (q) {
-        const nameEl = c.querySelector('.p-name');
-        const descEl = c.querySelector('.p-desc');
-        const text = ((nameEl ? nameEl.textContent : '') + ' ' + (descEl ? descEl.textContent : '')).toLowerCase();
-        searchMatch = text.includes(q);
-      }
-      const show = catMatch && tagMatch && searchMatch;
-      c.style.display = show ? '' : 'none';
-      if (show) visible++;
-    });
-    document.getElementById('countLabel').textContent = visible + ' création' + (visible > 1 ? 's' : '');
-  }
-
-  function sortProducts() {
-    const grid = document.getElementById('prodGrid');
-    const cards = [...grid.querySelectorAll('.p-card')];
-    const sort = document.getElementById('sortSel').value;
-    if (sort === 'price-asc') cards.sort((a,b) => +a.dataset.price - +b.dataset.price);
-    else if (sort === 'price-desc') cards.sort((a,b) => +b.dataset.price - +a.dataset.price);
-    cards.forEach(c => grid.appendChild(c));
   }
 
   /* ─── CART ─── */
