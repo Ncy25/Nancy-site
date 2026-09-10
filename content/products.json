@@ -19,16 +19,16 @@
     {
       "id": "pampilles-motifs",
       "name": "Théa - Aquarelle d'automne",
-      "category": "Exclusivités",
+      "category": "Pampilles",
       "price": 17,
-      "variant": "uni",
+      "variant": "motifs",
       "emoji": "🌸",
       "description": "Une paire joyeuse et sophistiquée, parfaite pour prolonger l'été ou pimenter la rentrée.",
       "colors": [
         "#F0A882"
       ],
       "bg": "#F5D5C8",
-      "badge": "new",
+      "badge": "exclu",
       "stock": "in_stock",
       "image": "/images/uploads/103725.jpg"
     },
