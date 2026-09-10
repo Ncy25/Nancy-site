@@ -167,6 +167,22 @@ collections:
                 widget: "select"
                 options: ["in_stock", "low"]
               - { label: "Photo du produit", name: "image", widget: "image", required: false }
+          - label: "Aperçu de la prochaine collection"
+            name: "sneak"
+            widget: "object"
+            fields:
+              - { label: "Petite phrase", name: "script", widget: "string" }
+              - { label: "Titre de la section", name: "title", widget: "string" }
+              - name: "cards"
+                label: "Cartes (aperçu flouté)"
+                widget: "list"
+                summary: "{{fields.name}}"
+                max: 4
+                fields:
+                  - { label: "Nom (mystère)", name: "name", widget: "string" }
+                  - { label: "Date / période annoncée", name: "date", widget: "string" }
+                  - { label: "Couleur de fond", name: "bg", widget: "color" }
+                  - { label: "Couleur d'accent (le rond flouté)", name: "accent", widget: "color" }
 
   - name: "cgv"
     label: "CGV"

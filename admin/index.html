@@ -239,7 +239,24 @@
             ),
             h('div', { className: 'wf-section-title' }, g(['section_label'])),
             h('div', { className: 'wf-section-h2' }, g(['section_title'])),
-            renderProductGrid(entry, getAsset, true)
+            renderProductGrid(entry, getAsset, true),
+            h('div', { className: 'wf-section-title', style: { marginTop: '20px' } }, g(['sneak', 'script'])),
+            h('div', { className: 'wf-section-h2' }, g(['sneak', 'title'])),
+            h('div', { className: 'wf-grid' },
+              (function () {
+                const cards = entry.getIn(['data', 'sneak', 'cards']);
+                const arr = cards && cards.toJS ? cards.toJS() : (Array.isArray(cards) ? cards : []);
+                return arr.map((c, i) => h('div', { key: i, className: 'wf-card' },
+                  h('div', { className: 'wf-card-img', style: { background: c.bg || '#F5EDE8' } },
+                    h('div', { style: { width: '60%', height: '60%', borderRadius: '50%', background: c.accent || '#D4A0A0', opacity: .5, filter: 'blur(3px)' } })
+                  ),
+                  h('div', { className: 'wf-card-body' },
+                    h('div', { className: 'wf-card-name' }, c.name || ''),
+                    h('div', { className: 'wf-card-desc' }, c.date || '')
+                  )
+                ));
+              })()
+            )
           );
         }
       }));
