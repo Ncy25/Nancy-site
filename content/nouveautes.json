@@ -13,15 +13,7 @@
   "mosaic_image_3": "",
   "mosaic_image_4": "",
   "countdown_title": "🌸 Prochain drop — Collection Été",
-  "countdown_subtitle": "Les prochaines pampilles arrivent bientôt. Inscrivez-vous pour être prévenue en avant-première.",
-  "feature": {
-    "tag": "✨ Édition limitée",
-    "name": "Coeur — Jeans Édition",
-    "price": 17,
-    "emoji": "🌺",
-    "description": "Notre création la plus joyeuse : deux formes florales différentes, dégradé nacré, finition or. Une seule paire de créoles, deux personnalités.",
-    "image": "/images/uploads/20260902.jpg"
-  },
+  "countdown_subtitle": "Les prochaines pampilles arrivent bientôt.",
   "products": [
     {
       "id": "lilas-douceur",
@@ -151,5 +143,13 @@
         "accent": "#D4B060"
       }
     ]
+  },
+  "feature": {
+    "description": "Notre création la plus joyeuse : deux formes florales différentes, dégradé nacré, finition or. Une seule paire de créoles, deux personnalités.",
+    "emoji": "🌺",
+    "image": "/images/uploads/20260902.jpg",
+    "name": "Coeur — Jeans Édition",
+    "price": 17,
+    "tag": "✨ Édition limitée"
   }
 }
