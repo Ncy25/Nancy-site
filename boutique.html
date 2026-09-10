@@ -180,6 +180,7 @@
     }
     .badge-new { background: var(--peach); color: #fff; }
     .badge-bestseller { background: var(--gold); color: #fff; }
+    .badge-exclu { background: #9B7EC2; color: #fff; }
     .badge-custom { background: var(--sage); color: #fff; }
 
     /* Wishlist btn */
@@ -570,7 +571,6 @@
       <div class="cat-tab active" onclick="filterCat('all', this)">Tout voir</div>
       <div class="cat-tab" onclick="filterCat('pampilles', this)">Pampilles</div>
       <div class="cat-tab" onclick="filterCat('creoles', this)">Créoles</div>
-      <div class="cat-tab" onclick="filterCat('exclusivites', this)">Exclusivités ✨</div>
     </div>
 
     <!-- FILTERS BAR -->
@@ -759,6 +759,7 @@
         <div class="p-img" style="background:${p.bg || '#F5EDE8'}">
           ${p.badge === 'bestseller' ? '<div class="p-badges"><span class="p-badge badge-bestseller">⭐ Bestseller</span></div>' : ''}
           ${p.badge === 'new' ? '<div class="p-badges"><span class="p-badge badge-new">Nouveau</span></div>' : ''}
+          ${p.badge === 'exclu' ? '<div class="p-badges"><span class="p-badge badge-exclu">✨ Exclu</span></div>' : ''}
           <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
           </button>
