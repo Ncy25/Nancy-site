@@ -771,13 +771,25 @@
 
   fetch('content/products.json').then(r => r.json()).then(data => {
     products = data.products || [];
+    renderProducts();
+
     const urlParams = new URLSearchParams(window.location.search);
     const q = urlParams.get('q');
     if (q) {
       const si = document.getElementById('boutiqueSearchInput');
       if (si) si.value = q;
     }
-    renderProducts();
+    const tag = urlParams.get('tag');
+    if (tag) {
+      const btn = Array.from(document.querySelectorAll('.filter-pill')).find(el => (el.getAttribute('onclick') || '').includes(`filterTag('${tag}'`));
+      if (btn) filterTag(tag, btn);
+    }
+    const cat = urlParams.get('cat');
+    if (cat) {
+      const btn = Array.from(document.querySelectorAll('.cat-tab')).find(el => (el.getAttribute('onclick') || '').includes(`filterCat('${cat}'`));
+      if (btn) filterCat(cat, btn);
+    }
+    if (q) applyFilters();
   }).catch(() => { document.getElementById('countLabel').textContent = 'Produits indisponibles pour le moment'; });
 
   fetch('content/site.json').then(r => r.json()).then(site => {
