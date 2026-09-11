@@ -17,16 +17,14 @@
   "countdown_end": "2026-09-21T11:09:00",
   "products": [
     {
-      "id": "lilas-douceur",
+      "id": "Pampilles Théa",
       "name": "Théa - Aquarelle d'Automne",
       "category": "Pampilles",
       "price": 17,
       "emoji": "💜",
-      "description": "Nouvelles teintes mauve et parme, satinées.",
+      "description": "Nouvelles teintes",
       "colors": [
-        "#C9A0B8",
-        "#F0A882",
-        "#B8D4E8"
+        "#F0A882"
       ],
       "bg": "#f0f4e8",
       "badge": "new",
@@ -34,15 +32,14 @@
       "image": "/images/uploads/20260909_164243.jpg"
     },
     {
-      "id": "sauge-doree",
+      "id": "Pampilles Théa",
       "name": "Théa - Prune",
       "category": "Pampilles",
       "price": 13,
       "emoji": "🌿",
       "description": "Texture organique, effet pailletés",
       "colors": [
-        "#8FAF8A",
-        "#D4A853"
+        "#8FAF8A"
       ],
       "bg": "#F0F4E8",
       "badge": "new",
@@ -50,7 +47,7 @@
       "image": "/images/uploads/Photoroom-20260911_134157183.jpg"
     },
     {
-      "id": "Pampille max",
+      "id": "Pampille Max",
       "name": "Max - Rose Gold",
       "category": "Pampilles",
       "price": 17,
