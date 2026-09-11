@@ -17,48 +17,46 @@
       "price": 17,
       "variant": "motifs",
       "emoji": "🌺",
-      "description": "Blue jeans",
+      "description": "",
       "colors": [
         "#F0A882"
       ],
       "bg": "#eef2e8",
       "badge": "new",
       "stock": "in_stock",
-      "image": "/images/uploads/Coeur - Jeans.png"
+      "image": ""
     },
     {
-      "id": "pampilles-motifs",
+      "id": "pampilles-motifs-Théa",
       "name": "Théa - Aquarelle d'automne",
       "category": "Pampilles",
       "price": 17,
       "variant": "motifs",
       "emoji": "🌸",
-      "description": "Une paire joyeuse et sophistiquée, parfaite pour prolonger l'été ou pimenter la rentrée.",
+      "description": "",
       "colors": [
         "#F0A882"
       ],
       "bg": "#F5D5C8",
-      "badge": "exclu",
+      "badge": "new",
       "stock": "in_stock",
-      "image": "/images/uploads/103725.jpg"
+      "image": "/images/uploads/Théa - Aquarelle d'automne.jpg"
     },
     {
-      "id": "pampilles-unies",
-      "name": "unies",
+      "id": "pampilles-unies-CoeurCoral",
+      "name": "Coeur Coral - Cranberry",
       "category": "Pampilles",
       "price": 13,
       "variant": "uni",
       "emoji": "🌼",
-      "description": "Formes organiques et textures délicates pour habiller vos créoles existantes.",
+      "description": "",
       "colors": [
-        "#8FAF8A",
-        "#F0A882",
         "#C9A0B8"
       ],
       "bg": "#EEF2E8",
-      "badge": "",
-      "stock": "low",
-      "image": ""
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/Coeur Coral - Cranberry.jpg"
     },
     {
       "id": "pampilles-seules-unies",
