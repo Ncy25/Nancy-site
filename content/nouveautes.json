@@ -35,19 +35,19 @@
     },
     {
       "id": "sauge-doree",
-      "name": "Sauge Dorée",
+      "name": "Théa - Prune",
       "category": "Pampilles",
-      "price": 17,
+      "price": 13,
       "emoji": "🌿",
-      "description": "Argile sauge avec inclusions de feuille d'or. Texture organique, effet patiné unique.",
+      "description": "Texture organique, effet pailletés",
       "colors": [
         "#8FAF8A",
         "#D4A853"
       ],
       "bg": "#F0F4E8",
-      "badge": "exclu",
-      "stock": "low",
-      "image": ""
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/Photoroom-20260911_134157183.jpg"
     },
     {
       "id": "azur-ciel",
