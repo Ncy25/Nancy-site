@@ -295,8 +295,8 @@
       overflow: hidden;
     }
     .feat-card-mini img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
-    .feat-card-main { width: 148px; height: 148px; }
-    .feat-card-sm { width: 66px; height: 66px; }
+    .feat-card-main { width: 172px; height: 172px; }
+    .feat-card-sm { width: 77px; height: 77px; }
 
     /* ── CATEGORY TABS ── */
     .cat-tabs {
@@ -625,8 +625,6 @@
       <div class="modal-name" id="modalName"></div>
       <div class="modal-price" id="modalPrice"></div>
       <div class="modal-desc" id="modalDesc"></div>
-      <div class="modal-colors-label">Couleur disponible</div>
-      <div class="modal-colors" id="modalColors"></div>
       <div class="modal-qty-row">
         <div class="qty-ctrl">
           <button class="qty-btn" onclick="changeQty(-1)">−</button>
@@ -762,7 +760,6 @@
           </div>
         </div>
         <div class="p-info">
-          ${(p.colors && p.colors.length) ? `<div class="p-colors">${p.colors.map((c,i) => `<div class="p-color ${i===0?'sel':''}" style="background:${c}"></div>`).join('')}</div>` : ''}
           <div class="p-cat">${p.category}</div>
           <div class="p-name">${p.name}</div>
           <div class="p-desc">${p.description || ''}</div>
@@ -804,7 +801,6 @@
           </div>
         </div>
         <div class="p-info">
-          ${(p.colors && p.colors.length) ? `<div class="p-colors">${p.colors.map((c,i) => `<div class="p-color ${i===0?'sel':''}" style="background:${c}"></div>`).join('')}</div>` : ''}
           <div class="p-cat">${p.category}</div>
           <div class="p-name">${p.name}</div>
           <div class="p-desc">${p.description || ''}</div>
@@ -892,8 +888,6 @@
     document.getElementById('modalDesc').textContent = p.description;
     document.getElementById('modalImg').style.background = p.bg || '#F5EDE8';
     document.getElementById('modalImg').innerHTML = productVisual(p);
-    const mc = document.getElementById('modalColors');
-    mc.innerHTML = (p.colors || []).map((c,i) => `<div class="modal-color-btn ${i===0?'sel':''}" style="background:${c}" onclick="selectColor(this)"></div>`).join('');
     document.getElementById('modalAddBtn').onclick = () => {
       for (let i = 0; i < modalQty; i++) addToCart(p.category + ' ' + p.name, p.price, p.emoji);
       closeModal();

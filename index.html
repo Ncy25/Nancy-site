@@ -964,8 +964,6 @@
       <div class="modal-name" id="modalName"></div>
       <div class="modal-price" id="modalPrice"></div>
       <div class="modal-desc" id="modalDesc"></div>
-      <div class="modal-colors-label">Couleur disponible</div>
-      <div class="modal-colors" id="modalColors"></div>
       <div class="modal-qty-row">
         <div class="qty-ctrl">
           <button class="qty-btn" onclick="changeQty(-1)">−</button>
@@ -1124,7 +1122,6 @@
             </button>
           </div>
         </div>
-        ${(p.colors && p.colors.length) ? `<div class="p-colors">${p.colors.map((c,i) => `<div class="p-color" style="background:${c}"></div>`).join('')}</div>` : ''}
         <div class="p-cat">${p.category}</div>
         <div class="p-name">${p.name}</div>
         <div class="p-desc">${p.description || ''}</div>
@@ -1149,8 +1146,6 @@
     document.getElementById('modalDesc').textContent = p.description;
     document.getElementById('modalImg').style.background = p.bg || '#F5EDE8';
     document.getElementById('modalImg').innerHTML = productVisual(p);
-    const mc = document.getElementById('modalColors');
-    mc.innerHTML = (p.colors || []).map((c,i) => `<div class="modal-color-btn ${i===0?'sel':''}" style="background:${c}" onclick="selectColor(this)"></div>`).join('');
     document.getElementById('modalAddBtn').onclick = () => {
       for (let i = 0; i < modalQty; i++) addToCart(p.category + ' ' + p.name, p.price, p.emoji);
       closeModal();
