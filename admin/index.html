@@ -216,6 +216,12 @@
         render: function () {
           const { entry, getAsset } = this.props;
           const g = (path) => entry.getIn(['data', ...path]) || '';
+          const imgPreview = (path, size) => {
+            const val = entry.getIn(['data', ...path]);
+            if (!val) return null;
+            const asset = getAsset(val);
+            return h('img', { src: asset ? asset.url : '', style: { width: size + 'px', height: size + 'px', objectFit: 'cover', borderRadius: '10px' } });
+          };
           return h('div', {},
             h('div', { className: 'wf-legal-header' },
               h('div', { className: 'wf-legal-script' }, g(['header_script'])),
@@ -225,17 +231,27 @@
             h('div', {
               style: {
                 background: 'linear-gradient(135deg, #D97A52 0%, #C1653F 60%, #8B5A3C 100%)',
-                borderRadius: '20px', padding: '32px 36px', margin: '16px 0 24px', color: '#fff'
+                borderRadius: '20px', padding: '32px 36px', margin: '16px 0 24px', color: '#fff',
+                display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px'
               }
             },
-              h('div', { style: { fontSize: '10px', fontWeight: 700, letterSpacing: '.16em', textTransform: 'uppercase', opacity: .7, marginBottom: '8px' } }, g(['feat_tag'])),
-              h('div', {
-                style: { fontFamily: 'Playfair Display, serif', fontSize: '26px', fontWeight: 600, marginBottom: '10px', whiteSpace: 'pre-line' }
-              }, g(['feat_title'])),
-              h('div', { style: { fontSize: '13px', opacity: .85, marginBottom: '14px', maxWidth: '380px' } }, g(['feat_desc'])),
-              h('div', {
-                style: { display: 'inline-block', background: '#fff', color: '#C1653F', padding: '10px 22px', borderRadius: '999px', fontSize: '11px', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase' }
-              }, g(['feat_btn_text']))
+              h('div', {},
+                h('div', { style: { fontSize: '10px', fontWeight: 700, letterSpacing: '.16em', textTransform: 'uppercase', opacity: .7, marginBottom: '8px' } }, g(['feat_tag'])),
+                h('div', {
+                  style: { fontFamily: 'Playfair Display, serif', fontSize: '26px', fontWeight: 600, marginBottom: '10px', whiteSpace: 'pre-line' }
+                }, g(['feat_title'])),
+                h('div', { style: { fontSize: '13px', opacity: .85, marginBottom: '14px', maxWidth: '380px' } }, g(['feat_desc'])),
+                h('div', {
+                  style: { display: 'inline-block', background: '#fff', color: '#C1653F', padding: '10px 22px', borderRadius: '999px', fontSize: '11px', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase' }
+                }, g(['feat_btn_text']))
+              ),
+              h('div', { style: { display: 'flex', gap: '8px', alignItems: 'center' } },
+                imgPreview(['feat_photo_main'], 70) || h('div', { style: { width: '70px', height: '70px', borderRadius: '10px', background: 'rgba(255,255,255,0.2)' } }),
+                h('div', { style: { display: 'flex', flexDirection: 'column', gap: '6px' } },
+                  imgPreview(['feat_photo_sm1'], 32) || h('div', { style: { width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(255,255,255,0.2)' } }),
+                  imgPreview(['feat_photo_sm2'], 32) || h('div', { style: { width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(255,255,255,0.2)' } })
+                )
+              )
             ),
             h('div', { style: { fontFamily: 'Playfair Display, serif', fontSize: '20px', fontWeight: 600, margin: '18px 0 10px', color: '#5C3A28' } }, g(['creoles_title']) || 'Choisis tes créoles'),
             h('div', { style: { fontFamily: 'Playfair Display, serif', fontSize: '20px', fontWeight: 600, margin: '18px 0 8px', color: '#5C3A28' } }, g(['pampilles_title']) || 'Choisis tes pampilles'),
