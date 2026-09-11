@@ -94,24 +94,26 @@ collections:
             widget: "list"
             summary: "{{fields.name}} — {{fields.category}} ({{fields.price}}€)"
             fields:
-              - { label: "Identifiant (unique, sans espace)", name: "id", widget: "string" }
-              - { label: "Nom", name: "name", widget: "string" }
+              - { label: "Identifiant (unique, sans espace)", name: "id", widget: "string", required: false }
+              - { label: "Nom", name: "name", widget: "string", required: false }
               - label: "Catégorie"
                 name: "category"
                 widget: "select"
                 options: ["Pampilles", "Créoles"]
                 hint: "Coche la catégorie de ce produit."
-              - { label: "Prix (€)", name: "price", widget: "number", value_type: "float" }
+                required: false
+              - { label: "Prix (€)", name: "price", widget: "number", value_type: "float", required: false }
               - label: "Motif ou uni ?"
                 name: "variant"
                 widget: "select"
                 options: [{ label: "Uni", value: "uni" }, { label: "Motifs", value: "motifs" }]
                 default: "uni"
                 hint: "Utilisé par les filtres 'Unies' / 'Motifs' de la boutique."
-              - { label: "Emoji (utilisé si pas de photo)", name: "emoji", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Couleurs disponibles (codes hex)", name: "colors", widget: "list" }
-              - { label: "Couleur de fond de la vignette", name: "bg", widget: "color" }
+                required: false
+              - { label: "Emoji (utilisé si pas de photo)", name: "emoji", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Couleurs disponibles (codes hex)", name: "colors", widget: "list", required: false }
+              - { label: "Couleur de fond de la vignette", name: "bg", widget: "color", required: false }
               - label: "Badge"
                 name: "badge"
                 widget: "select"
@@ -121,6 +123,7 @@ collections:
                 name: "stock"
                 widget: "select"
                 options: ["in_stock", "low"]
+                required: false
               - { label: "Photo du produit", name: "image", widget: "image", required: false, hint: "Laisser vide pour garder l'illustration actuelle." }
 
   - name: "nouveautes"
@@ -151,17 +154,18 @@ collections:
             widget: "list"
             summary: "{{fields.name}} — {{fields.category}} ({{fields.price}}€)"
             fields:
-              - { label: "Identifiant (unique, sans espace)", name: "id", widget: "string" }
-              - { label: "Nom", name: "name", widget: "string" }
+              - { label: "Identifiant (unique, sans espace)", name: "id", widget: "string", required: false }
+              - { label: "Nom", name: "name", widget: "string", required: false }
               - label: "Catégorie"
                 name: "category"
                 widget: "select"
                 options: ["Pampilles", "Créoles"]
-              - { label: "Prix (€)", name: "price", widget: "number", value_type: "float" }
-              - { label: "Emoji (utilisé si pas de photo)", name: "emoji", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Couleurs disponibles (codes hex)", name: "colors", widget: "list" }
-              - { label: "Couleur de fond de la vignette", name: "bg", widget: "color" }
+                required: false
+              - { label: "Prix (€)", name: "price", widget: "number", value_type: "float", required: false }
+              - { label: "Emoji (utilisé si pas de photo)", name: "emoji", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Couleurs disponibles (codes hex)", name: "colors", widget: "list", required: false }
+              - { label: "Couleur de fond de la vignette", name: "bg", widget: "color", required: false }
               - label: "Badge"
                 name: "badge"
                 widget: "select"
@@ -171,6 +175,7 @@ collections:
                 name: "stock"
                 widget: "select"
                 options: ["in_stock", "low"]
+                required: false
               - { label: "Photo du produit", name: "image", widget: "image", required: false }
           - label: "Aperçu de la prochaine collection"
             name: "sneak"
