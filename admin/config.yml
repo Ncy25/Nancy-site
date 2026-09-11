@@ -134,7 +134,7 @@ collections:
         file: "content/nouveautes.json"
         fields:
           - { label: "Phrase (haut de page)", name: "hero_eyebrow", widget: "string" }
-          - { label: "Titre — ligne 1", name: "hero_title_line1", widget: "string" }
+          - { label: "Titre — ligne 1", name: "hero_title_line1", widget: "string", required: false }
           - { label: "Titre — ligne 2", name: "hero_title_line2", widget: "string" }
           - { label: "Sous-titre du hero", name: "hero_subtitle", widget: "text" }
           - { label: "Badge 1", name: "hero_tag1", widget: "string" }
