@@ -1036,15 +1036,21 @@
     renderNouveautes(data);
     if (data.sneak) renderSneak(data.sneak);
     // Ajoute automatiquement les produits marqués "Nouveau" dans la boutique
+    console.log('[WF] Produits nouveautés de base:', (data.products || []).length);
     fetch('content/products.json').then(r => r.json()).then(pd => {
+      console.log('[WF] Produits boutique total:', (pd.products || []).length);
       const boutiqueNew = (pd.products || []).filter(p => p.badge === 'new');
+      console.log('[WF] Produits boutique badge "new":', boutiqueNew.length, boutiqueNew.map(p => p.id));
       const existingIds = new Set((data.products || []).map(p => p.id));
+      console.log('[WF] IDs déjà présents sur Nouveautés:', [...existingIds]);
       const toAdd = boutiqueNew.filter(p => !existingIds.has(p.id));
+      console.log('[WF] Produits à ajouter:', toAdd.length, toAdd.map(p => p.id));
       if (toAdd.length) {
         data.products = (data.products || []).concat(toAdd);
         renderNouveautes(data);
+        console.log('[WF] Fusion terminée, total affiché:', novProducts.length);
       }
-    }).catch(() => {});
+    }).catch(err => console.error('[WF] Erreur de fusion:', err));
     const urlParams = new URLSearchParams(window.location.search);
     const q = urlParams.get('q');
     if (q) {
