@@ -62,21 +62,6 @@
       "image": "/images/uploads/Photoroom-20260911_141920005.jpg"
     },
     {
-      "id": "Pampilles Maë",
-      "name": "Maë - Olive",
-      "category": "Pampilles",
-      "price": 17,
-      "emoji": "✨",
-      "description": "",
-      "colors": [
-        "#C9A853"
-      ],
-      "bg": "#f0f4e8",
-      "badge": "new",
-      "stock": "in_stock",
-      "image": "/images/uploads/20260909_164206.jpg"
-    },
-    {
       "id": "Pampilles Coeur",
       "name": "Coeur Coral - Cranberry",
       "category": "Pampilles",
@@ -89,13 +74,28 @@
       "bg": "#f0f4e8",
       "badge": "new",
       "stock": "in_stock",
-      "image": ""
+      "image": "/images/uploads/20260909_164725.jpg"
     },
     {
-      "id": "marbre-or",
-      "name": "Marbre Or",
-      "category": "Pampilles + Créoles",
-      "price": 20,
+      "id": "Pampilles Maë",
+      "name": "Maë - Olive",
+      "category": "Pampilles",
+      "price": 13,
+      "emoji": "✨",
+      "description": "",
+      "colors": [
+        "#C9A853"
+      ],
+      "bg": "#f0f4e8",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/20260909_164206.jpg"
+    },
+    {
+      "id": "Pampilles coeur",
+      "name": "Coeur - Jeans",
+      "category": "Pampilles",
+      "price": 17,
       "emoji": "✨",
       "description": "",
       "colors": [
@@ -103,8 +103,21 @@
       ],
       "bg": "#F8F0E8",
       "badge": "new",
-      "stock": "low",
-      "image": ""
+      "stock": "in_stock",
+      "image": "/images/uploads/20260909_173127.jpg"
+    },
+    {
+      "id": "Pampilles Maë",
+      "name": "Maë - Kaki nacré",
+      "category": "Pampilles",
+      "price": 13,
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/20260909_164529.jpg"
     }
   ],
   "sneak": {
