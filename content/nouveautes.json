@@ -22,7 +22,7 @@
       "category": "Pampilles",
       "price": 17,
       "emoji": "💜",
-      "description": ".",
+      "description": "",
       "colors": [
         "#F0A882"
       ],
@@ -37,7 +37,7 @@
       "category": "Pampilles",
       "price": 13,
       "emoji": "🌿",
-      "description": ".",
+      "description": "",
       "colors": [
         "#8FAF8A"
       ],
@@ -52,7 +52,7 @@
       "category": "Pampilles",
       "price": 17,
       "emoji": "🩵",
-      "description": ".",
+      "description": "",
       "colors": [
         "#A8C8E0"
       ],
@@ -67,7 +67,7 @@
       "category": "Pampilles",
       "price": 17,
       "emoji": "✨",
-      "description": ".",
+      "description": "",
       "colors": [
         "#C9A853"
       ],
@@ -82,7 +82,7 @@
       "category": "Pampilles",
       "price": 13,
       "emoji": "🩷",
-      "description": ".",
+      "description": "",
       "colors": [
         "#F5B8A0"
       ],
@@ -97,10 +97,9 @@
       "category": "Pampilles + Créoles",
       "price": 20,
       "emoji": "✨",
-      "description": "Effet marbré or et crème, technique avancée. Chaque pièce est vraiment unique.",
+      "description": "",
       "colors": [
-        "#D4A853",
-        "#C9A853"
+        "#D4A853"
       ],
       "bg": "#F8F0E8",
       "badge": "new",
