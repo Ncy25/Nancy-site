@@ -1,12 +1,17 @@
 {
-  "header_script": "Choisissez votre coup de cœur",
+  "header_script": "Choisis ton coup de cœur",
   "header_title": "BOUTIQUE",
-  "header_subtitle": "Toutes nos créations · Pâte polymère · Faites à la main en France",
-  "feat_tag": "Collection",
-  "feat_title": "Joyful Pampilles\n— Nouvelle saison",
-  "feat_desc": "Des couleurs fraîches, des formes nouvelles. Chaque pièce est imaginée pour mettre de la joie dans votre quotidien.",
+  "header_subtitle": "Toutes mes créations · Pâte polymère · Faites à la main en France",
+  "feat_tag": "Collection Automne 2026",
+  "feat_title": "Collection\n— PADAPOM",
+  "feat_desc": "Des couleurs automnales se composent de teintes chaudes et terreuses. \nChaque pièce est imaginée pour mettre de la joie dans ton quotidien.",
   "feat_btn_text": "voir les nouveautés",
   "feat_btn_link": "https://wildflower-wm.fr/nouveautes.html",
+  "creoles_title": "Choisis tes créoles",
+  "pampilles_title": "Choisis tes pampilles",
+  "pampilles_tab_all": "Tout voir",
+  "pampilles_tab_uni": "Pampilles unies",
+  "pampilles_tab_motifs": "Pampilles à motifs",
   "products": [
     {
       "id": "pampilles-motifs",
