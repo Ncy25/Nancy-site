@@ -17,133 +17,17 @@
   "countdown_end": "2026-09-21T11:09:00",
   "products": [
     {
-      "id": "Pampilles Théa",
-      "name": "Théa - Aquarelle d'Automne",
-      "category": "Pampilles",
-      "price": 17,
-      "emoji": "💜",
-      "description": "",
-      "colors": [
-        "#F0A882"
-      ],
-      "bg": "#f0f4e8",
-      "badge": "new",
-      "stock": "in_stock",
-      "image": ""
-    },
-    {
-      "id": "Pampilles Théa",
-      "name": "Théa - Prune",
-      "category": "Pampilles",
-      "price": 13,
-      "emoji": "🌿",
-      "description": "",
-      "colors": [
-        "#8FAF8A"
-      ],
-      "bg": "#F0F4E8",
-      "badge": "new",
-      "stock": "in_stock",
-      "image": ""
-    },
-    {
-      "id": "Pampilles coeur",
-      "name": "Coeur - Jeans",
-      "category": "Pampilles",
-      "price": 17,
-      "emoji": "✨",
-      "description": "",
-      "colors": [
-        "#D4A853"
-      ],
-      "bg": "#F8F0E8",
-      "badge": "new",
-      "stock": "in_stock",
-      "image": "/images/uploads/20260909_173127.jpg"
-    },
-    {
-      "id": "Pampille Max",
-      "name": "Max - Rose Gold",
-      "category": "Pampilles",
-      "price": 13,
-      "emoji": "🩵",
-      "description": "",
-      "colors": [
-        "#A8C8E0"
-      ],
-      "bg": "#f0f4e8",
-      "badge": "new",
-      "stock": "in_stock",
-      "image": ""
-    },
-    {
-      "id": "Pampilles Maë",
-      "name": "Maë - Olive",
-      "category": "Pampilles",
-      "price": 13,
-      "emoji": "✨",
-      "description": "",
-      "colors": [
-        "#C9A853"
-      ],
-      "bg": "#f0f4e8",
-      "badge": "new",
-      "stock": "in_stock",
-      "image": ""
-    },
-    {
-      "id": "Pampilles Coeur",
-      "name": "Coeur Coral - Cranberry",
-      "category": "Pampilles",
-      "price": 13,
-      "emoji": "🩷",
-      "description": "",
-      "colors": [
-        "#F5B8A0"
-      ],
-      "bg": "#f0f4e8",
-      "badge": "new",
-      "stock": "in_stock",
-      "image": ""
-    },
-    {
-      "id": "Pampilles Théa",
-      "name": "Théa - Champagne",
-      "category": "Pampilles",
-      "price": 13,
-      "emoji": "",
-      "description": "Recto : pailletés \nVerso : nacrés",
-      "colors": [],
-      "bg": "",
-      "badge": "new",
-      "stock": "in_stock",
-      "image": ""
-    },
-    {
-      "id": "Pampilles Maë",
-      "name": "Maë - Chocolat",
-      "category": "Pampilles",
-      "price": 17,
-      "emoji": "",
-      "description": "Recto : Effet cuir\nVerso : Unie",
-      "colors": [],
-      "bg": "",
-      "badge": "new",
-      "stock": "in_stock",
-      "image": ""
-    },
-    {
-      "id": "Pampilles Maë",
-      "name": "Maë - Kaki nacré",
-      "category": "Pampilles",
-      "price": 13,
+      "id": "",
+      "name": "",
+      "category": "",
+      "price": null,
       "emoji": "",
       "description": "",
       "colors": [],
       "bg": "",
-      "badge": "new",
-      "stock": "in_stock",
-      "image": "/images/uploads/20260909_164529.jpg"
+      "badge": "",
+      "stock": "",
+      "image": ""
     }
   ],
   "sneak": {
