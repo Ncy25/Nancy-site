@@ -31,7 +31,7 @@
       "bg": "#f0f4e8",
       "badge": "new",
       "stock": "in_stock",
-      "image": "/images/uploads/Photoroom-20260911_133732872.jpg"
+      "image": "/images/uploads/20260909_164243.jpg"
     },
     {
       "id": "sauge-doree",
@@ -50,36 +50,34 @@
       "image": "/images/uploads/Photoroom-20260911_134157183.jpg"
     },
     {
-      "id": "azur-ciel",
-      "name": "Azur Ciel",
+      "id": "Pampille max",
+      "name": "Max - Rose Gold",
       "category": "Pampilles",
-      "price": 19,
+      "price": 17,
       "emoji": "🩵",
-      "description": "Bleu ciel et porcelaine, forme florale multi-pétales. La fraîcheur à l'oreille.",
+      "description": "Scintillantes",
       "colors": [
-        "#A8C8E0",
-        "#B8D4F0",
-        "#D0E8F8"
+        "#A8C8E0"
       ],
       "bg": "#E8F2F8",
       "badge": "new",
       "stock": "in_stock",
-      "image": ""
+      "image": "/images/uploads/Photoroom-20260911_141920005.jpg"
     },
     {
-      "id": "twist-dorees",
-      "name": "Twist Dorées",
-      "category": "Créoles seules",
-      "price": 7,
+      "id": "Pampilles Maë",
+      "name": "Maë - Olive",
+      "category": "Pampilles",
+      "price": 17,
       "emoji": "✨",
-      "description": "Nouvelle forme torsadée, finition dorée mate. Élégantes seules ou avec pampilles.",
+      "description": "Vert olive",
       "colors": [
         "#C9A853"
       ],
       "bg": "#FDF6E0",
-      "badge": "exclu",
-      "stock": "low",
-      "image": ""
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/20260909_164206.jpg"
     },
     {
       "id": "corail-coeur",
