@@ -22,7 +22,7 @@
       "category": "Pampilles",
       "price": 17,
       "emoji": "💜",
-      "description": "Nouvelles teintes",
+      "description": ".",
       "colors": [
         "#F0A882"
       ],
@@ -37,7 +37,7 @@
       "category": "Pampilles",
       "price": 13,
       "emoji": "🌿",
-      "description": "Texture organique, effet pailletés",
+      "description": ".",
       "colors": [
         "#8FAF8A"
       ],
@@ -52,11 +52,11 @@
       "category": "Pampilles",
       "price": 17,
       "emoji": "🩵",
-      "description": "Scintillantes",
+      "description": ".",
       "colors": [
         "#A8C8E0"
       ],
-      "bg": "#E8F2F8",
+      "bg": "#f0f4e8",
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Photoroom-20260911_141920005.jpg"
@@ -67,28 +67,26 @@
       "category": "Pampilles",
       "price": 17,
       "emoji": "✨",
-      "description": "Vert olive",
+      "description": ".",
       "colors": [
         "#C9A853"
       ],
-      "bg": "#FDF6E0",
+      "bg": "#f0f4e8",
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/20260909_164206.jpg"
     },
     {
-      "id": "corail-coeur",
-      "name": "Corail Cœur",
-      "category": "Pampilles seules",
-      "price": 15,
+      "id": "Pampilles Coeur",
+      "name": "Coeur Coral - Cranberry",
+      "category": "Pampilles",
+      "price": 13,
       "emoji": "🩷",
-      "description": "Forme cœur graphique, nuances corail et abricot. Le petit geste joyeux du quotidien.",
+      "description": ".",
       "colors": [
-        "#F5B8A0",
-        "#F0A882",
-        "#E88070"
+        "#F5B8A0"
       ],
-      "bg": "#FFF0E8",
+      "bg": "#f0f4e8",
       "badge": "new",
       "stock": "in_stock",
       "image": ""
