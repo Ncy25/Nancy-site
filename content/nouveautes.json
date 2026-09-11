@@ -1,12 +1,12 @@
 {
-  "hero_eyebrow": "Collection Printemps 2025",
-  "hero_title_line1": "JOYFUL",
-  "hero_title_line2": "NOUVEAUTÉS",
+  "hero_eyebrow": "Collection Automne 2026",
+  "hero_title_line1": ".",
+  "hero_title_line2": "PADAPOM .",
   "hero_subtitle": "De nouvelles teintes, de nouvelles textures — toujours façonnées à la main avec la même passion pour la couleur et le détail.",
   "hero_tag1": "✨ Arrivages frais",
   "hero_tag2": "🏺 Pâte polymère",
   "hero_tag3": "🇫🇷 Fait en France",
-  "section_label": "Nos créations fraîches",
+  "section_label": "Créations fraîches",
   "section_title": "Ce qui vient d'arriver",
   "mosaic_image_1": "",
   "mosaic_image_2": "",
@@ -14,6 +14,7 @@
   "mosaic_image_4": "",
   "countdown_title": "🌸 Prochain drop — Collection Été",
   "countdown_subtitle": "Les prochaines pampilles arrivent bientôt.",
+  "countdown_end": "2026-09-21T11:09:00",
   "products": [
     {
       "id": "lilas-douceur",
