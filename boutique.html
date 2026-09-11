@@ -292,7 +292,9 @@
       background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
       border-radius: 16px; padding: 12px;
       display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
     }
+    .feat-card-mini img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
     .feat-card-main { width: 120px; height: 120px; }
     .feat-card-sm { width: 54px; height: 54px; }
 
@@ -571,7 +573,7 @@
         </a>
       </div>
       <div class="feat-visual">
-        <div class="feat-card-main feat-card-mini">
+        <div class="feat-card-main feat-card-mini" id="featPhotoMain">
           <svg width="92" height="92" viewBox="0 0 92 92" fill="none">
             <circle cx="46" cy="28" r="14" fill="#F0A882" opacity=".55"/>
             <circle cx="64" cy="46" r="14" fill="#F0A882" opacity=".5"/>
@@ -582,10 +584,10 @@
           </svg>
         </div>
         <div style="display:flex;flex-direction:column;gap:10px">
-          <div class="feat-card-sm feat-card-mini">
+          <div class="feat-card-sm feat-card-mini" id="featPhotoSm1">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="13" stroke="#C9A853" stroke-width="3.5" fill="none" opacity=".8"/><circle cx="18" cy="31" r="3" fill="#C9A853" opacity=".8"/></svg>
           </div>
-          <div class="feat-card-sm feat-card-mini">
+          <div class="feat-card-sm feat-card-mini" id="featPhotoSm2">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 33C9 25 2 20 2 13C2 6.5 7 3 11 5C14 6.5 16.5 10 18 14C19.5 10 22 6.5 25 5C29 3 34 6.5 34 13C34 20 27 25 18 33Z" fill="#8FAF8A" opacity=".6"/></svg>
           </div>
         </div>
@@ -853,6 +855,13 @@
         featBtnEl.setAttribute('href', url);
       }
     }
+    const setPhoto = (id, url) => {
+      const el = document.getElementById(id);
+      if (el && url) el.innerHTML = `<img src="${url}" alt="">`;
+    };
+    setPhoto('featPhotoMain', data.feat_photo_main);
+    setPhoto('featPhotoSm1', data.feat_photo_sm1);
+    setPhoto('featPhotoSm2', data.feat_photo_sm2);
   }).catch(() => {});
 
   fetch('content/site.json').then(r => r.json()).then(site => {
