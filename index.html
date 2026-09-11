@@ -473,7 +473,9 @@
       background: rgba(255,255,255,0.45);
       display: flex; align-items: center; justify-content: center;
       transition: transform var(--ease);
+      overflow: hidden;
     }
+    .ab-cell img { width: 100%; height: 100%; object-fit: cover; }
     .ab-cell:hover { transform: scale(1.04) rotate(-2deg); }
     .ab-cell:nth-child(1) { border-radius: 20px 20px 60px 20px; background: rgba(255,255,255,0.55); }
     .ab-cell:nth-child(2) { border-radius: 20px 60px 20px 20px; background: rgba(255,255,255,0.35); }
@@ -851,16 +853,16 @@
   <div class="spark" style="bottom:12%;right:5%;animation-delay:1.2s"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A853" opacity=".35"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
   <div class="about-inner">
     <div class="about-shapes r">
-      <div class="ab-cell">
+      <div class="ab-cell" id="aboutCell1">
         <svg width="80" height="80" viewBox="0 0 80 80" fill="none"><path d="M40 72C24 58 6 48 6 32C6 18 16 10 26 14C32 16.5 37 24 40 32C43 24 48 16.5 54 14C64 10 74 18 74 32C74 48 56 58 40 72Z" fill="#F0A882" opacity=".5"/></svg>
       </div>
-      <div class="ab-cell">
+      <div class="ab-cell" id="aboutCell2">
         <svg width="80" height="80" viewBox="0 0 80 80" fill="none"><circle cx="40" cy="26" r="14" fill="#F0A882" opacity=".5"/><circle cx="54" cy="40" r="14" fill="#F0A882" opacity=".45"/><circle cx="40" cy="54" r="14" fill="#F0A882" opacity=".5"/><circle cx="26" cy="40" r="14" fill="#F0A882" opacity=".45"/><circle cx="40" cy="40" r="13" fill="#F5C4A8" opacity=".8"/><circle cx="40" cy="40" r="6" fill="#fff" opacity=".4"/></svg>
       </div>
-      <div class="ab-cell">
+      <div class="ab-cell" id="aboutCell3">
         <svg width="80" height="80" viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="28" stroke="#C9A853" stroke-width="5" fill="none" opacity=".6"/><circle cx="40" cy="68" r="4" fill="#C9A853" opacity=".7"/></svg>
       </div>
-      <div class="ab-cell">
+      <div class="ab-cell" id="aboutCell4">
         <svg width="80" height="80" viewBox="0 0 80 80" fill="none"><ellipse cx="40" cy="40" rx="28" ry="34" fill="#8FAF8A" opacity=".35" transform="rotate(-15 40 40)"/><line x1="40" y1="10" x2="40" y2="70" stroke="#8FAF8A" stroke-width="2" stroke-linecap="round"/></svg>
       </div>
     </div>
@@ -1276,6 +1278,13 @@
         const wrap = document.getElementById('histoireChips');
         if (wrap) wrap.innerHTML = d.histoire.chips.map(c => `<span class="about-chip">${c}</span>`).join('');
       }
+      ['about_img1', 'about_img2', 'about_img3', 'about_img4'].forEach((key, i) => {
+        const url = d.histoire[key];
+        if (url) {
+          const cell = document.getElementById('aboutCell' + (i + 1));
+          if (cell) cell.innerHTML = `<img src="${url}" alt="">`;
+        }
+      });
     }
     if (d.contact) {
       setText('contactLabel', d.contact.label);
