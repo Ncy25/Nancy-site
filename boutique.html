@@ -265,6 +265,8 @@
     .cat-tab.active { background: var(--terra); color: #fff; border-color: var(--terra); }
     .creoles-section { margin: 44px 0; }
     .creoles-title { font-family: var(--font-d); font-size: 26px; font-weight: 600; color: var(--brown); margin-bottom: 22px; }
+    .section-label { font-family: var(--font-d); font-size: 13px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--peach-dk); margin-bottom: 6px; }
+    .section-h2 { font-family: var(--font-s); font-size: 40px; color: var(--brown-mid); line-height: 1; }
 
     /* ── MODAL PRODUIT ── */
     .modal-overlay {
@@ -508,6 +510,12 @@
       <span>Boutique</span>
     </div>
 
+    <!-- SECTION INTRO -->
+    <div class="section-intro" style="margin:28px 0 8px;">
+      <div class="section-label" id="boutiqueSectionLabel">Nos créations fraîches</div>
+      <div class="section-h2" id="boutiqueSectionTitle">Ce qui vient d'arriver</div>
+    </div>
+
     <!-- CHOISIS TES CRÉOLES -->
     <div class="creoles-section">
       <h2 class="creoles-title" id="creolesTitle">Choisis tes créoles</h2>
@@ -745,6 +753,8 @@
     setText('pageHeaderScript', data.header_script);
     setText('pageHeaderTitle', data.header_title);
     setText('pageHeaderSub', data.header_subtitle);
+    setText('boutiqueSectionLabel', data.section_label);
+    setText('boutiqueSectionTitle', data.section_title);
     setText('creolesTitle', data.creoles_title);
     setText('pampillesTitle', data.pampilles_title);
     setText('pampillesTabAll', data.pampilles_tab_all);
