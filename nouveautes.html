@@ -82,6 +82,16 @@
     .nav-icon-btn:hover { color: var(--peach-dk); }
     .cart-badge { position: absolute; top: -6px; right: -6px; width: 16px; height: 16px; border-radius: 50%; background: var(--peach); color: #fff; font-size: 9px; font-weight: 700; display: none; align-items: center; justify-content: center; }
     .cart-badge.on { display: flex; }
+    .p-wish.liked svg { fill: var(--peach-dk); }
+    .wish-drawer-empty { text-align: center; padding: 50px 0; font-size: 14px; color: var(--gray); }
+    .wish-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(242,191,181,0.25); align-items: center; }
+    .wish-thumb { width: 52px; height: 52px; border-radius: 10px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .wish-info { flex: 1; }
+    .wish-name { font-size: 13.5px; font-weight: 500; color: var(--brown); margin-bottom: 3px; }
+    .wish-price { font-size: 13px; color: var(--peach-dk); margin-bottom: 6px; }
+    .wish-actions { display: flex; gap: 8px; }
+    .wish-btn-add { font-size: 11px; font-weight: 600; padding: 5px 12px; border-radius: 999px; background: var(--peach); color: #fff; border: none; cursor: pointer; }
+    .wish-btn-remove { font-size: 11px; padding: 5px 10px; border-radius: 999px; background: var(--blush); color: var(--brown-mid); border: none; cursor: pointer; }
     .nav-menu { display: flex; justify-content: center; align-items: center; gap: 36px; padding: 0 28px 10px; max-width: 1160px; margin: 0 auto; }
     .nav-menu a { font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--brown-mid); transition: color var(--ease); }
     .nav-menu a:hover, .nav-menu a.active { color: var(--peach-dk); }
@@ -650,6 +660,10 @@
       </div>
     </a>
     <div class="nav-right">
+      <button class="nav-icon-btn" onclick="toggleWishDrawer()" aria-label="Mes favoris">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <span class="cart-badge" id="wb">0</span>
+      </button>
       <button class="nav-icon-btn" onclick="toggleCart()" aria-label="Panier">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
         <span class="cart-badge" id="cb">0</span>
@@ -895,6 +909,13 @@
     <button class="dr-co" onclick="window.location.href='checkout.html'">Passer commande →</button>
   </div>
 </div>
+
+<!-- FAVORIS DRAWER -->
+<div class="overlay" id="wov" onclick="toggleWishDrawer()"></div>
+<div class="drawer" id="wdr" role="dialog" aria-label="Mes favoris">
+  <div class="dr-head"><h3>Mes favoris</h3><button class="dr-close" onclick="toggleWishDrawer()">✕</button></div>
+  <div class="dr-items" id="wi"><div class="wish-drawer-empty" id="we">Aucun coup de cœur pour l'instant 🌸</div></div>
+</div>
 <div class="toast" id="toast"></div>
 
 <!-- FOOTER -->
@@ -975,6 +996,7 @@
   }
 
   function renderNouveautes(data) {
+    lastNouveautesData = data;
     const grid = document.getElementById('prodGrid');
     novProducts = data.products || [];
 
@@ -983,7 +1005,7 @@
         <div class="p-img" style="background:${p.bg || '#F5EDE8'}">
           ${p.badge === 'new' ? '<div class="p-badges"><span class="p-badge badge-new">Nouveau</span></div>' : ''}
           ${p.badge === 'exclu' ? '<div class="p-badges"><span class="p-badge badge-exclu">Exclu</span></div>' : ''}
-          <button class="p-wish" onclick="toggleWish(event,this)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+          <button class="p-wish ${isWished(p.id) ? 'liked' : ''}" onclick="toggleWish(event,this,${idx})"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
           <div class="${p.image ? 'p-img-photo-wrap' : 'p-img-content'}">${novVisual(p)}</div>
           <div class="p-quick-add">
             <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('${(p.name||'').replace(/'/g,"\\'")}', ${p.price}, '${p.emoji || ''}')">
@@ -1186,6 +1208,70 @@
   }
 
   /* ─── CART ─── */
+  /* ─── WISHLIST ─── */
+  let lastNouveautesData = {};
+  let wishlist = [];
+  try {
+    const storedW = sessionStorage.getItem("wf_wishlist");
+    if (storedW) wishlist = JSON.parse(storedW);
+  } catch(e) {}
+  function saveWishlist() {
+    try { sessionStorage.setItem("wf_wishlist", JSON.stringify(wishlist)); } catch(e) {}
+  }
+  function isWished(id) { return wishlist.some(w => w.id === id); }
+
+  function toggleWish(e, btn, idx) {
+    e.stopPropagation();
+    const p = novProducts[idx];
+    if (!p) return;
+    const existing = wishlist.findIndex(w => w.id === p.id);
+    if (existing > -1) {
+      wishlist.splice(existing, 1);
+      btn.classList.remove('liked');
+      showToast('Retiré des coups de cœur');
+    } else {
+      wishlist.push({ id: p.id, name: p.name, category: p.category, price: p.price, emoji: p.emoji, bg: p.bg, image: p.image || '' });
+      btn.classList.add('liked');
+      showToast('Ajouté aux coups de cœur 🌸');
+    }
+    saveWishlist();
+    renderWishlist();
+  }
+
+  function renderWishlist() {
+    const wi = document.getElementById('wi');
+    const we = document.getElementById('we');
+    wi.querySelectorAll('.wish-item').forEach(el => el.remove());
+    const wb = document.getElementById('wb');
+    wb.textContent = wishlist.length;
+    wb.classList.toggle('on', wishlist.length > 0);
+    if (!wishlist.length) { we.style.display = 'block'; return; }
+    we.style.display = 'none';
+    wishlist.forEach((item, i) => {
+      const el = document.createElement('div'); el.className = 'wish-item';
+      const thumb = item.image
+        ? `<img src="${item.image}" style="width:100%;height:100%;object-fit:cover">`
+        : `<div style="width:100%;height:100%;background:${item.bg || '#F5EDE8'};display:flex;align-items:center;justify-content:center;font-size:22px">${item.emoji || ''}</div>`;
+      el.innerHTML = `<div class="wish-thumb">${thumb}</div><div class="wish-info"><div class="wish-name">${item.category} ${item.name}</div><div class="wish-price">${item.price.toFixed(2).replace('.',',')} €</div><div class="wish-actions"><button class="wish-btn-add" onclick="addToCart('${(item.category + ' ' + item.name).replace(/'/g,"\\'")}', ${item.price}, '${item.emoji || ''}')">Ajouter au panier</button><button class="wish-btn-remove" onclick="removeWish(${i})">Retirer</button></div></div>`;
+      wi.appendChild(el);
+    });
+  }
+
+  function removeWish(i) {
+    wishlist.splice(i, 1);
+    saveWishlist();
+    renderWishlist();
+    renderNouveautes(lastNouveautesData || {});
+  }
+
+  function toggleWishDrawer() {
+    document.getElementById('wdr').classList.toggle('open');
+    document.getElementById('wov').classList.toggle('open');
+  }
+
+  document.addEventListener("DOMContentLoaded", renderWishlist);
+  if (document.readyState !== "loading") renderWishlist();
+
   let cart = [];
   try {
     const stored = sessionStorage.getItem("wf_cart");
