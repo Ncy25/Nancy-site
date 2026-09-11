@@ -47,10 +47,25 @@
       "image": "/images/uploads/Photoroom-20260911_134157183.jpg"
     },
     {
+      "id": "Pampilles coeur",
+      "name": "Coeur - Jeans",
+      "category": "Pampilles",
+      "price": 17,
+      "emoji": "✨",
+      "description": "",
+      "colors": [
+        "#D4A853"
+      ],
+      "bg": "#F8F0E8",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/20260909_173127.jpg"
+    },
+    {
       "id": "Pampille Max",
       "name": "Max - Rose Gold",
       "category": "Pampilles",
-      "price": 17,
+      "price": 13,
       "emoji": "🩵",
       "description": "",
       "colors": [
@@ -60,21 +75,6 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Photoroom-20260911_141920005.jpg"
-    },
-    {
-      "id": "Pampilles Coeur",
-      "name": "Coeur Coral - Cranberry",
-      "category": "Pampilles",
-      "price": 13,
-      "emoji": "🩷",
-      "description": "",
-      "colors": [
-        "#F5B8A0"
-      ],
-      "bg": "#f0f4e8",
-      "badge": "new",
-      "stock": "in_stock",
-      "image": "/images/uploads/20260909_164725.jpg"
     },
     {
       "id": "Pampilles Maë",
@@ -92,19 +92,45 @@
       "image": "/images/uploads/20260909_164206.jpg"
     },
     {
-      "id": "Pampilles coeur",
-      "name": "Coeur - Jeans",
+      "id": "Pampilles Coeur",
+      "name": "Coeur Coral - Cranberry",
       "category": "Pampilles",
-      "price": 17,
-      "emoji": "✨",
+      "price": 13,
+      "emoji": "🩷",
       "description": "",
       "colors": [
-        "#D4A853"
+        "#F5B8A0"
       ],
-      "bg": "#F8F0E8",
+      "bg": "#f0f4e8",
       "badge": "new",
       "stock": "in_stock",
-      "image": "/images/uploads/20260909_173127.jpg"
+      "image": "/images/uploads/20260909_164725.jpg"
+    },
+    {
+      "id": "Pampilles Théa",
+      "name": "Théa - Champagne",
+      "category": "Pampilles",
+      "price": 13,
+      "emoji": "",
+      "description": "Recto : pailletés \nVerso : nacrés",
+      "colors": [],
+      "bg": "",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/20260909_164237.jpg"
+    },
+    {
+      "id": "Pampilles Maë",
+      "name": "Maë - Chocolat",
+      "category": "Pampilles",
+      "price": 17,
+      "emoji": "",
+      "description": "Recto : Effet cuir\nVerso : Unie",
+      "colors": [],
+      "bg": "",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/20260909_164442.jpg"
     },
     {
       "id": "Pampilles Maë",
