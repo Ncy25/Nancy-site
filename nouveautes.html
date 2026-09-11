@@ -1035,31 +1035,6 @@
     }
     renderNouveautes(data);
     if (data.sneak) renderSneak(data.sneak);
-    // Ajoute automatiquement les produits marqués "Nouveau" dans la boutique
-    const dbgBox = document.createElement('div');
-    dbgBox.style.cssText = 'position:fixed;bottom:10px;left:10px;right:10px;background:#000;color:#0f0;font-family:monospace;font-size:11px;padding:12px;z-index:99999;max-height:40vh;overflow:auto;border-radius:8px;white-space:pre-wrap;';
-    dbgBox.textContent = 'Diagnostic WF en cours...';
-    document.body.appendChild(dbgBox);
-    let dbgLines = [];
-    const dbgLog = (msg) => { dbgLines.push(msg); dbgBox.textContent = dbgLines.join('\n'); };
-
-    dbgLog('Produits nouveautés de base: ' + (data.products || []).length);
-    fetch('content/products.json').then(r => r.json()).then(pd => {
-      dbgLog('Produits boutique total: ' + (pd.products || []).length);
-      const boutiqueNew = (pd.products || []).filter(p => p.badge === 'new');
-      dbgLog('Produits boutique badge new: ' + boutiqueNew.length + ' -> ' + boutiqueNew.map(p => p.id).join(', '));
-      const existingIds = new Set((data.products || []).map(p => p.id));
-      dbgLog('IDs déjà présents sur Nouveautés: ' + [...existingIds].join(', '));
-      const toAdd = boutiqueNew.filter(p => !existingIds.has(p.id));
-      dbgLog('Produits à ajouter: ' + toAdd.length + ' -> ' + toAdd.map(p => p.id).join(', '));
-      if (toAdd.length) {
-        data.products = (data.products || []).concat(toAdd);
-        renderNouveautes(data);
-        dbgLog('Fusion terminée, total affiché: ' + novProducts.length);
-      } else {
-        dbgLog('Rien à ajouter (toAdd est vide).');
-      }
-    }).catch(err => dbgLog('ERREUR: ' + err.message));
     const urlParams = new URLSearchParams(window.location.search);
     const q = urlParams.get('q');
     if (q) {
