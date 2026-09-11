@@ -133,22 +133,22 @@ collections:
         label: "Page Nouveautés"
         file: "content/nouveautes.json"
         fields:
-          - { label: "Phrase (haut de page)", name: "hero_eyebrow", widget: "string" }
+          - { label: "Phrase (haut de page)", name: "hero_eyebrow", widget: "string", required: false }
           - { label: "Titre — ligne 1", name: "hero_title_line1", widget: "string", required: false }
-          - { label: "Titre — ligne 2", name: "hero_title_line2", widget: "string" }
-          - { label: "Sous-titre du hero", name: "hero_subtitle", widget: "text" }
-          - { label: "Badge 1", name: "hero_tag1", widget: "string" }
-          - { label: "Badge 2", name: "hero_tag2", widget: "string" }
-          - { label: "Badge 3", name: "hero_tag3", widget: "string" }
-          - { label: "Étiquette section produits", name: "section_label", widget: "string" }
-          - { label: "Titre section produits", name: "section_title", widget: "string" }
+          - { label: "Titre — ligne 2", name: "hero_title_line2", widget: "string", required: false }
+          - { label: "Sous-titre du hero", name: "hero_subtitle", widget: "text", required: false }
+          - { label: "Badge 1", name: "hero_tag1", widget: "string", required: false }
+          - { label: "Badge 2", name: "hero_tag2", widget: "string", required: false }
+          - { label: "Badge 3", name: "hero_tag3", widget: "string", required: false }
+          - { label: "Étiquette section produits", name: "section_label", widget: "string", required: false }
+          - { label: "Titre section produits", name: "section_title", widget: "string", required: false }
           - { label: "Photo mosaïque 1 (badge Nouveau)", name: "mosaic_image_1", widget: "image", required: false, hint: "Laisser vide pour garder l'illustration actuelle." }
           - { label: "Photo mosaïque 2 (badge Exclusif)", name: "mosaic_image_2", widget: "image", required: false }
           - { label: "Photo mosaïque 3 (badge Saison)", name: "mosaic_image_3", widget: "image", required: false }
           - { label: "Photo mosaïque 4", name: "mosaic_image_4", widget: "image", required: false }
-          - { label: "Titre du compte à rebours", name: "countdown_title", widget: "string" }
-          - { label: "Sous-titre du compte à rebours", name: "countdown_subtitle", widget: "text" }
-          - { label: "Date et heure de fin du compte à rebours", name: "countdown_end", widget: "datetime", hint: "Le compte à rebours affichera le temps restant jusqu'à cette date précise." }
+          - { label: "Titre du compte à rebours", name: "countdown_title", widget: "string", required: false }
+          - { label: "Sous-titre du compte à rebours", name: "countdown_subtitle", widget: "text", required: false }
+          - { label: "Date et heure de fin du compte à rebours", name: "countdown_end", widget: "datetime", required: false, hint: "Le compte à rebours affichera le temps restant jusqu'à cette date précise." }
           - name: "products"
             label: "Produits nouveautés"
             widget: "list"
@@ -180,19 +180,21 @@ collections:
           - label: "Aperçu de la prochaine collection"
             name: "sneak"
             widget: "object"
+            required: false
             fields:
-              - { label: "Petite phrase", name: "script", widget: "string" }
-              - { label: "Titre de la section", name: "title", widget: "string" }
+              - { label: "Petite phrase", name: "script", widget: "string", required: false }
+              - { label: "Titre de la section", name: "title", widget: "string", required: false }
               - name: "cards"
                 label: "Cartes (aperçu flouté)"
                 widget: "list"
                 summary: "{{fields.name}}"
                 max: 4
+                required: false
                 fields:
-                  - { label: "Nom (mystère)", name: "name", widget: "string" }
-                  - { label: "Date / période annoncée", name: "date", widget: "string" }
-                  - { label: "Couleur de fond", name: "bg", widget: "color" }
-                  - { label: "Couleur d'accent (le rond flouté)", name: "accent", widget: "color" }
+                  - { label: "Nom (mystère)", name: "name", widget: "string", required: false }
+                  - { label: "Date / période annoncée", name: "date", widget: "string", required: false }
+                  - { label: "Couleur de fond", name: "bg", widget: "color", required: false }
+                  - { label: "Couleur d'accent (le rond flouté)", name: "accent", widget: "color", required: false }
 
   - name: "cgv"
     label: "CGV"
