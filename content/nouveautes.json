@@ -17,16 +17,16 @@
   "countdown_end": "2026-09-21T11:09:00",
   "products": [
     {
-      "id": "",
-      "name": "",
+      "id": "pom",
+      "name": "pom",
       "category": "Pampilles",
-      "price": null,
+      "price": 17,
       "emoji": "",
       "description": "",
       "colors": [],
       "bg": "",
-      "badge": "",
-      "stock": "",
+      "badge": "new",
+      "stock": "in_stock",
       "image": ""
     }
   ],
