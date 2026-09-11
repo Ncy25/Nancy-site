@@ -2,14 +2,8 @@
   "header_script": "Choisis ton coup de cœur",
   "header_title": "BOUTIQUE",
   "header_subtitle": "Toutes mes créations",
-  "feat_tag": "Collection Automne 2026",
-  "feat_title": "PADAPOM",
-  "feat_desc": "Des couleurs automnales se composent de teintes chaudes et terreuses. \nChaque pièce est imaginée pour mettre de la joie dans ton quotidien.",
-  "feat_btn_text": "voir les nouveautés",
-  "feat_btn_link": "https://wildflower-wm.fr/nouveautes.html",
-  "feat_photo_main": "/images/uploads/Pampilles Coeur - Cramberry.jpg",
-  "feat_photo_sm1": "",
-  "feat_photo_sm2": "",
+  "section_label": "bijoux a composer",
+  "section_title": "Tu choisis ta paire de créoles et ajoute autant de es pampilles que tu veux",
   "creoles_title": "Choisis tes créoles",
   "pampilles_title": "Choisis tes pampilles",
   "pampilles_tab_all": "Tout voir",
@@ -133,5 +127,13 @@
       "stock": "in_stock",
       "image": ""
     }
-  ]
+  ],
+  "feat_btn_link": "https://wildflower-wm.fr/nouveautes.html",
+  "feat_btn_text": "voir les nouveautés",
+  "feat_desc": "Des couleurs automnales se composent de teintes chaudes et terreuses. \nChaque pièce est imaginée pour mettre de la joie dans ton quotidien.",
+  "feat_photo_main": "/images/uploads/Pampilles Coeur - Cramberry.jpg",
+  "feat_photo_sm1": "",
+  "feat_photo_sm2": "",
+  "feat_tag": "Collection Automne 2026",
+  "feat_title": "PADAPOM"
 }
