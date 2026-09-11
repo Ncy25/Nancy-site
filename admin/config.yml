@@ -53,6 +53,10 @@ collections:
               - { label: "Paragraphe 1", name: "paragraph1", widget: "text" }
               - { label: "Paragraphe 2", name: "paragraph2", widget: "text" }
               - { label: "Badges (liste)", name: "chips", widget: "list" }
+              - { label: "Photo 1 (cœur)", name: "about_img1", widget: "image", required: false, hint: "Laisser vide pour garder l'illustration actuelle." }
+              - { label: "Photo 2 (fleur)", name: "about_img2", widget: "image", required: false, hint: "Laisser vide pour garder l'illustration actuelle." }
+              - { label: "Photo 3 (anneau)", name: "about_img3", widget: "image", required: false, hint: "Laisser vide pour garder l'illustration actuelle." }
+              - { label: "Photo 4 (feuille)", name: "about_img4", widget: "image", required: false, hint: "Laisser vide pour garder l'illustration actuelle." }
           - label: "Contact"
             name: "contact"
             widget: "object"

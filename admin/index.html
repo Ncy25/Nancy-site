@@ -154,6 +154,11 @@
             h('div', { className: 'wf-section-h2' }, g(['boutique_title']) + ' — ' + g(['boutique_subtitle'])),
             h('div', { className: 'wf-block' },
               h('h3', {}, g(['histoire', 'title'])),
+              h('div', { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', maxWidth: '200px', marginBottom: '14px' } },
+                ['about_img1', 'about_img2', 'about_img3', 'about_img4'].map((f, i) =>
+                  h('div', { key: i, style: { width: '100%', aspectRatio: '1', borderRadius: '14px', overflow: 'hidden' } }, heroImg(entry.getIn(['data', 'histoire', f])))
+                )
+              ),
               h('p', {}, g(['histoire', 'paragraph1'])),
               h('p', {}, g(['histoire', 'paragraph2'])),
               h('div', {}, chipsArr.map((c, i) => h('span', { key: i, className: 'wf-chip' }, c)))
@@ -267,6 +272,36 @@
                   h('div', { key: i, style: { width: '100%', aspectRatio: '1', overflow: 'hidden' } }, mosaicImg(entry.getIn(['data', f])))
                 )
               )
+            ),
+            h('div', {
+              style: {
+                background: 'linear-gradient(135deg, #C1653F 0%, #8B5A3C 100%)',
+                borderRadius: '18px', padding: '20px 24px', margin: '16px 0',
+                color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px'
+              }
+            },
+              h('div', {},
+                h('div', { style: { fontWeight: 700, fontSize: '14px', marginBottom: '4px' } }, g(['countdown_title']) || '🌸 Compte à rebours'),
+                h('div', { style: { fontSize: '12px', opacity: .85 } }, g(['countdown_subtitle']))
+              ),
+              (function () {
+                const endRaw = entry.getIn(['data', 'countdown_end']);
+                if (!endRaw) return h('div', { style: { fontSize: '11px', opacity: .7, fontStyle: 'italic' } }, 'Aucune date de fin définie');
+                const end = new Date(endRaw);
+                const diff = Math.max(0, end - new Date());
+                const days = Math.floor(diff / 86400000);
+                const hours = Math.floor((diff % 86400000) / 3600000);
+                return h('div', { style: { display: 'flex', gap: '10px' } },
+                  h('div', { style: { background: 'rgba(255,255,255,0.15)', borderRadius: '10px', padding: '8px 14px', textAlign: 'center', minWidth: '54px' } },
+                    h('div', { style: { fontSize: '20px', fontWeight: 700 } }, days),
+                    h('div', { style: { fontSize: '9px', opacity: .8, textTransform: 'uppercase' } }, 'Jours')
+                  ),
+                  h('div', { style: { background: 'rgba(255,255,255,0.15)', borderRadius: '10px', padding: '8px 14px', textAlign: 'center', minWidth: '54px' } },
+                    h('div', { style: { fontSize: '20px', fontWeight: 700 } }, hours),
+                    h('div', { style: { fontSize: '9px', opacity: .8, textTransform: 'uppercase' } }, 'Heures')
+                  )
+                );
+              })()
             ),
             h('div', { className: 'wf-section-title' }, g(['section_label'])),
             h('div', { className: 'wf-section-h2' }, g(['section_title'])),
