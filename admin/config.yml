@@ -244,6 +244,8 @@ collections:
                 options: ["in_stock", "low"]
                 required: false
               - { label: "Photo du produit", name: "image", widget: "image", required: false }
+              - { label: "Propose la gravure personnalisée", name: "custom_gravure", widget: "boolean", default: false, required: false }
+              - { label: "Propose la finition au choix", name: "custom_finition", widget: "boolean", default: false, required: false }
 
   - name: "cgv"
     label: "CGV"
