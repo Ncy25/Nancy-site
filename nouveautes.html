@@ -707,7 +707,7 @@
     <!-- TEXT -->
     <div class="hero-text">
       <div class="hero-eyebrow" id="nvHeroEyebrow">Collection Printemps 2025</div>
-      <h1 class="hero-h1"><span id="nvHeroTitle1">JOYFUL</span><br><span id="nvHeroTitle2">NOUVEAUTÉS</span></h1>
+      <h1 class="hero-h1"><span id="nvHeroTitle1">JOYFUL</span><br id="nvHeroTitleBr"><span id="nvHeroTitle2">NOUVEAUTÉS</span></h1>
       <p class="hero-sub" id="nvHeroSub">De nouvelles teintes, de nouvelles textures — toujours façonnées à la main avec la même passion pour la couleur et le détail.</p>
       <div class="hero-tags">
         <span class="hero-tag" id="nvTag1">✨ Arrivages frais</span>
@@ -1013,8 +1013,22 @@
   fetch('content/nouveautes.json').then(r => r.json()).then(data => {
     const setText = (id, val) => { const el = document.getElementById(id); if (el && val) el.textContent = val; };
     setText('nvHeroEyebrow', data.hero_eyebrow);
-    setText('nvHeroTitle1', data.hero_title_line1);
-    setText('nvHeroTitle2', data.hero_title_line2);
+    const nvTitle1El = document.getElementById('nvHeroTitle1');
+    if (nvTitle1El) {
+      if (data.hero_title_line1) { nvTitle1El.textContent = data.hero_title_line1; nvTitle1El.style.display = ''; }
+      else { nvTitle1El.textContent = ''; nvTitle1El.style.display = 'none'; }
+    }
+    const nvTitle2El = document.getElementById('nvHeroTitle2');
+    const nvTitleBrEl = document.getElementById('nvHeroTitleBr');
+    if (nvTitle2El) {
+      if (data.hero_title_line2) {
+        nvTitle2El.textContent = data.hero_title_line2; nvTitle2El.style.display = '';
+        if (nvTitleBrEl) nvTitleBrEl.style.display = '';
+      } else {
+        nvTitle2El.textContent = ''; nvTitle2El.style.display = 'none';
+        if (nvTitleBrEl) nvTitleBrEl.style.display = 'none';
+      }
+    }
     setText('nvHeroSub', data.hero_subtitle);
     setText('nvTag1', data.hero_tag1);
     setText('nvTag2', data.hero_tag2);
