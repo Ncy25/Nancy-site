@@ -67,6 +67,58 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Max - Rose Gold.jpg"
+    },
+    {
+      "id": "pampilles-thea",
+      "name": "Théa - Prune",
+      "category": "Pampilles",
+      "price": 13,
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "#f5d5c8",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/Théa - Prune.jpg"
+    },
+    {
+      "id": "pampilles-mae",
+      "name": "Maë - Chocolat",
+      "category": "Pampilles",
+      "price": 17,
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "#f9e8e0",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/Mae - Chocolat.jpg"
+    },
+    {
+      "id": "pampilles-thea",
+      "name": "Théa - Champagne nacré",
+      "category": "Pampilles",
+      "price": 13,
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "#eef2e8",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/Théa - Champagne nacré.jpg"
+    },
+    {
+      "id": "pampilles-mae",
+      "name": "Maë - Terre cuite",
+      "category": "Pampilles",
+      "price": 13,
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "#f5d5c8",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/Mae - Terre Cuite.jpg"
     }
   ],
   "sneak": null,
