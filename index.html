@@ -1178,6 +1178,10 @@
   fetch('content/products.json').then(r => r.json()).then(data => {
     products = data.products || [];
     renderHomeProducts();
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) setTimeout(() => target.scrollIntoView({ behavior: 'auto', block: 'start' }), 50);
+    }
   }).catch(() => {});
 
 
