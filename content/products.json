@@ -109,6 +109,20 @@
       "image": "/images/uploads/Théa - Champagne nacré.jpg"
     },
     {
+      "id": "pampilles-mae",
+      "name": "Maë - Terre cuite",
+      "category": "Pampilles",
+      "price": 13,
+      "variant": "uni",
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/Mae - Terre Cuite.jpg"
+    },
+    {
       "id": "creoles-dorees",
       "name": "Créoles Martelées dorées",
       "category": "Créoles",
