@@ -216,9 +216,6 @@ collections:
           - { label: "Photo mosaïque 2", name: "mosaic_image_2", widget: "image", required: false }
           - { label: "Photo mosaïque 3", name: "mosaic_image_3", widget: "image", required: false }
           - { label: "Photo mosaïque 4", name: "mosaic_image_4", widget: "image", required: false }
-          - { label: "Titre du compte à rebours", name: "countdown_title", widget: "string", required: false }
-          - { label: "Sous-titre du compte à rebours", name: "countdown_subtitle", widget: "text", required: false }
-          - { label: "Date et heure de fin du compte à rebours", name: "countdown_end", widget: "datetime", required: false, hint: "Le compte à rebours affichera le temps restant jusqu'à cette date précise." }
           - name: "products"
             label: "Produits Wooden Mountain"
             widget: "list"
@@ -247,24 +244,6 @@ collections:
                 options: ["in_stock", "low"]
                 required: false
               - { label: "Photo du produit", name: "image", widget: "image", required: false }
-          - label: "Aperçu de la prochaine collection"
-            name: "sneak"
-            widget: "object"
-            required: false
-            fields:
-              - { label: "Petite phrase", name: "script", widget: "string", required: false }
-              - { label: "Titre de la section", name: "title", widget: "string", required: false }
-              - name: "cards"
-                label: "Cartes (aperçu flouté)"
-                widget: "list"
-                summary: "{{fields.name}}"
-                max: 4
-                required: false
-                fields:
-                  - { label: "Nom (mystère)", name: "name", widget: "string", required: false }
-                  - { label: "Date / période annoncée", name: "date", widget: "string", required: false }
-                  - { label: "Couleur de fond", name: "bg", widget: "color", required: false }
-                  - { label: "Couleur d'accent (le rond flouté)", name: "accent", widget: "color", required: false }
 
   - name: "cgv"
     label: "CGV"
