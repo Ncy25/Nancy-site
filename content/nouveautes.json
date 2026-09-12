@@ -17,17 +17,30 @@
   "countdown_end": "2026-09-21T11:09:00",
   "products": [
     {
-      "id": "pom",
-      "name": "pom",
+      "id": "pampilles-coeur",
+      "name": "Coeur - Jeans",
       "category": "Pampilles",
       "price": 17,
       "emoji": "",
       "description": "",
       "colors": [],
-      "bg": "",
+      "bg": "#eef2e8",
       "badge": "new",
       "stock": "in_stock",
-      "image": ""
+      "image": "/images/uploads/Coeur - Jeans.jpg"
+    },
+    {
+      "id": "pampilles-thea",
+      "name": "Théa - Aquarelle d'Automne",
+      "category": "Pampilles",
+      "price": 17,
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "#f5d5c8",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/Théa - Aquarelle d'automne.jpg"
     }
   ],
   "sneak": {
