@@ -237,9 +237,12 @@
 
     /* ── CATEGORY BLOCKS ── */
     #categories { padding: 0 0 56px; background: var(--ivory); }
+    #categories-top { padding: 32px 0 0; background: var(--ivory); }
     .cat-grid {
       display: grid; grid-template-columns: repeat(3,1fr); gap: 18px;
     }
+    .cat-grid-2 { grid-template-columns: repeat(2,1fr); max-width: 720px; margin: 0 auto; }
+    .cat-grid-single { display: grid; max-width: 340px; margin: 0 auto; }
     .cat-block {
       border-radius: 18px;
       padding: 26px 20px;
@@ -780,6 +783,17 @@
   </svg>
 </section>
 
+<!-- SUR MESURE -->
+<section id="categories-top">
+  <div class="container">
+    <div class="cat-grid-single r">
+      <a href="index.html#contact" class="cat-block cb3">
+        <div class="cat-block-label">Sur mesure</div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- LIFESTYLE CIRCLES -->
 <section id="lifestyle">
   <div class="lifestyle-wave-top"></div>
@@ -839,7 +853,7 @@
 <!-- CATEGORIES -->
 <section id="categories">
   <div class="container">
-    <div class="cat-grid r">
+    <div class="cat-grid cat-grid-2 r">
       <a href="nouveautes.html" class="cat-block cb1">
         <div class="spark" style="top:16px;right:20px"><svg width="16" height="16" viewBox="0 0 24 24" fill="#D97A52" opacity=".45"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
         <div class="cat-block-label">Nouveautés</div>
@@ -847,9 +861,6 @@
       <a href="boutique.html" class="cat-block cb2">
         <div class="spark" style="top:16px;right:24px"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A853" opacity=".5"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
         <div class="cat-block-label">Boutique</div>
-      </a>
-      <a href="index.html#contact" class="cat-block cb3">
-        <div class="cat-block-label">Sur mesure</div>
       </a>
     </div>
   </div>
