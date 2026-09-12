@@ -780,25 +780,6 @@
   </svg>
 </section>
 
-<!-- CATEGORIES -->
-<section id="categories">
-  <div class="container">
-    <div class="cat-grid r">
-      <a href="nouveautes.html" class="cat-block cb1">
-        <div class="spark" style="top:16px;right:20px"><svg width="16" height="16" viewBox="0 0 24 24" fill="#D97A52" opacity=".45"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
-        <div class="cat-block-label">Nouveautés</div>
-      </a>
-      <a href="boutique.html" class="cat-block cb2">
-        <div class="spark" style="top:16px;right:24px"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A853" opacity=".5"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
-        <div class="cat-block-label">Boutique</div>
-      </a>
-      <a href="index.html#contact" class="cat-block cb3">
-        <div class="cat-block-label">Sur mesure</div>
-      </a>
-    </div>
-  </div>
-</section>
-
 <!-- LIFESTYLE CIRCLES -->
 <section id="lifestyle">
   <div class="lifestyle-wave-top"></div>
@@ -851,8 +832,25 @@
 
     <div class="prod-grid" id="prodGrid"></div>
 
-    <div class="prod-cta r">
-      <a href="#contact" class="btn-outline-peach">Pièce sur mesure →</a>
+    <div class="boutique-h2 r" id="belowProductsText" style="margin-top:48px">La suite c'est par ici</div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section id="categories">
+  <div class="container">
+    <div class="cat-grid r">
+      <a href="nouveautes.html" class="cat-block cb1">
+        <div class="spark" style="top:16px;right:20px"><svg width="16" height="16" viewBox="0 0 24 24" fill="#D97A52" opacity=".45"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
+        <div class="cat-block-label">Nouveautés</div>
+      </a>
+      <a href="boutique.html" class="cat-block cb2">
+        <div class="spark" style="top:16px;right:24px"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A853" opacity=".5"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
+        <div class="cat-block-label">Boutique</div>
+      </a>
+      <a href="index.html#contact" class="cat-block cb3">
+        <div class="cat-block-label">Sur mesure</div>
+      </a>
     </div>
   </div>
 </section>
@@ -1108,7 +1106,10 @@
   function renderHomeProducts() {
     const grid = document.getElementById('prodGrid');
     if (!grid) return;
-    grid.innerHTML = products.map((p, idx) => `
+    const entries = products.map((p, idx) => ({ p, idx }));
+    const selected = entries.filter(e => e.p.show_on_home);
+    const toShow = (selected.length ? selected : entries).slice(0, 10);
+    grid.innerHTML = toShow.map(({ p, idx }) => `
       <div class="p-card r" data-cat="" data-tags="" data-price="${p.price}" onclick="openModal(${idx})">
         <div class="p-img" style="background:${p.bg || '#F5EDE8'}">
           ${p.badge === 'bestseller' ? '<div class="p-badges"><span class="p-badge badge-bestseller">⭐ Bestseller</span></div>' : ''}
@@ -1278,6 +1279,7 @@
     setText('lifestyleTitle', d.lifestyle_title);
     setText('boutiqueTitle', d.boutique_title);
     setText('boutiqueSubtitle', d.boutique_subtitle);
+    setText('belowProductsText', d.below_products_text);
     if (d.histoire) {
       setText('histoireLabel', d.histoire.label);
       setText('histoireTitle', d.histoire.title);
