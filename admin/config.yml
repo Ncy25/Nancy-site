@@ -218,6 +218,14 @@ collections:
           - { label: "Photo mosaïque 2", name: "mosaic_image_2", widget: "image", required: false }
           - { label: "Photo mosaïque 3", name: "mosaic_image_3", widget: "image", required: false }
           - { label: "Photo mosaïque 4", name: "mosaic_image_4", widget: "image", required: false }
+          - label: "Bandeau final (Une question ?)"
+            name: "cta"
+            widget: "object"
+            required: false
+            fields:
+              - { label: "Petite phrase", name: "script", widget: "string", required: false }
+              - { label: "Titre", name: "title", widget: "string", required: false }
+              - { label: "Sous-titre", name: "subtitle", widget: "text", required: false }
           - name: "products"
             label: "Produits Wooden Mountain"
             widget: "list"
