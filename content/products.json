@@ -22,7 +22,8 @@
       "bg": "#eef2e8",
       "badge": "new",
       "stock": "in_stock",
-      "image": "/images/uploads/Coeur - Jeans.jpg"
+      "image": "/images/uploads/Coeur - Jeans.jpg",
+      "show_on_home": true
     },
     {
       "id": "pampilles-thea",
@@ -36,7 +37,8 @@
       "bg": "#F5D5C8",
       "badge": "new",
       "stock": "in_stock",
-      "image": "/images/uploads/Théa - Aquarelle d'automne.jpg"
+      "image": "/images/uploads/Théa - Aquarelle d'automne.jpg",
+      "show_on_home": true
     },
     {
       "id": "pampilles-coeurcoral",
@@ -50,7 +52,8 @@
       "bg": "#f9e8e0",
       "badge": "new",
       "stock": "in_stock",
-      "image": "/images/uploads/Coeur Coral - Cranberry.jpg"
+      "image": "/images/uploads/Coeur Coral - Cranberry.jpg",
+      "show_on_home": false
     },
     {
       "id": "pampilles-max",
@@ -64,7 +67,8 @@
       "bg": "#eef2e8",
       "badge": "new",
       "stock": "in_stock",
-      "image": "/images/uploads/Max - Rose Gold.jpg"
+      "image": "/images/uploads/Max - Rose Gold.jpg",
+      "show_on_home": true
     },
     {
       "id": "Pampilles-thea",
@@ -78,7 +82,8 @@
       "bg": "#f5d5c8",
       "badge": "new",
       "stock": "in_stock",
-      "image": "/images/uploads/Théa - Prune.jpg"
+      "image": "/images/uploads/Théa - Prune.jpg",
+      "show_on_home": true
     },
     {
       "id": "Pampilles-mae",
@@ -92,7 +97,8 @@
       "bg": "#f9e8e0",
       "badge": "new",
       "stock": "",
-      "image": "/images/uploads/Mae - Chocolat.jpg"
+      "image": "/images/uploads/Mae - Chocolat.jpg",
+      "show_on_home": false
     },
     {
       "id": "pampilles-thea",
@@ -106,7 +112,8 @@
       "bg": "#eef2e8",
       "badge": "new",
       "stock": "in_stock",
-      "image": "/images/uploads/Théa - Champagne nacré.jpg"
+      "image": "/images/uploads/Théa - Champagne nacré.jpg",
+      "show_on_home": false
     },
     {
       "id": "pampilles-mae",
@@ -120,7 +127,8 @@
       "bg": "#f5d5c8",
       "badge": "new",
       "stock": "in_stock",
-      "image": "/images/uploads/Mae - Terre Cuite.jpg"
+      "image": "/images/uploads/Mae - Terre Cuite.jpg",
+      "show_on_home": false
     },
     {
       "id": "pampilles-mae",
@@ -134,7 +142,8 @@
       "bg": "#f9e8e0",
       "badge": "new",
       "stock": "in_stock",
-      "image": "/images/uploads/20260909_164529.jpg"
+      "image": "/images/uploads/20260909_164529.jpg",
+      "show_on_home": false
     },
     {
       "id": "pampilles-mae",
@@ -148,7 +157,8 @@
       "bg": "#eef2e8",
       "badge": "new",
       "stock": "in_stock",
-      "image": "/images/uploads/Mae - Olive.jpg"
+      "image": "/images/uploads/Mae - Olive.jpg",
+      "show_on_home": false
     },
     {
       "id": "creoles-dorees",
@@ -164,7 +174,8 @@
       "bg": "#F5D5C8",
       "badge": "bestseller",
       "stock": "in_stock",
-      "image": "/images/uploads/Martelées-dorées.jpg"
+      "image": "/images/uploads/Martelées-dorées.jpg",
+      "show_on_home": false
     },
     {
       "id": "créoles-dorées",
@@ -180,7 +191,8 @@
       "bg": "#F9E8E0",
       "badge": "",
       "stock": "in_stock",
-      "image": "/images/uploads/Torsadées-dorées.jpg"
+      "image": "/images/uploads/Torsadées-dorées.jpg",
+      "show_on_home": false
     },
     {
       "id": "créoles-dorées",
@@ -196,7 +208,8 @@
       "bg": "#eef2e8",
       "badge": "new",
       "stock": "in_stock",
-      "image": "/images/uploads/Rotatives-dorées.jpg"
+      "image": "/images/uploads/Rotatives-dorées.jpg",
+      "show_on_home": false
     },
     {
       "id": "créoles-dorées",
@@ -210,7 +223,8 @@
       "bg": "#f5d5c8",
       "badge": "",
       "stock": "in_stock",
-      "image": "/images/uploads/Lisses-dorées.jpg"
+      "image": "/images/uploads/Lisses-dorées.jpg",
+      "show_on_home": false
     },
     {
       "id": "creoles-dorees",
@@ -224,7 +238,8 @@
       "bg": "#f9e8e0",
       "badge": "",
       "stock": "in_stock",
-      "image": "/images/uploads/Rectangulaires-dorées.jpg"
+      "image": "/images/uploads/Rectangulaires-dorées.jpg",
+      "show_on_home": false
     }
   ],
   "feat_btn_link": "https://wildflower-wm.fr/nouveautes.html",
