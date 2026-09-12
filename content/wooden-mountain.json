@@ -19,14 +19,11 @@
     {
       "id": "wm-support-bijoux",
       "name": "Support à bijoux",
-      "category": "Pampilles",
+      "category": "",
       "price": 22,
       "emoji": "🌲",
       "description": "Un support en bois massif pour ranger et exposer vos pampilles Wild Flower.",
-      "colors": [
-        "#B08968",
-        "#8B5E3C"
-      ],
+      "colors": [],
       "bg": "#F5EDE3",
       "badge": "new",
       "stock": "in_stock",
@@ -34,21 +31,8 @@
     }
   ],
   "sneak": {
-    "script": "Bientôt disponible",
-    "title": "Nos prochaines créations en bois",
-    "cards": [
-      {
-        "name": "Mystère 1",
-        "date": "Bientôt",
-        "bg": "#F5EDE3",
-        "accent": "#B08968"
-      },
-      {
-        "name": "Mystère 2",
-        "date": "Bientôt",
-        "bg": "#EFE6D8",
-        "accent": "#8B5E3C"
-      }
-    ]
+    "script": "",
+    "title": "",
+    "cards": []
   }
 }
