@@ -1,0 +1,41 @@
+{
+  "hero_eyebrow": "L'artisanat du bois",
+  "hero_title_line1": "WOODEN",
+  "hero_title_line2": "MOUNTAIN",
+  "hero_subtitle": "Des créations en bois façonnées avec soin, pour prolonger l'univers Wild Flower dans votre intérieur.",
+  "hero_tag1": "🌲 Bois massif",
+  "hero_tag2": "✋ Fait main",
+  "hero_tag3": "🇫🇷 Fait en France",
+  "section_label": "L'univers Wooden Mountain",
+  "section_title": "Nos créations en bois",
+  "mosaic_image_1": "",
+  "mosaic_image_2": "",
+  "mosaic_image_3": "",
+  "mosaic_image_4": "",
+  "countdown_title": "Prochaine collection bois",
+  "countdown_subtitle": "De nouvelles pièces en bois arrivent bientôt.",
+  "countdown_end": "",
+  "products": [
+    {
+      "id": "wm-support-bijoux",
+      "name": "Support à bijoux",
+      "category": "Pampilles",
+      "price": 22,
+      "emoji": "🌲",
+      "description": "Un support en bois massif pour ranger et exposer vos pampilles Wild Flower.",
+      "colors": ["#B08968", "#8B5E3C"],
+      "bg": "#F5EDE3",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": ""
+    }
+  ],
+  "sneak": {
+    "script": "Bientôt disponible",
+    "title": "Nos prochaines créations en bois",
+    "cards": [
+      { "name": "Mystère 1", "date": "Bientôt", "bg": "#F5EDE3", "accent": "#B08968" },
+      { "name": "Mystère 2", "date": "Bientôt", "bg": "#EFE6D8", "accent": "#8B5E3C" }
+    ]
+  }
+}
