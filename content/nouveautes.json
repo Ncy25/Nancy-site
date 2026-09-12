@@ -41,38 +41,22 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Théa - Aquarelle d'automne.jpg"
+    },
+    {
+      "id": "pampilles-coeurcoral",
+      "name": "Coeur Coral - Cranberry",
+      "category": "Pampilles",
+      "price": 13,
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "#f9e8e0",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/Coeur Coral - Cranberry.jpg"
     }
   ],
-  "sneak": {
-    "script": "Bientôt disponible",
-    "title": "Aperçu de la prochaine collection",
-    "cards": [
-      {
-        "name": "Prune & Parme",
-        "date": "Collection Été — Juin 2025",
-        "bg": "#EDE8F8",
-        "accent": "#9B8FD4"
-      },
-      {
-        "name": "Menthe Glacée",
-        "date": "Collection Été — Juin 2025",
-        "bg": "#E8F8F0",
-        "accent": "#68C89A"
-      },
-      {
-        "name": "Rose Poudré",
-        "date": "Collection Été — Juillet 2025",
-        "bg": "#F8EEF8",
-        "accent": "#E890C0"
-      },
-      {
-        "name": "Citron Doré",
-        "date": "Collection Été — Juillet 2025",
-        "bg": "#F8F4E0",
-        "accent": "#D4B060"
-      }
-    ]
-  },
+  "sneak": null,
   "feature": {
     "description": "Notre création la plus joyeuse : deux formes florales différentes, dégradé nacré, finition or. Une seule paire de créoles, deux personnalités.",
     "emoji": "🌺",
