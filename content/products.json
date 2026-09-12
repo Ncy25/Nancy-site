@@ -123,6 +123,34 @@
       "image": "/images/uploads/Mae - Terre Cuite.jpg"
     },
     {
+      "id": "pampilles-mae",
+      "name": "Maë - Kaki nacré",
+      "category": "Pampilles",
+      "price": 13,
+      "variant": "uni",
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/20260909_164529.jpg"
+    },
+    {
+      "id": "pampilles-mae",
+      "name": "Maë - Olive",
+      "category": "Pampilles",
+      "price": 13,
+      "variant": "uni",
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/Mae - Olive.jpg"
+    },
+    {
       "id": "creoles-dorees",
       "name": "Créoles martelées dorées",
       "category": "Créoles",
@@ -182,49 +210,21 @@
       "bg": "",
       "badge": "",
       "stock": "in_stock",
-      "image": ""
+      "image": "/images/uploads/Lisses-dorées.jpg"
     },
     {
       "id": "creoles-dorees",
-      "name": "Créoles rectangulaire lisses dorées",
+      "name": "Créoles rectangulaires lisses dorées",
       "category": "Créoles",
       "price": 7,
       "variant": "",
       "emoji": "",
-      "description": "Anneaux lisses à fermoir clipsable, finition dorée. Compatibles avec l'ensemble de nos pampilles.",
+      "description": "Anneaux rectangulaires lisses à fermoir clipsable, finition dorée. Compatibles avec l'ensemble de nos pampilles.",
       "colors": [],
       "bg": "",
       "badge": "",
       "stock": "in_stock",
-      "image": ""
-    },
-    {
-      "id": "pampilles-mae",
-      "name": "Maë - Kaki nacré",
-      "category": "Pampilles",
-      "price": 13,
-      "variant": "uni",
-      "emoji": "",
-      "description": "",
-      "colors": [],
-      "bg": "",
-      "badge": "new",
-      "stock": "in_stock",
-      "image": "/images/uploads/20260909_164529.jpg"
-    },
-    {
-      "id": "pampilles-mae",
-      "name": "Maë - Olive",
-      "category": "Pampilles",
-      "price": 13,
-      "variant": "uni",
-      "emoji": "",
-      "description": "",
-      "colors": [],
-      "bg": "",
-      "badge": "new",
-      "stock": "in_stock",
-      "image": "/images/uploads/Mae - Olive.jpg"
+      "image": "/images/uploads/Rectangulaires-dorées.jpg"
     }
   ],
   "feat_btn_link": "https://wildflower-wm.fr/nouveautes.html",
