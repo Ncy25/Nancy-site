@@ -775,22 +775,8 @@
 <section id="produits-bois" style="padding: 0 0 80px; background: var(--ivory);">
   <div class="container">
 
-    <!-- Countdown -->
-    <div class="countdown-banner r" style="margin-top:64px">
-      <div class="cb-left">
-        <div class="cb-title">🌸 Prochain drop — Collection Été</div>
-        <div class="cb-sub">Les prochaines pampilles arrivent bientôt. Inscrivez-vous pour être prévenue en avant-première.</div>
-      </div>
-      <div class="cb-right">
-        <div class="cd-unit"><span class="cd-num" id="cd-d">14</span><span class="cd-label">Jours</span></div>
-        <div class="cd-unit"><span class="cd-num" id="cd-h">06</span><span class="cd-label">Heures</span></div>
-        <div class="cd-unit"><span class="cd-num" id="cd-m">32</span><span class="cd-label">Min</span></div>
-        <div class="cd-unit"><span class="cd-num" id="cd-s">00</span><span class="cd-label">Sec</span></div>
-      </div>
-    </div>
-
     <!-- Intro -->
-    <div class="section-intro-inner r">
+    <div class="section-intro-inner r" style="margin-top:64px">
       <div>
         <div class="section-label" id="nvSectionLabel">L'univers Wooden Mountain</div>
         <div class="section-h2" id="nvSectionTitle">Nos créations en bois</div>
@@ -818,17 +804,6 @@
 
     <!-- GRID -->
     <div class="prod-grid" id="prodGrid"></div><!-- /prod-grid -->
-  </div>
-</section>
-
-<!-- ── SNEAK PEEK ── -->
-<section class="sneak-section">
-  <div class="container">
-    <div class="sneak-header r">
-      <div class="sneak-script" id="sneakScript">Bientôt disponible</div>
-      <h2 class="sneak-h2" id="sneakTitle">Aperçu de la prochaine collection</h2>
-    </div>
-    <div class="sneak-row" id="sneakRow"></div>
   </div>
 </section>
 
@@ -1029,15 +1004,7 @@
     setImg('nvMosaic2', data.mosaic_image_2);
     setImg('nvMosaic3', data.mosaic_image_3);
     setImg('nvMosaic4', data.mosaic_image_4);
-    document.getElementById('countdown-title-el') && (document.getElementById('countdown-title-el').textContent = data.countdown_title);
-    const cbTitle = document.querySelector('.cb-title'); if (cbTitle && data.countdown_title) cbTitle.textContent = data.countdown_title;
-    const cbSub = document.querySelector('.cb-sub'); if (cbSub && data.countdown_subtitle) cbSub.textContent = data.countdown_subtitle;
-    if (data.countdown_end) {
-      const parsed = new Date(data.countdown_end);
-      if (!isNaN(parsed)) { target = parsed; updateCountdown(); }
-    }
     renderNouveautes(data);
-    if (data.sneak) renderSneak(data.sneak);
     const urlParams = new URLSearchParams(window.location.search);
     const q = urlParams.get('q');
     if (q) {
@@ -1061,30 +1028,6 @@
     if (feLink && site.contact_email) { feLink.textContent = site.contact_email; feLink.href = 'mailto:' + site.contact_email; }
     if (flr && site.footer_logo_line) flr.textContent = site.footer_logo_line;
   }).catch(() => {});
-
-  /* ─── COUNTDOWN ─── */
-  let target = null;
-
-  function updateCountdown() {
-    if (!target) return;
-    const now = new Date();
-    const diff = Math.max(0, target - now);
-    const d = Math.floor(diff / 86400000);
-    const h = Math.floor((diff % 86400000) / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    const s = Math.floor((diff % 60000) / 1000);
-    const fmt = n => String(n).padStart(2,'0');
-    document.getElementById('cd-d').textContent = fmt(d);
-    document.getElementById('cd-h').textContent = fmt(h);
-    document.getElementById('cd-m').textContent = fmt(m);
-    document.getElementById('cd-s').textContent = fmt(s);
-    if (diff <= 0) {
-      const banner = document.querySelector('.countdown-banner');
-      if (banner) banner.style.display = 'none';
-    }
-  }
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
 
   /* ─── FILTER ─── */
   let activeFilter = 'all';
@@ -1143,35 +1086,6 @@
   }
 
   /* ─── SNEAK PEEK : rendu + collecte d'email réelle ─── */
-  function renderSneak(sneak) {
-    const scriptEl = document.getElementById('sneakScript');
-    const titleEl = document.getElementById('sneakTitle');
-    if (scriptEl && sneak.script) scriptEl.textContent = sneak.script;
-    if (titleEl && sneak.title) titleEl.textContent = sneak.title;
-
-    const row = document.getElementById('sneakRow');
-    if (!row) return;
-    const cards = Array.isArray(sneak.cards) ? sneak.cards : [];
-    row.innerHTML = cards.map((c, i) => `
-      <div class="sneak-card r d${i + 1}">
-        <div class="sneak-img" style="background:${c.bg || '#F5EDE8'}">
-          <div style="width:80px;height:80px;border-radius:50%;background:${c.accent || '#D4A0A0'};opacity:.5;filter:blur(3px)"></div>
-          <div class="sneak-blur">
-            <div class="sneak-blur-icon">🔒</div>
-            <div class="sneak-blur-text">Bientôt</div>
-          </div>
-        </div>
-        <div class="sneak-info">
-          <div class="sneak-name">${c.name || ''}</div>
-          <div class="sneak-date">${c.date || ''}</div>
-        </div>
-      </div>
-    `).join('');
-
-    const sneakObs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }), { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
-    row.querySelectorAll('.sneak-card').forEach(el => sneakObs.observe(el));
-  }
-
   /* ─── NEWSLETTER ─── */
   function subscribeNl() {
     const v = document.getElementById('nlEmail').value.trim();
