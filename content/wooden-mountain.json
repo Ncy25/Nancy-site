@@ -24,7 +24,9 @@
       "bg": "#F5EDE3",
       "badge": "new",
       "stock": "in_stock",
-      "image": ""
+      "image": "",
+      "custom_gravure": true,
+      "custom_finition": false
     }
   ]
 }
