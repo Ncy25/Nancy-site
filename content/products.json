@@ -11,7 +11,7 @@
   "pampilles_tab_motifs": "Pampilles à motifs",
   "products": [
     {
-      "id": "pampilles-motifs",
+      "id": "pampilles-coeur",
       "name": "Coeur - Jeans",
       "category": "Pampilles",
       "price": 17,
@@ -25,7 +25,7 @@
       "image": "/images/uploads/Coeur - Jeans.jpg"
     },
     {
-      "id": "pampilles-motifs-Théa",
+      "id": "pampilles-thea",
       "name": "Théa - Aquarelle d'automne",
       "category": "Pampilles",
       "price": 17,
@@ -39,7 +39,7 @@
       "image": "/images/uploads/Théa - Aquarelle d'automne.jpg"
     },
     {
-      "id": "pampilles-unies-CoeurCoral",
+      "id": "pampilles-coeurcoral",
       "name": "Coeur Coral - Cranberry",
       "category": "Pampilles",
       "price": 13,
@@ -53,7 +53,7 @@
       "image": "/images/uploads/Coeur Coral - Cranberry.jpg"
     },
     {
-      "id": "pampilles-Max-Rosegold",
+      "id": "pampilles-max",
       "name": "Max - Rose gold",
       "category": "Pampilles",
       "price": 13,
@@ -65,6 +65,48 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Max - Rose Gold.jpg"
+    },
+    {
+      "id": "Pampilles-thea",
+      "name": "Théa - Prune",
+      "category": "Pampilles",
+      "price": 13,
+      "variant": "uni",
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/Théa - Prune.jpg"
+    },
+    {
+      "id": "Pampilles-mae",
+      "name": "Maë - Chocolat",
+      "category": "Pampilles",
+      "price": 17,
+      "variant": "motifs",
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "",
+      "badge": "new",
+      "stock": "",
+      "image": "/images/uploads/Mae - Chocolat.jpg"
+    },
+    {
+      "id": "pampilles-thea",
+      "name": "Théa - Champagne nacré",
+      "category": "Pampilles",
+      "price": 13,
+      "variant": "uni",
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/Théa - Champagne nacré.jpg"
     },
     {
       "id": "creoles-dorees",
