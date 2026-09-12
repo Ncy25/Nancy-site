@@ -25,7 +25,7 @@
       "description": "",
       "colors": [],
       "bg": "#eef2e8",
-      "badge": "new",
+      "badge": "exclu",
       "stock": "in_stock",
       "image": "/images/uploads/Coeur - Jeans.jpg"
     },
@@ -119,6 +119,32 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Mae - Terre Cuite.jpg"
+    },
+    {
+      "id": "pampilles-mae",
+      "name": "Maë - Kaki nacré",
+      "category": "Pampilles",
+      "price": 13,
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "#f9e8e0",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/20260909_164529.jpg"
+    },
+    {
+      "id": "pampilles-mae",
+      "name": "Maë - Olive",
+      "category": "Pampilles",
+      "price": 13,
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "#eef2e8",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/Mae - Olive.jpg"
     }
   ],
   "sneak": null,
