@@ -3,7 +3,7 @@
   "header_title": "BOUTIQUE",
   "header_subtitle": "Toutes mes créations",
   "section_label": "bijoux a composer",
-  "section_title": "Choisis ta paire de créoles et ajoute autant de pampilles que tu veux",
+  "section_title": "Choisis ta paire de créoles et ajoute tes pampilles",
   "creoles_title": "Les créoles",
   "pampilles_title": "Les pampilles",
   "pampilles_tab_all": "Tout voir",
@@ -75,7 +75,7 @@
       "emoji": "",
       "description": "",
       "colors": [],
-      "bg": "",
+      "bg": "#eef2e8",
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Théa - Prune.jpg"
@@ -89,7 +89,7 @@
       "emoji": "",
       "description": "",
       "colors": [],
-      "bg": "",
+      "bg": "#f5d5c8",
       "badge": "new",
       "stock": "",
       "image": "/images/uploads/Mae - Chocolat.jpg"
@@ -157,7 +157,7 @@
       "price": 7,
       "variant": "",
       "emoji": "✨",
-      "description": "Anneaux martelées à fermoir clipsable, finition dorée. Compatibles avec l'ensemble de nos pampilles.",
+      "description": "Anneaux martelées à fermoir clipsable, finition dorée. Compatibles avec l'ensemble des pampilles.",
       "colors": [
         "#C9A853"
       ],
@@ -173,7 +173,7 @@
       "price": 7,
       "variant": "",
       "emoji": "🤍",
-      "description": "Anneaux torsadées à fermoir clipsable, finition dorée. Compatibles avec l'ensemble de nos pampilles.",
+      "description": "Anneaux torsadées à fermoir clipsable, finition dorée. Compatibles avec l'ensemble des pampilles.",
       "colors": [
         "#A8B8C4"
       ],
@@ -189,7 +189,7 @@
       "price": 7,
       "variant": "",
       "emoji": "🤍",
-      "description": "Anneaux rotatives à fermoir clipsable, finition dorée. Compatibles avec l'ensemble de nos pampilles.",
+      "description": "Anneaux rotatives à fermoir clipsable, finition dorée. Compatibles avec l'ensemble des pampilles.",
       "colors": [
         "#A8B8C4"
       ],
@@ -205,9 +205,9 @@
       "price": 7,
       "variant": "",
       "emoji": "",
-      "description": "Anneaux lisses à fermoir clipsable, finition dorée. Compatibles avec l'ensemble de nos pampilles.",
+      "description": "Anneaux lisses à fermoir clipsable, finition dorée. Compatibles avec l'ensemble des pampilles.",
       "colors": [],
-      "bg": "",
+      "bg": "#f9e8e0",
       "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/Lisses-dorées.jpg"
@@ -219,9 +219,9 @@
       "price": 7,
       "variant": "",
       "emoji": "",
-      "description": "Anneaux rectangulaires lisses à fermoir clipsable, finition dorée. Compatibles avec l'ensemble de nos pampilles.",
+      "description": "Anneaux rectangulaires lisses à fermoir clipsable, finition dorée. Compatibles avec l'ensemble des pampilles.",
       "colors": [],
-      "bg": "",
+      "bg": "#f9e8e0",
       "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/Rectangulaires-dorées.jpg"
