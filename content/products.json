@@ -197,6 +197,34 @@
       "badge": "",
       "stock": "in_stock",
       "image": ""
+    },
+    {
+      "id": "pampilles-mae",
+      "name": "Maë - Kaki nacré",
+      "category": "Pampilles",
+      "price": 13,
+      "variant": "uni",
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": ""
+    },
+    {
+      "id": "pampilles-mae",
+      "name": "Maë - Olive",
+      "category": "Pampilles",
+      "price": 13,
+      "variant": "uni",
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/Mae - Olive.jpg"
     }
   ],
   "feat_btn_link": "https://wildflower-wm.fr/nouveautes.html",
