@@ -498,6 +498,10 @@
       border: 2.5px solid transparent; transition: transform var(--ease), border-color var(--ease);
     }
     .modal-color-btn:hover, .modal-color-btn.sel { transform: scale(1.18); border-color: var(--brown); }
+    .modal-custom { margin-bottom: 16px; }
+    .modal-custom-label { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--brown-mid); margin-bottom: 8px; }
+    .modal-custom-opt { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--brown); margin-bottom: 8px; cursor: pointer; }
+    .modal-custom-opt input { width: 16px; height: 16px; accent-color: var(--peach-dk); cursor: pointer; }
     .modal-qty-row { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
     .qty-ctrl { display: flex; align-items: center; gap: 2px; background: var(--blush); border-radius: 999px; padding: 3px; }
     .qty-btn { width: 30px; height: 30px; border-radius: 50%; background: none; border: none; cursor: pointer; font-size: 15px; color: var(--brown-mid); transition: background var(--ease); display: flex; align-items: center; justify-content: center; }
@@ -819,6 +823,15 @@
       <div class="modal-name" id="modalName"></div>
       <div class="modal-price" id="modalPrice"></div>
       <div class="modal-desc" id="modalDesc"></div>
+      <div class="modal-custom" id="modalCustomWrap" style="display:none">
+        <div class="modal-custom-label">Personnalisation</div>
+        <label class="modal-custom-opt" id="optGravure" style="display:none">
+          <input type="checkbox" id="chkGravure"> Gravure personnalisée
+        </label>
+        <label class="modal-custom-opt" id="optFinition" style="display:none">
+          <input type="checkbox" id="chkFinition"> Finition au choix
+        </label>
+      </div>
       <div class="modal-qty-row">
         <div class="qty-ctrl">
           <button class="qty-btn" onclick="changeQty(-1)">−</button>
@@ -1220,8 +1233,23 @@
     document.getElementById('modalDesc').textContent = p.description;
     document.getElementById('modalImg').style.background = p.bg || '#F5EDE8';
     document.getElementById('modalImg').innerHTML = novVisual(p);
+
+    const optGravure = document.getElementById('optGravure');
+    const optFinition = document.getElementById('optFinition');
+    const chkGravure = document.getElementById('chkGravure');
+    const chkFinition = document.getElementById('chkFinition');
+    chkGravure.checked = false;
+    chkFinition.checked = false;
+    optGravure.style.display = p.custom_gravure ? 'flex' : 'none';
+    optFinition.style.display = p.custom_finition ? 'flex' : 'none';
+    document.getElementById('modalCustomWrap').style.display = (p.custom_gravure || p.custom_finition) ? 'block' : 'none';
+
     document.getElementById('modalAddBtn').onclick = () => {
-      for (let i = 0; i < modalQty; i++) addToCart(p.category + ' ' + p.name, p.price, p.emoji);
+      const extras = [];
+      if (p.custom_gravure && chkGravure.checked) extras.push('Gravure personnalisée');
+      if (p.custom_finition && chkFinition.checked) extras.push('Finition au choix');
+      const label = p.category + ' ' + p.name + (extras.length ? ' (' + extras.join(', ') + ')' : '');
+      for (let i = 0; i < modalQty; i++) addToCart(label, p.price, p.emoji);
       closeModal();
     };
     document.getElementById('modalOverlay').classList.add('open');
