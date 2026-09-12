@@ -31,7 +31,7 @@
     },
     {
       "id": "pampilles-thea",
-      "name": "Théa - Aquarelle d'Automne",
+      "name": "Théa - Aquarelle d'automne",
       "category": "Pampilles",
       "price": 17,
       "emoji": "",
@@ -54,6 +54,19 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Coeur Coral - Cranberry.jpg"
+    },
+    {
+      "id": "pampilles-max",
+      "name": "Max - Rose gold",
+      "category": "Pampilles",
+      "price": 13,
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "#eef2e8",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/Max - Rose Gold.jpg"
     }
   ],
   "sneak": null,
