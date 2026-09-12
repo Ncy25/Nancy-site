@@ -24,7 +24,11 @@
       "🏺 Pâte polymère",
       "🎨 Pièces uniques",
       "🇫🇷 France"
-    ]
+    ],
+    "about_img1": "",
+    "about_img2": "",
+    "about_img3": "",
+    "about_img4": ""
   },
   "contact": {
     "label": "Une question ?",
@@ -36,6 +40,6 @@
     "custom_note": "Sur-mesure & commandes groupées bienvenues",
     "quote": "Des pampilles qui changent tout — interchangeables, colorées, faites à la main."
   },
-  "footer_tagline": "Pampilles interchangeables, colorées et faites à la main, pour changer d'humeur en deux secondes.",
+  "footer_tagline": "Pampilles interchangeables et objets en bois personnalisés",
   "footer_copyright": "© 2026 WildFlower_WoodenMountain · Fabriqué en France"
 }
