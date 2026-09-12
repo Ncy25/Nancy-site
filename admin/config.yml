@@ -44,6 +44,7 @@ collections:
           - { label: "Titre section 'lifestyle'", name: "lifestyle_title", widget: "string" }
           - { label: "Titre section boutique", name: "boutique_title", widget: "string" }
           - { label: "Sous-titre section boutique", name: "boutique_subtitle", widget: "string" }
+          - { label: "Texte sous les produits (avant les 3 rectangles)", name: "below_products_text", widget: "string", required: false }
           - label: "Notre histoire"
             name: "histoire"
             widget: "object"
@@ -125,6 +126,7 @@ collections:
                 options: ["in_stock", "low"]
                 required: false
               - { label: "Photo du produit", name: "image", widget: "image", required: false, hint: "Laisser vide pour garder l'illustration actuelle." }
+              - { label: "Afficher sur la page d'accueil", name: "show_on_home", widget: "boolean", default: false, required: false, hint: "Maximum 10 produits affichés sur l'accueil. Si aucun n'est coché, les 10 premiers s'affichent par défaut." }
 
   - name: "nouveautes"
     label: "Nouveautés"
