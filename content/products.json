@@ -124,10 +124,10 @@
     },
     {
       "id": "creoles-dorees",
-      "name": "Créoles Martelées dorées",
+      "name": "Créoles martelées dorées",
       "category": "Créoles",
       "price": 7,
-      "variant": "uni",
+      "variant": "",
       "emoji": "✨",
       "description": "Anneaux martelées à fermoir clipsable, finition dorée. Compatibles avec l'ensemble de nos pampilles.",
       "colors": [
@@ -143,7 +143,7 @@
       "name": "Créoles torsadées dorées",
       "category": "Créoles",
       "price": 7,
-      "variant": "motifs",
+      "variant": "",
       "emoji": "🤍",
       "description": "Anneaux torsadées à fermoir clipsable, finition dorée. Compatibles avec l'ensemble de nos pampilles.",
       "colors": [
@@ -159,7 +159,7 @@
       "name": "Créoles rotatives dorées",
       "category": "Créoles",
       "price": 7,
-      "variant": "motifs",
+      "variant": "",
       "emoji": "🤍",
       "description": "Anneaux rotatives à fermoir clipsable, finition dorée. Compatibles avec l'ensemble de nos pampilles.",
       "colors": [
@@ -169,6 +169,34 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Rotatives-dorées.jpg"
+    },
+    {
+      "id": "créoles-dorées",
+      "name": "Créoles lisses dorées",
+      "category": "Créoles",
+      "price": 7,
+      "variant": "",
+      "emoji": "",
+      "description": "Anneaux lisses à fermoir clipsable, finition dorée. Compatibles avec l'ensemble de nos pampilles.",
+      "colors": [],
+      "bg": "",
+      "badge": "",
+      "stock": "in_stock",
+      "image": ""
+    },
+    {
+      "id": "creoles-dorees",
+      "name": "Créoles rectangulaire lisses dorées",
+      "category": "Créoles",
+      "price": 7,
+      "variant": "",
+      "emoji": "",
+      "description": "Anneaux lisses à fermoir clipsable, finition dorée. Compatibles avec l'ensemble de nos pampilles.",
+      "colors": [],
+      "bg": "",
+      "badge": "",
+      "stock": "in_stock",
+      "image": ""
     }
   ],
   "feat_btn_link": "https://wildflower-wm.fr/nouveautes.html",
