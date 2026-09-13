@@ -964,7 +964,7 @@
         if (data.url) {
           window.location.href = data.url;
         } else {
-          showToast(data.error || 'Erreur lors de la création du paiement');
+          showToast((data.error || 'Erreur lors de la création du paiement') + (data.detail ? ' — ' + data.detail : ''));
           if (payBtn) { payBtn.disabled = false; payBtn.innerHTML = payBtnOriginalHTML; }
         }
       })
@@ -981,7 +981,7 @@
     if (!t) {
       t = document.createElement('div');
       t.id = 'toast';
-      t.style.cssText = `position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(60px);background:var(--brown);color:var(--cream);padding:10px 22px;border-radius:999px;font-size:13.5px;font-weight:500;z-index:400;pointer-events:none;transition:transform .4s cubic-bezier(.34,1.5,.64,1),opacity .4s;opacity:0;white-space:nowrap;`;
+      t.style.cssText = `position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(60px);background:var(--brown);color:var(--cream);padding:10px 22px;border-radius:16px;font-size:13.5px;font-weight:500;z-index:400;transition:transform .4s cubic-bezier(.34,1.5,.64,1),opacity .4s;opacity:0;white-space:normal;max-width:90vw;text-align:center;`;
       document.body.appendChild(t);
     }
     t.textContent = msg;
@@ -991,7 +991,7 @@
     toastTimer = setTimeout(() => {
       t.style.transform = 'translateX(-50%) translateY(60px)';
       t.style.opacity = '0';
-    }, 2800);
+    }, 9000);
   }
 
   // ── Enter on promo input
