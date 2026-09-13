@@ -823,20 +823,19 @@
 </footer>
 
 <script>
-  // ── Cart data (read from sessionStorage or demo fallback)
+  // ── Retour depuis Stripe : afficher la confirmation ─────────────
+  const urlParams = new URLSearchParams(window.location.search);
+  const stripeSessionId = urlParams.get('session_id');
+  if (stripeSessionId) {
+    try { sessionStorage.removeItem('wf_cart'); } catch (e) {}
+  }
+
+  // ── Cart data (read from sessionStorage) ────────────────────────
   let cartItems = [];
   try {
     const stored = sessionStorage.getItem('wf_cart');
     if (stored) cartItems = JSON.parse(stored);
   } catch(e) {}
-
-  // Demo items if empty
-  if (!cartItems.length) {
-    cartItems = [
-      { name: 'Pampilles + Créoles Motifs', price: 18, emoji: '🌺', qty: 1 },
-      { name: 'Créoles Dorées', price: 5, emoji: '✨', qty: 2 },
-    ];
-  }
 
   let deliveryCost = 2.50;
   let promoDiscount = 0;
@@ -850,9 +849,10 @@
       sub += item.price * item.qty;
       const div = document.createElement('div');
       div.className = 'sum-item';
+      const thumbContent = item.image ? `<img src="${item.image}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:12px;position:absolute;inset:0">` : item.emoji;
       div.innerHTML = `
         <div class="sum-thumb">
-          ${item.emoji}
+          ${thumbContent}
           <span class="sum-qty-badge">${item.qty}</span>
         </div>
         <div class="sum-name">${item.name}</div>
@@ -873,6 +873,12 @@
     document.getElementById('totalAmt').textContent = Math.max(0, total).toFixed(2).replace('.',',') + ' €';
   }
   renderSummary();
+
+  if (stripeSessionId) {
+    document.getElementById('checkoutFormWrap').classList.add('hide');
+    document.getElementById('successWrap').classList.add('show');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
   // ── Delivery selection
   function selectDel(el, idx) {
@@ -936,10 +942,36 @@
       showToast('Veuillez remplir tous les champs obligatoires');
       return;
     }
-    // Simulate API call
-    document.getElementById('checkoutFormWrap').classList.add('hide');
-    document.getElementById('successWrap').classList.add('show');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (!cartItems.length) {
+      showToast('Votre panier est vide');
+      return;
+    }
+
+    const payBtn = document.querySelector('.btn-pay');
+    const payBtnOriginalHTML = payBtn ? payBtn.innerHTML : '';
+    if (payBtn) { payBtn.disabled = true; payBtn.innerHTML = 'Redirection vers le paiement…'; }
+
+    const items = cartItems.map(i => ({ name: i.name, qty: i.qty }));
+    try { sessionStorage.setItem('wf_cart', JSON.stringify(cartItems)); } catch (e) {}
+
+    fetch('https://wildflower-wm.fr/api/checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items, customer: { name: fname, email, address: addr, city, zip } }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          showToast(data.error || 'Erreur lors de la création du paiement');
+          if (payBtn) { payBtn.disabled = false; payBtn.innerHTML = payBtnOriginalHTML; }
+        }
+      })
+      .catch(() => {
+        showToast('Impossible de contacter le service de paiement. Réessaie dans un instant.');
+        if (payBtn) { payBtn.disabled = false; payBtn.innerHTML = payBtnOriginalHTML; }
+      });
   }
 
   // ── Toast
