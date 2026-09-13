@@ -16,11 +16,11 @@
   "products": [
     {
       "id": "Boule-noel-pick-up",
-      "name": "Boule de Noël Pick-up",
+      "name": "Le Pick-up de Noël",
       "category": "Bois",
       "price": 8,
       "emoji": "🌲",
-      "description": "",
+      "description": "Une décoration de Noël charmante et nostalgique, parfaite pour ajouter une touche de joie et de tradition à ton décor festif.\n\nHauteur:87 mm\nLargeur:80 mm",
       "colors": [],
       "bg": "#F5EDE3",
       "badge": "new",
@@ -31,11 +31,11 @@
     },
     {
       "id": "Noel",
-      "name": "Mon premier Noël",
+      "name": "Cheval à bascule - Mon premier Noël",
       "category": "Bois",
       "price": 8,
       "emoji": "",
-      "description": "",
+      "description": "Le traditionnel cheval à bascule demeure un jouet incontournable et sera un magnifique objet de décoration dans ton sapin.\n\nHauteur:73 mm\nLargeur :83 mm\n\n\n#wooden_mountain_05 #wood",
       "colors": [],
       "bg": "",
       "badge": "new",
