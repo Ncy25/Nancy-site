@@ -1017,7 +1017,7 @@
   <div class="dr-items" id="di"><div class="dr-empty" id="de">Votre panier est vide 🌸</div></div>
   <div class="dr-foot">
     <div class="dr-total"><span class="dr-total-l">Total</span><span class="dr-total-v" id="dt">0,00 €</span></div>
-    <button class="dr-co" onclick="checkout()">Passer commande →</button>
+    <button class="dr-co" onclick="window.location.href='checkout.html'">Passer commande →</button>
   </div>
 </div>
 
@@ -1236,13 +1236,6 @@
   function chQty(i, d) { cart[i].qty += d; if (cart[i].qty <= 0) cart.splice(i, 1); renderCart(); }
   function openCart() { document.getElementById('dr').classList.add('open'); document.getElementById('ov').classList.add('open'); }
   function toggleCart() { document.getElementById('dr').classList.toggle('open'); document.getElementById('ov').classList.toggle('open'); }
-
-  function checkout() {
-    if (!cart.length) return;
-    fetch('/api/checkout', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({items: cart}) })
-      .then(r => r.json()).then(d => { if (d.url) window.location.href = d.url; })
-      .catch(() => toast('Erreur réseau. Réessayez.'));
-  }
 
   function sendForm(e) {
     e.preventDefault();
