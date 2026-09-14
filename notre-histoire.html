@@ -1193,5 +1193,15 @@
     setTimeout(() => t.classList.remove('on'), 2800);
   }
 </script>
+
+<script>
+  // Corrige le bug du bouton qui ne répond plus après un retour arrière du navigateur
+  // (page restaurée depuis le cache mémoire du navigateur, JS figé)
+  window.addEventListener('pageshow', function (event) {
+    if (event.persisted) {
+      window.location.reload();
+    }
+  });
+</script>
 </body>
 </html>
