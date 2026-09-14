@@ -118,7 +118,7 @@
     /* ── MAIN LAYOUT ── */
     .checkout-wrap {
       max-width: 1160px; margin: 0 auto; padding: 48px 28px 96px;
-      display: grid; grid-template-columns: 1fr 400px; gap: 48px; align-items: start;
+      display: grid; grid-template-columns: 1fr 400px; gap: 48px; align-items: stretch;
     }
 
     /* ── SECTION TITLES ── */
@@ -296,7 +296,7 @@
     .del-price.free { color: var(--sage); }
 
     /* ── ORDER SUMMARY (RIGHT SIDE) ── */
-    .summary-sticky { position: static; }
+    .summary-sticky { position: sticky; top: 24px; }
     .summary-card {
       background: var(--ivory);
       border: 1px solid rgba(242,191,181,0.35);
