@@ -448,7 +448,6 @@
       .summary-sticky { position: static; display: contents; }
       .left-col, .right-col { display: contents; }
       #cardCommande { order: 1; }
-      #cardNote { order: 2; }
       #cardLivraison { order: 3; }
       #cardCoordonnees { order: 4; }
       #cardAdresse { order: 5; }
@@ -457,7 +456,7 @@
       .poem-note { order: 8; }
       .d1, .d2, .d3 { transition-delay: 0s; }
       .form-card, .summary-card { margin-bottom: 4px !important; }
-      #cardRecap, #cardPaiement, #cardNote { margin-top: 0 !important; }
+      #cardRecap, #cardPaiement { margin-top: 0 !important; }
     }
     @media (max-width: 560px) {
       .f-2col, .f-3col { grid-template-columns: 1fr; }
@@ -754,18 +753,6 @@
         <div class="secure-row">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
           <p>Après avoir cliqué sur "Confirmer & payer", tu seras redirigée vers notre partenaire de paiement sécurisé Stripe pour saisir tes coordonnées bancaires. Aucune donnée de carte ne transite par notre site.</p>
-        </div>
-      </div>
-
-      <!-- NOTE FACULTATIVE -->
-      <div class="form-card r" id="cardNote" style="margin-top:24px">
-        <div class="form-card-title" style="margin-bottom:14px">
-          <div class="fc-icon">💬</div>
-          Note pour votre commande
-          <span style="font-size:12px;font-weight:400;color:var(--gray);margin-left:4px">(facultatif)</span>
-        </div>
-        <div class="fg" style="margin-bottom:0">
-          <textarea placeholder="Ex: Pampilles Maë + Créoles pour un cadeau..." rows="3" style="resize:vertical;border:1.5px solid rgba(195,107,74,0.18);border-radius:10px;background:var(--cream);font-family:var(--font-b);font-size:14px;color:var(--brown);padding:11px 14px;outline:none;transition:border-color var(--ease),box-shadow var(--ease);width:100%" onfocus="this.style.borderColor='var(--peach)';this.style.boxShadow='0 0 0 3px rgba(240,168,130,0.15)'" onblur="this.style.borderColor='rgba(195,107,74,0.18)';this.style.boxShadow=''"></textarea>
         </div>
       </div>
 
