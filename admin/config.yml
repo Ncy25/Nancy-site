@@ -19,6 +19,8 @@ collections:
           - { label: "Email de contact", name: "contact_email", widget: "string" }
           - { label: "Logo texte — 1ère ligne (script, ex: Wild)", name: "footer_logo_script", widget: "string" }
           - { label: "Logo texte — 2ème ligne (ex: Flower · by Wooden Mountain)", name: "footer_logo_line", widget: "string" }
+          - { label: "Point retrait — Activer", name: "pickup_enabled", widget: "boolean", default: true, required: false, hint: "Active ou désactive l'option de retrait gratuit à la page de paiement." }
+          - { label: "Point retrait — Adresse", name: "pickup_address", widget: "text", required: false, hint: "Ex: 12 rue des Fleurs, 75000 Paris — sur rendez-vous. Laisser vide pour retirer l'option du paiement." }
 
   - name: "home"
     label: "Page d'accueil"
