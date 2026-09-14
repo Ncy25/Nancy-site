@@ -436,7 +436,7 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .checkout-wrap { grid-template-columns: 1fr; }
+      .checkout-wrap { grid-template-columns: minmax(0, 1fr); }
       .summary-sticky { position: static; display: contents; }
       .left-col, .right-col { display: contents; }
       #cardCommande { order: 1; }
@@ -445,6 +445,7 @@
       #cardPaiement { order: 4; }
       #cardCoordonnees { order: 5; }
       #cardAdresse { order: 6; }
+      .poem-note { order: 7; }
       .form-card, .summary-card { text-align: center; }
       .form-card-title, .summary-title { justify-content: center; }
       .fg { text-align: left; }
