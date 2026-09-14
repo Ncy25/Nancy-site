@@ -164,7 +164,9 @@
               h('div', {}, chipsArr.map((c, i) => h('span', { key: i, className: 'wf-chip' }, c)))
             ),
             h('div', { className: 'wf-block' },
-              h('h3', {}, g(['contact', 'intro_title'])),
+              h('div', { style: { fontSize: '11px', fontWeight: 600, letterSpacing: '.15em', textTransform: 'uppercase', color: '#D97A52', marginBottom: '4px' } }, g(['contact', 'label']) || 'Une question ?'),
+              h('h3', {}, g(['contact', 'title']) || 'Écrivons-nous'),
+              h('h4', { style: { fontSize: '14px', marginTop: '10px' } }, g(['contact', 'intro_title'])),
               h('p', {}, g(['contact', 'intro_text'])),
               h('p', { style: { fontSize: '12.5px' } }, '📧 ' + g(['contact', 'email'])),
               h('div', { className: 'wf-quote' }, '"' + g(['contact', 'quote']) + '"')
