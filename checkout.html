@@ -618,6 +618,14 @@
           </div>
           <div class="del-price" id="dp2">8,00 €</div>
         </div>
+        <div class="del-opt" id="delOptPickup" onclick="selectDel(this, 3)" style="display:none">
+          <div class="del-radio"><div class="del-radio-inner"></div></div>
+          <div class="del-info">
+            <div class="del-name">Retrait en main propre</div>
+            <div class="del-desc" id="pickupAddress">Adresse à définir</div>
+          </div>
+          <div class="del-price" id="dp3">Gratuit</div>
+        </div>
       </div>
       <div class="secure-row" style="margin-top:16px">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -796,7 +804,7 @@
   function selectDel(el, idx) {
     document.querySelectorAll('.del-opt').forEach(o => o.classList.remove('selected'));
     el.classList.add('selected');
-    const prices = [2.50, 5.50, 8.00];
+    const prices = [2.50, 5.50, 8.00, 0];
     deliveryCost = prices[idx];
     renderSummary();
   }
@@ -921,6 +929,10 @@
     if (site.logo_image) {
       const logo = document.getElementById('navLogo');
       if (logo) logo.innerHTML = `<img src="${site.logo_image}" alt="${site.brand_name || 'WildFlower_WoodenMountain'}" style="height:48px;width:auto;display:block">`;
+    }
+    if (site.pickup_enabled !== false && site.pickup_address) {
+      document.getElementById('pickupAddress').textContent = site.pickup_address;
+      document.getElementById('delOptPickup').style.display = '';
     }
   }).catch(() => {});
 </script>
