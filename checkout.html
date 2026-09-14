@@ -288,7 +288,8 @@
     .del-info { flex: 1; }
     .del-name { font-size: 13.5px; font-weight: 500; color: var(--brown); margin-bottom: 2px; }
     .del-desc { font-size: 12px; color: var(--gray); }
-    .del-price { font-size: 13.5px; font-weight: 600; color: var(--peach-dk); white-space: nowrap; }
+    .del-price { font-size: 13.5px; font-weight: 600; color: var(--peach-dk); white-space: nowrap; text-align: right; }
+    .del-free-badge { font-size: 11px; font-weight: 700; color: var(--sage, #6B9B5E); text-align: right; margin-top: 2px; }
     .del-price.free { color: var(--sage); }
 
     /* ── ORDER SUMMARY (RIGHT SIDE) ── */
@@ -608,7 +609,10 @@
             <div class="del-name">Lettre suivie — La Poste</div>
             <div class="del-desc">Livraison en 2–3 jours ouvrés · Suivi inclus</div>
           </div>
-          <div class="del-price" id="dp1">2,50 €</div>
+          <div>
+            <div class="del-price" id="dp1">2,50 €</div>
+            <div class="del-free-badge" id="dpFree1" style="display:none">Offert</div>
+          </div>
         </div>
         <div class="del-opt" onclick="selectDel(this, 2)">
           <div class="del-radio"><div class="del-radio-inner"></div></div>
@@ -616,7 +620,10 @@
             <div class="del-name">Colissimo sans signature</div>
             <div class="del-desc">Livraison en 2–3 jours ouvrés · Emballage renforcé</div>
           </div>
-          <div class="del-price" id="dp2">5,50 €</div>
+          <div>
+            <div class="del-price" id="dp2">5,50 €</div>
+            <div class="del-free-badge" id="dpFree2" style="display:none">Offert</div>
+          </div>
         </div>
         <div class="del-opt" onclick="selectDel(this, 3)">
           <div class="del-radio"><div class="del-radio-inner"></div></div>
@@ -790,6 +797,8 @@
       document.getElementById('shipping').textContent = deliveryCost.toFixed(2).replace('.',',') + ' €';
       document.getElementById('shipping').classList.remove('free-del');
     }
+    document.getElementById('dpFree1').style.display = sub >= 50 ? 'block' : 'none';
+    document.getElementById('dpFree2').style.display = sub >= 50 ? 'block' : 'none';
     document.getElementById('totalAmt').textContent = Math.max(0, total).toFixed(2).replace('.',',') + ' €';
   }
   renderSummary();
