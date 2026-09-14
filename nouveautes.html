@@ -184,6 +184,8 @@
     .mosaic-card:nth-child(3) { border-radius: 60px 20px 20px 20px; transform: translateY(14px); }
     .mosaic-card:nth-child(3):hover { transform: translateY(10px) scale(1.04) rotate(-1.5deg); }
     .mosaic-card:nth-child(4) { border-radius: 20px 20px 20px 60px; }
+    .mosaic-img-inner { width: 140px; height: 140px; }
+    .mosaic-img-inner svg { width: 100%; height: 100%; }
     .mosaic-badge {
       position: absolute; top: 12px; left: 12px;
       background: var(--peach); color: #fff;
@@ -572,6 +574,7 @@
       .hero-sub, .hero-tags { margin-left: auto; margin-right: auto; justify-content: center; }
       .btn-hero { margin: 0 auto; }
       .hero-mosaic { order: -1; max-width: 340px; margin: 0 auto; }
+      .mosaic-img-inner { width: 100px; height: 100px; }
       .feature-card { grid-column: span 1; }
       .fc-visual { display: none; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -725,7 +728,7 @@
     <div class="hero-mosaic">
       <div class="mosaic-card">
         <span class="mosaic-badge">Nouveau</span>
-        <div class="mosaic-img-slot" id="nvMosaic1" style="width:100px;height:100px;display:flex;align-items:center;justify-content:center">
+        <div class="mosaic-img-slot" id="nvMosaic1" style="display:flex;align-items:center;justify-content:center" class="mosaic-img-inner">
           <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
             <circle cx="50" cy="30" r="16" fill="#F0A882" opacity=".55"/>
             <circle cx="70" cy="50" r="16" fill="#F0A882" opacity=".5"/>
@@ -738,7 +741,7 @@
       </div>
       <div class="mosaic-card">
         <span class="mosaic-badge gold">Exclusif</span>
-        <div class="mosaic-img-slot" id="nvMosaic2" style="width:100px;height:100px;display:flex;align-items:center;justify-content:center">
+        <div class="mosaic-img-slot" id="nvMosaic2" style="display:flex;align-items:center;justify-content:center" class="mosaic-img-inner">
           <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
             <circle cx="50" cy="50" r="36" stroke="#C9A853" stroke-width="7.5" fill="none" opacity=".75"/>
             <circle cx="50" cy="86" r="5.5" fill="#C9A853" opacity=".85"/>
@@ -748,7 +751,7 @@
       </div>
       <div class="mosaic-card">
         <span class="mosaic-badge sage">Saison</span>
-        <div class="mosaic-img-slot" id="nvMosaic3" style="width:100px;height:100px;display:flex;align-items:center;justify-content:center">
+        <div class="mosaic-img-slot" id="nvMosaic3" style="display:flex;align-items:center;justify-content:center" class="mosaic-img-inner">
           <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
             <path d="M50 90C34 74 10 62 10 44C10 28 21 18 32 22C39 24.5 45 34 50 44C55 34 61 24.5 68 22C79 18 90 28 90 44C90 62 66 74 50 90Z" fill="#8FAF8A" opacity=".5"/>
             <path d="M50 76C38 64 20 55 20 44C20 34 28 27 36 30C41 32 46 40 50 48C54 40 59 32 64 30C72 27 80 34 80 44C80 55 62 64 50 76Z" fill="#8FAF8A" opacity=".65"/>
@@ -756,7 +759,7 @@
         </div>
       </div>
       <div class="mosaic-card">
-        <div class="mosaic-img-slot" id="nvMosaic4" style="width:100px;height:100px;display:flex;align-items:center;justify-content:center">
+        <div class="mosaic-img-slot" id="nvMosaic4" style="display:flex;align-items:center;justify-content:center" class="mosaic-img-inner">
           <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
             <ellipse cx="50" cy="50" rx="38" ry="46" fill="#F0A882" opacity=".45" transform="rotate(-14 50 50)"/>
             <ellipse cx="50" cy="50" rx="22" ry="28" fill="#E8907A" opacity=".65"/>
