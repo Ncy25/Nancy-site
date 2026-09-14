@@ -437,7 +437,19 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .checkout-wrap { grid-template-columns: 1fr; }
-      .summary-sticky { position: static; order: -1; }
+      .summary-sticky { position: static; display: contents; }
+      .left-col, .right-col { display: contents; }
+      #cardCommande { order: 1; }
+      #cardNote { order: 2; }
+      #cardLivraison { order: 3; }
+      #cardPaiement { order: 4; }
+      #cardCoordonnees { order: 5; }
+      #cardAdresse { order: 6; }
+      .form-card, .summary-card { text-align: center; }
+      .form-card-title, .summary-title { justify-content: center; }
+      .fg { text-align: left; }
+      .f-2col, .f-3col { justify-items: center; }
+      .del-opt, .secure-row { text-align: left; }
     }
     @media (max-width: 560px) {
       .f-2col, .f-3col { grid-template-columns: 1fr; }
@@ -448,7 +460,7 @@
 <body>
 
 <!-- PROMO BAR -->
-<div class="promo-bar">🌸 Livraison offerte dès 50€ d'achat · Pièces uniques faites à la main</div>
+<div class="promo-bar">Livraison offerte dès 50€ d'achat · Pièces uniques faites à la main</div>
 
 <!-- NAV -->
 <nav>
@@ -532,7 +544,7 @@
   <div class="left-col">
 
     <!-- COORDONNÉES -->
-    <div class="form-card r">
+    <div class="form-card r" id="cardCoordonnees">
       <div class="form-card-title">
         <div class="fc-icon">👤</div>
         Vos coordonnées
@@ -560,7 +572,7 @@
     </div>
 
     <!-- ADRESSE LIVRAISON -->
-    <div class="form-card r d1">
+    <div class="form-card r d1" id="cardAdresse">
       <div class="form-card-title">
         <div class="fc-icon">📍</div>
         Adresse de livraison
@@ -589,7 +601,7 @@
     </div>
 
     <!-- MODE DE LIVRAISON -->
-    <div class="form-card r d2">
+    <div class="form-card r d2" id="cardLivraison">
       <div class="form-card-title">
         <div class="fc-icon">📦</div>
         Mode de livraison
@@ -636,12 +648,12 @@
       </div>
       <div class="secure-row" style="margin-top:16px">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <p>Chaque colis est emballé soigneusement à la main avec une petite attention 🌸 — délai de préparation : 3 à 5 jours ouvrés.</p>
+        <p>Chaque colis est emballé soigneusement à la main avec une petite attention — délai de préparation : 3 à 5 jours ouvrés.</p>
       </div>
     </div>
 
     <!-- PAIEMENT -->
-    <div class="form-card r d3">
+    <div class="form-card r d3" id="cardPaiement">
       <div class="form-card-title">
         <div class="fc-icon">💳</div>
         Paiement
@@ -653,7 +665,7 @@
     </div>
 
     <!-- NOTE FACULTATIVE -->
-    <div class="form-card r" style="margin-bottom:0">
+    <div class="form-card r" id="cardNote" style="margin-bottom:0">
       <div class="form-card-title" style="margin-bottom:14px">
         <div class="fc-icon">💬</div>
         Note pour votre commande
@@ -669,7 +681,7 @@
   <!-- RIGHT COL — SUMMARY -->
   <div class="right-col">
     <div class="summary-sticky">
-      <div class="summary-card r">
+      <div class="summary-card r" id="cardCommande">
         <div class="summary-title">Votre commande</div>
         <div class="sum-items" id="summaryItems">
           <!-- Injected by JS -->
@@ -677,7 +689,7 @@
 
         <!-- Promo code -->
         <div class="promo-row">
-          <input type="text" class="promo-input" placeholder="Code promo 🌸" id="promoInput"/>
+          <input type="text" class="promo-input" placeholder="Code promo" id="promoInput"/>
           <button class="btn-promo" onclick="applyPromo()">Appliquer</button>
         </div>
 
@@ -724,7 +736,7 @@
 
       <!-- Poème -->
       <div class="poem-note r d2">
-        <p>"Chaque pampille part avec un peu de moi — et beaucoup d'amour pour vous." 🌸</p>
+        <p>"Chaque création part avec un peu de moi — et beaucoup d'amour pour vous."</p>
       </div>
     </div>
   </div>
@@ -743,7 +755,7 @@
       <a href="index.html#contact">Contact</a>
     </div>
     <div class="footer-bar">
-      <p id="footerCopyright">© 2025 WildFlower_WoodenMountain · Fait avec 🌸 en France</p>
+      <p id="footerCopyright">© 2025 WildFlower_WoodenMountain · Fait avec amour en France</p>
       <p>Paiement sécurisé · Expédition soignée</p>
     </div>
   </div>
@@ -854,7 +866,7 @@
       document.getElementById('promoRow').style.display = 'flex';
       document.getElementById('promoVal').textContent = '— ' + promoDiscount.toFixed(2).replace('.',',') + ' €';
       renderSummary();
-      showToast('Code promo appliqué ! 🌸');
+      showToast('Code promo appliqué !');
     } else {
       showToast('Code invalide ou expiré');
     }
