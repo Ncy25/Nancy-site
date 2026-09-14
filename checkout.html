@@ -594,37 +594,37 @@
         Mode de livraison
       </div>
       <div class="delivery-options">
-        <div class="del-opt selected" onclick="selectDel(this, 0)">
-          <div class="del-radio"><div class="del-radio-inner"></div></div>
-          <div class="del-info">
-            <div class="del-name">Lettre suivie — La Poste</div>
-            <div class="del-desc">Livraison en 2–3 jours ouvrés · Suivi inclus</div>
-          </div>
-          <div class="del-price" id="dp0">2,50 €</div>
-        </div>
-        <div class="del-opt" onclick="selectDel(this, 1)">
-          <div class="del-radio"><div class="del-radio-inner"></div></div>
-          <div class="del-info">
-            <div class="del-name">Colissimo avec avis de passage</div>
-            <div class="del-desc">Livraison en 2–3 jours ouvrés · Emballage renforcé</div>
-          </div>
-          <div class="del-price" id="dp1">5,50 €</div>
-        </div>
-        <div class="del-opt" onclick="selectDel(this, 2)">
-          <div class="del-radio"><div class="del-radio-inner"></div></div>
-          <div class="del-info">
-            <div class="del-name">Colissimo International</div>
-            <div class="del-desc">Europe — 5 à 10 jours ouvrés</div>
-          </div>
-          <div class="del-price" id="dp2">8,00 €</div>
-        </div>
-        <div class="del-opt" id="delOptPickup" onclick="selectDel(this, 3)" style="display:none">
+        <div class="del-opt" id="delOptPickup" onclick="selectDel(this, 0)" style="display:none">
           <div class="del-radio"><div class="del-radio-inner"></div></div>
           <div class="del-info">
             <div class="del-name">Retrait en main propre</div>
             <div class="del-desc" id="pickupAddress">Adresse à définir</div>
           </div>
-          <div class="del-price" id="dp3">Gratuit</div>
+          <div class="del-price" id="dp0">Gratuit</div>
+        </div>
+        <div class="del-opt selected" onclick="selectDel(this, 1)">
+          <div class="del-radio"><div class="del-radio-inner"></div></div>
+          <div class="del-info">
+            <div class="del-name">Lettre suivie — La Poste</div>
+            <div class="del-desc">Livraison en 2–3 jours ouvrés · Suivi inclus</div>
+          </div>
+          <div class="del-price" id="dp1">2,50 €</div>
+        </div>
+        <div class="del-opt" onclick="selectDel(this, 2)">
+          <div class="del-radio"><div class="del-radio-inner"></div></div>
+          <div class="del-info">
+            <div class="del-name">Colissimo sans signature</div>
+            <div class="del-desc">Livraison en 2–3 jours ouvrés · Emballage renforcé</div>
+          </div>
+          <div class="del-price" id="dp2">5,50 €</div>
+        </div>
+        <div class="del-opt" onclick="selectDel(this, 3)">
+          <div class="del-radio"><div class="del-radio-inner"></div></div>
+          <div class="del-info">
+            <div class="del-name">Colissimo International</div>
+            <div class="del-desc">Europe — 5 à 10 jours ouvrés</div>
+          </div>
+          <div class="del-price" id="dp3">8,00 €</div>
         </div>
       </div>
       <div class="secure-row" style="margin-top:16px">
@@ -804,7 +804,7 @@
   function selectDel(el, idx) {
     document.querySelectorAll('.del-opt').forEach(o => o.classList.remove('selected'));
     el.classList.add('selected');
-    const prices = [2.50, 5.50, 8.00, 0];
+    const prices = [0, 2.50, 5.50, 8.00];
     deliveryCost = prices[idx];
     renderSummary();
   }
