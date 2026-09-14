@@ -385,14 +385,6 @@
     }
     .trust-item svg { color: var(--sage); }
 
-    /* note poétique */
-    .poem-note {
-      margin-top: 16px;
-      background: var(--blush);
-      border-radius: 16px; padding: 16px 18px;
-      border-left: 3px solid var(--peach);
-    }
-    .poem-note p { font-family: var(--font-d); font-size: 15px; font-style: italic; color: var(--brown); line-height: 1.65; }
     #cardRecap { display: none; }
 
     /* ── SUCCESS STATE ── */
@@ -453,7 +445,6 @@
       #cardAdresse { order: 5; }
       #cardRecap { order: 6; display: block; }
       #cardPaiement { order: 7; }
-      .poem-note { order: 8; }
       .d1, .d2, .d3 { transition-delay: 0s; }
       .form-card, .summary-card { margin-bottom: 4px !important; }
       #cardRecap, #cardPaiement { margin-top: 0 !important; }
@@ -754,11 +745,6 @@
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
           <p>Après avoir cliqué sur "Confirmer & payer", tu seras redirigée vers notre partenaire de paiement sécurisé Stripe pour saisir tes coordonnées bancaires. Aucune donnée de carte ne transite par notre site.</p>
         </div>
-      </div>
-
-      <!-- Poème -->
-      <div class="poem-note r d2">
-        <p>"Chaque création part avec un peu de moi — et beaucoup d'amour pour vous."</p>
       </div>
     </div>
   </div>
