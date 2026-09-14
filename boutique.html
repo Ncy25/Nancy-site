@@ -905,7 +905,7 @@
   function addToCart(name, price, emoji, image) {
     const ex = cart.find(i => i.name === name);
     ex ? ex.qty++ : cart.push({ name, price, emoji, image: image || '', qty: 1 });
-    renderCart(); toast('Ajouté au panier 🌸'); openCart();
+    renderCart(); toast('Ajouté au panier');
   }
 
   function renderCart() {
