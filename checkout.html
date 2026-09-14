@@ -624,7 +624,7 @@
             <div class="del-name">Colissimo International</div>
             <div class="del-desc">Europe — 5 à 10 jours ouvrés</div>
           </div>
-          <div class="del-price" id="dp3">8,00 €</div>
+          <div class="del-price" id="dp3">15,00 €</div>
         </div>
       </div>
       <div class="secure-row" style="margin-top:16px">
@@ -804,7 +804,7 @@
   function selectDel(el, idx) {
     document.querySelectorAll('.del-opt').forEach(o => o.classList.remove('selected'));
     el.classList.add('selected');
-    const prices = [0, 2.50, 5.50, 8.00];
+    const prices = [0, 2.50, 5.50, 15.00];
     deliveryCost = prices[idx];
     renderSummary();
   }
