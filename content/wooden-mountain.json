@@ -45,6 +45,22 @@
       "image": "/images/uploads/Photoroom-20241122_105609.png",
       "custom_gravure": true,
       "custom_finition": false
+    },
+    {
+      "id": "Couches-superposes",
+      "name": "Layered",
+      "category": "Bois",
+      "occasion": "Ecole",
+      "price": 35,
+      "emoji": "",
+      "description": "Zoom sur le nouvel effet \"Layered\" (couches superposés) en bois qui est à personnaliser au mot ou prénom de ton choix !\n\n‣ La structure en bois solide et épurée.\nDes motifs découpés avec soin\nTrois couleurs assorties (Ici, du bleu pour la sérénité et du doré pour la valeur) \nUn message gravé avec amour: \"Merci\" et\n\"Super\".\nEt la touche finale : L'intention !\n\nLe cadeau parfait pour célébrer la fin d'une belle année scolaire.",
+      "colors": [],
+      "bg": "",
+      "badge": "",
+      "stock": "in_stock",
+      "image": "/images/uploads/20260701_155950.jpg",
+      "custom_gravure": true,
+      "custom_finition": false
     }
   ]
 }
