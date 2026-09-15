@@ -257,6 +257,21 @@
       "stock": "in_stock",
       "image": "",
       "show_on_home": false
+    },
+    {
+      "id": "colliers",
+      "name": "Maë - Saint valentin",
+      "category": "Colliers",
+      "price": 30,
+      "variant": "uni",
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "",
+      "badge": "",
+      "stock": "in_stock",
+      "image": "",
+      "show_on_home": false
     }
   ],
   "feat_btn_link": "https://wildflower-wm.fr/nouveautes.html",
