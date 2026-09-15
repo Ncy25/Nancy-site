@@ -7,7 +7,7 @@
   "creoles_title": "Les créoles",
   "pampilles_title": "Les pampilles",
   "bracelets_title": "Les bracelets",
-  "colliers_title": "",
+  "colliers_title": "Les colliers",
   "pampilles_tab_all": "Tout voir",
   "pampilles_tab_uni": "Pampilles unies",
   "pampilles_tab_motifs": "Pampilles à motifs",
@@ -241,6 +241,21 @@
       "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/Rectangulaires-dorées.jpg",
+      "show_on_home": false
+    },
+    {
+      "id": "bracelets",
+      "name": "Théa - Fetes de mere",
+      "category": "Bracelets",
+      "price": 25,
+      "variant": "motifs",
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "",
+      "badge": "",
+      "stock": "in_stock",
+      "image": "",
       "show_on_home": false
     }
   ],
