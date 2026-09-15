@@ -88,6 +88,8 @@ collections:
           - { label: "Étiquette section produits", name: "section_label", widget: "string" }
           - { label: "Titre section produits", name: "section_title", widget: "string" }
           - { label: "Titre section \"Choisis tes créoles\"", name: "creoles_title", widget: "string" }
+          - { label: "Titre section \"Les Bracelets\"", name: "bracelets_title", widget: "string", required: false }
+          - { label: "Titre section \"Les Colliers\"", name: "colliers_title", widget: "string", required: false }
           - { label: "Titre section \"Choisis tes pampilles\"", name: "pampilles_title", widget: "string" }
           - { label: "Bouton pampilles — Tout voir", name: "pampilles_tab_all", widget: "string" }
           - { label: "Bouton pampilles — Unies", name: "pampilles_tab_uni", widget: "string" }
@@ -102,8 +104,7 @@ collections:
               - label: "Catégorie"
                 name: "category"
                 widget: "select"
-                options: ["Pampilles", "Créoles"]
-                hint: "Coche la catégorie de ce produit."
+                options: ["Pampilles", "Créoles", "Bracelets", "Colliers"]
                 required: false
               - { label: "Prix (€)", name: "price", widget: "number", value_type: "float", required: false }
               - label: "Motif ou uni ?"
