@@ -240,6 +240,13 @@ collections:
                 widget: "select"
                 options: ["Bois", "Plexiglass"]
                 required: false
+                hint: "Information sur la matière (n'affecte plus les filtres de la page)."
+              - label: "Occasion"
+                name: "occasion"
+                widget: "select"
+                options: ["Cave&Bar", "Noël", "Pâques", "Naissance", "Mariage", "Ecole"]
+                required: false
+                hint: "Détermine dans quel filtre ce produit apparaît sur la page."
               - { label: "Prix (€)", name: "price", widget: "number", value_type: "float", required: false }
               - { label: "Emoji (utilisé si pas de photo)", name: "emoji", widget: "string", required: false }
               - { label: "Description", name: "description", widget: "text", required: false }
