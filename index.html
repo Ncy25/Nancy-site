@@ -1028,7 +1028,7 @@
 <div class="overlay" id="wov" onclick="toggleWishDrawer()"></div>
 <div class="drawer" id="wdr" role="dialog" aria-label="Mes favoris">
   <div class="dr-head"><h3>Mes favoris</h3><button class="dr-close" onclick="toggleWishDrawer()">✕</button></div>
-  <div class="dr-items" id="wi"><div class="wish-drawer-empty" id="we">Aucun coup de cœur pour l'instant 🌸</div></div>
+  <div class="dr-items" id="wi"><div class="wish-drawer-empty" id="we">Aucun coup de cœur pour l'instant</div></div>
 </div>
 <div class="toast" id="toast"></div>
 
@@ -1089,7 +1089,7 @@
     } else {
       wishlist.push({ id: p.id, name: p.name, category: p.category, price: p.price, emoji: p.emoji, bg: p.bg, image: p.image || '' });
       btn.classList.add('liked');
-      toast('Ajouté aux coups de cœur 🌸');
+      toast('Ajouté aux coups de cœur');
     }
     saveWishlist();
     renderWishlist();

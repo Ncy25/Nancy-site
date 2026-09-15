@@ -628,7 +628,7 @@
       .nl-form { flex-direction: column; }
       .nl-btn { width: 100%; text-align: center; }
       .filter-right { margin-left: 0; width: 100%; }
-      .filter-pills-row { display: flex; gap: 8px; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin: 0 -28px; padding: 0 28px 4px; }
+      .filter-pills-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 0; padding: 0; }
       .filter-pills-row::-webkit-scrollbar { display: none; }
       .filter-pill { flex-shrink: 0; padding: 8px 14px; font-size: 12.5px; white-space: nowrap; }
       .p-quick-add { display: none !important; }
@@ -914,7 +914,7 @@
 <div class="overlay" id="wov" onclick="toggleWishDrawer()"></div>
 <div class="drawer" id="wdr" role="dialog" aria-label="Mes favoris">
   <div class="dr-head"><h3>Mes favoris</h3><button class="dr-close" onclick="toggleWishDrawer()">✕</button></div>
-  <div class="dr-items" id="wi"><div class="wish-drawer-empty" id="we">Aucun coup de cœur pour l'instant 🌸</div></div>
+  <div class="dr-items" id="wi"><div class="wish-drawer-empty" id="we">Aucun coup de cœur pour l'instant</div></div>
 </div>
 <div class="toast" id="toast"></div>
 
@@ -1168,7 +1168,7 @@
   function toggleWish(e, btn) {
     e.stopPropagation();
     btn.classList.toggle('liked');
-    showToast(btn.classList.contains('liked') ? 'Ajouté aux coups de cœur 🌸' : 'Retiré des coups de cœur');
+    showToast(btn.classList.contains('liked') ? 'Ajouté aux coups de cœur' : 'Retiré des coups de cœur');
   }
 
   /* ─── SNEAK PEEK : rendu + collecte d'email réelle ─── */
@@ -1207,7 +1207,7 @@
     } else {
       wishlist.push({ id: p.id, name: p.name, category: p.category, price: p.price, emoji: p.emoji, bg: p.bg, image: p.image || '' });
       btn.classList.add('liked');
-      showToast('Ajouté aux coups de cœur 🌸');
+      showToast('Ajouté aux coups de cœur');
     }
     saveWishlist();
     renderWishlist();
