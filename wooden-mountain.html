@@ -825,8 +825,12 @@
     <div class="filter-row r">
       <div class="filter-pills-row" id="filterPillsRow">
         <button class="filter-pill active" onclick="filterPill('all', this)">Tout voir</button>
-        <button class="filter-pill" onclick="filterPill('bois', this)">Bois</button>
-        <button class="filter-pill" onclick="filterPill('plexiglass', this)">Plexiglass</button>
+        <button class="filter-pill" onclick="filterPill('cave-bar', this)">Cave&amp;Bar</button>
+        <button class="filter-pill" onclick="filterPill('noel', this)">Noël</button>
+        <button class="filter-pill" onclick="filterPill('paques', this)">Pâques</button>
+        <button class="filter-pill" onclick="filterPill('naissance', this)">Naissance</button>
+        <button class="filter-pill" onclick="filterPill('mariage', this)">Mariage</button>
+        <button class="filter-pill" onclick="filterPill('ecole', this)">Ecole</button>
       </div>
       <div class="filter-right">
         <select class="sort-select" id="sortSel" onchange="sortProducts()">
@@ -1015,7 +1019,7 @@
     novProducts = data.products || [];
 
     const cardsHtml = novProducts.map((p, idx) => `
-      <div class="p-card" data-cat="${novCatSlug(p.category)}" data-tags="${novTags(p)}" data-price="${p.price}" onclick="openModal(${idx})">
+      <div class="p-card" data-cat="${novCatSlug(p.occasion)}" data-tags="${novTags(p)}" data-price="${p.price}" onclick="openModal(${idx})">
         <div class="p-img" style="background:${p.bg || '#F5EDE8'}">
           ${p.badge === 'new' ? '<div class="p-badges"><span class="p-badge badge-new">Nouveau</span></div>' : ''}
           ${p.badge === 'exclu' ? '<div class="p-badges"><span class="p-badge badge-exclu">Exclu</span></div>' : ''}
