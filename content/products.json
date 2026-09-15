@@ -245,7 +245,7 @@
     },
     {
       "id": "bracelets",
-      "name": "Théa - Fetes de mere",
+      "name": "Théa - Fête des mères",
       "category": "Bracelets",
       "price": 25,
       "variant": "motifs",
@@ -254,7 +254,7 @@
       "colors": [],
       "bg": "",
       "badge": "",
-      "stock": "in_stock",
+      "stock": "low",
       "image": "",
       "show_on_home": false
     },
@@ -269,7 +269,7 @@
       "colors": [],
       "bg": "",
       "badge": "",
-      "stock": "in_stock",
+      "stock": "low",
       "image": "",
       "show_on_home": false
     }
