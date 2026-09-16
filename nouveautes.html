@@ -1062,6 +1062,16 @@
     }
     renderNouveautes(data);
     if (data.sneak) renderSneak(data.sneak);
+    // Ajoute automatiquement les produits boutique cochés "Afficher aussi sur Nouveautés"
+    fetch('content/products.json').then(r => r.json()).then(pd => {
+      const toAdd = (pd.products || []).filter(p => p.show_on_nouveautes);
+      const existingIds = new Set((data.products || []).map(p => p.id));
+      const newOnes = toAdd.filter(p => !existingIds.has(p.id));
+      if (newOnes.length) {
+        data.products = (data.products || []).concat(newOnes);
+        renderNouveautes(data);
+      }
+    }).catch(() => {});
     const urlParams = new URLSearchParams(window.location.search);
     const q = urlParams.get('q');
     if (q) {
