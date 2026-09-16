@@ -1052,7 +1052,22 @@
     document.querySelectorAll('.p-card, .feature-card').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 0.1 + 's'; obs.observe(el); });
   }
 
-  fetch('content/wooden-mountain.json').then(r => r.json()).then(data => {
+  fetch('content/wooden-mountain.json').then(r => {
+    if (!r.ok) throw new Error('HTTP ' + r.status + ' ' + r.statusText);
+    return r.text();
+  }).then(text => {
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch (parseErr) {
+      const box = document.createElement('div');
+      box.style.cssText = 'position:fixed;bottom:10px;left:10px;right:10px;background:#000;color:#0f0;font-family:monospace;font-size:11px;padding:12px;z-index:99999;max-height:50vh;overflow:auto;border-radius:8px;white-space:pre-wrap;';
+      box.textContent = 'ERREUR JSON: ' + parseErr.message + '\n\nContenu reçu (500 premiers caractères):\n' + text.slice(0, 500);
+      document.body.appendChild(box);
+      throw parseErr;
+    }
+    return data;
+  }).then(data => {
     const setText = (id, val) => { const el = document.getElementById(id); if (el && val) el.textContent = val; };
     setText('nvHeroEyebrow', data.hero_eyebrow);
     const nvTitle1El = document.getElementById('nvHeroTitle1');
@@ -1097,9 +1112,13 @@
       const si = document.getElementById('nouveautesSearchInput');
       if (si) { si.value = q; applyFilter(); }
     }
-  }).catch(() => {
+  }).catch((err) => {
     const lbl = document.getElementById('countLabel');
     if (lbl) lbl.textContent = 'Produits indisponibles pour le moment';
+    const box2 = document.createElement('div');
+    box2.style.cssText = 'position:fixed;bottom:10px;left:10px;right:10px;background:#000;color:#f66;font-family:monospace;font-size:11px;padding:12px;z-index:99999;border-radius:8px;white-space:pre-wrap;';
+    box2.textContent = 'ERREUR CHARGEMENT: ' + (err && err.message ? err.message : err);
+    document.body.appendChild(box2);
   });
 
   fetch('content/site.json').then(r => r.json()).then(site => {
