@@ -693,7 +693,7 @@
           </button>
           <div class="${p.image ? 'p-img-photo-wrap' : 'p-img-content'}">${productVisual(p)}</div>
           <div class="p-quick-add">
-            <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('${cartLabel(p.category, p.name).replace(/'/g,"\\'")}', ${p.price}, '${p.emoji || ''}', '${p.image || ''}')">
+            <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('${cartLabel(p.category, p.name).replace(/'/g,"\\'")}', ${p.price}, '${p.emoji || ''}', '${p.image || ''}', ${p.weight || 0})">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
               Ajouter au panier
             </button>
@@ -732,7 +732,7 @@
           </button>
           <div class="${p.image ? 'p-img-photo-wrap' : 'p-img-content'}">${productVisual(p)}</div>
           <div class="p-quick-add">
-            <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('${cartLabel(p.category, p.name).replace(/'/g,"\\'")}', ${p.price}, '${p.emoji || ''}', '${p.image || ''}')">
+            <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('${cartLabel(p.category, p.name).replace(/'/g,"\\'")}', ${p.price}, '${p.emoji || ''}', '${p.image || ''}', ${p.weight || 0})">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
               Ajouter au panier
             </button>
@@ -776,7 +776,7 @@
           </button>
           <div class="${p.image ? 'p-img-photo-wrap' : 'p-img-content'}">${productVisual(p)}</div>
           <div class="p-quick-add">
-            <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('${cartLabel(p.category, p.name).replace(/'/g,"\\'")}', ${p.price}, '${p.emoji || ''}', '${p.image || ''}')">
+            <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('${cartLabel(p.category, p.name).replace(/'/g,"\\'")}', ${p.price}, '${p.emoji || ''}', '${p.image || ''}', ${p.weight || 0})">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
               Ajouter au panier
             </button>
@@ -855,7 +855,7 @@
     document.getElementById('modalImg').style.background = p.bg || '#F5EDE8';
     document.getElementById('modalImg').innerHTML = productVisual(p);
     document.getElementById('modalAddBtn').onclick = () => {
-      for (let i = 0; i < modalQty; i++) addToCart(cartLabel(p.category, p.name), p.price, p.emoji, p.image);
+      for (let i = 0; i < modalQty; i++) addToCart(cartLabel(p.category, p.name), p.price, p.emoji, p.image, p.weight);
       closeModal();
     };
     document.getElementById('modalOverlay').classList.add('open');
@@ -922,7 +922,7 @@
       const thumb = item.image
         ? `<img src="${item.image}" style="width:100%;height:100%;object-fit:cover">`
         : `<div style="width:100%;height:100%;background:${item.bg || '#F5EDE8'};display:flex;align-items:center;justify-content:center;font-size:22px">${item.emoji || ''}</div>`;
-      el.innerHTML = `<div class="wish-thumb">${thumb}</div><div class="wish-info"><div class="wish-name">${cartLabel(item.category, item.name)}</div><div class="wish-price">${(item.price || 0).toFixed(2).replace('.',',')} €</div><div class="wish-actions"><button class="wish-btn-add" onclick="addToCart('${cartLabel(item.category, item.name).replace(/'/g,"\\'")}', ${item.price}, '${item.emoji || ''}', '${item.image || ''}')">Ajouter au panier</button><button class="wish-btn-remove" onclick="removeWish(${i})">Retirer</button></div></div>`;
+      el.innerHTML = `<div class="wish-thumb">${thumb}</div><div class="wish-info"><div class="wish-name">${cartLabel(item.category, item.name)}</div><div class="wish-price">${(item.price || 0).toFixed(2).replace('.',',')} €</div><div class="wish-actions"><button class="wish-btn-add" onclick="addToCart('${cartLabel(item.category, item.name).replace(/'/g,"\\'")}', ${item.price}, '${item.emoji || ''}', '${item.image || ''}', ${item.weight || 0})">Ajouter au panier</button><button class="wish-btn-remove" onclick="removeWish(${i})">Retirer</button></div></div>`;
       wi.appendChild(el);
     });
   }
@@ -963,9 +963,9 @@
   document.addEventListener("DOMContentLoaded", renderCart);
   if (document.readyState !== "loading") renderCart();
 
-  function addToCart(name, price, emoji, image) {
+  function addToCart(name, price, emoji, image, weight) {
     const ex = cart.find(i => i.name === name);
-    ex ? ex.qty++ : cart.push({ name, price, emoji, image: image || '', qty: 1 });
+    ex ? ex.qty++ : cart.push({ name, price, emoji, image: image || '', weight: weight || 0, qty: 1 });
     renderCart(); toast('Ajouté au panier');
   }
 

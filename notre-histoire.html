@@ -1155,9 +1155,9 @@
   document.addEventListener("DOMContentLoaded", renderCart);
   if (document.readyState !== "loading") renderCart();
 
-  function addToCart(name, price, emoji, image) {
+  function addToCart(name, price, emoji, image, weight) {
     const ex = cart.find(i => i.name === name);
-    ex ? ex.qty++ : cart.push({ name, price, emoji, image: image || '', qty: 1 });
+    ex ? ex.qty++ : cart.push({ name, price, emoji, image: image || '', weight: weight || 0, qty: 1 });
     renderCart(); toast('Ajouté au panier');
   }
 

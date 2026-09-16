@@ -276,6 +276,8 @@
     }
     .del-opt:hover { border-color: var(--peach); }
     .del-opt.selected { border-color: var(--peach); background: var(--rose-lt); }
+    .del-opt.disabled { opacity: .5; cursor: not-allowed; pointer-events: none; }
+    .del-weight-warning { font-size: 11.5px; color: #C0392B; font-weight: 600; margin-top: 4px; }
     .del-radio {
       width: 18px; height: 18px; border-radius: 50%;
       border: 2px solid var(--blush-mid);
@@ -614,11 +616,12 @@
           </div>
           <div class="del-price" id="dp0">Gratuit</div>
         </div>
-        <div class="del-opt selected" onclick="selectDel(this, 1)">
+        <div class="del-opt selected" id="delOptLettre" onclick="selectDel(this, 1)">
           <div class="del-radio"><div class="del-radio-inner"></div></div>
           <div class="del-info">
             <div class="del-name">Lettre suivie — La Poste</div>
             <div class="del-desc">Livraison en 2–3 jours ouvrés · Suivi inclus</div>
+            <div class="del-weight-warning" id="delWeightWarning" style="display:none">Indisponible : votre commande dépasse 20g</div>
           </div>
           <div>
             <div class="del-price" id="dp1">2,50 €</div>
@@ -792,8 +795,10 @@
     const el = document.getElementById('summaryItems');
     el.innerHTML = '';
     let sub = 0;
+    let totalWeight = 0;
     cartItems.forEach(item => {
       sub += item.price * item.qty;
+      totalWeight += (item.weight || 0) * item.qty;
       const div = document.createElement('div');
       div.className = 'sum-item';
       const thumbContent = item.image ? `<img src="${item.image}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:12px;position:absolute;inset:0">` : item.emoji;
@@ -807,6 +812,20 @@
       `;
       el.appendChild(div);
     });
+
+    // Lettre suivie limitée à 20g — désactive l'option si dépassé
+    const lettreOpt = document.getElementById('delOptLettre');
+    const lettreWarning = document.getElementById('delWeightWarning');
+    if (lettreOpt) {
+      const overWeight = totalWeight > 20;
+      lettreOpt.classList.toggle('disabled', overWeight);
+      if (lettreWarning) lettreWarning.style.display = overWeight ? 'block' : 'none';
+      if (overWeight && lettreOpt.classList.contains('selected')) {
+        // Bascule automatiquement vers Colissimo sans signature
+        const fallback = document.querySelectorAll('.del-opt')[2];
+        if (fallback) { lettreOpt.classList.remove('selected'); selectDel(fallback, 2); return; }
+      }
+    }
 
     const total = sub + (sub >= 50 ? 0 : deliveryCost) - promoDiscount;
     document.getElementById('subtotal').textContent = sub.toFixed(2).replace('.',',') + ' €';
