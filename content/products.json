@@ -25,6 +25,7 @@
       "badge": "exclu",
       "stock": "in_stock",
       "image": "/images/uploads/Coeur - Jeans.jpg",
+      "weight": 3,
       "show_on_home": true
     },
     {
@@ -40,6 +41,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Théa - Aquarelle d'automne.jpg",
+      "weight": 3,
       "show_on_home": true
     },
     {
@@ -55,6 +57,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Coeur Coral - Cranberry.jpg",
+      "weight": null,
       "show_on_home": false
     },
     {
@@ -70,6 +73,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Max - Rose Gold.jpg",
+      "weight": null,
       "show_on_home": true
     },
     {
@@ -85,6 +89,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Théa - Prune.jpg",
+      "weight": null,
       "show_on_home": true
     },
     {
@@ -100,6 +105,7 @@
       "badge": "new",
       "stock": "",
       "image": "/images/uploads/Mae - Chocolat.jpg",
+      "weight": null,
       "show_on_home": false
     },
     {
@@ -115,6 +121,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Théa - Champagne nacré.jpg",
+      "weight": null,
       "show_on_home": false
     },
     {
@@ -130,6 +137,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Mae - Terre Cuite.jpg",
+      "weight": null,
       "show_on_home": false
     },
     {
@@ -145,6 +153,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/20260909_164529.jpg",
+      "weight": null,
       "show_on_home": false
     },
     {
@@ -160,6 +169,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Mae - Olive.jpg",
+      "weight": null,
       "show_on_home": false
     },
     {
@@ -177,6 +187,7 @@
       "badge": "bestseller",
       "stock": "in_stock",
       "image": "/images/uploads/Martelées-dorées.jpg",
+      "weight": null,
       "show_on_home": false
     },
     {
@@ -194,6 +205,7 @@
       "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/Torsadées-dorées.jpg",
+      "weight": null,
       "show_on_home": false
     },
     {
@@ -209,6 +221,7 @@
       "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/20260916_182513.jpg",
+      "weight": null,
       "show_on_home": false
     },
     {
@@ -226,6 +239,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Rotatives-dorées.jpg",
+      "weight": null,
       "show_on_home": false
     },
     {
@@ -241,6 +255,7 @@
       "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/Lisses-dorées.jpg",
+      "weight": null,
       "show_on_home": false
     },
     {
@@ -256,6 +271,7 @@
       "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/Rectangulaires-dorées.jpg",
+      "weight": null,
       "show_on_home": false
     },
     {
@@ -271,6 +287,7 @@
       "badge": "",
       "stock": "low",
       "image": "",
+      "weight": null,
       "show_on_home": false
     },
     {
@@ -286,6 +303,7 @@
       "badge": "",
       "stock": "low",
       "image": "",
+      "weight": null,
       "show_on_home": false
     }
   ],
