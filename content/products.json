@@ -26,7 +26,8 @@
       "stock": "in_stock",
       "image": "/images/uploads/Coeur - Jeans.jpg",
       "weight": 10,
-      "show_on_home": true
+      "show_on_home": true,
+      "show_on_nouveautes": true
     },
     {
       "id": "pampilles-thea",
@@ -42,7 +43,8 @@
       "stock": "in_stock",
       "image": "/images/uploads/Théa - Aquarelle d'automne.jpg",
       "weight": 10,
-      "show_on_home": true
+      "show_on_home": true,
+      "show_on_nouveautes": true
     },
     {
       "id": "pampilles-coeurcoral",
@@ -58,7 +60,8 @@
       "stock": "in_stock",
       "image": "/images/uploads/Coeur Coral - Cranberry.jpg",
       "weight": 10,
-      "show_on_home": false
+      "show_on_home": false,
+      "show_on_nouveautes": true
     },
     {
       "id": "pampilles-max",
@@ -74,7 +77,8 @@
       "stock": "in_stock",
       "image": "/images/uploads/Max - Rose Gold.jpg",
       "weight": 10,
-      "show_on_home": true
+      "show_on_home": true,
+      "show_on_nouveautes": true
     },
     {
       "id": "Pampilles-thea",
@@ -90,7 +94,8 @@
       "stock": "in_stock",
       "image": "/images/uploads/Théa - Prune.jpg",
       "weight": 10,
-      "show_on_home": true
+      "show_on_home": true,
+      "show_on_nouveautes": false
     },
     {
       "id": "Pampilles-mae",
@@ -106,7 +111,8 @@
       "stock": "",
       "image": "/images/uploads/Mae - Chocolat.jpg",
       "weight": 10,
-      "show_on_home": false
+      "show_on_home": false,
+      "show_on_nouveautes": false
     },
     {
       "id": "pampilles-thea",
@@ -122,7 +128,8 @@
       "stock": "in_stock",
       "image": "/images/uploads/Théa - Champagne nacré.jpg",
       "weight": 10,
-      "show_on_home": false
+      "show_on_home": false,
+      "show_on_nouveautes": false
     },
     {
       "id": "pampilles-mae",
@@ -138,7 +145,8 @@
       "stock": "in_stock",
       "image": "/images/uploads/Mae - Terre Cuite.jpg",
       "weight": 10,
-      "show_on_home": false
+      "show_on_home": false,
+      "show_on_nouveautes": false
     },
     {
       "id": "pampilles-mae",
@@ -154,7 +162,8 @@
       "stock": "in_stock",
       "image": "/images/uploads/20260909_164529.jpg",
       "weight": 10,
-      "show_on_home": false
+      "show_on_home": false,
+      "show_on_nouveautes": false
     },
     {
       "id": "pampilles-mae",
@@ -170,7 +179,8 @@
       "stock": "in_stock",
       "image": "/images/uploads/Mae - Olive.jpg",
       "weight": 10,
-      "show_on_home": false
+      "show_on_home": false,
+      "show_on_nouveautes": false
     },
     {
       "id": "creoles-dorees",
@@ -188,7 +198,8 @@
       "stock": "in_stock",
       "image": "/images/uploads/Martelées-dorées.jpg",
       "weight": 10,
-      "show_on_home": false
+      "show_on_home": false,
+      "show_on_nouveautes": false
     },
     {
       "id": "créoles-dorées",
@@ -206,7 +217,8 @@
       "stock": "in_stock",
       "image": "/images/uploads/Torsadées-dorées.jpg",
       "weight": 10,
-      "show_on_home": false
+      "show_on_home": false,
+      "show_on_nouveautes": false
     },
     {
       "id": "créoles-argentées",
@@ -222,7 +234,8 @@
       "stock": "in_stock",
       "image": "/images/uploads/20260916_182513.jpg",
       "weight": 10,
-      "show_on_home": false
+      "show_on_home": false,
+      "show_on_nouveautes": false
     },
     {
       "id": "créoles-dorées",
@@ -240,7 +253,8 @@
       "stock": "in_stock",
       "image": "/images/uploads/Rotatives-dorées.jpg",
       "weight": 10,
-      "show_on_home": false
+      "show_on_home": false,
+      "show_on_nouveautes": false
     },
     {
       "id": "créoles-dorées",
@@ -256,7 +270,8 @@
       "stock": "in_stock",
       "image": "/images/uploads/Lisses-dorées.jpg",
       "weight": 10,
-      "show_on_home": false
+      "show_on_home": false,
+      "show_on_nouveautes": false
     },
     {
       "id": "creoles-dorees",
@@ -272,7 +287,8 @@
       "stock": "in_stock",
       "image": "/images/uploads/Rectangulaires-dorées.jpg",
       "weight": 10,
-      "show_on_home": false
+      "show_on_home": false,
+      "show_on_nouveautes": false
     },
     {
       "id": "bracelets",
@@ -288,7 +304,8 @@
       "stock": "low",
       "image": "",
       "weight": null,
-      "show_on_home": false
+      "show_on_home": false,
+      "show_on_nouveautes": false
     },
     {
       "id": "colliers",
@@ -304,7 +321,8 @@
       "stock": "low",
       "image": "",
       "weight": null,
-      "show_on_home": false
+      "show_on_home": false,
+      "show_on_nouveautes": false
     }
   ],
   "feat_btn_link": "https://wildflower-wm.fr/nouveautes.html",
