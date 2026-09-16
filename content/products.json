@@ -25,7 +25,7 @@
       "badge": "exclu",
       "stock": "in_stock",
       "image": "/images/uploads/Coeur - Jeans.jpg",
-      "weight": 3,
+      "weight": 10,
       "show_on_home": true
     },
     {
@@ -41,7 +41,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Théa - Aquarelle d'automne.jpg",
-      "weight": 3,
+      "weight": 10,
       "show_on_home": true
     },
     {
@@ -57,7 +57,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Coeur Coral - Cranberry.jpg",
-      "weight": null,
+      "weight": 10,
       "show_on_home": false
     },
     {
@@ -73,7 +73,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Max - Rose Gold.jpg",
-      "weight": null,
+      "weight": 10,
       "show_on_home": true
     },
     {
@@ -89,7 +89,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Théa - Prune.jpg",
-      "weight": null,
+      "weight": 10,
       "show_on_home": true
     },
     {
@@ -105,7 +105,7 @@
       "badge": "new",
       "stock": "",
       "image": "/images/uploads/Mae - Chocolat.jpg",
-      "weight": null,
+      "weight": 10,
       "show_on_home": false
     },
     {
@@ -121,7 +121,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Théa - Champagne nacré.jpg",
-      "weight": null,
+      "weight": 10,
       "show_on_home": false
     },
     {
@@ -137,7 +137,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Mae - Terre Cuite.jpg",
-      "weight": null,
+      "weight": 10,
       "show_on_home": false
     },
     {
@@ -153,7 +153,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/20260909_164529.jpg",
-      "weight": null,
+      "weight": 10,
       "show_on_home": false
     },
     {
@@ -169,7 +169,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Mae - Olive.jpg",
-      "weight": null,
+      "weight": 10,
       "show_on_home": false
     },
     {
@@ -187,7 +187,7 @@
       "badge": "bestseller",
       "stock": "in_stock",
       "image": "/images/uploads/Martelées-dorées.jpg",
-      "weight": null,
+      "weight": 10,
       "show_on_home": false
     },
     {
@@ -205,7 +205,7 @@
       "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/Torsadées-dorées.jpg",
-      "weight": null,
+      "weight": 10,
       "show_on_home": false
     },
     {
@@ -221,7 +221,7 @@
       "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/20260916_182513.jpg",
-      "weight": null,
+      "weight": 10,
       "show_on_home": false
     },
     {
@@ -239,7 +239,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Rotatives-dorées.jpg",
-      "weight": null,
+      "weight": 10,
       "show_on_home": false
     },
     {
@@ -255,7 +255,7 @@
       "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/Lisses-dorées.jpg",
-      "weight": null,
+      "weight": 10,
       "show_on_home": false
     },
     {
@@ -265,13 +265,13 @@
       "price": 7,
       "variant": "",
       "emoji": "",
-      "description": "Anneaux rectangulaires lisses à fermoir clipsable, finition dorée, diamètre 19 mm, épaisseur 2 mm (2g) compatibles avec toutes les pampilles.",
+      "description": "Anneaux rectangulaires lisses à fermoir clipsable, finition dorée, diamètre 19 mm, épaisseur 2 mm, compatibles avec toutes les pampilles.",
       "colors": [],
       "bg": "#f9e8e0",
       "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/Rectangulaires-dorées.jpg",
-      "weight": null,
+      "weight": 10,
       "show_on_home": false
     },
     {
