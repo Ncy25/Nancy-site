@@ -272,6 +272,21 @@
       "stock": "low",
       "image": "",
       "show_on_home": false
+    },
+    {
+      "id": "créoles-argentées",
+      "name": "Créoles torsadées argentées",
+      "category": "Créoles",
+      "price": 7,
+      "variant": "",
+      "emoji": "",
+      "description": "Anneaux torsadées à fermoir clipsable, finition argentée, diamètre 19 mm, épaisseur 2 mm (2g) compatibles avec toutes les pampilles.",
+      "colors": [],
+      "bg": "",
+      "badge": "",
+      "stock": "in_stock",
+      "image": "/images/uploads/20260916_182513.jpg",
+      "show_on_home": false
     }
   ],
   "feat_btn_link": "https://wildflower-wm.fr/nouveautes.html",
