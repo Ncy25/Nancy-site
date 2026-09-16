@@ -16,7 +16,7 @@
   "products": [
     {
       "id": "pick-up-de-noel",
-      "name": "Le Pick-up de Noël",
+      "name": "Pick-up de Noël",
       "category": "Bois",
       "occasion": "Noël",
       "price": 8,
@@ -69,7 +69,7 @@
       "occasion": "Naissance",
       "price": 10,
       "emoji": "",
-      "description": "",
+      "description": "Hauteur : 100 mm\nLargeur : 100 mm",
       "colors": [],
       "bg": "",
       "badge": "new",
