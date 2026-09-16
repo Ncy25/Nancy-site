@@ -1005,7 +1005,7 @@
           <div class="p-name">${p.name}</div>
           <div class="p-desc">${p.description || ''}</div>
           <div class="p-bottom">
-            <div class="p-price">${p.price.toFixed(2).replace('.',',')} €</div>
+            <div class="p-price">${(p.price || 0).toFixed(2).replace('.',',')} €</div>
             <div class="p-stock ${p.stock === 'low' ? 'low' : ''}"><span class="p-stock-dot"></span> ${p.stock === 'low' ? 'Dernières pièces' : 'En stock'}</div>
           </div>
         </div>
@@ -1251,7 +1251,7 @@
       const thumb = item.image
         ? `<img src="${item.image}" style="width:100%;height:100%;object-fit:cover">`
         : `<div style="width:100%;height:100%;background:${item.bg || '#F5EDE8'};display:flex;align-items:center;justify-content:center;font-size:22px">${item.emoji || ''}</div>`;
-      el.innerHTML = `<div class="wish-thumb">${thumb}</div><div class="wish-info"><div class="wish-name">${cartLabel(item.category, item.name)}</div><div class="wish-price">${item.price.toFixed(2).replace('.',',')} €</div><div class="wish-actions"><button class="wish-btn-add" onclick="addToCart('${cartLabel(item.category, item.name).replace(/'/g,"\\'")}', ${item.price}, '${item.emoji || ''}', '${item.image || ''}')">Ajouter au panier</button><button class="wish-btn-remove" onclick="removeWish(${i})">Retirer</button></div></div>`;
+      el.innerHTML = `<div class="wish-thumb">${thumb}</div><div class="wish-info"><div class="wish-name">${cartLabel(item.category, item.name)}</div><div class="wish-price">${(item.price || 0).toFixed(2).replace('.',',')} €</div><div class="wish-actions"><button class="wish-btn-add" onclick="addToCart('${cartLabel(item.category, item.name).replace(/'/g,"\\'")}', ${item.price}, '${item.emoji || ''}', '${item.image || ''}')">Ajouter au panier</button><button class="wish-btn-remove" onclick="removeWish(${i})">Retirer</button></div></div>`;
       wi.appendChild(el);
     });
   }
@@ -1335,7 +1335,7 @@
     document.getElementById('modalQty').textContent = 1;
     document.getElementById('modalCat').textContent = p.category;
     document.getElementById('modalName').textContent = p.name;
-    document.getElementById('modalPrice').textContent = p.price.toFixed(2).replace('.',',') + ' €';
+    document.getElementById('modalPrice').textContent = (p.price || 0).toFixed(2).replace('.',',') + ' €';
     document.getElementById('modalDesc').textContent = p.description;
     document.getElementById('modalImg').style.background = p.bg || '#F5EDE8';
     document.getElementById('modalImg').innerHTML = novVisual(p);

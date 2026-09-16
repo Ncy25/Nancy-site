@@ -1037,7 +1037,7 @@
           <div class="p-name">${p.name}</div>
           <div class="p-desc">${p.description || ''}</div>
           <div class="p-bottom">
-            <div class="p-price">${p.price.toFixed(2).replace('.',',')} €</div>
+            <div class="p-price">${(p.price || 0).toFixed(2).replace('.',',')} €</div>
             <div class="p-stock ${p.stock === 'low' ? 'low' : ''}"><span class="p-stock-dot"></span> ${p.stock === 'low' ? 'Dernières pièces' : 'En stock'}</div>
           </div>
         </div>
@@ -1052,22 +1052,7 @@
     document.querySelectorAll('.p-card, .feature-card').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 0.1 + 's'; obs.observe(el); });
   }
 
-  fetch('content/wooden-mountain.json').then(r => {
-    if (!r.ok) throw new Error('HTTP ' + r.status + ' ' + r.statusText);
-    return r.text();
-  }).then(text => {
-    let data;
-    try {
-      data = JSON.parse(text);
-    } catch (parseErr) {
-      const box = document.createElement('div');
-      box.style.cssText = 'position:fixed;bottom:10px;left:10px;right:10px;background:#000;color:#0f0;font-family:monospace;font-size:11px;padding:12px;z-index:99999;max-height:50vh;overflow:auto;border-radius:8px;white-space:pre-wrap;';
-      box.textContent = 'ERREUR JSON: ' + parseErr.message + '\n\nContenu reçu (500 premiers caractères):\n' + text.slice(0, 500);
-      document.body.appendChild(box);
-      throw parseErr;
-    }
-    return data;
-  }).then(data => {
+  fetch('content/wooden-mountain.json').then(r => r.json()).then(data => {
     const setText = (id, val) => { const el = document.getElementById(id); if (el && val) el.textContent = val; };
     setText('nvHeroEyebrow', data.hero_eyebrow);
     const nvTitle1El = document.getElementById('nvHeroTitle1');
@@ -1112,13 +1097,9 @@
       const si = document.getElementById('nouveautesSearchInput');
       if (si) { si.value = q; applyFilter(); }
     }
-  }).catch((err) => {
+  }).catch(() => {
     const lbl = document.getElementById('countLabel');
     if (lbl) lbl.textContent = 'Produits indisponibles pour le moment';
-    const box2 = document.createElement('div');
-    box2.style.cssText = 'position:fixed;bottom:10px;left:10px;right:10px;background:#000;color:#f66;font-family:monospace;font-size:11px;padding:12px;z-index:99999;border-radius:8px;white-space:pre-wrap;';
-    box2.textContent = 'ERREUR CHARGEMENT: ' + (err && err.message ? err.message : err);
-    document.body.appendChild(box2);
   });
 
   fetch('content/site.json').then(r => r.json()).then(site => {
@@ -1246,7 +1227,7 @@
       const thumb = item.image
         ? `<img src="${item.image}" style="width:100%;height:100%;object-fit:cover">`
         : `<div style="width:100%;height:100%;background:${item.bg || '#F5EDE8'};display:flex;align-items:center;justify-content:center;font-size:22px">${item.emoji || ''}</div>`;
-      el.innerHTML = `<div class="wish-thumb">${thumb}</div><div class="wish-info"><div class="wish-name">${item.name}</div><div class="wish-price">${item.price.toFixed(2).replace('.',',')} €</div><div class="wish-actions"><button class="wish-btn-add" onclick="addToCart('${item.name.replace(/'/g,"\\'")}', ${item.price}, '${item.emoji || ''}', '${item.image || ''}')">Ajouter au panier</button><button class="wish-btn-remove" onclick="removeWish(${i})">Retirer</button></div></div>`;
+      el.innerHTML = `<div class="wish-thumb">${thumb}</div><div class="wish-info"><div class="wish-name">${item.name}</div><div class="wish-price">${(item.price || 0).toFixed(2).replace('.',',')} €</div><div class="wish-actions"><button class="wish-btn-add" onclick="addToCart('${item.name.replace(/'/g,"\\'")}', ${item.price}, '${item.emoji || ''}', '${item.image || ''}')">Ajouter au panier</button><button class="wish-btn-remove" onclick="removeWish(${i})">Retirer</button></div></div>`;
       wi.appendChild(el);
     });
   }
@@ -1330,7 +1311,7 @@
     document.getElementById('modalQty').textContent = 1;
     document.getElementById('modalCat').textContent = p.category;
     document.getElementById('modalName').textContent = p.name;
-    document.getElementById('modalPrice').textContent = p.price.toFixed(2).replace('.',',') + ' €';
+    document.getElementById('modalPrice').textContent = (p.price || 0).toFixed(2).replace('.',',') + ' €';
     document.getElementById('modalDesc').textContent = p.description;
     document.getElementById('modalImg').style.background = p.bg || '#F5EDE8';
     document.getElementById('modalImg').innerHTML = novVisual(p);
