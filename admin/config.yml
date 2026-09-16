@@ -129,6 +129,7 @@ collections:
                 options: ["in_stock", "low"]
                 required: false
               - { label: "Photo du produit", name: "image", widget: "image", required: false, hint: "Laisser vide pour garder l'illustration actuelle." }
+              - { label: "Poids (grammes)", name: "weight", widget: "number", value_type: "int", required: false, hint: "Utilisé pour déterminer si Lettre suivie (max 20g) reste proposée au client." }
               - { label: "Afficher sur la page d'accueil", name: "show_on_home", widget: "boolean", default: false, required: false, hint: "Maximum 10 produits affichés sur l'accueil. Si aucun n'est coché, les 10 premiers s'affichent par défaut." }
 
   - name: "nouveautes"
@@ -182,6 +183,7 @@ collections:
                 options: ["in_stock", "low"]
                 required: false
               - { label: "Photo du produit", name: "image", widget: "image", required: false }
+              - { label: "Poids (grammes)", name: "weight", widget: "number", value_type: "int", required: false, hint: "Utilisé pour déterminer si Lettre suivie (max 20g) reste proposée au client." }
           - label: "Aperçu de la prochaine collection"
             name: "sneak"
             widget: "object"
@@ -264,6 +266,7 @@ collections:
                 options: ["in_stock", "low"]
                 required: false
               - { label: "Photo du produit", name: "image", widget: "image", required: false }
+              - { label: "Poids (grammes)", name: "weight", widget: "number", value_type: "int", required: false, hint: "Utilisé pour déterminer si Lettre suivie (max 20g) reste proposée au client." }
               - { label: "Propose la gravure personnalisée", name: "custom_gravure", widget: "boolean", default: false, required: false }
               - { label: "Propose la finition au choix", name: "custom_finition", widget: "boolean", default: false, required: false }
 
