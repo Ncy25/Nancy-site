@@ -131,6 +131,7 @@ collections:
               - { label: "Photo du produit", name: "image", widget: "image", required: false, hint: "Laisser vide pour garder l'illustration actuelle." }
               - { label: "Poids (grammes)", name: "weight", widget: "number", value_type: "int", required: false, hint: "Utilisé pour déterminer si Lettre suivie (max 20g) reste proposée au client." }
               - { label: "Afficher sur la page d'accueil", name: "show_on_home", widget: "boolean", default: false, required: false, hint: "Maximum 10 produits affichés sur l'accueil. Si aucun n'est coché, les 10 premiers s'affichent par défaut." }
+              - { label: "Afficher aussi sur la page Nouveautés", name: "show_on_nouveautes", widget: "boolean", default: false, required: false, hint: "Évite de publier deux fois la même annonce : coche pour que ce produit apparaisse aussi sur Nouveautés, en plus de la boutique." }
 
   - name: "nouveautes"
     label: "Nouveautés"
