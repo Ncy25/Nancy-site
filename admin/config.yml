@@ -245,7 +245,7 @@ collections:
               - label: "Occasion"
                 name: "occasion"
                 widget: "select"
-                options: ["Cave&Bar", "Noël", "Pâques", "Naissance", "Mariage", "Ecole"]
+                options: ["Cave&Bar", "Noël", "Déco murale", "Pâques", "Naissance", "Mariage", "Ecole"]
                 required: false
                 hint: "Détermine dans quel filtre ce produit apparaît sur la page."
               - { label: "Prix (€)", name: "price", widget: "number", value_type: "float", required: false }
