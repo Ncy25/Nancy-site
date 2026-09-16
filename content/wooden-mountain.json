@@ -77,6 +77,22 @@
       "image": "/images/uploads/20260916_103552 (1).png",
       "custom_gravure": false,
       "custom_finition": false
+    },
+    {
+      "id": "",
+      "name": "Hirondelle",
+      "category": "Plexiglass",
+      "occasion": "",
+      "price": null,
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/20260916_112321.jpg",
+      "custom_gravure": false,
+      "custom_finition": false
     }
   ]
 }
