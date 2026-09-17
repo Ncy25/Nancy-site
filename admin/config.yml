@@ -104,7 +104,7 @@ collections:
               - label: "Catégorie"
                 name: "category"
                 widget: "select"
-                options: ["Pampilles", "Créoles", "Bracelets", "Colliers"]
+                options: [{ label: "(Aucune)", value: "" }, "Pampilles", "Créoles", "Bracelets", "Colliers"]
                 required: false
               - { label: "Prix (€)", name: "price", widget: "number", value_type: "float", required: false }
               - label: "Motif ou uni ?"
@@ -166,7 +166,7 @@ collections:
               - label: "Catégorie"
                 name: "category"
                 widget: "select"
-                options: ["Pampilles", "Créoles"]
+                options: [{ label: "(Aucune)", value: "" }, "Pampilles", "Créoles"]
                 required: false
               - { label: "Prix (€)", name: "price", widget: "number", value_type: "float", required: false }
               - { label: "Emoji (utilisé si pas de photo)", name: "emoji", widget: "string", required: false }
@@ -242,13 +242,13 @@ collections:
               - label: "Catégorie"
                 name: "category"
                 widget: "select"
-                options: ["Bois", "Plexiglass"]
+                options: [{ label: "(Aucune)", value: "" }, "Bois", "Plexiglass"]
                 required: false
                 hint: "Information sur la matière (n'affecte plus les filtres de la page)."
               - label: "Occasion"
                 name: "occasion"
                 widget: "select"
-                options: ["Cave&Bar", "Noël", "Déco murale", "Pâques", "Naissance", "Mariage", "Ecole"]
+                options: [{ label: "(Aucune)", value: "" }, "Cave&Bar", "Noël", "Déco murale", "Pâques", "Naissance", "Mariage", "Ecole"]
                 required: false
                 hint: "Détermine dans quel filtre ce produit apparaît sur la page."
               - { label: "Prix (€)", name: "price", widget: "number", value_type: "float", required: false }
