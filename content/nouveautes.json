@@ -15,22 +15,7 @@
   "countdown_title": "Prochain drop — Collection Octobre ROSE",
   "countdown_subtitle": "Les prochaines pampilles arrivent bientôt.",
   "countdown_end": "2026-09-26T19:30:00",
-  "products": [
-    {
-      "id": "",
-      "name": "",
-      "category": "",
-      "price": null,
-      "emoji": "",
-      "description": "",
-      "colors": [],
-      "bg": "",
-      "badge": "",
-      "stock": "",
-      "image": "",
-      "weight": null
-    }
-  ],
+  "products": [],
   "sneak": null,
   "feature": {
     "description": "Notre création la plus joyeuse : deux formes florales différentes, dégradé nacré, finition or. Une seule paire de créoles, deux personnalités.",
