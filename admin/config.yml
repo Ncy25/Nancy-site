@@ -97,6 +97,7 @@ collections:
           - name: "products"
             label: "Produits"
             widget: "list"
+            required: false
             summary: "{{fields.name}} — {{fields.category}} ({{fields.price}}€)"
             fields:
               - { label: "Identifiant (unique, sans espace)", name: "id", widget: "string", required: false }
@@ -159,6 +160,7 @@ collections:
           - name: "products"
             label: "Produits nouveautés"
             widget: "list"
+            required: false
             summary: "{{fields.name}} — {{fields.category}} ({{fields.price}}€)"
             fields:
               - { label: "Identifiant (unique, sans espace)", name: "id", widget: "string", required: false }
@@ -235,6 +237,7 @@ collections:
           - name: "products"
             label: "Produits Wooden Mountain"
             widget: "list"
+            required: false
             summary: "{{fields.name}} — {{fields.category}} ({{fields.price}}€)"
             fields:
               - { label: "Identifiant (unique, sans espace)", name: "id", widget: "string", required: false }
