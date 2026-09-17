@@ -17,32 +17,18 @@
   "countdown_end": "2026-09-26T19:30:00",
   "products": [
     {
-      "id": "pampilles-mae",
-      "name": "Maë - Kaki nacré",
+      "id": "bla",
+      "name": "bla",
       "category": "Pampilles",
-      "price": 13,
+      "price": 1,
       "emoji": "",
       "description": "",
       "colors": [],
-      "bg": "#f9e8e0",
+      "bg": "",
       "badge": "new",
       "stock": "in_stock",
-      "image": "/images/uploads/20260909_164529.jpg",
-      "weight": null
-    },
-    {
-      "id": "pampilles-mae",
-      "name": "Maë - Olive",
-      "category": "Pampilles",
-      "price": 13,
-      "emoji": "",
-      "description": "",
-      "colors": [],
-      "bg": "#eef2e8",
-      "badge": "new",
-      "stock": "in_stock",
-      "image": "/images/uploads/Mae - Olive.jpg",
-      "weight": null
+      "image": "",
+      "weight": 2
     }
   ],
   "sneak": null,
