@@ -70,7 +70,7 @@
     }
     .nav-top {
       display: flex; align-items: center; justify-content: space-between;
-      height: 72px;
+      height: 100px;
       max-width: 1160px; margin: 0 auto; padding: 0 28px;
     }
     .nav-left { display: flex; align-items: center; gap: 22px; }
@@ -980,7 +980,7 @@
   fetch('content/site.json').then(r => r.json()).then(site => {
     if (site.logo_image) {
       const logo = document.getElementById('navLogo');
-      if (logo) logo.innerHTML = `<img src="${site.logo_image}" alt="${site.brand_name || 'WildFlower_WoodenMountain'}" style="height:48px;width:auto;display:block">`;
+      if (logo) logo.innerHTML = `<img src="${site.logo_image}" alt="${site.brand_name || 'WildFlower_WoodenMountain'}" style="height:90px;width:auto;display:block">`;
     }
     if (site.pickup_enabled !== false && site.pickup_address) {
       document.getElementById('pickupAddress').textContent = site.pickup_address;

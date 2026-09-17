@@ -40,7 +40,7 @@
 
     /* NAV */
     nav{position:sticky;top:0;z-index:200;background:rgba(255,252,250,0.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(242,191,181,0.3);}
-    .nav-top{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1160px;margin:0 auto;padding:0 28px;}
+    .nav-top{display:flex;align-items:center;justify-content:space-between;height:100px;max-width:1160px;margin:0 auto;padding:0 28px;}
     .nav-left{display:flex;align-items:center;gap:22px;}
     .nav-icon-btn{background:none;border:none;cursor:pointer;color:var(--brown-mid);font-size:17px;transition:color var(--ease);}
     .nav-icon-btn:hover{color:var(--peach-dk);}
@@ -243,7 +243,7 @@
   fetch('content/site.json').then(r => r.json()).then(site => {
     if (site.logo_image) {
       const logo = document.getElementById('navLogo');
-      if (logo) logo.innerHTML = `<img src="${site.logo_image}" alt="${site.brand_name || 'WildFlower_WoodenMountain'}" style="height:48px;width:auto;display:block">`;
+      if (logo) logo.innerHTML = `<img src="${site.logo_image}" alt="${site.brand_name || 'WildFlower_WoodenMountain'}" style="height:90px;width:auto;display:block">`;
     }
     const flw = document.getElementById('footerLogoWild');
     const flr = document.getElementById('footerLogoRow');
