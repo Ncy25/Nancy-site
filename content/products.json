@@ -104,7 +104,7 @@
       "price": 17,
       "variant": "motifs",
       "emoji": "",
-      "description": "Designs uniques, réalisés à la main, pampilles artisanales longueur 20 mm (2g) compatibles avec toutes les créoles",
+      "description": "Designs uniques, réalisés à la main, pampilles artisanales longueur 20 mm, compatibles avec toutes les créoles",
       "colors": [],
       "bg": "#f9e8e0",
       "badge": "new",
@@ -112,7 +112,7 @@
       "image": "/images/uploads/Mae - Chocolat.jpg",
       "weight": 10,
       "show_on_home": false,
-      "show_on_nouveautes": false
+      "show_on_nouveautes": true
     },
     {
       "id": "pampilles-thea",
@@ -121,7 +121,7 @@
       "price": 13,
       "variant": "uni",
       "emoji": "",
-      "description": "Designs uniques, réalisés à la main, pampilles artisanales longueur 18 mm (2g) compatibles avec toutes les créoles",
+      "description": "Designs uniques, réalisés à la main, pampilles artisanales longueur 18 mm, compatibles avec toutes les créoles",
       "colors": [],
       "bg": "#eef2e8",
       "badge": "new",
@@ -129,7 +129,7 @@
       "image": "/images/uploads/Théa - Champagne nacré.jpg",
       "weight": 10,
       "show_on_home": false,
-      "show_on_nouveautes": false
+      "show_on_nouveautes": true
     },
     {
       "id": "pampilles-mae",
@@ -138,7 +138,7 @@
       "price": 13,
       "variant": "uni",
       "emoji": "",
-      "description": "Designs uniques, réalisés à la main, pampilles artisanales longueur 20 mm (2g) compatibles avec toutes les créoles",
+      "description": "Designs uniques, réalisés à la main, pampilles artisanales longueur 20 mm, compatibles avec toutes les créoles",
       "colors": [],
       "bg": "#f5d5c8",
       "badge": "new",
@@ -146,7 +146,7 @@
       "image": "/images/uploads/Mae - Terre Cuite.jpg",
       "weight": 10,
       "show_on_home": false,
-      "show_on_nouveautes": false
+      "show_on_nouveautes": true
     },
     {
       "id": "pampilles-mae",
@@ -155,7 +155,7 @@
       "price": 13,
       "variant": "uni",
       "emoji": "",
-      "description": "Designs uniques, réalisés à la main, pampilles artisanales longueur 20 mm (2g) compatibles avec toutes les créoles",
+      "description": "Designs uniques, réalisés à la main, pampilles artisanales longueur 20 mm, compatibles avec toutes les créoles",
       "colors": [],
       "bg": "#f9e8e0",
       "badge": "new",
@@ -163,7 +163,7 @@
       "image": "/images/uploads/20260909_164529.jpg",
       "weight": 10,
       "show_on_home": false,
-      "show_on_nouveautes": false
+      "show_on_nouveautes": true
     },
     {
       "id": "pampilles-mae",
@@ -172,7 +172,7 @@
       "price": 13,
       "variant": "uni",
       "emoji": "",
-      "description": "Designs uniques, réalisés à la main, pampilles artisanales longueur 20 mm (2g) compatibles avec toutes les créoles",
+      "description": "Designs uniques, réalisés à la main, pampilles artisanales longueur 20 mm, compatibles avec toutes les créoles",
       "colors": [],
       "bg": "#eef2e8",
       "badge": "new",
@@ -180,7 +180,7 @@
       "image": "/images/uploads/Mae - Olive.jpg",
       "weight": 10,
       "show_on_home": false,
-      "show_on_nouveautes": false
+      "show_on_nouveautes": true
     },
     {
       "id": "creoles-dorees",
@@ -189,7 +189,7 @@
       "price": 7,
       "variant": "",
       "emoji": "✨",
-      "description": "Anneaux martelées à fermoir clipsable, finition dorée, diamètre 19 mm, épaisseur 2 mm (2g) compatibles avec toutes les pampilles.",
+      "description": "Anneaux martelées à fermoir clipsable, finition dorée, diamètre 19 mm, épaisseur 2 mm, compatibles avec toutes les pampilles.",
       "colors": [
         "#C9A853"
       ],
@@ -208,7 +208,7 @@
       "price": 7,
       "variant": "",
       "emoji": "🤍",
-      "description": "Anneaux torsadées à fermoir clipsable, finition dorée, diamètre 19 mm, épaisseur 2 mm (2g) compatibles avec toutes les pampilles.",
+      "description": "Anneaux torsadées à fermoir clipsable, finition dorée, diamètre 19 mm, épaisseur 2 mm, compatibles avec toutes les pampilles.",
       "colors": [
         "#A8B8C4"
       ],
@@ -218,7 +218,7 @@
       "image": "/images/uploads/Torsadées-dorées.jpg",
       "weight": 10,
       "show_on_home": false,
-      "show_on_nouveautes": false
+      "show_on_nouveautes": true
     },
     {
       "id": "créoles-argentées",
@@ -227,7 +227,7 @@
       "price": 7,
       "variant": "",
       "emoji": "",
-      "description": "Anneaux torsadées à fermoir clipsable, finition argentée, diamètre 19 mm, épaisseur 2 mm (2g) compatibles avec toutes les pampilles.",
+      "description": "Anneaux torsadées à fermoir clipsable, finition argentée, diamètre 19 mm, épaisseur 2 mm, compatibles avec toutes les pampilles.",
       "colors": [],
       "bg": "",
       "badge": "",
@@ -235,7 +235,7 @@
       "image": "/images/uploads/20260916_182513.jpg",
       "weight": 10,
       "show_on_home": false,
-      "show_on_nouveautes": false
+      "show_on_nouveautes": true
     },
     {
       "id": "créoles-dorées",
@@ -244,7 +244,7 @@
       "price": 7,
       "variant": "",
       "emoji": "🤍",
-      "description": "Anneaux rotatives à fermoir clipsable, finition dorée, diamètre 19 mm, épaisseur 2 mm (2g) compatibles avec toutes les pampilles.",
+      "description": "Anneaux rotatives à fermoir clipsable, finition dorée, diamètre 19 mm, épaisseur 2 mm, compatibles avec toutes les pampilles.",
       "colors": [
         "#A8B8C4"
       ],
@@ -263,7 +263,7 @@
       "price": 7,
       "variant": "",
       "emoji": "",
-      "description": "Anneaux lisses à fermoir clipsable, finition dorée, diamètre 19 mm, épaisseur 2 mm (2g) compatibles avec toutes les pampilles.",
+      "description": "Anneaux lisses à fermoir clipsable, finition dorée, diamètre 19 mm, épaisseur 2 mm, compatibles avec toutes les pampilles.",
       "colors": [],
       "bg": "#f5d5c8",
       "badge": "",
@@ -283,12 +283,12 @@
       "description": "Anneaux rectangulaires lisses à fermoir clipsable, finition dorée, diamètre 19 mm, épaisseur 2 mm, compatibles avec toutes les pampilles.",
       "colors": [],
       "bg": "#f9e8e0",
-      "badge": "",
+      "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Rectangulaires-dorées.jpg",
       "weight": 10,
       "show_on_home": false,
-      "show_on_nouveautes": false
+      "show_on_nouveautes": true
     },
     {
       "id": "bracelets",
