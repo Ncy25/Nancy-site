@@ -272,7 +272,7 @@ collections:
               - { label: "Photo du produit", name: "image", widget: "image", required: false }
               - { label: "Poids (grammes)", name: "weight", widget: "number", value_type: "int", required: false, hint: "Utilisé pour déterminer si Lettre suivie (max 20g) reste proposée au client." }
               - { label: "Propose la gravure personnalisée", name: "custom_gravure", widget: "boolean", default: false, required: false }
-              - { label: "Propose la finition au choix", name: "custom_finition", widget: "boolean", default: false, required: false }
+              - { label: "Demande Date, Heure, Poids et Taille au client", name: "custom_finition", widget: "boolean", default: false, required: false, hint: "Si activé, un champ texte obligatoire s'affiche sur la fiche produit pour que le client précise ces informations." }
 
   - name: "cgv"
     label: "CGV"
