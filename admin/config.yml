@@ -273,6 +273,7 @@ collections:
               - { label: "Poids (grammes)", name: "weight", widget: "number", value_type: "int", required: false, hint: "Utilisé pour déterminer si Lettre suivie (max 20g) reste proposée au client." }
               - { label: "Demande une gravure personnalisée au client", name: "custom_gravure", widget: "boolean", default: false, required: false, hint: "Si activé, un champ texte obligatoire s'affiche sur la fiche produit pour que le client précise le prénom/mot à graver." }
               - { label: "Demande Date, Heure, Poids et Taille au client", name: "custom_finition", widget: "boolean", default: false, required: false, hint: "Si activé, un champ texte obligatoire s'affiche sur la fiche produit pour que le client précise ces informations." }
+              - { label: "Demande de choisir 3 couleurs au client", name: "custom_colors3", widget: "boolean", default: false, required: false, hint: "Si activé, un champ texte obligatoire s'affiche sur la fiche produit pour que le client précise ses 3 couleurs." }
 
   - name: "cgv"
     label: "CGV"
