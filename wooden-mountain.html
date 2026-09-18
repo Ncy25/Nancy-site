@@ -505,6 +505,7 @@
     .modal-color-btn:hover, .modal-color-btn.sel { transform: scale(1.18); border-color: var(--brown); }
     .modal-custom { margin-bottom: 16px; }
     .modal-custom-label { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--brown-mid); margin-bottom: 8px; }
+    .modal-custom-label-small { display: block; font-size: 11.5px; font-weight: 600; color: var(--brown-mid); margin-bottom: 6px; }
     .modal-custom-opt { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--brown); margin-bottom: 8px; cursor: pointer; }
     .modal-custom-opt input { width: 16px; height: 16px; accent-color: var(--peach-dk); cursor: pointer; }
     .modal-custom-input { width: 100%; padding: 9px 12px; margin: -2px 0 10px 24px; width: calc(100% - 24px); border: 1px solid rgba(195,107,74,0.25); border-radius: 10px; font-size: 13px; font-family: inherit; color: var(--brown); background: var(--ivory); outline: none; }
@@ -866,9 +867,10 @@
           <input type="checkbox" id="chkGravure"> Gravure personnalisée
         </label>
         <input type="text" id="txtGravure" placeholder="Prénom ou mot à graver..." class="modal-custom-input" style="display:none" maxlength="20">
-        <label class="modal-custom-opt" id="optFinition" style="display:none">
-          <input type="checkbox" id="chkFinition"> Finition au choix
-        </label>
+        <div id="optFinition" style="display:none">
+          <label class="modal-custom-label-small">Date, Heure, Poids et Taille <span style="color:#C0392B">*</span></label>
+          <input type="text" id="txtFinition" placeholder="Ex : 12/12, 15h, 65kg, 1m70" class="modal-custom-input" required>
+        </div>
       </div>
       <div class="modal-qty-row">
         <div class="qty-ctrl">
@@ -1320,24 +1322,30 @@
     const optGravure = document.getElementById('optGravure');
     const optFinition = document.getElementById('optFinition');
     const chkGravure = document.getElementById('chkGravure');
-    const chkFinition = document.getElementById('chkFinition');
     const txtGravure = document.getElementById('txtGravure');
+    const txtFinition = document.getElementById('txtFinition');
     chkGravure.checked = false;
-    chkFinition.checked = false;
     txtGravure.value = '';
     txtGravure.style.display = 'none';
+    txtFinition.value = '';
+    txtFinition.style.borderColor = '';
     optGravure.style.display = p.custom_gravure ? 'flex' : 'none';
-    optFinition.style.display = p.custom_finition ? 'flex' : 'none';
+    optFinition.style.display = p.custom_finition ? 'block' : 'none';
     document.getElementById('modalCustomWrap').style.display = (p.custom_gravure || p.custom_finition) ? 'block' : 'none';
     chkGravure.onchange = () => { txtGravure.style.display = (p.custom_gravure && chkGravure.checked) ? 'block' : 'none'; };
 
     document.getElementById('modalAddBtn').onclick = () => {
+      if (p.custom_finition && !txtFinition.value.trim()) {
+        txtFinition.focus();
+        txtFinition.style.borderColor = '#C0392B';
+        return;
+      }
       const extras = [];
       if (p.custom_gravure && chkGravure.checked) {
         const word = txtGravure.value.trim();
         extras.push('Gravure' + (word ? ' : ' + word : ' personnalisée'));
       }
-      if (p.custom_finition && chkFinition.checked) extras.push('Finition au choix');
+      if (p.custom_finition) extras.push('Détails : ' + txtFinition.value.trim());
       const label = p.name + (extras.length ? ' (' + extras.join(', ') + ')' : '');
       for (let i = 0; i < modalQty; i++) addToCart(label, p.price, p.emoji, p.image, p.weight);
       closeModal();
