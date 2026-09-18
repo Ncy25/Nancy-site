@@ -52,7 +52,7 @@
     },
     {
       "id": "Couches-superposes",
-      "name": "Layered",
+      "name": "Atsem (Layered)",
       "category": "Bois",
       "occasion": "Ecole",
       "price": 35,
@@ -62,7 +62,7 @@
       "bg": "#f5d5c8",
       "badge": "",
       "stock": "in_stock",
-      "image": "/images/uploads/20260701_155950.jpg",
+      "image": "/images/uploads/20260701_153431.jpg",
       "weight": null,
       "custom_gravure": true,
       "custom_finition": false,
@@ -106,21 +106,21 @@
     },
     {
       "id": "blabla",
-      "name": "blabla",
+      "name": "Maîtresse (Layered)",
       "category": "Bois",
-      "occasion": "",
-      "price": 8,
+      "occasion": "Ecole",
+      "price": 35,
       "emoji": "",
       "description": "",
       "colors": [],
       "bg": "",
       "badge": "new",
       "stock": "in_stock",
-      "image": "",
+      "image": "/images/uploads/20260701_153630.jpg",
       "weight": null,
-      "custom_gravure": true,
+      "custom_gravure": false,
       "custom_finition": false,
-      "custom_colors3": false
+      "custom_colors3": true
     }
   ]
 }
