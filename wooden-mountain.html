@@ -871,6 +871,10 @@
           <label class="modal-custom-label-small">Date, Heure, Poids et Taille <span style="color:#C0392B">*</span></label>
           <input type="text" id="txtFinition" placeholder="Ex : 26.03.2025, 4:18, 3210g, 49cm" class="modal-custom-input" required>
         </div>
+        <div id="optColors3" style="display:none">
+          <label class="modal-custom-label-small">Choisis 3 couleurs <span style="color:#C0392B">*</span></label>
+          <input type="text" id="txtColors3" placeholder="Ex : Rose, Doré, Vert sauge" class="modal-custom-input" required>
+        </div>
       </div>
       <div class="modal-qty-row">
         <div class="qty-ctrl">
@@ -1321,15 +1325,20 @@
 
     const optGravure = document.getElementById('optGravure');
     const optFinition = document.getElementById('optFinition');
+    const optColors3 = document.getElementById('optColors3');
     const txtGravure = document.getElementById('txtGravure');
     const txtFinition = document.getElementById('txtFinition');
+    const txtColors3 = document.getElementById('txtColors3');
     txtGravure.value = '';
     txtGravure.style.borderColor = '';
     txtFinition.value = '';
     txtFinition.style.borderColor = '';
+    txtColors3.value = '';
+    txtColors3.style.borderColor = '';
     optGravure.style.display = p.custom_gravure ? 'block' : 'none';
     optFinition.style.display = p.custom_finition ? 'block' : 'none';
-    document.getElementById('modalCustomWrap').style.display = (p.custom_gravure || p.custom_finition) ? 'block' : 'none';
+    optColors3.style.display = p.custom_colors3 ? 'block' : 'none';
+    document.getElementById('modalCustomWrap').style.display = (p.custom_gravure || p.custom_finition || p.custom_colors3) ? 'block' : 'none';
 
     document.getElementById('modalAddBtn').onclick = () => {
       if (p.custom_gravure && !txtGravure.value.trim()) {
@@ -1342,9 +1351,15 @@
         txtFinition.style.borderColor = '#C0392B';
         return;
       }
+      if (p.custom_colors3 && !txtColors3.value.trim()) {
+        txtColors3.focus();
+        txtColors3.style.borderColor = '#C0392B';
+        return;
+      }
       const extras = [];
       if (p.custom_gravure) extras.push('Gravure : ' + txtGravure.value.trim());
       if (p.custom_finition) extras.push('Détails : ' + txtFinition.value.trim());
+      if (p.custom_colors3) extras.push('Couleurs : ' + txtColors3.value.trim());
       const label = p.name + (extras.length ? ' (' + extras.join(', ') + ')' : '');
       for (let i = 0; i < modalQty; i++) addToCart(label, p.price, p.emoji, p.image, p.weight);
       closeModal();
