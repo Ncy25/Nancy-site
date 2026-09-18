@@ -27,6 +27,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Photoroom-20241212_112217.png",
+      "weight": null,
       "custom_gravure": true,
       "custom_finition": false
     },
@@ -43,6 +44,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Photoroom-20241122_105609.png",
+      "weight": null,
       "custom_gravure": true,
       "custom_finition": false
     },
@@ -59,6 +61,7 @@
       "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/20260701_155950.jpg",
+      "weight": null,
       "custom_gravure": true,
       "custom_finition": false
     },
@@ -75,8 +78,9 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/20260916_103552 (1).png",
+      "weight": null,
       "custom_gravure": true,
-      "custom_finition": false
+      "custom_finition": true
     },
     {
       "id": "",
@@ -91,6 +95,7 @@
       "badge": "exclu",
       "stock": "in_stock",
       "image": "/images/uploads/20260916_112321.jpg",
+      "weight": null,
       "custom_gravure": false,
       "custom_finition": false
     },
@@ -107,6 +112,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "",
+      "weight": null,
       "custom_gravure": true,
       "custom_finition": false
     }
