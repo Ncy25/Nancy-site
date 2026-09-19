@@ -52,6 +52,15 @@ collections:
                   - { label: "Description", name: "description", widget: "text", required: false }
                   - { label: "Photo", name: "image", widget: "image", required: false }
           - { label: "Titre section 'lifestyle'", name: "lifestyle_title", widget: "string" }
+          - label: "Bandeau Wooden Mountain"
+            name: "wm_banner"
+            widget: "object"
+            required: false
+            fields:
+              - { label: "Petite phrase (ex : L'univers)", name: "eyebrow", widget: "string", required: false }
+              - { label: "Titre (ex : Wooden Mountain)", name: "title", widget: "string", required: false }
+              - { label: "Sous-titre", name: "subtitle", widget: "text", required: false }
+              - { label: "Texte du bouton (ex : Découvrir)", name: "button_text", widget: "string", required: false }
           - { label: "Titre section boutique", name: "boutique_title", widget: "string" }
           - { label: "Sous-titre section boutique", name: "boutique_subtitle", widget: "string" }
           - { label: "Texte sous les produits (avant les 3 rectangles)", name: "below_products_text", widget: "string", required: false }

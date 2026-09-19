@@ -136,19 +136,43 @@
             return h('img', { src: asset ? asset.url : '', style: { width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit' } });
           };
 
+          const stepsRaw = entry.getIn(['data', 'hero', 'steps']);
+          const stepsArr = stepsRaw && stepsRaw.toJS ? stepsRaw.toJS() : (Array.isArray(stepsRaw) ? stepsRaw : []);
+
           return h('div', {},
             h('div', { className: 'wf-promo' }, g(['promo_bar'])),
-            h('div', { className: 'wf-hero' },
-              h('div', { className: 'wf-script' }, g(['hero', 'script'])),
-              h('div', { className: 'wf-h1' }, g(['hero', 'title_line1']) + ' ' + g(['hero', 'title_line2'])),
-              h('div', { className: 'wf-sub' }, g(['hero', 'subtitle'])),
-              h('span', { className: 'wf-btn' }, g(['hero', 'button_text'])),
-              h('div', { style: { display: 'flex', gap: '10px', justifyContent: 'center', marginTop: '18px' } },
-                h('div', { style: { width: '80px', height: '80px', borderRadius: '14px', overflow: 'hidden' } }, heroImg(entry.getIn(['data', 'hero', 'main_image']))),
-                h('div', { style: { width: '40px', height: '40px', borderRadius: '10px', overflow: 'hidden' } }, heroImg(entry.getIn(['data', 'hero', 'small_image_1']))),
-                h('div', { style: { width: '40px', height: '40px', borderRadius: '10px', overflow: 'hidden' } }, heroImg(entry.getIn(['data', 'hero', 'small_image_2']))),
-                h('div', { style: { width: '40px', height: '40px', borderRadius: '10px', overflow: 'hidden' } }, heroImg(entry.getIn(['data', 'hero', 'small_image_3'])))
-              )
+            h('div', { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', alignItems: 'center', padding: '20px 0' } },
+              h('div', {},
+                h('div', { className: 'wf-script' }, g(['hero', 'script'])),
+                h('div', { style: { fontFamily: 'Playfair Display, serif', fontSize: '24px', fontWeight: 600, color: '#5C3A28', lineHeight: 1.25, marginBottom: '10px' } }, g(['hero', 'title'])),
+                h('div', { className: 'wf-sub', style: { textAlign: 'left', margin: 0 } }, g(['hero', 'subtitle'])),
+                h('span', { className: 'wf-btn', style: { marginTop: '14px', display: 'inline-block' } }, g(['hero', 'button_text']))
+              ),
+              h('div', { style: { width: '100%', aspectRatio: '4/5', borderRadius: '20px', overflow: 'hidden' } }, heroImg(entry.getIn(['data', 'hero', 'photo'])))
+            ),
+            h('div', { style: { display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '14px', padding: '10px 0 20px' } },
+              [0, 1, 2].map(i => {
+                const s = stepsArr[i] || {};
+                return h('div', { key: i, style: { textAlign: 'center' } },
+                  h('div', { style: { width: '100%', aspectRatio: '4/3', borderRadius: '12px', overflow: 'hidden', marginBottom: '8px' } }, heroImg(s.image)),
+                  h('div', { style: { fontFamily: 'Playfair Display, serif', fontWeight: 600, fontSize: '13px', color: '#5C3A28' } }, s.title || ''),
+                  h('div', { style: { fontSize: '11px', color: '#8B6F5C' } }, s.description || '')
+                );
+              })
+            ),
+            h('div', {
+              style: {
+                background: 'linear-gradient(120deg, #8FAF8A 0%, #7A9E74 100%)',
+                borderRadius: '16px', padding: '20px 24px', margin: '4px 0 20px',
+                display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px'
+              }
+            },
+              h('div', {},
+                h('div', { style: { fontSize: '10px', fontWeight: 600, letterSpacing: '.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.85)', marginBottom: '3px' } }, g(['wm_banner', 'eyebrow']) || "L'univers"),
+                h('div', { style: { fontFamily: 'Playfair Display, serif', fontSize: '19px', fontWeight: 600, color: '#fff', marginBottom: '4px' } }, g(['wm_banner', 'title']) || 'Wooden Mountain'),
+                h('div', { style: { fontSize: '11.5px', color: 'rgba(255,255,255,0.9)' } }, g(['wm_banner', 'subtitle']))
+              ),
+              h('span', { style: { flexShrink: 0, background: '#fff', color: '#8FAF8A', fontSize: '11px', fontWeight: 600, padding: '8px 16px', borderRadius: '999px', whiteSpace: 'nowrap' } }, g(['wm_banner', 'button_text']) || 'Découvrir')
             ),
             h('div', { className: 'wf-section-title' }, 'Section boutique'),
             h('div', { className: 'wf-section-h2' }, g(['boutique_title']) + ' — ' + g(['boutique_subtitle'])),
