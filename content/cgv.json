@@ -34,7 +34,7 @@
       "toc_label": "Prix",
       "tag": "Article 4",
       "title": "Prix",
-      "body": "Les prix sont affichés en euros (€), toutes taxes comprises (TTC). En tant que micro-entreprise en franchise de TVA (article 293 B du CGI), WildFlower_WoodenMountain ne collecte pas de TVA — la mention « TVA non applicable » s'applique.\n\n[ENCADRÉ] Pampilles Unies + Créoles : 20,00 € Pampilles à motifs + Créoles : 24,00 € Pampilles seules Unies : 13,00 € Pampilles seules Motifs : 17,00 € Créoles seules Dorées : 7,00 € Créoles seules Argentées : 7,00 € Frais de port : offerts dès 50€ d'achat\n\nLes prix peuvent être modifiés à tout moment. Le prix applicable est celui affiché au moment de la validation de la commande."
+      "body": "Les prix sont affichés en euros (€), toutes taxes comprises (TTC). En tant que micro-entreprise en franchise de TVA (article 293 B du CGI), WildFlower_WoodenMountain ne collecte pas de TVA — la mention « TVA non applicable » s'applique.\n\n[ENCADRÉ] Pampilles Unies + Créoles : 20,00€, Pampilles à motifs + Créoles : 24,00€, Pampilles seules Unies : 13,00€, Pampilles seules à Motifs : 17,00€, Créoles seules Dorées : 7,00€, Créoles seules Argentées : 7,00€, Frais de port : offerts dès 50€ d'achat.\n\nLes prix peuvent être modifiés à tout moment. Le prix applicable est celui affiché au moment de la validation de la commande."
     },
     {
       "slug": "cgv-paiement",
@@ -42,7 +42,7 @@
       "toc_label": "Paiement",
       "tag": "Article 5",
       "title": "Paiement",
-      "body": "Le paiement est exigible à la commande. Les moyens de paiement acceptés sont :\n\n- Carte bancaire (Visa, Mastercard, CB) — via un prestataire sécurisé\n- PayPal\n- Virement bancaire (sur demande, pour les commandes sur mesure)\n\nLes transactions sont sécurisées par chiffrement SSL. Wild Flower by Wooden Mountain ne conserve aucune donnée bancaire."
+      "body": "Le paiement est exigible à la commande. Les moyens de paiement acceptés sont :\n\n- Carte bancaire (Visa, Mastercard, CB) — via un prestataire sécurisé\n- PayPal\n- Virement bancaire (sur demande, pour les commandes sur mesure)\n\nLes transactions sont sécurisées par chiffrement SSL. WildFlower_WoodenMountain ne conserve aucune donnée bancaire."
     },
     {
       "slug": "cgv-livraison",
@@ -50,7 +50,7 @@
       "toc_label": "Livraison",
       "tag": "Article 6",
       "title": "Livraison",
-      "body": "Les commandes sont expédiées sous 3 à 5 jours ouvrés après confirmation du paiement, emballées avec soin.\n\n[ENCADRÉ] France métropolitaine : Lettre suivie ou Colissimo sous 2–3 jours DOM-TOM & International : Colissimo International, délais variables Livraison offerte dès 50€ d'achat en France métropolitaine En dessous de 50€ : frais de port selon le mode d'expédition choisi\n\nWildFlower_WoodenMountain ne peut être tenue responsable des retards imputables aux transporteurs ou aux services postaux. En cas de colis perdu, une réclamation sera ouverte auprès du transporteur dans les meilleurs délais."
+      "body": "Les commandes sont expédiées sous 3 à 5 jours ouvrés après confirmation du paiement, emballées avec soin.\n\n[ENCADRÉ] France métropolitaine : Lettre suivie ou Colissimo sous 2–3 jours DOM-TOM & International : Colissimo International, délais variables. La livraison est offerte dès 50€ d'achat en France métropolitaine. En dessous de 50€ : les frais de port sont selon le mode d'expédition choisi.\n\nWildFlower_WoodenMountain ne peut être tenue responsable des retards imputables aux transporteurs ou aux services postaux. En cas de colis perdu, une réclamation sera ouverte auprès du transporteur dans les meilleurs délais."
     },
     {
       "slug": "cgv-retractation",
@@ -82,7 +82,7 @@
       "toc_label": "Sur mesure",
       "tag": "Article 10",
       "title": "Commandes sur mesure",
-      "body": "WildFlower_WoodenMountain propose des créations sur mesure (couleur, motif, forme spécifique). Ces commandes font l'objet d'un échange préalable par e-mail pour définir le projet.\n\n[ENCADRÉ] Délai de réalisation : 2 à 4 semaines selon la complexité Acompte : 50% à la commande, solde à l'expédition Annulation : l'acompte versé est non remboursable si la production a démarré Droit de rétractation : non applicable (article L.221-28 du Code de la consommation)\n\nDes photos de validation seront envoyées avant expédition pour s'assurer de votre satisfaction."
+      "body": "WildFlower_WoodenMountain propose des créations sur mesure (couleur, motif, forme spécifique). Ces commandes font l'objet d'un échange préalable par e-mail pour définir le projet.\n\n[ENCADRÉ] Délai de réalisation : 2 à 4 semaines selon la complexité. Acompte : 50% à la commande, solde à l'expédition. Annulation : l'acompte versé est non remboursable si la production a démarré. Droit de rétractation : non applicable (article L.221-28 du Code de la consommation)\n\nDes photos de validation seront envoyées avant expédition pour s'assurer de votre satisfaction."
     },
     {
       "slug": "cgv-contact",
