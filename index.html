@@ -721,7 +721,7 @@
   <div class="hero-v2-top">
     <div class="hero-v2-text">
       <div class="hero-v2-script" id="heroScript">Nouvelle collection</div>
-      <h1 class="hero-v2-h1" id="heroTitle">Vos bijoux, vos règles : pampilles interchangeables à combiner à l'infini</h1>
+      <h1 class="hero-v2-h1" id="heroTitle">PAMPILLES INTERCHANGEABLE<br>A COMBINER A L'INFINI</h1>
       <p class="hero-v2-sub" id="heroSubtitle">Créez votre propre style chaque jour avec nos créoles et pampilles artisanales interchangeables.</p>
     </div>
     <div class="hero-v2-photo-wrap" id="heroPhotoWrap">
@@ -1211,7 +1211,10 @@
     setText('promoBarText', d.promo_bar);
     if (d.hero) {
       setText('heroScript', d.hero.script);
-      setText('heroTitle', d.hero.title);
+      if (d.hero.title) {
+        const titleEl = document.getElementById('heroTitle');
+        if (titleEl) titleEl.innerHTML = d.hero.title.replace(/\n/g, '<br>');
+      }
       setText('heroSubtitle', d.hero.subtitle);
       setText('heroButtonText', d.hero.button_text);
       const btnLink = document.getElementById('heroButtonLink');
