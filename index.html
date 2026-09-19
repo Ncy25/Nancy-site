@@ -226,6 +226,27 @@
       transition: transform var(--ease), box-shadow var(--ease);
     }
     .cat-block:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(195,107,74,0.15); }
+    .wm-banner {
+      margin-top: 18px;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      background: linear-gradient(120deg, var(--sage) 0%, #7A9E74 100%);
+      border-radius: 20px;
+      padding: 30px 36px;
+      text-decoration: none;
+      transition: transform var(--ease), box-shadow var(--ease);
+    }
+    .wm-banner:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(143,175,138,0.35); }
+    .wm-banner-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,0.85); margin-bottom: 4px; }
+    .wm-banner-title { font-family: var(--font-d); font-size: 26px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+    .wm-banner-sub { font-size: 14px; color: rgba(255,255,255,0.9); max-width: 420px; line-height: 1.5; }
+    .wm-banner-btn {
+      flex-shrink: 0;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; color: var(--sage);
+      font-family: var(--font-d); font-size: 14px; font-weight: 600;
+      padding: 13px 24px; border-radius: 999px;
+      white-space: nowrap;
+    }
     .cat-block-label {
       font-family: var(--font-d);
       font-size: 19px; font-weight: 600;
@@ -620,6 +641,8 @@
     }
     @media (max-width: 900px) {
       .prod-grid { grid-template-columns: repeat(2, 1fr); }
+      .wm-banner { flex-direction: column; text-align: center; padding: 28px 24px; }
+      .wm-banner-sub { max-width: none; }
     }
   </style>
 </head>
@@ -807,6 +830,18 @@
         <div class="cat-block-label">Boutique</div>
       </a>
     </div>
+
+    <a href="wooden-mountain.html" class="wm-banner r">
+      <div class="wm-banner-text">
+        <div class="wm-banner-eyebrow">L'univers</div>
+        <div class="wm-banner-title">Wooden Mountain</div>
+        <p class="wm-banner-sub">Des créations en bois façonnées avec soin, pour prolonger l'univers Wild Flower dans ton intérieur.</p>
+      </div>
+      <span class="wm-banner-btn">
+        Découvrir
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </a>
   </div>
 </section>
 
