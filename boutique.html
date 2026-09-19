@@ -374,6 +374,14 @@
     .footer-logo-wild { font-family: var(--font-s); font-size: 28px; color: #F2B899; }
     .footer-logo-row { font-family: var(--font-b); font-size: 13px; letter-spacing: .1em; color: var(--peach); margin-bottom: 12px; }
     .f-tagline { font-size: 13px; line-height: 1.7; max-width: 230px; }
+    .f-social { display: flex; gap: 10px; margin-top: 16px; }
+    .f-social-link {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      display: flex; align-items: center; justify-content: center;
+      color: inherit; transition: background var(--ease), transform var(--ease);
+    }
+    .f-social-link:hover { background: var(--peach); transform: translateY(-2px); }
     .f-col h4 { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,248,245,0.3); margin-bottom: 14px; }
     .f-col ul { display: flex; flex-direction: column; gap: 9px; }
     .f-col a { font-size: 13.5px; color: rgba(255,248,245,0.58); transition: color var(--ease); }
@@ -622,7 +630,19 @@
         <div class="footer-logo-wild" id="footerLogoWild">Wild</div>
         <div class="footer-logo-row" id="footerLogoRow">Flower · by Wooden Mountain</div>
         <p class="f-tagline" id="footerTagline">Pampilles interchangeables en argile polymère. Colorées, faites à la main, pour changer d'humeur en deux secondes.</p>
-      </div>
+
+        <div class="f-social" id="footerSocial">
+          <a href="#" id="socialFacebook" class="f-social-link" style="display:none" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+          </a>
+          <a href="#" id="socialInstagram" class="f-social-link" style="display:none" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a href="#" id="socialVinted" class="f-social-link" style="display:none" target="_blank" rel="noopener" aria-label="Vinted">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l3.2 13.5a1 1 0 001 .8h1.6a1 1 0 001-.8L13 8l2.2 9.5a1 1 0 001 .8h1.6a1 1 0 001-.8L22 4"/></svg>
+          </a>
+        </div>
+            </div>
       <div class="f-col">
         <h4>Navigation</h4>
         <ul>
@@ -828,6 +848,11 @@
   }).catch(() => {});
 
   fetch('content/site.json').then(r => r.json()).then(site => {
+    const socialMap = { socialFacebook: site.social_facebook, socialInstagram: site.social_instagram, socialVinted: site.social_vinted };
+    Object.keys(socialMap).forEach(id => {
+      const el = document.getElementById(id);
+      if (el && socialMap[id]) { el.href = socialMap[id]; el.style.display = 'flex'; }
+    });
     if (site.logo_image) {
       const logo = document.getElementById('navLogo');
       if (logo) logo.innerHTML = `<img src="${site.logo_image}" alt="${site.brand_name || 'WildFlower_WoodenMountain'}" style="height:90px;width:auto;display:block">`;
