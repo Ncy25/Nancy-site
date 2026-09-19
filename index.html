@@ -146,97 +146,67 @@
     .mobile-nav a { font-size: 14px; font-weight: 500; color: var(--brown-mid); letter-spacing: .08em; text-transform: uppercase; } .mobile-nav a.active { color: var(--peach-dk); }
 
     /* ── HERO ── */
-    .hero {
+    .hero-v2 {
       position: relative;
-      min-height: 88vh;
+      background: linear-gradient(180deg, #FDF3EC 0%, #FDF8F5 100%);
+      padding: 56px 0 0;
       overflow: hidden;
-      display: flex; align-items: center;
     }
-    .hero-gradient {
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, #FDE8DC 0%, #FCDCC8 25%, #FAD0B4 50%, #F8C8A8 75%, #F5C0A0 100%);
+    .hero-v2-top {
+      max-width: 1160px; margin: 0 auto; padding: 0 28px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
     }
-    /* wave shape at bottom */
-    .hero-wave {
-      position: absolute; bottom: -2px; left: 0; right: 0;
-      height: 80px; width: 100%;
+    .hero-v2-script {
+      font-family: var(--font-s); font-size: 24px; color: var(--terra);
+      margin-bottom: 6px; animation: fade-up .7s .1s both;
     }
-    .hero-blob1 {
-      position: absolute; top: -40px; right: 10%;
-      width: 320px; height: 320px; border-radius: 50%;
-      background: rgba(255,255,255,0.28);
-    }
-    .hero-blob2 {
-      position: absolute; bottom: 30px; left: -60px;
-      width: 260px; height: 260px; border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-    }
-    .hero-inner {
-      position: relative; z-index: 1;
-      width: 100%; max-width: 1160px; margin: 0 auto; padding: 80px 28px 100px;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
-    }
-    .hero-visual {
-      display: flex; flex-wrap: wrap; gap: 14px;
-      justify-content: center;
-    }
-    .hero-card {
-      background: rgba(255,255,255,0.55);
-      backdrop-filter: blur(8px);
-      border-radius: 18px;
-      padding: 18px;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 24px rgba(195,107,74,0.1);
-      transition: transform var(--ease);
-    }
-    .hero-card:hover { transform: rotate(-2deg) scale(1.04); }
-    .hero-card-main { width: 260px; height: 260px; border-radius: 26px; }
-    .hero-card-sm { width: 116px; height: 116px; border-radius: 18px; }
-
-    .hero-text { }
-    .hero-script {
-      font-family: var(--font-s);
-      font-size: 22px; color: var(--brown-mid);
-      margin-bottom: 4px;
-      animation: fade-up .7s .1s both;
-    }
-    .hero-h1 {
-      font-family: var(--font-d);
-      font-size: clamp(52px, 7vw, 86px);
-      font-weight: 600;
-      line-height: .95;
-      letter-spacing: -.02em;
-      color: #fff;
-      text-shadow: 0 2px 12px rgba(195,107,74,0.2);
-      margin-bottom: 24px;
+    .hero-v2-h1 {
+      font-family: var(--font-d); font-size: clamp(30px, 3.4vw, 42px);
+      font-weight: 600; line-height: 1.2; letter-spacing: -.01em;
+      color: var(--brown); margin-bottom: 18px;
       animation: fade-up .7s .2s both;
     }
-    .hero-sub {
-      font-size: 15px; color: rgba(255,255,255,0.9); line-height: 1.7;
-      max-width: 360px; margin-bottom: 32px;
+    .hero-v2-sub {
+      font-size: 15.5px; color: var(--brown-mid); line-height: 1.75;
+      max-width: 420px; margin-bottom: 30px;
       animation: fade-up .7s .3s both;
     }
-    .btn-hero {
+    .btn-hero-v2 {
       display: inline-flex; align-items: center; gap: 8px;
-      padding: 14px 32px;
-      background: #fff;
-      color: var(--peach-dk);
-      font-family: var(--font-b);
-      font-size: 12.5px; font-weight: 600;
+      padding: 15px 34px;
+      background: var(--peach); color: #fff;
+      font-family: var(--font-b); font-size: 12.5px; font-weight: 600;
       letter-spacing: .1em; text-transform: uppercase;
-      border: none; border-radius: 999px; cursor: pointer;
-      box-shadow: 0 4px 20px rgba(195,107,74,0.2);
+      border: none; border-radius: 999px; cursor: pointer; text-decoration: none;
+      box-shadow: 0 4px 20px rgba(195,107,74,0.22);
       transition: transform var(--ease), box-shadow var(--ease);
       animation: fade-up .7s .4s both;
     }
-    .btn-hero:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(195,107,74,0.28); }
+    .btn-hero-v2:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(195,107,74,0.3); background: var(--peach-dk); }
+    .hero-v2-photo-wrap {
+      position: relative; border-radius: 28px; overflow: hidden;
+      aspect-ratio: 4/5; background: var(--blush);
+      box-shadow: 0 16px 48px rgba(195,107,74,0.16);
+      animation: fade-up .7s .2s both;
+    }
+    .hero-v2-photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-v2-steps {
+      max-width: 1160px; margin: 64px auto 0; padding: 0 28px 72px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+    }
+    .hero-step { text-align: center; }
+    .hero-step-photo {
+      width: 100%; aspect-ratio: 4/3; border-radius: 18px; overflow: hidden;
+      background: var(--cream); margin-bottom: 16px;
+      box-shadow: 0 4px 20px rgba(195,107,74,0.08);
+    }
+    .hero-step-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-step-title { font-family: var(--font-d); font-size: 17px; font-weight: 600; color: var(--brown); margin-bottom: 6px; }
+    .hero-step-desc { font-size: 13.5px; color: var(--brown-mid); line-height: 1.6; }
     @keyframes fade-up {
       from { opacity: 0; transform: translateY(18px); }
       to   { opacity: 1; transform: none; }
     }
-
-    /* sparkles in hero */
-    .hero .spark svg { fill: rgba(255,255,255,0.7); }
 
     /* ── CATEGORY BLOCKS ── */
     #categories { padding: 0 0 40px; background: var(--ivory); }
@@ -596,10 +566,11 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 860px) {
-      .hero-inner { grid-template-columns: 1fr; text-align: center; }
-      .hero-sub { margin: 0 auto 32px; }
-      .btn-hero { margin: 0 auto; }
-      .hero-visual { order: -1; }
+      .hero-v2-top { grid-template-columns: 1fr; text-align: center; gap: 32px; }
+      .hero-v2-sub { margin: 0 auto 30px; }
+      .btn-hero-v2 { margin: 0 auto; }
+      .hero-v2-photo-wrap { order: -1; max-width: 380px; margin: 0 auto; aspect-ratio: 1/1; }
+      .hero-v2-steps { grid-template-columns: 1fr; gap: 32px; }
       .cat-grid { grid-template-columns: 1fr; }
       .about-inner { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
@@ -721,73 +692,39 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero" aria-label="Hero Wild Flower">
-  <div class="hero-gradient"></div>
-  <div class="hero-blob1"></div>
-  <div class="hero-blob2"></div>
-
-  <!-- sparkles -->
-  <div class="spark" style="top:14%;left:55%">
-    <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg>
-  </div>
-  <div class="spark" style="top:68%;right:12%;animation-delay:.8s">
-    <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg>
-  </div>
-  <div class="spark" style="top:30%;right:8%;animation-delay:1.4s">
-    <svg width="10" height="10" viewBox="0 0 24 24"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg>
-  </div>
-
-  <div class="hero-inner">
-    <!-- Visual tiles -->
-    <div class="hero-visual">
-      <div class="hero-card hero-card-main" id="heroImgMain">
-        <svg width="160" height="160" viewBox="0 0 160 160" fill="none">
-          <!-- main pampille shape -->
-          <ellipse cx="80" cy="80" rx="52" ry="62" fill="#F0A882" opacity=".6" transform="rotate(-15 80 80)"/>
-          <ellipse cx="80" cy="80" rx="52" ry="62" fill="#E8907A" opacity=".35" transform="rotate(15 80 80)"/>
-          <circle cx="80" cy="80" r="24" fill="#F5C4A8" opacity=".9"/>
-          <circle cx="80" cy="80" r="14" fill="#fff" opacity=".5"/>
-          <!-- petals -->
-          <ellipse cx="80" cy="30" rx="12" ry="18" fill="#F0A882" opacity=".55"/>
-          <ellipse cx="80" cy="130" rx="12" ry="18" fill="#F0A882" opacity=".55"/>
-          <ellipse cx="30" cy="80" rx="18" ry="12" fill="#F0A882" opacity=".5"/>
-          <ellipse cx="130" cy="80" rx="18" ry="12" fill="#F0A882" opacity=".5"/>
-        </svg>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:14px">
-        <div class="hero-card hero-card-sm" id="heroImgSmall1">
-          <svg width="56" height="56" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="20" stroke="#C9A853" stroke-width="4" fill="none"/><circle cx="28" cy="48" r="3.5" fill="#C9A853"/></svg>
-        </div>
-        <div class="hero-card hero-card-sm" id="heroImgSmall2">
-          <svg width="56" height="56" viewBox="0 0 56 56" fill="none"><path d="M28 50C16 38 4 30 4 20C4 11 11 6 18 9C22.5 11 26 17 28 22C30 17 33.5 11 38 9C45 6 52 11 52 20C52 30 40 38 28 50Z" fill="#8FAF8A" opacity=".6"/></svg>
-        </div>
-        <div class="hero-card hero-card-sm" id="heroImgSmall3">
-          <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-            <circle cx="28" cy="18" r="9" fill="#F0A882" opacity=".55"/>
-            <circle cx="38" cy="28" r="9" fill="#F0A882" opacity=".5"/>
-            <circle cx="28" cy="38" r="9" fill="#F0A882" opacity=".55"/>
-            <circle cx="18" cy="28" r="9" fill="#F0A882" opacity=".5"/>
-            <circle cx="28" cy="28" r="8" fill="#F5C4A8"/>
-            <circle cx="28" cy="28" r="4" fill="#fff" opacity=".5"/>
-          </svg>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-text">
-      <div class="hero-script" id="heroScript">Nouvelle collection</div>
-      <h1 class="hero-h1"><span id="heroTitle1">JOYFUL</span><br id="heroTitleBr"><span id="heroTitle2">PAMPILLES</span></h1>
-      <p class="hero-sub" id="heroSubtitle">Des créations interchangeables en argile polymère, colorées et façonnées à la main — pour changer d'humeur en deux secondes.</p>
-      <a href="nouveautes.html" class="btn-hero">
-        <span id="heroButtonText">Découvrir maintenant</span>
+<section class="hero-v2" aria-label="Hero Wild Flower">
+  <div class="hero-v2-top">
+    <div class="hero-v2-text">
+      <div class="hero-v2-script" id="heroScript">Nouvelle collection</div>
+      <h1 class="hero-v2-h1" id="heroTitle">Vos bijoux, vos règles : pampilles interchangeables à combiner à l'infini</h1>
+      <p class="hero-v2-sub" id="heroSubtitle">Créez votre propre style chaque jour avec nos créoles et pampilles artisanales interchangeables.</p>
+      <a href="nouveautes.html" class="btn-hero-v2" id="heroButtonLink">
+        <span id="heroButtonText">Découvrir les pampilles</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
     </div>
+    <div class="hero-v2-photo-wrap" id="heroPhotoWrap">
+      <img id="heroPhoto" src="" alt="Wild Flower — bijoux interchangeables" style="display:none">
+    </div>
   </div>
 
-  <svg class="hero-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#FFFCFA"/>
-  </svg>
+  <div class="hero-v2-steps" id="heroSteps">
+    <div class="hero-step">
+      <div class="hero-step-photo"><img id="heroStep1Img" src="" alt="" style="display:none"></div>
+      <div class="hero-step-title" id="heroStep1Title">1. La base</div>
+      <div class="hero-step-desc" id="heroStep1Desc">Composez une mix de matières et de créoles pour la base.</div>
+    </div>
+    <div class="hero-step">
+      <div class="hero-step-photo"><img id="heroStep2Img" src="" alt="" style="display:none"></div>
+      <div class="hero-step-title" id="heroStep2Title">2. Les pampilles</div>
+      <div class="hero-step-desc" id="heroStep2Desc">Créez vos pampilles artisanales interchangeables.</div>
+    </div>
+    <div class="hero-step">
+      <div class="hero-step-photo"><img id="heroStep3Img" src="" alt="" style="display:none"></div>
+      <div class="hero-step-title" id="heroStep3Title">3. Le mix</div>
+      <div class="hero-step-desc" id="heroStep3Desc">Composez et personnalisez votre mix à l'infini.</div>
+    </div>
+  </div>
 </section>
 
 <!-- SUR MESURE -->
@@ -1283,30 +1220,32 @@
     setText('promoBarText', d.promo_bar);
     if (d.hero) {
       setText('heroScript', d.hero.script);
-      setText('heroTitle1', d.hero.title_line1);
-      const heroTitle2El = document.getElementById('heroTitle2');
-      const heroTitleBrEl = document.getElementById('heroTitleBr');
-      if (heroTitle2El) {
-        if (d.hero.title_line2) {
-          heroTitle2El.textContent = d.hero.title_line2;
-          heroTitle2El.style.display = '';
-          if (heroTitleBrEl) heroTitleBrEl.style.display = '';
-        } else {
-          heroTitle2El.textContent = '';
-          heroTitle2El.style.display = 'none';
-          if (heroTitleBrEl) heroTitleBrEl.style.display = 'none';
-        }
-      }
+      setText('heroTitle', d.hero.title);
       setText('heroSubtitle', d.hero.subtitle);
       setText('heroButtonText', d.hero.button_text);
-      const setImg = (id, path) => {
-        const el = document.getElementById(id);
-        if (el && path) el.innerHTML = `<img src="${path}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit">`;
+      const btnLink = document.getElementById('heroButtonLink');
+      if (btnLink && d.hero.button_link) btnLink.setAttribute('href', d.hero.button_link);
+      const setPhoto = (imgId, path) => {
+        const el = document.getElementById(imgId);
+        if (el && path) { el.src = path; el.style.display = 'block'; }
       };
-      setImg('heroImgMain', d.hero.main_image);
-      setImg('heroImgSmall1', d.hero.small_image_1);
-      setImg('heroImgSmall2', d.hero.small_image_2);
-      setImg('heroImgSmall3', d.hero.small_image_3);
+      setPhoto('heroPhoto', d.hero.photo);
+      if (d.hero.steps && Array.isArray(d.hero.steps)) {
+        d.hero.steps.forEach((s, i) => {
+          const n = i + 1;
+          setPhoto('heroStep' + n + 'Img', s.image);
+          if (s.title) setText('heroStep' + n + 'Title', s.title);
+          if (s.description) setText('heroStep' + n + 'Desc', s.description);
+        });
+      }
+      if (d.hero.steps && d.hero.steps.length) {
+        d.hero.steps.slice(0, 3).forEach((s, i) => {
+          const n = i + 1;
+          setText('heroStep' + n + 'Title', s.title);
+          setText('heroStep' + n + 'Desc', s.description);
+          setPhoto('heroStep' + n + 'Img', s.image);
+        });
+      }
     }
     setText('lifestyleTitle', d.lifestyle_title);
     setText('boutiqueTitle', d.boutique_title);
