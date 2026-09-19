@@ -58,7 +58,7 @@
       "toc_label": "Retours",
       "tag": "Retours",
       "title": "Procédure de retour",
-      "body": "Pour effectuer un retour, suivez ces étapes :\n\n- Contactez-nous à woodenmountain05@gmail.com dans les 14 jours suivant la réception, en précisant votre numéro de commande et le motif du retour.\n- Nous vous répondons sous 48h ouvrées avec l'adresse de retour et la marche à suivre.\n- Remettez le produit dans son état d'origine (non porté, non altéré), avec son emballage si possible.\n- Expédiez le colis à l'adresse communiquée, en conservant votre preuve de dépôt.\n- Dès réception et vérification de l'article, vous êtes remboursée sous 14 jours sur le moyen de paiement utilisé lors de l'achat.\n\n[ENCADRÉ] Les frais de retour restent à votre charge, sauf en cas d'erreur de notre part ou de produit défectueux."
+      "body": "Pour effectuer un retour, suivez ces étapes :"
     },
     {
       "slug": "lv-remboursement",
@@ -66,15 +66,15 @@
       "toc_label": "Remboursement",
       "tag": "Remboursement",
       "title": "Modalités de remboursement",
-      "body": "Le remboursement est effectué dans les 14 jours suivant la réception du retour ou la preuve d'expédition du colis (le premier des deux termes).\n\n[ENCADRÉ] Montant remboursé : prix du ou des produits retournés + frais de port initiaux si l'intégralité de la commande est retournée. Frais de retour : à la charge de l'acheteur (sauf erreur/défaut de notre part). Mode de remboursement : via le moyen de paiement utilisé lors de la commande. Délai bancaire : 3 à 5 jours supplémentaires selon votre établissement\n\nEn cas de retour partiel, seul le montant des articles retournés est remboursé. Les frais de port initiaux ne sont pas remboursés dans ce cas."
+      "body": "Le remboursement est effectué dans les 14 jours suivant la réception du retour ou la preuve d'expédition du colis (le premier des deux termes).\n\n[ENCADRÉ] Montant remboursé : prix du ou des produits retournés + frais de port initiaux si l'intégralité de la commande est retournée Frais de retour : à la charge de l'acheteur (sauf erreur/défaut de notre part) Mode de remboursement : via le moyen de paiement utilisé lors de la commande Délai bancaire : 3 à 5 jours supplémentaires selon votre établissement\n\nEn cas de retour partiel, seul le montant des articles retournés est remboursé. Les frais de port initiaux ne sont pas remboursés dans ce cas."
     },
     {
       "slug": "lv-contact",
       "toc_emoji": "📧",
       "toc_label": "Contact",
       "tag": "Contact",
-      "title": "Une question ? On est là 🌸",
-      "body": "[ENCADRÉ] 📧 E-mail : woodenmountain05@gmail.com ⏱ Délai de réponse : sous 48 heures ouvrées 📦 Pour tout retour : toujours nous contacter en premier\n\nChaque colis part avec une petite attention — parce que vous méritez de sourire en l'ouvrant."
+      "title": "Une question ? On est là",
+      "body": "[ENCADRÉ] 📧 E-mail : woodenmountain05@gmail.com ⏱ Délai de réponse : sous 48 heures ouvrées 📦 Pour tout retour : toujours nous contacter en premier\n\nChaque colis part avec une petite attention — parce que vous méritez de sourire en l'ouvrant. 🌸"
     }
   ]
 }
