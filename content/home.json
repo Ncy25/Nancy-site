@@ -2,7 +2,7 @@
   "promo_bar": "Livraison offerte dès 50€ d'achat · Pièces uniques faites à la main",
   "hero": {
     "script": "Tes bijoux, tes règles :",
-    "title": "PAMPILLES INTERCHANGEABLES À COMBINER À L'INFINI",
+    "title": "PAMPILLES INTERCHANGEABLES \nÀ COMBINER À L'INFINI",
     "subtitle": "Crée ton propre style avec tes créoles et tes pampilles interchangeables.",
     "button_text": "Découvrir maintenant",
     "button_link": "boutique.html",
@@ -32,6 +32,7 @@
     "title_line2": ""
   },
   "lifestyle_title": "Faites à la main, portées avec amour",
+  "wm_banner": null,
   "boutique_title": "Les créations",
   "boutique_subtitle": "C'est le moment d'ajouter au panier",
   "below_products_text": "Viens en découvrir plus",
