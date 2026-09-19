@@ -1,15 +1,19 @@
 {
-  "promo_bar": "🌸 Livraison offerte dès 50€ d'achat · Pièces uniques faites à la main",
+  "promo_bar": "Livraison offerte dès 50€ d'achat · Pièces uniques faites à la main",
   "hero": {
-    "script": "Collection Automne 2026",
-    "title_line1": "PADAPOM",
-    "title_line2": "",
-    "subtitle": "Des créations interchangeables et automnales pour changer d'humeur en deux secondes.",
+    "script": "Tes bijoux, tes règles :",
+    "title": "Pampilles interchangeable à combiner à l'infini",
+    "subtitle": "Créai ton propre style chaque jour avec tes créoles et pampilles artisanales interchangeables.",
     "button_text": "Découvrir maintenant",
+    "button_link": "",
+    "photo": "",
+    "steps": [],
     "main_image": "/images/uploads/20260911_150457.png",
     "small_image_1": "/images/uploads/20260909_173127 (1).png",
     "small_image_2": "/images/uploads/20260909_164407.png",
-    "small_image_3": "/images/uploads/20260909_164206.png"
+    "small_image_3": "/images/uploads/20260909_164206.png",
+    "title_line1": "PADAPOM",
+    "title_line2": ""
   },
   "lifestyle_title": "Faites à la main, portées avec amour",
   "boutique_title": "Les créations",
