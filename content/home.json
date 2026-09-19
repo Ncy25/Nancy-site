@@ -2,7 +2,7 @@
   "promo_bar": "Livraison offerte dès 50€ d'achat · Pièces uniques faites à la main",
   "hero": {
     "script": "Tes bijoux, tes règles :",
-    "title": "Pampilles interchangeable à combiner à l'infini",
+    "title": "Pampilles interchangeables à combiner à l'infini",
     "subtitle": "Crée ton propre style chaque jour avec tes créoles et pampilles artisanales interchangeables.",
     "button_text": "Découvrir maintenant",
     "button_link": "boutique.html",
@@ -15,12 +15,12 @@
       },
       {
         "title": "2. Les pampilles",
-        "description": "Choisis tes pampilles interchangeable.",
+        "description": "Choisis tes pampilles interchangeables.",
         "image": "/images/uploads/20260919_111424.png"
       },
       {
         "title": "3. Le mix",
-        "description": "Compose et personnalisé ton mix à l'infini",
+        "description": "Compose et personnalise ton mix à l'infini.",
         "image": "/images/uploads/20260919_113151 (1).png"
       }
     ],
