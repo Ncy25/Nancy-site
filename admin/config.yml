@@ -35,7 +35,7 @@ collections:
             widget: "object"
             fields:
               - { label: "Petite phrase manuscrite", name: "script", widget: "string" }
-              - { label: "Titre principal", name: "title", widget: "string" }
+              - { label: "Titre principal", name: "title", widget: "text", hint: "Appuie sur Entrée pour aller à la ligne." }
               - { label: "Sous-titre", name: "subtitle", widget: "text" }
               - { label: "Texte du bouton", name: "button_text", widget: "string" }
               - { label: "Lien du bouton", name: "button_link", widget: "string", required: false, hint: "Ex : nouveautes.html ou boutique.html" }
