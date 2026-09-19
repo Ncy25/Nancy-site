@@ -32,7 +32,12 @@
     "title_line2": ""
   },
   "lifestyle_title": "Faites à la main, portées avec amour",
-  "wm_banner": null,
+  "wm_banner": {
+    "eyebrow": "L'univers du bois",
+    "title": "WOODEN MOUNTAIN",
+    "subtitle": "Des créations en bois façonnées avec soin, pour prolongé l'univers WildFlower dans ton intérieur.",
+    "button_text": "VOIR LES CREATIONS"
+  },
   "boutique_title": "Les créations",
   "boutique_subtitle": "C'est le moment d'ajouter au panier",
   "below_products_text": "Viens en découvrir plus",
