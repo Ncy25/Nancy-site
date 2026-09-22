@@ -362,6 +362,10 @@
     if (!el || !items || !items.length) return;
     el.innerHTML = items.map(it => `<div class="care-list-item${avoid ? ' avoid-list-item' : ''}">${avoid ? crossIcon : checkIcon}${it.text || it}</div>`).join('');
   }
+  function setText(id, value) {
+    const el = document.getElementById(id);
+    if (el && value !== undefined && value !== null && value !== '') el.textContent = value;
+  }
   function setHTML(id, value) {
     const el = document.getElementById(id);
     if (el && value !== undefined && value !== null && value !== '') el.innerHTML = value;
