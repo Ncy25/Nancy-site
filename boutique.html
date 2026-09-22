@@ -3,14 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Boutique — WildFlower_WoodenMountain</title>
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png?v=4"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png?v=4"/>
-  <link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192.png?v=4"/>
-  <link rel="icon" type="image/png" sizes="512x512" href="images/android-chrome-512.png?v=4"/>
-  <link rel="alternate icon" href="images/favicon.ico?v=4"/>
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png?v=4"/>
-  <meta name="description" content="Toutes nos créations de pampilles interchangeables en argile polymère, faites à la main. WildFlower_WoodenMountain."/>
+  <title>Boutique — Wild Flower by Wooden Mountain</title>
+  <meta name="description" content="Toutes nos créations de pampilles interchangeables en argile polymère, faites à la main. Wild Flower by Wooden Mountain."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"/>
@@ -68,7 +62,7 @@
     }
     .nav-top {
       display: flex; align-items: center; justify-content: space-between;
-      height: 100px; max-width: 1160px; margin: 0 auto; padding: 0 28px;
+      height: 72px; max-width: 1160px; margin: 0 auto; padding: 0 28px;
     }
     .nav-left { display: flex; align-items: center; gap: 22px; }
     .nav-search-btn { background: none; border: none; cursor: pointer; color: var(--brown-mid); font-size: 17px; transition: color var(--ease); }
@@ -84,16 +78,6 @@
     .nav-icon-btn:hover { color: var(--peach-dk); }
     .cart-badge { position: absolute; top: -6px; right: -6px; width: 16px; height: 16px; border-radius: 50%; background: var(--peach); color: #fff; font-size: 9px; font-weight: 700; display: none; align-items: center; justify-content: center; }
     .cart-badge.on { display: flex; }
-    .p-wish.liked svg { fill: var(--peach-dk); }
-    .wish-drawer-empty { text-align: center; padding: 50px 0; font-size: 14px; color: var(--gray); }
-    .wish-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(242,191,181,0.25); align-items: center; }
-    .wish-thumb { width: 52px; height: 52px; border-radius: 10px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .wish-info { flex: 1; }
-    .wish-name { font-size: 13.5px; font-weight: 500; color: var(--brown); margin-bottom: 3px; }
-    .wish-price { font-size: 13px; color: var(--peach-dk); margin-bottom: 6px; }
-    .wish-actions { display: flex; gap: 8px; }
-    .wish-btn-add { font-size: 11px; font-weight: 600; padding: 5px 12px; border-radius: 999px; background: var(--peach); color: #fff; border: none; cursor: pointer; }
-    .wish-btn-remove { font-size: 11px; padding: 5px 10px; border-radius: 999px; background: var(--blush); color: var(--brown-mid); border: none; cursor: pointer; }
     .nav-menu { display: flex; justify-content: center; align-items: center; gap: 36px; padding: 0 28px 10px; max-width: 1160px; margin: 0 auto; }
     .nav-menu a { font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--brown-mid); transition: color var(--ease); }
     .nav-menu a:hover, .nav-menu a.active { color: var(--peach-dk); }
@@ -101,7 +85,7 @@
     .nav-burger span { display: block; width: 20px; height: 1.8px; background: var(--brown-mid); border-radius: 2px; }
     .mobile-nav { display: none; flex-direction: column; gap: 16px; padding: 20px 28px 24px; border-top: 1px solid rgba(242,191,181,0.3); }
     .mobile-nav.open { display: flex; }
-    .mobile-nav a { font-size: 14px; font-weight: 500; color: var(--brown-mid); letter-spacing: .08em; text-transform: uppercase; } .mobile-nav a.active { color: var(--peach-dk); }
+    .mobile-nav a { font-size: 14px; font-weight: 500; color: var(--brown-mid); letter-spacing: .08em; text-transform: uppercase; }
 
     /* ── PAGE HEADER ── */
     .page-header {
@@ -161,8 +145,8 @@
     .prod-section { padding: 32px 0 80px; }
     .prod-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 28px;
     }
 
     /* ── PRODUCT CARD ── */
@@ -181,7 +165,6 @@
       position: relative;
     }
     .p-img-content { width: 78%; height: 78%; display: flex; align-items: center; justify-content: center; }
-    .p-img-photo-wrap { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
     .p-shape-anim { transition: transform .5s ease; }
     .p-card:hover .p-shape-anim { transform: scale(1.09) rotate(6deg); }
 
@@ -193,7 +176,6 @@
     }
     .badge-new { background: var(--peach); color: #fff; }
     .badge-bestseller { background: var(--gold); color: #fff; }
-    .badge-exclu { background: #8FAF8A; color: #fff; }
     .badge-custom { background: var(--sage); color: #fff; }
 
     /* Wishlist btn */
@@ -251,6 +233,51 @@
     }
     .p-color:hover, .p-color.sel { transform: scale(1.2); border-color: var(--brown-mid); }
 
+    /* ── FEATURED BANNER ── */
+    .feat-banner {
+      border-radius: 28px;
+      background: linear-gradient(135deg, var(--peach-dk) 0%, var(--terra) 50%, var(--brown-mid) 100%);
+      padding: 48px 48px;
+      margin-bottom: 32px;
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 32px; align-items: center;
+    }
+    .feat-banner::before {
+      content: ''; position: absolute;
+      top: -60px; right: 120px;
+      width: 280px; height: 280px; border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+    }
+    .feat-banner::after {
+      content: ''; position: absolute;
+      bottom: -80px; right: -40px;
+      width: 240px; height: 240px; border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+    }
+    .feat-banner-tag { font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 10px; }
+    .feat-banner h2 { font-family: var(--font-d); font-size: clamp(28px, 4vw, 40px); font-weight: 600; color: #fff; line-height: 1; margin-bottom: 12px; letter-spacing: -.02em; }
+    .feat-banner p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.65; max-width: 360px; margin-bottom: 22px; }
+    .btn-feat {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; background: #fff; color: var(--peach-dk);
+      border-radius: 999px; border: none; cursor: pointer;
+      font-family: var(--font-b); font-size: 12.5px; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      transition: transform var(--ease), box-shadow var(--ease);
+    }
+    .btn-feat:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
+    .feat-visual {
+      display: flex; gap: 10px; position: relative; z-index: 1;
+    }
+    .feat-card-mini {
+      background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+      border-radius: 16px; padding: 12px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .feat-card-main { width: 120px; height: 120px; }
+    .feat-card-sm { width: 54px; height: 54px; }
+
     /* ── CATEGORY TABS ── */
     .cat-tabs {
       display: flex; gap: 8px; flex-wrap: wrap;
@@ -266,10 +293,29 @@
     }
     .cat-tab:hover { border-color: var(--peach); color: var(--terra); }
     .cat-tab.active { background: var(--terra); color: #fff; border-color: var(--terra); }
-    .creoles-section { margin: 44px 0; }
-    .creoles-title { font-family: var(--font-d); font-size: 26px; font-weight: 600; color: var(--brown); margin-bottom: 22px; }
-    .section-label { font-family: var(--font-d); font-size: 13px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--peach-dk); margin-bottom: 6px; }
-    .section-h2 { font-family: var(--font-s); font-size: 40px; color: var(--brown-mid); line-height: 1; }
+
+    /* ── MESURE BAND ── */
+    .mesure-band {
+      background: var(--blush);
+      border-radius: 24px; padding: 40px 44px;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 24px; align-items: center;
+      margin-top: 48px;
+      border: 1px solid rgba(242,191,181,0.5);
+    }
+    .mesure-band h3 { font-family: var(--font-d); font-size: 28px; font-weight: 600; color: var(--brown); margin-bottom: 8px; }
+    .mesure-band p { font-size: 14px; color: var(--brown-mid); line-height: 1.7; max-width: 420px; }
+    .mesure-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .mesure-chip { background: rgba(255,255,255,0.65); border: 1px solid rgba(255,255,255,0.9); color: var(--brown-mid); font-size: 12px; font-weight: 500; padding: 5px 12px; border-radius: 999px; }
+    .btn-mesure {
+      padding: 14px 30px; background: var(--terra); color: #fff;
+      border: none; border-radius: 999px; cursor: pointer;
+      font-family: var(--font-b); font-size: 13px; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: flex; align-items: center; gap: 8px; white-space: nowrap;
+      transition: background var(--ease), transform var(--ease);
+    }
+    .btn-mesure:hover { background: var(--brown-mid); transform: translateY(-2px); }
 
     /* ── MODAL PRODUIT ── */
     .modal-overlay {
@@ -288,9 +334,9 @@
       background: var(--ivory); border-radius: 28px;
       box-shadow: 0 24px 80px rgba(107,61,42,0.25);
       transition: transform .4s cubic-bezier(.34,1.4,.64,1), opacity .3s;
-      opacity: 0; pointer-events: none;
+      opacity: 0;
     }
-    .modal.open { transform: translate(-50%,-50%) scale(1); opacity: 1; pointer-events: all; }
+    .modal.open { transform: translate(-50%,-50%) scale(1); opacity: 1; }
     .modal-inner { display: grid; grid-template-columns: 1fr 1fr; min-height: 420px; }
     .modal-img {
       border-radius: 28px 0 0 28px; overflow: hidden;
@@ -348,8 +394,7 @@
     .dr-items { flex: 1; overflow-y: auto; padding: 18px 26px; }
     .dr-empty { text-align: center; padding: 50px 0; font-size: 14px; color: var(--gray); }
     .dr-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(242,191,181,0.25); }
-    .dr-thumb { width: 48px; height: 48px; border-radius: 10px; background: var(--blush); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; overflow: hidden; }
-    .dr-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .dr-thumb { width: 48px; height: 48px; border-radius: 10px; background: var(--blush); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
     .dr-info { flex: 1; }
     .dr-name { font-size: 13.5px; font-weight: 500; color: var(--brown); margin-bottom: 3px; }
     .dr-price { font-size: 13px; color: var(--peach-dk); }
@@ -374,14 +419,6 @@
     .footer-logo-wild { font-family: var(--font-s); font-size: 28px; color: #F2B899; }
     .footer-logo-row { font-family: var(--font-b); font-size: 13px; letter-spacing: .1em; color: var(--peach); margin-bottom: 12px; }
     .f-tagline { font-size: 13px; line-height: 1.7; max-width: 230px; }
-    .f-social { display: flex; gap: 10px; margin-top: 16px; }
-    .f-social-link {
-      width: 36px; height: 36px; border-radius: 50%;
-      background: rgba(255,255,255,0.08);
-      display: flex; align-items: center; justify-content: center;
-      color: inherit; transition: background var(--ease), transform var(--ease);
-    }
-    .f-social-link:hover { background: var(--peach); transform: translateY(-2px); }
     .f-col h4 { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,248,245,0.3); margin-bottom: 14px; }
     .f-col ul { display: flex; flex-direction: column; gap: 9px; }
     .f-col a { font-size: 13.5px; color: rgba(255,248,245,0.58); transition: color var(--ease); }
@@ -394,46 +431,18 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 860px) {
+      .feat-banner { grid-template-columns: 1fr; }
+      .feat-visual { display: none; }
+      .mesure-band { grid-template-columns: 1fr; }
       .modal-inner { grid-template-columns: 1fr; }
       .modal-img { border-radius: 28px 28px 0 0; min-height: 220px; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
-      .prod-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 600px) {
       .nav-menu { display: none; }
       .nav-burger { display: flex; }
-      .page-header-sub { font-size: 12px; padding: 0 12px; }
-      .section-h2 { font-size: 26px; line-height: 1.15; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .filters-right { margin-left: 0; width: 100%; }
-      .cat-tabs { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 4px; margin: 0 -28px 8px; padding-left: 28px; padding-right: 28px; }
-      .cat-tabs::-webkit-scrollbar { display: none; }
-      .cat-tab { flex-shrink: 0; padding: 8px 16px; font-size: 13px; }
-      .filter-pills-row { display: flex; gap: 8px; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin: 0 -28px; padding: 0 28px 4px; }
-      .filter-pills-row::-webkit-scrollbar { display: none; }
-      .filter-pill { flex-shrink: 0; padding: 8px 14px; font-size: 12.5px; white-space: nowrap; }
-      .p-quick-add { display: none !important; }
-      .modal { width: calc(100vw - 24px); max-height: calc(100vh - 32px); border-radius: 20px; }
-      .modal-inner { min-height: 0; }
-      .modal-img { border-radius: 20px 20px 0 0; height: 265px; min-height: 0; max-height: 265px; padding: 10px; overflow: hidden; }
-      .modal-img svg { width: 105px !important; height: 105px !important; }
-      .modal-body { padding: 14px 16px 18px; }
-      .modal-close { width: 26px; height: 26px; top: 8px; right: 8px; font-size: 12px; }
-      .modal-cat { font-size: 10px; }
-      .modal-name { font-size: 19px; margin-bottom: 4px; }
-      .modal-price { font-size: 16px; margin-bottom: 8px; }
-      .modal-desc { font-size: 11.5px; line-height: 1.45; margin-bottom: 10px; }
-      .modal-colors-label { font-size: 10px; }
-      .modal-colors { margin-bottom: 10px; }
-      .modal-colors .modal-color-btn { width: 24px; height: 24px; }
-      .modal-qty-row { margin-bottom: 10px; }
-      .btn-add-modal { padding: 11px; font-size: 12px; }
-      .modal-trust { font-size: 10px; margin-top: 8px; gap: 8px; }
-      .prod-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-      .p-name { font-size: 15px; }
-      .p-desc { display: none; }
-      .p-price { font-size: 14px; }
-      .p-cat { font-size: 9px; }
     }
   </style>
 </head>
@@ -446,14 +455,11 @@
 <nav>
   <div class="nav-top">
     <div class="nav-left">
-      <button class="nav-search-btn" id="navSearchBtn" onclick="toggleNavSearch()" aria-label="Rechercher">
+      <button class="nav-search-btn" aria-label="Rechercher">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </button>
-      <div class="nav-search-wrap" id="navSearchWrap" style="display:none;align-items:center;margin-left:8px">
-        <input type="text" id="navSearchInput" placeholder="Rechercher un produit..." onkeydown="if(event.key==='Enter') submitNavSearch()" style="border:none;border-bottom:1px solid var(--peach, #F0A882);background:transparent;outline:none;font-size:13px;padding:4px 2px;width:160px;color:inherit;font-family:inherit">
-      </div>
     </div>
-    <a href="index.html" class="nav-logo" aria-label="WildFlower_WoodenMountain" id="navLogo">
+    <a href="index.html" class="nav-logo" aria-label="Wild Flower by Wooden Mountain">
       <span class="logo-wild">Wild</span>
       <div class="logo-flower-row">
         Fl
@@ -473,9 +479,8 @@
       </div>
     </a>
     <div class="nav-right">
-      <button class="nav-icon-btn" onclick="toggleWishDrawer()" aria-label="Mes favoris">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-        <span class="cart-badge" id="wb">0</span>
+      <button class="nav-icon-btn" aria-label="Compte">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
       </button>
       <button class="nav-icon-btn" onclick="toggleCart()" aria-label="Panier">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
@@ -486,17 +491,15 @@
   </div>
   <ul class="nav-menu">
     <li><a href="index.html">Accueil</a></li>
-    <li><a href="nouveautes.html">Nouveautés</a></li>
+    <li><a href="#">Nouveautés</a></li>
     <li><a href="boutique.html" class="active">Boutique</a></li>
-    <li><a href="wooden-mountain.html">Wooden Mountain</a></li><li><a href="notre-histoire.html">Qui je suis ?</a></li>
+    <li><a href="index.html#histoire">Notre histoire</a></li>
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
   <div class="mobile-nav" id="mn">
     <a href="index.html">Accueil</a>
-    <a href="nouveautes.html" onclick="this.closest('.mobile-nav').classList.remove('open')">Nouveautés</a>
-    <a href="boutique.html" class="active" onclick="this.closest('.mobile-nav').classList.remove('open')">Boutique</a>
-    <a href="wooden-mountain.html" onclick="this.closest('.mobile-nav').classList.remove('open')">Wooden Mountain</a>
-    <a href="notre-histoire.html" onclick="this.closest('.mobile-nav').classList.remove('open')">Qui je suis ?</a>
+    <a href="boutique.html" onclick="this.closest('.mobile-nav').classList.remove('open')">Boutique</a>
+    <a href="index.html#histoire" onclick="this.closest('.mobile-nav').classList.remove('open')">Notre histoire</a>
     <a href="index.html#contact" onclick="this.closest('.mobile-nav').classList.remove('open')">Contact</a>
   </div>
 </nav>
@@ -509,9 +512,9 @@
   <div class="ph-spark" style="top:30%;right:11%;animation-delay:.8s"><svg width="13" height="13" viewBox="0 0 24 24" fill="#D4A853" opacity=".6"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
   <div class="ph-spark" style="bottom:32%;left:16%;animation-delay:1.5s"><svg width="10" height="10" viewBox="0 0 24 24" fill="#fff" opacity=".4"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
   <div class="ph-spark" style="top:20%;right:28%;animation-delay:2s"><svg width="8" height="8" viewBox="0 0 24 24" fill="#fff" opacity=".35"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
-  <div class="page-header-script" id="pageHeaderScript">Choisissez votre coup de cœur</div>
-  <h1 id="pageHeaderTitle">La Boutique</h1>
-  <p class="page-header-sub" id="pageHeaderSub">Toutes nos créations · Argile polymère · Faites à la main en France</p>
+  <div class="page-header-script">Choisissez votre coup de cœur</div>
+  <h1>La Boutique</h1>
+  <p class="page-header-sub">Toutes nos créations · Argile polymère · Faites à la main en France</p>
 </div>
 
 <!-- MAIN -->
@@ -525,39 +528,312 @@
       <span>Boutique</span>
     </div>
 
-    <!-- SECTION INTRO -->
-    <div class="section-intro" style="margin:28px 0 8px;">
-      <div class="section-label" id="boutiqueSectionLabel">Bijoux à composer</div>
-      <div class="section-h2" id="boutiqueSectionTitle">Ce qui vient d'arriver</div>
-    </div>
-
-    <!-- CHOISIS TES CRÉOLES -->
-    <div class="creoles-section">
-      <h2 class="creoles-title" id="creolesTitle">Choisis tes créoles</h2>
-      <div class="prod-grid" id="creolesGrid"></div>
-    </div>
-
-    <!-- CHOISIS TES PAMPILLES -->
-    <div class="creoles-section">
-      <h2 class="creoles-title" id="pampillesTitle">Choisis tes pampilles</h2>
-      <div class="cat-tabs" id="pampillesTabs">
-        <div class="cat-tab active" onclick="filterPampilles('all', this)" id="pampillesTabAll">Tout voir</div>
-        <div class="cat-tab" onclick="filterPampilles('uni', this)" id="pampillesTabUni">Pampilles unies</div>
-        <div class="cat-tab" onclick="filterPampilles('motifs', this)" id="pampillesTabMotifs">Pampilles à motifs</div>
+    <!-- FEATURED BANNER -->
+    <div class="feat-banner" style="margin-top:32px">
+      <div>
+        <div class="feat-banner-tag">✨ Collection printemps</div>
+        <h2>Joyful Pampilles<br>— Nouvelle saison</h2>
+        <p>Des couleurs fraîches, des formes nouvelles. Chaque pièce est imaginée pour mettre de la joie dans votre quotidien.</p>
+        <button class="btn-feat" onclick="filterCat('new')">
+          Voir les nouveautés
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
       </div>
-      <div class="prod-grid" id="pampillesGrid"></div>
+      <div class="feat-visual">
+        <div class="feat-card-main feat-card-mini">
+          <svg width="92" height="92" viewBox="0 0 92 92" fill="none">
+            <circle cx="46" cy="28" r="14" fill="#F0A882" opacity=".55"/>
+            <circle cx="64" cy="46" r="14" fill="#F0A882" opacity=".5"/>
+            <circle cx="46" cy="64" r="14" fill="#F0A882" opacity=".55"/>
+            <circle cx="28" cy="46" r="14" fill="#F0A882" opacity=".5"/>
+            <circle cx="46" cy="46" r="16" fill="#F5C4A8" opacity=".9"/>
+            <circle cx="46" cy="46" r="7" fill="#fff" opacity=".4"/>
+          </svg>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="feat-card-sm feat-card-mini">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="13" stroke="#C9A853" stroke-width="3.5" fill="none" opacity=".8"/><circle cx="18" cy="31" r="3" fill="#C9A853" opacity=".8"/></svg>
+          </div>
+          <div class="feat-card-sm feat-card-mini">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 33C9 25 2 20 2 13C2 6.5 7 3 11 5C14 6.5 16.5 10 18 14C19.5 10 22 6.5 25 5C29 3 34 6.5 34 13C34 20 27 25 18 33Z" fill="#8FAF8A" opacity=".6"/></svg>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- LES BRACELETS -->
-    <div class="creoles-section">
-      <h2 class="creoles-title" id="braceletsTitle">Les Bracelets</h2>
-      <div class="prod-grid" id="braceletsGrid"></div>
+    <!-- CATEGORY TABS -->
+    <div class="cat-tabs">
+      <div class="cat-tab active" onclick="filterCat('all', this)">Tout voir</div>
+      <div class="cat-tab" onclick="filterCat('pampilles-creoles', this)">Pampilles + Créoles</div>
+      <div class="cat-tab" onclick="filterCat('pampilles', this)">Pampilles seules</div>
+      <div class="cat-tab" onclick="filterCat('creoles', this)">Créoles seules</div>
     </div>
 
-    <!-- LES COLLIERS -->
-    <div class="creoles-section">
-      <h2 class="creoles-title" id="colliersTitle">Les Colliers</h2>
-      <div class="prod-grid" id="colliersGrid"></div>
+    <!-- FILTERS BAR -->
+    <div class="filters-wrap">
+      <div class="filters-bar">
+        <button class="filter-pill active" onclick="filterTag('all', this)">Tout</button>
+        <button class="filter-pill" onclick="filterTag('new', this)">Nouveautés 🌸</button>
+        <button class="filter-pill" onclick="filterTag('bestseller', this)">Meilleures ventes ⭐</button>
+        <button class="filter-pill" onclick="filterTag('uni', this)">Unies</button>
+        <button class="filter-pill" onclick="filterTag('motifs', this)">Motifs</button>
+        <div class="filters-right">
+          <span class="count-label" id="countLabel">6 créations</span>
+          <select class="sort-select" id="sortSel" onchange="sortProducts()">
+            <option value="default">Tri : défaut</option>
+            <option value="price-asc">Prix croissant</option>
+            <option value="price-desc">Prix décroissant</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCT GRID -->
+    <div class="prod-section">
+      <div class="prod-grid" id="prodGrid">
+
+        <!-- CARD 1 -->
+        <div class="p-card" data-cat="pampilles-creoles" data-tags="bestseller,motifs" data-price="18" onclick="openModal(0)">
+          <div class="p-img" style="background:#F5EDE8">
+            <div class="p-badges">
+              <span class="p-badge badge-bestseller">⭐ Bestseller</span>
+            </div>
+            <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </button>
+            <div class="p-img-content">
+              <svg class="p-shape-anim" width="140" height="140" viewBox="0 0 140 140" fill="none">
+                <circle cx="70" cy="42" r="21" fill="#F0A882" opacity=".5"/>
+                <circle cx="98" cy="70" r="21" fill="#F0A882" opacity=".45"/>
+                <circle cx="70" cy="98" r="21" fill="#F0A882" opacity=".5"/>
+                <circle cx="42" cy="70" r="21" fill="#F0A882" opacity=".45"/>
+                <circle cx="70" cy="70" r="23" fill="#F5C4A8" opacity=".9"/>
+                <circle cx="70" cy="70" r="11" fill="#fff" opacity=".45"/>
+              </svg>
+            </div>
+            <div class="p-quick-add">
+              <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Pampilles + Créoles Motifs',18,'🌺')">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Ajouter au panier
+              </button>
+            </div>
+          </div>
+          <div class="p-info">
+            <div class="p-colors">
+              <div class="p-color sel" style="background:#F0A882"></div>
+              <div class="p-color" style="background:#8FAF8A"></div>
+              <div class="p-color" style="background:#D4A853"></div>
+              <div class="p-color" style="background:#C9A0B8"></div>
+            </div>
+            <div class="p-cat">Pampilles + Créoles</div>
+            <div class="p-name">Motifs</div>
+            <div class="p-desc">Formes florales et graphiques, centro nacré. Le duo signature.</div>
+            <div class="p-bottom">
+              <div class="p-price">18,00 €</div>
+              <div class="p-stock"><span class="p-stock-dot"></span> En stock</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="p-card" data-cat="pampilles-creoles" data-tags="new,uni" data-price="16" onclick="openModal(1)">
+          <div class="p-img" style="background:var(--blush-mid)">
+            <div class="p-badges">
+              <span class="p-badge badge-new">Nouveau</span>
+            </div>
+            <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </button>
+            <div class="p-img-content">
+              <svg class="p-shape-anim" width="140" height="140" viewBox="0 0 140 140" fill="none">
+                <ellipse cx="70" cy="70" rx="50" ry="60" fill="#F0A882" opacity=".55" transform="rotate(-12 70 70)"/>
+                <ellipse cx="70" cy="70" rx="28" ry="34" fill="#E8907A" opacity=".7"/>
+                <ellipse cx="70" cy="70" rx="13" ry="16" fill="#fff" opacity=".3"/>
+              </svg>
+            </div>
+            <div class="p-quick-add">
+              <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Pampilles + Créoles Unies',16,'🌸')">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Ajouter au panier
+              </button>
+            </div>
+          </div>
+          <div class="p-info">
+            <div class="p-colors">
+              <div class="p-color sel" style="background:#F0A882"></div>
+              <div class="p-color" style="background:#C26B4A"></div>
+              <div class="p-color" style="background:#8FAF8A"></div>
+              <div class="p-color" style="background:#B8D4E8"></div>
+              <div class="p-color" style="background:#D4A853"></div>
+            </div>
+            <div class="p-cat">Pampilles + Créoles</div>
+            <div class="p-name">Unies</div>
+            <div class="p-desc">Teintes douces, surface satinée. L'essentiel, parfait.</div>
+            <div class="p-bottom">
+              <div class="p-price">16,00 €</div>
+              <div class="p-stock"><span class="p-stock-dot"></span> En stock</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="p-card" data-cat="pampilles" data-tags="motifs" data-price="15" onclick="openModal(2)">
+          <div class="p-img" style="background:#EEF2E8">
+            <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </button>
+            <div class="p-img-content">
+              <svg class="p-shape-anim" width="140" height="140" viewBox="0 0 140 140" fill="none">
+                <ellipse cx="70" cy="70" rx="46" ry="60" fill="#8FAF8A" opacity=".35" transform="rotate(-22 70 70)"/>
+                <ellipse cx="70" cy="70" rx="46" ry="60" fill="#8FAF8A" opacity=".25" transform="rotate(22 70 70)"/>
+                <circle cx="70" cy="70" r="20" fill="#8FAF8A" opacity=".65"/>
+                <circle cx="70" cy="70" r="9" fill="#fff" opacity=".4"/>
+              </svg>
+            </div>
+            <div class="p-quick-add">
+              <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Pampilles Seules Motifs',15,'🌼')">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Ajouter au panier
+              </button>
+            </div>
+          </div>
+          <div class="p-info">
+            <div class="p-colors">
+              <div class="p-color sel" style="background:#8FAF8A"></div>
+              <div class="p-color" style="background:#F0A882"></div>
+              <div class="p-color" style="background:#C9A0B8"></div>
+            </div>
+            <div class="p-cat">Pampilles seules</div>
+            <div class="p-name">Motifs</div>
+            <div class="p-desc">Formes organiques et textures délicates. Pour vos créoles existantes.</div>
+            <div class="p-bottom">
+              <div class="p-price">15,00 €</div>
+              <div class="p-stock"><span class="p-stock-dot"></span> En stock</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="p-card" data-cat="pampilles" data-tags="uni" data-price="13" onclick="openModal(3)">
+          <div class="p-img" style="background:var(--blush)">
+            <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </button>
+            <div class="p-img-content">
+              <svg class="p-shape-anim" width="140" height="140" viewBox="0 0 140 140" fill="none">
+                <path d="M70 125C44 101 14 83 14 57C14 35 28 22 44 27C54 31 64 44 70 57C76 44 86 31 96 27C112 22 126 35 126 57C126 83 96 101 70 125Z" fill="#E8D5C0" opacity=".8"/>
+                <path d="M70 105C50 87 26 73 26 57C26 44 36 34 46 38C52 40.5 60 51 70 65C80 51 88 40.5 94 38C104 34 114 44 114 57C114 73 90 87 70 105Z" fill="#D4A853" opacity=".35"/>
+              </svg>
+            </div>
+            <div class="p-quick-add">
+              <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Pampilles Seules Unies',13,'🧡')">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Ajouter au panier
+              </button>
+            </div>
+          </div>
+          <div class="p-info">
+            <div class="p-colors">
+              <div class="p-color sel" style="background:#D4A853"></div>
+              <div class="p-color" style="background:#F0A882"></div>
+              <div class="p-color" style="background:#C26B4A"></div>
+              <div class="p-color" style="background:#8FAF8A"></div>
+            </div>
+            <div class="p-cat">Pampilles seules</div>
+            <div class="p-name">Unies</div>
+            <div class="p-desc">Simples et douces. La base idéale pour une tenue épurée.</div>
+            <div class="p-bottom">
+              <div class="p-price">13,00 €</div>
+              <div class="p-stock p-stock low"><span class="p-stock-dot"></span> Dernières pièces</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="p-card" data-cat="creoles" data-tags="uni" data-price="5" onclick="openModal(4)">
+          <div class="p-img" style="background:var(--blush-mid)">
+            <div class="p-badges">
+              <span class="p-badge badge-bestseller">⭐ Bestseller</span>
+            </div>
+            <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </button>
+            <div class="p-img-content">
+              <svg class="p-shape-anim" width="140" height="140" viewBox="0 0 140 140" fill="none">
+                <circle cx="70" cy="70" r="50" stroke="#C9A853" stroke-width="10" fill="none" opacity=".75"/>
+                <circle cx="70" cy="120" r="7" fill="#C9A853" opacity=".85"/>
+                <ellipse cx="70" cy="70" rx="22" ry="22" fill="#F0D08A" opacity=".2"/>
+              </svg>
+            </div>
+            <div class="p-quick-add">
+              <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Créoles Dorées',5,'✨')">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Ajouter au panier
+              </button>
+            </div>
+          </div>
+          <div class="p-info">
+            <div class="p-cat">Créoles seules</div>
+            <div class="p-name">Dorées</div>
+            <div class="p-desc">Finition dorée subtile. Compatibles avec toutes nos pampilles.</div>
+            <div class="p-bottom">
+              <div class="p-price">5,00 €</div>
+              <div class="p-stock"><span class="p-stock-dot"></span> En stock</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="p-card" data-cat="creoles" data-tags="uni" data-price="5" onclick="openModal(5)">
+          <div class="p-img" style="background:var(--blush)">
+            <button class="p-wish" onclick="toggleWish(event, this)" aria-label="Coup de cœur">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </button>
+            <div class="p-img-content">
+              <svg class="p-shape-anim" width="140" height="140" viewBox="0 0 140 140" fill="none">
+                <circle cx="70" cy="70" r="50" stroke="#A8B8C4" stroke-width="10" fill="none" opacity=".75"/>
+                <circle cx="70" cy="120" r="7" fill="#A8B8C4" opacity=".85"/>
+                <ellipse cx="70" cy="70" rx="22" ry="22" fill="#C8D8E0" opacity=".2"/>
+              </svg>
+            </div>
+            <div class="p-quick-add">
+              <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('Créoles Argentées',5,'🤍')">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Ajouter au panier
+              </button>
+            </div>
+          </div>
+          <div class="p-info">
+            <div class="p-cat">Créoles seules</div>
+            <div class="p-name">Argentées</div>
+            <div class="p-desc">Finition argentée délicate. Pour un look frais et lumineux.</div>
+            <div class="p-bottom">
+              <div class="p-price">5,00 €</div>
+              <div class="p-stock"><span class="p-stock-dot"></span> En stock</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- MESURE BAND -->
+      <div class="mesure-band">
+        <div>
+          <h3>Une envie sur mesure ? ✋</h3>
+          <p>Couleur précise, motif particulier, commande groupée pour un cadeau — tout est possible. On échange par e-mail et on crée ensemble votre pièce unique.</p>
+          <div class="mesure-chips">
+            <span class="mesure-chip">🎨 Couleur au choix</span>
+            <span class="mesure-chip">✨ Motif personnalisé</span>
+            <span class="mesure-chip">🎁 Idée cadeau</span>
+            <span class="mesure-chip">📦 Commande groupée</span>
+          </div>
+        </div>
+        <a href="index.html#contact" class="btn-mesure">
+          Demander un sur-mesure
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
     </div>
   </div>
 </main>
@@ -573,6 +849,8 @@
       <div class="modal-name" id="modalName"></div>
       <div class="modal-price" id="modalPrice"></div>
       <div class="modal-desc" id="modalDesc"></div>
+      <div class="modal-colors-label">Couleur disponible</div>
+      <div class="modal-colors" id="modalColors"></div>
       <div class="modal-qty-row">
         <div class="qty-ctrl">
           <button class="qty-btn" onclick="changeQty(-1)">−</button>
@@ -607,18 +885,11 @@
 <div class="overlay" id="ov" onclick="toggleCart()"></div>
 <div class="drawer" id="dr" role="dialog" aria-label="Panier">
   <div class="dr-head"><h3>Mon panier</h3><button class="dr-close" onclick="toggleCart()">✕</button></div>
-  <div class="dr-items" id="di"><div class="dr-empty" id="de"><img src="images/pampille-mae-orange.png" alt="" style="width:56px;height:56px;object-fit:contain;display:block;margin:0 auto 12px">Votre panier est vide</div></div>
+  <div class="dr-items" id="di"><div class="dr-empty" id="de">Votre panier est vide 🌸</div></div>
   <div class="dr-foot">
     <div class="dr-total"><span class="dr-total-l">Total</span><span class="dr-total-v" id="dt">0,00 €</span></div>
     <button class="dr-co" onclick="window.location.href='checkout.html'">Passer commande →</button>
   </div>
-</div>
-
-<!-- FAVORIS DRAWER -->
-<div class="overlay" id="wov" onclick="toggleWishDrawer()"></div>
-<div class="drawer" id="wdr" role="dialog" aria-label="Mes favoris">
-  <div class="dr-head"><h3>Mes favoris</h3><button class="dr-close" onclick="toggleWishDrawer()">✕</button></div>
-  <div class="dr-items" id="wi"><div class="wish-drawer-empty" id="we">Aucun coup de cœur pour l'instant</div></div>
 </div>
 <div class="toast" id="toast"></div>
 
@@ -627,29 +898,16 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="footer-logo-wild" id="footerLogoWild">Wild</div>
-        <div class="footer-logo-row" id="footerLogoRow">Flower · by Wooden Mountain</div>
-        <p class="f-tagline" id="footerTagline">Pampilles interchangeables en argile polymère. Colorées, faites à la main, pour changer d'humeur en deux secondes.</p>
-
-        <div class="f-social" id="footerSocial">
-          <a href="#" id="socialFacebook" class="f-social-link" style="display:none" target="_blank" rel="noopener" aria-label="Facebook">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
-          </a>
-          <a href="#" id="socialInstagram" class="f-social-link" style="display:none" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-          </a>
-          <a href="#" id="socialVinted" class="f-social-link" style="display:none" target="_blank" rel="noopener" aria-label="Vinted">
-            <span style="font-family:Georgia,serif;font-size:16px;font-weight:700;line-height:1">V</span>
-          </a>
-        </div>
-            </div>
+        <div class="footer-logo-wild">Wild</div>
+        <div class="footer-logo-row">Flower · by Wooden Mountain</div>
+        <p class="f-tagline">Pampilles interchangeables en argile polymère. Colorées, faites à la main, pour changer d'humeur en deux secondes.</p>
+      </div>
       <div class="f-col">
         <h4>Navigation</h4>
         <ul>
           <li><a href="index.html">Accueil</a></li>
-          <li><a href="nouveautes.html">Nouveautés</a></li>
           <li><a href="boutique.html">Boutique</a></li>
-          <li><a href="wooden-mountain.html">Wooden Mountain</a></li><li><a href="notre-histoire.html">Qui je suis ?</a></li>
+          <li><a href="index.html#histoire">Notre histoire</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </div>
@@ -660,210 +918,64 @@
           <li><a href="cgv.html">CGV</a></li>
           <li><a href="politique-confidentialite.html">Confidentialité</a></li>
           <li><a href="livraisons-retours.html">Livraisons &amp; retours</a></li>
-          <li><a href="mailto:contact@woodenmountain.fr" id="footerEmailLink">contact@woodenmountain.fr</a></li>
+          <li><a href="entretien-bijoux.html">Entretien des bijoux</a></li>
+          <li><a href="mailto:contact@woodenmountain.fr">contact@woodenmountain.fr</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bar">
-      <p id="footerCopyright">© 2025 WildFlower_WoodenMountain · Fait avec 🌸 en France</p>
+      <p>© 2025 Wild Flower by Wooden Mountain · Fait avec 🌸 en France</p>
       <p>Paiement sécurisé · Expédition soignée</p>
     </div>
   </div>
 </footer>
 
 <script>
-  /* ─── PRODUCTS DATA (chargées depuis content/products.json — éditable via Sveltia CMS) ─── */
-  let products = [];
-
-  function productVisual(p) {
-    if (p.image) return `<img src="${p.image}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover">`;
-    const c = (p.colors && p.colors[0]) || '#F0A882';
-    return `<div style="width:100%;height:100%;border-radius:50%;background:${c};opacity:.35;display:flex;align-items:center;justify-content:center;font-size:44px">${p.emoji || ''}</div>`;
-  }
-
-  function tagsFor(p) {
-    const tags = [];
-    if (p.badge) tags.push(p.badge);
-    tags.push(p.variant === 'motifs' ? 'motifs' : 'uni');
-    return tags.join(',');
-  }
-
-  function catSlug(cat) {
-    if (!cat) return '';
-    return cat.toString().trim().toLowerCase()
-      .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // retire les accents
-      .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-  }
-
-  function renderCreolesSection() {
-    const grid = document.getElementById('creolesGrid');
-    if (!grid) return;
-    const creoleIndexes = [];
-    products.forEach((p, idx) => { if (catSlug(p.category) === 'creoles') creoleIndexes.push(idx); });
-    grid.innerHTML = creoleIndexes.map(idx => {
-      const p = products[idx];
-      return `
-      <div class="p-card" onclick="openModal(${idx})">
-        <div class="p-img" style="background:${p.bg || '#F5EDE8'}">
-          ${p.badge === 'bestseller' ? '<div class="p-badges"><span class="p-badge badge-bestseller">⭐ Bestseller</span></div>' : ''}
-          ${p.badge === 'new' ? '<div class="p-badges"><span class="p-badge badge-new">Nouveau</span></div>' : ''}
-          ${p.badge === 'exclu' ? '<div class="p-badges"><span class="p-badge badge-exclu">✨ Exclu</span></div>' : ''}
-          <button class="p-wish ${isWished(p.id) ? 'liked' : ''}" onclick="toggleWish(event, this, ${idx})" aria-label="Coup de cœur">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-          </button>
-          <div class="${p.image ? 'p-img-photo-wrap' : 'p-img-content'}">${productVisual(p)}</div>
-          <div class="p-quick-add">
-            <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('${cartLabel(p.category, p.name).replace(/'/g,"\\'")}', ${p.price}, '${p.emoji || ''}', '${p.image || ''}', ${p.weight || 0})">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              Ajouter au panier
-            </button>
-          </div>
-        </div>
-        <div class="p-info">
-          <div class="p-cat">${p.category}</div>
-          <div class="p-name">${p.name}</div>
-          <div class="p-desc">${p.description || ''}</div>
-          <div class="p-bottom">
-            <div class="p-price">${(p.price || 0).toFixed(2).replace('.',',')} €</div>
-            <div class="p-stock ${p.stock === 'low' ? 'low' : ''}"><span class="p-stock-dot"></span> ${p.stock === 'low' ? 'Dernières pièces' : 'En stock'}</div>
-          </div>
-        </div>
-      </div>`;
-    }).join('');
-    const obs2 = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }), { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
-    grid.querySelectorAll('.p-card').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 0.1 + 's'; obs2.observe(el); });
-  }
-
-  function renderSimpleSection(gridId, categorySlug) {
-    const grid = document.getElementById(gridId);
-    if (!grid) return;
-    const idxs = [];
-    products.forEach((p, idx) => { if (catSlug(p.category) === categorySlug) idxs.push(idx); });
-    grid.innerHTML = idxs.map(idx => {
-      const p = products[idx];
-      return `
-      <div class="p-card" onclick="openModal(${idx})">
-        <div class="p-img" style="background:${p.bg || '#F5EDE8'}">
-          ${p.badge === 'bestseller' ? '<div class="p-badges"><span class="p-badge badge-bestseller">⭐ Bestseller</span></div>' : ''}
-          ${p.badge === 'new' ? '<div class="p-badges"><span class="p-badge badge-new">Nouveau</span></div>' : ''}
-          ${p.badge === 'exclu' ? '<div class="p-badges"><span class="p-badge badge-exclu">✨ Exclu</span></div>' : ''}
-          <button class="p-wish ${isWished(p.id) ? 'liked' : ''}" onclick="toggleWish(event, this, ${idx})" aria-label="Coup de cœur">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-          </button>
-          <div class="${p.image ? 'p-img-photo-wrap' : 'p-img-content'}">${productVisual(p)}</div>
-          <div class="p-quick-add">
-            <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('${cartLabel(p.category, p.name).replace(/'/g,"\\'")}', ${p.price}, '${p.emoji || ''}', '${p.image || ''}', ${p.weight || 0})">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              Ajouter au panier
-            </button>
-          </div>
-        </div>
-        <div class="p-info">
-          <div class="p-cat">${p.category}</div>
-          <div class="p-name">${p.name}</div>
-          <div class="p-desc">${p.description || ''}</div>
-          <div class="p-bottom">
-            <div class="p-price">${(p.price || 0).toFixed(2).replace('.',',')} €</div>
-            <div class="p-stock ${p.stock === 'low' ? 'low' : ''}"><span class="p-stock-dot"></span> ${p.stock === 'low' ? 'Dernières pièces' : 'En stock'}</div>
-          </div>
-        </div>
-      </div>`;
-    }).join('');
-    const obsX = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }), { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
-    grid.querySelectorAll('.p-card').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 0.1 + 's'; obsX.observe(el); });
-  }
-
-  function renderBraceletsSection() { renderSimpleSection('braceletsGrid', 'bracelets'); }
-  function renderColliersSection() { renderSimpleSection('colliersGrid', 'colliers'); }
-
-  let pampillesIndexes = [];
-
-  function renderPampillesSection() {
-    const grid = document.getElementById('pampillesGrid');
-    if (!grid) return;
-    pampillesIndexes = [];
-    products.forEach((p, idx) => { if (catSlug(p.category) === 'pampilles') pampillesIndexes.push(idx); });
-    grid.innerHTML = pampillesIndexes.map(idx => {
-      const p = products[idx];
-      return `
-      <div class="p-card" data-variant="${p.variant === 'motifs' ? 'motifs' : 'uni'}" onclick="openModal(${idx})">
-        <div class="p-img" style="background:${p.bg || '#F5EDE8'}">
-          ${p.badge === 'bestseller' ? '<div class="p-badges"><span class="p-badge badge-bestseller">⭐ Bestseller</span></div>' : ''}
-          ${p.badge === 'new' ? '<div class="p-badges"><span class="p-badge badge-new">Nouveau</span></div>' : ''}
-          ${p.badge === 'exclu' ? '<div class="p-badges"><span class="p-badge badge-exclu">✨ Exclu</span></div>' : ''}
-          <button class="p-wish ${isWished(p.id) ? 'liked' : ''}" onclick="toggleWish(event, this, ${idx})" aria-label="Coup de cœur">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--peach-dk)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-          </button>
-          <div class="${p.image ? 'p-img-photo-wrap' : 'p-img-content'}">${productVisual(p)}</div>
-          <div class="p-quick-add">
-            <button class="btn-quick-add" onclick="event.stopPropagation(); addToCart('${cartLabel(p.category, p.name).replace(/'/g,"\\'")}', ${p.price}, '${p.emoji || ''}', '${p.image || ''}', ${p.weight || 0})">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              Ajouter au panier
-            </button>
-          </div>
-        </div>
-        <div class="p-info">
-          <div class="p-cat">${p.category}</div>
-          <div class="p-name">${p.name}</div>
-          <div class="p-desc">${p.description || ''}</div>
-          <div class="p-bottom">
-            <div class="p-price">${(p.price || 0).toFixed(2).replace('.',',')} €</div>
-            <div class="p-stock ${p.stock === 'low' ? 'low' : ''}"><span class="p-stock-dot"></span> ${p.stock === 'low' ? 'Dernières pièces' : 'En stock'}</div>
-          </div>
-        </div>
-      </div>`;
-    }).join('');
-    const obs3 = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }), { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
-    grid.querySelectorAll('.p-card').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 0.1 + 's'; obs3.observe(el); });
-  }
-
-  function filterPampilles(variant, el) {
-    document.querySelectorAll('#pampillesTabs .cat-tab').forEach(t => t.classList.remove('active'));
-    el.classList.add('active');
-    document.querySelectorAll('#pampillesGrid .p-card').forEach(c => {
-      c.style.display = (variant === 'all' || c.dataset.variant === variant) ? '' : 'none';
-    });
-  }
-
-  fetch('content/products.json').then(r => r.json()).then(data => {
-    products = data.products || [];
-    renderCreolesSection();
-    renderBraceletsSection();
-    renderColliersSection();
-    renderPampillesSection();
-
-    const setText = (id, val) => { const el = document.getElementById(id); if (el && val) el.textContent = val; };
-    setText('pageHeaderScript', data.header_script);
-    setText('pageHeaderTitle', data.header_title);
-    setText('pageHeaderSub', data.header_subtitle);
-    setText('boutiqueSectionLabel', data.section_label);
-    setText('boutiqueSectionTitle', data.section_title);
-    setText('creolesTitle', data.creoles_title);
-    setText('braceletsTitle', data.bracelets_title);
-    setText('colliersTitle', data.colliers_title);
-    setText('pampillesTitle', data.pampilles_title);
-    setText('pampillesTabAll', data.pampilles_tab_all);
-    setText('pampillesTabUni', data.pampilles_tab_uni);
-    setText('pampillesTabMotifs', data.pampilles_tab_motifs);
-  }).catch(() => {});
-
-  fetch('content/site.json').then(r => r.json()).then(site => {
-    const socialMap = { socialFacebook: site.social_facebook, socialInstagram: site.social_instagram, socialVinted: site.social_vinted };
-    Object.keys(socialMap).forEach(id => {
-      const el = document.getElementById(id);
-      if (el && socialMap[id]) { el.href = socialMap[id]; el.style.display = 'flex'; }
-    });
-    if (site.logo_image) {
-      const logo = document.getElementById('navLogo');
-      if (logo) logo.innerHTML = `<img src="${site.logo_image}" alt="${site.brand_name || 'WildFlower_WoodenMountain'}" style="height:90px;width:auto;display:block">`;
+  /* ─── PRODUCTS DATA ─── */
+  const products = [
+    {
+      name: 'Pampilles + Créoles Motifs', cat: 'Pampilles + Créoles', price: 18, emoji: '🌺',
+      desc: 'Formes florales et graphiques avec centro nacré — le duo signature de Wild Flower. Chaque pampille est façonnée à la main, une par une. Légères à porter, infiniment interchangeables.',
+      colors: ['#F0A882','#8FAF8A','#D4A853','#C9A0B8'],
+      bg: '#F5EDE8',
+      svg: `<svg width="140" height="140" viewBox="0 0 140 140" fill="none"><circle cx="70" cy="42" r="21" fill="#F0A882" opacity=".5"/><circle cx="98" cy="70" r="21" fill="#F0A882" opacity=".45"/><circle cx="70" cy="98" r="21" fill="#F0A882" opacity=".5"/><circle cx="42" cy="70" r="21" fill="#F0A882" opacity=".45"/><circle cx="70" cy="70" r="23" fill="#F5C4A8" opacity=".9"/><circle cx="70" cy="70" r="11" fill="#fff" opacity=".45"/></svg>`
+    },
+    {
+      name: 'Pampilles + Créoles Unies', cat: 'Pampilles + Créoles', price: 16, emoji: '🌸',
+      desc: 'Teintes douces, surface satinée et formes épurées. L\'essentiel dans sa version la plus pure. Disponibles en de nombreuses couleurs, parfaites pour s\'assortir à toutes les tenues.',
+      colors: ['#F0A882','#C26B4A','#8FAF8A','#B8D4E8','#D4A853'],
+      bg: '#F5D5C8',
+      svg: `<svg width="140" height="140" viewBox="0 0 140 140" fill="none"><ellipse cx="70" cy="70" rx="50" ry="60" fill="#F0A882" opacity=".55" transform="rotate(-12 70 70)"/><ellipse cx="70" cy="70" rx="28" ry="34" fill="#E8907A" opacity=".7"/><ellipse cx="70" cy="70" rx="13" ry="16" fill="#fff" opacity=".3"/></svg>`
+    },
+    {
+      name: 'Pampilles Seules Motifs', cat: 'Pampilles seules', price: 15, emoji: '🌼',
+      desc: 'Formes organiques et textures délicates pour habiller vos créoles existantes. La solution idéale pour renouveler un bijou préféré sans en racheter un entier.',
+      colors: ['#8FAF8A','#F0A882','#C9A0B8'],
+      bg: '#EEF2E8',
+      svg: `<svg width="140" height="140" viewBox="0 0 140 140" fill="none"><ellipse cx="70" cy="70" rx="46" ry="60" fill="#8FAF8A" opacity=".35" transform="rotate(-22 70 70)"/><ellipse cx="70" cy="70" rx="46" ry="60" fill="#8FAF8A" opacity=".25" transform="rotate(22 70 70)"/><circle cx="70" cy="70" r="20" fill="#8FAF8A" opacity=".65"/><circle cx="70" cy="70" r="9" fill="#fff" opacity=".4"/></svg>`
+    },
+    {
+      name: 'Pampilles Seules Unies', cat: 'Pampilles seules', price: 13, emoji: '🧡',
+      desc: 'Simples, douces, déclinées dans de belles teintes. La base parfaite pour une tenue épurée et élégante. À associer avec nos créoles ou les vôtres.',
+      colors: ['#D4A853','#F0A882','#C26B4A','#8FAF8A'],
+      bg: '#F9E8E0',
+      svg: `<svg width="140" height="140" viewBox="0 0 140 140" fill="none"><path d="M70 125C44 101 14 83 14 57C14 35 28 22 44 27C54 31 64 44 70 57C76 44 86 31 96 27C112 22 126 35 126 57C126 83 96 101 70 125Z" fill="#E8D5C0" opacity=".8"/><path d="M70 105C50 87 26 73 26 57C26 44 36 34 46 38C52 40.5 60 51 70 65C80 51 88 40.5 94 38C104 34 114 44 114 57C114 73 90 87 70 105Z" fill="#D4A853" opacity=".35"/></svg>`
+    },
+    {
+      name: 'Créoles Dorées', cat: 'Créoles seules', price: 5, emoji: '✨',
+      desc: 'Anneau fin à fermoir clipsable, finition dorée subtile. Compatibles avec l\'ensemble de nos pampilles. La base idéale pour construire votre duo signature.',
+      colors: ['#C9A853'],
+      bg: '#F5D5C8',
+      svg: `<svg width="140" height="140" viewBox="0 0 140 140" fill="none"><circle cx="70" cy="70" r="50" stroke="#C9A853" stroke-width="10" fill="none" opacity=".75"/><circle cx="70" cy="120" r="7" fill="#C9A853" opacity=".85"/><ellipse cx="70" cy="70" rx="22" ry="22" fill="#F0D08A" opacity=".2"/></svg>`
+    },
+    {
+      name: 'Créoles Argentées', cat: 'Créoles seules', price: 5, emoji: '🤍',
+      desc: 'Anneau fin à fermoir clipsable, finition argentée délicate. Pour un look plus frais et lumineux. Se marient parfaitement avec les tons pastel et sages de nos pampilles.',
+      colors: ['#A8B8C4'],
+      bg: '#F9E8E0',
+      svg: `<svg width="140" height="140" viewBox="0 0 140 140" fill="none"><circle cx="70" cy="70" r="50" stroke="#A8B8C4" stroke-width="10" fill="none" opacity=".75"/><circle cx="70" cy="120" r="7" fill="#A8B8C4" opacity=".85"/><ellipse cx="70" cy="70" rx="22" ry="22" fill="#C8D8E0" opacity=".2"/></svg>`
     }
-    const flw = document.getElementById('footerLogoWild');
-    const flr = document.getElementById('footerLogoRow');
-    if (flw && site.footer_logo_script) flw.textContent = site.footer_logo_script;
-    const feLink = document.getElementById('footerEmailLink');
-    if (feLink && site.contact_email) { feLink.textContent = site.contact_email; feLink.href = 'mailto:' + site.contact_email; }
-    if (flr && site.footer_logo_line) flr.textContent = site.footer_logo_line;
-  }).catch(() => {});
+  ];
 
   /* ─── MODAL ─── */
   let currentProduct = null, modalQty = 1;
@@ -873,14 +985,16 @@
     currentProduct = p;
     modalQty = 1;
     document.getElementById('modalQty').textContent = 1;
-    document.getElementById('modalCat').textContent = p.category;
+    document.getElementById('modalCat').textContent = p.cat;
     document.getElementById('modalName').textContent = p.name;
-    document.getElementById('modalPrice').textContent = (p.price || 0).toFixed(2).replace('.',',') + ' €';
-    document.getElementById('modalDesc').textContent = p.description;
-    document.getElementById('modalImg').style.background = p.bg || '#F5EDE8';
-    document.getElementById('modalImg').innerHTML = productVisual(p);
+    document.getElementById('modalPrice').textContent = p.price.toFixed(2).replace('.',',') + ' €';
+    document.getElementById('modalDesc').textContent = p.desc;
+    document.getElementById('modalImg').style.background = p.bg;
+    document.getElementById('modalImg').innerHTML = p.svg;
+    const mc = document.getElementById('modalColors');
+    mc.innerHTML = p.colors.map((c,i) => `<div class="modal-color-btn ${i===0?'sel':''}" style="background:${c}" onclick="selectColor(this)"></div>`).join('');
     document.getElementById('modalAddBtn').onclick = () => {
-      for (let i = 0; i < modalQty; i++) addToCart(cartLabel(p.category, p.name), p.price, p.emoji, p.image, p.weight);
+      for (let i = 0; i < modalQty; i++) addToCart(p.name, p.price, p.emoji);
       closeModal();
     };
     document.getElementById('modalOverlay').classList.add('open');
@@ -905,97 +1019,61 @@
   }
 
   /* ─── WISHLIST ─── */
-  let wishlist = [];
-  try {
-    const storedW = sessionStorage.getItem("wf_wishlist");
-    if (storedW) wishlist = JSON.parse(storedW);
-  } catch(e) {}
-  function saveWishlist() {
-    try { sessionStorage.setItem("wf_wishlist", JSON.stringify(wishlist)); } catch(e) {}
-  }
-  function isWished(id) { return wishlist.some(w => w.id === id); }
-
-  function toggleWish(e, btn, idx) {
+  function toggleWish(e, btn) {
     e.stopPropagation();
-    const p = products[idx];
-    if (!p) return;
-    const existing = wishlist.findIndex(w => w.id === p.id);
-    if (existing > -1) {
-      wishlist.splice(existing, 1);
-      btn.classList.remove('liked');
-      toast('Retiré des coups de cœur');
-    } else {
-      wishlist.push({ id: p.id, name: p.name, category: p.category, price: p.price, emoji: p.emoji, bg: p.bg, image: p.image || '' });
-      btn.classList.add('liked');
-      toast('Ajouté aux coups de cœur');
-    }
-    saveWishlist();
-    renderWishlist();
+    btn.classList.toggle('liked');
+    toast(btn.classList.contains('liked') ? 'Ajouté aux coups de cœur 🌸' : 'Retiré des coups de cœur');
   }
 
-  function renderWishlist() {
-    const wi = document.getElementById('wi');
-    const we = document.getElementById('we');
-    wi.querySelectorAll('.wish-item').forEach(el => el.remove());
-    const wb = document.getElementById('wb');
-    wb.textContent = wishlist.length;
-    wb.classList.toggle('on', wishlist.length > 0);
-    if (!wishlist.length) { we.style.display = 'block'; return; }
-    we.style.display = 'none';
-    wishlist.forEach((item, i) => {
-      const el = document.createElement('div'); el.className = 'wish-item';
-      const thumb = item.image
-        ? `<img src="${item.image}" style="width:100%;height:100%;object-fit:cover">`
-        : `<div style="width:100%;height:100%;background:${item.bg || '#F5EDE8'};display:flex;align-items:center;justify-content:center;font-size:22px">${item.emoji || ''}</div>`;
-      el.innerHTML = `<div class="wish-thumb">${thumb}</div><div class="wish-info"><div class="wish-name">${cartLabel(item.category, item.name)}</div><div class="wish-price">${(item.price || 0).toFixed(2).replace('.',',')} €</div><div class="wish-actions"><button class="wish-btn-add" onclick="addToCart('${cartLabel(item.category, item.name).replace(/'/g,"\\'")}', ${item.price}, '${item.emoji || ''}', '${item.image || ''}', ${item.weight || 0})">Ajouter au panier</button><button class="wish-btn-remove" onclick="removeWish(${i})">Retirer</button></div></div>`;
-      wi.appendChild(el);
+  /* ─── FILTER / SORT ─── */
+  let activeTag = 'all', activeCat = 'all';
+
+  function filterCat(cat, el) {
+    activeCat = cat;
+    if (el) { document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active')); el.classList.add('active'); }
+    applyFilters();
+  }
+
+  function filterTag(tag, el) {
+    activeTag = tag;
+    document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+    el.classList.add('active');
+    applyFilters();
+  }
+
+  function applyFilters() {
+    const cards = document.querySelectorAll('.p-card');
+    let visible = 0;
+    cards.forEach(c => {
+      const catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
+      const tags = c.dataset.tags ? c.dataset.tags.split(',') : [];
+      const tagMatch = activeTag === 'all' || tags.includes(activeTag);
+      const show = catMatch && tagMatch;
+      c.style.display = show ? '' : 'none';
+      if (show) visible++;
     });
+    document.getElementById('countLabel').textContent = visible + ' création' + (visible > 1 ? 's' : '');
   }
 
-  function removeWish(i) {
-    wishlist.splice(i, 1);
-    saveWishlist();
-    renderWishlist();
-    // Resynchronise l'état visuel des cœurs sur la grille
-    renderCreolesSection(); renderBraceletsSection(); renderColliersSection(); renderPampillesSection();
+  function sortProducts() {
+    const grid = document.getElementById('prodGrid');
+    const cards = [...grid.querySelectorAll('.p-card')];
+    const sort = document.getElementById('sortSel').value;
+    if (sort === 'price-asc') cards.sort((a,b) => +a.dataset.price - +b.dataset.price);
+    else if (sort === 'price-desc') cards.sort((a,b) => +b.dataset.price - +a.dataset.price);
+    cards.forEach(c => grid.appendChild(c));
   }
-
-  function toggleWishDrawer() {
-    document.getElementById('wdr').classList.toggle('open');
-    document.getElementById('wov').classList.toggle('open');
-  }
-
-  document.addEventListener("DOMContentLoaded", renderWishlist);
-  if (document.readyState !== "loading") renderWishlist();
 
   /* ─── CART ─── */
   let cart = [];
-  function cartLabel(category, name) {
-    const cat = (category || '').trim();
-    const nm = (name || '').trim();
-    if (!cat) return nm;
-    if (nm.toLowerCase().startsWith(cat.toLowerCase())) return nm;
-    return cat + ' ' + nm;
-  }
 
-  try {
-    const stored = sessionStorage.getItem("wf_cart");
-    if (stored) cart = JSON.parse(stored);
-  } catch(e) {}
-  function saveCart() {
-    try { sessionStorage.setItem("wf_cart", JSON.stringify(cart)); } catch(e) {}
-  }
-  document.addEventListener("DOMContentLoaded", renderCart);
-  if (document.readyState !== "loading") renderCart();
-
-  function addToCart(name, price, emoji, image, weight) {
+  function addToCart(name, price, emoji) {
     const ex = cart.find(i => i.name === name);
-    ex ? ex.qty++ : cart.push({ name, price, emoji, image: image || '', weight: weight || 0, qty: 1 });
-    renderCart(); toast('Ajouté au panier');
+    ex ? ex.qty++ : cart.push({ name, price, emoji, qty: 1 });
+    renderCart(); toast('Ajouté au panier 🌸'); openCart();
   }
 
   function renderCart() {
-    saveCart();
     const di = document.getElementById('di');
     const de = document.getElementById('de');
     di.querySelectorAll('.dr-item').forEach(e => e.remove());
@@ -1009,8 +1087,7 @@
     cart.forEach((item, i) => {
       total += item.price * item.qty; count += item.qty;
       const el = document.createElement('div'); el.className = 'dr-item';
-      const thumb = item.image ? `<img src="${item.image}" alt="">` : (item.emoji || '');
-      el.innerHTML = `<div class="dr-thumb">${thumb}</div><div class="dr-info"><div class="dr-name">${item.name}</div><div class="dr-price">${item.price},00 €</div><div class="dr-qty"><button class="qb" onclick="chQty(${i},-1)">−</button><span class="qv">${item.qty}</span><button class="qb" onclick="chQty(${i},1)">+</button></div></div>`;
+      el.innerHTML = `<div class="dr-thumb">${item.emoji}</div><div class="dr-info"><div class="dr-name">${item.name}</div><div class="dr-price">${item.price},00 €</div><div class="dr-qty"><button class="qb" onclick="chQty(${i},-1)">−</button><span class="qv">${item.qty}</span><button class="qb" onclick="chQty(${i},1)">+</button></div></div>`;
       di.appendChild(el);
     });
     document.getElementById('dt').textContent = total.toFixed(2).replace('.',',') + ' €';
@@ -1029,42 +1106,15 @@
     setTimeout(() => t.classList.remove('on'), 2800);
   }
 
+  /* ─── REVEAL ─── */
+  const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }), { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  document.querySelectorAll('.p-card').forEach((el, i) => {
+    el.style.transitionDelay = (i % 3) * 0.1 + 's';
+    obs.observe(el);
+  });
+
   /* ─── ESC to close modal ─── */
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-</script>
-<script>
-  fetch('content/home.json').then(r => r.json()).then(d => {
-    const ft = document.getElementById('footerTagline');
-    const fc = document.getElementById('footerCopyright');
-    if (ft && d.footer_tagline) ft.textContent = d.footer_tagline;
-    if (fc && d.footer_copyright) fc.textContent = d.footer_copyright;
-  }).catch(() => {});
-</script>
-<script>
-  function toggleNavSearch() {
-    const wrap = document.getElementById('navSearchWrap');
-    const input = document.getElementById('navSearchInput');
-    if (!wrap) return;
-    const isOpen = wrap.style.display === 'flex';
-    wrap.style.display = isOpen ? 'none' : 'flex';
-    if (!isOpen && input) setTimeout(() => input.focus(), 50);
-  }
-  function submitNavSearch() {
-    const input = document.getElementById('navSearchInput');
-    if (!input) return;
-    const q = input.value.trim();
-    if (q) window.location.href = 'boutique.html?q=' + encodeURIComponent(q);
-  }
-</script>
-
-<script>
-  // Corrige le bug du bouton qui ne répond plus après un retour arrière du navigateur
-  // (page restaurée depuis le cache mémoire du navigateur, JS figé)
-  window.addEventListener('pageshow', function (event) {
-    if (event.persisted) {
-      window.location.reload();
-    }
-  });
 </script>
 </body>
 </html>

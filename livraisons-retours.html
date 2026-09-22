@@ -3,14 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Livraisons &amp; Retours — WildFlower_WoodenMountain</title>
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png?v=4"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png?v=4"/>
-  <link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192.png?v=4"/>
-  <link rel="icon" type="image/png" sizes="512x512" href="images/android-chrome-512.png?v=4"/>
-  <link rel="alternate icon" href="images/favicon.ico?v=4"/>
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png?v=4"/>
-  <meta name="description" content="Informations de livraison et politique de retours de WildFlower_WoodenMountain."/>
+  <title>Livraisons &amp; Retours — Wild Flower by Wooden Mountain</title>
+  <meta name="description" content="Informations de livraison et politique de retours de Wild Flower by Wooden Mountain."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"/>
@@ -35,7 +29,7 @@
     .promo-bar{background:var(--peach);text-align:center;padding:9px 16px;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#fff;}
 
     nav{position:sticky;top:0;z-index:200;background:rgba(255,252,250,0.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(242,191,181,0.3);}
-    .nav-top{display:flex;align-items:center;justify-content:space-between;height:100px;max-width:1160px;margin:0 auto;padding:0 28px;}
+    .nav-top{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1160px;margin:0 auto;padding:0 28px;}
     .nav-left{display:flex;align-items:center;gap:22px;}
     .nav-icon-btn{background:none;border:none;cursor:pointer;color:var(--brown-mid);font-size:17px;transition:color var(--ease);}
     .nav-icon-btn:hover{color:var(--peach-dk);}
@@ -49,12 +43,7 @@
     .nav-menu{display:flex;justify-content:center;align-items:center;gap:36px;padding:0 28px 10px;max-width:1160px;margin:0 auto;}
     .nav-menu a{font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--brown-mid);transition:color var(--ease);}
     .nav-menu a:hover{color:var(--peach-dk);}
-        .nav-burger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
-    .nav-burger span { display: block; width: 20px; height: 1.8px; background: var(--brown-mid); border-radius: 2px; }
-    .mobile-nav { display: none; flex-direction: column; gap: 16px; padding: 20px 28px 24px; border-top: 1px solid rgba(242,191,181,0.3); }
-    .mobile-nav.open { display: flex; }
-    .mobile-nav a { font-size: 14px; font-weight: 500; color: var(--brown-mid); letter-spacing: .08em; text-transform: uppercase; } .mobile-nav a.active { color: var(--peach-dk); }
-    @media(max-width:600px){.nav-menu{display:none;}.nav-burger{display:flex;}}
+    @media(max-width:600px){.nav-menu{display:none;}}
 
     /* Warm sage-tinted gradient for this page */
     .page-header{background:linear-gradient(135deg,#E8EDD8 0%,#D8E5C8 50%,#CCE0B8 100%);padding:64px 28px 88px;text-align:center;position:relative;overflow:hidden;}
@@ -133,14 +122,6 @@
     .footer-logo-wild{font-family:var(--font-s);font-size:28px;color:#F2B899;}
     .footer-logo-row{font-family:var(--font-b);font-size:13px;letter-spacing:.1em;color:var(--peach);margin-bottom:12px;}
     .f-tagline{font-size:13px;line-height:1.7;max-width:230px;}
-    .f-social { display: flex; gap: 10px; margin-top: 16px; }
-    .f-social-link {
-      width: 36px; height: 36px; border-radius: 50%;
-      background: rgba(255,255,255,0.08);
-      display: flex; align-items: center; justify-content: center;
-      color: inherit; transition: background var(--ease), transform var(--ease);
-    }
-    .f-social-link:hover { background: var(--peach); transform: translateY(-2px); }
     .f-col h4{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,248,245,0.3);margin-bottom:14px;}
     .f-col ul{display:flex;flex-direction:column;gap:9px;}
     .f-col a{font-size:13.5px;color:rgba(255,248,245,0.58);transition:color var(--ease);}
@@ -159,45 +140,33 @@
 <nav>
   <div class="nav-top">
     <div class="nav-left">
-      <button class="nav-icon-btn" id="navSearchBtn" onclick="toggleNavSearch()" aria-label="Rechercher"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
-      <div class="nav-search-wrap" id="navSearchWrap" style="display:none;align-items:center;margin-left:8px">
-        <input type="text" id="navSearchInput" placeholder="Rechercher un produit..." onkeydown="if(event.key==='Enter') submitNavSearch()" style="border:none;border-bottom:1px solid #F0A882;background:transparent;outline:none;font-size:13px;padding:4px 2px;width:160px;color:inherit;font-family:inherit">
-      </div>
+      <button class="nav-icon-btn" aria-label="Rechercher"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
     </div>
-    <a href="index.html" class="nav-logo" aria-label="WildFlower_WoodenMountain" id="navLogo">
+    <a href="index.html" class="nav-logo" aria-label="Wild Flower by Wooden Mountain">
       <span class="logo-wild">Wild</span>
       <div class="logo-flower-row">Fl<svg class="logo-flower-icon" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="10" r="5" fill="#F0A882" opacity=".85"/><circle cx="22" cy="16" r="5" fill="#F0A882" opacity=".75"/><circle cx="16" cy="22" r="5" fill="#F0A882" opacity=".85"/><circle cx="10" cy="16" r="5" fill="#F0A882" opacity=".75"/><circle cx="16" cy="16" r="6" fill="#F5C4A8"/><circle cx="16" cy="16" r="3.5" fill="#fff" opacity=".7"/></svg>wer</div>
       <div style="display:flex;align-items:center;gap:4px;margin-top:1px"><span class="logo-by">by</span><span class="logo-wm">Wooden Mountain</span></div>
     </a>
     <div class="nav-right">
-      <a href="boutique.html" class="nav-icon-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></a>
-      <button class="nav-burger" onclick="document.getElementById('mn').classList.toggle('open')"><span></span><span></span><span></span></button>
+      <button class="nav-icon-btn" aria-label="Compte"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></button>
+      <a href="index.html#boutique" class="nav-icon-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></a>
     </div>
   </div>
   <ul class="nav-menu">
     <li><a href="index.html">Accueil</a></li>
-    <li><a href="nouveautes.html">Nouveautés</a></li>
-    <li><a href="boutique.html">Boutique</a></li>
-    <li><a href="wooden-mountain.html">Wooden Mountain</a></li><li><a href="notre-histoire.html">Qui je suis ?</a></li>
+    <li><a href="index.html#boutique">Boutique</a></li>
+    <li><a href="index.html#histoire">Notre histoire</a></li>
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
-  <div class="mobile-nav" id="mn">
-    <a href="index.html" onclick="this.closest('.mobile-nav').classList.remove('open')">Accueil</a>
-    <a href="nouveautes.html" onclick="this.closest('.mobile-nav').classList.remove('open')">Nouveautés</a>
-    <a href="boutique.html" onclick="this.closest('.mobile-nav').classList.remove('open')">Boutique</a>
-    <a href="wooden-mountain.html" onclick="this.closest('.mobile-nav').classList.remove('open')">Wooden Mountain</a>
-    <a href="notre-histoire.html" onclick="this.closest('.mobile-nav').classList.remove('open')">Qui je suis ?</a>
-    <a href="index.html#contact" onclick="this.closest('.mobile-nav').classList.remove('open')">Contact</a>
-  </div>
 </nav>
 
 <div class="page-header">
   <div class="ph-spark" style="top:20%;left:8%;animation:spark-pulse 2.5s ease-in-out infinite"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" opacity=".5"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
   <div class="ph-spark" style="top:30%;right:10%;animation:spark-pulse 2.5s .8s ease-in-out infinite"><svg width="12" height="12" viewBox="0 0 24 24" fill="#D4A853" opacity=".55"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
   <div class="ph-spark" style="bottom:32%;left:16%;animation:spark-pulse 2.5s 1.4s ease-in-out infinite"><svg width="10" height="10" viewBox="0 0 24 24" fill="#fff" opacity=".4"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
-  <div class="page-header-script" id="pageHeaderScript">Expédié avec amour</div>
-  <h1 id="pageHeaderTitle">Livraisons &amp; Retours</h1>
-  <p class="page-header-sub" id="pageHeaderSub">Chaque colis est emballé à la main, avec soin ✨</p>
+  <div class="page-header-script">Expédié avec amour</div>
+  <h1>Livraisons &amp; Retours</h1>
+  <p class="page-header-sub">Chaque colis est emballé à la main, avec soin ✨</p>
 </div>
 
 <!-- ÉTAPES VISUELLES -->
@@ -236,12 +205,164 @@
 <div class="page-body">
   <div class="container">
     <div class="ml-layout">
-      <aside class="toc" id="tocAside">
+      <aside class="toc">
         <div class="toc-label">Sommaire</div>
-        <ul id="tocList"></ul>
+        <ul>
+          <li><a href="#lv-preparation">🏺 Préparation</a></li>
+          <li><a href="#lv-modes">📦 Modes de livraison</a></li>
+          <li><a href="#lv-tarifs">💛 Tarifs &amp; délais</a></li>
+          <li><a href="#lv-suivi">🔍 Suivi de colis</a></li>
+          <li><a href="#lv-probleme">⚠️ Problème livraison</a></li>
+          <li><a href="#lv-retractation">↩️ Rétractation</a></li>
+          <li><a href="#lv-retours">🔄 Retours</a></li>
+          <li><a href="#lv-remboursement">💸 Remboursement</a></li>
+          <li><a href="#lv-contact">📧 Contact</a></li>
+        </ul>
       </aside>
 
-      <div id="sectionsContainer"></div>
+      <div>
+        <section class="ml-section" id="lv-preparation">
+          <span class="ml-section-tag">Préparation</span>
+          <h2>Préparation des commandes</h2>
+          <p>Chaque commande est préparée à la main, avec le même soin apporté à la fabrication des pièces elles-mêmes. Les commandes sont traitées du <strong>lundi au vendredi</strong>.</p>
+          <div class="sage-box">
+            <p>⏱ <strong>Délai de préparation : 3 à 5 jours ouvrés</strong> après confirmation du paiement.<br>Les commandes passées le week-end ou jours fériés sont traitées le premier jour ouvré suivant.<br>En période de forte activité (fêtes, nouvelles collections), ce délai peut s'allonger légèrement — vous serez informé(e) par e-mail.</p>
+          </div>
+          <p>Vous recevrez un e-mail de confirmation d'expédition avec votre numéro de suivi dès que votre colis sera remis au transporteur.</p>
+        </section>
+        <div class="petal-div">🌸 · · ·</div>
+
+        <section class="ml-section" id="lv-modes">
+          <span class="ml-section-tag">Modes de livraison</span>
+          <h2>Modes de livraison disponibles</h2>
+          <p>Plusieurs options d'expédition sont proposées selon votre destination :</p>
+          <div class="info-box">
+            <p>
+              <strong>🇫🇷 France métropolitaine :</strong><br>
+              — Lettre suivie (La Poste) pour les petits envois légers<br>
+              — Colissimo avec suivi et avis de passage<br><br>
+              <strong>🇪🇺 Europe :</strong><br>
+              — Colissimo International avec numéro de suivi<br><br>
+              <strong>🌍 Reste du monde :</strong><br>
+              — Colissimo International ou Chronopost selon la destination<br>
+              — Nous contacter pour un devis personnalisé
+            </p>
+          </div>
+          <p>Les bijoux en argile polymère sont légers et compacts — ils voyagent très bien ! Chaque envoi est soigneusement protégé pour arriver intact.</p>
+        </section>
+        <div class="petal-div">🌸 · · ·</div>
+
+        <section class="ml-section" id="lv-tarifs">
+          <span class="ml-section-tag">Tarifs &amp; délais</span>
+          <h2>Tarifs et délais de livraison</h2>
+          <table class="shipping-table">
+            <thead>
+              <tr><th>Destination</th><th>Mode</th><th>Délai estimé</th><th>Tarif</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>France métropolitaine</td><td>Lettre suivie</td><td>2–3 jours ouvrés</td><td>À partir de 2,50€</td></tr>
+              <tr><td>France métropolitaine</td><td>Colissimo</td><td>2–3 jours ouvrés</td><td>À partir de 5,50€</td></tr>
+              <tr><td>France métro. (≥ 50€)</td><td>Au choix</td><td>2–3 jours ouvrés</td><td><span class="free-tag">Offert ✓</span></td></tr>
+              <tr><td>DOM-TOM</td><td>Colissimo International</td><td>7–15 jours ouvrés</td><td>Sur devis</td></tr>
+              <tr><td>Europe</td><td>Colissimo International</td><td>5–10 jours ouvrés</td><td>À partir de 8,00€</td></tr>
+              <tr><td>Reste du monde</td><td>Colissimo / Chronopost</td><td>Variable</td><td>Sur devis</td></tr>
+            </tbody>
+          </table>
+          <p>Les délais sont indicatifs et peuvent varier en période de forte activité postale (Noël, soldes, etc.).</p>
+        </section>
+        <div class="petal-div">🌸 · · ·</div>
+
+        <section class="ml-section" id="lv-suivi">
+          <span class="ml-section-tag">Suivi</span>
+          <h2>Suivi de votre colis</h2>
+          <p>Dès l'expédition de votre commande, vous recevez un e-mail contenant votre <strong>numéro de suivi</strong>. Vous pouvez suivre l'acheminement de votre colis directement sur le site de La Poste ou du transporteur concerné.</p>
+          <p>En cas d'absence lors de la livraison, un avis de passage est déposé dans votre boîte aux lettres. Le colis est généralement mis à disposition au bureau de poste le plus proche pendant 15 jours.</p>
+          <div class="sage-box">
+            <p>💡 <strong>Astuce :</strong> Pensez à vérifier vos spams si vous ne recevez pas l'e-mail de confirmation d'expédition. Vous pouvez également nous contacter à tout moment pour obtenir des nouvelles de votre commande.</p>
+          </div>
+        </section>
+        <div class="petal-div">🌸 · · ·</div>
+
+        <section class="ml-section" id="lv-probleme">
+          <span class="ml-section-tag">Problème ?</span>
+          <h2>Problème à la livraison</h2>
+          <p>Malgré tout le soin apporté à l'emballage, il peut arriver qu'un colis arrive endommagé ou soit perdu. Voici comment nous pouvons vous aider :</p>
+          <ul class="list">
+            <li><strong>Colis endommagé</strong> : prenez des photos avant d'ouvrir le colis, puis contactez-nous sous 48h avec les photos. Nous ouvrirons une réclamation et trouverons une solution (remplacement ou remboursement).</li>
+            <li><strong>Colis perdu</strong> : si le suivi n'évolue plus depuis plus de 10 jours ouvrés, contactez-nous. Nous effectuerons une recherche auprès du transporteur.</li>
+            <li><strong>Erreur de commande</strong> : si vous avez reçu un article différent de celui commandé, contactez-nous immédiatement. Nous prenons en charge les frais de retour et renvoyons le bon article.</li>
+          </ul>
+          <p style="margin-top:12px;">Dans tous les cas : <a href="mailto:contact@woodenmountain.fr">contact@woodenmountain.fr</a> — nous sommes là pour vous. 🌸</p>
+        </section>
+        <div class="petal-div">🌸 · · ·</div>
+
+        <section class="ml-section" id="lv-retractation">
+          <span class="ml-section-tag">Rétractation</span>
+          <h2>Droit de rétractation</h2>
+          <p>Conformément à l'article L.221-18 du Code de la consommation, vous disposez d'un délai de <strong>14 jours calendaires</strong> à compter de la réception de votre commande pour exercer votre droit de rétractation, sans motif à donner.</p>
+          <div class="info-box">
+            <p>📧 Notifiez-nous par e-mail à <a href="mailto:contact@woodenmountain.fr">contact@woodenmountain.fr</a> avant l'expiration du délai, en précisant votre numéro de commande.</p>
+          </div>
+          <div class="highlight-box">
+            <p>⚠️ <strong>Exception — Sur mesure :</strong> Le droit de rétractation ne s'applique pas aux commandes personnalisées (couleur, forme ou motif spécifiques choisis sur mesure), conformément à l'article L.221-28 du Code de la consommation.</p>
+          </div>
+        </section>
+        <div class="petal-div">🌸 · · ·</div>
+
+        <section class="ml-section" id="lv-retours">
+          <span class="ml-section-tag">Retours</span>
+          <h2>Procédure de retour</h2>
+          <p>Pour effectuer un retour, suivez ces étapes :</p>
+          <div class="retour-steps">
+            <div class="retour-step">
+              <div class="retour-step-num">1</div>
+              <div class="retour-step-text"><strong>Contactez-nous</strong>Envoyez un e-mail à <a href="mailto:contact@woodenmountain.fr">contact@woodenmountain.fr</a> avec votre numéro de commande et la raison du retour. Aucun retour sans accord préalable ne sera accepté.</div>
+            </div>
+            <div class="retour-step">
+              <div class="retour-step-num">2</div>
+              <div class="retour-step-text"><strong>Préparez le colis</strong>Remballez l'article dans son emballage d'origine (ou équivalent). L'article doit être non porté, non endommagé, dans son état d'origine.</div>
+            </div>
+            <div class="retour-step">
+              <div class="retour-step-num">3</div>
+              <div class="retour-step-text"><strong>Expédiez sous 14 jours</strong>Retournez le colis à l'adresse communiquée, en lettre suivie ou Colissimo. Les frais de retour sont à votre charge (sauf erreur ou défaut de notre part).</div>
+            </div>
+            <div class="retour-step">
+              <div class="retour-step-num">4</div>
+              <div class="retour-step-text"><strong>Remboursement ou échange</strong>Dès réception et vérification du retour, votre remboursement ou échange est traité sous 14 jours maximum.</div>
+            </div>
+          </div>
+        </section>
+        <div class="petal-div">🌸 · · ·</div>
+
+        <section class="ml-section" id="lv-remboursement">
+          <span class="ml-section-tag">Remboursement</span>
+          <h2>Modalités de remboursement</h2>
+          <p>Le remboursement est effectué dans les <strong>14 jours</strong> suivant la réception du retour ou la preuve d'expédition du colis (le premier des deux termes).</p>
+          <div class="info-box">
+            <p>
+              <strong>Montant remboursé :</strong> prix du ou des produits retournés + frais de port initiaux si l'intégralité de la commande est retournée<br>
+              <strong>Frais de retour :</strong> à la charge de l'acheteur (sauf erreur/défaut de notre part)<br>
+              <strong>Mode de remboursement :</strong> via le moyen de paiement utilisé lors de la commande<br>
+              <strong>Délai bancaire :</strong> 3 à 5 jours supplémentaires selon votre établissement
+            </p>
+          </div>
+          <p>En cas de retour partiel, seul le montant des articles retournés est remboursé. Les frais de port initiaux ne sont pas remboursés dans ce cas.</p>
+        </section>
+        <div class="petal-div">🌸 · · ·</div>
+
+        <section class="ml-section" id="lv-contact">
+          <span class="ml-section-tag">Contact</span>
+          <h2>Une question ? On est là 🌸</h2>
+          <div class="info-box">
+            <p>
+              📧 <strong>E-mail :</strong> <a href="mailto:contact@woodenmountain.fr">contact@woodenmountain.fr</a><br>
+              ⏱ <strong>Délai de réponse :</strong> sous 48 heures ouvrées<br>
+              📦 <strong>Pour tout retour :</strong> toujours nous contacter en premier
+            </p>
+          </div>
+          <p style="margin-top:20px;font-family:var(--font-d);font-style:italic;color:var(--terra);font-size:16px;">Chaque colis part avec une petite attention — parce que vous méritez de sourire en l'ouvrant. 🌸</p>
+        </section>
+      </div>
     </div>
   </div>
 </div>
@@ -250,7 +371,7 @@
 <div class="cta-band">
   <h3>Prête à craquer pour une pampille ?</h3>
   <p>Des créations uniques, faites à la main, livrées chez vous avec soin.</p>
-  <a href="boutique.html" class="btn-cta">
+  <a href="index.html#boutique" class="btn-cta">
     Voir la boutique
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
   </a>
@@ -259,106 +380,17 @@
 <footer>
   <div class="footer-container">
     <div class="footer-grid">
-      <div><div class="footer-logo-wild" id="footerLogoWild">Wild</div><div class="footer-logo-row" id="footerLogoRow">Flower · by Wooden Mountain</div><p class="f-tagline" id="footerTagline">Pampilles interchangeables en argile polymère. Colorées, faites à la main, pour changer d'humeur en deux secondes.</p><div class="f-social" id="footerSocial"><a href="#" id="socialFacebook" class="f-social-link" style="display:none" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a><a href="#" id="socialInstagram" class="f-social-link" style="display:none" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1"/></svg></a><a href="#" id="socialVinted" class="f-social-link" style="display:none" target="_blank" rel="noopener" aria-label="Vinted"><span style="font-family:Arial,sans-serif;font-size:15px;font-weight:800;line-height:1;color:#09B1BA">V</span></a></div></div>
-      <div class="f-col"><h4>Navigation</h4><ul><li><a href="nouveautes.html">Nouveautés</a></li><li><a href="boutique.html">Boutique</a></li><li><a href="wooden-mountain.html">Wooden Mountain</a></li><li><a href="notre-histoire.html">Qui je suis ?</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
-      <div class="f-col"><h4>Légal</h4><ul><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="cgv.html">CGV</a></li><li><a href="politique-confidentialite.html">Confidentialité</a></li><li><a href="livraisons-retours.html">Livraisons &amp; retours</a></li></ul></div>
+      <div><div class="footer-logo-wild">Wild</div><div class="footer-logo-row">Flower · by Wooden Mountain</div><p class="f-tagline">Pampilles interchangeables en argile polymère. Colorées, faites à la main, pour changer d'humeur en deux secondes.</p></div>
+      <div class="f-col"><h4>Navigation</h4><ul><li><a href="index.html#boutique">Boutique</a></li><li><a href="index.html#histoire">Notre histoire</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+      <div class="f-col"><h4>Légal</h4><ul><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="cgv.html">CGV</a></li><li><a href="politique-confidentialite.html">Confidentialité</a></li><li><a href="livraisons-retours.html">Livraisons &amp; retours</a></li><li><a href="entretien-bijoux.html">Entretien des bijoux</a></li></ul></div>
     </div>
-    <div class="footer-bar"><p id="footerCopyright">© 2025 WildFlower_WoodenMountain · Fait avec 🌸 en France</p><p>Paiement sécurisé · Expédition soignée</p></div>
+    <div class="footer-bar"><p>© 2025 Wild Flower by Wooden Mountain · Fait avec 🌸 en France</p><p>Paiement sécurisé · Expédition soignée</p></div>
   </div>
 </footer>
 
 <script>
   const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('v'); }), {threshold:.08,rootMargin:'0px 0px -20px 0px'});
   document.querySelectorAll('.ml-section, .step-card').forEach(el => obs.observe(el));
-</script>
-<script>
-  function escapeHtml(str) {
-    return String(str || '')
-      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  }
-
-  function renderBody(body) {
-    if (!body) return '';
-    const blocks = body.split('\n\n');
-    return blocks.map(block => {
-      if (block.startsWith('[ENCADRÉ] ')) {
-        return '<div class="info-box"><p>' + escapeHtml(block.slice(10)) + '</p></div>';
-      }
-      const lines = block.split('\n');
-      if (lines.length && lines.every(l => l.startsWith('- '))) {
-        return '<ul class="list">' + lines.map(l => '<li>' + escapeHtml(l.slice(2)) + '</li>').join('') + '</ul>';
-      }
-      return '<p>' + escapeHtml(block) + '</p>';
-    }).join('');
-  }
-
-  fetch('content/livraisons.json').then(r => r.json()).then(d => {
-    const setText = (id, val) => { const el = document.getElementById(id); if (el && val) el.textContent = val; };
-    setText('pageHeaderScript', d.header_script);
-    setText('pageHeaderTitle', d.header_title);
-    setText('pageHeaderSub', d.header_subtitle);
-    setText('updatedLabel', d.updated_label);
-
-    const tocList = document.getElementById('tocList');
-    const sectionsContainer = document.getElementById('sectionsContainer');
-    if (tocList && sectionsContainer && Array.isArray(d.sections)) {
-      tocList.innerHTML = d.sections.map(s =>
-        '<li><a href="#' + s.slug + '">' + (s.toc_emoji || '📄') + ' ' + escapeHtml(s.toc_label || s.title) + '</a></li>'
-      ).join('');
-
-      sectionsContainer.innerHTML = '<div>' + d.sections.map((s, i) => `
-        <section class="ml-section" id="${s.slug}">
-          <span class="ml-section-tag">${escapeHtml(s.tag)}</span>
-          <h2>${escapeHtml(s.title)}</h2>
-          ${renderBody(s.body)}
-        </section>
-        ${i < d.sections.length - 1 ? '<div class="petal-div"><img src="images/apple-touch-icon.png?v=4" alt="" style="width:20px;height:20px;object-fit:contain;vertical-align:middle"></div>' : ''}
-      `).join('') + '</div>';
-
-      const obs2 = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }), { threshold: .08, rootMargin: '0px 0px -20px 0px' });
-      document.querySelectorAll('.ml-section').forEach(el => obs2.observe(el));
-    }
-  }).catch(() => {});
-
-  fetch('content/site.json').then(r => r.json()).then(site => {
-    const socialMap = { socialFacebook: site.social_facebook, socialInstagram: site.social_instagram, socialVinted: site.social_vinted };
-    Object.keys(socialMap).forEach(id => {
-      const el = document.getElementById(id);
-      if (el && socialMap[id]) { el.href = socialMap[id]; el.style.display = 'flex'; }
-    });
-    if (site.logo_image) {
-      const logo = document.getElementById('navLogo');
-      if (logo) logo.innerHTML = `<img src="${site.logo_image}" alt="${site.brand_name || 'WildFlower_WoodenMountain'}" style="height:90px;width:auto;display:block">`;
-    }
-    const flw = document.getElementById('footerLogoWild');
-    const flr = document.getElementById('footerLogoRow');
-    if (flw && site.footer_logo_script) flw.textContent = site.footer_logo_script;
-    if (flr && site.footer_logo_line) flr.textContent = site.footer_logo_line;
-  }).catch(() => {});
-</script>
-<script>
-  fetch('content/home.json').then(r => r.json()).then(d => {
-    const ft = document.getElementById('footerTagline');
-    const fc = document.getElementById('footerCopyright');
-    if (ft && d.footer_tagline) ft.textContent = d.footer_tagline;
-    if (fc && d.footer_copyright) fc.textContent = d.footer_copyright;
-  }).catch(() => {});
-</script>
-<script>
-  function toggleNavSearch() {
-    const wrap = document.getElementById('navSearchWrap');
-    const input = document.getElementById('navSearchInput');
-    if (!wrap) return;
-    const isOpen = wrap.style.display === 'flex';
-    wrap.style.display = isOpen ? 'none' : 'flex';
-    if (!isOpen && input) setTimeout(() => input.focus(), 50);
-  }
-  function submitNavSearch() {
-    const input = document.getElementById('navSearchInput');
-    if (!input) return;
-    const q = input.value.trim();
-    if (q) window.location.href = 'boutique.html?q=' + encodeURIComponent(q);
-  }
 </script>
 </body>
 </html>
