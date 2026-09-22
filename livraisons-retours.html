@@ -82,6 +82,8 @@
     .ml-section-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--peach-dk);background:var(--rose-lt);border-radius:999px;padding:4px 12px;margin-bottom:12px;}
     .ml-section h2{font-family:var(--font-d);font-size:28px;font-weight:600;color:var(--brown);margin-bottom:16px;letter-spacing:-.01em;line-height:1.15;}
     .ml-section p{font-size:14.5px;color:var(--brown-mid);line-height:1.85;margin-bottom:10px;}
+    .ml-list{margin:0 0 10px;padding-left:20px;}
+    .ml-list li{font-size:14.5px;color:var(--brown-mid);line-height:1.85;margin-bottom:4px;}
     .ml-section p:last-child{margin-bottom:0;}
     .ml-section a{color:var(--peach-dk);text-decoration:underline;text-decoration-color:rgba(240,168,130,0.4);transition:color var(--ease);}
     .ml-section a:hover{color:var(--terra);}
@@ -167,9 +169,9 @@
   <div class="ph-spark" style="top:20%;left:8%;animation:spark-pulse 2.5s ease-in-out infinite"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" opacity=".5"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
   <div class="ph-spark" style="top:30%;right:10%;animation:spark-pulse 2.5s .8s ease-in-out infinite"><svg width="12" height="12" viewBox="0 0 24 24" fill="#D4A853" opacity=".55"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
   <div class="ph-spark" style="bottom:32%;left:16%;animation:spark-pulse 2.5s 1.4s ease-in-out infinite"><svg width="10" height="10" viewBox="0 0 24 24" fill="#fff" opacity=".4"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
-  <div class="page-header-script">Expédié avec amour</div>
-  <h1>Livraisons &amp; Retours</h1>
-  <p class="page-header-sub">Chaque colis est emballé à la main, avec soin ✨</p>
+  <div class="page-header-script" id="mlHeaderScript">Expédié avec amour</div>
+  <h1 id="mlHeaderTitle">Livraisons &amp; Retours</h1>
+  <p class="page-header-sub" id="mlHeaderSub">Chaque colis est emballé à la main, avec soin ✨</p>
 </div>
 
 <!-- ÉTAPES VISUELLES -->
@@ -210,165 +212,14 @@
     <div class="ml-layout">
       <aside class="toc">
         <div class="toc-label">Sommaire</div>
-        <ul>
-          <li><a href="#lv-preparation">🏺 Préparation</a></li>
-          <li><a href="#lv-modes">📦 Modes de livraison</a></li>
-          <li><a href="#lv-tarifs">💛 Tarifs &amp; délais</a></li>
-          <li><a href="#lv-suivi">🔍 Suivi de colis</a></li>
-          <li><a href="#lv-probleme">⚠️ Problème livraison</a></li>
-          <li><a href="#lv-retractation">↩️ Rétractation</a></li>
-          <li><a href="#lv-retours">🔄 Retours</a></li>
-          <li><a href="#lv-remboursement">💸 Remboursement</a></li>
-          <li><a href="#lv-contact">📧 Contact</a></li>
-        </ul>
+        <ul id="mlToc"></ul>
       </aside>
 
-      <div>
-        <section class="ml-section" id="lv-preparation">
-          <span class="ml-section-tag">Préparation</span>
-          <h2>Préparation des commandes</h2>
-          <p>Chaque commande est préparée à la main, avec le même soin apporté à la fabrication des pièces elles-mêmes. Les commandes sont traitées du <strong>lundi au vendredi</strong>.</p>
-          <div class="sage-box">
-            <p>⏱ <strong>Délai de préparation : 3 à 5 jours ouvrés</strong> après confirmation du paiement.<br>Les commandes passées le week-end ou jours fériés sont traitées le premier jour ouvré suivant.<br>En période de forte activité (fêtes, nouvelles collections), ce délai peut s'allonger légèrement — vous serez informé(e) par e-mail.</p>
-          </div>
-          <p>Vous recevrez un e-mail de confirmation d'expédition avec votre numéro de suivi dès que votre colis sera remis au transporteur.</p>
-        </section>
-        <div class="petal-div">🌸 · · ·</div>
-
-        <section class="ml-section" id="lv-modes">
-          <span class="ml-section-tag">Modes de livraison</span>
-          <h2>Modes de livraison disponibles</h2>
-          <p>Plusieurs options d'expédition sont proposées selon votre destination :</p>
-          <div class="info-box">
-            <p>
-              <strong>🇫🇷 France métropolitaine :</strong><br>
-              — Lettre suivie (La Poste) pour les petits envois légers<br>
-              — Colissimo avec suivi et avis de passage<br><br>
-              <strong>🇪🇺 Europe :</strong><br>
-              — Colissimo International avec numéro de suivi<br><br>
-              <strong>🌍 Reste du monde :</strong><br>
-              — Colissimo International ou Chronopost selon la destination<br>
-              — Nous contacter pour un devis personnalisé
-            </p>
-          </div>
-          <p>Les bijoux en argile polymère sont légers et compacts — ils voyagent très bien ! Chaque envoi est soigneusement protégé pour arriver intact.</p>
-        </section>
-        <div class="petal-div">🌸 · · ·</div>
-
-        <section class="ml-section" id="lv-tarifs">
-          <span class="ml-section-tag">Tarifs &amp; délais</span>
-          <h2>Tarifs et délais de livraison</h2>
-          <table class="shipping-table">
-            <thead>
-              <tr><th>Destination</th><th>Mode</th><th>Délai estimé</th><th>Tarif</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>France métropolitaine</td><td>Lettre suivie</td><td>2–3 jours ouvrés</td><td>À partir de 2,50€</td></tr>
-              <tr><td>France métropolitaine</td><td>Colissimo</td><td>2–3 jours ouvrés</td><td>À partir de 5,50€</td></tr>
-              <tr><td>France métro. (≥ 50€)</td><td>Au choix</td><td>2–3 jours ouvrés</td><td><span class="free-tag">Offert ✓</span></td></tr>
-              <tr><td>DOM-TOM</td><td>Colissimo International</td><td>7–15 jours ouvrés</td><td>Sur devis</td></tr>
-              <tr><td>Europe</td><td>Colissimo International</td><td>5–10 jours ouvrés</td><td>À partir de 8,00€</td></tr>
-              <tr><td>Reste du monde</td><td>Colissimo / Chronopost</td><td>Variable</td><td>Sur devis</td></tr>
-            </tbody>
-          </table>
-          <p>Les délais sont indicatifs et peuvent varier en période de forte activité postale (Noël, soldes, etc.).</p>
-        </section>
-        <div class="petal-div">🌸 · · ·</div>
-
-        <section class="ml-section" id="lv-suivi">
-          <span class="ml-section-tag">Suivi</span>
-          <h2>Suivi de votre colis</h2>
-          <p>Dès l'expédition de votre commande, vous recevez un e-mail contenant votre <strong>numéro de suivi</strong>. Vous pouvez suivre l'acheminement de votre colis directement sur le site de La Poste ou du transporteur concerné.</p>
-          <p>En cas d'absence lors de la livraison, un avis de passage est déposé dans votre boîte aux lettres. Le colis est généralement mis à disposition au bureau de poste le plus proche pendant 15 jours.</p>
-          <div class="sage-box">
-            <p>💡 <strong>Astuce :</strong> Pensez à vérifier vos spams si vous ne recevez pas l'e-mail de confirmation d'expédition. Vous pouvez également nous contacter à tout moment pour obtenir des nouvelles de votre commande.</p>
-          </div>
-        </section>
-        <div class="petal-div">🌸 · · ·</div>
-
-        <section class="ml-section" id="lv-probleme">
-          <span class="ml-section-tag">Problème ?</span>
-          <h2>Problème à la livraison</h2>
-          <p>Malgré tout le soin apporté à l'emballage, il peut arriver qu'un colis arrive endommagé ou soit perdu. Voici comment nous pouvons vous aider :</p>
-          <ul class="list">
-            <li><strong>Colis endommagé</strong> : prenez des photos avant d'ouvrir le colis, puis contactez-nous sous 48h avec les photos. Nous ouvrirons une réclamation et trouverons une solution (remplacement ou remboursement).</li>
-            <li><strong>Colis perdu</strong> : si le suivi n'évolue plus depuis plus de 10 jours ouvrés, contactez-nous. Nous effectuerons une recherche auprès du transporteur.</li>
-            <li><strong>Erreur de commande</strong> : si vous avez reçu un article différent de celui commandé, contactez-nous immédiatement. Nous prenons en charge les frais de retour et renvoyons le bon article.</li>
-          </ul>
-          <p style="margin-top:12px;">Dans tous les cas : <a href="mailto:contact@woodenmountain.fr">contact@woodenmountain.fr</a> — nous sommes là pour vous. 🌸</p>
-        </section>
-        <div class="petal-div">🌸 · · ·</div>
-
-        <section class="ml-section" id="lv-retractation">
-          <span class="ml-section-tag">Rétractation</span>
-          <h2>Droit de rétractation</h2>
-          <p>Conformément à l'article L.221-18 du Code de la consommation, vous disposez d'un délai de <strong>14 jours calendaires</strong> à compter de la réception de votre commande pour exercer votre droit de rétractation, sans motif à donner.</p>
-          <div class="info-box">
-            <p>📧 Notifiez-nous par e-mail à <a href="mailto:contact@woodenmountain.fr">contact@woodenmountain.fr</a> avant l'expiration du délai, en précisant votre numéro de commande.</p>
-          </div>
-          <div class="highlight-box">
-            <p>⚠️ <strong>Exception — Sur mesure :</strong> Le droit de rétractation ne s'applique pas aux commandes personnalisées (couleur, forme ou motif spécifiques choisis sur mesure), conformément à l'article L.221-28 du Code de la consommation.</p>
-          </div>
-        </section>
-        <div class="petal-div">🌸 · · ·</div>
-
-        <section class="ml-section" id="lv-retours">
-          <span class="ml-section-tag">Retours</span>
-          <h2>Procédure de retour</h2>
-          <p>Pour effectuer un retour, suivez ces étapes :</p>
-          <div class="retour-steps">
-            <div class="retour-step">
-              <div class="retour-step-num">1</div>
-              <div class="retour-step-text"><strong>Contactez-nous</strong>Envoyez un e-mail à <a href="mailto:contact@woodenmountain.fr">contact@woodenmountain.fr</a> avec votre numéro de commande et la raison du retour. Aucun retour sans accord préalable ne sera accepté.</div>
-            </div>
-            <div class="retour-step">
-              <div class="retour-step-num">2</div>
-              <div class="retour-step-text"><strong>Préparez le colis</strong>Remballez l'article dans son emballage d'origine (ou équivalent). L'article doit être non porté, non endommagé, dans son état d'origine.</div>
-            </div>
-            <div class="retour-step">
-              <div class="retour-step-num">3</div>
-              <div class="retour-step-text"><strong>Expédiez sous 14 jours</strong>Retournez le colis à l'adresse communiquée, en lettre suivie ou Colissimo. Les frais de retour sont à votre charge (sauf erreur ou défaut de notre part).</div>
-            </div>
-            <div class="retour-step">
-              <div class="retour-step-num">4</div>
-              <div class="retour-step-text"><strong>Remboursement ou échange</strong>Dès réception et vérification du retour, votre remboursement ou échange est traité sous 14 jours maximum.</div>
-            </div>
-          </div>
-        </section>
-        <div class="petal-div">🌸 · · ·</div>
-
-        <section class="ml-section" id="lv-remboursement">
-          <span class="ml-section-tag">Remboursement</span>
-          <h2>Modalités de remboursement</h2>
-          <p>Le remboursement est effectué dans les <strong>14 jours</strong> suivant la réception du retour ou la preuve d'expédition du colis (le premier des deux termes).</p>
-          <div class="info-box">
-            <p>
-              <strong>Montant remboursé :</strong> prix du ou des produits retournés + frais de port initiaux si l'intégralité de la commande est retournée<br>
-              <strong>Frais de retour :</strong> à la charge de l'acheteur (sauf erreur/défaut de notre part)<br>
-              <strong>Mode de remboursement :</strong> via le moyen de paiement utilisé lors de la commande<br>
-              <strong>Délai bancaire :</strong> 3 à 5 jours supplémentaires selon votre établissement
-            </p>
-          </div>
-          <p>En cas de retour partiel, seul le montant des articles retournés est remboursé. Les frais de port initiaux ne sont pas remboursés dans ce cas.</p>
-        </section>
-        <div class="petal-div">🌸 · · ·</div>
-
-        <section class="ml-section" id="lv-contact">
-          <span class="ml-section-tag">Contact</span>
-          <h2>Une question ? On est là 🌸</h2>
-          <div class="info-box">
-            <p>
-              📧 <strong>E-mail :</strong> <a href="mailto:contact@woodenmountain.fr">contact@woodenmountain.fr</a><br>
-              ⏱ <strong>Délai de réponse :</strong> sous 48 heures ouvrées<br>
-              📦 <strong>Pour tout retour :</strong> toujours nous contacter en premier
-            </p>
-          </div>
-          <p style="margin-top:20px;font-family:var(--font-d);font-style:italic;color:var(--terra);font-size:16px;">Chaque colis part avec une petite attention — parce que vous méritez de sourire en l'ouvrant. 🌸</p>
-        </section>
-      </div>
+      <div id="mlSections"></div>
     </div>
   </div>
 </div>
+
 
 <!-- CTA BAND -->
 <div class="cta-band">
@@ -398,7 +249,44 @@
 
 <script>
   const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('v'); }), {threshold:.08,rootMargin:'0px 0px -20px 0px'});
-  document.querySelectorAll('.ml-section, .step-card').forEach(el => obs.observe(el));
+  document.querySelectorAll('.step-card').forEach(el => obs.observe(el));
+
+  function escapeHtml(s) {
+    return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+  function renderBody(body) {
+    return (body || '').split('\n\n').filter(b => b.trim()).map(block => {
+      block = block.trim();
+      if (block.startsWith('[ENCADRÉ]')) {
+        return `<div class="info-box"><p>${escapeHtml(block.replace(/^\[ENCADRÉ\]\s*/, ''))}</p></div>`;
+      }
+      if (block.split('\n').every(l => l.trim().startsWith('- '))) {
+        const items = block.split('\n').map(l => `<li>${escapeHtml(l.trim().replace(/^-\s?/, ''))}</li>`).join('');
+        return `<ul class="ml-list">${items}</ul>`;
+      }
+      return `<p>${escapeHtml(block)}</p>`;
+    }).join('');
+  }
+
+  fetch('content/livraisons.json').then(r => r.json()).then(d => {
+    if (d.header_script) document.getElementById('mlHeaderScript').textContent = d.header_script;
+    if (d.header_title) document.getElementById('mlHeaderTitle').textContent = d.header_title;
+    if (d.header_subtitle) document.getElementById('mlHeaderSub').textContent = d.header_subtitle;
+    const sections = d.sections || [];
+    const tocEl = document.getElementById('mlToc');
+    const secEl = document.getElementById('mlSections');
+    tocEl.innerHTML = sections.map(s => `<li><a href="#${s.slug || ''}">${s.toc_emoji || '📄'} ${escapeHtml(s.toc_label || s.title || '')}</a></li>`).join('');
+    secEl.innerHTML = sections.map((s, i) => `
+      <section class="ml-section" id="${s.slug || 'section-' + i}">
+        <span class="ml-section-tag">${escapeHtml(s.tag || '')}</span>
+        <h2>${escapeHtml(s.title || '')}</h2>
+        ${renderBody(s.body)}
+      </section>
+      ${i < sections.length - 1 ? '<div class="petal-div"><img src="images/apple-touch-icon.png?v=4" alt=""></div>' : ''}
+    `).join('');
+    document.querySelectorAll('.ml-section').forEach(el => obs.observe(el));
+  }).catch(() => {});
+
   fetch('content/site.json').then(r => r.json()).then(site => {
     const socialMap = { socialFacebook: site.social_facebook, socialInstagram: site.social_instagram, socialVinted: site.social_vinted };
     Object.keys(socialMap).forEach(id => {

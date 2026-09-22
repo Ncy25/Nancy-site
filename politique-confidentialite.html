@@ -66,6 +66,8 @@
     .ml-section-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--peach-dk);background:var(--rose-lt);border-radius:999px;padding:4px 12px;margin-bottom:12px;}
     .ml-section h2{font-family:var(--font-d);font-size:28px;font-weight:600;color:var(--brown);margin-bottom:16px;letter-spacing:-.01em;line-height:1.15;}
     .ml-section p{font-size:14.5px;color:var(--brown-mid);line-height:1.85;margin-bottom:10px;}
+    .ml-list{margin:0 0 10px;padding-left:20px;}
+    .ml-list li{font-size:14.5px;color:var(--brown-mid);line-height:1.85;margin-bottom:4px;}
     .ml-section p:last-child{margin-bottom:0;}
     .ml-section a{color:var(--peach-dk);text-decoration:underline;text-decoration-color:rgba(240,168,130,0.4);transition:color var(--ease);}
     .ml-section a:hover{color:var(--terra);}
@@ -132,163 +134,24 @@
 <div class="page-header">
   <div class="ph-spark" style="top:20%;left:9%;animation:spark-pulse 2.5s ease-in-out infinite"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" opacity=".5"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
   <div class="ph-spark" style="top:28%;right:11%;animation:spark-pulse 2.5s .9s ease-in-out infinite"><svg width="11" height="11" viewBox="0 0 24 24" fill="#D4A853" opacity=".5"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5z"/></svg></div>
-  <div class="page-header-script">Vos données, notre respect</div>
-  <h1>Politique de<br>Confidentialité</h1>
-  <p class="page-header-sub">Dernière mise à jour : juin 2025 · Conforme RGPD</p>
+  <div class="page-header-script" id="mlHeaderScript">Vos données, notre respect</div>
+  <h1 id="mlHeaderTitle">Politique de<br>Confidentialité</h1>
+  <p class="page-header-sub" id="mlHeaderSub">Dernière mise à jour : juin 2025 · Conforme RGPD</p>
 </div>
 
 <div class="page-body">
   <div class="container">
-    <div class="updated-badge">
+    <div class="updated-badge" id="mlUpdatedBadge" style="display:none">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      Mis à jour le 1er juin 2025 — conforme RGPD (UE 2016/679)
+      <span id="mlUpdatedLabel"></span>
     </div>
     <div class="ml-layout">
       <aside class="toc">
         <div class="toc-label">Sommaire</div>
-        <ul>
-          <li><a href="#pc-responsable">🌸 Responsable</a></li>
-          <li><a href="#pc-collecte">📋 Données collectées</a></li>
-          <li><a href="#pc-finalites">🎯 Finalités</a></li>
-          <li><a href="#pc-conservation">⏳ Conservation</a></li>
-          <li><a href="#pc-partage">🤝 Partage</a></li>
-          <li><a href="#pc-droits">✊ Vos droits</a></li>
-          <li><a href="#pc-cookies">🍪 Cookies</a></li>
-          <li><a href="#pc-securite">🔒 Sécurité</a></li>
-          <li><a href="#pc-contact">📧 Contact</a></li>
-        </ul>
+        <ul id="mlToc"></ul>
       </aside>
 
-      <div>
-        <section class="ml-section" id="pc-responsable">
-          <span class="ml-section-tag">Article 1</span>
-          <h2>Responsable du traitement</h2>
-          <div class="info-box">
-            <p>
-              <strong>Responsable :</strong> Wild Flower by Wooden Mountain<br>
-              <strong>Représentant :</strong> [Prénom Nom]<br>
-              <strong>Adresse :</strong> [Votre adresse postale]<br>
-              <strong>Email :</strong> <a href="mailto:contact@woodenmountain.fr">contact@woodenmountain.fr</a>
-            </p>
-          </div>
-          <p>Wild Flower by Wooden Mountain s'engage à traiter vos données personnelles avec la plus grande transparence, dans le respect du Règlement Général sur la Protection des Données (RGPD – UE 2016/679) et de la loi Informatique et Libertés modifiée.</p>
-        </section>
-        <div class="petal-div">🌸 · · ·</div>
-
-        <section class="ml-section" id="pc-collecte">
-          <span class="ml-section-tag">Article 2</span>
-          <h2>Données collectées</h2>
-          <p>Nous collectons uniquement les données strictement nécessaires à nos activités :</p>
-          <div class="info-box" style="margin-top:12px">
-            <p>
-              <strong>Via le formulaire de contact :</strong> prénom, nom, adresse e-mail, message libre, sujet.<br>
-              <strong>Via une commande :</strong> prénom, nom, adresse e-mail, adresse postale de livraison, détail de la commande.<br>
-              <strong>Via la navigation :</strong> données de connexion techniques (adresse IP, type de navigateur) à des fins de sécurité et statistiques anonymes uniquement.<br>
-              <strong>Ce que nous ne collectons PAS :</strong> données bancaires (traitées exclusivement par nos prestataires de paiement sécurisés), numéro de téléphone (sauf demande explicite), données sensibles.
-            </p>
-          </div>
-        </section>
-        <div class="petal-div">🌸 · · ·</div>
-
-        <section class="ml-section" id="pc-finalites">
-          <span class="ml-section-tag">Article 3</span>
-          <h2>Finalités du traitement</h2>
-          <p>Vos données sont collectées et traitées pour les finalités suivantes :</p>
-          <ul class="list">
-            <li><strong>Traitement des commandes</strong> — exécution du contrat (article 6.1.b RGPD)</li>
-            <li><strong>Service client et réponses</strong> — intérêt légitime et exécution du contrat</li>
-            <li><strong>Gestion comptable</strong> — obligation légale (article 6.1.c RGPD)</li>
-            <li><strong>Amélioration du site</strong> — statistiques anonymes, intérêt légitime</li>
-            <li><strong>Communication commerciale</strong> — uniquement avec votre consentement explicite</li>
-          </ul>
-          <p style="margin-top:12px;">Nous ne procédons à aucun traitement automatisé ni profilage à des fins publicitaires.</p>
-        </section>
-        <div class="petal-div">🌸 · · ·</div>
-
-        <section class="ml-section" id="pc-conservation">
-          <span class="ml-section-tag">Article 4</span>
-          <h2>Durée de conservation</h2>
-          <div class="info-box">
-            <p>
-              <strong>Données de contact :</strong> 3 ans à compter du dernier contact<br>
-              <strong>Données de commande :</strong> 5 ans (obligation comptable légale)<br>
-              <strong>Données de navigation :</strong> 13 mois maximum<br>
-              <strong>Données de consentement marketing :</strong> jusqu'au retrait du consentement + 3 ans
-            </p>
-          </div>
-          <p>À l'expiration de ces délais, vos données sont supprimées ou anonymisées de manière irréversible.</p>
-        </section>
-        <div class="petal-div">🌸 · · ·</div>
-
-        <section class="ml-section" id="pc-partage">
-          <span class="ml-section-tag">Article 5</span>
-          <h2>Partage des données</h2>
-          <p>Wild Flower by Wooden Mountain ne vend ni ne loue vos données personnelles à des tiers. Vos données peuvent être partagées avec :</p>
-          <ul class="list">
-            <li><strong>Prestataires de paiement</strong> (ex : Stripe, PayPal) — pour sécuriser les transactions</li>
-            <li><strong>Transporteurs</strong> (ex : La Poste, Colissimo) — pour l'acheminement des colis</li>
-            <li><strong>Hébergeur du site</strong> — dans le cadre de l'exploitation technique</li>
-          </ul>
-          <p style="margin-top:12px;">Ces tiers sont soumis à leurs propres politiques de confidentialité et n'utilisent vos données qu'aux fins pour lesquelles elles ont été transmises.</p>
-        </section>
-        <div class="petal-div">🌸 · · ·</div>
-
-        <section class="ml-section" id="pc-droits">
-          <span class="ml-section-tag">Article 6</span>
-          <h2>Vos droits</h2>
-          <p>Conformément aux articles 15 à 22 du RGPD, vous disposez des droits suivants :</p>
-          <div class="rights-grid">
-            <div class="right-card"><div class="right-icon">👁️</div><strong>Droit d'accès</strong><p>Obtenir une copie de vos données personnelles.</p></div>
-            <div class="right-card"><div class="right-icon">✏️</div><strong>Droit de rectification</strong><p>Corriger des données inexactes ou incomplètes.</p></div>
-            <div class="right-card"><div class="right-icon">🗑️</div><strong>Droit à l'effacement</strong><p>Demander la suppression de vos données (droit à l'oubli).</p></div>
-            <div class="right-card"><div class="right-icon">⏸️</div><strong>Droit à la limitation</strong><p>Suspendre le traitement de vos données.</p></div>
-            <div class="right-card"><div class="right-icon">📤</div><strong>Droit à la portabilité</strong><p>Recevoir vos données dans un format lisible.</p></div>
-            <div class="right-card"><div class="right-icon">🚫</div><strong>Droit d'opposition</strong><p>Vous opposer à certains traitements de vos données.</p></div>
-          </div>
-          <p>Pour exercer ces droits, écrivez à : <a href="mailto:contact@woodenmountain.fr">contact@woodenmountain.fr</a>. Nous répondrons dans un délai d'un mois.</p>
-          <p>En cas de réclamation non résolue, vous pouvez saisir la <strong>CNIL</strong> : <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>.</p>
-        </section>
-        <div class="petal-div">🌸 · · ·</div>
-
-        <section class="ml-section" id="pc-cookies">
-          <span class="ml-section-tag">Article 7</span>
-          <h2>Cookies &amp; traceurs</h2>
-          <p>Ce site utilise uniquement des cookies techniques essentiels (gestion du panier, session de navigation). Aucun cookie publicitaire ou de profilage n'est déposé sans votre consentement.</p>
-          <div class="info-box">
-            <p>
-              <strong>Cookies essentiels :</strong> nécessaires au fonctionnement du site — aucun consentement requis<br>
-              <strong>Cookies analytiques :</strong> uniquement avec votre accord explicite<br>
-              <strong>Cookies tiers :</strong> aucun sans consentement<br>
-              <strong>Durée max :</strong> 13 mois conformément aux recommandations CNIL
-            </p>
-          </div>
-          <p>Vous pouvez gérer ou supprimer les cookies via les paramètres de votre navigateur à tout moment. Plus d'informations : <a href="https://www.cnil.fr/fr/cookies-et-autres-traceurs" target="_blank" rel="noopener">cnil.fr/fr/cookies-et-autres-traceurs</a>.</p>
-        </section>
-        <div class="petal-div">🌸 · · ·</div>
-
-        <section class="ml-section" id="pc-securite">
-          <span class="ml-section-tag">Article 8</span>
-          <h2>Sécurité des données</h2>
-          <p>Wild Flower by Wooden Mountain met en œuvre les mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès non autorisé, perte, altération ou divulgation.</p>
-          <p>Les transmissions de données sensibles (paiement, informations personnelles) sont chiffrées via le protocole SSL/TLS. Aucun numéro de carte bancaire n'est conservé sur nos serveurs.</p>
-          <p>En cas de violation de données susceptible d'engendrer un risque pour vos droits et libertés, nous nous engageons à en informer la CNIL dans les 72 heures et à vous notifier directement si le risque est élevé.</p>
-        </section>
-        <div class="petal-div">🌸 · · ·</div>
-
-        <section class="ml-section" id="pc-contact">
-          <span class="ml-section-tag">Article 9</span>
-          <h2>Contact &amp; réclamations</h2>
-          <div class="info-box">
-            <p>
-              📧 <strong>E-mail :</strong> <a href="mailto:contact@woodenmountain.fr">contact@woodenmountain.fr</a><br>
-              📮 <strong>Courrier :</strong> Wild Flower by Wooden Mountain — [Votre adresse]<br>
-              ⏱ <strong>Délai de réponse :</strong> sous 30 jours (RGPD) · en pratique sous 48h ouvrées<br>
-              🏛️ <strong>Autorité de contrôle :</strong> <a href="https://www.cnil.fr" target="_blank" rel="noopener">CNIL — www.cnil.fr</a>
-            </p>
-          </div>
-          <p style="margin-top:20px;font-family:var(--font-d);font-style:italic;color:var(--terra);font-size:16px;">Votre confiance est aussi précieuse que chaque pampille façonnée à la main. 🌸</p>
-        </section>
-      </div>
+      <div id="mlSections"></div>
     </div>
   </div>
 </div>
@@ -311,7 +174,47 @@
 
 <script>
   const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('v'); }), {threshold:.08,rootMargin:'0px 0px -20px 0px'});
-  document.querySelectorAll('.ml-section').forEach(el => obs.observe(el));
+
+  function escapeHtml(s) {
+    return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+  function renderBody(body) {
+    return (body || '').split('\n\n').filter(b => b.trim()).map(block => {
+      block = block.trim();
+      if (block.startsWith('[ENCADRÉ]')) {
+        return `<div class="info-box"><p>${escapeHtml(block.replace(/^\[ENCADRÉ\]\s*/, ''))}</p></div>`;
+      }
+      if (block.split('\n').every(l => l.trim().startsWith('- '))) {
+        const items = block.split('\n').map(l => `<li>${escapeHtml(l.trim().replace(/^-\s?/, ''))}</li>`).join('');
+        return `<ul class="ml-list">${items}</ul>`;
+      }
+      return `<p>${escapeHtml(block)}</p>`;
+    }).join('');
+  }
+
+  fetch('content/confidentialite.json').then(r => r.json()).then(d => {
+    if (d.header_script) document.getElementById('mlHeaderScript').textContent = d.header_script;
+    if (d.header_title) document.getElementById('mlHeaderTitle').textContent = d.header_title;
+    if (d.header_subtitle) document.getElementById('mlHeaderSub').textContent = d.header_subtitle;
+    if (d.updated_label) {
+      document.getElementById('mlUpdatedLabel').textContent = d.updated_label;
+      document.getElementById('mlUpdatedBadge').style.display = 'flex';
+    }
+    const sections = d.sections || [];
+    const tocEl = document.getElementById('mlToc');
+    const secEl = document.getElementById('mlSections');
+    tocEl.innerHTML = sections.map(s => `<li><a href="#${s.slug || ''}">${s.toc_emoji || '📄'} ${escapeHtml(s.toc_label || s.title || '')}</a></li>`).join('');
+    secEl.innerHTML = sections.map((s, i) => `
+      <section class="ml-section" id="${s.slug || 'section-' + i}">
+        <span class="ml-section-tag">${escapeHtml(s.tag || '')}</span>
+        <h2>${escapeHtml(s.title || '')}</h2>
+        ${renderBody(s.body)}
+      </section>
+      ${i < sections.length - 1 ? '<div class="petal-div"><img src="images/apple-touch-icon.png?v=4" alt=""></div>' : ''}
+    `).join('');
+    document.querySelectorAll('.ml-section').forEach(el => obs.observe(el));
+  }).catch(() => {});
+
   fetch('content/site.json').then(r => r.json()).then(site => {
     const socialMap = { socialFacebook: site.social_facebook, socialInstagram: site.social_instagram, socialVinted: site.social_vinted };
     Object.keys(socialMap).forEach(id => {
