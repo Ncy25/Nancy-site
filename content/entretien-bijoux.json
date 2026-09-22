@@ -1,0 +1,39 @@
+{
+  "header_script": "Prendre soin de vos créations",
+  "header_title": "Entretien des bijoux",
+  "header_subtitle": "Tout savoir sur les matières de vos créoles et sur l'entretien de vos pampilles en argile polymère, pour qu'elles vous accompagnent longtemps.",
+  "creoles": {
+    "tag": "Vos créoles",
+    "title": "Comprendre les matières : 304L et 316L",
+    "intro": "Toutes nos créoles sont réalisées en acier inoxydable chirurgical, une matière hypoallergénique choisie pour sa durabilité et son confort de port au quotidien. Selon les modèles, deux nuances sont utilisées :",
+    "text_304l": "Un acier inoxydable de très bonne qualité, résistant à l'oxydation et adapté à la majorité des peaux. C'est la référence dans la bijouterie fantaisie haut de gamme.",
+    "text_316l": "Une version encore plus résistante à la corrosion, y compris à l'eau et à la transpiration. Recommandée pour les peaux les plus sensibles ou réactives.",
+    "info_box_label": "Bon à savoir :",
+    "info_box": "la finition (nom du produit) précise la matière utilisée sur chaque fiche produit. En cas de doute avant un achat, n'hésite pas à nous écrire — on te répond avec plaisir.",
+    "care_items": [
+      "Essuie tes créoles avec un chiffon doux et sec après chaque port.",
+      "Range-les à l'abri de la poussière, idéalement dans une pochette ou une boîte.",
+      "Mets-les en dernier, après parfum et cosmétiques, pour limiter les résidus."
+    ],
+    "avoid_items": [
+      "Évite les produits chimiques agressifs (chlore, eau de javel) qui peuvent ternir la surface à long terme."
+    ]
+  },
+  "pampilles": {
+    "tag": "Vos pampilles",
+    "title": "Entretenir vos pampilles en argile polymère",
+    "intro": "Chaque pampille est façonnée et cuite à la main à partir d'argile polymère, puis poncée et vernie avec soin. C'est une matière légère et colorée, mais qui demande quelques précautions pour rester belle longtemps.",
+    "good_items": [
+      "Nettoie-les délicatement avec un chiffon doux légèrement humide si besoin, puis sèche immédiatement.",
+      "Range tes pampilles à plat, à l'abri de la lumière directe du soleil, pour préserver l'éclat des couleurs.",
+      "Décroche-les de tes créoles pour dormir, te doucher ou faire du sport."
+    ],
+    "avoid_items": [
+      "L'eau prolongée (piscine, mer, douche) : l'argile polymère n'est pas conçue pour rester immergée.",
+      "La chaleur directe (voiture au soleil, radiateur, sèche-cheveux) qui peut ramollir ou déformer la pièce.",
+      "Les chocs et chutes sur une surface dure, qui peuvent fissurer ou ébrécher l'argile."
+    ],
+    "info_box_label": "Un accident est vite arrivé ?",
+    "info_box": "Écris-nous une photo à l'appui — on regarde toujours si une réparation est possible avant d'envisager un remplacement."
+  }
+}
