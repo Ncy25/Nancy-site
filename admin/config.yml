@@ -19,9 +19,6 @@ collections:
           - { label: "Email de contact", name: "contact_email", widget: "string" }
           - { label: "Logo texte — 1ère ligne (script, ex: Wild)", name: "footer_logo_script", widget: "string" }
           - { label: "Logo texte — 2ème ligne (ex: Flower · by Wooden Mountain)", name: "footer_logo_line", widget: "string" }
-          - { label: "Lien Facebook", name: "social_facebook", widget: "string", required: false, hint: "Laisser vide pour ne pas afficher l'icône." }
-          - { label: "Lien Instagram", name: "social_instagram", widget: "string", required: false, hint: "Laisser vide pour ne pas afficher l'icône." }
-          - { label: "Lien Vinted", name: "social_vinted", widget: "string", required: false, hint: "Laisser vide pour ne pas afficher l'icône." }
           - { label: "Point retrait — Activer", name: "pickup_enabled", widget: "boolean", default: true, required: false, hint: "Active ou désactive l'option de retrait gratuit à la page de paiement." }
           - { label: "Point retrait — Adresse", name: "pickup_address", widget: "text", required: false, hint: "Ex: 12 rue des Fleurs, 75000 Paris — sur rendez-vous. Laisser vide pour retirer l'option du paiement." }
 
@@ -38,32 +35,15 @@ collections:
             widget: "object"
             fields:
               - { label: "Petite phrase manuscrite", name: "script", widget: "string" }
-              - { label: "Titre principal", name: "title", widget: "text", hint: "Appuie sur Entrée pour aller à la ligne." }
+              - { label: "Titre — ligne 1", name: "title_line1", widget: "string" }
+              - { label: "Titre — ligne 2", name: "title_line2", widget: "string", required: false }
               - { label: "Sous-titre", name: "subtitle", widget: "text" }
               - { label: "Texte du bouton", name: "button_text", widget: "string" }
-              - { label: "Lien du bouton", name: "button_link", widget: "string", required: false, hint: "Ex : nouveautes.html ou boutique.html" }
-              - { label: "Photo principale (à droite du texte)", name: "photo", widget: "image", required: false, hint: "Photo de style lifestyle, format portrait recommandé." }
-              - label: "3 étapes (sous le hero)"
-                name: "steps"
-                widget: "list"
-                required: false
-                min: 3
-                max: 3
-                summary: "{{fields.title}}"
-                fields:
-                  - { label: "Titre (ex : 1. La base)", name: "title", widget: "string", required: false }
-                  - { label: "Description", name: "description", widget: "text", required: false }
-                  - { label: "Photo", name: "image", widget: "image", required: false }
+              - { label: "Photo principale (grande vignette)", name: "main_image", widget: "image", required: false, hint: "Laisser vide pour garder l'illustration actuelle." }
+              - { label: "Petite photo 1", name: "small_image_1", widget: "image", required: false }
+              - { label: "Petite photo 2", name: "small_image_2", widget: "image", required: false }
+              - { label: "Petite photo 3", name: "small_image_3", widget: "image", required: false }
           - { label: "Titre section 'lifestyle'", name: "lifestyle_title", widget: "string" }
-          - label: "Bandeau Wooden Mountain"
-            name: "wm_banner"
-            widget: "object"
-            required: false
-            fields:
-              - { label: "Petite phrase (ex : L'univers)", name: "eyebrow", widget: "string", required: false }
-              - { label: "Titre (ex : Wooden Mountain)", name: "title", widget: "string", required: false }
-              - { label: "Sous-titre", name: "subtitle", widget: "text", required: false }
-              - { label: "Texte du bouton (ex : Découvrir)", name: "button_text", widget: "string", required: false }
           - { label: "Titre section boutique", name: "boutique_title", widget: "string" }
           - { label: "Sous-titre section boutique", name: "boutique_subtitle", widget: "string" }
           - { label: "Texte sous les produits (avant les 3 rectangles)", name: "below_products_text", widget: "string", required: false }
@@ -117,7 +97,6 @@ collections:
           - name: "products"
             label: "Produits"
             widget: "list"
-            required: false
             summary: "{{fields.name}} — {{fields.category}} ({{fields.price}}€)"
             fields:
               - { label: "Identifiant (unique, sans espace)", name: "id", widget: "string", required: false }
@@ -125,7 +104,7 @@ collections:
               - label: "Catégorie"
                 name: "category"
                 widget: "select"
-                options: [{ label: "(Aucune)", value: "" }, { label: "Pampilles", value: "Pampilles" }, { label: "Créoles", value: "Créoles" }, { label: "Bracelets", value: "Bracelets" }, { label: "Colliers", value: "Colliers" }]
+                options: ["Pampilles", "Créoles", "Bracelets", "Colliers"]
                 required: false
               - { label: "Prix (€)", name: "price", widget: "number", value_type: "float", required: false }
               - label: "Motif ou uni ?"
@@ -180,7 +159,6 @@ collections:
           - name: "products"
             label: "Produits nouveautés"
             widget: "list"
-            required: false
             summary: "{{fields.name}} — {{fields.category}} ({{fields.price}}€)"
             fields:
               - { label: "Identifiant (unique, sans espace)", name: "id", widget: "string", required: false }
@@ -188,7 +166,7 @@ collections:
               - label: "Catégorie"
                 name: "category"
                 widget: "select"
-                options: [{ label: "(Aucune)", value: "" }, { label: "Pampilles", value: "Pampilles" }, { label: "Créoles", value: "Créoles" }]
+                options: ["Pampilles", "Créoles"]
                 required: false
               - { label: "Prix (€)", name: "price", widget: "number", value_type: "float", required: false }
               - { label: "Emoji (utilisé si pas de photo)", name: "emoji", widget: "string", required: false }
@@ -257,7 +235,6 @@ collections:
           - name: "products"
             label: "Produits Wooden Mountain"
             widget: "list"
-            required: false
             summary: "{{fields.name}} — {{fields.category}} ({{fields.price}}€)"
             fields:
               - { label: "Identifiant (unique, sans espace)", name: "id", widget: "string", required: false }
@@ -265,13 +242,13 @@ collections:
               - label: "Catégorie"
                 name: "category"
                 widget: "select"
-                options: [{ label: "(Aucune)", value: "" }, { label: "Bois", value: "Bois" }, { label: "Plexiglass", value: "Plexiglass" }]
+                options: ["Bois", "Plexiglass"]
                 required: false
                 hint: "Information sur la matière (n'affecte plus les filtres de la page)."
               - label: "Occasion"
                 name: "occasion"
                 widget: "select"
-                options: [{ label: "(Aucune)", value: "" }, { label: "Cave&Bar", value: "Cave&Bar" }, { label: "Noël", value: "Noël" }, { label: "Déco murale", value: "Déco murale" }, { label: "Pâques", value: "Pâques" }, { label: "Naissance", value: "Naissance" }, { label: "Mariage", value: "Mariage" }, { label: "Ecole", value: "Ecole" }]
+                options: ["Cave&Bar", "Noël", "Déco murale", "Pâques", "Naissance", "Mariage", "Ecole"]
                 required: false
                 hint: "Détermine dans quel filtre ce produit apparaît sur la page."
               - { label: "Prix (€)", name: "price", widget: "number", value_type: "float", required: false }
@@ -291,9 +268,8 @@ collections:
                 required: false
               - { label: "Photo du produit", name: "image", widget: "image", required: false }
               - { label: "Poids (grammes)", name: "weight", widget: "number", value_type: "int", required: false, hint: "Utilisé pour déterminer si Lettre suivie (max 20g) reste proposée au client." }
-              - { label: "Demande une gravure personnalisée au client", name: "custom_gravure", widget: "boolean", default: false, required: false, hint: "Si activé, un champ texte obligatoire s'affiche sur la fiche produit pour que le client précise le prénom/mot à graver." }
-              - { label: "Demande Date, Heure, Poids et Taille au client", name: "custom_finition", widget: "boolean", default: false, required: false, hint: "Si activé, un champ texte obligatoire s'affiche sur la fiche produit pour que le client précise ces informations." }
-              - { label: "Demande de choisir 3 couleurs au client", name: "custom_colors3", widget: "boolean", default: false, required: false, hint: "Si activé, un champ texte obligatoire s'affiche sur la fiche produit pour que le client précise ses 3 couleurs." }
+              - { label: "Propose la gravure personnalisée", name: "custom_gravure", widget: "boolean", default: false, required: false }
+              - { label: "Propose la finition au choix", name: "custom_finition", widget: "boolean", default: false, required: false }
 
   - name: "cgv"
     label: "CGV"
@@ -557,3 +533,50 @@ collections:
               - { label: "Petite phrase", name: "script", widget: "string" }
               - { label: "Titre", name: "title", widget: "string" }
               - { label: "Sous-titre", name: "subtitle", widget: "text" }
+
+  - name: "entretien-bijoux"
+    label: "Entretien des bijoux"
+    files:
+      - name: "page"
+        label: "Page Entretien des bijoux"
+        file: "content/entretien-bijoux.json"
+        fields:
+          - { label: "Petite phrase manuscrite", name: "header_script", widget: "string" }
+          - { label: "Titre", name: "header_title", widget: "string" }
+          - { label: "Sous-titre", name: "header_subtitle", widget: "text" }
+          - label: "Section Créoles"
+            name: "creoles"
+            widget: "object"
+            fields:
+              - { label: "Étiquette", name: "tag", widget: "string" }
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Texte d'introduction", name: "intro", widget: "text" }
+              - { label: "Description 304L", name: "text_304l", widget: "text" }
+              - { label: "Description 316L", name: "text_316l", widget: "text" }
+              - { label: "Encadré - libellé (ex: Bon à savoir :)", name: "info_box_label", widget: "string", required: false }
+              - { label: "Encadré - texte", name: "info_box", widget: "text", required: false }
+              - label: "Bons gestes (coche verte)"
+                name: "care_items"
+                widget: "list"
+                field: { label: "Texte", name: "text", widget: "string" }
+              - label: "À éviter (croix)"
+                name: "avoid_items"
+                widget: "list"
+                field: { label: "Texte", name: "text", widget: "string" }
+          - label: "Section Pampilles"
+            name: "pampilles"
+            widget: "object"
+            fields:
+              - { label: "Étiquette", name: "tag", widget: "string" }
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Texte d'introduction", name: "intro", widget: "text" }
+              - label: "Les bons gestes (coche verte)"
+                name: "good_items"
+                widget: "list"
+                field: { label: "Texte", name: "text", widget: "string" }
+              - label: "À éviter (croix)"
+                name: "avoid_items"
+                widget: "list"
+                field: { label: "Texte", name: "text", widget: "string" }
+              - { label: "Encadré - libellé", name: "info_box_label", widget: "string", required: false }
+              - { label: "Encadré - texte", name: "info_box", widget: "text", required: false }

@@ -419,6 +419,68 @@
         }));
       });
 
+      /* ── APERÇU : Entretien des bijoux ── */
+      CMS.registerPreviewTemplate('entretien-bijoux', createClass({
+        render: function () {
+          const { entry } = this.props;
+          const g = (path) => entry.getIn(['data', ...path]) || '';
+          const arr = (path) => {
+            const v = entry.getIn(['data', ...path]);
+            return v && v.toJS ? v.toJS() : (Array.isArray(v) ? v : []);
+          };
+          const renderList = (items, isAvoid) => h('div', { style: { margin: '10px 0' } },
+            items.map((it, i) => h('div', {
+              key: i,
+              style: { display: 'flex', gap: '8px', fontSize: '13px', color: '#8B5540', marginBottom: '6px', lineHeight: 1.5 }
+            },
+              h('span', { style: { color: isAvoid ? '#C0392B' : '#8FAF8A', flexShrink: 0 } }, isAvoid ? '✕' : '✓'),
+              h('span', {}, (it && it.text) || it)
+            ))
+          );
+          const renderSection = (path, title304316) => h('div', { style: { marginBottom: '32px' } },
+            h('span', {
+              style: { display: 'inline-block', fontSize: '10px', fontWeight: 600, letterSpacing: '.1em', textTransform: 'uppercase', color: '#D97A52', background: '#FDEAE5', borderRadius: '999px', padding: '4px 12px', marginBottom: '10px' }
+            }, g([path, 'tag'])),
+            h('div', { style: { fontFamily: 'Playfair Display, serif', fontSize: '22px', fontWeight: 600, color: '#6B3D2A', marginBottom: '10px' } }, g([path, 'title'])),
+            h('div', { style: { fontSize: '13.5px', color: '#8B5540', lineHeight: 1.7, marginBottom: '12px' } }, g([path, 'intro'])),
+            title304316 && h('div', { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '12px' } },
+              h('div', { style: { background: '#FFFCFA', border: '1px solid #F5D5C8', borderRadius: '12px', padding: '14px' } },
+                h('div', { style: { fontWeight: 700, marginBottom: '4px' } }, '304L'),
+                h('div', { style: { fontSize: '12.5px', color: '#8B5540' } }, g([path, 'text_304l']))
+              ),
+              h('div', { style: { background: '#FFFCFA', border: '1px solid #F5D5C8', borderRadius: '12px', padding: '14px' } },
+                h('div', { style: { fontWeight: 700, marginBottom: '4px' } }, '316L'),
+                h('div', { style: { fontSize: '12.5px', color: '#8B5540' } }, g([path, 'text_316l']))
+              )
+            ),
+            (g([path, 'care_items']) || arr([path, 'care_items']).length) ? h('div', {},
+              h('div', { style: { fontSize: '13px', fontWeight: 600, color: '#C26B4A', margin: '10px 0 4px' } }, 'Comment en prendre soin'),
+              renderList(arr([path, 'care_items']), false),
+              renderList(arr([path, 'avoid_items']), true)
+            ) : null,
+            arr([path, 'good_items']).length ? h('div', {},
+              h('div', { style: { fontSize: '13px', fontWeight: 600, color: '#C26B4A', margin: '10px 0 4px' } }, 'Les bons gestes'),
+              renderList(arr([path, 'good_items']), false),
+              h('div', { style: { fontSize: '13px', fontWeight: 600, color: '#C26B4A', margin: '10px 0 4px' } }, 'À éviter'),
+              renderList(arr([path, 'avoid_items']), true)
+            ) : null,
+            g([path, 'info_box']) ? h('div', {
+              style: { background: '#F9E8E0', borderRadius: '12px', padding: '12px 14px', borderLeft: '3px solid #F0A882', fontSize: '12.5px', color: '#8B5540', marginTop: '10px' }
+            }, h('strong', {}, g([path, 'info_box_label']) || ''), ' ' + g([path, 'info_box'])) : null
+          );
+
+          return h('div', {},
+            h('div', { style: { textAlign: 'center', background: 'linear-gradient(135deg,#FDE8DC,#FCDCC8)', borderRadius: '16px', padding: '28px 20px', marginBottom: '24px' } },
+              h('div', { style: { fontFamily: 'Dancing Script, cursive', fontSize: '18px', color: '#C26B4A', marginBottom: '4px' } }, g(['header_script'])),
+              h('div', { style: { fontFamily: 'Playfair Display, serif', fontSize: '28px', fontWeight: 600, color: '#fff' } }, g(['header_title'])),
+              h('div', { style: { fontSize: '12.5px', color: 'rgba(107,61,42,0.7)', marginTop: '8px' } }, g(['header_subtitle']))
+            ),
+            renderSection(['creoles'], true),
+            renderSection(['pampilles'], false)
+          );
+        }
+      }));
+
       /* ── APERÇU : Textes de la page Notre histoire ── */
       CMS.registerPreviewTemplate('histoire-textes', createClass({
         render: function () {
