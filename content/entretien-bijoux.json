@@ -1,9 +1,9 @@
 {
-  "header_script": "Prendre soin de vos créations",
-  "header_title": "Entretien des bijoux",
+  "header_script": "Prendre soin de tes créations",
+  "header_title": "ENTRETIEN DES BIJOUX",
   "header_subtitle": "Tout savoir sur les matières de vos créoles et sur l'entretien de vos pampilles en argile polymère, pour qu'elles vous accompagnent longtemps.",
   "creoles": {
-    "tag": "Vos créoles",
+    "tag": "Tes créoles",
     "title": "Comprendre les matières : 304L et 316L",
     "intro": "Toutes nos créoles sont réalisées en acier inoxydable chirurgical, une matière hypoallergénique choisie pour sa durabilité et son confort de port au quotidien. Selon les modèles, deux nuances sont utilisées :",
     "text_304l": "Un acier inoxydable de très bonne qualité, résistant à l'oxydation et adapté à la majorité des peaux. C'est la référence dans la bijouterie fantaisie haut de gamme.",
@@ -34,6 +34,6 @@
       "Les chocs et chutes sur une surface dure, qui peuvent fissurer ou ébrécher l'argile."
     ],
     "info_box_label": "Un accident est vite arrivé ?",
-    "info_box": "Écris-nous une photo à l'appui — on regarde toujours si une réparation est possible avant d'envisager un remplacement."
+    "info_box": "Écris-moi"
   }
 }
