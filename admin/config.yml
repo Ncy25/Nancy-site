@@ -126,7 +126,7 @@ collections:
               - label: "Stock"
                 name: "stock"
                 widget: "select"
-                options: ["in_stock", "low"]
+                options: [{ label: "En stock", value: "in_stock" }, { label: "Dernières pièces", value: "low" }, { label: "Rupture de stock", value: "rupture" }]
                 required: false
               - { label: "Photo du produit", name: "image", widget: "image", required: false, hint: "Laisser vide pour garder l'illustration actuelle." }
               - { label: "Poids (grammes)", name: "weight", widget: "number", value_type: "int", required: false, hint: "Utilisé pour déterminer si Lettre suivie (max 20g) reste proposée au client." }
@@ -181,7 +181,7 @@ collections:
               - label: "Stock"
                 name: "stock"
                 widget: "select"
-                options: ["in_stock", "low"]
+                options: [{ label: "En stock", value: "in_stock" }, { label: "Dernières pièces", value: "low" }, { label: "Rupture de stock", value: "rupture" }]
                 required: false
               - { label: "Photo du produit", name: "image", widget: "image", required: false }
               - { label: "Poids (grammes)", name: "weight", widget: "number", value_type: "int", required: false, hint: "Utilisé pour déterminer si Lettre suivie (max 20g) reste proposée au client." }
@@ -264,7 +264,7 @@ collections:
               - label: "Stock"
                 name: "stock"
                 widget: "select"
-                options: ["in_stock", "low"]
+                options: [{ label: "En stock", value: "in_stock" }, { label: "Dernières pièces", value: "low" }, { label: "Rupture de stock", value: "rupture" }]
                 required: false
               - { label: "Photo du produit", name: "image", widget: "image", required: false }
               - { label: "Poids (grammes)", name: "weight", widget: "number", value_type: "int", required: false, hint: "Utilisé pour déterminer si Lettre suivie (max 20g) reste proposée au client." }
