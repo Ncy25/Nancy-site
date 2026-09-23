@@ -521,11 +521,12 @@ collections:
               - name: "reviews"
                 label: "Avis"
                 widget: "list"
+                required: false
                 summary: "{{fields.author}}"
                 fields:
-                  - { label: "Texte de l'avis", name: "text", widget: "text" }
-                  - { label: "Prénom", name: "author", widget: "string" }
-                  - { label: "Ville", name: "location", widget: "string" }
+                  - { label: "Texte de l'avis", name: "text", widget: "text", required: false }
+                  - { label: "Prénom", name: "author", widget: "string", required: false }
+                  - { label: "Ville", name: "location", widget: "string", required: false }
           - label: "Bandeau final (CTA)"
             name: "cta"
             widget: "object"
