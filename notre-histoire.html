@@ -871,7 +871,7 @@
 </section>
 
 <!-- TÉMOIGNAGES -->
-<section class="testimonials">
+<section class="testimonials" id="testimonialsSection">
   <div class="container">
     <div class="test-title r" id="testLabel">Ce qu'on dit de nous</div>
     <div class="test-h2 r" id="testTitle">Elles ont craqué 🌸</div>
@@ -1143,15 +1143,20 @@
     }
 
     if (d.testimonials) {
-      setText('testLabel', d.testimonials.label);
-      setText('testTitle', d.testimonials.title);
-      const reviews = Array.isArray(d.testimonials.reviews) ? d.testimonials.reviews : [];
-      reviews.forEach((rv, i) => {
-        const n = i + 1;
-        setText('test' + n + 'Text', rv.text);
-        setText('test' + n + 'Author', rv.author);
+      const testSection = document.getElementById('testimonialsSection');
+      if (d.testimonials.show_section === false) {
+        if (testSection) testSection.style.display = 'none';
+      } else {
+        setText('testLabel', d.testimonials.label);
+        setText('testTitle', d.testimonials.title);
+        const reviews = Array.isArray(d.testimonials.reviews) ? d.testimonials.reviews : [];
+        reviews.forEach((rv, i) => {
+          const n = i + 1;
+          setText('test' + n + 'Text', rv.text);
+          setText('test' + n + 'Author', rv.author);
         setText('test' + n + 'Location', rv.location);
       });
+      }
     }
 
     if (d.cta) {
