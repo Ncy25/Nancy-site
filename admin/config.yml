@@ -516,8 +516,9 @@ collections:
             name: "testimonials"
             widget: "object"
             fields:
-              - { label: "Étiquette de section", name: "label", widget: "string" }
-              - { label: "Titre de section", name: "title", widget: "string" }
+              - { label: "Afficher cette section sur le site", name: "show_section", widget: "boolean", default: true, required: false }
+              - { label: "Étiquette de section", name: "label", widget: "string", required: false }
+              - { label: "Titre de section", name: "title", widget: "string", required: false }
               - name: "reviews"
                 label: "Avis"
                 widget: "list"
