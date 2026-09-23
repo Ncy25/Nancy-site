@@ -63,6 +63,7 @@
     ]
   },
   "testimonials": {
+    "show_section": false,
     "label": "Ce qu'on dit de moi",
     "title": "Elles ont craqué",
     "reviews": [
