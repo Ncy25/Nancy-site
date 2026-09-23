@@ -3,14 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Paiement — WildFlower_WoodenMountain</title>
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png?v=4"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png?v=4"/>
-  <link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192.png?v=4"/>
-  <link rel="icon" type="image/png" sizes="512x512" href="images/android-chrome-512.png?v=4"/>
-  <link rel="alternate icon" href="images/favicon.ico?v=4"/>
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png?v=4"/>
-  <meta name="description" content="Finalisez votre commande WildFlower_WoodenMountain."/>
+  <title>Paiement — Wild Flower by Wooden Mountain</title>
+  <meta name="description" content="Finalisez votre commande Wild Flower by Wooden Mountain."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"/>
@@ -70,7 +64,7 @@
     }
     .nav-top {
       display: flex; align-items: center; justify-content: space-between;
-      height: 100px;
+      height: 72px;
       max-width: 1160px; margin: 0 auto; padding: 0 28px;
     }
     .nav-left { display: flex; align-items: center; gap: 22px; }
@@ -112,13 +106,13 @@
     }
     .prog-step.active .prog-dot { background: var(--peach); border-color: var(--peach); color: #fff; }
     .prog-step.done .prog-dot { background: var(--sage-lt); border-color: var(--sage); color: var(--sage); }
-    .prog-line { flex: 1; height: 1.5px; background: var(--blush-mid); margin: 0 20px; min-width: 30px; }
+    .prog-line { flex: 1; height: 1.5px; background: var(--blush-mid); margin: 0 12px; min-width: 30px; max-width: 80px; }
     .prog-line.done { background: var(--sage-lt); }
 
     /* ── MAIN LAYOUT ── */
     .checkout-wrap {
       max-width: 1160px; margin: 0 auto; padding: 48px 28px 96px;
-      display: grid; grid-template-columns: 1fr 400px; gap: 48px; align-items: stretch;
+      display: grid; grid-template-columns: 1fr 400px; gap: 48px; align-items: start;
     }
 
     /* ── SECTION TITLES ── */
@@ -276,8 +270,6 @@
     }
     .del-opt:hover { border-color: var(--peach); }
     .del-opt.selected { border-color: var(--peach); background: var(--rose-lt); }
-    .del-opt.disabled { opacity: .5; cursor: not-allowed; pointer-events: none; }
-    .del-weight-warning { font-size: 11.5px; color: #C0392B; font-weight: 600; margin-top: 4px; }
     .del-radio {
       width: 18px; height: 18px; border-radius: 50%;
       border: 2px solid var(--blush-mid);
@@ -293,12 +285,11 @@
     .del-info { flex: 1; }
     .del-name { font-size: 13.5px; font-weight: 500; color: var(--brown); margin-bottom: 2px; }
     .del-desc { font-size: 12px; color: var(--gray); }
-    .del-price { font-size: 13.5px; font-weight: 600; color: var(--peach-dk); white-space: nowrap; text-align: right; }
-    .del-free-badge { font-size: 11px; font-weight: 700; color: var(--sage, #6B9B5E); text-align: right; margin-top: 2px; }
+    .del-price { font-size: 13.5px; font-weight: 600; color: var(--peach-dk); white-space: nowrap; }
     .del-price.free { color: var(--sage); }
 
     /* ── ORDER SUMMARY (RIGHT SIDE) ── */
-    .summary-sticky { position: sticky; top: 24px; }
+    .summary-sticky { position: sticky; top: 100px; }
     .summary-card {
       background: var(--ivory);
       border: 1px solid rgba(242,191,181,0.35);
@@ -336,7 +327,7 @@
       border-bottom: 1px dashed rgba(242,191,181,0.4);
     }
     .promo-input {
-      flex: 1; min-width: 0; padding: 10px 14px;
+      flex: 1; padding: 10px 14px;
       border: 1.5px solid rgba(195,107,74,0.18);
       border-radius: 10px; background: var(--cream);
       font-family: var(--font-b); font-size: 13.5px; color: var(--brown);
@@ -387,7 +378,14 @@
     }
     .trust-item svg { color: var(--sage); }
 
-    #cardRecap { display: none; }
+    /* note poétique */
+    .poem-note {
+      margin-top: 16px;
+      background: var(--blush);
+      border-radius: 16px; padding: 16px 18px;
+      border-left: 3px solid var(--peach);
+    }
+    .poem-note p { font-family: var(--font-d); font-size: 15px; font-style: italic; color: var(--brown); line-height: 1.65; }
 
     /* ── SUCCESS STATE ── */
     .success-wrap {
@@ -434,34 +432,19 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .progress-bar { padding: 12px 16px; }
-      .prog-dot { width: 22px; height: 22px; font-size: 10px; }
-      .prog-step { font-size: 10.5px; gap: 5px; white-space: nowrap; }
-      .prog-line { margin: 0 6px; min-width: 14px; max-width: 30px; }
-      .checkout-wrap { grid-template-columns: minmax(0, 1fr); gap: 4px; }
-      .summary-sticky { position: static; display: contents; }
-      .left-col, .right-col { display: contents; }
-      #cardCommande { order: 1; }
-      #cardLivraison { order: 3; }
-      #cardCoordonnees { order: 4; }
-      #cardAdresse { order: 5; }
-      #cardRecap { order: 6; display: block; }
-      #cardPaiement { order: 7; }
-      .d1, .d2, .d3 { transition-delay: 0s; }
-      .form-card, .summary-card { margin-bottom: 4px !important; }
-      #cardRecap, #cardPaiement { margin-top: 0 !important; }
+      .checkout-wrap { grid-template-columns: 1fr; }
+      .summary-sticky { position: static; order: -1; }
     }
     @media (max-width: 560px) {
       .f-2col, .f-3col { grid-template-columns: 1fr; }
       .pay-tabs { flex-wrap: wrap; }
-      .btn-promo { padding: 10px 12px; font-size: 11.5px; }
     }
   </style>
 </head>
 <body>
 
 <!-- PROMO BAR -->
-<div class="promo-bar">Livraison offerte dès 50€ d'achat · Pièces uniques faites à la main</div>
+<div class="promo-bar">🌸 Livraison offerte dès 50€ d'achat · Pièces uniques faites à la main</div>
 
 <!-- NAV -->
 <nav>
@@ -473,7 +456,7 @@
       </a>
     </div>
 
-    <a href="index.html" class="nav-logo" id="navLogo">
+    <a href="index.html" class="nav-logo">
       <span class="logo-wild">Wild</span>
       <div class="logo-flower-row">
         Fl
@@ -513,25 +496,23 @@
     <div class="prog-line done"></div>
     <div class="prog-step active">
       <div class="prog-dot">2</div>
-      <span>Livraison</span>
+      <span>Livraison &amp; paiement</span>
     </div>
     <div class="prog-line"></div>
     <div class="prog-step">
       <div class="prog-dot">3</div>
-      <span>Paiement</span>
+      <span>Confirmation</span>
     </div>
   </div>
 </div>
 
 <!-- SUCCESS STATE -->
 <div class="success-wrap" id="successWrap">
-  <div class="success-icon">
-    <img src="images/apple-touch-icon.png?v=2" alt="" style="width:64px;height:64px;border-radius:16px">
-  </div>
+  <div class="success-icon">🌸</div>
   <div class="success-script">Merci infiniment</div>
   <div class="success-title">Commande confirmée !</div>
   <p class="success-sub">Votre commande a bien été reçue. Un e-mail de confirmation va vous être envoyé. Vos pampilles seront préparées avec soin et expédiées sous 3–5 jours ouvrés. 💛</p>
-  <a href="boutique.html" class="btn-back-shop">
+  <a href="index.html#boutique" class="btn-back-shop">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
     Retourner à la boutique
   </a>
@@ -545,7 +526,7 @@
   <div class="left-col">
 
     <!-- COORDONNÉES -->
-    <div class="form-card r" id="cardCoordonnees">
+    <div class="form-card r">
       <div class="form-card-title">
         <div class="fc-icon">👤</div>
         Vos coordonnées
@@ -565,7 +546,7 @@
       <div class="fg"><label>Téléphone <span style="font-weight:400;opacity:.6">(facultatif)</span></label>
         <div class="input-wrap">
           <span class="input-icon">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 0118 1.82a2 2 0 012 1.99v3.01a2 2 0 01-1.44 1.93l-2 .67a16 16 0 006.38 6.38l.67-2a2 2 0 011.93-1.44z"/></svg>
           </span>
           <input type="tel" placeholder="06 00 00 00 00" autocomplete="tel" style="padding-left:42px"/>
         </div>
@@ -573,7 +554,7 @@
     </div>
 
     <!-- ADRESSE LIVRAISON -->
-    <div class="form-card r d1" id="cardAdresse">
+    <div class="form-card r d1">
       <div class="form-card-title">
         <div class="fc-icon">📍</div>
         Adresse de livraison
@@ -602,55 +583,154 @@
     </div>
 
     <!-- MODE DE LIVRAISON -->
-    <div class="form-card r d2" id="cardLivraison">
+    <div class="form-card r d2">
       <div class="form-card-title">
         <div class="fc-icon">📦</div>
         Mode de livraison
       </div>
       <div class="delivery-options">
-        <div class="del-opt" id="delOptPickup" onclick="selectDel(this, 0)" style="display:none">
-          <div class="del-radio"><div class="del-radio-inner"></div></div>
-          <div class="del-info">
-            <div class="del-name">Retrait en main propre</div>
-            <div class="del-desc" id="pickupAddress">Adresse à définir</div>
-          </div>
-          <div class="del-price" id="dp0">Gratuit</div>
-        </div>
-        <div class="del-opt selected" id="delOptLettre" onclick="selectDel(this, 1)">
+        <div class="del-opt selected" onclick="selectDel(this, 0)">
           <div class="del-radio"><div class="del-radio-inner"></div></div>
           <div class="del-info">
             <div class="del-name">Lettre suivie — La Poste</div>
             <div class="del-desc">Livraison en 2–3 jours ouvrés · Suivi inclus</div>
-            <div class="del-weight-warning" id="delWeightWarning" style="display:none">Indisponible : votre commande dépasse 20g</div>
           </div>
-          <div>
-            <div class="del-price" id="dp1">2,50 €</div>
-            <div class="del-free-badge" id="dpFree1" style="display:none">Offert</div>
-          </div>
+          <div class="del-price" id="dp0">2,50 €</div>
         </div>
-        <div class="del-opt" onclick="selectDel(this, 2)">
+        <div class="del-opt" onclick="selectDel(this, 1)">
           <div class="del-radio"><div class="del-radio-inner"></div></div>
           <div class="del-info">
-            <div class="del-name">Colissimo sans signature</div>
+            <div class="del-name">Colissimo avec avis de passage</div>
             <div class="del-desc">Livraison en 2–3 jours ouvrés · Emballage renforcé</div>
           </div>
-          <div>
-            <div class="del-price" id="dp2">5,50 €</div>
-            <div class="del-free-badge" id="dpFree2" style="display:none">Offert</div>
-          </div>
+          <div class="del-price" id="dp1">5,50 €</div>
         </div>
-        <div class="del-opt" onclick="selectDel(this, 3)">
+        <div class="del-opt" onclick="selectDel(this, 2)">
           <div class="del-radio"><div class="del-radio-inner"></div></div>
           <div class="del-info">
             <div class="del-name">Colissimo International</div>
             <div class="del-desc">Europe — 5 à 10 jours ouvrés</div>
           </div>
-          <div class="del-price" id="dp3">15,00 €</div>
+          <div class="del-price" id="dp2">8,00 €</div>
         </div>
       </div>
       <div class="secure-row" style="margin-top:16px">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <p>Chaque colis est emballé soigneusement à la main avec une petite attention — délai de préparation : 3 à 5 jours ouvrés.</p>
+        <p>Chaque colis est emballé soigneusement à la main avec une petite attention 🌸 — délai de préparation : 3 à 5 jours ouvrés.</p>
+      </div>
+    </div>
+
+    <!-- PAIEMENT -->
+    <div class="form-card r d3">
+      <div class="form-card-title">
+        <div class="fc-icon">💳</div>
+        Paiement
+      </div>
+
+      <!-- Tabs -->
+      <div class="pay-tabs">
+        <div class="pay-tab active" onclick="switchTab('card', this)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          Carte bancaire
+        </div>
+        <div class="pay-tab" onclick="switchTab('paypal', this)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7.07 21.89l.43-2.72.01-.08-.01.02H5.1l1.97-12.5h4.83c1.58 0 2.74.35 3.42 1.04.65.66.84 1.64.56 2.9-.53 2.53-1.97 3.82-4.28 3.82h-1.08l-.26 1.64-.38 2.4-.04.24H7.07zm1.88-7.19h.72c1.27 0 2.13-.75 2.44-2.18.22-1.01.05-1.67-.52-2-.27-.15-.66-.23-1.2-.23H9.1l-.15.95-.53 3.46z"/></svg>
+          PayPal
+        </div>
+        <div class="pay-tab" onclick="switchTab('virement', this)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+          Virement
+        </div>
+      </div>
+
+      <!-- Card zone -->
+      <div id="zone-card">
+        <!-- Visual card preview -->
+        <div class="card-preview" id="cardPreview">
+          <div class="card-chip">
+            <div class="card-chip-cell"></div>
+            <div class="card-chip-cell"></div>
+            <div class="card-chip-cell"></div>
+            <div class="card-chip-cell"></div>
+          </div>
+          <div class="card-number" id="cardNumDisplay">•••• •••• •••• ••••</div>
+          <div class="card-bottom">
+            <div>
+              <div class="card-label">Titulaire</div>
+              <div class="card-value" id="cardNameDisplay">NOM PRÉNOM</div>
+            </div>
+            <div>
+              <div class="card-label">Expire</div>
+              <div class="card-value" id="cardExpDisplay">MM/AA</div>
+            </div>
+            <div class="card-logo">Wild</div>
+          </div>
+        </div>
+
+        <div class="fg">
+          <label>Numéro de carte</label>
+          <div class="input-wrap">
+            <span class="input-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </span>
+            <input type="text" id="cardNum" placeholder="1234 5678 9012 3456" maxlength="19" oninput="formatCardNum(this)" style="padding-left:42px"/>
+            <div class="input-brand">
+              <span class="card-brand cb-visa">VISA</span>
+              <span class="card-brand cb-mc">MC</span>
+              <span class="card-brand cb-cb">CB</span>
+            </div>
+          </div>
+        </div>
+        <div class="fg">
+          <label>Nom sur la carte</label>
+          <input type="text" id="cardName" placeholder="LÉA DUPONT" oninput="updateCardName(this)" style="text-transform:uppercase" autocomplete="cc-name"/>
+        </div>
+        <div class="f-2col">
+          <div class="fg">
+            <label>Date d'expiration</label>
+            <input type="text" id="cardExp" placeholder="MM/AA" maxlength="5" oninput="formatExp(this)" autocomplete="cc-exp"/>
+          </div>
+          <div class="fg">
+            <label>CVV</label>
+            <div class="input-wrap">
+              <input type="password" id="cardCvv" placeholder="•••" maxlength="4" autocomplete="cc-csc"/>
+              <span class="input-icon" style="left:auto;right:13px;font-size:13px;cursor:help" title="3 chiffres au dos de votre carte">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="secure-row">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          <p>Vos données bancaires sont chiffrées par SSL et ne transitent jamais sur nos serveurs. Paiement 100% sécurisé.</p>
+        </div>
+      </div>
+
+      <!-- PayPal zone -->
+      <div class="paypal-zone" id="zone-paypal">
+        <p>Vous serez redirigé(e) vers PayPal pour finaliser votre paiement en toute sécurité.</p>
+        <button class="btn-paypal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#003087"><path d="M7.07 21.89l.43-2.72h-.01-.01l-.41 2.6-.01.12h.01zM19.26 7.2c.05-.32.08-.65.08-.98 0-2.87-2.12-4.22-5.6-4.22H7.27L4.67 18.28h3.88l.77-4.87h2.08c3.73 0 6.3-1.94 6.91-5.49l.03-.19-.08-.53z"/></svg>
+          Payer avec PayPal
+        </button>
+      </div>
+
+      <!-- Virement zone -->
+      <div class="virement-zone" id="zone-virement">
+        <p><strong>Coordonnées bancaires :</strong><br>
+        Nous vous enverrons les coordonnées bancaires par e-mail après validation de votre commande. L'expédition sera effectuée à réception du virement (2–3 jours ouvrés supplémentaires).</p>
+      </div>
+    </div>
+
+    <!-- NOTE FACULTATIVE -->
+    <div class="form-card r" style="margin-bottom:0">
+      <div class="form-card-title" style="margin-bottom:14px">
+        <div class="fc-icon">💬</div>
+        Note pour votre commande
+        <span style="font-size:12px;font-weight:400;color:var(--gray);margin-left:4px">(facultatif)</span>
+      </div>
+      <div class="fg" style="margin-bottom:0">
+        <textarea placeholder="Ex : c'est un cadeau, pouvez-vous ajouter un petit mot ? Couleur souhaitée pour le papier…" rows="3" style="resize:vertical;border:1.5px solid rgba(195,107,74,0.18);border-radius:10px;background:var(--cream);font-family:var(--font-b);font-size:14px;color:var(--brown);padding:11px 14px;outline:none;transition:border-color var(--ease),box-shadow var(--ease);width:100%" onfocus="this.style.borderColor='var(--peach)';this.style.boxShadow='0 0 0 3px rgba(240,168,130,0.15)'" onblur="this.style.borderColor='rgba(195,107,74,0.18)';this.style.boxShadow=''"></textarea>
       </div>
     </div>
 
@@ -659,7 +739,7 @@
   <!-- RIGHT COL — SUMMARY -->
   <div class="right-col">
     <div class="summary-sticky">
-      <div class="summary-card r" id="cardCommande">
+      <div class="summary-card r">
         <div class="summary-title">Votre commande</div>
         <div class="sum-items" id="summaryItems">
           <!-- Injected by JS -->
@@ -667,7 +747,7 @@
 
         <!-- Promo code -->
         <div class="promo-row">
-          <input type="text" class="promo-input" placeholder="Code promo" id="promoInput"/>
+          <input type="text" class="promo-input" placeholder="Code promo 🌸" id="promoInput"/>
           <button class="btn-promo" onclick="applyPromo()">Appliquer</button>
         </div>
 
@@ -712,42 +792,9 @@
         </div>
       </div>
 
-      <!-- RÉCAP MOBILE (juste avant Paiement) -->
-      <div class="form-card r" id="cardRecap" style="margin-top:24px">
-        <div class="form-card-title" style="margin-bottom:14px">
-          <div class="fc-icon">🧾</div>
-          Récapitulatif
-        </div>
-        <div class="sum-totals" style="margin-bottom:18px">
-          <div class="sum-row">
-            <span class="lbl">Sous-total</span>
-            <span class="val" id="subtotal2">—</span>
-          </div>
-          <div class="sum-row">
-            <span class="lbl">Livraison</span>
-            <span class="val" id="shipping2">2,50 €</span>
-          </div>
-          <div class="sum-row total">
-            <span class="lbl">Total</span>
-            <span class="val" id="totalAmt2">—</span>
-          </div>
-        </div>
-        <button class="btn-pay" onclick="submitOrder()">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-          Confirmer &amp; payer
-        </button>
-      </div>
-
-      <!-- PAIEMENT -->
-      <div class="form-card r d3" id="cardPaiement" style="margin-top:24px">
-        <div class="form-card-title">
-          <div class="fc-icon">💳</div>
-          Paiement
-        </div>
-        <div class="secure-row">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-          <p>Après avoir cliqué sur "Confirmer & payer", tu seras redirigée vers notre partenaire de paiement sécurisé Stripe pour saisir tes coordonnées bancaires. Aucune donnée de carte ne transite par notre site.</p>
-        </div>
+      <!-- Poème -->
+      <div class="poem-note r d2">
+        <p>"Chaque pampille part avec un peu de moi — et beaucoup d'amour pour vous." 🌸</p>
       </div>
     </div>
   </div>
@@ -766,26 +813,27 @@
       <a href="index.html#contact">Contact</a>
     </div>
     <div class="footer-bar">
-      <p id="footerCopyright">© 2025 WildFlower_WoodenMountain · Fait avec amour en France</p>
+      <p>© 2025 Wild Flower by Wooden Mountain · Fait avec 🌸 en France</p>
       <p>Paiement sécurisé · Expédition soignée</p>
     </div>
   </div>
 </footer>
 
 <script>
-  // ── Retour depuis Stripe : afficher la confirmation ─────────────
-  const urlParams = new URLSearchParams(window.location.search);
-  const stripeSessionId = urlParams.get('session_id');
-  if (stripeSessionId) {
-    try { sessionStorage.removeItem('wf_cart'); } catch (e) {}
-  }
-
-  // ── Cart data (read from sessionStorage) ────────────────────────
+  // ── Cart data (read from localStorage or demo fallback)
   let cartItems = [];
   try {
-    const stored = sessionStorage.getItem('wf_cart');
+    const stored = localStorage.getItem('wf_cart');
     if (stored) cartItems = JSON.parse(stored);
   } catch(e) {}
+
+  // Demo items if empty
+  if (!cartItems.length) {
+    cartItems = [
+      { name: 'Pampilles + Créoles Motifs', price: 18, emoji: '🌺', qty: 1 },
+      { name: 'Créoles Dorées', price: 5, emoji: '✨', qty: 2 },
+    ];
+  }
 
   let deliveryCost = 2.50;
   let promoDiscount = 0;
@@ -795,16 +843,13 @@
     const el = document.getElementById('summaryItems');
     el.innerHTML = '';
     let sub = 0;
-    let totalWeight = 0;
     cartItems.forEach(item => {
       sub += item.price * item.qty;
-      totalWeight += (item.weight || 0) * item.qty;
       const div = document.createElement('div');
       div.className = 'sum-item';
-      const thumbContent = item.image ? `<img src="${item.image}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:12px;position:absolute;inset:0">` : item.emoji;
       div.innerHTML = `
         <div class="sum-thumb">
-          ${thumbContent}
+          ${item.emoji}
           <span class="sum-qty-badge">${item.qty}</span>
         </div>
         <div class="sum-name">${item.name}</div>
@@ -813,50 +858,24 @@
       el.appendChild(div);
     });
 
-    // Lettre suivie limitée à 20g — désactive l'option si dépassé
-    const lettreOpt = document.getElementById('delOptLettre');
-    const lettreWarning = document.getElementById('delWeightWarning');
-    if (lettreOpt) {
-      const overWeight = totalWeight > 20;
-      lettreOpt.classList.toggle('disabled', overWeight);
-      if (lettreWarning) lettreWarning.style.display = overWeight ? 'block' : 'none';
-      if (overWeight && lettreOpt.classList.contains('selected')) {
-        // Bascule automatiquement vers Colissimo sans signature
-        const fallback = document.querySelectorAll('.del-opt')[2];
-        if (fallback) { lettreOpt.classList.remove('selected'); selectDel(fallback, 2); return; }
-      }
-    }
-
     const total = sub + (sub >= 50 ? 0 : deliveryCost) - promoDiscount;
     document.getElementById('subtotal').textContent = sub.toFixed(2).replace('.',',') + ' €';
-    document.getElementById('subtotal2').textContent = sub.toFixed(2).replace('.',',') + ' €';
     if (sub >= 50) {
       document.getElementById('shipping').textContent = 'Offert';
       document.getElementById('shipping').classList.add('free-del');
-      document.getElementById('shipping2').textContent = 'Offert';
     } else {
       document.getElementById('shipping').textContent = deliveryCost.toFixed(2).replace('.',',') + ' €';
       document.getElementById('shipping').classList.remove('free-del');
-      document.getElementById('shipping2').textContent = deliveryCost.toFixed(2).replace('.',',') + ' €';
     }
-    document.getElementById('dpFree1').style.display = sub >= 50 ? 'block' : 'none';
-    document.getElementById('dpFree2').style.display = sub >= 50 ? 'block' : 'none';
     document.getElementById('totalAmt').textContent = Math.max(0, total).toFixed(2).replace('.',',') + ' €';
-    document.getElementById('totalAmt2').textContent = Math.max(0, total).toFixed(2).replace('.',',') + ' €';
   }
   renderSummary();
-
-  if (stripeSessionId) {
-    document.getElementById('checkoutFormWrap').classList.add('hide');
-    document.getElementById('successWrap').classList.add('show');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
 
   // ── Delivery selection
   function selectDel(el, idx) {
     document.querySelectorAll('.del-opt').forEach(o => o.classList.remove('selected'));
     el.classList.add('selected');
-    const prices = [0, 2.50, 5.50, 15.00];
+    const prices = [2.50, 5.50, 8.00];
     deliveryCost = prices[idx];
     renderSummary();
   }
@@ -897,7 +916,7 @@
       document.getElementById('promoRow').style.display = 'flex';
       document.getElementById('promoVal').textContent = '— ' + promoDiscount.toFixed(2).replace('.',',') + ' €';
       renderSummary();
-      showToast('Code promo appliqué !');
+      showToast('Code promo appliqué ! 🌸');
     } else {
       showToast('Code invalide ou expiré');
     }
@@ -914,36 +933,10 @@
       showToast('Veuillez remplir tous les champs obligatoires');
       return;
     }
-    if (!cartItems.length) {
-      showToast('Votre panier est vide');
-      return;
-    }
-
-    const payBtn = document.querySelector('.btn-pay');
-    const payBtnOriginalHTML = payBtn ? payBtn.innerHTML : '';
-    if (payBtn) { payBtn.disabled = true; payBtn.innerHTML = 'Redirection vers le paiement…'; }
-
-    const items = cartItems.map(i => ({ name: i.name, qty: i.qty }));
-    try { sessionStorage.setItem('wf_cart', JSON.stringify(cartItems)); } catch (e) {}
-
-    fetch('https://wildflower-wm.fr/api/checkout', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ items, customer: { name: fname, email, address: addr, city, zip } }),
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data.url) {
-          window.location.href = data.url;
-        } else {
-          showToast((data.error || 'Erreur lors de la création du paiement') + (data.detail ? ' — ' + data.detail : ''));
-          if (payBtn) { payBtn.disabled = false; payBtn.innerHTML = payBtnOriginalHTML; }
-        }
-      })
-      .catch(() => {
-        showToast('Impossible de contacter le service de paiement. Réessaie dans un instant.');
-        if (payBtn) { payBtn.disabled = false; payBtn.innerHTML = payBtnOriginalHTML; }
-      });
+    // Simulate API call
+    document.getElementById('checkoutFormWrap').classList.add('hide');
+    document.getElementById('successWrap').classList.add('show');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   // ── Toast
@@ -953,7 +946,7 @@
     if (!t) {
       t = document.createElement('div');
       t.id = 'toast';
-      t.style.cssText = `position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(60px);background:var(--brown);color:var(--cream);padding:10px 22px;border-radius:16px;font-size:13.5px;font-weight:500;z-index:400;transition:transform .4s cubic-bezier(.34,1.5,.64,1),opacity .4s;opacity:0;white-space:normal;max-width:90vw;text-align:center;`;
+      t.style.cssText = `position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(60px);background:var(--brown);color:var(--cream);padding:10px 22px;border-radius:999px;font-size:13.5px;font-weight:500;z-index:400;pointer-events:none;transition:transform .4s cubic-bezier(.34,1.5,.64,1),opacity .4s;opacity:0;white-space:nowrap;`;
       document.body.appendChild(t);
     }
     t.textContent = msg;
@@ -963,7 +956,7 @@
     toastTimer = setTimeout(() => {
       t.style.transform = 'translateX(-50%) translateY(60px)';
       t.style.opacity = '0';
-    }, 9000);
+    }, 2800);
   }
 
   // ── Enter on promo input
@@ -974,34 +967,6 @@
   // ── Reveal
   const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('v'); }), { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
   document.querySelectorAll('.r').forEach(el => obs.observe(el));
-</script>
-
-<script>
-  fetch('content/site.json').then(r => r.json()).then(site => {
-    if (site.logo_image) {
-      const logo = document.getElementById('navLogo');
-      if (logo) logo.innerHTML = `<img src="${site.logo_image}" alt="${site.brand_name || 'WildFlower_WoodenMountain'}" style="height:90px;width:auto;display:block">`;
-    }
-    if (site.pickup_enabled !== false && site.pickup_address) {
-      document.getElementById('pickupAddress').textContent = site.pickup_address;
-      document.getElementById('delOptPickup').style.display = '';
-    }
-  }).catch(() => {});
-</script>
-<script>
-  fetch('content/home.json').then(r => r.json()).then(d => {
-    const fc = document.getElementById('footerCopyright');
-    if (fc && d.footer_copyright) fc.textContent = d.footer_copyright;
-  }).catch(() => {});
-</script>
-
-<script>
-  // Corrige le bug du bouton qui ne répond plus après un retour arrière du navigateur
-  window.addEventListener('pageshow', function (event) {
-    if (event.persisted) {
-      window.location.reload();
-    }
-  });
 </script>
 </body>
 </html>

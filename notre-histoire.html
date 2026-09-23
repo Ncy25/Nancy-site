@@ -1163,11 +1163,11 @@
 <script>
   let cart = [];
   try {
-    const stored = sessionStorage.getItem("wf_cart");
+    const stored = localStorage.getItem("wf_cart");
     if (stored) cart = JSON.parse(stored);
   } catch(e) {}
   function saveCart() {
-    try { sessionStorage.setItem("wf_cart", JSON.stringify(cart)); } catch(e) {}
+    try { localStorage.setItem("wf_cart", JSON.stringify(cart)); } catch(e) {}
   }
   document.addEventListener("DOMContentLoaded", renderCart);
   if (document.readyState !== "loading") renderCart();

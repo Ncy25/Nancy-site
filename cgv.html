@@ -235,12 +235,12 @@
 <script>
   (function syncCartBadge() {
     try {
-      const stored = sessionStorage.getItem('wf_cart');
+      const stored = localStorage.getItem('wf_cart');
       const cart = stored ? JSON.parse(stored) : [];
       const count = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
       const badge = document.getElementById('cb');
       if (badge) { badge.textContent = count; badge.classList.toggle('on', count > 0); }
-      const storedW = sessionStorage.getItem('wf_wishlist');
+      const storedW = localStorage.getItem('wf_wishlist');
       const wishlist = storedW ? JSON.parse(storedW) : [];
       const wbadge = document.getElementById('wb');
       if (wbadge) { wbadge.textContent = wishlist.length; wbadge.classList.toggle('on', wishlist.length > 0); }

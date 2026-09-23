@@ -1221,11 +1221,11 @@
   let lastNouveautesData = {};
   let wishlist = [];
   try {
-    const storedW = sessionStorage.getItem("wf_wishlist");
+    const storedW = localStorage.getItem("wf_wishlist");
     if (storedW) wishlist = JSON.parse(storedW);
   } catch(e) {}
   function saveWishlist() {
-    try { sessionStorage.setItem("wf_wishlist", JSON.stringify(wishlist)); } catch(e) {}
+    try { localStorage.setItem("wf_wishlist", JSON.stringify(wishlist)); } catch(e) {}
   }
   function isWished(id) { return wishlist.some(w => w.id === id); }
 
@@ -1291,11 +1291,11 @@
   }
 
   try {
-    const stored = sessionStorage.getItem("wf_cart");
+    const stored = localStorage.getItem("wf_cart");
     if (stored) cart = JSON.parse(stored);
   } catch(e) {}
   function saveCart() {
-    try { sessionStorage.setItem("wf_cart", JSON.stringify(cart)); } catch(e) {}
+    try { localStorage.setItem("wf_cart", JSON.stringify(cart)); } catch(e) {}
   }
   document.addEventListener("DOMContentLoaded", renderCart);
   if (document.readyState !== "loading") renderCart();
