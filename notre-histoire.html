@@ -392,6 +392,7 @@
     .dr-info { flex: 1; }
     .dr-name { font-size: 13.5px; font-weight: 500; color: var(--brown); margin-bottom: 3px; }
     .dr-price { font-size: 13px; color: var(--peach-dk); }
+    .dr-rupture-warning { font-size: 11px; color: #C0392B; font-weight: 600; margin: 2px 0 4px; }
     .dr-qty { display: flex; align-items: center; gap: 7px; margin-top: 5px; }
     .qb { width: 22px; height: 22px; border-radius: 50%; background: var(--blush); border: none; cursor: pointer; font-size: 13px; color: var(--brown); display: flex; align-items: center; justify-content: center; transition: background var(--ease); }
     .qb:hover { background: var(--peach); color: #fff; }
@@ -1178,6 +1179,17 @@
     renderCart(); toast('Ajouté au panier');
   }
 
+  let ruptureNames = [];
+  Promise.all([
+    fetch('content/products.json').then(r => r.json()).catch(() => ({products: []})),
+    fetch('content/nouveautes.json').then(r => r.json()).catch(() => ({products: []})),
+    fetch('content/wooden-mountain.json').then(r => r.json()).catch(() => ({products: []}))
+  ]).then(([a, b, c]) => {
+    ruptureNames = [].concat(a.products || [], b.products || [], c.products || [])
+      .filter(p => p.stock === 'rupture').map(p => p.name);
+    renderCart();
+  }).catch(() => {});
+
   function renderCart() {
     saveCart();
     const di = document.getElementById('di');
@@ -1194,7 +1206,9 @@
       total += item.price * item.qty; count += item.qty;
       const el = document.createElement('div'); el.className = 'dr-item';
       const thumb = item.image ? `<img src="${item.image}" alt="">` : (item.emoji || '');
-      el.innerHTML = `<div class="dr-thumb">${thumb}</div><div class="dr-info"><div class="dr-name">${item.name}</div><div class="dr-price">${item.price},00 €</div><div class="dr-qty"><button class="qb" onclick="chQty(${i},-1)">−</button><span class="qv">${item.qty}</span><button class="qb" onclick="chQty(${i},1)">+</button></div></div>`;
+      const isRupture = ruptureNames.some(n => item.name.startsWith(n));
+      const ruptureWarning = isRupture ? `<div class="dr-rupture-warning">⚠ Cet article est passé en rupture de stock</div>` : '';
+      el.innerHTML = `<div class="dr-thumb">${thumb}</div><div class="dr-info"><div class="dr-name">${item.name}</div>${ruptureWarning}<div class="dr-price">${item.price},00 €</div><div class="dr-qty"><button class="qb" onclick="chQty(${i},-1)">−</button><span class="qv">${item.qty}</span><button class="qb" onclick="chQty(${i},1)">+</button></div></div>`;
       di.appendChild(el);
     });
     document.getElementById('dt').textContent = total.toFixed(2).replace('.',',') + ' €';
