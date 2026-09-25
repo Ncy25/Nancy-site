@@ -2,42 +2,36 @@
   "promo_bar": "Livraison offerte dès 50€ d'achat · Pièces uniques faites à la main",
   "hero": {
     "script": "Tes bijoux, tes règles :",
-    "title": "PAMPILLES INTERCHANGEABLES \nÀ COMBINER \nÀ L'INFINI",
+    "title_line1": "PADAPOM",
+    "title_line2": "",
     "subtitle": "Découvre les pampilles interchangeables : l'idée qui change tout.\nUne réunion à 9h ? Un dîner chic à 20h ? Ne choisis plus entre discrétion et audace. Glisse, clipse, varie les couleurs et les formes au gré de tes envies.\nUn seul geste suffit pour changer d’humeur en deux secondes chrono.\nCrée ton propre style chaque jours.",
     "button_text": "Découvrir maintenant",
-    "button_link": "boutique.html",
-    "photo": "/images/uploads/Screenshot_20260919_162911_Gallery.jpg",
-    "steps": [
-      {
-        "title": "1. La base",
-        "description": "Choisis ta paire de créoles pour la base.",
-        "image": "/images/uploads/20260919_105505 (1).png"
-      },
-      {
-        "title": "2. Les pampilles",
-        "description": "Choisis tes pampilles interchangeables.",
-        "image": "/images/uploads/20260921_104234.png"
-      },
-      {
-        "title": "3. Le mix",
-        "description": "Compose et personnalise ton mix à l'infini.",
-        "image": "/images/uploads/20260919_113151 (1).png"
-      }
-    ],
     "main_image": "/images/uploads/20260911_150457.png",
     "small_image_1": "/images/uploads/20260909_173127 (1).png",
     "small_image_2": "/images/uploads/20260909_164407.png",
     "small_image_3": "/images/uploads/20260909_164206.png",
-    "title_line1": "PADAPOM",
-    "title_line2": ""
+    "button_link": "boutique.html",
+    "photo": "/images/uploads/Screenshot_20260919_162911_Gallery.jpg",
+    "steps": [
+      {
+        "description": "Choisis ta paire de créoles pour la base.",
+        "image": "/images/uploads/20260919_105505 (1).png",
+        "title": "1. La base"
+      },
+      {
+        "description": "Choisis tes pampilles interchangeables.",
+        "image": "/images/uploads/20260921_104234.png",
+        "title": "2. Les pampilles"
+      },
+      {
+        "description": "Compose et personnalise ton mix à l'infini.",
+        "image": "/images/uploads/20260919_113151 (1).png",
+        "title": "3. Le mix"
+      }
+    ],
+    "title": "PAMPILLES INTERCHANGEABLES \nÀ COMBINER \nÀ L'INFINI"
   },
   "lifestyle_title": "Faites à la main, portées avec amour",
-  "wm_banner": {
-    "eyebrow": "L'univers du bois",
-    "title": "WOODEN MOUNTAIN",
-    "subtitle": "Des créations en bois façonnées avec soin, pour prolongé l'univers WildFlower dans ton intérieur.",
-    "button_text": "VOIR LES CRÉATIONS"
-  },
   "boutique_title": "Les créations",
   "boutique_subtitle": "C'est le moment d'ajouter au panier",
   "below_products_text": "Viens en découvrir plus",
@@ -54,7 +48,7 @@
     "about_img1": "/images/uploads/c2ff1fd1fb32cbf037fed5213d1ced1f.jpg",
     "about_img2": "/images/uploads/20260916_112321.jpg",
     "about_img3": "/images/uploads/20260916_103552 (1).png",
-    "about_img4": ""
+    "about_img4": "/images/uploads/0810fdff27398f8e21a1a6f77406edb8.jpg"
   },
   "contact": {
     "label": "Une question ?",
@@ -67,5 +61,11 @@
     "quote": "Des pampilles qui changent tout — Du bois a vos mesures."
   },
   "footer_tagline": "Pampilles interchangeables et objets en bois personnalisés",
-  "footer_copyright": "© 2026 WildFlower_WoodenMountain · Fabriqué en France"
+  "footer_copyright": "© 2026 WildFlower_WoodenMountain · Fabriqué en France",
+  "wm_banner": {
+    "button_text": "VOIR LES CRÉATIONS",
+    "eyebrow": "L'univers du bois",
+    "subtitle": "Des créations en bois façonnées avec soin, pour prolongé l'univers WildFlower dans ton intérieur.",
+    "title": "WOODEN MOUNTAIN"
+  }
 }
