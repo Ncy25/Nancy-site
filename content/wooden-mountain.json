@@ -99,7 +99,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/20260916_103552 (1).png",
-      "weight": null,
+      "weight": 20,
       "custom_gravure": true,
       "custom_finition": true,
       "custom_colors3": false
@@ -121,6 +121,23 @@
       "custom_gravure": false,
       "custom_finition": false,
       "custom_colors3": false
+    },
+    {
+      "id": "Body",
+      "name": "Plaque de naissance personnalisée en bois — Motif Body",
+      "category": "Bois",
+      "occasion": "Naissance",
+      "price": 10,
+      "emoji": "",
+      "description": "Gravure personnalisée : prénom, date, heure, taille et poids de naissance. Design doux & naturel : forme originale de body avec motifs gravés.",
+      "colors": [],
+      "bg": "",
+      "badge": "",
+      "stock": "",
+      "image": "/images/uploads/1790365859454.jpg",
+      "weight": 20,
+      "custom_gravure": true,
+      "custom_finition": true
     }
   ]
 }
