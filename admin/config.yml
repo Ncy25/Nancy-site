@@ -362,6 +362,7 @@ collections:
           - { label: "Bloc 1 — photo 4 (bas droite)", name: "block1_image_4", widget: "image", required: false }
           - { label: "Bloc 2 — 'L'argile polymère' (grande photo)", name: "block2_image", widget: "image", required: false }
           - { label: "Bloc 3 — 'Changer d'humeur' (grande photo)", name: "block3_image", widget: "image", required: false }
+          - { label: "Bloc 3 — 'Changer d'humeur' (vidéo, remplace la photo si ajoutée)", name: "block3_video", widget: "file", required: false, hint: "Format MP4 recommandé, fichier léger de préférence (quelques secondes en boucle)." }
           - { label: "Matériaux — photo 1", name: "materials_image_1", widget: "image", required: false }
           - { label: "Matériaux — photo 2", name: "materials_image_2", widget: "image", required: false }
           - { label: "Matériaux — photo 3", name: "materials_image_3", widget: "image", required: false }
