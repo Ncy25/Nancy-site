@@ -1012,12 +1012,17 @@
       const el = document.getElementById(id);
       if (el && path) el.innerHTML = `<img src="${path}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit">`;
     };
+    const setVideo = (id, path) => {
+      const el = document.getElementById(id);
+      if (el && path) el.innerHTML = `<video src="${path}" style="width:100%;height:100%;object-fit:cover;border-radius:inherit" autoplay muted loop playsinline></video>`;
+    };
     setImg('histoireImg1', d.block1_image_1);
     setImg('histoireImg2', d.block1_image_2);
     setImg('histoireImg3', d.block1_image_3);
     setImg('histoireImg4', d.block1_image_4);
     setImg('histoireImg5', d.block2_image);
     setImg('histoireImg6', d.block3_image);
+    if (d.block3_video) setVideo('histoireImg6', d.block3_video);
     setImg('histoireImg7', d.materials_image_1);
     setImg('histoireImg8', d.materials_image_2);
     setImg('histoireImg9', d.materials_image_3);
