@@ -1,8 +1,8 @@
 {
-  "hero_eyebrow": "Collection Automne 2026",
-  "hero_title_line1": "PADAPOM",
+  "hero_eyebrow": "Collection",
+  "hero_title_line1": "OCTOBRE ROSE",
   "hero_title_line2": "",
-  "hero_subtitle": "Les couleurs automnales se composent de teintes chaudes, profondes et terreuses inspirées de la nature.",
+  "hero_subtitle": "​« Créer pour soutenir, porter pour sensibiliser. »",
   "hero_tag1": "✨ Pépites",
   "hero_tag2": "🏺 Pâte polymère",
   "hero_tag3": "🇫🇷 Fait en France",
@@ -15,7 +15,22 @@
   "countdown_title": "Prochain drop — Collection Octobre ROSE",
   "countdown_subtitle": "Les prochaines pampilles arrivent bientôt.",
   "countdown_end": "2026-09-26T19:30:00",
-  "products": [],
+  "products": [
+    {
+      "id": "",
+      "name": "",
+      "category": "",
+      "price": null,
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "",
+      "badge": "",
+      "stock": "",
+      "image": "",
+      "weight": null
+    }
+  ],
   "sneak": null,
   "feature": {
     "description": "Notre création la plus joyeuse : deux formes florales différentes, dégradé nacré, finition or. Une seule paire de créoles, deux personnalités.",
