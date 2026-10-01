@@ -159,6 +159,8 @@ collections:
           - name: "products"
             label: "Produits nouveautés"
             widget: "list"
+            required: false
+            hint: "Laisse vide : les produits affichés ici viennent automatiquement de la case « Afficher aussi sur la page Nouveautés » cochée sur chaque produit, dans l'onglet Produits — Boutique."
             summary: "{{fields.name}} — {{fields.category}} ({{fields.price}}€)"
             fields:
               - { label: "Identifiant (unique, sans espace)", name: "id", widget: "string", required: false }
