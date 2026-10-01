@@ -53,7 +53,7 @@
       "price": 17,
       "variant": "motifs",
       "emoji": "",
-      "description": "",
+      "description": "Designs uniques, réalisés à la main, pampilles artisanales longueur 18 mm et 16 mm, compatibles avec toutes les créoles",
       "colors": [],
       "bg": "",
       "badge": "new",
@@ -70,7 +70,7 @@
       "price": 13,
       "variant": "uni",
       "emoji": "",
-      "description": "",
+      "description": "Designs uniques, réalisés à la main, pampilles artisanales longueur 18 mm, compatibles avec toutes les créoles",
       "colors": [],
       "bg": "",
       "badge": "new",
@@ -95,7 +95,7 @@
       "image": "/images/uploads/Coeur - Jeans.jpg",
       "weight": 10,
       "show_on_home": true,
-      "show_on_nouveautes": true
+      "show_on_nouveautes": false
     },
     {
       "id": "pampilles-thea",
@@ -112,7 +112,7 @@
       "image": "/images/uploads/Théa - Aquarelle d'automne.jpg",
       "weight": 10,
       "show_on_home": true,
-      "show_on_nouveautes": true
+      "show_on_nouveautes": false
     },
     {
       "id": "pampilles-coeurcoral",
@@ -128,8 +128,8 @@
       "stock": "in_stock",
       "image": "/images/uploads/Coeur Coral - Cranberry.jpg",
       "weight": 10,
-      "show_on_home": false,
-      "show_on_nouveautes": true
+      "show_on_home": true,
+      "show_on_nouveautes": false
     },
     {
       "id": "pampilles-max",
@@ -145,8 +145,8 @@
       "stock": "in_stock",
       "image": "/images/uploads/Max - Rose Gold.jpg",
       "weight": 10,
-      "show_on_home": true,
-      "show_on_nouveautes": true
+      "show_on_home": false,
+      "show_on_nouveautes": false
     },
     {
       "id": "Pampilles-thea",
@@ -158,12 +158,12 @@
       "description": "Designs uniques, réalisés à la main, pampilles artisanales longueur 18 mm, compatibles avec toutes les créoles",
       "colors": [],
       "bg": "#f5d5c8",
-      "badge": "new",
+      "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/Théa - Prune.jpg",
       "weight": 10,
       "show_on_home": true,
-      "show_on_nouveautes": true
+      "show_on_nouveautes": false
     },
     {
       "id": "Pampilles-mae",
@@ -175,12 +175,12 @@
       "description": "Designs uniques, réalisés à la main, pampilles artisanales longueur 20 mm, compatibles avec toutes les créoles",
       "colors": [],
       "bg": "#f9e8e0",
-      "badge": "new",
+      "badge": "",
       "stock": "",
       "image": "/images/uploads/Mae - Chocolat.jpg",
       "weight": 10,
       "show_on_home": false,
-      "show_on_nouveautes": true
+      "show_on_nouveautes": false
     },
     {
       "id": "pampilles-thea",
@@ -192,12 +192,12 @@
       "description": "Designs uniques, réalisés à la main, pampilles artisanales longueur 18 mm, compatibles avec toutes les créoles",
       "colors": [],
       "bg": "#eef2e8",
-      "badge": "new",
+      "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/Théa - Champagne nacré.jpg",
       "weight": 10,
       "show_on_home": false,
-      "show_on_nouveautes": true
+      "show_on_nouveautes": false
     },
     {
       "id": "pampilles-mae",
@@ -209,12 +209,12 @@
       "description": "Designs uniques, réalisés à la main, pampilles artisanales longueur 20 mm, compatibles avec toutes les créoles",
       "colors": [],
       "bg": "#f5d5c8",
-      "badge": "new",
+      "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/Mae - Terre Cuite.jpg",
       "weight": 10,
       "show_on_home": false,
-      "show_on_nouveautes": true
+      "show_on_nouveautes": false
     },
     {
       "id": "pampilles-mae",
@@ -226,12 +226,12 @@
       "description": "Designs uniques, réalisés à la main, pampilles artisanales longueur 20 mm, compatibles avec toutes les créoles",
       "colors": [],
       "bg": "#f9e8e0",
-      "badge": "new",
+      "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/20260909_164529.jpg",
       "weight": 10,
       "show_on_home": false,
-      "show_on_nouveautes": true
+      "show_on_nouveautes": false
     },
     {
       "id": "pampilles-mae",
@@ -243,12 +243,12 @@
       "description": "Designs uniques, réalisés à la main, pampilles artisanales longueur 20 mm, compatibles avec toutes les créoles",
       "colors": [],
       "bg": "#eef2e8",
-      "badge": "new",
+      "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/Mae - Olive.jpg",
       "weight": 10,
-      "show_on_home": false,
-      "show_on_nouveautes": true
+      "show_on_home": true,
+      "show_on_nouveautes": false
     },
     {
       "id": "creoles-dorees",
