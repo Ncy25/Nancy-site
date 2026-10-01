@@ -81,6 +81,23 @@
       "show_on_nouveautes": true
     },
     {
+      "id": "",
+      "name": "La Broche",
+      "category": "",
+      "price": 20,
+      "variant": "uni",
+      "emoji": "",
+      "description": "Cette jolie broche artisanale de 50 mm, façonnée a la main, rend hommage à toutes les femmes et soutient la lutte contre le cancer du sein. Chaque détail est unique : Ruban rose, petit coeur et fleur symbolisent la force, l'amour et l'espoir",
+      "colors": [],
+      "bg": "",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "",
+      "weight": 10,
+      "show_on_home": true,
+      "show_on_nouveautes": true
+    },
+    {
       "id": "pampilles-coeur",
       "name": "Coeur - Jeans",
       "category": "Pampilles",
