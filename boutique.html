@@ -551,13 +551,13 @@
     </div>
 
     <!-- LES BRACELETS -->
-    <div class="creoles-section">
+    <div class="creoles-section" id="braceletsSection" style="display:none">
       <h2 class="creoles-title" id="braceletsTitle">Les Bracelets</h2>
       <div class="prod-grid" id="braceletsGrid"></div>
     </div>
 
     <!-- LES COLLIERS -->
-    <div class="creoles-section">
+    <div class="creoles-section" id="colliersSection" style="display:none">
       <h2 class="creoles-title" id="colliersTitle">Les Colliers</h2>
       <div class="prod-grid" id="colliersGrid"></div>
     </div>
@@ -739,7 +739,7 @@
 
   function renderSimpleSection(gridId, categorySlug) {
     const grid = document.getElementById(gridId);
-    if (!grid) return;
+    if (!grid) return 0;
     const idxs = [];
     products.forEach((p, idx) => { if (catSlug(p.category) === categorySlug) idxs.push(idx); });
     grid.innerHTML = idxs.map(idx => {
@@ -774,10 +774,19 @@
     }).join('');
     const obsX = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }), { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
     grid.querySelectorAll('.p-card').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 0.1 + 's'; obsX.observe(el); });
+    return idxs.length;
   }
 
-  function renderBraceletsSection() { renderSimpleSection('braceletsGrid', 'bracelets'); }
-  function renderColliersSection() { renderSimpleSection('colliersGrid', 'colliers'); }
+  function renderBraceletsSection() {
+    const count = renderSimpleSection('braceletsGrid', 'bracelets');
+    const section = document.getElementById('braceletsSection');
+    if (section) section.style.display = count > 0 ? '' : 'none';
+  }
+  function renderColliersSection() {
+    const count = renderSimpleSection('colliersGrid', 'colliers');
+    const section = document.getElementById('colliersSection');
+    if (section) section.style.display = count > 0 ? '' : 'none';
+  }
 
   let pampillesIndexes = [];
 
