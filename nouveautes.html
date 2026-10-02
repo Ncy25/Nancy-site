@@ -331,6 +331,10 @@
     .p-card.rupture .btn-quick-add { display: none; }
     .p-card.rupture .p-img { opacity: .55; }
     .p-stock.low .p-stock-dot { background: var(--gold); }
+    .p-card.no-price .btn-quick-add { display: none; }
+    .p-price.price-soon { font-size: 13px; letter-spacing: .02em; }
+    .btn-add-modal:disabled { opacity: .5; cursor: not-allowed; }
+    .btn-add-modal:disabled:hover { background: var(--peach-dk); transform: none; }
 
     /* Color swatches */
     .p-colors { display: flex; gap: 6px; margin-bottom: 10px; }
@@ -871,7 +875,7 @@
       </div>
       <button class="btn-add-modal" id="modalAddBtn">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-        Ajouter au panier
+        <span id="modalAddBtnLabel">Ajouter au panier</span>
       </button>
       <div class="modal-trust">
         <div class="modal-trust-item">
@@ -1000,13 +1004,24 @@
     return tags.join(',');
   }
 
+  /* ─── GARDE-FOU PRIX ─── */
+  // Un produit sans prix (vide, 0 ou invalide) ne peut pas être acheté :
+  // il s'affiche "Bientôt disponible" et le bouton panier est désactivé.
+  function priceOk(p) {
+    const n = Number(p.price);
+    return p.price !== undefined && p.price !== null && p.price !== '' && !isNaN(n) && n > 0;
+  }
+  function priceLabel(p) {
+    return priceOk(p) ? Number(p.price).toFixed(2).replace('.', ',') + ' €' : 'Bientôt disponible';
+  }
+
   function renderNouveautes(data) {
     lastNouveautesData = data;
     const grid = document.getElementById('prodGrid');
     novProducts = data.products || [];
 
     const cardsHtml = novProducts.map((p, idx) => `
-      <div class="p-card ${p.stock === 'rupture' ? 'rupture' : ''}" data-cat="${novCatSlug(p.category)}" data-tags="${novTags(p)}" data-price="${p.price}" onclick="openModal(${idx})">
+      <div class="p-card ${p.stock === 'rupture' ? 'rupture' : ''} ${priceOk(p) ? '' : 'no-price'}" data-cat="${novCatSlug(p.category)}" data-tags="${novTags(p)}" data-price="${p.price}" onclick="openModal(${idx})">
         <div class="p-img" style="background:${p.bg || '#F5EDE8'}">
           ${p.badge === 'new' ? '<div class="p-badges"><span class="p-badge badge-new">Nouveau</span></div>' : ''}
           ${p.badge === 'exclu' ? '<div class="p-badges"><span class="p-badge badge-exclu">Exclu</span></div>' : ''}
@@ -1024,7 +1039,7 @@
           <div class="p-name">${p.name}</div>
           <div class="p-desc">${p.description || ''}</div>
           <div class="p-bottom">
-            <div class="p-price">${(p.price || 0).toFixed(2).replace('.',',')} €</div>
+            <div class="p-price${priceOk(p) ? '' : ' price-soon'}">${priceLabel(p)}</div>
             <div class="p-stock ${p.stock === 'rupture' ? 'rupture' : p.stock === 'low' ? 'low' : ''}"><span class="p-stock-dot"></span> ${p.stock === 'rupture' ? 'Rupture de stock' : p.stock === 'low' ? 'Dernières pièces' : 'En stock'}</div>
           </div>
         </div>
@@ -1382,14 +1397,24 @@
     document.getElementById('modalQty').textContent = 1;
     document.getElementById('modalCat').textContent = p.category;
     document.getElementById('modalName').textContent = p.name;
-    document.getElementById('modalPrice').textContent = (p.price || 0).toFixed(2).replace('.',',') + ' €';
+    document.getElementById('modalPrice').textContent = priceLabel(p);
     document.getElementById('modalDesc').textContent = p.description;
     document.getElementById('modalImg').style.background = p.bg || '#F5EDE8';
     document.getElementById('modalImg').innerHTML = novVisual(p);
-    document.getElementById('modalAddBtn').onclick = () => {
-      for (let i = 0; i < modalQty; i++) addToCart(cartLabel(p.category, p.name), p.price, p.emoji, p.image, p.weight);
-      closeModal();
-    };
+    const modalBtn = document.getElementById('modalAddBtn');
+    const modalBtnLabel = document.getElementById('modalAddBtnLabel');
+    if (priceOk(p)) {
+      modalBtn.disabled = false;
+      modalBtnLabel.textContent = 'Ajouter au panier';
+      modalBtn.onclick = () => {
+        for (let i = 0; i < modalQty; i++) addToCart(cartLabel(p.category, p.name), p.price, p.emoji, p.image, p.weight);
+        closeModal();
+      };
+    } else {
+      modalBtn.disabled = true;
+      modalBtnLabel.textContent = 'Bientôt disponible';
+      modalBtn.onclick = null;
+    }
     document.getElementById('modalOverlay').classList.add('open');
     document.getElementById('prodModal').classList.add('open');
     document.body.style.overflow = 'hidden';
