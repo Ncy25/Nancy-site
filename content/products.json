@@ -24,7 +24,7 @@
       "bg": "",
       "badge": "new",
       "stock": "in_stock",
-      "image": "",
+      "image": "/images/uploads/20261002_154105.jpg",
       "weight": 10,
       "show_on_home": true,
       "show_on_nouveautes": true
@@ -41,7 +41,7 @@
       "bg": "",
       "badge": "new",
       "stock": "in_stock",
-      "image": "",
+      "image": "/images/uploads/20261002_154119.jpg",
       "weight": 10,
       "show_on_home": true,
       "show_on_nouveautes": true
@@ -65,23 +65,6 @@
     },
     {
       "id": "",
-      "name": "Théa - Du rose tout simplement",
-      "category": "Pampilles",
-      "price": 13,
-      "variant": "uni",
-      "emoji": "",
-      "description": "Designs uniques, réalisés à la main, pampilles artisanales longueur 18 mm, compatibles avec toutes les créoles",
-      "colors": [],
-      "bg": "",
-      "badge": "new",
-      "stock": "in_stock",
-      "image": "",
-      "weight": 10,
-      "show_on_home": true,
-      "show_on_nouveautes": true
-    },
-    {
-      "id": "",
       "name": "La Broche",
       "category": "",
       "price": 20,
@@ -92,7 +75,7 @@
       "bg": "",
       "badge": "new",
       "stock": "in_stock",
-      "image": "",
+      "image": "/images/uploads/20261002_154226.jpg",
       "weight": 10,
       "show_on_home": true,
       "show_on_nouveautes": true
