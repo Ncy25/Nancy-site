@@ -1034,5 +1034,34 @@
     if (fc && d.footer_copyright) fc.textContent = d.footer_copyright;
   }).catch(() => {});
 </script>
+<script>
+  // Complète le poids des articles du panier (anciens paniers ou ajout sans poids)
+  Promise.all(['products','nouveautes','wooden-mountain'].map(f =>
+    fetch('content/' + f + '.json').then(r => r.json()).catch(() => ({ products: [] }))
+  )).then(all => {
+    const W = {};
+    all.forEach(d => (d.products || []).forEach(p => {
+      if (!p.name) return;
+      const w = Number(p.weight) || 0;
+      W[(((p.category || '') + ' ' + p.name).trim())] = w;
+      W[p.name.trim()] = w;
+    }));
+    let changed = false;
+    cartItems.forEach(it => {
+      if (it.weight) return;
+      let cand = (it.name || '').trim();
+      while (cand) {
+        if (W[cand] !== undefined) { it.weight = W[cand]; changed = true; break; }
+        const i = cand.lastIndexOf(' (');
+        if (i <= 0) break;
+        cand = cand.slice(0, i).trim();
+      }
+    });
+    if (changed) {
+      try { localStorage.setItem('wf_cart', JSON.stringify(cartItems)); } catch (e) {}
+      renderSummary();
+    }
+  });
+</script>
 </body>
 </html>
