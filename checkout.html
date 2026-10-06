@@ -475,7 +475,7 @@
       </a>
     </div>
 
-    <a href="index.html" class="nav-logo">
+    <a href="index.html" class="nav-logo" id="navLogo">
       <span class="logo-wild">Wild</span>
       <div class="logo-flower-row">
         Fl
@@ -965,6 +965,10 @@
 </script>
 <script>
   fetch('content/site.json').then(r => r.json()).then(site => {
+    if (site.logo_image) {
+      const logo = document.getElementById('navLogo');
+      if (logo) logo.innerHTML = `<img src="${site.logo_image}" alt="${site.brand_name || 'WildFlower_WoodenMountain'}" style="height:90px;width:auto;display:block">`;
+    }
     if (site.pickup_enabled !== false && site.pickup_address) {
       document.getElementById('pickupAddress').textContent = site.pickup_address;
       document.getElementById('delOptPickup').style.display = '';
