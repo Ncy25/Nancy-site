@@ -428,6 +428,8 @@
     .f-links a { font-size: 12.5px; color: rgba(255,248,245,0.5); transition: color var(--ease); }
     .f-links a:hover { color: var(--peach); }
 
+    #cardRecap { display: none; }
+
     /* ── REVEAL ── */
     .r { opacity: 0; transform: translateY(16px); transition: opacity .55s ease, transform .55s ease; }
     .r.v { opacity: 1; transform: none; }
@@ -435,12 +437,27 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .checkout-wrap { grid-template-columns: 1fr; }
-      .summary-sticky { position: static; order: -1; }
+      .progress-bar { padding: 12px 16px; }
+      .prog-dot { width: 22px; height: 22px; font-size: 10px; }
+      .prog-step { font-size: 10.5px; gap: 5px; white-space: nowrap; }
+      .prog-line { margin: 0 6px; min-width: 14px; max-width: 30px; }
+      .checkout-wrap { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+      .summary-sticky { position: static; display: contents; }
+      .left-col, .right-col { display: contents; }
+      #cardCommande { order: 1; }
+      #cardLivraison { order: 3; }
+      #cardCoordonnees { order: 4; }
+      #cardAdresse { order: 5; }
+      #cardNote { order: 6; }
+      #cardRecap { order: 7; display: block; }
+      #cardPaiement { order: 8; }
+      #cardPoem { order: 9; }
+      .d1, .d2, .d3 { transition-delay: 0s; }
+      .form-card, .summary-card { margin-bottom: 4px !important; }
+      #cardRecap, #cardPaiement { margin-top: 0 !important; }
     }
     @media (max-width: 560px) {
       .f-2col, .f-3col { grid-template-columns: 1fr; }
-      .pay-tabs { flex-wrap: wrap; }
     }
   </style>
 </head>
@@ -529,7 +546,7 @@
   <div class="left-col">
 
     <!-- COORDONNÉES -->
-    <div class="form-card r">
+    <div class="form-card r" id="cardCoordonnees">
       <div class="form-card-title">
         <div class="fc-icon">👤</div>
         Vos coordonnées
@@ -557,7 +574,7 @@
     </div>
 
     <!-- ADRESSE LIVRAISON -->
-    <div class="form-card r d1">
+    <div class="form-card r d1" id="cardAdresse">
       <div class="form-card-title">
         <div class="fc-icon">📍</div>
         Adresse de livraison
@@ -586,7 +603,7 @@
     </div>
 
     <!-- MODE DE LIVRAISON -->
-    <div class="form-card r d2">
+    <div class="form-card r d2" id="cardLivraison">
       <div class="form-card-title">
         <div class="fc-icon">📦</div>
         Mode de livraison
@@ -639,7 +656,7 @@
     </div>
 
     <!-- PAIEMENT -->
-    <div class="form-card r d3">
+    <div class="form-card r d3" id="cardPaiement">
       <div class="form-card-title">
         <div class="fc-icon">💳</div>
         Paiement
@@ -652,7 +669,7 @@
     </div>
 
     <!-- NOTE FACULTATIVE -->
-    <div class="form-card r" style="margin-bottom:0">
+    <div class="form-card r" id="cardNote" style="margin-bottom:0">
       <div class="form-card-title" style="margin-bottom:14px">
         <div class="fc-icon">💬</div>
         Note pour votre commande
@@ -668,7 +685,7 @@
   <!-- RIGHT COL — SUMMARY -->
   <div class="right-col">
     <div class="summary-sticky">
-      <div class="summary-card r">
+      <div class="summary-card r" id="cardCommande">
         <div class="summary-title">Votre commande</div>
         <div class="sum-items" id="summaryItems">
           <!-- Injected by JS -->
@@ -721,8 +738,25 @@
         </div>
       </div>
 
+      <!-- RÉCAP MOBILE (juste avant Paiement) -->
+      <div class="form-card r" id="cardRecap" style="margin-top:24px">
+        <div class="form-card-title" style="margin-bottom:14px">
+          <div class="fc-icon">🧾</div>
+          Récapitulatif
+        </div>
+        <div class="sum-totals" style="margin-bottom:18px">
+          <div class="sum-row"><span class="lbl">Sous-total</span><span class="val" id="subtotal2">—</span></div>
+          <div class="sum-row"><span class="lbl">Livraison</span><span class="val" id="shipping2">2,50 €</span></div>
+          <div class="sum-row total"><span class="lbl">Total</span><span class="val" id="totalAmt2">—</span></div>
+        </div>
+        <button class="btn-pay" onclick="submitOrder()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          Confirmer &amp; payer
+        </button>
+      </div>
+
       <!-- Poème -->
-      <div class="poem-note r d2">
+      <div class="poem-note r d2" id="cardPoem">
         <p>"Chaque pampille part avec un peu de moi — et beaucoup d'amour pour vous." 🌸</p>
       </div>
     </div>
@@ -807,6 +841,9 @@
     document.getElementById('dpFree1').style.display = sub >= 50 ? 'block' : 'none';
     document.getElementById('dpFree2').style.display = sub >= 50 ? 'block' : 'none';
     document.getElementById('totalAmt').textContent = Math.max(0, total).toFixed(2).replace('.',',') + ' €';
+    document.getElementById('subtotal2').textContent = document.getElementById('subtotal').textContent;
+    document.getElementById('shipping2').textContent = document.getElementById('shipping').textContent;
+    document.getElementById('totalAmt2').textContent = document.getElementById('totalAmt').textContent;
   }
   renderSummary();
 
