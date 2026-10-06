@@ -369,6 +369,7 @@
     }
     .btn-pay:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(195,107,74,0.38); }
     .btn-pay:active { transform: none; }
+    .btn-pay:disabled { opacity: .45; cursor: not-allowed; filter: grayscale(.6); box-shadow: none; transform: none; pointer-events: none; }
 
     /* trust items */
     .trust-row {
@@ -857,14 +858,16 @@
         if (fallback) { lettreOpt.classList.remove('selected'); selectDel(fallback, 2); return; }
       }
     }
+    const cartEmpty = !cartItems.length || sub <= 0;
+    document.querySelectorAll('.btn-pay').forEach(b => { b.disabled = cartEmpty; });
     const freeShip = sub >= 50 && (deliveryIdx === 1 || deliveryIdx === 2);
-    const total = sub + (freeShip ? 0 : deliveryCost) - promoDiscount;
+    const total = cartEmpty ? 0 : sub + (freeShip ? 0 : deliveryCost) - promoDiscount;
     document.getElementById('subtotal').textContent = sub.toFixed(2).replace('.',',') + ' €';
     if (freeShip) {
       document.getElementById('shipping').textContent = 'Offert';
       document.getElementById('shipping').classList.add('free-del');
     } else {
-      document.getElementById('shipping').textContent = deliveryCost.toFixed(2).replace('.',',') + ' €';
+      document.getElementById('shipping').textContent = cartEmpty ? '0,00 €' : deliveryCost.toFixed(2).replace('.',',') + ' €';
       document.getElementById('shipping').classList.remove('free-del');
     }
     document.getElementById('dpFree1').style.display = sub >= 50 ? 'block' : 'none';
@@ -950,9 +953,8 @@
       showToast('Votre panier est vide');
       return;
     }
-    const btn = document.querySelector('.btn-pay');
-    btn.disabled = true;
-    btn.style.opacity = '.6';
+    const btns = document.querySelectorAll('.btn-pay');
+    btns.forEach(b => { b.disabled = true; });
     const items = cartItems.map(i => ({ name: i.name, qty: i.qty }));
     fetch('https://wildflower-wm.fr/api/checkout', {
       method: 'POST',
@@ -965,12 +967,12 @@
           window.location.href = data.url;
         } else {
           showToast(data.error || 'Erreur lors de la création du paiement');
-          btn.disabled = false; btn.style.opacity = '';
+          btns.forEach(b => { b.disabled = false; });
         }
       })
       .catch(() => {
         showToast('Connexion impossible, réessayez');
-        btn.disabled = false; btn.style.opacity = '';
+        btns.forEach(b => { b.disabled = false; });
       });
   }
 
