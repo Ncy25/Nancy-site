@@ -891,7 +891,7 @@
     fetch('https://wildflower-wm.fr/api/checkout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ items, customer: { name: fname, email, address: addr, city, zip } })
+      body: JSON.stringify({ items, delivery: ['pickup','lettre','colissimo','international'][deliveryIdx], customer: { name: fname, email, address: addr, city, zip } })
     })
       .then(res => res.json())
       .then(data => {
