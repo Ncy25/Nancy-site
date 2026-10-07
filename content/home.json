@@ -32,6 +32,15 @@
     "title": "PAMPILLES INTERCHANGEABLES \nÀ COMBINER \nÀ L'INFINI"
   },
   "lifestyle_title": "Faites à la main, portées avec amour",
+  "slideshow": {
+    "enabled": true,
+    "title": "",
+    "images": [
+      "/images/uploads/1789823830599.png",
+      "/images/uploads/1789972878787.png",
+      "/images/uploads/1790365859454.jpg"
+    ]
+  },
   "boutique_title": "Les créations",
   "boutique_subtitle": "C'est le moment d'ajouter au panier",
   "below_products_text": "Viens en découvrir plus",
