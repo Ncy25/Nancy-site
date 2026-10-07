@@ -859,9 +859,14 @@
     const lettreWarning = document.getElementById('delWeightWarning');
     if (lettreOpt) {
       const overWeight = totalWeight > 20;
-      lettreOpt.classList.toggle('disabled', overWeight);
-      if (lettreWarning) lettreWarning.style.display = overWeight ? 'block' : 'none';
-      if (overWeight && lettreOpt.classList.contains('selected')) {
+      const overValue = sub >= 50;
+      const lettreOff = overWeight || overValue;
+      lettreOpt.classList.toggle('disabled', lettreOff);
+      if (lettreWarning) {
+        lettreWarning.textContent = overWeight ? 'Indisponible : votre commande dépasse 20g' : 'Réservée aux commandes de moins de 50 € — Colissimo offert dès 50 €';
+        lettreWarning.style.display = lettreOff ? 'block' : 'none';
+      }
+      if (lettreOff && lettreOpt.classList.contains('selected')) {
         const fallback = document.querySelectorAll('.del-opt')[2];
         if (fallback) { lettreOpt.classList.remove('selected'); selectDel(fallback, 2); return; }
       }
