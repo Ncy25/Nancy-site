@@ -1148,7 +1148,7 @@
   function initSlideshow(cfg) {
     const sec = document.getElementById('slideshow'), wrap = document.getElementById('ssWrap');
     if (!sec || !wrap) return;
-    const imgs = ((cfg && cfg.images) || []).map(x => (x && typeof x === 'object') ? x.image : x).filter(Boolean).slice(0, 5);
+    const imgs = ((cfg && cfg.images) || []).map(x => (x && typeof x === 'object') ? x.image : x).filter(Boolean).slice(0, 10);
     if (!cfg || !cfg.enabled || !imgs.length) { sec.classList.remove('on'); return; }
     const esc = t => String(t).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
     const tEl = document.getElementById('ssTitle');
