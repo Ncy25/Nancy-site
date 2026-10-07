@@ -51,7 +51,7 @@ collections:
             fields:
               - { label: "Afficher le diaporama", name: "enabled", widget: "boolean", default: false, required: false, hint: "Coche pour afficher, décoche pour masquer. Le diaporama n'apparaît que s'il y a au moins une photo." }
               - { label: "Titre au-dessus (optionnel)", name: "title", widget: "string", required: false, hint: "Laisser vide pour ne mettre aucun titre." }
-              - { label: "Photos (jusqu'à 5)", name: "images", widget: "list", field: { label: "Photo", name: "image", widget: "image" }, max: 5, required: false, hint: "Les photos défilent automatiquement, de gauche à droite, toutes les 4 secondes." }
+              - { label: "Photos (jusqu'à 10)", name: "images", widget: "list", field: { label: "Photo", name: "image", widget: "image" }, max: 10, required: false, hint: "Les photos défilent automatiquement, de gauche à droite, toutes les 4 secondes." }
           - { label: "Titre section boutique", name: "boutique_title", widget: "string" }
           - { label: "Sous-titre section boutique", name: "boutique_subtitle", widget: "string" }
           - { label: "Texte sous les produits (avant les 3 rectangles)", name: "below_products_text", widget: "string", required: false }
