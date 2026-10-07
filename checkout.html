@@ -604,7 +604,7 @@
         <div class="fg"><label>Ville</label><input type="text" id="city" placeholder="Paris" autocomplete="address-level2"/></div>
         <div class="fg"><label>Code postal</label><input type="text" id="zip" placeholder="75000" autocomplete="postal-code" maxlength="5"/></div>
         <div class="fg"><label>Pays</label>
-          <select autocomplete="country">
+          <select id="country" autocomplete="country" onchange="applyCountry()">
             <option value="FR" selected>🇫🇷 France</option>
             <option value="BE">🇧🇪 Belgique</option>
             <option value="CH">🇨🇭 Suisse</option>
@@ -648,7 +648,7 @@
             <div class="del-free-badge" id="dpFree1" style="display:none">Offert</div>
           </div>
         </div>
-        <div class="del-opt" onclick="selectDel(this, 2)">
+        <div class="del-opt" id="delOptColissimo" onclick="selectDel(this, 2)">
           <div class="del-radio"><div class="del-radio-inner"></div></div>
           <div class="del-info">
             <div class="del-name">Colissimo sans signature</div>
@@ -659,7 +659,7 @@
             <div class="del-free-badge" id="dpFree2" style="display:none">Offert</div>
           </div>
         </div>
-        <div class="del-opt" onclick="selectDel(this, 3)">
+        <div class="del-opt" id="delOptInter" onclick="selectDel(this, 3)" style="display:none">
           <div class="del-radio"><div class="del-radio-inner"></div></div>
           <div class="del-info">
             <div class="del-name">Colissimo International</div>
@@ -894,6 +894,27 @@
     document.getElementById('successWrap').classList.add('show');
   }
 
+  // ── Pays → modes de livraison proposés
+  let pickupAvailable = false;
+  function applyCountry() {
+    const sel = document.getElementById('country');
+    const foreign = !!sel && sel.value !== 'FR';
+    const show = (id, on) => { const e = document.getElementById(id); if (e) e.style.display = on ? '' : 'none'; };
+    show('delOptPickup', !foreign && pickupAvailable);
+    show('delOptLettre', !foreign);
+    show('delOptColissimo', !foreign);
+    show('delOptInter', foreign);
+    const cur = document.querySelector('.del-opt.selected');
+    const curHidden = !cur || cur.style.display === 'none';
+    if (foreign) {
+      if (deliveryIdx !== 3 || curHidden) selectDel(document.getElementById('delOptInter'), 3);
+    } else if (deliveryIdx === 3 || curHidden) {
+      const lettre = document.getElementById('delOptLettre');
+      const useLettre = lettre && !lettre.classList.contains('disabled');
+      selectDel(document.getElementById(useLettre ? 'delOptLettre' : 'delOptColissimo'), useLettre ? 1 : 2);
+    }
+  }
+
   // ── Delivery selection
   function selectDel(el, idx) {
     document.querySelectorAll('.del-opt').forEach(o => o.classList.remove('selected'));
@@ -1032,7 +1053,8 @@
     if (feLink && site.contact_email) { feLink.textContent = site.contact_email; feLink.href = 'mailto:' + site.contact_email; }
     if (site.pickup_enabled !== false && site.pickup_address) {
       document.getElementById('pickupAddress').textContent = site.pickup_address;
-      document.getElementById('delOptPickup').style.display = '';
+      pickupAvailable = true;
+      applyCountry();
     }
   }).catch(() => {});
 </script>
