@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet"/>
+<meta name="robots" content="noindex, nofollow"/>
+<title>Mail — Commande expédiée</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #F3E9E4; margin: 0; padding: 24px 12px 60px; color: #3a2010; }
+  .tool { max-width: 560px; margin: 0 auto 22px; background: #fff; border-radius: 14px; padding: 18px 20px; box-shadow: 0 2px 12px rgba(107,61,42,.08); }
+  .tool h1 { font-family: Georgia, serif; font-size: 18px; color: #6B3D2A; margin: 0 0 4px; }
+  .tool p { font-size: 13px; color: #9E8880; margin: 0 0 14px; line-height: 1.5; }
+  .tool label { display: block; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #D97A52; margin: 10px 0 5px; }
+  .tool input, .tool textarea, .tool select { width: 100%; box-sizing: border-box; padding: 10px 12px; border: 1.5px solid rgba(195,107,74,.25); border-radius: 10px; font-size: 14px; font-family: inherit; color: #3a2010; }
+  .tool textarea { resize: vertical; min-height: 56px; }
+  .row { display: flex; gap: 12px; } .row > div { flex: 1; }
+  .btn { margin-top: 16px; width: 100%; padding: 13px; border: none; border-radius: 999px; background: #F0A882; color: #fff; font-size: 14px; font-weight: 700; letter-spacing: .05em; cursor: pointer; }
+  .btn:hover { background: #D97A52; }
+  #ok { text-align: center; font-size: 13px; color: #5c8a57; min-height: 18px; margin-top: 8px; font-weight: 600; }
+  @media (max-width: 480px) { .row { flex-direction: column; gap: 0; } }
+</style>
+</head>
+<body>
+
+<div class="tool">
+  <h1>Mail « Commande expédiée »</h1>
+  <p>Choisis le mode d'envoi et remplis les champs, clique sur « Copier le mail », puis colle-le (Ctrl+V) dans un nouveau message Gmail. Pense à saisir l'adresse e-mail de la cliente et l'objet : <strong>Votre commande a été expédiée</strong>.</p>
+  <label for="fMode">Mode d'envoi</label>
+  <select id="fMode" onchange="upd()">
+    <option value="lettre">Lettre suivie — La Poste</option>
+    <option value="colissimo">Colissimo sans signature</option>
+    <option value="international">Colissimo International</option>
+  </select>
+  <div class="row">
+    <div><label for="fPrenom">Prénom de la cliente</label><input id="fPrenom" placeholder="Léa" oninput="upd()"></div>
+    <div><label for="fCmd">N° de commande</label><input id="fCmd" placeholder="ABCD1234" oninput="upd()"></div>
+  </div>
+  <label for="fSuivi">N° de suivi du colis</label>
+  <input id="fSuivi" placeholder="Ex : 6A12345678901" oninput="upd()">
+  <button class="btn" onclick="copyMail()">Copier le mail</button>
+  <div id="ok"></div>
+</div>
+
+<!-- ═══════════ LE MAIL (styles en ligne pour un collage fidèle dans Gmail) ═══════════ -->
+<div id="mail" style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:18px;overflow:hidden;font-family:Arial,sans-serif">
+  <div style="background:#ffffff;padding:28px 32px 20px;text-align:center">
+    <img src="https://wildflower-wm.fr/images/logo-wildflower-email-recadre.png" alt="WildFlower_WoodenMountain" width="200" style="width:200px;max-width:50%;height:auto;display:inline-block"/>
+  </div>
+  <div style="padding:32px 28px">
+    <div style="text-align:center;margin:4px 0 22px">
+      <div style="font-family:'Dancing Script','Brush Script MT','Segoe Script',cursive;font-size:28px;font-weight:600;color:#C36B4A;line-height:1.2;margin-bottom:4px"><span id="mHello" style="font-family:'Dancing Script','Brush Script MT','Segoe Script',cursive">Bonne nouvelle</span></div>
+      <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:36px;font-weight:600;color:#6B3D2A;line-height:1.1;margin-bottom:16px">Votre commande est expédiée !</div>
+      <p style="font-size:15px;color:#9E8880;line-height:1.7;margin:0">Elle est en route vers vous.</p>
+    </div>
+    <div style="text-align:center;margin-bottom:22px"><span id="mCmdWrap" style="display:inline-block;background:#FDE8DC;color:#C26B4A;font-weight:700;font-size:13px;padding:6px 14px;border-radius:999px;letter-spacing:.08em">Commande #<span id="mCmd">XXXXXXXX</span></span></div>
+
+    <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#D97A52;margin:24px 0 8px">Suivi de votre colis</div>
+    <div style="background:#FFF8F5;border-radius:10px;padding:14px 16px;border:1px solid rgba(195,107,74,0.15);margin-bottom:20px">
+      <p id="mMode" style="margin:0 0 6px;font-size:14px;color:#8B5540;line-height:1.6"></p>
+      <p style="margin:0;font-size:14px;color:#8B5540;line-height:1.6">N° de suivi : <strong id="mSuivi" style="color:#6B3D2A;letter-spacing:.04em">—</strong></p>
+    </div>
+
+    <div id="mCta" style="text-align:center;margin:26px 0">
+      <a id="mLink" href="https://www.laposte.fr/outils/suivre-vos-envois" style="display:inline-block;background:#F0A882;color:#ffffff;padding:13px 32px;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:.05em">Suivre mon colis</a>
+    </div>
+
+    <p style="font-size:13px;color:#9E8880;text-align:center;margin:26px 0 0">
+      Des questions ? Écrivez-nous à
+      <a href="mailto:woodenmountain05@gmail.com" style="color:#D97A52">woodenmountain05@gmail.com</a>
+    </p>
+  </div>
+  <div style="text-align:center;padding:20px 32px;border-top:1px solid rgba(195,107,74,0.12)">
+    <p style="font-size:12px;color:#9E8880;margin:0;line-height:1.6">WildFlower_WoodenMountain<br>wildflower-wm.fr</p>
+  </div>
+</div>
+
+<script>
+    const MODES = { lettre: 'Lettre suivie — La Poste', colissimo: 'Colissimo sans signature', international: 'Colissimo International' };
+  function upd() {
+    const p = document.getElementById('fPrenom').value.trim();
+    const c = document.getElementById('fCmd').value.trim().replace(/^#/, '').toUpperCase();
+    const t = document.getElementById('fSuivi').value.replace(/\s+/g, '').toUpperCase();
+    const m = document.getElementById('fMode').value;
+    document.getElementById('mHello').textContent = p ? 'Bonne nouvelle ' + p : 'Bonne nouvelle';
+    document.getElementById('mCmd').textContent = c || 'XXXXXXXX';
+    document.getElementById('mCmdWrap').style.display = c ? 'inline-block' : 'none';
+    document.getElementById('mMode').textContent = 'Mode d\'envoi : ' + MODES[m];
+    document.getElementById('mSuivi').textContent = t || '—';
+    document.getElementById('mLink').href = t ? 'https://www.laposte.fr/outils/suivre-vos-envois?code=' + encodeURIComponent(t) : 'https://www.laposte.fr/outils/suivre-vos-envois';
+  }
+  async function copyMail() {
+    const el = document.getElementById('mail'), ok = document.getElementById('ok');
+    const html = el.outerHTML;
+    try {
+      await navigator.clipboard.write([new ClipboardItem({
+        'text/html': new Blob([html], { type: 'text/html' }),
+        'text/plain': new Blob([el.innerText], { type: 'text/plain' })
+      })]);
+      ok.textContent = 'Mail copié ! Colle-le dans Gmail (Ctrl+V).';
+    } catch (e) {
+      const r = document.createRange(); r.selectNode(el);
+      const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+      try { document.execCommand('copy'); ok.textContent = 'Mail copié ! Colle-le dans Gmail (Ctrl+V).'; }
+      catch (_) { ok.textContent = 'Sélectionne le mail à la main puis fais Ctrl+C.'; }
+    }
+  }
+  // Pré-remplissage depuis le lien du mail « Nouvelle commande » (#d=...)
+  try {
+    const m = location.hash.match(/[#&]d=([^&]+)/);
+    if (m) {
+      const b64 = m[1].replace(/-/g, '+').replace(/_/g, '/');
+      const bin = atob(b64 + '='.repeat((4 - b64.length % 4) % 4));
+      const d = JSON.parse(new TextDecoder().decode(Uint8Array.from(bin, c => c.charCodeAt(0))));
+      document.getElementById('fPrenom').value = d.pre || '';
+      document.getElementById('fCmd').value = d.c || '';
+      if (['lettre','colissimo','international'].includes(d.k)) document.getElementById('fMode').value = d.k;
+    }
+  } catch (e) { console.error(e); }
+  upd();
+</script>
+</body>
+</html>
