@@ -587,7 +587,7 @@
           <span class="input-icon">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
           </span>
-          <input type="tel" placeholder="06 00 00 00 00" autocomplete="tel" style="padding-left:42px"/>
+          <input type="tel" id="phone" placeholder="06 00 00 00 00" autocomplete="tel" style="padding-left:42px"/>
         </div>
       </div>
     </div>
@@ -599,7 +599,7 @@
         Adresse de livraison
       </div>
       <div class="fg"><label>Adresse</label><input type="text" id="addr" placeholder="12 rue des Fleurs" autocomplete="street-address"/></div>
-      <div class="fg"><label>Complément <span style="font-weight:400;opacity:.6">(facultatif)</span></label><input type="text" placeholder="Bât. B, Apt. 42…" autocomplete="address-line2"/></div>
+      <div class="fg"><label>Complément <span style="font-weight:400;opacity:.6">(facultatif)</span></label><input type="text" id="addr2" placeholder="Bât. B, Apt. 42…" autocomplete="address-line2"/></div>
       <div class="f-3col">
         <div class="fg"><label>Ville</label><input type="text" id="city" placeholder="Paris" autocomplete="address-level2"/></div>
         <div class="fg"><label>Code postal</label><input type="text" id="zip" placeholder="75000" autocomplete="postal-code" maxlength="5"/></div>
@@ -609,7 +609,15 @@
             <option value="BE">🇧🇪 Belgique</option>
             <option value="CH">🇨🇭 Suisse</option>
             <option value="LU">🇱🇺 Luxembourg</option>
-            <option value="other">Autre…</option>
+            <option value="DE">🇩🇪 Allemagne</option>
+            <option value="ES">🇪🇸 Espagne</option>
+            <option value="IT">🇮🇹 Italie</option>
+            <option value="PT">🇵🇹 Portugal</option>
+            <option value="NL">🇳🇱 Pays-Bas</option>
+            <option value="GB">🇬🇧 Royaume-Uni</option>
+            <option value="AT">🇦🇹 Autriche</option>
+            <option value="IE">🇮🇪 Irlande</option>
+            <option value="MC">🇲🇨 Monaco</option>
           </select>
         </div>
       </div>
@@ -975,11 +983,15 @@
   // ── Submit
   function submitOrder() {
     const fname = document.getElementById('fname').value.trim();
+    const lname = document.getElementById('lname').value.trim();
     const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const addr2 = document.getElementById('addr2').value.trim();
+    const country = document.getElementById('country').value;
     const addr  = document.getElementById('addr').value.trim();
     const city  = document.getElementById('city').value.trim();
     const zip   = document.getElementById('zip').value.trim();
-    if (!fname || !email || !addr || !city || !zip) {
+    if (!fname || !lname || !email || !addr || !city || !zip) {
       showToast('Veuillez remplir tous les champs obligatoires');
       return;
     }
@@ -993,7 +1005,7 @@
     fetch('https://wildflower-wm.fr/api/checkout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ items, delivery: ['pickup','lettre','colissimo','international'][deliveryIdx], customer: { name: fname, email, address: addr, city, zip } })
+      body: JSON.stringify({ items, delivery: ['pickup','lettre','colissimo','international'][deliveryIdx], customer: { name: (fname + ' ' + lname).trim(), email, phone, address: addr, address2: addr2, city, zip, country } })
     })
       .then(res => res.json())
       .then(data => {
