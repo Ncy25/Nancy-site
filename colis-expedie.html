@@ -65,6 +65,11 @@
       <a id="mLink" href="https://www.laposte.fr/outils/suivre-vos-envois" style="display:inline-block;background:#F0A882;color:#ffffff;padding:13px 32px;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:.05em">Suivre mon colis</a>
     </div>
 
+    <div id="mItems" style="display:none">
+      <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#D97A52;margin:24px 0 8px;text-align:center">Votre commande</div>
+      <table style="width:100%;border-collapse:collapse"><tbody id="mItemRows"></tbody></table>
+    </div>
+
     <p style="font-size:13px;color:#9E8880;text-align:center;margin:26px 0 0">
       Des questions ? Écrivez-nous à
       <a href="mailto:woodenmountain05@gmail.com" style="color:#D97A52">woodenmountain05@gmail.com</a>
@@ -114,6 +119,15 @@
       const d = JSON.parse(new TextDecoder().decode(Uint8Array.from(bin, c => c.charCodeAt(0))));
       document.getElementById('fPrenom').value = d.pre || '';
       document.getElementById('fCmd').value = d.c || '';
+      const items = (d.it || []);
+      if (items.length) {
+        const E = t => String(t == null ? '' : t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        document.getElementById('mItemRows').innerHTML = items.map(i => {
+          const im = /^https:\/\//.test(i.i || '') ? `<img src="${E(i.i)}" alt="" width="56" height="56" style="display:block;width:56px;height:56px;object-fit:cover;border-radius:10px;border:1px solid #FDE8DC"/>` : '';
+          return `<tr><td style="padding:10px 0 10px 14px;border-bottom:1px solid #FDE8DC;width:60px;vertical-align:middle">${im}</td><td style="padding:10px 14px;border-bottom:1px solid #FDE8DC;font-size:14px;color:#3a2010;vertical-align:middle">${E(i.d)}</td><td style="padding:10px 14px;border-bottom:1px solid #FDE8DC;text-align:right;font-size:14px;color:#8B5540;vertical-align:middle;white-space:nowrap">× ${E(i.q)}</td></tr>`;
+        }).join('');
+        document.getElementById('mItems').style.display = 'block';
+      }
       if (['lettre','colissimo','international'].includes(d.k)) document.getElementById('fMode').value = d.k;
     }
   } catch (e) { console.error(e); }
