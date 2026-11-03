@@ -25,6 +25,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Wooden Mountain - Flowers_20261002_233031_0000.png",
+      "image_alt": "Pampilles coeur dégradé rose pastel, rose nacré et pailleté, modelées à la main en argile polymère. Longueur [taille] mm, compatibles avec toutes les créoles. Pièce artisanale, légère, colorée.",
       "weight": 10,
       "show_on_home": true,
       "show_on_nouveautes": true
@@ -42,6 +43,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Wooden Mountain - Flowers_20261002_233053_0000.png",
+      "image_alt": "Pampilles fleur rayées en dégradé de rose, modelées à la main en argile polymère. Longueur 20 mm, compatibles avec toutes les créoles. Pièce artisanale, légère et colorée.",
       "weight": 10,
       "show_on_home": true,
       "show_on_nouveautes": true
@@ -59,6 +61,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Wooden Mountain - Flowers_20261002_221409_0000.png",
+      "image_alt": "pampilles en argile polymère, un cœur rouge corail brillant et une colombe à motif fleuri rose, faites main",
       "weight": 10,
       "show_on_home": true,
       "show_on_nouveautes": true
@@ -76,6 +79,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Wooden Mountain - Flowers_20261002_230330_0000.png",
+      "image_alt": "Broche artisanale dorée en argile polymère avec un ruban rose, un petit cœur et une fleur, en soutien à la lutte contre le cancer du sein, faite main",
       "weight": 10,
       "show_on_home": true,
       "show_on_nouveautes": true
@@ -93,6 +97,7 @@
       "badge": "",
       "stock": "low",
       "image": "/images/uploads/Coeur - Jeans.jpg",
+      "image_alt": "Pampilles en forme de cœur en argile polymère, effet jeans bleu avec couture brodée, faites main",
       "weight": 10,
       "show_on_home": true,
       "show_on_nouveautes": false
@@ -110,6 +115,7 @@
       "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/Théa - Aquarelle d'automne.jpg",
+      "image_alt": "Pampilles en forme de fleur en argile polymère, motif rayé multicolore bleu marine, vert menthe et orange, faites main",
       "weight": 10,
       "show_on_home": true,
       "show_on_nouveautes": false
@@ -127,6 +133,7 @@
       "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/Coeur Coral - Cranberry.jpg",
+      "image_alt": "Pampilles en forme de cœur en argile polymère, rouge cranberry pailleté avec stries en relief, faites main",
       "weight": 10,
       "show_on_home": true,
       "show_on_nouveautes": false
@@ -144,6 +151,7 @@
       "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/Max - Rose Gold.jpg",
+      "image_alt": "Pampilles ovales en forme de fleur en argile polymère, rose gold pailleté, faites main",
       "weight": 10,
       "show_on_home": false,
       "show_on_nouveautes": false
@@ -161,6 +169,7 @@
       "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/Théa - Prune.jpg",
+      "image_alt": "Pampilles en forme de fleur en argile polymère, violet prune pailleté, faites main",
       "weight": 10,
       "show_on_home": true,
       "show_on_nouveautes": false
@@ -178,6 +187,7 @@
       "badge": "",
       "stock": "",
       "image": "/images/uploads/Mae - Chocolat.jpg",
+      "image_alt": "Pampilles en forme de fleur en argile polymère, marron chocolat, une fleur lisse et une fleur effet cuir, faites main",
       "weight": 10,
       "show_on_home": false,
       "show_on_nouveautes": false
@@ -195,6 +205,7 @@
       "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/Théa - Champagne nacré.jpg",
+      "image_alt": "Pampilles en forme de fleur en argile polymère, champagne nacré pailleté, une fleur beige clair et une fleur champagne, faites main",
       "weight": 10,
       "show_on_home": false,
       "show_on_nouveautes": false
@@ -212,6 +223,7 @@
       "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/Mae - Terre Cuite.jpg",
+      "image_alt": "Pampilles en forme de fleur en argile polymère, orange terre cuite brillant, faites main",
       "weight": 10,
       "show_on_home": false,
       "show_on_nouveautes": false
@@ -229,6 +241,7 @@
       "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/20260909_164529.jpg",
+      "image_alt": "Pampilles en forme de fleur en argile polymère, vert kaki nacré pailleté, faites main",
       "weight": 10,
       "show_on_home": false,
       "show_on_nouveautes": false
@@ -246,6 +259,7 @@
       "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/Mae - Olive.jpg",
+      "image_alt": "Pampilles en forme de fleur en argile polymère, vert olive brillant, faites main",
       "weight": 10,
       "show_on_home": true,
       "show_on_nouveautes": false
@@ -265,6 +279,7 @@
       "badge": "bestseller",
       "stock": "in_stock",
       "image": "/images/uploads/Martelées-dorées.jpg",
+      "image_alt": "",
       "weight": 10,
       "show_on_home": false,
       "show_on_nouveautes": false
@@ -284,6 +299,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Torsadées-dorées.jpg",
+      "image_alt": "",
       "weight": 10,
       "show_on_home": false,
       "show_on_nouveautes": true
@@ -301,6 +317,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/20260916_182513.jpg",
+      "image_alt": "",
       "weight": 10,
       "show_on_home": false,
       "show_on_nouveautes": true
@@ -320,6 +337,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Rotatives-dorées.jpg",
+      "image_alt": "",
       "weight": 10,
       "show_on_home": false,
       "show_on_nouveautes": true
@@ -337,6 +355,7 @@
       "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/Lisses-dorées.jpg",
+      "image_alt": "",
       "weight": 10,
       "show_on_home": false,
       "show_on_nouveautes": false
@@ -354,6 +373,7 @@
       "badge": "new",
       "stock": "in_stock",
       "image": "/images/uploads/Rectangulaires-dorées.jpg",
+      "image_alt": "",
       "weight": 10,
       "show_on_home": false,
       "show_on_nouveautes": true
