@@ -85,24 +85,6 @@
       "show_on_nouveautes": true
     },
     {
-      "id": "pampilles-coeur",
-      "name": "Coeur - Jeans",
-      "category": "Pampilles",
-      "price": 17,
-      "variant": "motifs",
-      "emoji": "🌺",
-      "description": "Designs uniques, réalisés à la main, pampilles artisanales longueur 22 mm, compatibles avec toutes les créoles",
-      "colors": [],
-      "bg": "#eef2e8",
-      "badge": "",
-      "stock": "low",
-      "image": "/images/uploads/Coeur - Jeans.jpg",
-      "image_alt": "Pampilles en forme de cœur en argile polymère, effet jeans bleu avec couture brodée, faites main",
-      "weight": 10,
-      "show_on_home": true,
-      "show_on_nouveautes": false
-    },
-    {
       "id": "pampilles-thea",
       "name": "Théa - Aquarelle d'automne",
       "category": "Pampilles",
