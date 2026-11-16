@@ -27,8 +27,8 @@
       "image": "/images/uploads/Wooden Mountain - Flowers_20261002_233031_0000.png",
       "image_alt": "Pampilles coeur dégradé rose pastel, rose nacré et pailleté, modelées à la main en argile polymère. Longueur [taille] mm, compatibles avec toutes les créoles. Pièce artisanale, légère, colorée.",
       "weight": 10,
-      "show_on_home": true,
-      "show_on_nouveautes": true
+      "show_on_home": false,
+      "show_on_nouveautes": false
     },
     {
       "id": "",
@@ -45,8 +45,8 @@
       "image": "/images/uploads/Wooden Mountain - Flowers_20261002_233053_0000.png",
       "image_alt": "Pampilles fleur rayées en dégradé de rose, modelées à la main en argile polymère. Longueur 20 mm, compatibles avec toutes les créoles. Pièce artisanale, légère et colorée.",
       "weight": 10,
-      "show_on_home": true,
-      "show_on_nouveautes": true
+      "show_on_home": false,
+      "show_on_nouveautes": false
     },
     {
       "id": "",
@@ -358,6 +358,24 @@
       "image_alt": "",
       "weight": 10,
       "show_on_home": false,
+      "show_on_nouveautes": true
+    },
+    {
+      "id": "",
+      "name": "Maë - Givre doré",
+      "category": "Pampilles",
+      "price": 17,
+      "variant": "motifs",
+      "emoji": "",
+      "description": "Designs uniques, réalisés à la main, pampilles artisanales longueur 20 mm, compatibles avec toutes les créoles",
+      "colors": [],
+      "bg": "",
+      "badge": "new",
+      "stock": "in_stock",
+      "image": "/images/uploads/Wooden Mountain - Flowers_20261116_222359_0000.png",
+      "image_alt": "",
+      "weight": 10,
+      "show_on_home": true,
       "show_on_nouveautes": true
     }
   ],
