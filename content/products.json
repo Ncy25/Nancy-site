@@ -575,6 +575,24 @@
       "weight": 10,
       "show_on_home": false,
       "show_on_nouveautes": false
+    },
+    {
+      "id": "",
+      "name": "Maë - Poinsettia rétro",
+      "category": "Pampilles",
+      "price": 17,
+      "variant": "motifs",
+      "emoji": "",
+      "description": "",
+      "colors": [],
+      "bg": "",
+      "badge": "",
+      "stock": "in_stock",
+      "image": "/images/uploads/20261113_121343.jpg",
+      "image_alt": "",
+      "weight": 10,
+      "show_on_home": false,
+      "show_on_nouveautes": false
     }
   ],
   "feat_btn_link": "https://wildflower-wm.fr/nouveautes.html",
