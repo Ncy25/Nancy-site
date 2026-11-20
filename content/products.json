@@ -690,10 +690,10 @@
         "#C9A853"
       ],
       "bg": "#F5D5C8",
-      "badge": "bestseller",
+      "badge": "",
       "stock": "in_stock",
-      "image": "/images/uploads/1795079830002.jpg",
-      "image_alt": "",
+      "image": "/images/uploads/6_20261121_000547_0002.png",
+      "image_alt": "Créoles dorées martelées 19 mm acier inoxydable",
       "weight": 10,
       "show_on_home": false,
       "show_on_nouveautes": false
@@ -710,13 +710,13 @@
         "#A8B8C4"
       ],
       "bg": "#F9E8E0",
-      "badge": "new",
+      "badge": "",
       "stock": "in_stock",
-      "image": "/images/uploads/1795079900748.jpg",
-      "image_alt": "",
+      "image": "/images/uploads/5_20261121_000547_0001.png",
+      "image_alt": "Créoles dorées torsadées 19 mm acier inoxydable",
       "weight": 10,
       "show_on_home": false,
-      "show_on_nouveautes": true
+      "show_on_nouveautes": false
     },
     {
       "id": "créoles-argentées",
@@ -728,13 +728,13 @@
       "description": "Anneaux torsadées à fermoir clipsable, finition argentée, diamètre 19 mm, épaisseur 2 mm, compatibles avec toutes les pampilles. Acier inoxydable 304L",
       "colors": [],
       "bg": "",
-      "badge": "new",
+      "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/20260916_182513.jpg",
-      "image_alt": "",
+      "image_alt": "Créoles argentées torsadées 19 mm acier inoxydable",
       "weight": 10,
       "show_on_home": false,
-      "show_on_nouveautes": true
+      "show_on_nouveautes": false
     },
     {
       "id": "créoles-dorées",
@@ -748,13 +748,13 @@
         "#A8B8C4"
       ],
       "bg": "#eef2e8",
-      "badge": "new",
+      "badge": "",
       "stock": "in_stock",
-      "image": "/images/uploads/1795079655882.jpg",
-      "image_alt": "",
+      "image": "/images/uploads/7_20261121_000547_0003.png",
+      "image_alt": "Créoles dorées rotatives 19 mm acier inoxydable",
       "weight": 10,
       "show_on_home": false,
-      "show_on_nouveautes": true
+      "show_on_nouveautes": false
     },
     {
       "id": "créoles-dorées",
@@ -769,7 +769,7 @@
       "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/4_20261121_000546_0000.png",
-      "image_alt": "",
+      "image_alt": "Créoles dorées lisses 19 mm acier inoxydable",
       "weight": 10,
       "show_on_home": false,
       "show_on_nouveautes": false
@@ -784,13 +784,13 @@
       "description": "Anneaux rectangulaires lisses à fermoir clipsable, finition dorée, diamètre 19 mm, épaisseur 2 mm, compatibles avec toutes les pampilles.",
       "colors": [],
       "bg": "#f9e8e0",
-      "badge": "new",
+      "badge": "",
       "stock": "in_stock",
       "image": "/images/uploads/Rectangulaires-dorées.jpg",
-      "image_alt": "",
+      "image_alt": "Créoles dorées lisses rectangulaires 19 mm acier inoxydable",
       "weight": 10,
       "show_on_home": false,
-      "show_on_nouveautes": true
+      "show_on_nouveautes": false
     },
     {
       "id": "",
