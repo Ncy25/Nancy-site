@@ -566,6 +566,12 @@
       <div class="prod-grid" id="pampillesResineGrid"></div>
     </div>
 
+    <!-- SANTA SECRET -->
+    <div class="creoles-section" id="santaSecretSection" style="display:none">
+      <h2 class="creoles-title" id="santaSecretTitle">Santa Secret</h2>
+      <div class="prod-grid" id="santaSecretGrid"></div>
+    </div>
+
     <!-- LES BRACELETS -->
     <div class="creoles-section" id="braceletsSection" style="display:none">
       <h2 class="creoles-title" id="braceletsTitle">Les Bracelets</h2>
@@ -814,6 +820,11 @@
     const section = document.getElementById('pampillesResineSection');
     if (section) section.style.display = count > 0 ? '' : 'none';
   }
+  function renderSantaSecretSection() {
+    const count = renderSimpleSection('santaSecretGrid', 'santa-secret');
+    const section = document.getElementById('santaSecretSection');
+    if (section) section.style.display = count > 0 ? '' : 'none';
+  }
   function renderColliersSection() {
     const count = renderSimpleSection('colliersGrid', 'colliers');
     const section = document.getElementById('colliersSection');
@@ -876,6 +887,7 @@
     renderColliersSection();
     renderPampillesSection();
     renderPampillesResineSection();
+    renderSantaSecretSection();
 
     const setText = (id, val) => { const el = document.getElementById(id); if (el && val) el.textContent = val; };
     setText('pageHeaderScript', data.header_script);
@@ -888,6 +900,7 @@
     setText('colliersTitle', data.colliers_title);
     setText('pampillesTitle', data.pampilles_title);
     setText('pampillesResineTitle', data.pampilles_resine_title);
+    setText('santaSecretTitle', data.santa_secret_title);
     setText('pampillesTabAll', data.pampilles_tab_all);
     setText('pampillesTabUni', data.pampilles_tab_uni);
     setText('pampillesTabMotifs', data.pampilles_tab_motifs);
@@ -1013,7 +1026,7 @@
     saveWishlist();
     renderWishlist();
     // Resynchronise l'état visuel des cœurs sur la grille
-    renderCreolesSection(); renderBraceletsSection(); renderColliersSection(); renderPampillesSection(); renderPampillesResineSection();
+    renderCreolesSection(); renderBraceletsSection(); renderColliersSection(); renderPampillesSection(); renderPampillesResineSection(); renderSantaSecretSection();
   }
 
   function toggleWishDrawer() {
