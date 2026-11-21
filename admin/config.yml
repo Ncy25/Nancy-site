@@ -215,24 +215,6 @@ collections:
               - { label: "Photo du produit", name: "image", widget: "image", required: false }
               - { label: "Description de la photo (invisible, pour Google)", name: "image_alt", widget: "string", required: false, hint: "Optionnel. Une courte phrase décrivant la photo, ex : Pampille ronde en argile polymère rose pastel, portée sur une créole en acier. Invisible sur le site, aide Google. Laisser vide = le nom du produit est utilisé." }
               - { label: "Poids (grammes)", name: "weight", widget: "number", value_type: "int", required: false, hint: "Utilisé pour déterminer si Lettre suivie (max 20g) reste proposée au client." }
-          - label: "Aperçu de la prochaine collection"
-            name: "sneak"
-            widget: "object"
-            required: false
-            fields:
-              - { label: "Petite phrase", name: "script", widget: "string", required: false }
-              - { label: "Titre de la section", name: "title", widget: "string", required: false }
-              - name: "cards"
-                label: "Cartes (aperçu flouté)"
-                widget: "list"
-                summary: "{{fields.name}}"
-                max: 4
-                required: false
-                fields:
-                  - { label: "Nom (mystère)", name: "name", widget: "string", required: false }
-                  - { label: "Date / période annoncée", name: "date", widget: "string", required: false }
-                  - { label: "Couleur de fond", name: "bg", widget: "color", required: false }
-                  - { label: "Couleur d'accent (le rond flouté)", name: "accent", widget: "color", required: false }
 
   - name: "wooden-mountain"
     label: "Wooden Mountain"
