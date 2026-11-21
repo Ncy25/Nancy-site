@@ -43,6 +43,28 @@ collections:
               - { label: "Petite photo 1", name: "small_image_1", widget: "image", required: false }
               - { label: "Petite photo 2", name: "small_image_2", widget: "image", required: false }
               - { label: "Petite photo 3", name: "small_image_3", widget: "image", required: false }
+              - { label: "Titre principal (celui qui s'affiche sur le site — une ligne par retour)", name: "title", widget: "text", required: false, hint: "C'est ce champ que le site affiche en grand sur l'accueil. Un retour à la ligne = un passage à la ligne sur le site." }
+              - { label: "Lien du bouton", name: "button_link", widget: "string", required: false, hint: "Ex : boutique.html" }
+              - { label: "Photo du haut de page (grande photo)", name: "photo", widget: "image", required: false }
+              - label: "Les 3 étapes (La base, Les pampilles, Le mix)"
+                name: "steps"
+                widget: "list"
+                required: false
+                max: 3
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Photo", name: "image", widget: "image", required: false }
+                  - { label: "Titre", name: "title", widget: "string", required: false }
+                  - { label: "Description", name: "description", widget: "string", required: false }
+          - label: "Bandeau Wooden Mountain (vert, sous les 3 étapes)"
+            name: "wm_banner"
+            widget: "object"
+            required: false
+            fields:
+              - { label: "Petite phrase", name: "eyebrow", widget: "string", required: false }
+              - { label: "Titre", name: "title", widget: "string", required: false }
+              - { label: "Sous-titre", name: "subtitle", widget: "text", required: false }
+              - { label: "Texte du bouton", name: "button_text", widget: "string", required: false }
           - { label: "Titre section 'lifestyle'", name: "lifestyle_title", widget: "string" }
           - label: "Diaporama photos (avant « Les créations »)"
             name: "slideshow"
