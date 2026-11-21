@@ -10,26 +10,32 @@
     "small_image_1": "",
     "small_image_2": "",
     "small_image_3": "",
+    "title": "PAMPILLES INTERCHANGEABLES \nÀ COMBINER \nÀ L'INFINI",
     "button_link": "boutique.html",
     "photo": "/images/uploads/Screenshot_20260919_162911_Gallery.jpg",
     "steps": [
       {
-        "description": "Choisis ta paire de créoles pour la base.",
         "image": "/images/uploads/20260919_105505 (1).png",
-        "title": "1. La base"
+        "title": "1. La base",
+        "description": "Choisis ta paire de créoles pour la base."
       },
       {
-        "description": "Choisis tes pampilles interchangeables.",
         "image": "/images/uploads/20260921_104234.png",
-        "title": "2. Les pampilles"
+        "title": "2. Les pampilles",
+        "description": "Choisis tes pampilles interchangeables."
       },
       {
-        "description": "Compose et personnalise ton mix à l'infini.",
         "image": "/images/uploads/20260919_113151 (1).png",
-        "title": "3. Le mix"
+        "title": "3. Le mix",
+        "description": "Compose et personnalise ton mix à l'infini."
       }
-    ],
-    "title": "PAMPILLES INTERCHANGEABLES \nÀ COMBINER \nÀ L'INFINI"
+    ]
+  },
+  "wm_banner": {
+    "eyebrow": "L'univers du bois",
+    "title": "WOODEN MOUNTAIN",
+    "subtitle": "Des créations en bois façonnées avec soin, pour prolonger l'univers WildFlower dans ton intérieur.",
+    "button_text": "VOIR LES CRÉATIONS"
   },
   "lifestyle_title": "Faites à la main, portées avec amour",
   "slideshow": {
@@ -70,11 +76,5 @@
     "quote": "Des pampilles qui changent tout — Du bois a vos mesures."
   },
   "footer_tagline": "Pampilles interchangeables et objets en bois personnalisés",
-  "footer_copyright": "© 2026 WildFlower_WoodenMountain · Fabriqué en France",
-  "wm_banner": {
-    "button_text": "VOIR LES CRÉATIONS",
-    "eyebrow": "L'univers du bois",
-    "subtitle": "Des créations en bois façonnées avec soin, pour prolongé l'univers WildFlower dans ton intérieur.",
-    "title": "WOODEN MOUNTAIN"
-  }
+  "footer_copyright": "© 2026 WildFlower_WoodenMountain · Fabriqué en France"
 }
