@@ -334,6 +334,13 @@
       .ss-arrow { width: 34px; height: 34px; font-size: 17px; }
     }
     #boutique { padding: 72px 0 80px; background: var(--ivory); }
+    .resine-band { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; margin: 0 auto 44px; max-width: 760px; padding: 18px 26px; border-radius: 20px; background: var(--blush); border: 1.5px solid rgba(242,191,181,0.5); }
+    .resine-band-text { display: flex; flex-direction: column; gap: 2px; text-align: left; }
+    .resine-band-script { font-family: var(--font-s); font-size: 19px; color: var(--terra); line-height: 1.1; }
+    .resine-band-title { font-family: var(--font-d); font-size: 22px; font-weight: 600; color: var(--brown); line-height: 1.2; }
+    .resine-band-btn { display: inline-block; padding: 11px 26px; border-radius: 999px; background: var(--terra); color: #fff; font-size: 13px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; transition: transform .25s, background .25s; }
+    .resine-band-btn:hover { transform: translateY(-2px); background: var(--peach-dk); }
+    @media (max-width: 600px) { .resine-band { flex-direction: column; text-align: center; padding: 18px 20px; } .resine-band-text { text-align: center; } .resine-band-title { font-size: 19px; } }
     .boutique-title {
       font-family: var(--font-d);
       font-size: 15px; font-weight: 500;
@@ -799,6 +806,14 @@
 <!-- BOUTIQUE -->
 <section id="boutique">
   <div class="container">
+    <div class="resine-band" id="resineBand" style="display:none">
+      <div class="resine-band-text">
+        <span class="resine-band-script">Nouveau</span>
+        <span class="resine-band-title">Découvre aussi les pampilles en résine</span>
+      </div>
+      <a class="resine-band-btn" href="boutique.html#pampilles-resine">Découvrir</a>
+    </div>
+
     <div class="boutique-title r" id="boutiqueTitle">Nos créations</div>
     <div class="boutique-h2 r" id="boutiqueSubtitle">C'est le moment d'ajouter au panier</div>
 
@@ -1213,6 +1228,8 @@
   fetch('content/products.json').then(r => r.json()).then(data => {
     products = data.products || [];
     renderHomeProducts();
+    const rb = document.getElementById('resineBand');
+    if (rb) rb.style.display = products.some(p => (p.category || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') === 'pampilles resine') ? '' : 'none';
     if (window.location.hash) {
       const target = document.querySelector(window.location.hash);
       if (target) setTimeout(() => target.scrollIntoView({ behavior: 'auto', block: 'start' }), 50);

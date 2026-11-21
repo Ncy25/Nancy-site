@@ -275,7 +275,8 @@
     }
     .cat-tab:hover { border-color: var(--peach); color: var(--terra); }
     .cat-tab.active { background: var(--terra); color: #fff; border-color: var(--terra); }
-    .creoles-section { margin: 44px 0; }
+    .creoles-section { margin: 44px 0; scroll-margin-top: 90px; }
+    .section-jump { margin: 0 0 4px; }
     .creoles-title { font-family: var(--font-d); font-size: 26px; font-weight: 600; color: var(--brown); margin-bottom: 22px; }
     .section-label { font-family: var(--font-d); font-size: 13px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--peach-dk); margin-bottom: 6px; }
     .section-h2 { font-family: var(--font-s); font-size: 40px; color: var(--brown-mid); line-height: 1; }
@@ -543,14 +544,24 @@
     <!-- TEXTE D'INTRODUCTION -->
     <p class="boutique-intro" style="max-width:760px;margin:14px 0 30px;font-size:15px;line-height:1.75;color:var(--brown-mid)">Chez WildFlower, chaque pampille est modelée à la main en argile polymère, dans mon atelier à Gap. Elles se glissent sur tes créoles : tu changes de bijou en quelques secondes, selon ta tenue et ton humeur. Retrouve ici toutes les pampilles interchangeables et les créoles en acier inoxydable.</p>
 
+    <!-- RACCOURCIS VERS LES SECTIONS (n'apparaissent que s'il y a au moins 2 sections avec des produits) -->
+    <div class="cat-tabs section-jump" id="sectionJump" style="display:none" aria-label="Aller à une section">
+      <div class="cat-tab" data-jump="creoles" style="display:none" onclick="jumpTo('creoles')">Créoles</div>
+      <div class="cat-tab" data-jump="pampilles" style="display:none" onclick="jumpTo('pampilles')">Pampilles argile</div>
+      <div class="cat-tab" data-jump="pampilles-resine" style="display:none" onclick="jumpTo('pampilles-resine')">Pampilles résine</div>
+      <div class="cat-tab" data-jump="santa-secret" style="display:none" onclick="jumpTo('santa-secret')">Santa Secret</div>
+      <div class="cat-tab" data-jump="bracelets" style="display:none" onclick="jumpTo('bracelets')">Bracelets</div>
+      <div class="cat-tab" data-jump="colliers" style="display:none" onclick="jumpTo('colliers')">Colliers</div>
+    </div>
+
     <!-- CHOISIS TES CRÉOLES -->
-    <div class="creoles-section">
+    <div class="creoles-section" id="creolesSection">
       <h2 class="creoles-title" id="creolesTitle">Choisis tes créoles</h2>
       <div class="prod-grid" id="creolesGrid"></div>
     </div>
 
     <!-- CHOISIS TES PAMPILLES -->
-    <div class="creoles-section">
+    <div class="creoles-section" id="pampillesSection">
       <h2 class="creoles-title" id="pampillesTitle">Choisis tes pampilles</h2>
       <div class="cat-tabs" id="pampillesTabs">
         <div class="cat-tab active" onclick="filterPampilles('all', this)" id="pampillesTabAll">Tout voir</div>
@@ -831,6 +842,43 @@
     if (section) section.style.display = count > 0 ? '' : 'none';
   }
 
+  /* ─── RACCOURCIS VERS LES SECTIONS ─── */
+  const JUMP_SECTIONS = {
+    'creoles': 'creolesSection',
+    'pampilles': 'pampillesSection',
+    'pampilles-resine': 'pampillesResineSection',
+    'santa-secret': 'santaSecretSection',
+    'bracelets': 'braceletsSection',
+    'colliers': 'colliersSection'
+  };
+  const JUMP_CATS = { 'creoles': 'creoles', 'pampilles': 'pampilles', 'pampilles-resine': 'pampilles-resine', 'santa-secret': 'santa-secret', 'bracelets': 'bracelets', 'colliers': 'colliers' };
+  function updateSectionJump() {
+    const row = document.getElementById('sectionJump');
+    if (!row) return;
+    let visible = 0;
+    row.querySelectorAll('[data-jump]').forEach(b => {
+      const key = b.dataset.jump;
+      const has = products.some(p => catSlug(p.category) === JUMP_CATS[key]);
+      b.style.display = has ? '' : 'none';
+      if (has) visible++;
+    });
+    row.style.display = visible >= 2 ? '' : 'none';
+  }
+  function jumpTo(key) {
+    const el = document.getElementById(JUMP_SECTIONS[key]);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  function jumpFromHash() {
+    const key = (window.location.hash || '').replace('#', '');
+    if (key && JUMP_SECTIONS[key]) {
+      const el = document.getElementById(JUMP_SECTIONS[key]);
+      if (el && el.style.display !== 'none') {
+        el.scrollIntoView({ behavior: 'auto', block: 'start' });
+        setTimeout(() => el.scrollIntoView({ behavior: 'auto', block: 'start' }), 700);
+      }
+    }
+  }
+
   let pampillesIndexes = [];
 
   function renderPampillesSection() {
@@ -888,6 +936,8 @@
     renderPampillesSection();
     renderPampillesResineSection();
     renderSantaSecretSection();
+    updateSectionJump();
+    setTimeout(jumpFromHash, 80);
 
     const setText = (id, val) => { const el = document.getElementById(id); if (el && val) el.textContent = val; };
     setText('pageHeaderScript', data.header_script);
