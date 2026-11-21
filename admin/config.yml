@@ -59,6 +59,15 @@ collections:
               - { label: "Titre", name: "title", widget: "string", required: false }
               - { label: "Sous-titre", name: "subtitle", widget: "text", required: false }
               - { label: "Texte du bouton", name: "button_text", widget: "string", required: false }
+          - label: "Bande « Pampilles résine » (avant « Nos créations »)"
+            name: "resine_band"
+            widget: "object"
+            required: false
+            hint: "S'affiche seulement s'il y a au moins un produit de catégorie « Pampilles résine ». Le bouton mène à la section Pampilles résine de la boutique."
+            fields:
+              - { label: "Petite phrase manuscrite", name: "eyebrow", widget: "string", required: false, hint: "Ex : Nouveau" }
+              - { label: "Titre", name: "title", widget: "string", required: false, hint: "Ex : Découvre aussi les pampilles en résine" }
+              - { label: "Texte du bouton", name: "button_text", widget: "string", required: false, hint: "Ex : Découvrir" }
           - { label: "Titre section 'lifestyle'", name: "lifestyle_title", widget: "string" }
           - label: "Diaporama photos (avant « Les créations »)"
             name: "slideshow"
