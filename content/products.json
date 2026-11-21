@@ -6,7 +6,8 @@
   "section_title": "Choisis ta paire de créoles et ajoute tes pampilles",
   "creoles_title": "Les créoles",
   "pampilles_title": "Les pampilles",
-  "pampilles_resine_title": "Pampilles résine",
+  "pampilles_resine_title": "Les pampilles en résine",
+  "santa_secret_title": "Les \"santa secret\"",
   "bracelets_title": "Les bracelets",
   "colliers_title": "Les colliers",
   "pampilles_tab_all": "Tout voir",
@@ -124,7 +125,7 @@
     {
       "id": "",
       "name": "Théa - Scintillant de minuit",
-      "category": "Pampilles",
+      "category": "Pampilles résine",
       "price": 13,
       "variant": "uni",
       "emoji": "",
@@ -142,7 +143,7 @@
     {
       "id": "",
       "name": "Théa - Hologramme",
-      "category": "Pampilles",
+      "category": "Pampilles résine",
       "price": 13,
       "variant": "uni",
       "emoji": "",
@@ -160,7 +161,7 @@
     {
       "id": "",
       "name": "Théa - Vert scintillant",
-      "category": "Pampilles",
+      "category": "Pampilles résine",
       "price": 13,
       "variant": "uni",
       "emoji": "",
@@ -178,7 +179,7 @@
     {
       "id": "",
       "name": "Théa - Opale scintillante",
-      "category": "Pampilles",
+      "category": "Pampilles résine",
       "price": 13,
       "variant": "uni",
       "emoji": "",
