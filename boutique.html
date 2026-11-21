@@ -560,6 +560,12 @@
       <div class="prod-grid" id="pampillesGrid"></div>
     </div>
 
+    <!-- PAMPILLES RÉSINE -->
+    <div class="creoles-section" id="pampillesResineSection" style="display:none">
+      <h2 class="creoles-title" id="pampillesResineTitle">Pampilles résine</h2>
+      <div class="prod-grid" id="pampillesResineGrid"></div>
+    </div>
+
     <!-- LES BRACELETS -->
     <div class="creoles-section" id="braceletsSection" style="display:none">
       <h2 class="creoles-title" id="braceletsTitle">Les Bracelets</h2>
@@ -803,6 +809,11 @@
     const section = document.getElementById('braceletsSection');
     if (section) section.style.display = count > 0 ? '' : 'none';
   }
+  function renderPampillesResineSection() {
+    const count = renderSimpleSection('pampillesResineGrid', 'pampilles-resine');
+    const section = document.getElementById('pampillesResineSection');
+    if (section) section.style.display = count > 0 ? '' : 'none';
+  }
   function renderColliersSection() {
     const count = renderSimpleSection('colliersGrid', 'colliers');
     const section = document.getElementById('colliersSection');
@@ -864,6 +875,7 @@
     renderBraceletsSection();
     renderColliersSection();
     renderPampillesSection();
+    renderPampillesResineSection();
 
     const setText = (id, val) => { const el = document.getElementById(id); if (el && val) el.textContent = val; };
     setText('pageHeaderScript', data.header_script);
@@ -875,6 +887,7 @@
     setText('braceletsTitle', data.bracelets_title);
     setText('colliersTitle', data.colliers_title);
     setText('pampillesTitle', data.pampilles_title);
+    setText('pampillesResineTitle', data.pampilles_resine_title);
     setText('pampillesTabAll', data.pampilles_tab_all);
     setText('pampillesTabUni', data.pampilles_tab_uni);
     setText('pampillesTabMotifs', data.pampilles_tab_motifs);
@@ -1000,7 +1013,7 @@
     saveWishlist();
     renderWishlist();
     // Resynchronise l'état visuel des cœurs sur la grille
-    renderCreolesSection(); renderBraceletsSection(); renderColliersSection(); renderPampillesSection();
+    renderCreolesSection(); renderBraceletsSection(); renderColliersSection(); renderPampillesSection(); renderPampillesResineSection();
   }
 
   function toggleWishDrawer() {
