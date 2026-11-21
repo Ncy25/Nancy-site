@@ -808,10 +808,10 @@
   <div class="container">
     <div class="resine-band" id="resineBand" style="display:none">
       <div class="resine-band-text">
-        <span class="resine-band-script">Nouveau</span>
-        <span class="resine-band-title">Découvre aussi les pampilles en résine</span>
+        <span class="resine-band-script" id="resineBandScript">Nouveau</span>
+        <span class="resine-band-title" id="resineBandTitle">Découvre aussi les pampilles en résine</span>
       </div>
-      <a class="resine-band-btn" href="boutique.html#pampilles-resine">Découvrir</a>
+      <a class="resine-band-btn" id="resineBandBtn" href="boutique.html#pampilles-resine">Découvrir</a>
     </div>
 
     <div class="boutique-title r" id="boutiqueTitle">Nos créations</div>
@@ -1352,6 +1352,11 @@
       setText('wmBannerTitle', d.wm_banner.title);
       setText('wmBannerSub', d.wm_banner.subtitle);
       setText('wmBannerBtnText', d.wm_banner.button_text);
+    }
+    if (d.resine_band) {
+      setText('resineBandScript', d.resine_band.eyebrow);
+      setText('resineBandTitle', d.resine_band.title);
+      setText('resineBandBtn', d.resine_band.button_text);
     }
     setText('lifestyleTitle', d.lifestyle_title);
     initSlideshow(d.slideshow);
