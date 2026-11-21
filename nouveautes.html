@@ -825,6 +825,7 @@
         <button class="filter-pill active" onclick="filterPill('all', this)">Tout voir</button>
         <button class="filter-pill" onclick="filterPill('pampilles', this)">Pampilles</button>
         <button class="filter-pill" onclick="filterPill('creoles', this)">Créoles</button>
+        <button class="filter-pill" id="pillResine" style="display:none" onclick="filterPill('pampilles-resine', this)">Pampilles résine</button>
       </div>
       <div class="filter-right">
         <select class="sort-select" id="sortSel" onchange="sortProducts()">
@@ -1007,6 +1008,8 @@
     lastNouveautesData = data;
     const grid = document.getElementById('prodGrid');
     novProducts = data.products || [];
+    const pillResine = document.getElementById('pillResine');
+    if (pillResine) pillResine.style.display = novProducts.some(p => novCatSlug(p.category) === 'pampilles-resine') ? '' : 'none';
 
     const cardsHtml = novProducts.map((p, idx) => `
       <div class="p-card ${p.stock === 'rupture' ? 'rupture' : ''} ${priceOk(p) ? '' : 'no-price'}" data-cat="${novCatSlug(p.category)}" data-tags="${novTags(p)}" data-price="${p.price}" onclick="openModal(${idx})">
