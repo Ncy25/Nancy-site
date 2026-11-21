@@ -842,17 +842,6 @@
   </div>
 </section>
 
-<!-- ── SNEAK PEEK ── -->
-<section class="sneak-section">
-  <div class="container">
-    <div class="sneak-header r">
-      <div class="sneak-script" id="sneakScript">Bientôt disponible</div>
-      <h2 class="sneak-h2" id="sneakTitle">Aperçu de la prochaine collection</h2>
-    </div>
-    <div class="sneak-row" id="sneakRow"></div>
-  </div>
-</section>
-
 <!-- ── NEWSLETTER ── -->
 <!-- MODAL PRODUIT -->
 <div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
@@ -1095,7 +1084,6 @@
       if (!isNaN(parsed)) { target = parsed; updateCountdown(); }
     }
     renderNouveautes(data);
-    if (data.sneak) renderSneak(data.sneak);
     // Ajoute automatiquement les produits boutique cochés "Afficher aussi sur Nouveautés"
     fetch('content/products.json').then(r => r.json()).then(pd => {
       const toAdd = (pd.products || []).filter(p => p.show_on_nouveautes);
