@@ -170,6 +170,48 @@ collections:
               - { label: "Afficher sur la page d'accueil", name: "show_on_home", widget: "boolean", default: false, required: false, hint: "Maximum 10 produits affichés sur l'accueil. Si aucun n'est coché, les 10 premiers s'affichent par défaut." }
               - { label: "Afficher aussi sur la page Nouveautés", name: "show_on_nouveautes", widget: "boolean", default: false, required: false, hint: "Évite de publier deux fois la même annonce : coche pour que ce produit apparaisse aussi sur Nouveautés, en plus de la boutique." }
 
+  - name: "fin-de-serie"
+    label: "Fin de série (anciennes collections)"
+    files:
+      - name: "fin-de-serie"
+        label: "Produits en fin de série"
+        file: "content/fin-de-serie.json"
+        fields:
+          - { label: "Titre de la section (boutique)", name: "section_title", widget: "string", required: false, hint: "Ex : Fin de série. Laisser vide = « Fin de série »." }
+          - { label: "Petit texte sous le titre (optionnel)", name: "intro_text", widget: "text", required: false, hint: "Ex : Dernières pièces des collections passées, elles ne seront pas refaites." }
+          - name: "products"
+            label: "Produits en fin de série"
+            widget: "list"
+            required: false
+            hint: "Ajoute ici UNIQUEMENT les produits de fin de série. Ils s'affichent dans la section « Fin de série » de la boutique, jamais dans les autres sections. Pense à retirer le produit de la liste « Produits — Boutique » pour ne pas l'avoir en double."
+            summary: "{{fields.name}} — {{fields.price}}€ (avant {{fields.old_price}}€)"
+            fields:
+              - { label: "Nom (identique au produit d'origine)", name: "name", widget: "string", required: false }
+              - { label: "Identifiant (unique, sans espace)", name: "id", widget: "string", required: false }
+              - label: "Catégorie (type de bijou)"
+                name: "category"
+                widget: "select"
+                options: ["Pampilles", "Pampilles résine", "Créoles", "Bracelets", "Colliers"]
+                required: false
+              - { label: "Prix actuel (€) — prix payé par la cliente", name: "price", widget: "number", value_type: "float", required: false, hint: "C'est ce prix qui est facturé au paiement." }
+              - { label: "Ancien prix (€) — affiché barré", name: "old_price", widget: "number", value_type: "float", required: false, hint: "Optionnel. Doit être plus élevé que le prix actuel pour être affiché barré. Vide = pas de prix barré." }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Photo du produit", name: "image", widget: "image", required: false }
+              - { label: "Description de la photo (invisible, pour Google)", name: "image_alt", widget: "string", required: false }
+              - { label: "Emoji (utilisé si pas de photo)", name: "emoji", widget: "string", required: false }
+              - { label: "Couleur de fond de la vignette", name: "bg", widget: "color", required: false }
+              - label: "Badge"
+                name: "badge"
+                widget: "select"
+                options: [{ label: "Aucun", value: "" }, { label: "Nouveau", value: "new" }, { label: "Bestseller", value: "bestseller" }, { label: "Exclu", value: "exclu" }]
+                required: false
+              - label: "Stock"
+                name: "stock"
+                widget: "select"
+                options: [{ label: "En stock", value: "in_stock" }, { label: "Dernières pièces", value: "low" }, { label: "Rupture de stock", value: "rupture" }]
+                required: false
+              - { label: "Poids (grammes)", name: "weight", widget: "number", value_type: "int", required: false, hint: "Utilisé pour déterminer si Lettre suivie (max 20g) reste proposée au client." }
+
   - name: "nouveautes"
     label: "Nouveautés"
     files:
