@@ -613,6 +613,18 @@
       <h2 class="creoles-title" id="colliersTitle">Les Colliers</h2>
       <div class="prod-grid" id="colliersGrid"></div>
     </div>
+
+    <!-- RACCOURCIS (copie en bas de page) -->
+    <div class="cat-tabs section-jump" id="sectionJumpBottom" style="display:none;margin-top:44px" aria-label="Aller à une section">
+      <div class="cat-tab" data-jump="creoles" style="display:none" onclick="jumpTo('creoles')">Créoles</div>
+      <div class="cat-tab" data-jump="pampilles" style="display:none" onclick="jumpTo('pampilles')">Pampilles argile</div>
+      <span class="pill-break" aria-hidden="true"></span>
+      <div class="cat-tab" data-jump="pampilles-resine" style="display:none" onclick="jumpTo('pampilles-resine')">Pampilles résine</div>
+      <div class="cat-tab" data-jump="fin-de-serie" style="display:none" onclick="jumpTo('fin-de-serie')">Fin de série</div>
+      <div class="cat-tab" data-jump="santa-secret" style="display:none" onclick="jumpTo('santa-secret')">Santa Secret</div>
+      <div class="cat-tab" data-jump="bracelets" style="display:none" onclick="jumpTo('bracelets')">Bracelets</div>
+      <div class="cat-tab" data-jump="colliers" style="display:none" onclick="jumpTo('colliers')">Colliers</div>
+    </div>
   </div>
 </main>
 
@@ -892,16 +904,16 @@
   };
   const JUMP_CATS = { 'fin-de-serie': 'fin-de-serie', 'creoles': 'creoles', 'pampilles': 'pampilles', 'pampilles-resine': 'pampilles-resine', 'santa-secret': 'santa-secret', 'bracelets': 'bracelets', 'colliers': 'colliers' };
   function updateSectionJump() {
-    const row = document.getElementById('sectionJump');
-    if (!row) return;
-    let visible = 0;
-    row.querySelectorAll('[data-jump]').forEach(b => {
-      const key = b.dataset.jump;
-      const has = products.some(p => sectionCat(p) === JUMP_CATS[key]);
-      b.style.display = has ? '' : 'none';
-      if (has) visible++;
+    document.querySelectorAll('.section-jump').forEach(row => {
+      let visible = 0;
+      row.querySelectorAll('[data-jump]').forEach(b => {
+        const key = b.dataset.jump;
+        const has = products.some(p => sectionCat(p) === JUMP_CATS[key]);
+        b.style.display = has ? '' : 'none';
+        if (has) visible++;
+      });
+      row.style.display = visible >= 2 ? '' : 'none';
     });
-    row.style.display = visible >= 2 ? '' : 'none';
   }
   function jumpTo(key) {
     const el = document.getElementById(JUMP_SECTIONS[key]);
