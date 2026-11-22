@@ -16,6 +16,36 @@
       "badge": "",
       "stock": "in_stock",
       "weight": 10
+    },
+    {
+      "name": "Maë - Berlingot rose",
+      "id": "",
+      "category": "Pampilles",
+      "price": 10,
+      "old_price": 17,
+      "description": "",
+      "image": "/images/uploads/20261122_155053.jpg",
+      "image_alt": "",
+      "emoji": "",
+      "bg": "",
+      "badge": "",
+      "stock": "",
+      "weight": 10
+    },
+    {
+      "name": "Maë - Berlingot vert",
+      "id": "",
+      "category": "Pampilles",
+      "price": 10,
+      "old_price": 17,
+      "description": "",
+      "image": "/images/uploads/20261122_155101.jpg",
+      "image_alt": "",
+      "emoji": "",
+      "bg": "",
+      "badge": "",
+      "stock": "",
+      "weight": 10
     }
   ]
 }
