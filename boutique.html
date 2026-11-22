@@ -247,8 +247,10 @@
     .p-card.rupture .btn-quick-add { display: none; }
     .p-card.rupture .p-img { opacity: .55; }
     .p-card.no-price .btn-quick-add { display: none; }
-    .price-old { text-decoration: line-through; color: var(--gray, #9A8B84); font-size: .72em; font-weight: 500; margin-right: 8px; }
-    .price-now { color: var(--terra, #C4704F); }
+    .price-old { text-decoration: line-through; margin-right: 8px; }
+    .price-now { }
+    .p-bottom:has(.price-old) { flex-wrap: wrap; row-gap: 2px; }
+    .p-bottom:has(.price-old) .p-price { white-space: nowrap; }
     .p-price.price-soon { font-size: 13px; letter-spacing: .02em; }
     .btn-add-modal:disabled { opacity: .5; cursor: not-allowed; }
     .btn-add-modal:disabled:hover { background: var(--peach-dk); transform: none; }
@@ -420,8 +422,10 @@
       .cat-tabs { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 4px; margin: 0 -28px 8px; padding-left: 28px; padding-right: 28px; }
       .cat-tabs::-webkit-scrollbar { display: none; }
       .cat-tab { flex-shrink: 0; padding: 8px 16px; font-size: 13px; }
+      #pampillesTabs { flex-wrap: wrap; overflow-x: visible; justify-content: center; margin: 0 0 8px; padding-left: 0; padding-right: 0; }
       .section-jump { flex-wrap: wrap; overflow-x: visible; margin: 0 0 8px; padding-left: 0; padding-right: 0; }
       .section-jump .pill-break { display: block; flex-basis: 100%; height: 0; }
+      .section-jump .cat-tab { flex: 1 1 auto; text-align: center; padding: 11px 12px; font-size: 14px; }
       .filter-pills-row { display: flex; gap: 8px; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin: 0 -28px; padding: 0 28px 4px; }
       .filter-pills-row::-webkit-scrollbar { display: none; }
       .filter-pill { flex-shrink: 0; padding: 8px 14px; font-size: 12.5px; white-space: nowrap; }
