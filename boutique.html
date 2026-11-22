@@ -247,6 +247,8 @@
     .p-card.rupture .btn-quick-add { display: none; }
     .p-card.rupture .p-img { opacity: .55; }
     .p-card.no-price .btn-quick-add { display: none; }
+    .price-old { text-decoration: line-through; color: var(--gray, #9A8B84); font-size: .72em; font-weight: 500; margin-right: 8px; }
+    .price-now { color: var(--terra, #C4704F); }
     .p-price.price-soon { font-size: 13px; letter-spacing: .02em; }
     .btn-add-modal:disabled { opacity: .5; cursor: not-allowed; }
     .btn-add-modal:disabled:hover { background: var(--peach-dk); transform: none; }
@@ -546,6 +548,7 @@
 
     <!-- RACCOURCIS VERS LES SECTIONS (n'apparaissent que s'il y a au moins 2 sections avec des produits) -->
     <div class="cat-tabs section-jump" id="sectionJump" style="display:none" aria-label="Aller à une section">
+      <div class="cat-tab" data-jump="fin-de-serie" style="display:none" onclick="jumpTo('fin-de-serie')">Fin de série</div>
       <div class="cat-tab" data-jump="creoles" style="display:none" onclick="jumpTo('creoles')">Créoles</div>
       <div class="cat-tab" data-jump="pampilles" style="display:none" onclick="jumpTo('pampilles')">Pampilles argile</div>
       <div class="cat-tab" data-jump="pampilles-resine" style="display:none" onclick="jumpTo('pampilles-resine')">Pampilles résine</div>
@@ -569,6 +572,13 @@
         <div class="cat-tab" onclick="filterPampilles('motifs', this)" id="pampillesTabMotifs">Pampilles à motifs</div>
       </div>
       <div class="prod-grid" id="pampillesGrid"></div>
+    </div>
+
+    <!-- FIN DE SÉRIE -->
+    <div class="creoles-section" id="finSerieSection" style="display:none">
+      <h2 class="creoles-title" id="finSerieTitle">Fin de série</h2>
+      <p class="fin-serie-intro" id="finSerieIntro" style="display:none;margin:-6px 0 22px;color:var(--brown-mid);font-size:15px;line-height:1.7"></p>
+      <div class="prod-grid" id="finSerieGrid"></div>
     </div>
 
     <!-- PAMPILLES RÉSINE -->
@@ -734,6 +744,9 @@
   /* \u2500\u2500\u2500 GARDE-FOU PRIX \u2500\u2500\u2500 */
   // Un produit sans prix (vide, 0 ou invalide) ne peut pas \u00eatre achet\u00e9 :
   // il s'affiche "Bient\u00f4t disponible" et le bouton panier est d\u00e9sactiv\u00e9.
+  // Catégorie "de section" : les produits de l'onglet Fin de série sont regroupés à part
+  function sectionCat(p) { return p._fds ? 'fin-de-serie' : catSlug(p.category); }
+
   function priceOk(p) {
     const n = Number(p.price);
     return p.price !== undefined && p.price !== null && p.price !== '' && !isNaN(n) && n > 0;
@@ -741,12 +754,23 @@
   function priceLabel(p) {
     return priceOk(p) ? Number(p.price).toFixed(2).replace('.', ',') + ' \u20ac' : 'Bient\u00f4t disponible';
   }
+  // Prix barré (Fin de série) : ancien prix valide ET supérieur au prix actuel
+  function hasOldPrice(p) {
+    const o = Number(p.old_price);
+    return priceOk(p) && !isNaN(o) && o > Number(p.price);
+  }
+  function priceHtml(p) {
+    const now = priceLabel(p);
+    if (!hasOldPrice(p)) return now;
+    const old = Number(p.old_price).toFixed(2).replace('.', ',') + ' \u20ac';
+    return '<span class="price-old">' + old + '</span><span class="price-now">' + now + '</span>';
+  }
 
   function renderCreolesSection() {
     const grid = document.getElementById('creolesGrid');
     if (!grid) return;
     const creoleIndexes = [];
-    products.forEach((p, idx) => { if (catSlug(p.category) === 'creoles') creoleIndexes.push(idx); });
+    products.forEach((p, idx) => { if (sectionCat(p) === 'creoles') creoleIndexes.push(idx); });
     grid.innerHTML = creoleIndexes.map(idx => {
       const p = products[idx];
       return `
@@ -771,7 +795,7 @@
           <div class="p-name">${p.name}</div>
           <div class="p-desc">${p.description || ''}</div>
           <div class="p-bottom">
-            <div class="p-price${priceOk(p) ? '' : ' price-soon'}">${priceLabel(p)}</div>
+            <div class="p-price${priceOk(p) ? '' : ' price-soon'}">${priceHtml(p)}</div>
             <div class="p-stock ${p.stock === 'rupture' ? 'rupture' : p.stock === 'low' ? 'low' : ''}"><span class="p-stock-dot"></span> ${p.stock === 'rupture' ? 'Rupture de stock' : p.stock === 'low' ? 'Dernières pièces' : 'En stock'}</div>
           </div>
         </div>
@@ -785,7 +809,7 @@
     const grid = document.getElementById(gridId);
     if (!grid) return 0;
     const idxs = [];
-    products.forEach((p, idx) => { if (catSlug(p.category) === categorySlug) idxs.push(idx); });
+    products.forEach((p, idx) => { if (sectionCat(p) === categorySlug) idxs.push(idx); });
     grid.innerHTML = idxs.map(idx => {
       const p = products[idx];
       return `
@@ -810,7 +834,7 @@
           <div class="p-name">${p.name}</div>
           <div class="p-desc">${p.description || ''}</div>
           <div class="p-bottom">
-            <div class="p-price${priceOk(p) ? '' : ' price-soon'}">${priceLabel(p)}</div>
+            <div class="p-price${priceOk(p) ? '' : ' price-soon'}">${priceHtml(p)}</div>
             <div class="p-stock ${p.stock === 'rupture' ? 'rupture' : p.stock === 'low' ? 'low' : ''}"><span class="p-stock-dot"></span> ${p.stock === 'rupture' ? 'Rupture de stock' : p.stock === 'low' ? 'Dernières pièces' : 'En stock'}</div>
           </div>
         </div>
@@ -831,6 +855,11 @@
     const section = document.getElementById('pampillesResineSection');
     if (section) section.style.display = count > 0 ? '' : 'none';
   }
+  function renderFinSerieSection() {
+    const count = renderSimpleSection('finSerieGrid', 'fin-de-serie');
+    const section = document.getElementById('finSerieSection');
+    if (section) section.style.display = count > 0 ? '' : 'none';
+  }
   function renderSantaSecretSection() {
     const count = renderSimpleSection('santaSecretGrid', 'santa-secret');
     const section = document.getElementById('santaSecretSection');
@@ -844,6 +873,7 @@
 
   /* ─── RACCOURCIS VERS LES SECTIONS ─── */
   const JUMP_SECTIONS = {
+    'fin-de-serie': 'finSerieSection',
     'creoles': 'creolesSection',
     'pampilles': 'pampillesSection',
     'pampilles-resine': 'pampillesResineSection',
@@ -851,14 +881,14 @@
     'bracelets': 'braceletsSection',
     'colliers': 'colliersSection'
   };
-  const JUMP_CATS = { 'creoles': 'creoles', 'pampilles': 'pampilles', 'pampilles-resine': 'pampilles-resine', 'santa-secret': 'santa-secret', 'bracelets': 'bracelets', 'colliers': 'colliers' };
+  const JUMP_CATS = { 'fin-de-serie': 'fin-de-serie', 'creoles': 'creoles', 'pampilles': 'pampilles', 'pampilles-resine': 'pampilles-resine', 'santa-secret': 'santa-secret', 'bracelets': 'bracelets', 'colliers': 'colliers' };
   function updateSectionJump() {
     const row = document.getElementById('sectionJump');
     if (!row) return;
     let visible = 0;
     row.querySelectorAll('[data-jump]').forEach(b => {
       const key = b.dataset.jump;
-      const has = products.some(p => catSlug(p.category) === JUMP_CATS[key]);
+      const has = products.some(p => sectionCat(p) === JUMP_CATS[key]);
       b.style.display = has ? '' : 'none';
       if (has) visible++;
     });
@@ -885,7 +915,7 @@
     const grid = document.getElementById('pampillesGrid');
     if (!grid) return;
     pampillesIndexes = [];
-    products.forEach((p, idx) => { if (catSlug(p.category) === 'pampilles') pampillesIndexes.push(idx); });
+    products.forEach((p, idx) => { if (sectionCat(p) === 'pampilles') pampillesIndexes.push(idx); });
     grid.innerHTML = pampillesIndexes.map(idx => {
       const p = products[idx];
       return `
@@ -910,7 +940,7 @@
           <div class="p-name">${p.name}</div>
           <div class="p-desc">${p.description || ''}</div>
           <div class="p-bottom">
-            <div class="p-price${priceOk(p) ? '' : ' price-soon'}">${priceLabel(p)}</div>
+            <div class="p-price${priceOk(p) ? '' : ' price-soon'}">${priceHtml(p)}</div>
             <div class="p-stock ${p.stock === 'rupture' ? 'rupture' : p.stock === 'low' ? 'low' : ''}"><span class="p-stock-dot"></span> ${p.stock === 'rupture' ? 'Rupture de stock' : p.stock === 'low' ? 'Dernières pièces' : 'En stock'}</div>
           </div>
         </div>
@@ -928,14 +958,19 @@
     });
   }
 
-  fetch('content/products.json').then(r => r.json()).then(data => {
-    products = data.products || [];
+  Promise.all([
+    fetch('content/products.json').then(r => r.json()),
+    fetch('content/fin-de-serie.json').then(r => r.ok ? r.json() : { products: [] }).catch(() => ({ products: [] }))
+  ]).then(([data, fds]) => {
+    // Les produits "Fin de série" (onglet Sveltia à part) sont regroupés dans leur propre section
+    products = (data.products || []).concat((fds.products || []).map(p => Object.assign({}, p, { _fds: true })));
     renderCreolesSection();
     renderBraceletsSection();
     renderColliersSection();
     renderPampillesSection();
     renderPampillesResineSection();
     renderSantaSecretSection();
+    renderFinSerieSection();
     updateSectionJump();
     setTimeout(jumpFromHash, 80);
 
@@ -952,6 +987,8 @@
     setText('pampillesTitle', data.pampilles_title);
     setText('pampillesResineTitle', data.pampilles_resine_title);
     setText('santaSecretTitle', data.santa_secret_title);
+    setText('finSerieTitle', fds.section_title);
+    if (fds.intro_text) { const fi = document.getElementById('finSerieIntro'); if (fi) { fi.textContent = fds.intro_text; fi.style.display = ''; } }
     setText('pampillesTabAll', data.pampilles_tab_all);
     setText('pampillesTabUni', data.pampilles_tab_uni);
     setText('pampillesTabMotifs', data.pampilles_tab_motifs);
@@ -985,7 +1022,7 @@
     document.getElementById('modalQty').textContent = 1;
     document.getElementById('modalCat').textContent = p.category;
     document.getElementById('modalName').textContent = p.name;
-    document.getElementById('modalPrice').textContent = priceLabel(p);
+    document.getElementById('modalPrice').innerHTML = priceHtml(p);
     document.getElementById('modalDesc').textContent = p.description;
     document.getElementById('modalImg').style.background = p.bg || '#F5EDE8';
     document.getElementById('modalImg').innerHTML = productVisual(p);
@@ -1077,7 +1114,7 @@
     saveWishlist();
     renderWishlist();
     // Resynchronise l'état visuel des cœurs sur la grille
-    renderCreolesSection(); renderBraceletsSection(); renderColliersSection(); renderPampillesSection(); renderPampillesResineSection(); renderSantaSecretSection();
+    renderCreolesSection(); renderBraceletsSection(); renderColliersSection(); renderPampillesSection(); renderPampillesResineSection(); renderSantaSecretSection(); renderFinSerieSection();
   }
 
   function toggleWishDrawer() {
@@ -1118,9 +1155,10 @@
   Promise.all([
     fetch('content/products.json').then(r => r.json()).catch(() => ({products: []})),
     fetch('content/nouveautes.json').then(r => r.json()).catch(() => ({products: []})),
-    fetch('content/wooden-mountain.json').then(r => r.json()).catch(() => ({products: []}))
-  ]).then(([a, b, c]) => {
-    ruptureNames = [].concat(a.products || [], b.products || [], c.products || [])
+    fetch('content/wooden-mountain.json').then(r => r.json()).catch(() => ({products: []})),
+    fetch('content/fin-de-serie.json').then(r => r.json()).catch(() => ({products: []}))
+  ]).then(([a, b, c, d]) => {
+    ruptureNames = [].concat(a.products || [], b.products || [], c.products || [], d.products || [])
       .filter(p => p.stock === 'rupture').map(p => p.name);
     renderCart();
   }).catch(() => {});
