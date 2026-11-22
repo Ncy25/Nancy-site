@@ -1,5 +1,21 @@
 {
   "section_title": "Fin de serie",
   "intro_text": "",
-  "products": []
+  "products": [
+    {
+      "name": "Marguerite - A la folie",
+      "id": "",
+      "category": "Pampilles",
+      "price": 10,
+      "old_price": 17,
+      "description": "",
+      "image": "/images/uploads/20260301_161957.png",
+      "image_alt": "",
+      "emoji": "",
+      "bg": "",
+      "badge": "",
+      "stock": "in_stock",
+      "weight": 10
+    }
+  ]
 }
