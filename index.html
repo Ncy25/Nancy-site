@@ -911,6 +911,7 @@
       <div class="r d2">
         <div class="c-form">
           <form id="cf" onsubmit="sendForm(event)">
+            <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Ne pas remplir<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
             <div class="f-2col">
               <div class="fg"><label for="fn">Prénom</label><input type="text" id="fn" name="fname" placeholder="Léa" required/></div>
               <div class="fg"><label for="ln">Nom</label><input type="text" id="ln" name="lname" placeholder="Dupont"/></div>
@@ -1277,10 +1278,11 @@
   function openCart() { document.getElementById('dr').classList.add('open'); document.getElementById('ov').classList.add('open'); }
   function toggleCart() { document.getElementById('dr').classList.toggle('open'); document.getElementById('ov').classList.toggle('open'); }
 
+  window.__formLoadedAt = Date.now();
   function sendForm(e) {
     e.preventDefault();
     const f = document.getElementById('cf');
-    fetch('/api/contact', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({fname:f.fname.value, lname:f.lname.value, email:f.email.value, sujet:f.sujet.value, message:f.message.value}) })
+    fetch('/api/contact', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({fname:f.fname.value, lname:f.lname.value, email:f.email.value, sujet:f.sujet.value, message:f.message.value, website:f.website.value, t:window.__formLoadedAt}) })
       .finally(() => { f.style.display='none'; document.getElementById('fok').style.display='block'; });
   }
 
